@@ -20,8 +20,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="subjects.html" class="nav-link">Subjects</a></li>
-                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                <li id="navAuth"><a href="login.html" class="nav-link btn btn-primary">Sign In</a></li>
+                <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
             </ul>
         </div>
     </nav>
@@ -39,15 +38,7 @@
         </div>
     </section>
 
-    <div class="lock-overlay" id="lockOverlay" style="display:none">
-        <div class="lock-content">
-            <div style="font-size:4rem;margin-bottom:16px">🔒</div>
-            <h2>Subscription Required</h2>
-            <p>Get full access to all notes, practice questions, and revision materials.</p>
-            <a href="pricing.html" class="btn btn-primary btn-lg">View Pricing</a>
-            <p style="margin-top:24px;font-size:0.85rem"><a href="login.html" style="color:var(--gray)">Already subscribed? Sign in</a></p>
-        </div>
-    </div>
+
 
     <script src="js/data.js"></script>
     <script src="js/auth.js"></script>
@@ -66,15 +57,12 @@
         subject.topics.forEach(topic => {
             const item = document.createElement('div');
             item.className = 'topic-item';
-            const locked = !Auth.isSubscribed();
             item.innerHTML = `
                 <div>
                     <h3>${topic.title}</h3>
                     <p>${topic.alevel && topic.igcse ? 'A-Level & IGCSE' : topic.alevel ? 'A-Level' : 'IGCSE'}</p>
                 </div>
-                <a href="${locked ? '#' : 'notes/' + subjectId + '-' + topic.id + '.html'}" class="btn ${locked ? 'btn-outline' : 'btn-primary'}">
-                    ${locked ? '🔒 Locked' : 'View Notes'}
-                </a>
+                <a href="notes/${subjectId}-${topic.id}.html" class="btn btn-primary">View Notes</a>
             `;
             list.appendChild(item);
         });

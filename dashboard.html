@@ -20,8 +20,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="subjects.html" class="nav-link">Subjects</a></li>
-                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
-                <li id="navAuth"><a href="login.html" class="nav-link btn btn-primary">Sign In</a></li>
+                <li><a href="dashboard.html" class="nav-link active">My Progress</a></li>
             </ul>
         </div>
     </nav>
@@ -53,11 +52,9 @@
     <script src="js/data.js"></script>
     <script src="js/auth.js"></script>
     <script>
-    if (!Auth.requireAuth()) {
-        // redirected
-    } else {
+    (function() {
         const user = Auth.getUser();
-        document.getElementById('userEmail').textContent = user.email;
+        document.getElementById('userEmail').textContent = user ? user.email : 'Guest — local progress only';
 
         const container = document.getElementById('subjectProgress');
         Object.keys(Subjects).forEach(key => {
