@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnAI — AI-Powered Tutor & Personalized Learning</title>
-    <meta name="description" content="LearnAI is a concept landing page for an AI-powered education platform. Not a live product.">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <title>LearnAI — Cambridge A-Level, IGCSE & IELTS Resources</title>
+    <meta name="description" content="Premium Cambridge A-Level, IGCSE and IELTS study resources, notes, and practice materials. Subscription-based access.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">LearnAI</span>
             </a>
@@ -25,446 +21,225 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#vision" class="nav-link">Vision</a></li>
-                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#customers" class="nav-link">For</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                <li><a href="#contact" class="nav-link btn btn-primary">Get Started</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li id="navAuth"><a href="login.html" class="nav-link btn btn-primary">Sign In</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="vision">
+    <section class="hero hero-cambridge">
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">🚀 Concept Preview</div>
-                <h1 class="hero-title">Your Personal AI Tutor,<br>Study Planner & Content Creator</h1>
+                <div class="hero-badge">✓ Official Syllabus Aligned</div>
+                <h1 class="hero-title">Ace Your Cambridge<br>A-Level & IGCSE Exams</h1>
                 <p class="hero-subtitle">
-                    A concept for an AI-powered education platform that could adapt learning based on ability, speed, 
-                    weaknesses, interests, and goals. This is a demo landing page — not a live product.
+                    Comprehensive notes, practice questions, and revision materials for Cambridge International examinations. 
+                    Created by top-scoring students and verified educators.
                 </p>
                 <div class="hero-cta">
-                    <a href="#how-it-works" class="btn btn-primary btn-lg">See How It Works</a>
-                    <a href="#contact" class="btn btn-outline btn-lg">Request Updates</a>
+                    <a href="pricing.html" class="btn btn-primary btn-lg">Get Full Access</a>
+                    <a href="subjects.html" class="btn btn-outline btn-lg">Browse Subjects</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">AI Tutoring</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Goal</span>
-                        <span class="stat-label">Personalized</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Custom Content</span>
-                    </div>
+                    <div class="stat"><span class="stat-number">11</span><span class="stat-label">Subjects</span></div>
+                    <div class="stat"><span class="stat-number">A*</span><span class="stat-label">Target Grade</span></div>
+                    <div class="stat"><span class="stat-number">24/7</span><span class="stat-label">Access</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem" id="problem">
+    <section class="subjects-preview">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">The Problem</span>
-                <h2 class="section-title">Traditional Education Has Critical Gaps</h2>
+                <span class="section-tag">Subjects</span>
+                <h2 class="section-title">Complete Coverage for Cambridge Exams</h2>
             </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">📚</div>
-                    <h3>One-Size-Fits-All</h3>
-                    <p>Every student receives the same textbooks, homework, and exercises. But every student learns differently.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">💰</div>
-                    <h3>Expensive Tutoring</h3>
-                    <p>Private tutors are costly and unavailable 24/7. Students need instant explanations and personalized practice.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">⏱️</div>
-                    <h3>Time Wasted</h3>
-                    <p>Students spend hours making notes, flashcards, and searching for practice questions instead of actually learning.</p>
-                </div>
+            <div class="subjects-grid">
+                <a href="subject.html?id=physics" class="subject-card">
+                    <div class="subject-icon">⚛️</div>
+                    <h3>Physics</h3>
+                    <p>9702 (A-Level) · 0625 (IGCSE)</p>
+                    <span class="subject-tag">Mechanics · Electricity · Waves · Nuclear</span>
+                </a>
+                <a href="subject.html?id=chemistry" class="subject-card">
+                    <div class="subject-icon">🧪</div>
+                    <h3>Chemistry</h3>
+                    <p>9701 (A-Level) · 0620 (IGCSE)</p>
+                    <span class="subject-tag">Organic · Inorganic · Physical · Analytical</span>
+                </a>
+                <a href="subject.html?id=biology" class="subject-card">
+                    <div class="subject-icon">🧬</div>
+                    <h3>Biology</h3>
+                    <p>9700 (A-Level) · 0610 (IGCSE)</p>
+                    <span class="subject-tag">Cell Biology · Genetics · Ecology · Physiology</span>
+                </a>
+                <a href="subject.html?id=maths" class="subject-card">
+                    <div class="subject-icon">📐</div>
+                    <h3>Mathematics</h3>
+                    <p>9709 (A-Level) · 0580 (IGCSE)</p>
+                    <span class="subject-tag">Pure · Statistics · Mechanics</span>
+                </a>
+                <a href="subject.html?id=additional-maths" class="subject-card">
+                    <div class="subject-icon">📊</div>
+                    <h3>Additional Mathematics</h3>
+                    <p>0606 (IGCSE)</p>
+                    <span class="subject-tag">Functions · Calculus · Vectors · Matrices</span>
+                </a>
+                <a href="subject.html?id=economics" class="subject-card">
+                    <div class="subject-icon">📈</div>
+                    <h3>Economics</h3>
+                    <p>9708 (A-Level) · 0455 (IGCSE)</p>
+                    <span class="subject-tag">Micro · Macro · International · Development</span>
+                </a>
+                <a href="subject.html?id=business" class="subject-card">
+                    <div class="subject-icon">💼</div>
+                    <h3>Business</h3>
+                    <p>9609 (A-Level) · 0450 (IGCSE)</p>
+                    <span class="subject-tag">Marketing · Finance · HR · Operations</span>
+                </a>
+                <a href="subject.html?id=accounting" class="subject-card">
+                    <div class="subject-icon">📋</div>
+                    <h3>Accounting</h3>
+                    <p>9706 (A-Level) · 0452 (IGCSE)</p>
+                    <span class="subject-tag">Financial · Cost · Management</span>
+                </a>
+                <a href="subject.html?id=english" class="subject-card">
+                    <div class="subject-icon">📖</div>
+                    <h3>English</h3>
+                    <p>9093/0500 · IELTS</p>
+                    <span class="subject-tag">Language · Literature · Essay Writing</span>
+                </a>
+                <a href="subject.html?id=chinese" class="subject-card">
+                    <div class="subject-icon">🈶</div>
+                    <h3>Chinese</h3>
+                    <p>9715 (A-Level) · 0509 (IGCSE)</p>
+                    <span class="subject-tag">Language · Literature · Culture</span>
+                </a>
+                <a href="subject.html?id=psychology" class="subject-card">
+                    <div class="subject-icon">🧠</div>
+                    <h3>Psychology</h3>
+                    <p>9990 (A-Level)</p>
+                    <span class="subject-tag">Cognitive · Social · Biological · Abnormal</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="features">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">How It Works</span>
-                <h2 class="section-title">From Upload to Mastery in 5 Steps</h2>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <div class="step-icon">📤</div>
-                        <h3>Upload Learning Materials</h3>
-                        <p>Upload textbooks, lecture notes, past papers, and syllabus documents. The AI analyzes key concepts, topics, exam requirements, and question patterns.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <div class="step-icon">📝</div>
-                        <h3>AI Creates Study Resources</h3>
-                        <p>Automatically generates personalized notes, flashcards, mind maps, and revision sheets tailored to your format preference.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <div class="step-icon">✅</div>
-                        <h3>AI Homework & Exam Marking</h3>
-                        <p>Upload essays, calculations, and past papers. The AI marks answers, identifies mistakes, explains errors, and provides model answers.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <div class="step-icon">📅</div>
-                        <h3>Personal AI Study Planner</h3>
-                        <p>Creates a personalized revision schedule based on exam dates, current grades, weak topics, and available study hours. Auto-adjusts as you improve.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <div class="step-icon">🎨</div>
-                        <h3>Custom Learning Materials</h3>
-                        <p>The AI creates entirely new educational materials — personalized workbooks, worksheets, and practice exams based on your specific needs and interests.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Features</span>
-                <h2 class="section-title">Powered by Advanced AI</h2>
+                <span class="section-tag">Why LearnAI</span>
+                <h2 class="section-title">Everything You Need for an A*</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🧬</div>
-                    <h3>AI Digital Twin</h3>
-                    <p>The AI builds a "digital twin" of each student — learning strengths, weaknesses, learning style, and memory retention over time.</p>
+                    <div class="feature-icon">📝</div>
+                    <h3>Syllabus-Aligned Notes</h3>
+                    <p>Every topic matched to the official Cambridge syllabus. No gaps, no extras — just what you need.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🗺️</div>
-                    <h3>Adaptive Learning Path</h3>
-                    <p>Creates personalized sequences based on prerequisite knowledge. Two students studying the same syllabus get completely different paths.</p>
+                    <div class="feature-icon">✅</div>
+                    <h3>Practice Questions</h3>
+                    <p>Past paper style questions with detailed mark schemes and examiner-style answers.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔮</div>
-                    <h3>AI Exam Predictor</h3>
-                    <p>Predicts likely exam topics based on syllabus coverage, historical papers, and your current readiness.</p>
+                    <div class="feature-icon">📹</div>
+                    <h3>Video Explanations</h3>
+                    <p>Step-by-step walkthroughs of difficult concepts and common exam traps.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌡️</div>
-                    <h3>Weakness Heatmap</h3>
-                    <p>Visual map of every syllabus objective showing confidence, mastery, and forgetting risk at a glance.</p>
+                    <div class="feature-icon">📅</div>
+                    <h3>Revision Timetable</h3>
+                    <p>Personalised study planner based on your exam dates and weak topics.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Memory Decay Engine</h3>
-                    <p>Uses spaced repetition and forgetting curves to schedule revision before knowledge fades.</p>
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Track your mastery across every syllabus objective with visual progress bars.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🏆</div>
-                    <h3>AI Past Paper Coach</h3>
-                    <p>Analyzes why marks were lost and identifies recurring patterns — poor evaluation, missing keywords, calculation errors.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>AI Study Companion</h3>
-                    <p>Acts like a coach that checks in daily, adjusts schedules, provides motivation, and keeps students accountable.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h3>Explain at Any Level</h3>
-                    <p>Instantly explain any topic at primary school, high school, university, or expert level.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Mistake Library</h3>
-                    <p>Every mistake is stored and categorized. The AI regularly creates quizzes based only on past errors.</p>
+                    <h3>A* Strategies</h3>
+                    <p>Exam techniques, time management tips, and common mistake analysis from top scorers.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hyper-Personalization Showcase -->
-    <section class="showcase">
-        <div class="container">
-            <div class="showcase-content">
-                <div class="showcase-text">
-                    <span class="section-tag">Hyper-Personalization</span>
-                    <h2>Learning Through Their Passions</h2>
-                    <p>Traditional workbooks use generic examples. Our AI creates materials themed around what children love.</p>
-                    <div class="showcase-example">
-                        <div class="example-card">
-                            <span class="example-tag">Traditional</span>
-                            <p>"5 trucks carry 12 boxes each. How many boxes total?"</p>
-                        </div>
-                        <div class="example-arrow">→</div>
-                        <div class="example-card example-card-highlight">
-                            <span class="example-tag">LearnAI</span>
-                            <p>"5 dinosaurs found 12 fossils each. How many fossils did they discover?"</p>
-                        </div>
-                    </div>
-                    <p class="showcase-note">Same curriculum. Different engagement. The AI adapts to dinosaurs, space, sports, art — whatever sparks curiosity.</p>
-                </div>
-                <div class="showcase-visual">
-                    <div class="visual-card">
-                        <div class="visual-header">🦕 Dinosaur Mathematics Workbook</div>
-                        <div class="visual-items">
-                            <div class="visual-item"><span>➕</span> Addition with T-Rex</div>
-                            <div class="visual-item"><span>✖️</span> Multiplication with Raptors</div>
-                            <div class="visual-item"><span>📊</span> Fractions with Fossils</div>
-                            <div class="visual-item"><span>🦴</span> Word Problems with Bones</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Target Customers -->
-    <section class="customers" id="customers">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Built For</span>
-                <h2 class="section-title">Who Benefits from LearnAI?</h2>
-            </div>
-            <div class="customers-grid">
-                <div class="customer-card">
-                    <div class="customer-icon">🎒</div>
-                    <h3>Students</h3>
-                    <p>Primary, secondary, and university students who need personalized tutoring, study plans, and practice materials.</p>
-                </div>
-                <div class="customer-card customer-card-featured">
-                    <div class="customer-badge">⭐ Top Market</div>
-                    <div class="customer-icon">👨‍👩‍👧</div>
-                    <h3>Parents</h3>
-                    <p>Parents seeking better academic performance, engaging learning experiences, and affordable tutoring alternatives for their children.</p>
-                </div>
-                <div class="customer-card">
-                    <div class="customer-icon">🏫</div>
-                    <h3>Schools</h3>
-                    <p>Schools looking for personalized homework, additional practice materials, teacher assistance, and student progress tracking.</p>
-                </div>
-                <div class="customer-card">
-                    <div class="customer-icon">💼</div>
-                    <h3>Professional Learners</h3>
-                    <p>Certification candidates, career switchers, language learners, and adult education students.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing-preview">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Pricing</span>
-                <h2 class="section-title">Flexible Plans for Every Learner</h2>
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>AI Tutor</h3>
-                        <div class="pricing-price">$10–30<span>/month</span></div>
+                        <h3>Monthly</h3>
+                        <div class="pricing-price">$19<span>/month</span></div>
                     </div>
                     <ul class="pricing-features">
-                        <li>AI tutoring & explanations</li>
-                        <li>Notes generation</li>
-                        <li>Flashcard creation</li>
-                        <li>Study planning</li>
-                        <li>Homework marking</li>
+                        <li>All 11 subjects</li>
+                        <li>Full notes & questions</li>
+                        <li>Progress tracking</li>
+                        <li>Cancel anytime</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+                    <a href="register.html?plan=monthly" class="btn btn-outline btn-block">Choose Monthly</a>
                 </div>
                 <div class="pricing-card pricing-card-featured">
-                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-badge">Best Value</div>
                     <div class="pricing-header">
-                        <h3>Family</h3>
-                        <div class="pricing-price">Custom<span>/month</span></div>
+                        <h3>Annual</h3>
+                        <div class="pricing-price">$149<span>/year</span></div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Multiple AI tutors</li>
+                        <li>All 11 subjects</li>
+                        <li>Full notes & questions</li>
                         <li>Progress tracking</li>
-                        <li>Monthly workbooks</li>
-                        <li>Parent reports</li>
-                        <li>Priority support</li>
+                        <li>Video explanations</li>
+                        <li>Revision planner</li>
+                        <li>35% savings</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary btn-block">Contact Us</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>School License</h3>
-                        <div class="pricing-price">Custom<span>/year</span></div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>Teacher dashboards</li>
-                        <li>Student accounts</li>
-                        <li>Curriculum generation</li>
-                        <li>AI marking tools</li>
-                        <li>Class analytics</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline btn-block">Contact Us</a>
-                </div>
-            </div>
-            <div class="pricing-note">
-                <p>📦 <strong>Personalized Workbooks:</strong> Physical workbooks $29–39 each | Print-on-demand with no inventory needed</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dashboard Preview -->
-    <section class="dashboard">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Dashboard</span>
-                <h2 class="section-title">Powerful Analytics at a Glance</h2>
-            </div>
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">📊</div>
-                    <h3>Learning Analytics</h3>
-                    <p>Track study time, topic mastery, weak areas, improvement trends, and exam readiness.</p>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">👨‍👩‍👧</div>
-                    <h3>Parent Dashboard</h3>
-                    <p>Weekly progress reports, areas needing improvement, recommended activities, and learning milestones.</p>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">🎯</div>
-                    <h3>AI Exam Predictor</h3>
-                    <p>Analyzes past performance and practice scores to predict exam readiness and priority revision areas.</p>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">🏫</div>
-                    <h3>Teacher Dashboard</h3>
-                    <p>Class mastery heatmaps, predicted grades, commonly misunderstood concepts, and recommended lessons.</p>
+                    <a href="register.html?plan=annual" class="btn btn-primary btn-block">Choose Annual</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why It Stands Out -->
-    <section class="differentiator">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Why LearnAI?</span>
-                <h2 class="section-title">Beyond Another Notes Website</h2>
-            </div>
-            <div class="diff-content">
-                <div class="diff-flow">
-                    <div class="diff-step">
-                        <div class="diff-step-num">1</div>
-                        <span>Learn</span>
-                    </div>
-                    <div class="diff-arrow">→</div>
-                    <div class="diff-step">
-                        <div class="diff-step-num">2</div>
-                        <span>Practice</span>
-                    </div>
-                    <div class="diff-arrow">→</div>
-                    <div class="diff-step">
-                        <div class="diff-step-num">3</div>
-                        <span>Feedback</span>
-                    </div>
-                    <div class="diff-arrow">→</div>
-                    <div class="diff-step">
-                        <div class="diff-step-num">4</div>
-                        <span>Improve</span>
-                    </div>
-                    <div class="diff-arrow">→</div>
-                    <div class="diff-step">
-                        <div class="diff-step-num">5</div>
-                        <span>Repeat</span>
-                    </div>
-                </div>
-                <p class="diff-desc">
-                    Most education AI tools focus only on answering questions or explaining concepts. 
-                    LearnAI creates a <strong>complete personalized education ecosystem</strong> that understands each student, 
-                    adapts to them, and actively manages their learning journey.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Interested in This Concept?</h2>
-                <p>This is a demo landing page showcasing a vision for AI-powered education. No product is currently available for purchase or trial.</p>
-                <div class="cta-buttons">
-                    <a href="mailto:contact@learnai-demo.example" class="btn btn-primary btn-lg">Request Info</a>
-                    <a href="privacy.html" class="btn btn-outline btn-lg">Privacy Policy</a>
-                </div>
-                <p class="cta-note">Demo only. No signup or payment accepted.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <span class="logo-icon">🎓</span>
-                        <span class="logo-text">LearnAI</span>
-                    </a>
-                    <p>AI-powered education platform for personalized learning, tutoring, and content creation.</p>
+                    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+                    <p>Cambridge A-Level, IGCSE & IELTS study resources.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Platform</h4>
                     <ul>
-                        <li><a href="#vision">Vision</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>For</h4>
-                    <ul>
-                        <li><a href="#customers">Students</a></li>
-                        <li><a href="#customers">Parents</a></li>
-                        <li><a href="#customers">Schools</a></li>
-                        <li><a href="#customers">Professionals</a></li>
+                        <li><a href="subjects.html">Subjects</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="login.html">Sign In</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Use</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LearnAI. All rights reserved.</p>
+                <p>&copy; 2026 LearnAI. Not affiliated with Cambridge Assessment International Education.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

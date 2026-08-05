@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — LearnAI</title>
+    <meta name="description" content="Your Cambridge study dashboard.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                <li id="navAuth"><a href="login.html" class="nav-link btn btn-primary">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Your Study Dashboard</h1>
+                    <p id="userEmail" style="color:var(--gray)">Loading...</p>
+                </div>
+                <a href="subjects.html" class="btn btn-primary">Browse Subjects</a>
+            </div>
+
+            <div class="dashboard-grid" id="subjectProgress">
+                <!-- Filled by JS -->
+            </div>
+
+            <div style="margin-top:60px">
+                <h2 style="margin-bottom:24px">Recent Activity</h2>
+                <div class="dashboard-card">
+                    <p style="color:var(--gray)">Start studying to see your progress here. Pick a subject to begin.</p>
+                    <a href="subjects.html" class="btn btn-outline" style="margin-top:16px">Explore Subjects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+    if (!Auth.requireAuth()) {
+        // redirected
+    } else {
+        const user = Auth.getUser();
+        document.getElementById('userEmail').textContent = user.email;
+
+        const container = document.getElementById('subjectProgress');
+        Object.keys(Subjects).forEach(key => {
+            const s = Subjects[key];
+            const card = document.createElement('a');
+            card.href = 'subject.html?id=' + key;
+            card.className = 'dashboard-card';
+            card.innerHTML = `
+                <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+                    <span style="font-size:2.5rem">${s.icon}</span>
+                    <div>
+                        <h3>${s.name}</h3>
+                        <p>${s.code}</p>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem;color:var(--gray)">${s.topics.length} topics</p>
+                <div style="margin-top:12px">
+                    <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+                    <p class="progress-text">0% complete</p>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — LearnAI</title>
+    <meta name="description" content="Affordable subscription plans for Cambridge A-Level and IGCSE study resources.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+                <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                <li id="navAuth"><a href="login.html" class="nav-link btn btn-primary">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Invest in Your A* Grade</h2>
+                <p style="color:var(--gray);margin-top:12px">Full access to all subjects, notes, and practice materials.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Monthly</h3>
+                        <div class="pricing-price">$19<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>All 11 subjects</li>
+                        <li>Complete syllabus notes</li>
+                        <li>Practice questions with mark schemes</li>
+                        <li>Progress tracking</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="register.html?plan=monthly" class="btn btn-outline btn-block">Choose Monthly</a>
+                </div>
+                <div class="pricing-card pricing-card-featured">
+                    <div class="pricing-badge">Best Value</div>
+                    <div class="pricing-header">
+                        <h3>Annual</h3>
+                        <div class="pricing-price">$149<span>/year</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>All 11 subjects</li>
+                        <li>Complete syllabus notes</li>
+                        <li>Practice questions with mark schemes</li>
+                        <li>Progress tracking</li>
+                        <li>Video explanations</li>
+                        <li>Revision timetable</li>
+                        <li>A* exam strategies</li>
+                        <li>Save 35%</li>
+                    </ul>
+                    <a href="register.html?plan=annual" class="btn btn-primary btn-block">Choose Annual</a>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:60px;max-width:700px;margin-left:auto;margin-right:auto;">
+                <h3 style="margin-bottom:16px">Why Subscribe?</h3>
+                <p style="color:var(--gray);line-height:1.8">Private tutoring for Cambridge subjects costs $50–150 per hour. For the price of a single tutoring session, get unlimited access to comprehensive notes, practice materials, and revision tools for an entire month. All content is aligned to the official Cambridge syllabus and written by students who achieved A* grades.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+                    <p>Cambridge A-Level, IGCSE & IELTS study resources.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="subjects.html">Subjects</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="login.html">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LearnAI. Not affiliated with Cambridge Assessment International Education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

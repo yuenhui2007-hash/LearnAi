@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject — LearnAI</title>
+    <meta name="description" content="Cambridge subject topics and notes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li id="navAuth"><a href="login.html" class="nav-link btn btn-primary">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="subject-section">
+        <div class="container">
+            <div class="subject-header">
+                <a href="subjects.html" class="back-btn">← All Subjects</a>
+                <h1 id="subjectTitle">Loading...</h1>
+                <p id="subjectCode"></p>
+            </div>
+            <div class="topic-list" id="topicList">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <div class="lock-overlay" id="lockOverlay" style="display:none">
+        <div class="lock-content">
+            <div style="font-size:4rem;margin-bottom:16px">🔒</div>
+            <h2>Subscription Required</h2>
+            <p>Get full access to all notes, practice questions, and revision materials.</p>
+            <a href="pricing.html" class="btn btn-primary btn-lg">View Pricing</a>
+            <p style="margin-top:24px;font-size:0.85rem"><a href="login.html" style="color:var(--gray)">Already subscribed? Sign in</a></p>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const subjectId = params.get('id');
+    const subject = Subjects[subjectId];
+
+    if (!subject) {
+        document.getElementById('subjectTitle').textContent = 'Subject Not Found';
+    } else {
+        document.getElementById('subjectTitle').textContent = subject.icon + ' ' + subject.name;
+        document.getElementById('subjectCode').textContent = subject.code;
+
+        const list = document.getElementById('topicList');
+        subject.topics.forEach(topic => {
+            const item = document.createElement('div');
+            item.className = 'topic-item';
+            const locked = !Auth.isSubscribed();
+            item.innerHTML = `
+                <div>
+                    <h3>${topic.title}</h3>
+                    <p>${topic.alevel && topic.igcse ? 'A-Level & IGCSE' : topic.alevel ? 'A-Level' : 'IGCSE'}</p>
+                </div>
+                <a href="${locked ? '#' : 'notes/' + subjectId + '-' + topic.id + '.html'}" class="btn ${locked ? 'btn-outline' : 'btn-primary'}">
+                    ${locked ? '🔒 Locked' : 'View Notes'}
+                </a>
+            `;
+            list.appendChild(item);
+        });
+
+        if (!Auth.isSubscribed()) {
+            document.getElementById('lockOverlay').style.display = 'flex';
+        }
+    }
+    </script>
+</body>
+</html>
