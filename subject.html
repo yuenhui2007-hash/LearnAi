@@ -34,45 +34,38 @@
                 <h1 id="subjectTitle">Loading...</h1>
                 <p id="subjectCode"></p>
             </div>
-            <div class="topic-list" id="topicList">
-                <!-- Filled by JS -->
-            </div>
+            <div class="topic-list" id="topicList"></div>
         </div>
     </section>
 
-
-
     <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
     <script>
-    const params = new URLSearchParams(window.location.search);
-    const subjectId = params.get('id');
-    const subject = Subjects[subjectId];
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var subjectId = params.get('id');
+        var subject = window.Subjects ? Subjects[subjectId] : null;
 
-    if (!subject) {
-        document.getElementById('subjectTitle').textContent = 'Subject Not Found';
-    } else {
+        if (!subject) {
+            document.getElementById('subjectTitle').textContent = 'Subject Not Found';
+            document.getElementById('subjectCode').textContent = 'Please check the URL or browse all subjects.';
+            return;
+        }
+
         document.getElementById('subjectTitle').textContent = subject.icon + ' ' + subject.name;
         document.getElementById('subjectCode').textContent = subject.code;
 
-        const list = document.getElementById('topicList');
-        subject.topics.forEach(topic => {
-            const item = document.createElement('div');
+        var list = document.getElementById('topicList');
+        subject.topics.forEach(function(topic) {
+            var completed = Progress.isCompleted(subjectId, topic.id);
+            var item = document.createElement('div');
             item.className = 'topic-item';
-            const completed = Progress.isCompleted(subjectId, topic.id);
-            item.innerHTML = `
-                <div>
-                    <h3>${completed ? '✓ ' : ''}${topic.title}</h3>
-                    <p>${topic.alevel && topic.igcse ? 'A-Level & IGCSE' : topic.alevel ? 'A-Level' : 'IGCSE'}</p>
-                </div>
-                <a href="notes/${subjectId}-${topic.id}.html" class="btn btn-primary">View Notes</a>
-            `;
+            var level = topic.alevel && topic.igcse ? 'A-Level & IGCSE' : topic.alevel ? 'A-Level' : 'IGCSE';
+            item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + level + '</p></div><a href="notes/' + subjectId + '-' + topic.id + '.html" class="btn btn-primary">View Notes</a>';
             list.appendChild(item);
         });
-
-        if (!Auth.isSubscribed()) {
-            document.getElementById('lockOverlay').style.display = 'flex';
-        }
-    }
+    })();
     </script>
 </body>
 </html>
