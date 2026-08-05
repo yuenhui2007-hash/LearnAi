@@ -139,10 +139,6 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.animate-in').forEach(function(el) {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        });
         if (window.Planner) Planner.render();
     });
 
