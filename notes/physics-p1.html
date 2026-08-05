@@ -3,69 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physical Quantities & Units — Physics — LearnAI</title>
+<title>Physical Quantities & Units — Physics Notes | LearnAI</title>
+<meta name="description" content="Physical Quantities & Units notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/styles.css?v=3">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
 </head>
 <body>
-<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-<section class="subject-section"><div class="container">
-<a href="../subject.html?id=physics" class="back-btn">← Physics</a>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="../subject.html?id=physics" class="back-btn">← Back to Physics</a>
 <div class="notes-container">
-<h2>Physical Quantities & Units</h2>
-<p><strong>Syllabus reference:</strong> Cambridge 9702 / 0625 — Topic 1</p>
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-igcse">IGCSE</span>
+<span class="level-badge badge-as">AS Level</span>
 
-<h3>Base Quantities & SI Units</h3>
-<p>All physical quantities are measured using a system of units. The internationally accepted system is the <span class="highlight">SI system</span> (Système International).</p>
-<ul>
-<li><strong>Mass</strong> — kilogram (kg)</li>
-<li><strong>Length</strong> — metre (m)</li>
-<li><strong>Time</strong> — second (s)</li>
-<li><strong>Electric current</strong> — ampere (A)</li>
-<li><strong>Temperature</strong> — kelvin (K)</li>
-<li><strong>Amount of substance</strong> — mole (mol)</li>
-</ul>
-
-<h3>Derived Quantities</h3>
-<p>Derived quantities are formed from combinations of base quantities.</p>
-<div class="formula">
-Speed = distance / time → units: m s⁻¹<br>
-Acceleration = change in velocity / time → units: m s⁻²<br>
-Force = mass × acceleration → units: kg m s⁻² = newton (N)
+</div>
+<h1>Physical Quantities & Units</h1>
+<p style="color:var(--gray)">9702 (A-Level) · 0625 (IGCSE)</p>
 </div>
 
-<h3>Homogeneity of Equations</h3>
-<p>An equation is <span class="highlight">homogeneous</span> if the units on both sides are the same. This is a useful check for derived formulas.</p>
-
-<h3>Significant Figures & Decimal Places</h3>
+<div class="notes-section">
+<h2>Detailed Notes</h2>
+<h3>1. Physical Quantities</h3>
+<p>A <strong>physical quantity</strong> is any quantity that can be measured. Physical quantities are divided into two categories:</p>
 <ul>
-<li>When multiplying or dividing, give the answer to the same number of significant figures as the least precise value.</li>
-<li>When adding or subtracting, give the answer to the same number of decimal places as the least precise value.</li>
+<li><strong>Base quantities</strong> — cannot be defined in terms of other quantities. The seven SI base quantities are: length (m), mass (kg), time (s), electric current (A), temperature (K), amount of substance (mol), luminous intensity (cd).</li>
+<li><strong>Derived quantities</strong> — defined in terms of base quantities. Examples: velocity (m/s), force (kg·m/s²), energy (kg·m²/s²).</li>
 </ul>
-
-<h3>Common Prefixes</h3>
+<h3>2. Units</h3>
+<p>The <strong>SI system</strong> (Système International) is the standard system of units used in science:</p>
 <ul>
-<li>tera (T) — 10¹²</li>
-<li>giga (G) — 10⁹</li>
-<li>mega (M) — 10⁶</li>
-<li>kilo (k) — 10³</li>
-<li>centi (c) — 10⁻²</li>
-<li>milli (m) — 10⁻³</li>
-<li>micro (μ) — 10⁻⁶</li>
-<li>nano (n) — 10⁻⁹</li>
-<li>pico (p) — 10⁻¹²</li>
+<li>All measurements should be expressed in SI units or appropriate prefixes.</li>
+<li>Common prefixes: nano (n, 10⁻⁹), micro (μ, 10⁻⁶), milli (m, 10⁻³), centi (c, 10⁻²), kilo (k, 10³), mega (M, 10⁶), giga (G, 10⁹).</li>
 </ul>
-
-<h3>Exam Tips</h3>
+<div class="formula-box"><strong>Homogeneity of equations:</strong> An equation is homogeneous if the units on both sides are the same. This is a useful check but does not prove an equation is correct.</div>
+<h3>3. Scalars and Vectors</h3>
 <ul>
-<li>Always show your working with units in calculations.</li>
-<li>Use standard form for very large or very small numbers.</li>
-<li>Check homogeneity before memorising a formula.</li>
+<li><strong>Scalar</strong> — has magnitude only (e.g., mass, speed, distance, energy, temperature).</li>
+<li><strong>Vector</strong> — has magnitude and direction (e.g., displacement, velocity, acceleration, force, momentum).</li>
+<li>Vectors are added using the <strong>parallelogram law</strong> or by resolving into components.</li>
+</ul>
+<h3>4. Measurement Techniques</h3>
+<ul>
+<li><strong>Precision</strong> — refers to the smallest division on the measuring instrument.</li>
+<li><strong>Accuracy</strong> — how close a measurement is to the true value.</li>
+<li><strong>Uncertainty</strong> — the range within which the true value is expected to lie.</li>
+<li>Percentage uncertainty = (uncertainty / measured value) × 100%.</li>
 </ul>
 </div>
-</div></section>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>7 SI base units: m, kg, s, A, K, mol, cd</li>
+<li>Prefixes: n(10⁻⁹), μ(10⁻⁶), m(10⁻³), c(10⁻²), k(10³), M(10⁶), G(10⁹)</li>
+<li>Scalars: magnitude only (mass, speed, distance, energy)</li>
+<li>Vectors: magnitude + direction (displacement, velocity, force, momentum)</li>
+<li>Homogeneity check: units must match on both sides of equation</li>
+<li>Precision = smallest scale division; Accuracy = closeness to true value</li>
+<li>% uncertainty = (uncertainty / value) × 100</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Read the question carefully — identify exactly what is being asked.</li>
+<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
+<li>Check units — ensure your final answer has the correct unit.</li>
+<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
+<li>Manage your time — don't spend too long on any single question.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="../js/auth.js?v=3"></script>
 <script src="../js/app.js?v=3"></script>
-<script>document.addEventListener('DOMContentLoaded',function(){var btn=document.createElement('button');btn.className='btn btn-primary mark-complete-btn';btn.dataset.subject='physics';btn.dataset.topic='p1';btn.style.marginTop='32px';if(Progress.isCompleted('physics','p1')){btn.textContent='✓ Completed';btn.disabled=true;}else{btn.textContent='Mark as Complete';}btn.addEventListener('click',function(){Progress.set('physics','p1',true);this.textContent='✓ Completed';this.disabled=true;});document.querySelector('.notes-container').appendChild(btn);});</script>
 </body>
 </html>
