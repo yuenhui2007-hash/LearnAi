@@ -6,7 +6,7 @@
 <title>Sign Up — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="css/styles.css?v=3">
 <style>
 .auth-section { padding: 120px 0 60px; background: #0f172a; min-height: 100vh; }
 .auth-container { max-width: 420px; margin: 0 auto; padding: 0 20px; }
@@ -24,28 +24,26 @@
 .auth-footer { text-align: center; margin-top: 20px; color: #94a3b8; font-size: .9rem; }
 .auth-footer a { color: #6366f1; }
 .social-login { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-.btn-social { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 10px; font-weight: 600; border: 1px solid #475569; background: #334155; color: #fff; cursor: pointer; text-decoration: none; }
+.btn-social { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 10px; font-weight: 600; border: 1px solid #475569; background: #334155; color: #fff; cursor: pointer; }
 .btn-social:hover { background: #475569; }
 .divider { display: flex; align-items: center; gap: 16px; margin: 20px 0; color: #64748b; font-size: .85rem; }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #475569; }
+.demo-note { text-align: center; font-size: .75rem; color: #64748b; margin-bottom: 16px; }
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="auth-section">
 <div class="container auth-container">
 <div class="auth-card">
 <h1>Create Account</h1>
 <p class="auth-subtitle">Join LearnAI — it's free</p>
-
+<div class="demo-note">🔒 All data stays in your browser. No server.</div>
 <div class="social-login">
-<a href="/api/auth/google" class="btn btn-social">🔴 Continue with Google</a>
-<a href="/api/auth/apple" class="btn btn-social">⚫ Continue with Apple</a>
+<button class="btn btn-social" onclick="alert('Google sign-up coming soon')">🔴 Continue with Google</button>
+<button class="btn btn-social" onclick="alert('Apple sign-up coming soon')">⚫ Continue with Apple</button>
 </div>
-
 <div class="divider">or</div>
-
 <form id="registerForm">
 <div class="form-group"><label>Full Name</label><input type="text" id="name" placeholder="John Doe" required></div>
 <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="+1 234 567 8900" required></div>
@@ -55,7 +53,6 @@
 <div class="auth-success" id="success"></div>
 <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
 </form>
-
 <div class="auth-footer">
 <p>Already have an account? <a href="login.html">Sign In</a></p>
 <p><a href="index.html">← Back to Home</a></p>
@@ -63,32 +60,13 @@
 </div>
 </div>
 </section>
-
+<script src="js/auth.js?v=3"></script>
 <script>
-const API = window.location.origin + '/api';
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const err = document.getElementById('error');
-  const suc = document.getElementById('success');
-  try {
-    const res = await fetch(API + '/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        password: document.getElementById('password').value
-      })
-    });
-    const data = await res.json();
-    if (!res.ok) { err.textContent = data.error; err.style.display = 'block'; suc.style.display = 'none'; return; }
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('user', JSON.stringify(data.user));
-    suc.textContent = 'Account created! Redirecting...';
-    suc.style.display = 'block'; err.style.display = 'none';
-    setTimeout(() => window.location.href = 'dashboard.html', 1000);
-  } catch { err.textContent = 'Network error'; err.style.display = 'block'; }
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+e.preventDefault();
+var result = Auth.register(document.getElementById('email').value, document.getElementById('password').value, document.getElementById('name').value, document.getElementById('phone').value);
+if (result.success) window.location.href = 'dashboard.html';
+else { document.getElementById('error').textContent = result.error; document.getElementById('error').style.display = 'block'; }
 });
 </script>
 </body>
