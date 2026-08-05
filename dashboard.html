@@ -20,7 +20,6 @@
 <li><a href="subjects.html" class="nav-link">Subjects</a></li>
 <li><a href="dashboard.html" class="nav-link active">My Progress</a></li>
 <li><a href="planner.html" class="nav-link">Planner</a></li>
-<li id="navAuth"></li>
 </ul>
 </div>
 </nav>
@@ -47,12 +46,10 @@
 </div>
 </section>
 
-<script src="js/auth.js?v=2"></script>
 <script src="js/data.js?v=2"></script>
 <script src="js/app.js?v=2"></script>
 <script>
 (function() {
-if (!Auth.getUser()) { window.location.href = 'login.html?redirect=dashboard.html'; return; }
 const overall = Progress.getOverallProgress();
 document.getElementById('overallProgress').textContent =
 overall.total > 0 ? overall.completed + '/' + overall.total + ' topics completed (' + overall.percent + '%)' : 'Start studying to track your progress';
