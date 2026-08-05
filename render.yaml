@@ -2,6 +2,8 @@ services:
   - type: web
     name: learnai
     runtime: node
+    repo: https://github.com/yuenhui2007-hash/LearnAi.git
+    rootDir: .
     buildCommand: npm install
     startCommand: node server.js
     envVars:
