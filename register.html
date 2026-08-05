@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — LearnAI</title>
+<meta name="description" content="Create your free LearnAI account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+.social-login { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.btn-social { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; border-radius: var(--radius); font-weight: 600; border: 2px solid var(--gray-light); background: var(--white); color: var(--dark); cursor: pointer; transition: var(--transition); }
+.btn-social:hover { background: var(--light); }
+.btn-google { border-color: #4285f4; color: #4285f4; }
+.btn-apple { border-color: var(--dark); color: var(--dark); }
+.social-icon { font-size: 1.2rem; font-weight: 700; }
+.divider { display: flex; align-items: center; margin: 24px 0; color: var(--gray); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--gray-light); }
+.divider span { padding: 0 16px; font-size: 0.85rem; }
+.demo-note { text-align: center; font-size: 0.8rem; color: var(--gray); margin-bottom: 20px; padding: 8px; background: var(--light); border-radius: var(--radius); }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="auth-section">
+<div class="container auth-container">
+<div class="auth-card">
+<h1>Create Account</h1>
+<p class="auth-subtitle">Join LearnAI — it's free</p>
+<div class="demo-note">🔒 All data stays in your browser. No server. No payment.</div>
+
+<div class="social-login">
+<button class="btn btn-social btn-google" onclick="demoOAuth('Google')"><span class="social-icon">G</span> Continue with Google</button>
+<button class="btn btn-social btn-apple" onclick="demoOAuth('Apple')"><span class="social-icon">🍎</span> Continue with Apple</button>
+</div>
+
+<div class="divider"><span>or</span></div>
+
+<form id="registerForm">
+<div class="form-group"><label for="name">Full Name</label><input type="text" id="name" placeholder="Your full name" required autocomplete="name"></div>
+<div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="+1 234 567 8900" required autocomplete="tel"></div>
+<div class="form-group"><label for="email">Gmail Address</label><input type="email" id="email" placeholder="you@gmail.com" required autocomplete="email"></div>
+<div class="form-group"><label for="password">Password</label><input type="password" id="password" placeholder="Create a password (min 6 chars)" required minlength="6" autocomplete="new-password"></div>
+<div class="auth-error" id="registerError"></div>
+<button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+</form>
+
+<div class="auth-footer">
+<p>Already have an account? <a href="login.html">Sign In</a></p>
+<p><a href="index.html">← Back to Home</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<script src="js/auth.js"></script>
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const result = Auth.register(document.getElementById('email').value, document.getElementById('password').value, document.getElementById('name').value, document.getElementById('phone').value);
+if (result.success) window.location.href = 'dashboard.html';
+else { document.getElementById('registerError').textContent = result.error; document.getElementById('registerError').style.display = 'block'; }
+});
+function demoOAuth(provider) {
+alert(provider + ' sign-up coming soon. For now, use the form above. Your data stays in your browser only.');
+}
+</script>
+</body>
+</html>
