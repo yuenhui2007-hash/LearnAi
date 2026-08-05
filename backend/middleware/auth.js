@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
-let JWT_SECRET = ***
-if (!JWT_SECRET) { JWT_SECRET = crypto…ing('hex'); console.warn('JWT_SECRET not set'); }
+let JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) { JWT_SECRET = crypto.randomBytes(32).toString('hex'); console.warn('JWT_SECRET not set'); }
 module.exports = {
   authenticate: (req, res, next) => {
     const t = req.headers.authorization?.replace('Bearer ', '');
