@@ -1,6 +1,6 @@
 # LearnAI — AI-Powered Tutor & Personalized Learning Platform
 
-A modern landing page for LearnAI, an AI-powered education platform that acts as a personal tutor, study planner, and educational content creator for students of all ages.
+A demo landing page showcasing the LearnAI concept — an AI-powered education platform vision. This is not a live product.
 
 ## Features
 
@@ -13,7 +13,7 @@ A modern landing page for LearnAI, an AI-powered education platform that acts as
 
 ## Live Demo
 
-Visit: [yuenhui2007-hash.github.io/LearnAi](https://yuenhui2007-hash.github.io/LearnAi)
+Visit: [yuenhui2007-hash.github.io/LearnAi](https://yuenhui2007-hash.github.io/LearnAi) — demo/concept only
 
 ## Tech Stack
 
