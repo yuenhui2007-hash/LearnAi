@@ -1,12 +1,12 @@
 /**
  * LearnAI Tutor — Cloudflare Worker Backend
- * Proxies AI requests to Gemini (free) or OpenAI (paid)
- * Keep this file secret — it contains no keys, only references env vars
+ * Uses Pollinations AI (free, no API key) as primary
+ * Falls back to Gemini/OpenAI if user provides keys
  */
 
 export default {
   async fetch(request, env) {
-    // Handle CORS preflight from your GitHub Pages site
+    // CORS preflight
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         status: 204,
@@ -18,25 +18,78 @@ export default {
       });
     }
 
-    // Only accept POST
     if (request.method !== 'POST') {
       return jsonResponse({ error: 'POST only' }, 405);
     }
 
-    // Parse body
     let body;
     try {
       body = await request.json();
     } catch {
-      return jsonResponse({ error: 'Invalid JSON body' }, 400);
+      return jsonResponse({ error: 'Invalid JSON' }, 400);
     }
 
-    const { messages, model = 'gpt-4o-mini' } = body;
+    const { messages, model = 'openai' } = body;
     if (!messages || !Array.isArray(messages)) {
       return jsonResponse({ error: 'messages array required' }, 400);
     }
 
-    // ===== OPENAI (paid, better quality) =====
+    // ===== PRIMARY: Pollinations AI (free, no key) =====
+    try {
+      const res = await fetch('https://text.pollinations.ai/openai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model,
+          messages,
+          temperature: 0.7,
+          max_tokens: 800,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.choices?.[0]?.message?.content) {
+        return jsonResponse({
+          reply: data.choices[0].message.content,
+          model: data.model || 'pollinations-openai',
+        });
+      }
+      // If Pollinations fails, continue to fallbacks
+    } catch (err) {
+      console.log('Pollinations failed:', err.message);
+    }
+
+    // ===== FALLBACK 1: Gemini (if user has key) =====
+    if (env.GEMINI_KEY) {
+      try {
+        const contents = messages.map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: m.content }],
+        }));
+
+        const res = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=***}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents }),
+          }
+        );
+
+        const data = await res.json();
+        if (res.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
+          return jsonResponse({
+            reply: data.candidates[0].content.parts[0].text,
+            model: 'gemini-1.5-flash',
+          });
+        }
+      } catch (err) {
+        console.log('Gemini failed:', err.message);
+      }
+    }
+
+    // ===== FALLBACK 2: OpenAI (if user has key) =====
     if (env.OPENAI_KEY) {
       try {
         const res = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -46,7 +99,7 @@ export default {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model,
+            model: 'gpt-4o-mini',
             messages,
             temperature: 0.7,
             max_tokens: 800,
@@ -54,70 +107,25 @@ export default {
         });
 
         const data = await res.json();
-
-        if (!res.ok) {
-          return jsonResponse({ error: data.error?.message || 'OpenAI error' }, res.status);
+        if (res.ok && data.choices?.[0]?.message?.content) {
+          return jsonResponse({
+            reply: data.choices[0].message.content,
+            model: data.model,
+          });
         }
-
-        return jsonResponse({
-          reply: data.choices[0].message.content,
-          model: data.model,
-          usage: data.usage,
-        });
       } catch (err) {
-        return jsonResponse({ error: err.message }, 502);
+        console.log('OpenAI failed:', err.message);
       }
     }
 
-    // ===== GEMINI (free tier — 1,500 req/day) =====
-    if (env.GEMINI_KEY) {
-      try {
-        // Gemini uses different message format
-        const contents = messages.map(m => ({
-          role: m.role === 'assistant' ? 'model' : 'user',
-          parts: [{ text: m.content }],
-        }));
-
-        const res = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.GEMINI_KEY}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents }),
-          }
-        );
-
-        const data = await res.json();
-
-        if (!res.ok) {
-          return jsonResponse(
-            { error: data.error?.message || `Gemini HTTP ${res.status}` },
-            res.status
-          );
-        }
-
-        if (!data.candidates || !data.candidates[0]?.content?.parts?.[0]?.text) {
-          return jsonResponse({ error: 'Empty response from Gemini' }, 502);
-        }
-
-        return jsonResponse({
-          reply: data.candidates[0].content.parts[0].text,
-          model: 'gemini-1.5-flash',
-        });
-      } catch (err) {
-        return jsonResponse({ error: err.message }, 502);
-      }
-    }
-
-    // No key configured
+    // All options exhausted
     return jsonResponse(
-      { error: 'No API key configured. Add GEMINI_KEY or OPENAI_KEY in Worker Settings → Variables.' },
-      500
+      { error: 'All AI services unavailable. Please try again later.' },
+      503
     );
   },
 };
 
-// Helper to return JSON with CORS headers
 function jsonResponse(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
