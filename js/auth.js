@@ -20,7 +20,7 @@ window.Auth = {
   updateNav: function() {
     var user = this.getUser();
     var el = document.getElementById('navAuth');
-    if (el) el.innerHTML = user ? '<a href="dashboard.html" class="nav-link">My Progress</a><a href="#" class="nav-link" onclick="Auth.logout();return false;">Sign Out</a>' : '<a href="login.html" class="nav-link">Sign In</a>';
+    if (el) el.innerHTML = user ? '<a href="#" class="nav-link" onclick="Auth.logout();return false;">Sign Out</a>' : '<a href="login.html" class="nav-link">Sign In / Sign Up</a>';
   }
 };
 document.addEventListener('DOMContentLoaded', function() { Auth.updateNav(); });
