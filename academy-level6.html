@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+<title>Level 6: Advanced AI Automation — Zetrix AI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=3">
+<style>
+.academy-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.academy-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.level-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.level-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.module { margin-bottom: 48px; }
+.module h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.module h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+.module p, .module li { line-height: 1.8; color: var(--dark-light); margin-bottom: 10px; }
+.module ul { padding-left: 24px; }
+.interactive-box { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin: 20px 0; border-left: 4px solid var(--primary); }
+.interactive-box h4 { margin-bottom: 12px; }
+.quiz-container { background: #f8fafc; padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+.quiz-question { margin-bottom: 20px; }
+.quiz-question p { font-weight: 600; margin-bottom: 10px; }
+.quiz-options label { display: block; padding: 10px 14px; margin-bottom: 8px; background: white; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+.quiz-options label:hover { background: var(--primary-light); }
+.quiz-options input { margin-right: 8px; }
+.quiz-result { margin-top: 20px; padding: 16px; border-radius: 12px; display: none; }
+.assignment-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 24px 0; }
+.assignment-box h4 { color: #92400e; margin-bottom: 8px; }
+.nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--gray-light); }
+.advanced-card { background: #faf5ff; padding: 20px; border-radius: 12px; margin: 12px 0; border-left: 4px solid #a855f7; }
+.advanced-card h4 { color: #7e22ce; margin-bottom: 8px; }
+.cert-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px; border-radius: var(--radius-xl); text-align: center; margin-top: 40px; }
+.cert-box h2 { margin-bottom: 16px; }
+@media (max-width: 768px) { .academy-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+      <li><a href="tutor.html" class="nav-link">AI Tutor</a></li>
+      <li><a href="academy.html" class="nav-link active">AI Academy</a></li>
+      <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
+      <li id="navAuth"><a href="login.html" class="nav-link">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="academy-page">
+  <div class="container">
+    <div class="academy-container">
+      <div class="level-header">
+        <span style="color:var(--primary);font-weight:600">Level 6 of 6</span>
+        <h1>Advanced AI Automation</h1>
+        <p style="color:var(--gray)">AI workflows, agents, multi-step prompts, document automation, custom GPTs, and API integrations. Estimated time: 4 hours.</p>
+      </div>
+
+      <div class="module">
+        <h2>Module 1: AI Workflows</h2>
+        <h3>What is an AI Workflow?</h3>
+        <p>An AI workflow chains multiple AI operations together to complete complex tasks automatically:</p>
+        <div class="interactive-box">
+          <h4>🔄 Example: Report Generation Workflow</h4>
+          <p>1. <strong>Data Collection</strong> → AI gathers data from multiple sources<br>
+          2. <strong>Analysis</strong> → AI analyses trends and anomalies<br>
+          3. <strong>Drafting</strong> → AI writes executive summary<br>
+          4. <strong>Review</strong> → AI checks for errors and consistency<br>
+          5. <strong>Formatting</strong> → AI applies company template and branding<br>
+          6. <strong>Distribution</strong> → AI emails stakeholders</p>
+        </div>
+
+        <h3>Building Blocks</h3>
+        <ul>
+          <li><strong>Triggers:</strong> Schedule, event, webhook, manual</li>
+          <li><strong>Actions:</strong> Generate text, analyse data, send email, update database</li>
+          <li><strong>Conditions:</strong> If/then logic for branching workflows</li>
+          <li><strong>Loops:</strong> Process multiple items iteratively</li>
+          <li><strong>Variables:</strong> Pass data between steps</li>
+        </ul>
+
+        <h3>Workflow Tools</h3>
+        <ul>
+          <li><strong>Zapier:</strong> Connect 5000+ apps without coding</li>
+          <li><strong>Make (Integromat):</strong> Visual workflow builder</li>
+          <li><strong>n8n:</strong> Open-source automation</li>
+          <li><strong>Microsoft Power Automate:</strong> Enterprise workflows</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h2>Module 2: Multi-Step Prompts</h2>
+        <h3>Chain-of-Thought Prompting</h3>
+        <p>Break complex tasks into sequential steps:</p>
+        <div class="interactive-box">
+          <h4>📝 Example: Multi-Step Analysis</h4>
+          <p><strong>Step 1:</strong> "Analyse this sales data and identify top 3 trends"<br>
+          <strong>Step 2:</strong> "For each trend, explain the likely cause"<br>
+          <strong>Step 3:</strong> "Recommend 2 actions for each trend"<br>
+          <strong>Step 4:</strong> "Summarise everything in a 3-slide presentation outline"</p>
+        </div>
+
+        <h3>Prompt Chaining Techniques</h3>
+        <ul>
+          <li><strong>Sequential refinement:</strong> Each output becomes the next input</li>
+          <li><strong>Parallel processing:</strong> Multiple prompts run simultaneously, results combined</li>
+          <li><strong>Conditional branching:</strong> Different next steps based on AI output</li>
+          <li><strong>Memory chains:</strong> Maintain context across a long process</li>
+        </ul>
+
+        <div class="advanced-card">
+          <h4>💡 Advanced Tip</h4>
+          <p>Use "Let me think step by step" or "Show your reasoning" to get better results from complex prompts.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 3: Document Automation</h2>
+        <h3>Automated Document Generation</h3>
+        <ul>
+          <li><strong>Mail merge on steroids:</strong> Generate 100 personalised proposals from a template</li>
+          <li><strong>Dynamic reports:</strong> Auto-update charts and summaries when data changes</li>
+          <li><strong>Contract generation:</strong> Fill in variables, apply clauses based on conditions</li>
+          <li><strong>Multi-language:</strong> Generate documents in 20+ languages simultaneously</li>
+        </ul>
+
+        <h3>Template Systems</h3>
+        <ul>
+          <li><strong>Variables:</strong> {{company_name}}, {{date}}, {{amount}}</li>
+          <li><strong>Conditionals:</strong> {% if premium %}Include warranty{% endif %}</li>
+          <li><strong>Loops:</strong> {% for item in order %} {{item.name}} {% endfor %}</li>
+          <li><strong>Formatting:</strong> Auto-apply styles, headers, footers</li>
+        </ul>
+
+        <div class="interactive-box">
+          <h4>🎯 Practice Task</h4>
+          <p>Create a proposal template with 5 variables. Use AI to generate 3 versions with different client data.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 4: Custom GPTs & AI Agents</h2>
+        <h3>Custom GPTs</h3>
+        <p>Create specialised AI models for specific tasks:</p>
+        <ul>
+          <li><strong>Knowledge injection:</strong> Upload company documents, SOPs, product info</li>
+          <li><strong>Behaviour configuration:</strong> Set tone, format, expertise level</li>
+          <li><strong>Tool integration:</strong> Connect to APIs, databases, search engines</li>
+          <li><strong>Conversation starters:</strong> Pre-built prompts for common tasks</li>
+        </ul>
+
+        <h3>AI Agents</h3>
+        <p>Autonomous AI that can take actions:</p>
+        <ul>
+          <li><strong>Research agents:</strong> Search web, summarise findings, cite sources</li>
+          <li><strong>Coding agents:</strong> Write, test, debug, and deploy code</li>
+          <li><strong>Data agents:</strong> Clean, analyse, visualise, and report on datasets</li>
+          <li><strong>Task agents:</strong> Manage to-do lists, schedule meetings, send reminders</li>
+        </ul>
+
+        <div class="advanced-card">
+          <h4>⚠️ Important</h4>
+          <p>AI agents should always have human oversight. Set clear boundaries on what they can and cannot do autonomously.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 5: API Integrations</h2>
+        <h3>What is an API?</h3>
+        <p>An API (Application Programming Interface) allows different software systems to communicate. AI can call APIs to:</p>
+        <ul>
+          <li>Retrieve data from databases or cloud services</li>
+          <li>Send messages via email, Slack, or SMS</li>
+          <li>Update CRM records or project management tools</li>
+          <li>Trigger other automations or workflows</li>
+        </ul>
+
+        <h3>Common API Use Cases</h3>
+        <ul>
+          <li><strong>Salesforce:</strong> Auto-update leads after AI qualification</li>
+          <li><strong>Slack:</strong> Post AI-generated summaries to channels</li>
+          <li><strong>Google Sheets:</strong> Append analysed data to spreadsheets</li>
+          <li><strong>Stripe:</strong> Generate invoices from AI-processed orders</li>
+        </ul>
+
+        <h3>No-Code Integration</h3>
+        <p>You don't need to be a developer:</p>
+        <ul>
+          <li><strong>Zapier:</strong> 5000+ app connections, visual builder</li>
+          <li><strong>Make:</strong> Complex multi-step scenarios</li>
+          <li><strong>Zetrix Connect:</strong> Native integrations with popular business tools</li>
+        </ul>
+      </div>
+
+      <div class="assignment-box">
+        <h4>📋 Final Project</h4>
+        <p>Build an AI workflow that: (1) receives an email, (2) extracts key information, (3) drafts a response, (4) saves data to a spreadsheet, (5) sends a Slack notification. Document each step.</p>
+      </div>
+
+      <div class="quiz-container">
+        <h3>📝 Level 6 Quiz (80% to pass)</h3>
+        <form id="quizForm">
+          <div class="quiz-question">
+            <p>1. What is prompt chaining?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="a"> Sending multiple emails</label>
+              <label><input type="radio" name="q1" value="b"> Using AI output as next prompt input</label>
+              <label><input type="radio" name="q1" value="c"> Typing very fast</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>2. What does API stand for?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="a"> Automated Process Integration</label>
+              <label><input type="radio" name="q2" value="b"> Application Programming Interface</label>
+              <label><input type="radio" name="q2" value="c"> Advanced Protocol Interface</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>3. What's a key benefit of custom GPTs?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="a"> They work without internet</label>
+              <label><input type="radio" name="q3" value="b"> Specialised knowledge and behaviour</label>
+              <label><input type="radio" name="q3" value="c"> They're always free</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>4. Which tool requires NO coding for automation?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="a"> Python scripts</label>
+              <label><input type="radio" name="q4" value="b"> Zapier</label>
+              <label><input type="radio" name="q4" value="c"> REST APIs</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>5. What should AI agents always have?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="a"> Unlimited access</label>
+              <label><input type="radio" name="q5" value="b"> Human oversight</label>
+              <label><input type="radio" name="q5" value="c"> Admin passwords</label>
+            </div>
+          </div>
+          <button type="submit" class="btn" style="margin-top:16px">Submit Quiz</button>
+        </form>
+        <div id="quizForm-result" class="quiz-result"></div>
+      </div>
+
+      <div class="cert-box" id="certBox" style="display:none">
+        <div style="font-size:4rem">🏆</div>
+        <h2>Congratulations!</h2>
+        <p>You've completed all 6 levels of the Zetrix AI Academy.</p>
+        <p style="font-size:1.2rem;font-weight:700;color:var(--primary-dark);margin:16px 0">Certified Zetrix AI Professional</p>
+        <p style="color:var(--gray)">Awarded on <span id="certDate"></span></p>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="academy-level5.html" class="btn btn-secondary">← Previous Level</a>
+        <a href="academy.html" class="btn">Back to Academy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/auth.js?v=3"></script>
+<script src="js/academy.js?v=3"></script>
+<script>
+if (!Academy.isLevelUnlocked(6)) {
+  document.querySelector('.academy-container').innerHTML = '<div style="text-align:center;padding:60px"><h2>🔒 Level Locked</h2><p>Complete Level 5 to unlock this content.</p><a href="academy-level5.html" class="btn" style="margin-top:24px">Go to Level 5</a></div>';
+} else {
+  Academy.initQuiz('quizForm', ['b','b','b','b','b'], 80, function(score) {
+    Academy.markLevelCompleted(6, score);
+    var cert = document.getElementById('certBox');
+    if (cert) {
+      cert.style.display = 'block';
+      document.getElementById('certDate').textContent = new Date().toLocaleDateString();
+    }
+  });
+}
+</script>
+</body>
+</html>

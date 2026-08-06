@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+<title>Level 2: Mastering Zetrix AI — Zetrix AI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=3">
+<style>
+.academy-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.academy-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.level-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.level-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.module { margin-bottom: 48px; }
+.module h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.module h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+.module p, .module li { line-height: 1.8; color: var(--dark-light); margin-bottom: 10px; }
+.module ul { padding-left: 24px; }
+.interactive-box { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin: 20px 0; border-left: 4px solid var(--primary); }
+.interactive-box h4 { margin-bottom: 12px; }
+.quiz-container { background: #f8fafc; padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+.quiz-question { margin-bottom: 20px; }
+.quiz-question p { font-weight: 600; margin-bottom: 10px; }
+.quiz-options label { display: block; padding: 10px 14px; margin-bottom: 8px; background: white; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+.quiz-options label:hover { background: var(--primary-light); }
+.quiz-options input { margin-right: 8px; }
+.quiz-result { margin-top: 20px; padding: 16px; border-radius: 12px; display: none; }
+.assignment-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 24px 0; }
+.assignment-box h4 { color: #92400e; margin-bottom: 8px; }
+.nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--gray-light); }
+.checkpoint { background: #dbeafe; padding: 20px; border-radius: 12px; margin: 16px 0; }
+.checkpoint h4 { color: #1e40af; margin-bottom: 8px; }
+@media (max-width: 768px) { .academy-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+      <li><a href="tutor.html" class="nav-link">AI Tutor</a></li>
+      <li><a href="academy.html" class="nav-link active">AI Academy</a></li>
+      <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
+      <li id="navAuth"><a href="login.html" class="nav-link">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="academy-page">
+  <div class="container">
+    <div class="academy-container">
+      <div class="level-header">
+        <span style="color:var(--primary);font-weight:600">Level 2 of 6</span>
+        <h1>Mastering Zetrix AI</h1>
+        <p style="color:var(--gray)">Dashboard, chat, file uploads, AI memory, assistants, and templates. Estimated time: 3 hours.</p>
+      </div>
+
+      <div class="module">
+        <h2>Module 1: Dashboard & Chat Interface</h2>
+        <h3>Dashboard Overview</h3>
+        <p>The Zetrix AI Dashboard is your central hub. It provides:</p>
+        <ul>
+          <li><strong>Quick Access:</strong> Recent conversations, favourite prompts, and pinned documents</li>
+          <li><strong>Usage Analytics:</strong> Track queries, tokens used, and time saved</li>
+          <li><strong>Team Workspace:</strong> Shared prompts and knowledge bases for departments</li>
+          <li><strong>Settings:</strong> Configure AI behaviour, memory, and integrations</li>
+        </ul>
+
+        <h3>Chat Best Practices</h3>
+        <ul>
+          <li><strong>Thread context:</strong> AI remembers the current conversation thread</li>
+          <li><strong>Regenerate:</strong> If an answer is poor, ask AI to try again with tweaks</li>
+          <li><strong>Follow-up questions:</strong> Drill deeper: "Explain step 3 in more detail"</li>
+          <li><strong>System prompts:</strong> Set persona at thread start: "You are a senior financial analyst"</li>
+        </ul>
+
+        <div class="interactive-box">
+          <h4>🎯 Interactive Walkthrough</h4>
+          <p><strong>Task:</strong> Start a new chat and use this opening prompt:</p>
+          <p><em>"You are an expert marketing strategist. I need to create a 30-day social media campaign for a new fitness app targeting professionals aged 25-40. Structure your response as: objectives, platforms, content calendar, KPIs."</em></p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 2: File Uploads & Document Analysis</h2>
+        <h3>Supported File Types</h3>
+        <ul>
+          <li><strong>PDFs:</strong> Extract text, summarise, answer questions</li>
+          <li><strong>Excel/CSV:</strong> Analyse data, create charts, find anomalies</li>
+          <li><strong>Word docs:</strong> Review, rewrite, translate</li>
+          <li><strong>Images:</strong> OCR text extraction, description, analysis</li>
+          <li><strong>Code files:</strong> Review, debug, explain</li>
+        </ul>
+
+        <h3>Document Analysis Techniques</h3>
+        <ul>
+          <li><strong>Summarise:</strong> "Summarise this 50-page report in 5 bullet points"</li>
+          <li><strong>Extract:</strong> "List all action items and deadlines from this meeting minutes"</li>
+          <li><strong>Compare:</strong> "Compare contract v1 and v2 — highlight all changes"</li>
+          <li><strong>Q&A:</strong> "Based on this policy document, what is the leave entitlement?"</li>
+        </ul>
+
+        <div class="checkpoint">
+          <h4>📋 Checkpoint</h4>
+          <p>Upload a company policy PDF. Ask AI three questions about it. Take a screenshot of the conversation.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 3: AI Memory</h2>
+        <h3>How AI Memory Works</h3>
+        <p>Zetrix AI Memory allows the system to remember preferences, facts, and context across sessions:</p>
+        <ul>
+          <li><strong>User Profile:</strong> Name, role, department, writing style preferences</li>
+          <li><strong>Project Context:</strong> Active projects, deadlines, stakeholders</li>
+          <li><strong>Knowledge Base:</strong> Company SOPs, brand guidelines, product info</li>
+          <li><strong>Conversation History:</strong> Reference past discussions</li>
+        </ul>
+
+        <h3>Memory Commands</h3>
+        <ul>
+          <li>"Remember that I work in the Finance department and prefer concise bullet points"</li>
+          <li>"Add to my knowledge base: Our company colours are navy blue and gold"</li>
+          <li>"What did we discuss about the Q3 budget last week?"</li>
+          <li>"Forget my previous preference for formal tone"</li>
+        </ul>
+      </div>
+
+      <div class="module">
+        <h2>Module 4: AI Assistants & Templates</h2>
+        <h3>AI Assistants</h3>
+        <p>Specialised AI personas for different tasks:</p>
+        <ul>
+          <li><strong>Writer:</strong> Drafts emails, reports, proposals</li>
+          <li><strong>Analyst:</strong> Crunches data, creates visualisations</li>
+          <li><strong>Coder:</strong> Writes, reviews, and debugs code</li>
+          <li><strong>Legal:</strong> Reviews contracts, explains clauses (assistive only)</li>
+          <li><strong>HR:</strong> Drafts JDs, interview questions, policies</li>
+        </ul>
+
+        <h3>Templates</h3>
+        <p>Pre-built prompt templates for common tasks:</p>
+        <ul>
+          <li><strong>Email templates:</strong> Follow-up, introduction, apology, proposal</li>
+          <li><strong>Report templates:</strong> Executive summary, project update, incident report</li>
+          <li><strong>Meeting templates:</strong> Agenda, minutes, action items</li>
+          <li><strong>Creative templates:</strong> Blog post, social media, ad copy</li>
+        </ul>
+
+        <div class="interactive-box">
+          <h4>🔧 Practical Task</h4>
+          <p>Create a template for weekly team updates. Include sections: accomplishments, blockers, next week priorities, help needed.</p>
+        </div>
+      </div>
+
+      <div class="quiz-container">
+        <h3>📝 Level 2 Quiz (80% to pass)</h3>
+        <form id="quizForm">
+          <div class="quiz-question">
+            <p>1. What file type can AI NOT analyse?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="a"> PDF</label>
+              <label><input type="radio" name="q1" value="b"> Excel</label>
+              <label><input type="radio" name="q1" value="c"> Executable (.exe)</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>2. What is the purpose of AI Memory?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="a"> Store passwords</label>
+              <label><input type="radio" name="q2" value="b"> Remember context across sessions</label>
+              <label><input type="radio" name="q2" value="c"> Delete old chats</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>3. Which assistant would you use to debug code?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="a"> Writer</label>
+              <label><input type="radio" name="q3" value="b"> Coder</label>
+              <label><input type="radio" name="q3" value="c"> HR</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>4. What is a system prompt?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="a"> A password</label>
+              <label><input type="radio" name="q4" value="b"> Setting AI's persona at conversation start</label>
+              <label><input type="radio" name="q4" value="c"> A bug report</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>5. How do you ask AI to forget something?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="a"> Close the browser</label>
+              <label><input type="radio" name="q5" value="b"> "Forget [specific information]"</label>
+              <label><input type="radio" name="q5" value="c"> Restart your computer</label>
+            </div>
+          </div>
+          <button type="submit" class="btn" style="margin-top:16px">Submit Quiz</button>
+        </form>
+        <div id="quizForm-result" class="quiz-result"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="academy-level1.html" class="btn btn-secondary">← Previous Level</a>
+        <a href="academy-level3.html" class="btn" id="nextLevelBtn" style="opacity:0.5;pointer-events:none">Next Level →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/auth.js?v=3"></script>
+<script src="js/academy.js?v=3"></script>
+<script>
+if (!Academy.isLevelUnlocked(2)) {
+  document.querySelector('.academy-container').innerHTML = '<div style="text-align:center;padding:60px"><h2>🔒 Level Locked</h2><p>Complete Level 1 to unlock this content.</p><a href="academy-level1.html" class="btn" style="margin-top:24px">Go to Level 1</a></div>';
+} else {
+  Academy.initQuiz('quizForm', ['c','b','b','b','b'], 80, function(score) {
+    Academy.markLevelCompleted(2, score);
+    document.getElementById('nextLevelBtn').style.opacity = '1';
+    document.getElementById('nextLevelBtn').style.pointerEvents = 'auto';
+  });
+}
+</script>
+</body>
+</html>

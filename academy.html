@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Zetrix AI Academy — LearnAI</title>
+<meta name="description" content="Zetrix AI Academy: Transform every employee into an AI-powered professional. 6 levels from fundamentals to advanced automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=3">
+<style>
+.academy-hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); color: white; padding: 140px 0 80px; text-align: center; }
+.academy-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
+.academy-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
+.academy-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-bottom: 24px; }
+.level-path { padding: 60px 0; background: var(--light); }
+.path-container { max-width: 900px; margin: 0 auto; }
+.path-title { text-align: center; margin-bottom: 48px; }
+.path-title h2 { font-size: 2rem; margin-bottom: 8px; }
+.path-title p { color: var(--gray); }
+.level-card { background: white; border-radius: var(--radius-xl); padding: 32px; margin-bottom: 24px; box-shadow: var(--shadow); display: flex; gap: 24px; align-items: flex-start; transition: transform 0.3s; cursor: pointer; text-decoration: none; color: inherit; }
+.level-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.level-number { width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; flex-shrink: 0; }
+.level-info h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.level-info p { color: var(--gray); font-size: 0.95rem; margin-bottom: 12px; }
+.level-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; }
+.level-meta span { display: flex; align-items: center; gap: 6px; }
+.level-meta .locked { color: var(--gray); }
+.level-meta .unlocked { color: var(--success); }
+.level-modules { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.module-tag { background: var(--light); padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+.cert-section { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+.cert-section h2 { font-size: 2rem; margin-bottom: 16px; }
+.cert-section p { max-width: 500px; margin: 0 auto 24px; color: var(--dark-light); }
+.features-section { padding: 60px 0; background: var(--white); }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 32px; }
+.feature-box { background: var(--light); padding: 28px; border-radius: var(--radius-lg); }
+.feature-box h4 { font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.feature-box p { font-size: 0.9rem; color: var(--gray); }
+.dept-section { padding: 60px 0; background: var(--light); }
+.dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+.dept-card { background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-align: center; }
+.dept-card h4 { margin-bottom: 8px; }
+.dept-card p { font-size: 0.85rem; color: var(--gray); }
+.progress-tracker { position: fixed; bottom: 24px; right: 24px; background: white; padding: 16px 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); z-index: 100; }
+.progress-tracker h4 { font-size: 0.9rem; margin-bottom: 8px; }
+.progress-bar { width: 200px; height: 8px; background: var(--gray-light); border-radius: 50px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 0%; transition: width 0.5s; }
+@media (max-width: 768px) {
+  .academy-hero h1 { font-size: 2rem; }
+  .level-card { flex-direction: column; }
+  .progress-tracker { left: 16px; right: 16px; bottom: 16px; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+      <li><a href="tutor.html" class="nav-link">AI Tutor</a></li>
+      <li><a href="academy.html" class="nav-link active">AI Academy</a></li>
+      <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
+      <li><a href="planner.html" class="nav-link">Planner</a></li>
+      <li id="navAuth"><a href="login.html" class="nav-link">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="academy-hero">
+  <div class="container">
+    <div class="academy-badge">🤖 Zetrix AI Academy</div>
+    <h1>Transform Every Employee Into an AI-Powered Professional</h1>
+    <p>Master AI fundamentals, prompt engineering, AI avatars, and department-specific automation through 6 progressive levels with hands-on practice.</p>
+    <a href="#levels" class="btn btn-white" style="margin-right:12px">Start Learning</a>
+    <a href="#departments" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white">Department Courses</a>
+  </div>
+</section>
+
+<section class="level-path" id="levels">
+  <div class="container path-container">
+    <div class="path-title">
+      <h2>Learning Journey</h2>
+      <p>Complete each level to unlock the next. Earn your certification.</p>
+    </div>
+
+    <a href="academy-level1.html" class="level-card">
+      <div class="level-number">1</div>
+      <div class="level-info">
+        <h3>AI Fundamentals</h3>
+        <p>What is AI, types of AI, generative AI, LLMs, limitations & myths</p>
+        <div class="level-meta">
+          <span>⏱️ 2 hours</span>
+          <span class="unlocked">🔓 Unlocked</span>
+        </div>
+        <div class="level-modules">
+          <span class="module-tag">What is AI?</span>
+          <span class="module-tag">How AI Thinks</span>
+          <span class="module-tag">Good vs Bad Prompts</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="academy-level2.html" class="level-card">
+      <div class="level-number">2</div>
+      <div class="level-info">
+        <h3>Mastering Zetrix AI</h3>
+        <p>Dashboard, chat, file uploads, AI memory, assistants, templates</p>
+        <div class="level-meta">
+          <span>⏱️ 3 hours</span>
+          <span class="locked">🔒 Complete Level 1</span>
+        </div>
+        <div class="level-modules">
+          <span class="module-tag">Dashboard & Chat</span>
+          <span class="module-tag">File Uploads</span>
+          <span class="module-tag">AI Memory</span>
+          <span class="module-tag">Templates</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="academy-level3.html" class="level-card">
+      <div class="level-number">3</div>
+      <div class="level-info">
+        <h3>AI Avatar (Claw)</h3>
+        <p>Voice conversations, meetings, presentations, roleplaying, training</p>
+        <div class="level-meta">
+          <span>⏱️ 2 hours</span>
+          <span class="locked">🔒 Complete Level 2</span>
+        </div>
+        <div class="level-modules">
+          <span class="module-tag">Voice Conversations</span>
+          <span class="module-tag">Meeting Mode</span>
+          <span class="module-tag">Roleplay Scenarios</span>
+          <span class="module-tag">Customer Support</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="academy-level4.html" class="level-card">
+      <div class="level-number">4</div>
+      <div class="level-info">
+        <h3>AI for Daily Work</h3>
+        <p>Travel planning, budgeting, learning, writing, scheduling, shopping</p>
+        <div class="level-meta">
+          <span>⏱️ 2 hours</span>
+          <span class="locked">🔒 Complete Level 3</span>
+        </div>
+        <div class="level-modules">
+          <span class="module-tag">Travel Planning</span>
+          <span class="module-tag">Budgeting</span>
+          <span class="module-tag">Language Learning</span>
+          <span class="module-tag">Writing Assistance</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="academy-level5.html" class="level-card">
+      <div class="level-number">5</div>
+      <div class="level-info">
+        <h3>Department-Specific AI</h3>
+        <p>HR, Finance, Marketing, Sales, Customer Service, Operations, Legal, IT, Executive</p>
+        <div class="level-meta">
+          <span>⏱️ 4 hours</span>
+          <span class="locked">🔒 Complete Level 4</span>
+        </div>
+        <div class="level-modules">
+          <span class="module-tag">HR & Recruitment</span>
+          <span class="module-tag">Finance & Analysis</span>
+          <span class="module-tag">Marketing & Sales</span>
+          <span class="module-tag">Operations & Legal</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="academy-level6.html" class="level-card">
+      <div class="level-number">6</div>
+      <div class="level-info">
+        <h3>Advanced AI Automation</h3>
+        <p>AI workflows, agents, multi-step prompts, document automation, custom GPTs, APIs</p>
+        <div class="level-meta">
+          <span>⏱️ 4 hours</span>
+          <span class="locked">🔒 Complete Level 5</span>
+        </div>
+        <div class="level-modules">
+          <span class="module-tag">AI Workflows</span>
+          <span class="module-tag">Multi-step Prompts</span>
+          <span class="module-tag">Document Automation</span>
+          <span class="module-tag">API Integrations</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="cert-section">
+  <div class="container">
+    <h2>🏆 Certified Zetrix AI Professional</h2>
+    <p>Complete all 6 levels, pass every quiz (80%+), finish practical assignments, and earn your official certification.</p>
+    <div style="font-size:4rem;margin:24px 0">📜</div>
+    <p style="font-size:0.9rem;color:var(--gray)">Certificate awarded upon completion of all levels and assessments</p>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="path-title">
+      <h2>Interactive Learning Features</h2>
+      <p>Hands-on practice, not just theory</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h4>🧪 AI Sandbox</h4>
+        <p>Try every concept with real AI. No fake simulations — practice with actual prompts.</p>
+      </div>
+      <div class="feature-box">
+        <h4>🧩 Prompt Builder</h4>
+        <p>Drag and drop blocks to build perfect prompts: Role, Goal, Context, Format, Constraints.</p>
+      </div>
+      <div class="feature-box">
+        <h4>⚔️ AI Battles</h4>
+        <p>Compare two prompts side-by-side. Vote on which is better and learn why.</p>
+      </div>
+      <div class="feature-box">
+        <h4>🔧 Prompt Repair</h4>
+        <p>Given a bad prompt, improve it. AI scores your fix out of 100.</p>
+      </div>
+      <div class="feature-box">
+        <h4>🎮 Gamification</h4>
+        <p>XP, levels, daily streaks, badges, and leaderboards for motivation.</p>
+      </div>
+      <div class="feature-box">
+        <h4>🎯 Scenario Simulator</h4>
+        <p>HR interviews, finance audits, customer complaints — every answer changes the scenario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dept-section" id="departments">
+  <div class="container">
+    <div class="path-title">
+      <h2>Department Courses</h2>
+      <p>Personalized learning paths for every role</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card"><h4>👥 HR</h4><p>Recruitment, interviews, performance reviews</p></div>
+      <div class="dept-card"><h4>💰 Finance</h4><p>Reports, Excel analysis, forecasting</p></div>
+      <div class="dept-card"><h4>📢 Marketing</h4><p>Campaigns, SEO, content, social media</p></div>
+      <div class="dept-card"><h4>🤝 Sales</h4><p>Prospecting, proposals, negotiations</p></div>
+      <div class="dept-card"><h4>🎧 Support</h4><p>Ticket handling, empathy, escalation</p></div>
+      <div class="dept-card"><h4>⚙️ Operations</h4><p>SOPs, workflows, project planning</p></div>
+      <div class="dept-card"><h4>⚖️ Legal</h4><p>Document review, compliance, contracts</p></div>
+      <div class="dept-card"><h4>💻 IT</h4><p>Debugging, scripts, documentation</p></div>
+      <div class="dept-card"><h4>👔 Executive</h4><p>Strategy, board reports, decisions</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="progress-tracker" id="progressTracker">
+  <h4>📊 Your Progress</h4>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <p style="font-size:0.8rem;margin-top:6px;color:var(--gray)"><span id="progressText">0%</span> completed</p>
+</div>
+
+<script src="js/auth.js?v=3"></script>
+<script src="js/academy.js?v=3"></script>
+</body>
+</html>

@@ -320,6 +320,135 @@ const knowledgeBase = {
     <div class="exam-tip-box"><strong>Exam tip:</strong> Always evaluate policies: short-run vs long-run, effectiveness depends on economic context.</div>`
   },
 
+  // ZETRIX AI ACADEMY
+  'zetrix-overview': {
+    patterns: ['zetrix','ai academy','claw','ai adoption','certified zetrix','ai professional'],
+    response: `<strong>Zetrix AI Academy</strong><br><br>
+    Transform every employee into an AI-powered professional through 6 progressive levels:<br><br>
+    <strong>Level 1:</strong> AI Fundamentals (2h) — What is AI, types, generative AI, LLMs, limitations, myths<br>
+    <strong>Level 2:</strong> Mastering Zetrix AI (3h) — Dashboard, chat, file uploads, AI memory, assistants, templates<br>
+    <strong>Level 3:</strong> AI Avatar Claw (2h) — Voice conversations, meetings, presentations, roleplaying<br>
+    <strong>Level 4:</strong> AI for Daily Work (2h) — Travel, budgeting, learning, writing, scheduling<br>
+    <strong>Level 5:</strong> Department-Specific AI (4h) — HR, Finance, Marketing, Sales, Support, Operations, Legal, IT, Executive<br>
+    <strong>Level 6:</strong> Advanced AI Automation (4h) — Workflows, agents, multi-step prompts, APIs, custom GPTs<br><br>
+    Each level requires: videos, reading, exercises, practical tasks, quiz (80% pass), real-world assignment.<br><br>
+    <div class="exam-tip-box"><strong>Certification:</strong> Complete all 6 levels to earn "Certified Zetrix AI Professional"</div>`
+  },
+
+  'zetrix-level1': {
+    patterns: ['ai fundamentals','what is ai','types of ai','generative ai','large language model','llm','ai limitation','ai myth','prompt engineering','good prompt','bad prompt'],
+    response: `<strong>Level 1: AI Fundamentals</strong><br><br>
+    <strong>Types of AI:</strong><br>
+    - Narrow AI: Specific tasks (chatbots, recommendation systems) — all current AI<br>
+    - General AI: Human-like intelligence — does not exist yet<br>
+    - Superintelligent AI: Surpasses humans — theoretical<br><br>
+    <strong>Generative AI:</strong> Creates new content — text, images, audio, code. Examples: GPT-4, DALL-E, Midjourney<br><br>
+    <strong>LLMs:</strong> Trained on vast text. Predict next word. Enable Q&A, translation, coding<br><br>
+    <strong>Limitations:</strong><br>
+    - Hallucination: Generates false but plausible information<br>
+    - No real understanding: Pattern matching, not comprehension<br>
+    - Training cutoff: Knowledge limited to training date<br>
+    - Bias: Reflects training data biases<br><br>
+    <strong>Prompt Formula:</strong> Role + Goal + Context + Format + Constraints<br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> "Explain [topic] like I'm 10" is a powerful prompt for simplification</div>`
+  },
+
+  'zetrix-level2': {
+    patterns: ['zetrix dashboard','ai memory','file upload','ai assistant','template','chat interface','system prompt'],
+    response: `<strong>Level 2: Mastering Zetrix AI</strong><br><br>
+    <strong>Dashboard:</strong> Quick access to recent chats, favourites, usage analytics, team workspace, settings<br><br>
+    <strong>AI Memory:</strong><br>
+    - User Profile: Name, role, department, writing style<br>
+    - Project Context: Active projects, deadlines, stakeholders<br>
+    - Knowledge Base: Company SOPs, brand guidelines<br>
+    - Commands: "Remember that...", "What did we discuss...", "Forget..."<br><br>
+    <strong>File Uploads:</strong> PDFs, Excel/CSV, Word, Images, Code files<br>
+    - Summarise, Extract, Compare, Q&A<br><br>
+    <strong>AI Assistants:</strong> Writer, Analyst, Coder, Legal (assistive), HR<br><br>
+    <strong>Templates:</strong> Email, Report, Meeting, Creative templates<br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> Set system prompt at thread start: "You are a senior financial analyst"</div>`
+  },
+
+  'zetrix-level3': {
+    patterns: ['claw avatar','voice conversation','ai roleplay','presentation mode','meeting mode','wake word','customer complaint simulation'],
+    response: `<strong>Level 3: AI Avatar (Claw)</strong><br><br>
+    <strong>Claw features:</strong><br>
+    - Voice conversations: Natural spoken dialogue<br>
+    - Visual presence: Animated avatar for presentations<br>
+    - Scenario roleplay: Practice difficult conversations<br>
+    - Meeting mode: AI participant that takes notes<br><br>
+    <strong>Wake word:</strong> "Hey Claw" for hands-free activation<br><br>
+    <strong>Roleplay Scenarios (cannot skip):</strong><br>
+    - Customer Complaint: De-escalate angry customer<br>
+    - Sales Pitch: Handle objections, close deal<br>
+    - Interview Practice: Answer behavioural/technical questions<br>
+    - Performance Review: Give constructive feedback<br>
+    - Negotiation: Better terms while maintaining relationship<br><br>
+    <strong>Presentation Mode:</strong> Co-presenter, Q&A backup, rehearsal feedback<br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> Upload slide deck before presenting. Set context: "You're co-presenting Q3 review to board"</div>`
+  },
+
+  'zetrix-level4': {
+    patterns: ['ai daily work','travel planning ai','budgeting ai','meal planning','language learning ai','writing assistant','scheduling ai'],
+    response: `<strong>Level 4: AI for Daily Work</strong><br><br>
+    <strong>Travel Planning:</strong> Itineraries, flight/hotel comparison, packing lists, language prep, local customs<br><br>
+    <strong>Budgeting:</strong> Monthly budgets, expense tracking, debt planning, investment basics, savings goals<br><br>
+    <strong>Learning:</strong> Study plans, explanations, flashcards, practice questions, language correction<br><br>
+    <strong>Writing:</strong> Emails, messages, social media, creative writing, editing<br><br>
+    <strong>Health & Scheduling:</strong> Meal plans, workouts, sleep hygiene, time blocking, deadline management<br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> Upload bank CSV for AI to categorise spending and find savings</div>`
+  },
+
+  'zetrix-level5': {
+    patterns: ['hr ai','finance ai','marketing ai','sales ai','customer service ai','operations ai','legal ai','it ai','executive ai','department specific'],
+    response: `<strong>Level 5: Department-Specific AI</strong><br><br>
+    <strong>HR:</strong> CV screening, JDs, interview questions, onboarding, performance reviews, conflict resolution<br><br>
+    <strong>Finance:</strong> Reports, Excel analysis, budgeting, forecasting, audit, presentations<br><br>
+    <strong>Marketing:</strong> Campaigns, SEO, social media, email marketing, personas, content calendars<br><br>
+    <strong>Sales:</strong> Prospecting, cold emails, proposals, objection handling, CRM updates<br><br>
+    <strong>Customer Service:</strong> Ticket responses, escalation, knowledge base, sentiment analysis<br><br>
+    <strong>Operations:</strong> SOPs, workflows, project planning, meeting minutes<br><br>
+    <strong>Legal (Assistive Only):</strong> Document review, compliance checks, research. AI does NOT replace lawyers<br><br>
+    <strong>IT:</strong> Documentation, debugging, scripts, knowledge management<br><br>
+    <strong>Executive:</strong> Strategy, board reports, speeches, decision support, stakeholder comms<br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> Upload real company documents for AI to solve actual work tasks</div>`
+  },
+
+  'zetrix-level6': {
+    patterns: ['ai workflow','ai agent','multi-step prompt','prompt chaining','document automation','custom gpt','api integration','zapier','automation'],
+    response: `<strong>Level 6: Advanced AI Automation</strong><br><br>
+    <strong>AI Workflows:</strong> Chain multiple AI operations<br>
+    - Triggers: Schedule, event, webhook, manual<br>
+    - Actions: Generate text, analyse data, send email<br>
+    - Tools: Zapier (5000+ apps), Make, n8n, Power Automate<br><br>
+    <strong>Multi-Step Prompts:</strong><br>
+    - Chain-of-thought: Break complex tasks into steps<br>
+    - Sequential refinement: Each output becomes next input<br>
+    - Tip: Use "Let me think step by step" for better results<br><br>
+    <strong>Document Automation:</strong><br>
+    - Mail merge: 100 personalised proposals from template<br>
+    - Variables: {{company_name}}, {{date}}<br>
+    - Multi-language: Generate in 20+ languages<br><br>
+    <strong>Custom GPTs:</strong> Specialised models with injected knowledge<br><br>
+    <strong>AI Agents:</strong> Autonomous AI — research, coding, data analysis, task management<br><br>
+    <strong>APIs:</strong> Connect AI to Salesforce, Slack, Google Sheets, Stripe<br><br>
+    <div class="exam-tip-box"><strong>Warning:</strong> AI agents must always have human oversight</div>`
+  },
+
+  'zetrix-prompt': {
+    patterns: ['prompt formula','perfect prompt','prompt structure','role goal context format','prompt blocks','prompt builder'],
+    response: `<strong>The Perfect Prompt Formula</strong><br><br>
+    <span class="formula">Role + Goal + Context + Format + Constraints</span><br><br>
+    <strong>Role:</strong> "You are an expert financial analyst..."<br>
+    <strong>Goal:</strong> "Analyse Q3 revenue trends..."<br>
+    <strong>Context:</strong> "Our company is a SaaS startup with 500 employees..."<br>
+    <strong>Format:</strong> "Present as bullet points with charts..."<br>
+    <strong>Constraints:</strong> "Keep under 500 words. Use simple language."<br><br>
+    <strong>Example:</strong><br>
+    <em>"You are a senior marketing strategist. Create a 30-day social media campaign for a new fitness app targeting professionals 25-40. Structure: objectives, platforms, content calendar, KPIs. Tone: energetic but professional."</em><br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> The more specific your prompt, the better the output. Vague prompts = vague answers.</div>`
+  },
+
   // GENERAL
   'revision-tips': {
     patterns: ['revise','revision','study','how to study','exam technique','time management','revision strategy','past paper'],

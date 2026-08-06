@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Reconciliation — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=3">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=accounting" class="back-btn">← Back to Accounting</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span></div>
+<h1>Bank Reconciliation</h1>
+<p style="color:var(--gray)">0452 / 9706 — Reconciling the Cash Book with the Bank Statement</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>Why Reconcile?</h3>
+<p>The cash book (bank column) and bank statement rarely agree because:</p>
+<ul>
+<li>Some transactions appear in one but not the other (timing differences)</li>
+<li>Errors may exist in either record</li>
+<li>The bank may record items the business doesn't know about yet</li>
+</ul>
+
+<h3>Common Differences</h3>
+<ul>
+<li><strong>Unpresented cheques:</strong> Cheques written and recorded in cash book but not yet cashed by payee → Deduct from bank statement balance</li>
+<li><strong>Uncredited deposits (lodgements):</strong> Cash/cheques paid into bank, recorded in cash book, but not yet cleared → Add to bank statement balance</li>
+<li><strong>Bank charges/interest:</strong> Recorded by bank but not yet in cash book → Record in cash book (Dr Bank Charges, Cr Bank)</li>
+<li><strong>Standing orders/direct debits:</strong> Automatic payments by bank → Record in cash book</li>
+<li><strong>Dishonoured cheques:</strong> Customer cheque bounced → Reverse cash book entry (Dr Receivable, Cr Bank)</li>
+<li><strong>Direct credits:</strong> Money received directly into bank → Record in cash book (Dr Bank, Cr Income)</li>
+<li><strong>Errors:</strong> In either cash book or bank statement</li>
+</ul>
+
+<h3>Bank Reconciliation Statement Format</h3>
+<div class="formula-box">
+Balance per bank statement              $X,XXX<br>
+Add: Uncredited deposits (lodgements)      XXX<br>
+Less: Unpresented cheques                 (XXX)<br>
+-----------------------------------------------<br>
+Balance per cash book (updated)          $X,XXX<br>
+<br>
+OR (starting from cash book):<br>
+Balance per cash book                   $X,XXX<br>
+Add: Bank charges/interest not recorded    XXX<br>
+Add: Direct debits not recorded            XXX<br>
+Less: Direct credits not recorded         (XXX)<br>
+-----------------------------------------------<br>
+Adjusted cash book balance               $X,XXX
+</div>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Updated Cash Book First</h3>
+<p>Best practice: Update the cash book for all items the bank knows about before preparing the reconciliation:</p>
+<ol>
+<li>Enter bank charges, interest, direct debits, direct credits, dishonoured cheques into cash book</li>
+<li>Correct any errors found in the cash book</li>
+<li>Balance the updated cash book</li>
+<li>Reconcile the updated balance to the bank statement using only timing differences</li>
+</ol>
+
+<h3>Overdraft Reconciliation</h3>
+<p>When the bank account is overdrawn (credit balance in cash book, debit on bank statement):</p>
+<ul>
+<li>Overdraft = bank loan (current liability) or negative bank asset</li>
+<li>Bank statement shows debit balance = business owes the bank</li>
+<li>Cash book shows credit balance = overdraft</li>
+<li>Same reconciliation principles apply but watch signs carefully</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Bank Loans in Financial Statements</h3>
+<p>Bank overdrafts and loans must be correctly classified:</p>
+<ul>
+<li><strong>Bank overdraft:</strong> Current liability (repayable on demand)</li>
+<li><strong>Short-term bank loan (≤1 year):</strong> Current liability</li>
+<li><strong>Long-term bank loan (>1 year):</strong> Non-current liability</li>
+<li><strong>Current portion of long-term loan:</strong> Split between current and non-current</li>
+</ul>
+
+<h3>Errors by the Bank</h3>
+<p>If the bank has made an error (e.g., wrong amount debited, another customer's transaction on your statement):</p>
+<ul>
+<li>Do NOT adjust the cash book</li>
+<li>Report to bank and show as adjustment in reconciliation only</li>
+<li>Once corrected by bank, no further action needed</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li><strong>Purpose:</strong> Explain difference between cash book and bank statement balances</li>
+<li><strong>Always update cash book first</strong> for bank charges, interest, direct debits, direct credits, dishonoured cheques</li>
+<li><strong>Unpresented cheques:</strong> deduct from bank statement (business has paid, bank hasn't)</li>
+<li><strong>Uncredited deposits:</strong> add to bank statement (business has received, bank hasn't cleared)</li>
+<li><strong>Bank errors:</strong> adjust reconciliation but NOT cash book</li>
+<li><strong>Cash book errors:</strong> correct in cash book before reconciliation</li>
+<li><strong>Overdraft:</strong> credit balance in cash book = debit on bank statement; current liability</li>
+<li>Final reconciled balance MUST match updated cash book balance</li>
+<li>Bank charges/interest → expense; dishonoured cheques → reverse receivable receipt</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/auth.js?v=3"></script><script src="../js/app.js?v=3"></script>
+</body></html>

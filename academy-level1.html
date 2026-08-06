@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+<title>Level 1: AI Fundamentals — Zetrix AI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=3">
+<style>
+.academy-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.academy-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.level-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.level-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.module { margin-bottom: 48px; }
+.module h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.module h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+.module p, .module li { line-height: 1.8; color: var(--dark-light); margin-bottom: 10px; }
+.module ul { padding-left: 24px; }
+.interactive-box { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin: 20px 0; border-left: 4px solid var(--primary); }
+.interactive-box h4 { margin-bottom: 12px; }
+.quiz-container { background: #f8fafc; padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+.quiz-container h3 { margin-bottom: 20px; }
+.quiz-question { margin-bottom: 20px; }
+.quiz-question p { font-weight: 600; margin-bottom: 10px; }
+.quiz-options label { display: block; padding: 10px 14px; margin-bottom: 8px; background: white; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+.quiz-options label:hover { background: var(--primary-light); }
+.quiz-options input { margin-right: 8px; }
+.quiz-result { margin-top: 20px; padding: 16px; border-radius: 12px; display: none; }
+.assignment-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 24px 0; }
+.assignment-box h4 { color: #92400e; margin-bottom: 8px; }
+.nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--gray-light); }
+@media (max-width: 768px) { .academy-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+      <li><a href="tutor.html" class="nav-link">AI Tutor</a></li>
+      <li><a href="academy.html" class="nav-link active">AI Academy</a></li>
+      <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
+      <li id="navAuth"><a href="login.html" class="nav-link">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="academy-page">
+  <div class="container">
+    <div class="academy-container">
+      <div class="level-header">
+        <span style="color:var(--primary);font-weight:600">Level 1 of 6</span>
+        <h1>AI Fundamentals</h1>
+        <p style="color:var(--gray)">Understand what AI is, how it thinks, and how to write effective prompts. Estimated time: 2 hours.</p>
+      </div>
+
+      <div class="module">
+        <h2>Module 1: What is AI?</h2>
+        <h3>Definition</h3>
+        <p>Artificial Intelligence (AI) refers to computer systems that can perform tasks that typically require human intelligence. These include understanding language, recognizing patterns, making decisions, and learning from experience.</p>
+        
+        <h3>Types of AI</h3>
+        <ul>
+          <li><strong>Narrow AI (Weak AI):</strong> Designed for specific tasks — chatbots, recommendation systems, image recognition. All current AI is narrow AI.</li>
+          <li><strong>General AI (Strong AI):</strong> Hypothetical AI with human-like general intelligence. Does not exist yet.</li>
+          <li><strong>Superintelligent AI:</strong> AI surpassing human intelligence across all domains. Still theoretical.</li>
+        </ul>
+
+        <h3>Generative AI</h3>
+        <p>Generative AI creates new content — text, images, audio, code — based on patterns learned from training data. Examples include GPT-4 (text), DALL-E (images), and Midjourney (art).</p>
+
+        <h3>Large Language Models (LLMs)</h3>
+        <p>LLMs are AI systems trained on vast text corpora. They predict the next word in a sequence, enabling them to generate coherent text, answer questions, translate languages, and write code.</p>
+
+        <h3>AI Limitations</h3>
+        <ul>
+          <li><strong>Hallucination:</strong> AI can generate plausible-sounding but false information</li>
+          <li><strong>No real understanding:</strong> AI predicts patterns; it doesn't truly "understand"</li>
+          <li><strong>Training data cutoff:</strong> Knowledge is limited to training date</li>
+          <li><strong>Bias:</strong> Reflects biases present in training data</li>
+          <li><strong>No common sense:</strong> Can fail at tasks requiring real-world reasoning</li>
+        </ul>
+
+        <h3>Common AI Myths</h3>
+        <ul>
+          <li>❌ Myth: AI is conscious or has feelings → ✅ Truth: AI is a statistical pattern matcher</li>
+          <li>❌ Myth: AI will replace all jobs → ✅ Truth: AI augments work; new roles emerge</li>
+          <li>❌ Myth: AI is always correct → ✅ Truth: Always verify AI outputs</li>
+          <li>❌ Myth: AI learns in real-time from users → ✅ Truth: Most AI is static between updates</li>
+        </ul>
+
+        <div class="interactive-box">
+          <h4>🎯 Interactive Exercise</h4>
+          <p>Classify these tasks:</p>
+          <ul>
+            <li>Writing a poem → <strong>AI Task</strong></li>
+            <li>Feeling empathy → <strong>Human Task</strong></li>
+            <li>Summarising a report → <strong>AI Task</strong></li>
+            <li>Making ethical judgments → <strong>Human Task</strong></li>
+            <li>Translating documents → <strong>AI Task</strong></li>
+            <li>Building trust with a client → <strong>Human Task</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 2: How AI Thinks</h2>
+        <p>The AI process follows a simple pipeline:</p>
+        <div class="interactive-box">
+          <h4>🧠 AI Prediction Pipeline</h4>
+          <p><strong>Question/Prompt</strong> → <strong>Tokenisation</strong> → <strong>Model Processing</strong> → <strong>Probability Prediction</strong> → <strong>Response Generation</strong></p>
+        </div>
+        
+        <h3>Key Concepts</h3>
+        <ul>
+          <li><strong>Tokenisation:</strong> Text is broken into tokens (words or subwords)</li>
+          <li><strong>Attention mechanism:</strong> AI focuses on relevant parts of input</li>
+          <li><strong>Transformer architecture:</strong> The neural network design powering modern LLMs</li>
+          <li><strong>Temperature:</strong> Controls randomness — lower = more focused, higher = more creative</li>
+        </ul>
+
+        <div class="interactive-box">
+          <h4>🎯 Mini Challenge</h4>
+          <p><strong>Which prompt produces the better answer?</strong></p>
+          <p>A) "Tell me about climate change"</p>
+          <p>B) "Explain climate change in 3 bullet points suitable for a 12-year-old"</p>
+          <p><em>Answer: B — specific, structured, audience-aware</em></p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 3: Good vs Bad Prompts</h2>
+        <h3>The Prompt Formula</h3>
+        <div class="interactive-box">
+          <h4>📝 Perfect Prompt Structure</h4>
+          <p><strong>Role</strong> + <strong>Goal</strong> + <strong>Context</strong> + <strong>Format</strong> + <strong>Constraints</strong></p>
+        </div>
+
+        <h3>Examples</h3>
+        <table style="width:100%;border-collapse:collapse;margin:16px 0">
+          <tr style="background:var(--light)">
+            <th style="padding:12px;text-align:left;border-bottom:2px solid var(--gray-light)">❌ Bad Prompt</th>
+            <th style="padding:12px;text-align:left;border-bottom:2px solid var(--gray-light)">✅ Good Prompt</th>
+          </tr>
+          <tr>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">"Write an email"</td>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">"Write a professional apology email to a client about a delayed shipment. Tone: empathetic but professional. Length: 150 words. Include: apology, explanation, compensation offer, next steps."</td>
+          </tr>
+          <tr>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">"Explain photosynthesis"</td>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">"Explain photosynthesis for a GCSE Biology student. Include: light-dependent reactions, Calvin cycle, and where each occurs in the chloroplast. Use bullet points."</td>
+          </tr>
+        </table>
+
+        <div class="interactive-box">
+          <h4>🔧 Prompt Repair Exercise</h4>
+          <p><strong>Bad prompt:</strong> "Help me with marketing"</p>
+          <p><strong>Your fix:</strong> _______________</p>
+          <p><em>Hint: Add role, goal, context, format, constraints</em></p>
+        </div>
+
+        <div class="assignment-box">
+          <h4>📋 Practical Assignment</h4>
+          <p>Use AI to summarise a news article in 3 bullet points. Take a screenshot of your prompt and the result. Submit it to unlock the quiz.</p>
+        </div>
+      </div>
+
+      <div class="quiz-container">
+        <h3>📝 Level 1 Quiz (80% to pass)</h3>
+        <form id="quizForm">
+          <div class="quiz-question">
+            <p>1. What type of AI do we currently have?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="a"> General AI</label>
+              <label><input type="radio" name="q1" value="b"> Narrow AI</label>
+              <label><input type="radio" name="q1" value="c"> Superintelligent AI</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>2. What is "hallucination" in AI?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="a"> AI seeing images</label>
+              <label><input type="radio" name="q2" value="b"> AI generating false information</label>
+              <label><input type="radio" name="q2" value="c"> AI running slowly</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>3. Which prompt element specifies the output structure?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="a"> Role</label>
+              <label><input type="radio" name="q3" value="b"> Format</label>
+              <label><input type="radio" name="q3" value="c"> Context</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>4. What does "temperature" control in AI?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="a"> Processing speed</label>
+              <label><input type="radio" name="q4" value="b"> Randomness/creativity</label>
+              <label><input type="radio" name="q4" value="c"> Cost per query</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>5. Which is a limitation of LLMs?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="a"> They can only write poems</label>
+              <label><input type="radio" name="q5" value="b"> They have no real understanding</label>
+              <label><input type="radio" name="q5" value="c"> They require internet to work</label>
+            </div>
+          </div>
+          <button type="submit" class="btn" style="margin-top:16px">Submit Quiz</button>
+        </form>
+        <div id="quizForm-result" class="quiz-result"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="academy.html" class="btn btn-secondary">← Back to Academy</a>
+        <a href="academy-level2.html" class="btn" id="nextLevelBtn" style="opacity:0.5;pointer-events:none">Next Level →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/auth.js?v=3"></script>
+<script src="js/academy.js?v=3"></script>
+<script>
+Academy.initQuiz('quizForm', ['b','b','b','b','b'], 80, function(score) {
+  Academy.markLevelCompleted(1, score);
+  document.getElementById('nextLevelBtn').style.opacity = '1';
+  document.getElementById('nextLevelBtn').style.pointerEvents = 'auto';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger Accounts — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=3">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=accounting" class="back-btn">← Back to Accounting</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span></div>
+<h1>Ledger Accounts</h1>
+<p style="color:var(--gray)">0452 / 9706 — General, Sales, and Purchases Ledgers</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>The Three Ledgers</h3>
+<ul>
+<li><strong>General Ledger (Nominal Ledger):</strong> Contains all accounts except individual customer and supplier accounts. Includes asset, liability, capital, income, and expense accounts. Used to prepare the trial balance and financial statements.</li>
+<li><strong>Sales Ledger (Debtors Ledger):</strong> Contains individual accounts for each credit customer. Tracks how much each customer owes.</li>
+<li><strong>Purchases Ledger (Creditors Ledger):</strong> Contains individual accounts for each credit supplier. Tracks how much is owed to each supplier.</li>
+</ul>
+
+<h3>General Ledger Account Types</h3>
+<ul>
+<li><strong>Real (Asset) Accounts:</strong> Cash, Bank, Equipment, Buildings, Inventory, Vehicles</li>
+<li><strong>Personal Accounts (in General Ledger):</strong> Sales Ledger Control, Purchases Ledger Control</li>
+<li><strong>Nominal Accounts:</strong> Sales, Purchases, Rent, Wages, Insurance, Discount Allowed/Received</li>
+</ul>
+
+<h3>Posting from Books of Prime Entry</h3>
+<div class="formula-box">
+Sales Day Book → Dr Sales Ledger Control (GL), Cr Sales (GL)<br>
+Purchases Day Book → Dr Purchases (GL), Cr Purchases Ledger Control (GL)<br>
+Sales Returns → Dr Sales Returns (GL), Cr Sales Ledger Control (GL)<br>
+Purchases Returns → Dr Purchases Ledger Control (GL), Cr Purchases Returns (GL)<br>
+Cash Book Receipts → Dr Cash/Bank (GL), Cr relevant accounts<br>
+Cash Book Payments → Dr relevant accounts, Cr Cash/Bank (GL)
+</div>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Control Accounts</h3>
+<p>Control accounts in the General Ledger mirror the total of all individual accounts in the subsidiary ledger:</p>
+<ul>
+<li><strong>Sales Ledger Control:</strong> Total of all customer balances (should equal sum of sales ledger)</li>
+<li><strong>Purchases Ledger Control:</strong> Total of all supplier balances (should equal sum of purchases ledger)</li>
+</ul>
+<div class="formula-box">
+Sales Ledger Control Account:<br>
+Dr: Balance b/d, Credit sales (from SDB), Dishonoured cheques, Interest charged<br>
+Cr: Cash received, Sales returns, Discount allowed, Irrecoverable debts, Set-offs (contra), Balance c/d<br>
+<br>
+Purchases Ledger Control Account:<br>
+Dr: Cash paid, Purchases returns, Discount received, Set-offs (contra), Balance c/d<br>
+Cr: Balance b/d, Credit purchases (from PDB), Interest charged
+</div>
+
+<h3>Reconciling Control Accounts</h3>
+<ul>
+<li>Total of individual balances in sales/purchases ledger should equal the control account balance</li>
+<li>Differences indicate errors in either the individual accounts or the control account</li>
+<li>Common errors: omission, commission, principle, original entry, reversal, compensating</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Suspense Accounts and Error Correction</h3>
+<p>When the trial balance doesn't agree, a suspense account is opened with the difference. Errors are found and corrected through the journal:</p>
+<ul>
+<li><strong>Error of omission:</strong> Transaction not recorded at all → Dr/Cr correct accounts</li>
+<li><strong>Error of commission:</strong> Wrong account but correct type (e.g., wrong customer) → transfer between accounts</li>
+<li><strong>Error of principle:</strong> Wrong category (e.g., expense recorded as asset) → reverse and correct</li>
+<li><strong>Error of original entry:</strong> Wrong amount → adjust for difference</li>
+<li><strong>Error of reversal:</strong> Debits/credits swapped → double the amount to correct</li>
+<li><strong>Compensating errors:</strong> Two errors that cancel out — both must be corrected</li>
+</ul>
+
+<h3>Effect on Profit and Net Assets</h3>
+<p>For each error, determine:</p>
+<ul>
+<li>Does it affect profit? (if income or expense is wrong)</li>
+<li>Does it affect net assets? (if asset, liability, or capital is wrong)</li>
+<li>Has the suspense account been used?</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li><strong>3 Ledgers:</strong> General Ledger (all accounts), Sales Ledger (customers), Purchases Ledger (suppliers)</li>
+<li><strong>General Ledger</strong> = real, personal (control), and nominal accounts</li>
+<li><strong>Control accounts</strong> in GL monitor totals of subsidiary ledgers</li>
+<li><strong>Sales Ledger Control</strong> Dr = sales, dishonoured cheques; Cr = receipts, returns, discounts, bad debts</li>
+<li><strong>Purchases Ledger Control</strong> Dr = payments, returns, discounts; Cr = purchases, interest</li>
+<li>Control account balance MUST equal sum of individual ledger balances</li>
+<li><strong>6 Types of Errors:</strong> omission, commission, principle, original entry, reversal, compensating</li>
+<li><strong>Suspense account</strong> = temporary; opened when TB doesn't balance</li>
+<li>Error correction: identify effect on profit AND net assets</li>
+<li>Reversal error → double entry to correct; Compensating → fix both errors</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/auth.js?v=3"></script><script src="../js/app.js?v=3"></script>
+</body></html>
