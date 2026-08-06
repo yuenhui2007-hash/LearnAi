@@ -1,22 +1,12 @@
 /**
  * LearnAI Tutor — Cloudflare Worker Backend
- *
- * This Worker proxies AI requests from your static GitHub Pages site
- * to OpenAI/Gemini, keeping your API key secret.
- *
- * DEPLOYMENT:
- * 1. Sign up at cloudflare.com
- * 2. Go to Workers & Pages → Create Worker
- * 3. Paste this entire file into the editor
- * 4. Go to Settings → Variables → Add "OPENAI_KEY" with your API key
- * 5. Save & Deploy
- * 6. Copy your Worker URL (e.g., https://learnai-tutor.yourname.workers.dev)
- * 7. Add that URL to your tutor.js as API_URL
+ * Proxies AI requests to Gemini (free) or OpenAI (paid)
+ * Keep this file secret — it contains no keys, only references env vars
  */
 
 export default {
-  async fetch(request, env, ctx) {
-    // CORS preflight
+  async fetch(request, env) {
+    // Handle CORS preflight from your GitHub Pages site
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         status: 204,
@@ -28,32 +18,25 @@ export default {
       });
     }
 
+    // Only accept POST
     if (request.method !== 'POST') {
-      return new Response(JSON.stringify({ error: 'POST only' }), {
-        status: 405,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonResponse({ error: 'POST only' }, 405);
     }
 
+    // Parse body
     let body;
     try {
       body = await request.json();
     } catch {
-      return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonResponse({ error: 'Invalid JSON body' }, 400);
     }
 
     const { messages, model = 'gpt-4o-mini' } = body;
     if (!messages || !Array.isArray(messages)) {
-      return new Response(JSON.stringify({ error: 'messages array required' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return jsonResponse({ error: 'messages array required' }, 400);
     }
 
-    // === OPENAI ===
+    // ===== OPENAI (paid, better quality) =====
     if (env.OPENAI_KEY) {
       try {
         const res = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -73,41 +56,25 @@ export default {
         const data = await res.json();
 
         if (!res.ok) {
-          return new Response(JSON.stringify({ error: data.error?.message || 'OpenAI error' }), {
-            status: res.status,
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-            },
-          });
+          return jsonResponse({ error: data.error?.message || 'OpenAI error' }, res.status);
         }
 
-        return new Response(JSON.stringify({
+        return jsonResponse({
           reply: data.choices[0].message.content,
           model: data.model,
           usage: data.usage,
-        }), {
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
         });
       } catch (err) {
-        return new Response(JSON.stringify({ error: err.message }), {
-          status: 502,
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
-        });
+        return jsonResponse({ error: err.message }, 502);
       }
     }
 
-    // === GEMINI (free tier fallback) ===
+    // ===== GEMINI (free tier — 1,500 req/day) =====
     if (env.GEMINI_KEY) {
       try {
-        const geminiMessages = messages.map(m => ({
-          role: m.role === 'assistant' ? 'model' : m.role,
+        // Gemini uses different message format
+        const contents = messages.map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
           parts: [{ text: m.content }],
         }));
 
@@ -116,48 +83,47 @@ export default {
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: geminiMessages }),
+            body: JSON.stringify({ contents }),
           }
         );
 
         const data = await res.json();
 
         if (!res.ok) {
-          return new Response(JSON.stringify({ error: data.error?.message || 'Gemini error' }), {
-            status: res.status,
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-            },
-          });
+          return jsonResponse(
+            { error: data.error?.message || `Gemini HTTP ${res.status}` },
+            res.status
+          );
         }
 
-        return new Response(JSON.stringify({
+        if (!data.candidates || !data.candidates[0]?.content?.parts?.[0]?.text) {
+          return jsonResponse({ error: 'Empty response from Gemini' }, 502);
+        }
+
+        return jsonResponse({
           reply: data.candidates[0].content.parts[0].text,
           model: 'gemini-1.5-flash',
-        }), {
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
         });
       } catch (err) {
-        return new Response(JSON.stringify({ error: err.message }), {
-          status: 502,
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
-        });
+        return jsonResponse({ error: err.message }, 502);
       }
     }
 
-    return new Response(JSON.stringify({ error: 'No API key configured. Set OPENAI_KEY or GEMINI_KEY in Worker variables.' }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
+    // No key configured
+    return jsonResponse(
+      { error: 'No API key configured. Add GEMINI_KEY or OPENAI_KEY in Worker Settings → Variables.' },
+      500
+    );
   },
 };
+
+// Helper to return JSON with CORS headers
+function jsonResponse(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+  });
+}
