@@ -58,8 +58,8 @@ document.getElementById('overallProgress').textContent =
 overall.total > 0 ? overall.completed + '/' + overall.total + ' topics completed (' + overall.percent + '%)' : 'Start studying to track your progress';
 
 const container = document.getElementById('subjectProgress');
-Object.keys(Subjects).forEach(function(key) {
-var s = Subjects[key];
+Object.keys(subjects).forEach(function(key) {
+var s = subjects[key];
 var prog = Progress.getSubjectProgress(key, s.topics.length);
 var card = document.createElement('a');
 card.href = 'subject.html?id=' + key;
