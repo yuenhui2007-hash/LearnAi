@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=3">
+<link rel="stylesheet" href="../css/znotes-style.css?v=3">
 <style>
 .notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
@@ -76,6 +77,28 @@
 </div>
 
 <div class="exam-tips">
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> Differentiate y = 3x⁴ + 2x² − 5x + 7</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+dy/dx = 3(4x³) + 2(2x) − 5(1) + 0<br>
+dy/dx = 12x³ + 4x − 5<br>
+<strong>Answer: dy/dx = 12x³ + 4x − 5</strong>
+</div>
+</div>
+<div class="common-mistake">Forgetting the +c (constant of integration) for indefinite integrals. You'll lose a mark!</div>
+<div class="key-point">The chain rule: if y = f(g(x)), then dy/dx = f'(g(x)) × g'(x). Use for functions inside functions.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>d/dx(xⁿ) = nxⁿ⁻¹</li>
+<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
+<li>Chain rule: dy/dx = dy/du × du/dx</li>
+<li>Stationary points: dy/dx = 0; d²y/dx² > 0 = min</li>
+</ul>
+</div>
 <h2>Exam Tips</h2>
 <ul>
 <li>Read the question carefully — identify exactly what is being asked.</li>
@@ -91,5 +114,6 @@
 
 <script src="../js/auth.js?v=3"></script>
 <script src="../js/app.js?v=3"></script>
+<script src="../js/mascot.js?v=3"></script>
 </body>
 </html>

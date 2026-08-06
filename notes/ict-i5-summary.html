@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Databases & Data Management — LearnAI</title>
+<title>Databases &amp; Data Management — Summary — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=3">
+<link rel="stylesheet" href="../css/znotes-style.css?v=3">
 <style>
 .notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
@@ -32,22 +33,45 @@
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="../subject.html?id=ict" class="back-btn">← Back to Ict</a>
+<a href="../subject.html?id=ict" class="back-btn">← Back to ICT</a>
 <div class="notes-container">
 <div class="notes-header">
-<div class="level-badges">
-<span class="level-badge badge-igcse">IGCSE</span>
-<span class="level-badge badge-as">AS</span>
-<span class="level-badge badge-a2">A2</span>
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE 0417</span><span class="level-badge badge-as">AS 9626</span><span class="level-badge badge-a2">A2 9626</span></div>
+<h1>Databases &amp; Data Management</h1>
+<p style="color:var(--gray)">Topic i5 — Revision Summary</p>
 </div>
-<h1>Databases & Data Management</h1>
-<p style="color:var(--gray)">ict-i5</p>
+<div class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Relational databases</strong> use multiple linked tables; flat files are single-table and redundant.</li>
+<li><strong>Primary key</strong> uniquely identifies; <strong>foreign key</strong> links tables.</li>
+<li><strong>Relationships:</strong> 1:1, 1:M, M:N (needs junction table).</li>
+<li><strong>Normalisation:</strong> 1NF (atomic), 2NF (no partial dependency), 3NF (no transitive dependency).</li>
+<li><strong>SQL commands:</strong> SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, ALTER, JOIN, GROUP BY, HAVING.</li>
+<li><strong>Validation:</strong> range, type, length, presence, format, lookup, check digit.</li>
+<li><strong>ACID:</strong> Atomicity, Consistency, Isolation, Durability.</li>
+<li><strong>Indexing</strong> speeds queries but slows writes.</li>
+<li><strong>NoSQL</strong> scales horizontally; document, key-value, column, graph types.</li>
+<li>Exam tip: Always state primary and foreign keys when designing a database. Draw ERDs with crow's foot notation.</li>
+</ul>
+<h3>🔑 Key Terms</h3>
+<ul>
+<li>Table, Record, Field, Tuple, Attribute, Primary Key, Foreign Key, Composite Key</li>
+<li>1NF, 2NF, 3NF, Normalisation, Redundancy, Transitive dependency</li>
+<li>SQL, SELECT, WHERE, JOIN, INNER JOIN, GROUP BY, HAVING, COUNT, AVG, MAX</li>
+<li>ACID, Transaction, Index, B-tree, Query optimiser</li>
+<li>ERD, Crow's foot, Cardinality, Junction table</li>
+<li>NoSQL, MongoDB, CAP Theorem, Sharding, Replication</li>
+</ul>
+<h3>🎯 Exam Tips</h3>
+<ul>
+<li>Design questions: identify entities, attributes, keys, then draw relationships.</li>
+<li>SQL: remember ORDER BY, GROUP BY, and HAVING syntax order.</li>
+<li>Normalisation: explain WHY each step removes redundancy — not just what.</li>
+<li>For M:N relationships, always introduce a junction/link table.</li>
+</ul>
 </div>
-<div class="notes-section"><h2>📘 IGCSE Content</h2><p><em>See full notes for detailed IGCSE content.</em></p></div>
-<div class="notes-section"><h2>📗 AS Level Content</h2><p><em>See full notes for detailed AS Level content.</em></p></div>
-<div class="notes-section"><h2>📙 A2 Level Content</h2><p><em>See full notes for detailed A2 Level content.</em></p></div>
-<div class="summary-box"><h3>📝 Last-Minute Summary</h3><ul><li><strong>Primary key:</strong> Unique identifier</li><li><strong>Foreign key:</strong> Links tables</li><li><strong>Normalisation:</strong> Reduce redundancy (1NF, 2NF, 3NF)</li><li><strong>SQL:</strong> SELECT, INSERT, UPDATE, DELETE</li><li><strong>Validation:</strong> Range, format, presence checks</li></ul></div>
 </div>
 </div></section>
 <script src="../js/auth.js?v=3"></script><script src="../js/app.js?v=3"></script>
+<script src="../js/mascot.js?v=3"></script>
 </body></html>

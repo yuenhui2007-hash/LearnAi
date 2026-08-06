@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=3">
+<link rel="stylesheet" href="../css/znotes-style.css?v=3">
 <style>
 .notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
@@ -23,7 +24,6 @@
 .notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
 .notes-section ul { margin: 12px 0; padding-left: 24px; }
 .notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
 .summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
 .summary-box h3 { color: #92400e; margin-bottom: 12px; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
@@ -35,19 +35,147 @@
 <a href="../subject.html?id=history" class="back-btn">← Back to History</a>
 <div class="notes-container">
 <div class="notes-header">
-<div class="level-badges">
-<span class="level-badge badge-igcse">IGCSE</span>
-<span class="level-badge badge-as">AS</span>
-<span class="level-badge badge-a2">A2</span>
-</div>
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS Level</span><span class="level-badge badge-a2">A2 Level</span></div>
 <h1>Hitler's Germany, 1929–1947</h1>
-<p style="color:var(--gray)">history-h8</p>
+<p style="color:var(--gray)">Cambridge 9389 A-Level / 0470 IGCSE</p>
 </div>
-<div class="notes-section"><h2>📘 IGCSE Content</h2><h3>Rise to Power</h3><ul><li><strong>Wall Street Crash (1929):</strong> German economy collapses; unemployment reaches 6 million</li><li><strong>Nazi appeal:</strong> Promise of jobs, national pride, scapegoating Jews</li><li><strong>1930 election:</strong> Nazis become second largest party (107 seats)</li><li><strong>July 1932:</strong> Nazis largest party (230 seats)</li><li><strong>Jan 1933:</strong> Hitler appointed Chancellor</li></ul><h3>Consolidation of Power</h3><ul><li><strong>Reichstag Fire (Feb 1933):</strong> Blamed on communists; Emergency Decrees</li><li><strong>Enabling Act (March 1933):</strong> Hitler could rule by decree for 4 years</li><li><strong>Night of Long Knives (June 1934):</strong> SA leaders killed; army loyalty secured</li><li><strong>Hindenburg's death (Aug 1934):</strong> Hitler becomes Führer</li></ul><h3>Nazi State</h3><ul><li><strong>Gestapo:</strong> Secret police; surveillance and terror</li><li><strong>Propaganda:</strong> Goebbels; radio, films, rallies, Olympics (1936)</li><li><strong>Education:</strong> Indoctrination; Hitler Youth compulsory (1936)</li></ul></div>
-<div class="notes-section"><h2>📗 AS Level Content</h2><h3>Economic Policy</h3><ul><li><strong>Work Creation Programmes:</strong> Autobahns, rearmament</li><li><strong>Rearmament:</strong> Violated Versailles Treaty; reduced unemployment</li><li><strong>Four-Year Plan (1936):</strong> Autarky (self-sufficiency); Göring</li></ul><h3>Foreign Policy</h3><ul><li><strong>1933:</strong> Left League of Nations</li><li><strong>1935:</strong> Reintroduced conscription</li><li><strong>1936:</strong> Remilitarised Rhineland</li><li><strong>1938:</strong> Anschluss with Austria; Munich Agreement (Sudetenland)</li></ul></div>
-<div class="notes-section"><h2>📙 A2 Level Content</h2><h3>Resistance & Opposition</h3><ul><li><strong>White Rose:</strong> Student group (1942–43); executed</li><li><strong>July Bomb Plot (1944):</strong> Stauffenberg; failed assassination</li><li><strong>Edelweiss Pirates:</strong> Working-class youth; graffiti and sabotage</li></ul><h3>Totalitarianism Debate</h3><ul><li><strong>Intentionalist:</strong> Hitler planned everything (Mein Kampf as blueprint)</li><li><strong>Structuralist:</strong> Chaotic Nazi state; polycratic competition</li><li><strong>Wehler:</strong> "Cumulative radicalisation" — initiatives from below</li></ul></div>
-<div class="summary-box"><h3>📝 Last-Minute Summary</h3><ul><li><strong>1929:</strong> Wall Street Crash → Nazi support rises</li><li><strong>Jan 1933:</strong> Hitler appointed Chancellor</li><li><strong>Feb 1933:</strong> Reichstag Fire → Emergency powers</li><li><strong>March 1933:</strong> Enabling Act</li><li><strong>1934:</strong> Night of Long Knives; Hitler becomes Führer</li><li><strong>1935–38:</strong> Rearmament, Rhineland, Anschluss, Munich</li><li><strong>Totalitarian debate:</strong> Intentionalist vs Structuralist</li></ul></div>
+
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>The Rise of the Nazis (1929–33)</h3>
+<ul>
+<li>Wall Street Crash (Oct 1929) triggered global depression. German economy collapsed: unemployment reached 6 million (1932), GDP fell 40%.</li>
+<li>Weimar Republic fragile: proportional representation created unstable coalitions; Article 48 allowed presidential rule by decree.</li>
+<li>Nazi appeal: promised economic recovery, national revival, anti-communism, anti-Semitism. Hitler's oratory and propaganda (Goebbels).</li>
+<li>SA (Sturmabteilung): paramilitary force; street battles with Communists. SS (Schutzstaffel): originally Hitler's bodyguard, later elite force under Himmler.</li>
+<li>1930 election: Nazis won 107 seats (18.3%) — up from 12 (2.6%) in 1928.</li>
+<li>1932: Nazis peaked — 230 seats (37.3%) in July election. Hitler ran for president against Hindenburg (lost).</li>
+<li><strong>30 Jan 1933:</strong> Hitler appointed Chancellor by Hindenburg. Only two Nazis in cabinet (Hitler and Frick). Conservatives (Papen, Schleicher) believed they could control him.</li>
+</ul>
+<h3>Consolidation of Power (1933–34)</h3>
+<ul>
+<li><strong>Reichstag Fire (27 Feb 1933):</strong> Dutch communist van der Lubbe arrested. Decree for the Protection of People and State (28 Feb): suspended civil liberties, allowed arrest without trial.</li>
+<li><strong>March 1933 election:</strong> Nazis won 288 seats (43.9%) with coalition partners (DNVP) giving majority. Enabling Act (23 March): gave Hitler power to rule by decree for 4 years. Passed with Centre Party support.</li>
+<li><strong>Gleichschaltung (coordination):</strong> All institutions brought under Nazi control. Trade unions abolished (2 May 1933); replaced by DAF (German Labour Front). Political parties banned (July 1933).</li>
+<li><strong>Night of the Long Knives (30 June 1934):</strong> Hitler purged SA leadership (Röhm and others) — 85–200 killed. SS gained power. Army approved.</li>
+<li><strong>Hindenburg's death (2 Aug 1934):</strong> Hitler merged offices of president and chancellor — became Führer. Army swore personal oath of loyalty.</li>
+</ul>
+<h3>Nazi Germany 1933–39: Society and Economy</h3>
+<ul>
+<li><strong>Economy:</strong> Public works (Autobahns), rearmament (conscription 1935), Mefo bills (off-budget financing). Unemployment fell from 6 million (1932) to under 1 million (1936). However, wages stagnated; working hours increased.</li>
+<li><strong>Propaganda:</strong> Goebbels as Minister of Propaganda. Control of press, radio, cinema, rallies (Nuremberg rallies), Olympics (1936).</li>
+<li><strong>Education and Youth:</strong> Curriculum Nazified; teachers purged. Hitler Youth (compulsory 1936): indoctrination in racial ideology and militarism. League of German Girls.</li>
+<li><strong>Women:</strong> Encouraged to be mothers and homemakers. Honour Cross of the German Mother (bronze for 4 children, silver for 6, gold for 8). Professional women and university students reduced.</li>
+<li><strong>Religion:</strong> Reich Church (pro-Nazi) vs Confessing Church (opposition, e.g., Pastor Niemöller). Concordat with Vatican (1933) violated.</li>
+<li><strong>Racial policy:</strong> Nuremberg Laws (1935); persecution of Jews intensified (see Holocaust notes). Also persecution of Roma, disabled, homosexuals, Jehovah's Witnesses.</li>
+</ul>
+<h3>Foreign Policy and Road to War</h3>
+<ul>
+<li>Withdrawal from League of Nations (1933). Rearmament announced (1935).</li>
+<li>Rhineland remilitarised (March 1936): troops entered demilitarised zone. France and Britain did not act.</li>
+<li>Anschluss with Austria (March 1938): union forbidden by Versailles. Achieved without war.</li>
+<li>Munich Agreement (Sept 1938): Hitler demanded Sudetenland (German-speaking part of Czechoslovakia). Britain (Chamberlain) and France agreed. "Peace for our time."</li>
+<li>March 1939: Germany occupied rest of Czechoslovakia — broke Munich promises. Britain guaranteed Poland.</li>
+<li>Nazi-Soviet Pact (Aug 1939): non-aggression treaty with secret protocol dividing Eastern Europe.</li>
+<li>1 Sept 1939: Germany invaded Poland. Britain and France declared war (3 Sept).</li>
+</ul>
+<h3>War and Defeat (1939–45)</h3>
+<ul>
+<li>Blitzkrieg victories: Poland (Sept 1939), Denmark and Norway (April 1940), Netherlands, Belgium, France (May–June 1940). Dunkirk evacuation (May–June 1940).</li>
+<li>Battle of Britain (July–Oct 1940): Luftwaffe failed to gain air superiority; invasion of Britain cancelled.</li>
+<li>Operation Barbarossa (June 1941): invasion of USSR. Initial gains; stalled at Moscow (Dec 1941). Declaration of war on USA (Dec 1941) after Pearl Harbor.</li>
+<li>Turning points: Stalingrad (Feb 1943), El Alamein (Nov 1942), Kursk (July 1943).</li>
+<li>D-Day (6 June 1944): Allied invasion of Normandy. Soviet advance from East.</li>
+<li>Hitler's suicide (30 April 1945); Germany surrendered (7–8 May 1945).</li>
+</ul>
+<h3>Occupation and Nuremberg (1945–47)</h3>
+<ul>
+<li>Germany divided into four zones (USA, UK, France, USSR). Berlin also divided.</li>
+<li>Denazification: trials of war criminals. Nuremberg Trials (Nov 1945–Oct 1946): 22 major Nazis tried; 12 sentenced to death (including Göring, Ribbentrop, Kaltenbrunner). Hess life imprisonment.</li>
+<li>Morgenthau Plan (initial) vs. policy of reconstruction. By 1947, Cold War tensions led to creation of West German state.</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>Why Did Hitler Come to Power?</h3>
+<ul>
+<li>Great Depression: economic catastrophe discredited Weimar democracy. Unemployed turned to extremes (Nazis and Communists).</li>
+<li>Weimar weaknesses: proportional representation, presidential cabinets (Brüning, Papen, Schleicher), lack of democratic culture in some sectors.</li>
+<li>Conservative elite miscalculation: Papen and Hindenburg believed they could use Hitler's mass support while controlling him. "We've hired him" (Papen).</li>
+<li>Nazi strengths: effective propaganda, Hitler's charisma, organisation (Gauleiters), appeal across classes (lower middle class, farmers, some workers).</li>
+<li>Not inevitable: Nazis lost 2 million votes between July and Nov 1932. Hitler appointed by elite manoeuvring, not popular majority.</li>
+</ul>
+<h3>The Nazi State: Totalitarian or Polycratic?</h3>
+<ul>
+<li>Totalitarian model: Hitler had absolute power; ideology permeated all aspects of life; terror (Gestapo, SS, camps) enforced conformity.</li>
+<li>Polycratic model (historians like Martin Broszat, Ian Kershaw): Nazi state was chaotic, with competing agencies and personal rivalries. Hitler was a "weak dictator" who often avoided decisions, allowing subordinates to compete.</li>
+<li>Source evaluation: use of decrees, Hitler's daily routine (late mornings, aversion to paperwork), power of Himmler, Goebbels, Göring.</li>
+</ul>
+<h3>Consensus and Coercion</h3>
+<ul>
+<li>How much did Germans support the regime? Some historians emphasise popular consent (economic recovery, national pride, effective propaganda). Others emphasise fear and surveillance.</li>
+<li>Gestapo relatively small (approx. 32,000 for 66 million people). Relied on denunciation by citizens.</li>
+<li>Opposition: isolated and fragmented. Communist and Socialist undergrounds. White Rose (Munich students, 1942–43). July 20 Plot (1944): Stauffenberg's bomb failed to kill Hitler. Army officers, some clergy (Niemöller, Bonhoeffer).</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>The Intentionalist vs Structuralist Debate on Nazi Foreign Policy</h3>
+<ul>
+<li><strong>Intentionalist (e.g., Klaus Hildebrand, Andreas Hillgruber):</strong> Hitler had a clear programme from Mein Kampf (1925): destroy Versailles, expand eastward (Lebensraum), destroy Jews. War was inevitable because Hitler planned it.</li>
+<li><strong>Structuralist/Functionalist (e.g., Hans Mommsen, Timothy Mason):</strong> Nazi foreign policy was more improvised. Economic pressures (need for resources) and internal dynamics drove expansion. Hitler was an opportunist who exploited situations.</li>
+<li><strong>Mason's "domestic crisis" thesis:</strong> expansion was driven by need to solve economic problems and prevent social unrest. War in 1939 was premature because Germany was not ready.</li>
+<li><strong>A.J.P. Taylor, The Origins of the Second World War (1961):</strong> Hitler was a traditional German statesman pursuing traditional aims; other powers mishandled him. Highly controversial.</li>
+</ul>
+<h3>Hitler as War Leader</h3>
+<ul>
+<li>Initial successes due to boldness and Allied unpreparedness. But strategic errors: invasion of USSR, declaration of war on USA, no retreat orders (Stalingrad).</li>
+<li>"No surrender" policy wasted German lives. Hitler increasingly detached from reality.</li>
+<li>Total war: Goebbels' Sportpalast speech (Feb 1943) called for total mobilisation. Speer's armaments production increased despite bombing.</li>
+</ul>
+<h3>Essay Frameworks</h3>
+<ul>
+<li><strong>"Hitler was a weak dictator":</strong> Polycratic state, avoided decisions, chaotic administration. Counter: Hitler made key decisions (Night of Long Knives, war), Führer cult gave him ultimate authority.</li>
+<li><strong>"The Nazi regime rested on popular support":</strong> Economic recovery, propaganda, nationalism. Counter: terror essential; opposition crushed; denunciations show fear, not consent.</li>
+<li><strong>"Hitler planned war from the start":</strong> Mein Kampf, rearmament, eastward expansion. Counter: improvisation, responses to opportunities, economic pressures.</li>
+</ul>
+</div>
+
+<div 
+<div class="worked-example">
+<h4>📜 Worked Example</h4>
+<p><strong>Question:</strong> To what extent was Germany responsible for WWI?</p>
+<div class="solution">
+<strong>Essay Plan:</strong><br>
+<strong>FOR:</strong> Blank cheque, Schlieffen Plan, naval expansion, Fischer thesis<br>
+<strong>AGAINST:</strong> Austrian ultimatum, Russian mobilisation, alliance system, Clark "sleepwalkers"<br>
+<strong>Conclusion:</strong> Significant responsibility but not sole blame
+</div>
+</div>
+<div class="common-mistake">Writing narrative instead of analysis. History essays need CAUSATION — explain WHY and SIGNIFICANCE.</div>
+<div class="key-point">Always use SPECIFIC EVIDENCE — dates, names, statistics. "On 28 June 1914" not "in 1914".</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Long-term: Militarism, Alliances, Imperialism, Nationalism</li>
+<li>Short-term: Assassination of Franz Ferdinand</li>
+<li>Treaty of Versailles: War guilt, reparations, territorial losses</li>
+<li>Cold War: Containment, Truman Doctrine, Marshall Plan</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>1929 Crash</strong> → depression → Nazi rise (107 seats 1930, 230 seats July 1932).</li>
+<li><strong>30 Jan 1933:</strong> Hitler appointed Chancellor. Reichstag Fire → Emergency Decree → Enabling Act (23 March).</li>
+<li><strong>1934:</strong> Night of Long Knives (June); Hindenburg dies (Aug) → Hitler Führer.</li>
+<li><strong>1933–39:</strong> Gleichschaltung; propaganda; Hitler Youth; women's role; Nuremberg Laws; economic recovery via rearmament.</li>
+<li><strong>Foreign policy:</strong> Rhineland (1936); Anschluss (1938); Munich (Sept 1938); Czech occupation (March 1939); Nazi-Soviet Pact (Aug 1939); Poland invaded (1 Sept 1939).</li>
+<li><strong>War:</strong> Blitzkrieg victories; Battle of Britain; Barbarossa (June 1941); Stalingrad (Feb 1943); D-Day (June 1944); Hitler suicide (30 April 1945).</li>
+<li><strong>Historiography:</strong> Totalitarian vs polycratic state; Intentionalist vs Structuralist foreign policy; consensus vs coercion.</li>
+<li><strong>Exam Tip:</strong> Distinguish between what Nazis promised and what they delivered. Know the sequence 1933→1934→1935→1936→1938→1939. Reference Kershaw on Hitler and Broszat on polycracy.</li>
+</ul>
+</div>
 </div>
 </div></section>
 <script src="../js/auth.js?v=3"></script><script src="../js/app.js?v=3"></script>
+<script src="../js/mascot.js?v=3"></script>
 </body></html>
