@@ -1043,6 +1043,7 @@ let currentSubject = 'all';
 let chatArea, userInput, sendBtn;
 
 function initTutor() {
+  Avatar.init();
   chatArea = document.getElementById('chatArea');
   userInput = document.getElementById('userInput');
   sendBtn = document.getElementById('sendBtn');
@@ -1151,12 +1152,99 @@ function formatAIReply(text) {
     .replace(/\n/g, '<br>');
 }
 
+// ===== AVATAR TTS =====
+const Avatar = {
+  synth: window.speechSynthesis,
+  voice: null,
+  enabled: true,
+  animInterval: null,
+
+  init() {
+    this.loadVoice();
+    if (this.synth.onvoiceschanged !== undefined) {
+      this.synth.onvoiceschanged = () => this.loadVoice();
+    }
+    this.createDOM();
+  },
+
+  loadVoice() {
+    const voices = this.synth.getVoices();
+    this.voice = voices.find(v => v.lang.startsWith('en') && v.name.includes('Google')) ||
+                 voices.find(v => v.lang.startsWith('en')) || voices[0];
+  },
+
+  createDOM() {
+    const wrap = document.createElement('div');
+    wrap.id = 'avatarWrap';
+    wrap.innerHTML = `
+      <div id="avBubble" style="display:none;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:10px;background:#1e293b;color:#fff;padding:8px 14px;border-radius:10px;font-size:0.8rem;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+        <span id="avText">Hello!</span>
+        <div style="position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid #1e293b;"></div>
+      </div>
+      <div id="avFace" style="width:64px;height:64px;background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 6px 20px rgba(99,102,241,0.4);cursor:pointer;transition:transform 0.2s;position:relative;">
+        🤖
+        <div id="avMouth" style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);width:16px;height:6px;background:#1e293b;border-radius:0 0 16px 16px;transition:height 0.1s;"></div>
+      </div>
+      <button id="avMute" style="position:absolute;top:-2px;right:-2px;width:22px;height:22px;border-radius:50%;background:#fff;border:none;box-shadow:0 1px 4px rgba(0,0,0,0.2);cursor:pointer;font-size:0.65rem;display:flex;align-items:center;justify-content:center;">🔊</button>
+    `;
+    wrap.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;align-items:center;gap:6px;';
+    document.body.appendChild(wrap);
+
+    document.getElementById('avMute').addEventListener('click', (e) => { e.stopPropagation(); this.toggle(); });
+    document.getElementById('avFace').addEventListener('click', () => { this.speak("I'm your AI tutor! Ask me anything."); });
+  },
+
+  toggle() {
+    this.enabled = !this.enabled;
+    document.getElementById('avMute').textContent = this.enabled ? '🔊' : '🔇';
+    if (!this.enabled) this.synth.cancel();
+  },
+
+  speak(text) {
+    if (!this.enabled || !this.synth) return;
+    this.synth.cancel();
+    const plain = text.replace(/<[^>]+>/g, '').replace(/\$\$.*?\$\$/g, '').replace(/\\\(|\\\)/g, '').substring(0, 280);
+    if (!plain.trim()) return;
+
+    const utter = new SpeechSynthesisUtterance(plain);
+    utter.voice = this.voice; utter.rate = 1.15; utter.pitch = 1.05;
+    utter.onstart = () => this.startAnim();
+    utter.onend = () => this.stopAnim();
+    utter.onerror = () => this.stopAnim();
+    this.synth.speak(utter);
+
+    const bubble = document.getElementById('avBubble');
+    document.getElementById('avText').textContent = plain.substring(0, 55) + (plain.length > 55 ? '...' : '');
+    bubble.style.display = 'block';
+    setTimeout(() => { bubble.style.display = 'none'; }, 3500);
+  },
+
+  startAnim() {
+    const mouth = document.getElementById('avMouth');
+    const face = document.getElementById('avFace');
+    face.style.transform = 'scale(1.08)';
+    let frame = 0;
+    this.animInterval = setInterval(() => {
+      frame = (frame + 1) % 4;
+      mouth.style.height = ([6, 14, 10, 14])[frame] + 'px';
+    }, 140);
+  },
+
+  stopAnim() {
+    clearInterval(this.animInterval);
+    document.getElementById('avMouth').style.height = '6px';
+    document.getElementById('avFace').style.transform = 'scale(1)';
+  }
+};
+
 function addMessage(text, sender) {
   const div = document.createElement('div');
   div.className = `message message-${sender}`;
   div.innerHTML = text;
   chatArea.appendChild(div);
   chatArea.scrollTop = chatArea.scrollHeight;
+
+  if (sender === 'bot') Avatar.speak(text);
 }
 
 function showTyping() {
