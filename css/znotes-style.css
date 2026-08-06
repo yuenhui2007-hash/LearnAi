@@ -149,14 +149,14 @@
   color: #064e3b;
 }
 
-/* Mascot placement */
+/* Mascot placement - bottom right */
 .mascot-container {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 1000;
   width: 80px;
-  height: 96px;
+  height: 80px;
   transition: transform 0.3s;
 }
 .mascot-container:hover {
@@ -165,12 +165,13 @@
 .mascot-container img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .mascot-speech {
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
   background: white;
   padding: 8px 14px;
   border-radius: 12px;
@@ -189,8 +190,9 @@
 @media (max-width: 768px) {
   .mascot-container {
     width: 60px;
-    height: 72px;
+    height: 60px;
     bottom: 80px;
+    right: 10px;
   }
 }
 

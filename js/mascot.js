@@ -1,4 +1,4 @@
-// LearnAI Dino Mascot — adds mascot to pages
+// LearnAI Mascot — adds mascot to pages
 (function() {
   const tips = [
     "You've got this! 💪",
@@ -14,15 +14,14 @@
   ];
 
   function initMascot() {
-    // Don't add on small pages or if already present
-    if (document.getElementById('learnai-dino')) return;
+    if (document.getElementById('learnai-mascot')) return;
 
     const container = document.createElement('div');
-    container.id = 'learnai-dino';
+    container.id = 'learnai-mascot';
     container.className = 'mascot-container';
     container.innerHTML = `
       <div class="mascot-speech">${tips[Math.floor(Math.random() * tips.length)]}</div>
-      <img src="images/mascot-dino.svg" alt="LearnAI Dino" width="80" height="96">
+      <img src="images/mascot-new.jpg" alt="LearnAI Mascot" width="80" height="80" style="border-radius:50%;object-fit:cover;">
     `;
     document.body.appendChild(container);
   }
