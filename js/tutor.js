@@ -494,13 +494,184 @@ const knowledgeBase = {
     <div class="exam-tip-box"><strong>Exam tip:</strong> The night before: light review only. Sleep > cramming.</div>`
   },
 
+  // HISTORY
+  'history-ww1': {
+    patterns: ['world war i','ww1','causes of wwi','franz ferdinand','treaty of versailles','alliance system','july crisis','schlieffen plan'],
+    response: `<strong>World War I (1914–1918)</strong><br><br>
+    <strong>Long-term causes:</strong><br>
+    - Alliance system: Triple Alliance (Germany, Austria-Hungary, Italy) vs Triple Entente (Britain, France, Russia)<br>
+    - Militarism: Arms race, especially Anglo-German naval rivalry<br>
+    - Imperialism: Scramble for Africa, Moroccan crises<br>
+    - Nationalism: Pan-Slavism, Balkan tensions<br><br>
+    <strong>Short-term trigger:</strong><br>
+    - 28 June 1914: Assassination of Archduke Franz Ferdinand in Sarajevo<br>
+    - July Crisis: Ultimatum → Austria declares war on Serbia → Russia mobilises → Germany declares war on Russia and France → Germany invades Belgium → Britain declares war<br><br>
+    <strong>Treaty of Versailles (1919):</strong><br>
+    - War guilt clause (Article 231)<br>
+    - Reparations: £6.6 billion<br>
+    - Territorial losses: Alsace-Lorraine, colonies, Polish Corridor<br>
+    - Military restrictions: 100,000 army, no air force, no submarines<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Balance long-term and short-term causes. Fischer thesis (Germany planned war) vs Clark (sleepwalkers — all powers to blame)</div>`
+  },
+
+  'history-cold-war': {
+    patterns: ['cold war','iron curtain','containment','truman doctrine','marshall plan','berlin blockade','berlin wall','cuban missile crisis','detente','gorbachev'],
+    response: `<strong>The Cold War (1947–1991)</strong><br><br>
+    <strong>Origins:</strong><br>
+    - 1945: Yalta and Potsdam conferences — tensions over Poland, Germany<br>
+    - 1946: Churchill's Iron Curtain speech<br>
+    - 1947: Truman Doctrine (containment of communism)<br>
+    - 1948: Marshall Plan ($13bn aid to Europe); Berlin Blockade and Airlift<br>
+    - 1949: NATO formed; USSR tests atomic bomb<br><br>
+    <strong>Key crises:</strong><br>
+    - 1950–53: Korean War<br>
+    - 1956: Hungarian Uprising (crushed by USSR)<br>
+    - 1961: Berlin Wall built<br>
+    - 1962: Cuban Missile Crisis — closest to nuclear war<br>
+    - 1968: Prague Spring (crushed by Warsaw Pact)<br><br>
+    <strong>End of Cold War:</strong><br>
+    - 1985: Gorbachev — Glasnost and Perestroika<br>
+    - 1989: Fall of Berlin Wall; revolutions in Eastern Europe<br>
+    - 1991: Soviet Union dissolves<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Know the historiography: Traditionalist (Soviet expansion to blame) vs Revisionist (US economic imperialism) vs Post-revisionist (mutual misunderstanding)</div>`
+  },
+
+  'history-hitler': {
+    patterns: ['hitler','nazi germany','weimar republic','reichstag fire','enabling act','night of long knives','kristallnacht','holocaust','final solution','nuremberg laws'],
+    response: `<strong>Nazi Germany (1933–1945)</strong><br><br>
+    <strong>Rise to power:</strong><br>
+    - 1929: Wall Street Crash → German economy collapses → 6 million unemployed<br>
+    - 1930: Nazis become 2nd largest party (107 seats)<br>
+    - Jan 1933: Hitler appointed Chancellor<br>
+    - Feb 1933: Reichstag Fire → Emergency Decrees<br>
+    - March 1933: Enabling Act → Hitler can rule by decree<br>
+    - June 1934: Night of Long Knives (SA leaders killed)<br>
+    - Aug 1934: Hindenburg dies; Hitler becomes Führer<br><br>
+    <strong>Nazi state:</strong><br>
+    - Gestapo (secret police), SS, concentration camps<br>
+    - Propaganda: Goebbels, rallies, radio, films<br>
+    - Education and youth: Hitler Youth (compulsory 1936)<br><br>
+    <strong>Persecution:</strong><br>
+    - 1935: Nuremberg Laws (stripped Jews of citizenship)<br>
+    - 1938: Kristallnacht (state-organised pogrom)<br>
+    - 1941–45: Final Solution → Holocaust (6 million Jews murdered)<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Totalitarianism debate: Intentionalist (Hitler planned everything) vs Structuralist (chaotic Nazi state, initiatives from below)</div>`
+  },
+
+  // GEOMETRY
+  'geometry-pythagoras': {
+    patterns: ['pythagoras','hypotenuse','right triangle','soh cah toa','trigonometry','sine rule','cosine rule'],
+    response: `<strong>Pythagoras & Trigonometry</strong><br><br>
+    <span class="formula">Pythagoras: a² + b² = c²</span><br>
+    <span class="formula">sin θ = opposite / hypotenuse</span><br>
+    <span class="formula">cos θ = adjacent / hypotenuse</span><br>
+    <span class="formula">tan θ = opposite / adjacent</span><br><br>
+    <strong>Sine Rule:</strong> a/sin A = b/sin B = c/sin C = 2R<br>
+    <strong>Cosine Rule:</strong> a² = b² + c² − 2bc cos A<br>
+    <strong>Area:</strong> ½ab sin C<br><br>
+    <strong>Special angles:</strong><br>
+    sin 30° = ½, sin 45° = 1/√2, sin 60° = √3/2<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Always label the triangle first. Identify which side is opposite, adjacent, hypotenuse relative to the angle given.</div>`
+  },
+
+  'geometry-circle': {
+    patterns: ['circle theorem','angle at centre','cyclic quadrilateral','tangent','chord','alternate segment'],
+    response: `<strong>Circle Theorems</strong><br><br>
+    <strong>1. Angle at centre = 2 × angle at circumference</strong><br>
+    <strong>2. Angle in semicircle = 90°</strong><br>
+    <strong>3. Angles in same segment are equal</strong><br>
+    <strong>4. Cyclic quadrilateral: opposite angles = 180°</strong><br>
+    <strong>5. Tangent ⊥ radius at point of contact</strong><br>
+    <strong>6. Tangent lengths from external point are equal</strong><br>
+    <strong>7. Alternate segment theorem:</strong> Angle between tangent and chord = angle in alternate segment<br>
+    <strong>8. Intersecting chords: PA × PB = PC × PD</strong><br><br>
+    <span class="formula">Circumference = 2πr = πd</span><br>
+    <span class="formula">Area = πr²</span><br>
+    <span class="formula">Arc length = (θ/360) × 2πr</span><br>
+    <span class="formula">Sector area = (θ/360) × πr²</span><br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Draw the diagram and identify which theorem applies. Always state the theorem by name.</div>`
+  },
+
+  // ICT
+  'ict-hardware': {
+    patterns: ['cpu','ram','rom','hard disk','input device','output device','fetch decode execute','motherboard'],
+    response: `<strong>Computer Hardware</strong><br><br>
+    <strong>CPU (Central Processing Unit):</strong><br>
+    - ALU: Performs arithmetic and logic operations<br>
+    - CU: Controls instruction execution<br>
+    - Registers: Small fast storage within CPU<br>
+    - Fetch-Decode-Execute cycle<br><br>
+    <strong>Memory:</strong><br>
+    - RAM: Volatile; stores running programs and data
+    - ROM: Non-volatile; stores BIOS/boot instructions
+    - Cache: L1, L2, L3 — faster but smaller than RAM<br><br>
+    <strong>Storage:</strong><br>
+    - Magnetic: Hard disk — high capacity, mechanical
+    - Optical: CD/DVD/Blu-ray — removable
+    - Solid State: SSD/flash — no moving parts, faster, expensive<br><br>
+    <strong>Input devices:</strong> Keyboard, mouse, scanner, microphone, webcam, barcode reader<br>
+    <strong>Output devices:</strong> Monitor, printer, speakers, projector, actuator<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Know the difference between RAM and ROM. RAM is volatile (lost when power off); ROM is non-volatile (permanent).</div>`
+  },
+
+  'ict-networks': {
+    patterns: ['lan','wan','wifi','router','switch','firewall','encryption','malware','phishing','ddos','vpn'],
+    response: `<strong>Networks & Security</strong><br><br>
+    <strong>Network types:</strong><br>
+    - LAN: Local Area Network (home, school, office)
+    - WAN: Wide Area Network (spans cities/countries; internet is largest WAN)
+    - WLAN: Wireless LAN (WiFi)<br><br>
+    <strong>Network hardware:</strong><br>
+    - Router: Connects networks; directs traffic using IP addresses
+    - Switch: Connects devices within LAN efficiently
+    - Hub: Broadcasts to all devices (wasteful)
+    - Modem: Converts digital/analogue signals<br><br>
+    <strong>Security threats:</strong><br>
+    - Malware: Viruses, worms, trojans, ransomware, spyware
+    - Phishing: Fake emails/websites to steal credentials
+    - DDoS: Overwhelming server with traffic<br><br>
+    <strong>Protection measures:</strong><br>
+    - Firewall: Filters network traffic
+    - Encryption: SSL/TLS for websites; scrambles data
+    - Authentication: Passwords, 2FA, biometrics
+    - VPN: Encrypted tunnel for secure remote access<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> A firewall blocks unauthorised access; encryption protects data even if intercepted.</div>`
+  },
+
+  'ict-programming': {
+    patterns: ['algorithm','pseudocode','flowchart','variable','loop','if statement','array','function','oop','object oriented'],
+    response: `<strong>Programming Concepts</strong><br><br>
+    <strong>Algorithm:</strong> Step-by-step solution to a problem<br>
+    <strong>Pseudocode:</strong> Informal language to describe algorithms<br>
+    <strong>Flowchart symbols:</strong> Oval (start/end), Rectangle (process), Diamond (decision), Parallelogram (input/output)<br><br>
+    <strong>Control structures:</strong><br>
+    - Sequence: Instructions in order
+    - Selection: IF...THEN...ELSE, CASE/SWITCH
+    - Iteration: FOR, WHILE, REPEAT...UNTIL<br><br>
+    <strong>Data types:</strong><br>
+    - Integer: Whole numbers
+    - Real/Float: Decimal numbers
+    - String: Text
+    - Boolean: True/False<br><br>
+    <strong>Data structures:</strong><br>
+    - Array: Collection of same-type elements
+    - 2D Array: Table (rows and columns)<br><br>
+    <strong>OOP concepts:</strong><br>
+    - Class: Blueprint for objects
+    - Object: Instance of a class
+    - Inheritance: Child class inherits from parent
+    - Encapsulation: Data hiding<br><br>
+    <div class="exam-tip-box"><strong>Exam tip:</strong> Trace through loops manually. Write down variable values after each iteration.</div>`
+  },
+
   'fallback': {
     response: `I don't have a specific answer for that in my knowledge base. Try asking about:<br><br>
     <ul>
-    <li>A specific topic (e.g., "Explain photosynthesis", "What is PED?")</li>
-    <li>A formula or equation</li>
+    <li>A specific topic (e.g., "Explain photosynthesis", "What is PED?", "How did Hitler rise to power?")</li>
+    <li>A formula or equation (e.g., "Pythagoras theorem", "Circle theorems")</li>
     <li>Exam tips for a subject</li>
     <li>How to revise effectively</li>
+    <li>Zetrix AI Academy content</li>
     </ul>
     Or select a subject from the buttons above and ask a focused question!`
   }
