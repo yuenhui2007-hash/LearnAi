@@ -76,7 +76,11 @@
 document.getElementById('loginForm').addEventListener('submit', function(e) {
 e.preventDefault();
 var result = Auth.login(document.getElementById('email').value, document.getElementById('password').value);
-if (result.success) window.location.href = 'dashboard.html';
+if (result.success) {
+  var params = new URLSearchParams(window.location.search);
+  var redirect = params.get('redirect') || 'dashboard.html';
+  window.location.href = redirect;
+}
 else { document.getElementById('error').textContent = result.error; document.getElementById('error').style.display = 'block'; }
 });
 </script>
