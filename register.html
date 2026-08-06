@@ -6,8 +6,8 @@
 <title>Sign Up — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=3">
-<link rel="stylesheet" href="css/znotes-style.css?v=3">
+<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/znotes-style.css?v=4">
 <style>
 .auth-section { padding: 120px 0 60px; background: #0f172a; min-height: 100vh; }
 .auth-container { max-width: 420px; margin: 0 auto; padding: 0 20px; }
@@ -41,8 +41,8 @@
 <p class="auth-subtitle">Join LearnAI — it's free</p>
 <div class="demo-note">🔒 All data stays in your browser. No server.</div>
 <div class="social-login">
-<button class="btn btn-social" onclick="alert('Google sign-up coming soon')">🔴 Continue with Google</button>
-<button class="btn btn-social" onclick="alert('Apple sign-up coming soon')">⚫ Continue with Apple</button>
+<button class="btn btn-social" onclick="redirectToGoogleLogin()">🔴 Continue with Google</button>
+<button class="btn btn-social" onclick="redirectToAppleLogin()">⚫ Continue with Apple</button>
 </div>
 <div class="divider">or</div>
 <form id="registerForm">
@@ -61,7 +61,8 @@
 </div>
 </div>
 </section>
-<script src="js/auth.js?v=3"></script>
+<script src="js/oauth.js"></script>
+<script src="js/auth.js?v=4"></script>
 <script>
 document.getElementById('registerForm').addEventListener('submit', function(e) {
 e.preventDefault();

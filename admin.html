@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding:40px 20px}
+h1{color:#fff;margin-bottom:8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:16px;padding:24px;margin-bottom:24px}
+.card h2{color:#fff;margin-bottom:16px;font-size:1.1rem}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:12px;text-align:left;border-bottom:1px solid #334155}
+th{color:#94a3b8;font-weight:600}
+tr:hover{background:#334155}
+.empty{color:#64748b;text-align:center;padding:24px}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:600}
+.badge-green{background:#064e3b;color:#34d399}
+.badge-yellow{background:#713f12;color:#facc15}
+.badge-gray{background:#1e293b;color:#94a3b8;border:1px solid #334155}
+.tabs{display:flex;gap:8px;margin-bottom:24px}
+.tab{padding:10px 20px;border-radius:10px;background:#1e293b;border:none;color:#94a3b8;cursor:pointer;font-weight:600}
+.tab.active{background:#6366f1;color:#fff}
+.hidden{display:none}
+.nav-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;color:#6366f1;font-weight:600;text-decoration:none}
+.nav-back:hover{color:#818cf8}
+</style>
+</head>
+<body>
+<a href="index.html" class="nav-back">← Back to LearnAI</a>
+<h1>LearnAI Admin</h1>
+<p class="sub">View all users and their activity</p>
+
+<div class="tabs">
+<button class="tab active" onclick="showTab('users')">Users</button>
+<button class="tab" onclick="showTab('progress')">Progress</button>
+</div>
+
+<div id="usersTab" class="card">
+<h2>Registered Users (<span id="userCount">0</span>)</h2>
+<div id="userTable"></div>
+</div>
+
+<div id="progressTab" class="card hidden">
+<h2>Topic Progress (<span id="progressCount">0</span>)</h2>
+<div id="progressTable"></div>
+</div>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('usersTab').classList.toggle('hidden',name!=='users');
+  document.getElementById('progressTab').classList.toggle('hidden',name!=='progress');
+}
+
+// Determine API base URL
+var API_BASE = '';
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  API_BASE = 'http://localhost:3000';
+}
+
+fetch(API_BASE + '/api/admin/users').then(r=>r.json()).then(d=>{
+  document.getElementById('userCount').textContent=d.count||0;
+  var el=document.getElementById('userTable');
+  if(!d.users||d.users.length===0){el.innerHTML='<p class="empty">No users yet</p>';return;}
+  el.innerHTML='<table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Plan</th><th>Joined</th></tr></thead><tbody>'+
+    d.users.map(u=>'<tr><td>'+u.id+'</td><td>'+(u.name||'-')+'</td><td>'+u.email+'</td><td><span class="badge badge-'+(u.subscription==='premium'?'green':u.subscription==='standard'?'yellow':'gray')+'">'+(u.subscription||'free')+'</span></td><td>'+new Date(u.createdAt).toLocaleDateString()+'</td></tr>').join('')+
+    '</tbody></table>';
+}).catch(err=>{
+  document.getElementById('userTable').innerHTML='<p class="empty">Error loading users: '+err.message+'</p>';
+});
+
+fetch(API_BASE + '/api/admin/progress').then(r=>r.json()).then(d=>{
+  document.getElementById('progressCount').textContent=d.count||0;
+  var el=document.getElementById('progressTable');
+  if(!d.progress||d.progress.length===0){el.innerHTML='<p class="empty">No progress yet</p>';return;}
+  el.innerHTML='<table><thead><tr><th>User</th><th>Subject</th><th>Topic</th><th>Status</th><th>Date</th></tr></thead><tbody>'+
+    d.progress.map(p=>'<tr><td>'+(p.userName||p.userEmail||p.userId)+'</td><td>'+p.subject+'</td><td>'+p.topicId+'</td><td>'+(p.completed?'<span class="badge badge-green">Done</span>':'<span class="badge badge-gray">Not done</span>')+'</td><td>'+(p.completedAt?new Date(p.completedAt).toLocaleDateString():'-')+'</td></tr>').join('')+
+    '</tbody></table>';
+}).catch(err=>{
+  document.getElementById('progressTable').innerHTML='<p class="empty">Error loading progress: '+err.message+'</p>';
+});
+</script>
+</body>
+</html>
