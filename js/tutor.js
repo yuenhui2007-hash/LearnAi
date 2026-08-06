@@ -1176,6 +1176,18 @@ function hideTyping() {
 function getLocalResponse(text) {
   const lower = text.toLowerCase();
 
+  // ===== MATH CALCULATOR =====
+  const mathResult = tryCalculate(text);
+  if (mathResult !== null) {
+    return `<h4>Calculation</h4><div class="formula-block">${text} = <strong>${mathResult}</strong></div>`;
+  }
+
+  // ===== GENERAL KNOWLEDGE =====
+  const generalAnswer = tryGeneralKnowledge(text);
+  if (generalAnswer !== null) {
+    return generalAnswer;
+  }
+
   if (knowledgeBase.greetings.patterns.some(p => lower.includes(p))) {
     return knowledgeBase.greetings.response;
   }
@@ -1236,6 +1248,112 @@ function generatePracticeQuestion() {
 <p><em>Hint: ${q.hint}</em></p>
 <p><span class="chip" onclick="this.nextElementSibling.style.display='block';this.style.display='none'" style="cursor:pointer;display:inline-block;margin-top:8px;">Show Answer</span>
 <span style="display:none"><strong>Answer:</strong> ${q.a}</span></p>`;
+}
+
+// ===== MATH CALCULATOR =====
+function tryCalculate(text) {
+  // Clean the text: remove common words, keep only math expression
+  let expr = text
+    .replace(/what is|what's|calculate|compute|solve|find|value of/gi, '')
+    .replace(/\?/g, '')
+    .trim();
+
+  // Only try if it looks like a math expression (contains digits and operators)
+  if (!/^[-+*/^().\d\s]+$/.test(expr)) return null;
+  if (!/\d/.test(expr)) return null;
+
+  try {
+    // Replace ^ with ** for exponentiation
+    expr = expr.replace(/\^/g, '**');
+    // Safe eval using Function constructor
+    const result = new Function('return (' + expr + ')')();
+    if (Number.isFinite(result)) {
+      // Format nicely
+      if (Number.isInteger(result)) return String(result);
+      return String(parseFloat(result.toFixed(6)));
+    }
+  } catch (e) {
+    // Not a valid expression
+  }
+  return null;
+}
+
+// ===== GENERAL KNOWLEDGE =====
+function tryGeneralKnowledge(text) {
+  const lower = text.toLowerCase().replace(/[?!.]/g, '').trim();
+
+  const knowledge = {
+    // Math basics
+    '1+2': '1 + 2 = <strong>3</strong>',
+    '2+2': '2 + 2 = <strong>4</strong>',
+    '3+3': '3 + 3 = <strong>6</strong>',
+    '4+4': '4 + 4 = <strong>8</strong>',
+    '5+5': '5 + 5 = <strong>10</strong>',
+    '10+10': '10 + 10 = <strong>20</strong>',
+    'pi': 'π (pi) ≈ <strong>3.14159...</strong> It is the ratio of a circle\'s circumference to its diameter.',
+    'what is pi': 'π (pi) ≈ <strong>3.14159...</strong> It is the ratio of a circle\'s circumference to its diameter.',
+    'square root of 16': '√16 = <strong>4</strong>',
+    'square root of 25': '√25 = <strong>5</strong>',
+    'square root of 64': '√64 = <strong>8</strong>',
+
+    // Time / Date
+    'what time is it': `Right now it is approximately <strong>${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</strong> (UTC).`,
+    'what day is it': `Today is <strong>${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</strong>.`,
+    'what day is it today': `Today is <strong>${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</strong>.`,
+    'what is the date': `Today is <strong>${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</strong>.`,
+    'what is the date today': `Today is <strong>${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</strong>.`,
+
+    // Weather (generic — no real-time data)
+    'what is the weather': 'I don\'t have access to real-time weather data. Try checking <a href="https://wttr.in" target="_blank">wttr.in</a> or your phone\'s weather app! I can help you with your studies though — what subject are you working on?',
+    'what is the weather like': 'I don\'t have access to real-time weather data. Try checking <a href="https://wttr.in" target="_blank">wttr.in</a> or your phone\'s weather app! I can help you with your studies though — what subject are you working on?',
+    'how is the weather': 'I don\'t have access to real-time weather data. Try checking <a href="https://wttr.in" target="_blank">wttr.in</a> or your phone\'s weather app! I can help you with your studies though — what subject are you working on?',
+
+    // Restaurants (generic)
+    'good restaurants': 'I can\'t browse real-time restaurant reviews, but I recommend checking <strong>Google Maps</strong>, <strong>TripAdvisor</strong>, or <strong>Yelp</strong> for top-rated places near you. Want help with a subject instead?',
+    'what restaurants are good': 'I can\'t browse real-time restaurant reviews, but I recommend checking <strong>Google Maps</strong>, <strong>TripAdvisor</strong>, or <strong>Yelp</strong> for top-rated places near you. Want help with a subject instead?',
+    'where should i eat': 'I recommend checking <strong>Google Maps</strong> or <strong>GrabFood/Foodpanda</strong> for options near you. Want help with a subject instead?',
+
+    // News (generic)
+    'what is the news': 'I don\'t have access to live news. Check <a href="https://news.google.com" target="_blank">Google News</a> or <a href="https://bbc.com" target="_blank">BBC</a> for the latest updates. Want to study instead?',
+    'what is happening in the world': 'I don\'t have access to live news. Check <a href="https://news.google.com" target="_blank">Google News</a> or <a href="https://bbc.com" target="_blank">BBC</a> for the latest updates. Want to study instead?',
+    'latest news': 'I don\'t have access to live news. Check <a href="https://news.google.com" target="_blank">Google News</a> or <a href="https://bbc.com" target="_blank">BBC</a> for the latest updates. Want to study instead?',
+
+    // General facts
+    'capital of france': 'The capital of France is <strong>Paris</strong>.',
+    'capital of japan': 'The capital of Japan is <strong>Tokyo</strong>.',
+    'capital of usa': 'The capital of the United States is <strong>Washington, D.C.</strong>',
+    'capital of uk': 'The capital of the United Kingdom is <strong>London</strong>.',
+    'capital of china': 'The capital of China is <strong>Beijing</strong>.',
+    'capital of india': 'The capital of India is <strong>New Delhi</strong>.',
+    'who invented the telephone': 'The telephone was invented by <strong>Alexander Graham Bell</strong> in 1876.',
+    'who invented the light bulb': 'The practical incandescent light bulb was developed by <strong>Thomas Edison</strong> in 1879.',
+    'who wrote romeo and juliet': '<strong>William Shakespeare</strong> wrote <em>Romeo and Juliet</em> around 1594–1596.',
+    'who wrote hamlet': '<strong>William Shakespeare</strong> wrote <em>Hamlet</em> around 1599–1601.',
+    'who painted the mona lisa': 'The Mona Lisa was painted by <strong>Leonardo da Vinci</strong> between 1503 and 1519.',
+    'how many continents are there': 'There are <strong>7 continents</strong>: Africa, Antarctica, Asia, Europe, North America, Oceania, and South America.',
+    'how many planets are in the solar system': 'There are <strong>8 planets</strong> in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.',
+    'what is the largest planet': '<strong>Jupiter</strong> is the largest planet in our solar system.',
+    'what is the smallest planet': '<strong>Mercury</strong> is the smallest planet in our solar system.',
+    'what is the speed of light': 'The speed of light in a vacuum is approximately <strong>3.00 × 10⁸ m/s</strong> (about 300,000 km/s).',
+    'what is the boiling point of water': 'The boiling point of water is <strong>100°C (212°F)</strong> at standard atmospheric pressure (1 atm).',
+    'what is the freezing point of water': 'The freezing point of water is <strong>0°C (32°F)</strong> at standard atmospheric pressure.',
+    'who is the president of the united states': 'As of my knowledge, you can check the latest at <a href="https://whitehouse.gov" target="_blank">whitehouse.gov</a>.',
+    'who is the prime minister of uk': 'As of my knowledge, you can check the latest at <a href="https://gov.uk" target="_blank">gov.uk</a>.',
+  };
+
+  // Exact match first
+  if (knowledge[lower]) {
+    return `<h4>Answer</h4><p>${knowledge[lower]}</p>`;
+  }
+
+  // Check for partial matches
+  for (const [key, value] of Object.entries(knowledge)) {
+    if (lower.includes(key)) {
+      return `<h4>Answer</h4><p>${value}</p>`;
+    }
+  }
+
+  return null;
 }
 
 document.addEventListener('DOMContentLoaded', initTutor);
