@@ -8,6 +8,8 @@ const studyPlans = new Map();
 const sessions = new Map();
 const analytics = new Map();
 const workbooks = new Map();
+const activityLogs = new Map();
+const academyProgress = new Map();
 
 // Seed demo user
 users.set('demo-user-1', {
@@ -21,4 +23,4 @@ users.set('demo-user-1', {
     createdAt: new Date().toISOString()
 });
 
-module.exports = { users, materials, studyPlans, sessions, analytics, workbooks };
+module.exports = { users, materials, studyPlans, sessions, analytics, workbooks, activityLogs, academyProgress };

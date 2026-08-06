@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
-const { users } = require('../config/database');
+const { users, activityLogs } = require('../config/database');
 const { generateToken } = require('../middleware/auth');
 const router = express.Router();
 
@@ -19,6 +19,16 @@ router.post('/register', async (req, res) => {
     const user = { id, email, name, role, password: hashedPassword, createdAt: new Date().toISOString() };
     users.set(id, user);
 
+    // Log registration activity
+    activityLogs.set(uuidv4(), {
+        userId: id,
+        userName: name,
+        userEmail: email,
+        action: 'register',
+        timestamp: new Date().toISOString(),
+        ip: req.ip || req.connection.remoteAddress
+    });
+
     const token = generateToken(user);
     res.status(201).json({ token, user: { id, email, name, role } });
 });
@@ -32,8 +42,34 @@ router.post('/login', async (req, res) => {
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) return res.status(401).json({ error: 'Invalid credentials' });
 
+    // Log login activity
+    activityLogs.set(uuidv4(), {
+        userId: user.id,
+        userName: user.name,
+        userEmail: user.email,
+        action: 'login',
+        timestamp: new Date().toISOString(),
+        ip: req.ip || req.connection.remoteAddress
+    });
+
     const token = generateToken(user);
     res.json({ token, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
+});
+
+// Logout (track activity)
+router.post('/logout', (req, res) => {
+    const { userId, userName, userEmail } = req.body;
+    if (userId) {
+        activityLogs.set(uuidv4(), {
+            userId,
+            userName: userName || 'Unknown',
+            userEmail: userEmail || 'Unknown',
+            action: 'logout',
+            timestamp: new Date().toISOString(),
+            ip: req.ip || req.connection.remoteAddress
+        });
+    }
+    res.json({ success: true, message: 'Logged out' });
 });
 
 module.exports = router;

@@ -3,87 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — LearnAI</title>
+<title>Admin Dashboard — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding:40px 20px}
-h1{color:#fff;margin-bottom:8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:16px;padding:24px;margin-bottom:24px}
-.card h2{color:#fff;margin-bottom:16px;font-size:1.1rem}
-table{width:100%;border-collapse:collapse;font-size:.9rem}
-th,td{padding:12px;text-align:left;border-bottom:1px solid #334155}
-th{color:#94a3b8;font-weight:600}
-tr:hover{background:#334155}
-.empty{color:#64748b;text-align:center;padding:24px}
-.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:600}
-.badge-green{background:#064e3b;color:#34d399}
-.badge-yellow{background:#713f12;color:#facc15}
-.badge-gray{background:#1e293b;color:#94a3b8;border:1px solid #334155}
-.tabs{display:flex;gap:8px;margin-bottom:24px}
-.tab{padding:10px 20px;border-radius:10px;background:#1e293b;border:none;color:#94a3b8;cursor:pointer;font-weight:600}
-.tab.active{background:#6366f1;color:#fff}
-.hidden{display:none}
-.nav-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;color:#6366f1;font-weight:600;text-decoration:none}
+body{font-family:Inter,system-ui,sans-serif;background:#0a0f1c;color:#e2e8f0;min-height:100vh;overflow-x:hidden}
+
+/* Animated background */
+.bg-mesh{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.6}
+.bg-mesh::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 40%,rgba(99,102,241,.15),transparent),radial-gradient(ellipse 60% 40% at 80% 60%,rgba(139,92,246,.12),transparent),radial-gradient(ellipse 50% 50% at 50% 100%,rgba(16,185,129,.08),transparent)}
+
+/* Floating particles */
+.particle{position:fixed;border-radius:50%;background:rgba(99,102,241,.25);pointer-events:none;z-index:1}
+@keyframes floatParticle{0%{transform:translateY(110vh) translateX(0);opacity:0}10%{opacity:.3}90%{opacity:.3}100%{transform:translateY(-10vh) translateX(20px);opacity:0}}
+
+/* Layout */
+.container{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:32px 24px}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+.header-left{display:flex;align-items:center;gap:16px}
+.header h1{color:#fff;font-size:1.6rem;font-weight:800}
+.header .sub{color:#94a3b8;font-size:.9rem}
+.live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.15);color:#34d399;padding:6px 14px;border-radius:50px;font-size:.75rem;font-weight:700;border:1px solid rgba(16,185,129,.3)}
+.live-badge::before{content:'';width:8px;height:8px;background:#34d399;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+/* Nav back */
+.nav-back{display:inline-flex;align-items:center;gap:8px;color:#6366f1;font-weight:600;text-decoration:none;font-size:.9rem;transition:color .2s}
 .nav-back:hover{color:#818cf8}
+
+/* Stats cards */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px}
+.stat-card{background:linear-gradient(135deg,rgba(30,41,59,.8) 0%,rgba(15,23,42,.8) 100%);border:1px solid rgba(99,102,241,.2);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(10px);transition:all .3s ease;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6366f1,#8b5cf6);opacity:0;transition:opacity .3s}
+.stat-card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.4);box-shadow:0 8px 32px rgba(99,102,241,.15)}
+.stat-card:hover::before{opacity:1}
+.stat-card .icon{font-size:1.8rem;margin-bottom:8px}
+.stat-card .value{font-size:2rem;font-weight:800;color:#fff;line-height:1}
+.stat-card .label{font-size:.8rem;color:#94a3b8;margin-top:4px}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tab{padding:10px 20px;border-radius:12px;background:rgba(30,41,59,.6);border:1px solid rgba(99,102,241,.1);color:#94a3b8;cursor:pointer;font-weight:600;font-size:.88rem;transition:all .3s;backdrop-filter:blur(10px)}
+.tab:hover{border-color:rgba(99,102,241,.3);color:#cbd5e1}
+.tab.active{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-color:transparent;box-shadow:0 4px 16px rgba(99,102,241,.3)}
+
+/* Cards */
+.card{background:linear-gradient(135deg,rgba(30,41,59,.7) 0%,rgba(15,23,42,.7) 100%);border:1px solid rgba(99,102,241,.15);border-radius:20px;padding:24px;backdrop-filter:blur(10px);transition:all .3s}
+.card:hover{border-color:rgba(99,102,241,.3)}
+.card h2{color:#fff;margin-bottom:16px;font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:8px}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:12px 14px;text-align:left}
+th{color:#94a3b8;font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid rgba(99,102,241,.2)}
+td{border-bottom:1px solid rgba(99,102,241,.08);color:#cbd5e1}
+tr{transition:background .2s}
+tr:hover{background:rgba(99,102,241,.08)}
+.empty{color:#64748b;text-align:center;padding:40px;font-style:italic}
+
+/* Badges */
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
+.badge-green{background:rgba(6,78,59,.5);color:#34d399;border:1px solid rgba(16,185,129,.3)}
+.badge-yellow{background:rgba(113,63,18,.5);color:#facc15;border:1px solid rgba(250,204,21,.3)}
+.badge-blue{background:rgba(30,58,138,.5);color:#60a5fa;border:1px solid rgba(96,165,250,.3)}
+.badge-gray{background:rgba(30,41,59,.8);color:#94a3b8;border:1px solid rgba(148,163,184,.2)}
+.badge-red{background:rgba(127,29,29,.5);color:#f87171;border:1px solid rgba(248,113,113,.3)}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(99,102,241,.3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(99,102,241,.5)}
+
+/* Animations */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeInUp .5s ease forwards}
+.hidden{display:none}
+
+/* Responsive */
+@media (max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}.header h1{font-size:1.3rem}th,td{padding:8px;font-size:.8rem}}
 </style>
 </head>
 <body>
+<div class="bg-mesh"></div>
+
+<script>
+(function(){
+for(let i=0;i<20;i++){
+const p=document.createElement('div');
+p.className='particle';
+p.style.width=(Math.random()*4+2)+'px';
+p.style.height=p.style.width;
+p.style.left=Math.random()*100+'vw';
+p.style.animationDuration=(Math.random()*15+10)+'s';
+p.style.animationDelay=(Math.random()*10)+'s';
+p.style.animation='floatParticle '+p.style.animationDuration+' linear infinite '+p.style.animationDelay;
+document.body.appendChild(p);
+}
+})();
+</script>
+
+<div class="container">
+<div class="header fade-in">
+<div class="header-left">
 <a href="index.html" class="nav-back">← Back to LearnAI</a>
-<h1>LearnAI Admin</h1>
-<p class="sub">View all users and their activity</p>
-
-<div class="tabs">
-<button class="tab active" onclick="showTab('users')">Users</button>
-<button class="tab" onclick="showTab('progress')">Progress</button>
+<div>
+<h1>Admin Dashboard</h1>
+<p class="sub">Monitor users, academy progress, and platform activity</p>
+</div>
+</div>
+<span class="live-badge">● Live</span>
 </div>
 
-<div id="usersTab" class="card">
-<h2>Registered Users (<span id="userCount">0</span>)</h2>
-<div id="userTable"></div>
+<!-- Stats -->
+<div class="stats-grid fade-in" id="statsGrid" style="animation-delay:.1s">
+<div class="stat-card"><div class="icon">👥</div><div class="value" id="statUsers">0</div><div class="label">Total Users</div></div>
+<div class="stat-card"><div class="icon">🔑</div><div class="value" id="statLogins">0</div><div class="label">Total Logins</div></div>
+<div class="stat-card"><div class="icon">🚪</div><div class="value" id="statLogouts">0</div><div class="label">Total Logouts</div></div>
+<div class="stat-card"><div class="icon">📅</div><div class="value" id="statTodayLogins">0</div><div class="label">Logins Today</div></div>
+<div class="stat-card"><div class="icon">🎓</div><div class="value" id="statTodayReg">0</div><div class="label">Registrations Today</div></div>
+<div class="stat-card"><div class="icon">🟢</div><div class="value" id="statActive">0</div><div class="label">Active Now</div></div>
 </div>
 
-<div id="progressTab" class="card hidden">
-<h2>Topic Progress (<span id="progressCount">0</span>)</h2>
-<div id="progressTable"></div>
+<!-- Tabs -->
+<div class="tabs fade-in" style="animation-delay:.2s">
+<button class="tab active" onclick="showTab('users')">👥 Users</button>
+<button class="tab" onclick="showTab('academy')">🎓 Academy Progress</button>
+<button class="tab" onclick="showTab('activity')">📋 Activity Log</button>
+</div>
+
+<!-- Users Tab -->
+<div id="usersTab" class="card fade-in" style="animation-delay:.3s">
+<h2>Registered Users <span id="userCount" style="color:#94a3b8;font-size:.9rem">(0)</span></h2>
+<div id="userTable"><p class="empty">Loading users...</p></div>
+</div>
+
+<!-- Academy Progress Tab -->
+<div id="academyTab" class="card hidden fade-in">
+<h2>AI Academy Progress <span id="academyCount" style="color:#94a3b8;font-size:.9rem">(0)</span></h2>
+<div id="academyTable"><p class="empty">Loading academy progress...</p></div>
+</div>
+
+<!-- Activity Log Tab -->
+<div id="activityTab" class="card hidden fade-in">
+<h2>Sign In / Sign Out Activity <span id="activityCount" style="color:#94a3b8;font-size:.9rem">(0)</span></h2>
+<div id="activityTable"><p class="empty">Loading activity logs...</p></div>
+</div>
+
 </div>
 
 <script>
+// Determine API base URL
+var API_BASE = '';
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  API_BASE = 'http://localhost:10000';
+}
+
 function showTab(name){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   event.target.classList.add('active');
   document.getElementById('usersTab').classList.toggle('hidden',name!=='users');
-  document.getElementById('progressTab').classList.toggle('hidden',name!=='progress');
+  document.getElementById('academyTab').classList.toggle('hidden',name!=='academy');
+  document.getElementById('activityTab').classList.toggle('hidden',name!=='activity');
 }
 
-// Determine API base URL
-var API_BASE = '';
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-  API_BASE = 'http://localhost:3000';
-}
+// Load stats
+fetch(API_BASE + '/api/admin/stats').then(r=>r.json()).then(d=>{
+  if(d.success && d.stats){
+    document.getElementById('statUsers').textContent = d.stats.totalUsers || 0;
+    document.getElementById('statLogins').textContent = d.stats.totalLogins || 0;
+    document.getElementById('statLogouts').textContent = d.stats.totalLogouts || 0;
+    document.getElementById('statTodayLogins').textContent = d.stats.todayLogins || 0;
+    document.getElementById('statTodayReg').textContent = d.stats.todayRegistrations || 0;
+    document.getElementById('statActive').textContent = d.stats.activeNow || 0;
+  }
+}).catch(()=>{});
 
+// Load users
 fetch(API_BASE + '/api/admin/users').then(r=>r.json()).then(d=>{
-  document.getElementById('userCount').textContent=d.count||0;
-  var el=document.getElementById('userTable');
-  if(!d.users||d.users.length===0){el.innerHTML='<p class="empty">No users yet</p>';return;}
-  el.innerHTML='<table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Plan</th><th>Joined</th></tr></thead><tbody>'+
-    d.users.map(u=>'<tr><td>'+u.id+'</td><td>'+(u.name||'-')+'</td><td>'+u.email+'</td><td><span class="badge badge-'+(u.subscription==='premium'?'green':u.subscription==='standard'?'yellow':'gray')+'">'+(u.subscription||'free')+'</span></td><td>'+new Date(u.createdAt).toLocaleDateString()+'</td></tr>').join('')+
+  document.getElementById('userCount').textContent = '(' + (d.count||0) + ')';
+  var el = document.getElementById('userTable');
+  if(!d.users || d.users.length===0){el.innerHTML='<p class="empty">No users yet</p>';return;}
+  el.innerHTML = '<table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Plan</th><th>Role</th><th>Joined</th></tr></thead><tbody>' +
+    d.users.map(u=>'<tr><td>'+u.id.substring(0,8)+'...</td><td>'+(u.name||'-')+'</td><td>'+u.email+'</td><td><span class="badge badge-'+(u.subscription==='premium'?'green':u.subscription==='standard'?'yellow':'gray')+'">'+(u.subscription||'free')+'</span></td><td><span class="badge badge-blue">'+(u.role||'student')+'</span></td><td>'+new Date(u.createdAt).toLocaleDateString()+'</td></tr>').join('') +
     '</tbody></table>';
 }).catch(err=>{
-  document.getElementById('userTable').innerHTML='<p class="empty">Error loading users: '+err.message+'</p>';
+  document.getElementById('userTable').innerHTML='<p class="empty">Error loading users: '+(err.message||'Server unavailable')+'</p>';
 });
 
-fetch(API_BASE + '/api/admin/progress').then(r=>r.json()).then(d=>{
-  document.getElementById('progressCount').textContent=d.count||0;
-  var el=document.getElementById('progressTable');
-  if(!d.progress||d.progress.length===0){el.innerHTML='<p class="empty">No progress yet</p>';return;}
-  el.innerHTML='<table><thead><tr><th>User</th><th>Subject</th><th>Topic</th><th>Status</th><th>Date</th></tr></thead><tbody>'+
-    d.progress.map(p=>'<tr><td>'+(p.userName||p.userEmail||p.userId)+'</td><td>'+p.subject+'</td><td>'+p.topicId+'</td><td>'+(p.completed?'<span class="badge badge-green">Done</span>':'<span class="badge badge-gray">Not done</span>')+'</td><td>'+(p.completedAt?new Date(p.completedAt).toLocaleDateString():'-')+'</td></tr>').join('')+
+// Load academy progress
+fetch(API_BASE + '/api/admin/academy-progress').then(r=>r.json()).then(d=>{
+  document.getElementById('academyCount').textContent = '(' + (d.count||0) + ')';
+  var el = document.getElementById('academyTable');
+  if(!d.academyProgress || d.academyProgress.length===0){
+    el.innerHTML='<p class="empty">No academy progress yet. Students will appear here once they start the AI Academy courses.</p>';
+    return;
+  }
+  el.innerHTML = '<table><thead><tr><th>Student</th><th>Email</th><th>Current Level</th><th>Modules Done</th><th>Quiz Avg</th><th>Last Active</th><th>Status</th></tr></thead><tbody>' +
+    d.academyProgress.map(p=>'<tr><td>'+(p.userName||'Unknown')+'</td><td>'+(p.userEmail||'-')+'</td><td>Level '+p.level+' — '+p.levelName+'</td><td>'+(p.completedModules?p.completedModules.length:0)+'</td><td>'+(p.totalScore||0)+'%</td><td>'+(p.lastActive?new Date(p.lastActive).toLocaleDateString():'-')+'</td><td><span class="badge badge-'+(p.completedAll?'green':'yellow')+'">'+(p.completedAll?'Certified':'In Progress')+'</span></td></tr>').join('') +
     '</tbody></table>';
 }).catch(err=>{
-  document.getElementById('progressTable').innerHTML='<p class="empty">Error loading progress: '+err.message+'</p>';
+  document.getElementById('academyTable').innerHTML='<p class="empty">Error loading academy progress: '+(err.message||'Server unavailable')+'</p>';
+});
+
+// Load activity logs
+fetch(API_BASE + '/api/admin/activity-logs').then(r=>r.json()).then(d=>{
+  document.getElementById('activityCount').textContent = '(' + (d.count||0) + ')';
+  var el = document.getElementById('activityTable');
+  if(!d.logs || d.logs.length===0){
+    el.innerHTML='<p class="empty">No activity logs yet. Login and logout events will appear here.</p>';
+    return;
+  }
+  el.innerHTML = '<table><thead><tr><th>Time</th><th>User</th><th>Email</th><th>Action</th><th>IP Address</th></tr></thead><tbody>' +
+    d.logs.map(l=>'<tr><td>'+new Date(l.timestamp).toLocaleString()+'</td><td>'+(l.userName||'Unknown')+'</td><td>'+(l.userEmail||'-')+'</td><td><span class="badge badge-'+(l.action==='login'?'green':l.action==='logout'?'red':l.action==='register'?'blue':'gray')+'">'+l.action.toUpperCase()+'</span></td><td>'+(l.ip||'-')+'</td></tr>').join('') +
+    '</tbody></table>';
+}).catch(err=>{
+  document.getElementById('activityTable').innerHTML='<p class="empty">Error loading activity logs: '+(err.message||'Server unavailable')+'</p>';
 });
 </script>
 </body>
