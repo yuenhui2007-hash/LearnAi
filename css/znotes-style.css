@@ -193,3 +193,34 @@
     bottom: 80px;
   }
 }
+
+/* External Resources section */
+.external-resources {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+  border-left: 4px solid #3b82f6;
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+  margin: 24px 0;
+}
+.external-resources h4 {
+  color: #1e40af;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+.external-resources ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.external-resources li {
+  margin-bottom: 8px;
+  color: #1e3a5f;
+  line-height: 1.6;
+}
+.external-resources a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+.external-resources a:hover {
+  text-decoration: underline;
+}
