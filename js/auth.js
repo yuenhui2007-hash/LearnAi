@@ -15,7 +15,7 @@ window.Auth = {
     if (!user) return { success: false, error: 'Invalid email or password.' };
     localStorage.setItem(AUTH_KEY, JSON.stringify(user)); return { success: true, user: user };
   },
-  logout: function() { localStorage.removeItem(AUTH_KEY); window.location.href = 'index.html'; },
+  logout: function() { localStorage.removeItem(AUTH_KEY); localStorage.removeItem('auth_token'); window.location.href = 'index.html'; },
   getUser: function() { var d = localStorage.getItem(AUTH_KEY); return d ? JSON.parse(d) : null; },
   updateNav: function() {
     var user = this.getUser();

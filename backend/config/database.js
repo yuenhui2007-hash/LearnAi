@@ -10,6 +10,7 @@ const analytics = new Map();
 const workbooks = new Map();
 const activityLogs = new Map();
 const academyProgress = new Map();
+const certificates = new Map();
 
 // Seed demo user
 users.set('demo-user-1', {

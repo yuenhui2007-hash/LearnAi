@@ -80,10 +80,22 @@
 <script src="js/oauth.js"></script>
 <script src="js/auth.js?v=4"></script>
 <script>
-document.getElementById('registerForm').addEventListener('submit', function(e) {
+document.getElementById('registerForm').addEventListener('submit', async function(e) {
 e.preventDefault();
-var result = Auth.register(document.getElementById('email').value, document.getElementById('password').value, document.getElementById('name').value);
+var name = document.getElementById('name').value;
+var email = document.getElementById('email').value;
+var password = document.getElementById('password').value;
+var result = Auth.register(email, password, name);
 if (result.success) {
+  try {
+    var apiBase = window.location.origin.includes('localhost') ? 'http://localhost:10000/api' : window.location.origin + '/api';
+    var res = await fetch(apiBase + '/auth/register', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({email: email, password: password, name: name})
+    });
+    var data = await res.json();
+    if (data.token) localStorage.setItem('auth_token', data.token);
+  } catch(err) { console.log('API register skipped (offline)'); }
   var params = new URLSearchParams(window.location.search);
   var redirect = params.get('redirect') || 'dashboard.html';
   window.location.href = redirect;

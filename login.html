@@ -76,10 +76,21 @@
 <script src="js/oauth.js"></script>
 <script src="js/auth.js?v=4"></script>
 <script>
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
 e.preventDefault();
-var result = Auth.login(document.getElementById('email').value, document.getElementById('password').value);
+var email = document.getElementById('email').value;
+var password = document.getElementById('password').value;
+var result = Auth.login(email, password);
 if (result.success) {
+  try {
+    var apiBase = window.location.origin.includes('localhost') ? 'http://localhost:10000/api' : window.location.origin + '/api';
+    var res = await fetch(apiBase + '/auth/login', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({email: email, password: password})
+    });
+    var data = await res.json();
+    if (data.token) localStorage.setItem('auth_token', data.token);
+  } catch(err) { console.log('API login skipped (offline)'); }
   var params = new URLSearchParams(window.location.search);
   var redirect = params.get('redirect') || 'dashboard.html';
   window.location.href = redirect;

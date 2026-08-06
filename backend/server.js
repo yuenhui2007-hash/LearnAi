@@ -31,6 +31,7 @@ app.use('/api/tutor', require('./routes/tutor'));
 app.use('/api/analytics', require('./routes/analytics'));
 app.use('/api/workbooks', require('./routes/workbooks'));
 app.use('/api/admin', require('./routes/admin'));
+app.use('/api/certificates', require('./routes/certificates'));
 
 // Health check
 app.get('/api/health', (req, res) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 const { authenticate } = require('../middleware/auth');
-const { studyPlans, users } = require('../config/database');
+const { studyPlans, users, academyProgress } = require('../config/database');
 const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 
@@ -36,6 +36,23 @@ router.get('/progress', authenticate, (req, res) => {
         totalStudyTime: 0,
         topicsCompleted: 0
     });
+});
+
+// POST /api/study/academy-progress — sync academy level completion
+router.post('/academy-progress', authenticate, (req, res) => {
+    const { level, score, completed } = req.body;
+    const userId = req.user.id;
+    let progress = academyProgress.get(userId);
+    if (!progress) progress = {};
+    progress[level] = { completed: !!completed, score: score || 0, date: new Date().toISOString() };
+    academyProgress.set(userId, progress);
+    res.json({ success: true, level, completed: !!completed });
+});
+
+// GET /api/study/academy-progress — get academy progress
+router.get('/academy-progress', authenticate, (req, res) => {
+    const progress = academyProgress.get(req.user.id) || {};
+    res.json({ success: true, progress });
 });
 
 module.exports = router;
