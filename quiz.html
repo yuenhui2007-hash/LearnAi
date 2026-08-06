@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/znotes-style.css?v=5">
+<style>
+.quiz-container { max-width: 800px; margin: 0 auto; padding: 120px 24px 60px; }
+.quiz-card { background: var(--white); padding: 40px; border-radius: var(--radius-xl); box-shadow: var(--shadow); margin-bottom: 24px; }
+.quiz-header { text-align: center; margin-bottom: 40px; }
+.quiz-header h1 { font-size: 2rem; margin-bottom: 8px; }
+.subject-select { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+.subject-btn { padding: 16px; border: 2px solid var(--gray-light); background: var(--white); border-radius: var(--radius-lg); cursor: pointer; transition: var(--transition); text-align: center; font-weight: 600; }
+.subject-btn:hover, .subject-btn.active { border-color: var(--primary); background: rgba(99,102,241,0.05); color: var(--primary); }
+.question-box { margin-bottom: 32px; }
+.question-box h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--dark); }
+.option { display: block; padding: 14px 20px; margin-bottom: 10px; border: 2px solid var(--gray-light); border-radius: var(--radius); cursor: pointer; transition: var(--transition); background: var(--white); }
+.option:hover { border-color: var(--primary); background: rgba(99,102,241,0.03); }
+.option.correct { border-color: var(--accent); background: rgba(16,185,129,0.1); }
+.option.wrong { border-color: #ef4444; background: rgba(239,68,68,0.1); }
+.option.disabled { pointer-events: none; opacity: 0.7; }
+.explanation { display: none; margin-top: 16px; padding: 16px; background: var(--light); border-radius: var(--radius); border-left: 4px solid var(--primary); }
+.explanation.show { display: block; }
+.quiz-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+.progress-bar-quiz { height: 8px; background: var(--gray-light); border-radius: 50px; overflow: hidden; margin-bottom: 24px; }
+.progress-fill-quiz { height: 100%; background: var(--gradient-1); border-radius: 50px; transition: width 0.3s; }
+.score-display { text-align: center; padding: 40px; }
+.score-display h2 { font-size: 3rem; color: var(--primary); margin-bottom: 16px; }
+.review-item { margin-bottom: 20px; padding: 20px; background: var(--light); border-radius: var(--radius-lg); }
+.review-item.correct { border-left: 4px solid var(--accent); }
+.review-item.wrong { border-left: 4px solid #ef4444; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="subjects.html" class="nav-link">Subjects</a></li><li><a href="quiz.html" class="nav-link active">Quiz</a></li><li><a href="flashcards.html" class="nav-link">Flashcards</a></li><li><a href="mock-exam.html" class="nav-link">Mock Exam</a></li><li><a href="ai-marker.html" class="nav-link">AI Marker</a></li><li><a href="quiz.html" class="nav-link">Quiz</a></li><li><a href="flashcards.html" class="nav-link">Flashcards</a></li><li><a href="mock-exam.html" class="nav-link">Mock Exam</a></li><li><a href="ai-marker.html" class="nav-link">AI Marker</a></li><li><a href="tutor.html" class="nav-link">AI Tutor</a></li><li><a href="dashboard.html" class="nav-link">My Progress</a></li><li id="navAuth"></li></ul></div></nav>
+
+<section class="quiz-container">
+<div class="quiz-header">
+<h1>📝 Subject Quiz</h1>
+<p>Test your knowledge with multiple-choice questions</p>
+</div>
+
+<div id="quiz-setup" class="quiz-card">
+<h3>Select a Subject</h3>
+<div class="subject-select" id="subjectSelect"></div>
+<button class="btn btn-primary" id="startQuiz" onclick="startQuiz()" disabled>Start Quiz</button>
+</div>
+
+<div id="quiz-area" class="quiz-card" style="display:none;">
+<div class="progress-bar-quiz"><div class="progress-fill-quiz" id="quizProgress" style="width:0%"></div></div>
+<div id="questionContainer"></div>
+<div class="quiz-controls">
+<button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()">← Previous</button>
+<span id="questionCounter">1 / 5</span>
+<button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+</div>
+</div>
+
+<div id="quiz-results" class="quiz-card" style="display:none;">
+<div class="score-display">
+<h2 id="scorePercent">0%</h2>
+<p id="scoreText">0 / 0 correct</p>
+</div>
+<div id="reviewContainer"></div>
+<button class="btn btn-primary" onclick="resetQuiz()">Try Another Subject</button>
+</div>
+</section>
+
+<script src="js/auth.js?v=5"></script>
+<script src="js/quiz-data.js?v=5"></script>
+<script src="js/quiz.js?v=5"></script>
+<script src="js/mascot.js?v=5"></script>
+</body>
+</html>

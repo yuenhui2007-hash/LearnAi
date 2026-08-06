@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Marker — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=5">
+<style>
+.marker-container { max-width: 900px; margin: 0 auto; padding: 120px 24px 60px; }
+.marker-card { background: var(--white); padding: 40px; border-radius: var(--radius-xl); box-shadow: var(--shadow); margin-bottom: 24px; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 8px; }
+.input-group input, .input-group textarea, .input-group select { width: 100%; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: var(--radius); font-family: inherit; font-size: 0.95rem; }
+.input-group textarea { min-height: 150px; resize: vertical; }
+.input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: var(--primary); }
+.mark-result { margin-top: 24px; padding: 24px; background: var(--light); border-radius: var(--radius-lg); }
+.mark-result h3 { color: var(--primary); margin-bottom: 12px; }
+.mark-section { margin-bottom: 16px; padding: 16px; background: var(--white); border-radius: var(--radius); border-left: 4px solid var(--primary); }
+.mark-section h4 { font-size: 1rem; margin-bottom: 8px; }
+.mark-section p { color: var(--dark-light); font-size: 0.95rem; line-height: 1.7; }
+.band-badge { display: inline-block; padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
+.band-a { background: #dcfce7; color: #166534; }
+.band-b { background: #dbeafe; color: #1e40af; }
+.band-c { background: #fef3c7; color: #92400e; }
+.band-d { background: #fee2e2; color: #991b1b; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="subjects.html" class="nav-link">Subjects</a></li><li><a href="quiz.html" class="nav-link">Quiz</a></li><li><a href="flashcards.html" class="nav-link">Flashcards</a></li><li><a href="mock-exam.html" class="nav-link">Mock Exam</a></li><li><a href="ai-marker.html" class="nav-link active">AI Marker</a></li><li><a href="quiz.html" class="nav-link">Quiz</a></li><li><a href="flashcards.html" class="nav-link">Flashcards</a></li><li><a href="mock-exam.html" class="nav-link">Mock Exam</a></li><li><a href="ai-marker.html" class="nav-link">AI Marker</a></li><li><a href="tutor.html" class="nav-link">AI Tutor</a></li><li><a href="dashboard.html" class="nav-link">My Progress</a></li><li id="navAuth"></li></ul></div></nav>
+
+<section class="marker-container">
+<div class="marker-card">
+<h1>🤖 AI Marker</h1>
+<p>Get instant feedback on your essay answers. Paste your response and the question for AI-powered marking.</p>
+
+<div class="input-group">
+<label>Subject</label>
+<select id="markerSubject">
+<option value="">Select Subject</option>
+<option value="physics">Physics</option>
+<option value="chemistry">Chemistry</option>
+<option value="biology">Biology</option>
+<option value="maths">Mathematics</option>
+<option value="economics">Economics</option>
+<option value="geography">Geography</option>
+<option value="history">History</option>
+<option value="ict">ICT</option>
+<option value="english">English</option>
+<option value="psychology">Psychology</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Question</label>
+<textarea id="markerQuestion" placeholder="Paste the exam question here..."></textarea>
+</div>
+
+<div class="input-group">
+<label>Your Answer</label>
+<textarea id="markerAnswer" placeholder="Paste your answer here..."></textarea>
+</div>
+
+<div class="input-group">
+<label>Total Marks Available</label>
+<input type="number" id="markerMarks" value="10" min="1" max="50">
+</div>
+
+<button class="btn btn-primary btn-lg" onclick="markAnswer()" id="markBtn">Mark My Answer</button>
+
+<div id="markerResult"></div>
+</div>
+</section>
+
+<script src="js/auth.js?v=5"></script>
+<script src="js/ai-marker.js?v=5"></script>
+<script src="js/mascot.js?v=5"></script>
+</body>
+</html>
