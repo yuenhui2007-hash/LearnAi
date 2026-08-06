@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loci & Constructions — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=3">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=geometry" class="back-btn">← Back to Geometry</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS Level</span><span class="level-badge badge-a2">A2 Level</span></div>
+<h1>Loci & Constructions</h1>
+<p style="color:var(--gray)">Geometry G6</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Definition of a Locus</h3>
+<p>A <strong>locus</strong> (plural: loci) is the set of all points satisfying a given condition. In IGCSE, loci are typically in 2D.</p>
+
+<h3>1.2 Standard Loci</h3>
+<ul>
+<li><strong>Locus of points equidistant from a fixed point:</strong> A circle with the fixed point as centre.</li>
+<li><strong>Locus of points equidistant from two fixed points:</strong> The perpendicular bisector of the line segment joining them.</li>
+<li><strong>Locus of points equidistant from two intersecting lines:</strong> The pair of angle bisectors.</li>
+<li><strong>Locus of points at a fixed distance from a line:</strong> Two parallel lines, one on each side of the given line.</li>
+<li><strong>Locus of points equidistant from a point and a line:</strong> A parabola.</li>
+</ul>
+
+<h3>1.3 Ruler and Compass Constructions</h3>
+<p>All IGCSE constructions use only an unmarked ruler and compasses:</p>
+<ul>
+<li><strong>Perpendicular bisector of AB:</strong> With centres A and B, draw equal arcs (radius > ½AB) intersecting at P and Q. Line PQ is the perpendicular bisector.</li>
+<li><strong>Angle bisector of ∠ABC:</strong> With centre B, draw arc cutting BA at P and BC at Q. With centres P and Q, draw equal arcs intersecting at R. Line BR bisects the angle.</li>
+<li><strong>Perpendicular from point P to line l:</strong> With centre P, draw arc cutting l at A and B. Construct perpendicular bisector of AB.</li>
+<li><strong>Perpendicular at point P on line l:</strong> With centre P, draw arc cutting l at A and B. Construct perpendicular bisector of AB.</li>
+<li><strong>Copy an angle:</strong> Given ∠ABC, draw ray PQ. With centre B, draw arc cutting BA at D and BC at E. With same radius, centre P, draw arc cutting PQ at R. Measure DE with compasses, mark point S on arc from R. Line PS makes the copied angle.</li>
+<li><strong>Construct 60° angle:</strong> Draw AB. With centres A and B, radius AB, draw arcs intersecting at C. Then ∠CAB = 60°.</li>
+<li><strong>Construct 90° angle:</strong> Construct perpendicular bisector or use the fact that angle in semicircle is 90°.</li>
+</ul>
+
+<h3>1.4 Worked Example — Locus Problem</h3>
+<p><strong>Problem:</strong> Points A and B are 8 cm apart. Shade the region of points that are:
+(a) less than 5 cm from A, and
+(b) nearer to A than to B.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>(a) Interior of circle centre A, radius 5 cm.</li>
+<li>(b) Region on A's side of perpendicular bisector of AB.</li>
+<li>The required region is the intersection: the part of the circle interior that lies on A's side of the perpendicular bisector.</li>
+</ul>
+
+<h3>1.5 Construction of Triangles</h3>
+<p>Given various combinations (SSS, SAS, ASA, RHS), construct the triangle using ruler and compasses. For SSA (ambiguous case), there may be two possible triangles.</p>
+</div>
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 Locus as Algebraic Equation</h3>
+<p>In coordinate geometry, a locus can be described by an equation.</p>
+<ul>
+<li>Locus equidistant from (a, b) and (c, d): perpendicular bisector, linear equation.</li>
+<li>Locus equidistant from origin: x² + y² = r² (circle).</li>
+<li>Locus equidistant from point (0, p) and line y = −p: x² = 4py (parabola).</li>
+</ul>
+
+<h3>2.2 Derivation of Parabola as Locus</h3>
+<p><strong>Definition:</strong> A parabola is the locus of points equidistant from a fixed point (focus) and a fixed line (directrix).</p>
+<p>Let focus be S(a, 0) and directrix be x = −a.</p>
+<p>For point P(x, y): PS = PM (where M is foot of perpendicular from P to directrix).</p>
+<p>√[(x−a)² + y²] = x + a</p>
+<p>Squaring: (x−a)² + y² = (x+a)²</p>
+<p>x² − 2ax + a² + y² = x² + 2ax + a²</p>
+<p>y² = 4ax</p>
+<div class="formula-box">Standard parabola: y² = 4ax (focus at (a,0), directrix x = −a)</div>
+
+<h3>2.3 Locus Problems with Circles</h3>
+<p><strong>Problem:</strong> Find the locus of point P such that ∠APB = 90° where A = (−2, 0) and B = (2, 0).</p>
+<p><strong>Solution:</strong></p>
+<p>Since angle in semicircle = 90°, P lies on circle with AB as diameter.</p>
+<p>Centre = (0, 0), radius = 2.</p>
+<p>Equation: x² + y² = 4 (excluding points A and B themselves).</p>
+
+<h3>2.4 Parametric Loci</h3>
+<p>A locus may be given parametrically. Eliminate the parameter to find the Cartesian equation.</p>
+<p><strong>Example:</strong> x = t + 1, y = t². Eliminating t: y = (x − 1)². This is a parabola with vertex at (1, 0).</p>
+</div>
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Conic Sections as Loci</h3>
+<p>All conic sections can be defined as loci involving a focus and directrix:</p>
+<div class="formula-box">Locus: PS = e × PM
+where e = eccentricity, S = focus, M = foot of perpendicular to directrix.</div>
+<ul>
+<li>e < 1: Ellipse</li>
+<li>e = 1: Parabola</li>
+<li>e > 1: Hyperbola</li>
+</ul>
+
+<h3>3.2 Ellipse as Locus</h3>
+<p>Standard ellipse: x²/a² + y²/b² = 1 (a > b)</p>
+<div class="formula-box">Foci: (±ae, 0) where e = √(1 − b²/a²)
+Directrices: x = ±a/e
+Sum of distances from foci = 2a</div>
+
+<h3>3.3 Hyperbola as Locus</h3>
+<p>Standard hyperbola: x²/a² − y²/b² = 1</p>
+<div class="formula-box">Foci: (±ae, 0) where e = √(1 + b²/a²)
+Directrices: x = ±a/e
+Difference of distances from foci = 2a
+Asymptotes: y = ±(b/a)x</div>
+
+<h3>3.4 Loci in 3D</h3>
+<ul>
+<li><strong>Locus equidistant from a point:</strong> Sphere.</li>
+<li><strong>Locus equidistant from two points:</strong> Plane (perpendicular bisector plane).</li>
+<li><strong>Locus equidistant from a point and plane:</strong> Paraboloid.</li>
+<li><strong>Locus equidistant from two intersecting planes:</strong> Pair of planes (angle bisectors).</li>
+</ul>
+
+<h3>3.5 Complex Number Loci</h3>
+<p>For complex number z = x + iy:</p>
+<div class="formula-box">|z − z₁| = r: Circle centre z₁, radius r
+|z − z₁| = |z − z₂|: Perpendicular bisector of z₁z₂
+|z − z₁| + |z − z₂| = 2a: Ellipse with foci z₁, z₂
+arg(z − z₁) = θ: Ray from z₁ at angle θ</div>
+</div>
+<div class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Locus = set of points satisfying a condition</strong></li>
+<li><strong>Equidistant from point:</strong> circle (sphere in 3D)</li>
+<li><strong>Equidistant from two points:</strong> perpendicular bisector (plane in 3D)</li>
+<li><strong>Equidistant from two lines:</strong> angle bisectors</li>
+<li><strong>Equidistant from point and line:</strong> parabola</li>
+<li><strong>Constructions:</strong> perpendicular bisector, angle bisector, copy angle, 60°, perpendicular from/to point</li>
+<li><strong>Parabola:</strong> y² = 4ax, focus (a,0), directrix x = −a</li>
+<li><strong>Ellipse:</strong> x²/a² + y²/b² = 1, foci (±ae,0), e = √(1−b²/a²)</li>
+<li><strong>Hyperbola:</strong> x²/a² − y²/b² = 1, foci (±ae,0), e = √(1+b²/a²)</li>
+<li><strong>Complex loci:</strong> |z−z₁|=r (circle), |z−z₁|=|z−z₂| (perp. bisector), arg(z−z₁)=θ (ray)</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/auth.js?v=3"></script><script src="../js/app.js?v=3"></script>
+</body></html>

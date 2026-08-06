@@ -4,6 +4,59 @@
  * AS/A2 flags indicate A-Level topic classification.
  */
 window.Subjects = {
+    history: {
+        name: 'History',
+        code: '9389 (A-Level) · 0470 (IGCSE)',
+        icon: '🏛️',
+        topics: [
+            { id: 'h1', title: 'The Origins of World War I, 1871–1914', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h2', title: 'The Holocaust', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h3', title: 'The Cold War in Europe, 1941–1995', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h4', title: 'The Cold War in Asia, 1945–1991', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h5', title: 'Civil Rights in the USA, 1863–1968', alevel: true, igcse: true, as: false, a2: true },
+            { id: 'h6', title: 'International History, 1945–1991', alevel: true, igcse: true, as: false, a2: true },
+            { id: 'h7', title: 'The French Revolution, 1774–1794', alevel: true, igcse: false, as: false, a2: true },
+            { id: 'h8', title: 'Hitler\'s Germany, 1929–1947', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h9', title: 'Stalin\'s Russia, 1924–1953', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h10', title: 'Britain, 1918–1951', alevel: true, igcse: true, as: false, a2: true },
+            { id: 'h11', title: 'The Origins of the Civil War in the USA', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'h12', title: 'International Relations, 1871–1945', alevel: true, igcse: true, as: true, a2: false }
+        ]
+    },
+    geometry: {
+        name: 'Geometry',
+        code: '9709 (A-Level) · 0580 (IGCSE)',
+        icon: '📐',
+        topics: [
+            { id: 'g1', title: 'Euclidean Geometry Fundamentals', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g2', title: 'Angles, Parallel Lines & Polygons', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g3', title: 'Congruence & Similarity', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g4', title: 'Pythagoras & Trigonometry in 2D/3D', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g5', title: 'Circles: Theorems & Properties', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g6', title: 'Loci & Constructions', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g7', title: 'Vectors in Geometry', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'g8', title: 'Transformations & Matrices', alevel: true, igcse: true, as: false, a2: true },
+            { id: 'g9', title: 'Coordinate Geometry of Circles & Parabolas', alevel: true, igcse: false, as: false, a2: true },
+            { id: 'g10', title: '3D Geometry & Mensuration', alevel: true, igcse: true, as: true, a2: false }
+        ]
+    },
+    ict: {
+        name: 'Information & Communication Technology',
+        code: '9626 (A-Level) · 0417 (IGCSE)',
+        icon: '💻',
+        topics: [
+            { id: 'i1', title: 'Computer Systems & Hardware', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i2', title: 'Networks, Internet & Security', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i3', title: 'Data Representation & Binary', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i4', title: 'Software, OS & Applications', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i5', title: 'Databases & Data Management', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i6', title: 'Web Design & HTML/CSS', alevel: true, igcse: true, as: false, a2: true },
+            { id: 'i7', title: 'Spreadsheets, Word Processing & Presentation', alevel: true, igcse: true, as: false, a2: true },
+            { id: 'i8', title: 'Programming Concepts & Algorithms', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i9', title: 'Impact of ICT on Society', alevel: true, igcse: true, as: true, a2: false },
+            { id: 'i10', title: 'Emerging Technologies & AI', alevel: true, igcse: true, as: false, a2: true }
+        ]
+    },
     physics: {
         name: 'Physics',
         code: '9702 (A-Level) · 0625 (IGCSE)',
