@@ -160,6 +160,8 @@ document.body.appendChild(p);
 var API_BASE = '';
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
   API_BASE = 'http://localhost:10000';
+} else if (window.location.hostname.includes('github.io')) {
+  API_BASE = 'https://learnai-ci7h.onrender.com';
 }
 
 function showTab(name){
