@@ -2,7 +2,7 @@
 // Tries Cloudflare Worker first (real AI), falls back to built-in knowledge base.
 // Set your Worker URL below after deployment.
 
-const API_URL = ''; // <-- PASTE YOUR CLOUDFLARE WORKER URL HERE, e.g. 'https://learnai-tutor.yourname.workers.dev'
+const API_URL = 'https://round-breeze-1dcc.m-14324261.workers.dev';, e.g. 'https://learnai-tutor.yourname.workers.dev'
 
 const SYSTEM_PROMPT = `You are the LearnAI Tutor, an expert Cambridge A-Level and IGCSE tutor.
 Rules:
