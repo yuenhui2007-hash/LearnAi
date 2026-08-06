@@ -62,7 +62,14 @@
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+      <li class="nav-dropdown">
+          <a href="subjects.html" class="nav-link nav-dropdown-toggle">Subjects</a>
+          <div class="nav-dropdown-menu">
+            <a href="subjects.html?board=caie" class="nav-link">CAIE</a>
+            <a href="subjects.html?board=edexcel" class="nav-link">Edexcel</a>
+            <a href="subjects.html?board=ib" class="nav-link">IB</a>
+          </div>
+        </li>
       <li><a href="tutor.html" class="nav-link">AI Tutor</a></li>
       <li><a href="academy.html" class="nav-link">AI Academy</a></li>
       <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
