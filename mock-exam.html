@@ -2,87 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mock Exam — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=5">
-<style>
-.mock-container { max-width: 900px; margin: 0 auto; padding: 120px 24px 60px; }
-.mock-card { background: var(--white); padding: 40px; border-radius: var(--radius-xl); box-shadow: var(--shadow); margin-bottom: 24px; }
-.timer { position: fixed; top: 80px; right: 20px; background: var(--dark); color: var(--white); padding: 12px 20px; border-radius: var(--radius); font-weight: 700; font-size: 1.2rem; z-index: 100; }
-.timer.warning { background: #ef4444; animation: pulse 1s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
-.question-block { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--gray-light); }
-.question-block h4 { font-size: 1.1rem; margin-bottom: 12px; color: var(--dark); }
-.question-block .marks { color: var(--gray); font-size: 0.85rem; margin-bottom: 12px; }
-.question-block textarea { width: 100%; min-height: 120px; padding: 12px; border: 2px solid var(--gray-light); border-radius: var(--radius); font-family: inherit; font-size: 0.95rem; resize: vertical; }
-.question-block textarea:focus { outline: none; border-color: var(--primary); }
-.exam-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-.exam-info { background: var(--light); padding: 16px 20px; border-radius: var(--radius); margin-bottom: 24px; }
-.exam-info p { margin: 4px 0; font-size: 0.9rem; color: var(--dark-light); }
-</style>
+<meta http-equiv="refresh" content="0; url=exam-practice.html">
+<title>Redirecting...</title>
 </head>
 <body>
-<nav class="navbar"><div class="container nav-container"><a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="subjects.html" class="nav-link">Subjects</a></li><li><a href="quiz.html" class="nav-link">Quiz</a></li><li><a href="flashcards.html" class="nav-link">Flashcards</a></li><li><a href="mock-exam.html" class="nav-link active">Mock Exam</a></li><li><a href="ai-marker.html" class="nav-link">AI Marker</a></li><li><a href="quiz.html" class="nav-link">Quiz</a></li><li><a href="flashcards.html" class="nav-link">Flashcards</a></li><li><a href="mock-exam.html" class="nav-link">Mock Exam</a></li><li><a href="ai-marker.html" class="nav-link">AI Marker</a></li><li><a href="tutor.html" class="nav-link">AI Tutor</a></li><li><a href="dashboard.html" class="nav-link">My Progress</a></li><li id="navAuth"></li></ul></div></nav>
-
-<div class="timer" id="examTimer" style="display:none;">60:00</div>
-
-<section class="mock-container">
-<div id="mock-setup" class="mock-card">
-<h1>📝 Mock Exam Creator</h1>
-<p>Generate a timed practice exam with structured questions</p>
-<div style="margin: 24px 0;">
-<label style="display:block;margin-bottom:8px;font-weight:600;">Subject</label>
-<select id="mockSubject" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;min-width:250px;">
-<option value="">Select Subject</option>
-</select>
-</div>
-<div style="margin: 24px 0;">
-<label style="display:block;margin-bottom:8px;font-weight:600;">Duration</label>
-<select id="mockDuration" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;">
-<option value="30">30 minutes</option>
-<option value="60" selected>60 minutes</option>
-<option value="90">90 minutes</option>
-<option value="120">120 minutes</option>
-</select>
-</div>
-<div style="margin: 24px 0;">
-<label style="display:block;margin-bottom:8px;font-weight:600;">Number of Questions</label>
-<select id="mockCount" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;">
-<option value="3">3 questions</option>
-<option value="5" selected>5 questions</option>
-<option value="8">8 questions</option>
-<option value="10">10 questions</option>
-</select>
-</div>
-<button class="btn btn-primary btn-lg" onclick="startMockExam()">Start Mock Exam</button>
-</div>
-
-<div id="mock-exam-area" style="display:none;">
-<div class="mock-card">
-<div class="exam-header"><h2 id="examTitle">Mock Exam</h2><span id="examInfo"></span></div>
-<div class="exam-info">
-<p><strong>Instructions:</strong> Answer all questions in the spaces provided. Show all working. Manage your time carefully.</p>
-<p><strong>Total marks:</strong> <span id="totalMarks">0</span></p>
-</div>
-<div id="questionsContainer"></div>
-<div style="text-align:center;margin-top:32px;">
-<button class="btn btn-primary btn-lg" onclick="submitMockExam()">Submit Exam</button>
-</div>
-</div>
-</div>
-
-<div id="mock-results" class="mock-card" style="display:none;">
-<h2>Exam Submitted</h2>
-<p>Your answers have been saved. Use the <a href="ai-marker.html">AI Marker</a> to get detailed feedback on your responses.</p>
-<div id="savedAnswers" style="margin:24px 0;"></div>
-<button class="btn btn-primary" onclick="resetMockExam()">Create New Exam</button>
-</div>
-</section>
-
-<script src="js/auth.js?v=5"></script>
-<script src="js/mock-exam.js?v=5"></script>
-<script src="js/mascot.js?v=5"></script>
+<p>Redirecting to <a href="exam-practice.html">Exam Practice</a>...</p>
 </body>
 </html>

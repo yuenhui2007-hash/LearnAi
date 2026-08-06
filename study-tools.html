@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Tools — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=6">
+<style>
+.study-container { max-width: 800px; margin: 0 auto; padding: 120px 24px 60px; }
+.study-card { background: var(--white); padding: 40px; border-radius: var(--radius-xl); box-shadow: var(--shadow); margin-bottom: 24px; }
+
+/* Tabs */
+.tab-bar { display: flex; gap: 4px; margin-bottom: 32px; border-bottom: 2px solid var(--gray-light); }
+.tab-btn { padding: 12px 24px; font-weight: 600; font-size: 0.95rem; color: var(--gray); background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: var(--transition); margin-bottom: -2px; }
+.tab-btn:hover { color: var(--primary); }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Quiz */
+.quiz-header { text-align: center; margin-bottom: 40px; }
+.quiz-header h1 { font-size: 2rem; margin-bottom: 8px; }
+.subject-select { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+.subject-btn { padding: 16px; border: 2px solid var(--gray-light); background: var(--white); border-radius: var(--radius-lg); cursor: pointer; transition: var(--transition); text-align: center; font-weight: 600; }
+.subject-btn:hover, .subject-btn.active { border-color: var(--primary); background: rgba(99,102,241,0.05); color: var(--primary); }
+.question-box { margin-bottom: 32px; }
+.question-box h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--dark); }
+.option { display: block; padding: 14px 20px; margin-bottom: 10px; border: 2px solid var(--gray-light); border-radius: var(--radius); cursor: pointer; transition: var(--transition); background: var(--white); }
+.option:hover { border-color: var(--primary); background: rgba(99,102,241,0.03); }
+.option.correct { border-color: var(--accent); background: rgba(16,185,129,0.1); }
+.option.wrong { border-color: #ef4444; background: rgba(239,68,68,0.1); }
+.option.disabled { pointer-events: none; opacity: 0.7; }
+.explanation { display: none; margin-top: 16px; padding: 16px; background: var(--light); border-radius: var(--radius); border-left: 4px solid var(--primary); }
+.explanation.show { display: block; }
+.quiz-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+.progress-bar-quiz { height: 8px; background: var(--gray-light); border-radius: 50px; overflow: hidden; margin-bottom: 24px; }
+.progress-fill-quiz { height: 100%; background: var(--gradient-1); border-radius: 50px; transition: width 0.3s; }
+.score-display { text-align: center; padding: 40px; }
+.score-display h2 { font-size: 3rem; color: var(--primary); margin-bottom: 16px; }
+.review-item { margin-bottom: 20px; padding: 20px; background: var(--light); border-radius: var(--radius-lg); }
+.review-item.correct { border-left: 4px solid var(--accent); }
+.review-item.wrong { border-left: 4px solid #ef4444; }
+
+/* Flashcards */
+.flash-card { background: var(--white); width: 100%; min-height: 320px; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; cursor: pointer; transition: transform 0.4s, box-shadow 0.3s; position: relative; }
+.flash-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+.flash-card.flipped .front { display: none; }
+.flash-card.flipped .back { display: block; }
+.flash-card .back { display: none; }
+.flash-card .front h3 { font-size: 1.5rem; color: var(--dark); }
+.flash-card .back h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 16px; }
+.flash-card .back p { font-size: 1.1rem; color: var(--dark-light); line-height: 1.7; }
+.flash-hint { position: absolute; bottom: 16px; font-size: 0.8rem; color: var(--gray); }
+.flash-controls { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
+.flash-controls button { padding: 12px 28px; border-radius: var(--radius); font-weight: 600; border: 2px solid var(--gray-light); background: var(--white); cursor: pointer; transition: var(--transition); }
+.flash-controls button:hover { border-color: var(--primary); color: var(--primary); }
+.flash-controls .btn-know { border-color: var(--accent); color: var(--accent); }
+.flash-controls .btn-dont { border-color: #ef4444; color: #ef4444; }
+.flash-stats { display: flex; justify-content: center; gap: 40px; margin-top: 20px; color: var(--gray); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+                <li><a href="study-tools.html" class="nav-link active">Study</a></li>
+                <li><a href="exam-practice.html" class="nav-link">Practice</a></li>
+                <li><a href="tutor.html" class="nav-link">Tutor</a></li>
+                <li><a href="dashboard.html" class="nav-link">Progress</a></li>
+                <li id="navAuth"><a href="login.html" class="nav-link">Sign In</a></li>
+            </ul>
+  </div>
+</nav>
+
+<section class="study-container">
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('quiz')">📝 Quiz</button>
+    <button class="tab-btn" onclick="switchTab('flashcards')">🗂️ Flashcards</button>
+  </div>
+
+  <!-- Quiz Panel -->
+  <div class="tab-panel active" id="tab-quiz">
+    <div class="study-card">
+      <div class="quiz-header">
+        <h1>Subject Quiz</h1>
+        <p>Test your knowledge with multiple-choice questions</p>
+      </div>
+
+      <div id="quiz-setup">
+        <h3 style="margin-bottom:16px">Select a Subject</h3>
+        <div class="subject-select" id="subjectSelect"></div>
+        <button class="btn btn-primary" id="startQuiz" onclick="startQuiz()" disabled>Start Quiz</button>
+      </div>
+
+      <div id="quiz-area" style="display:none;">
+        <div class="progress-bar-quiz"><div class="progress-fill-quiz" id="quizProgress" style="width:0%"></div></div>
+        <div id="questionContainer"></div>
+        <div class="quiz-controls">
+          <button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()">← Previous</button>
+          <span id="questionCounter">1 / 5</span>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <div id="quiz-results" style="display:none;">
+        <div class="score-display">
+          <h2 id="scorePercent">0%</h2>
+          <p id="scoreText">0 / 0 correct</p>
+        </div>
+        <div id="reviewContainer"></div>
+        <button class="btn btn-primary" onclick="resetQuiz()" style="margin-top:24px">Try Another Subject</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flashcards Panel -->
+  <div class="tab-panel" id="tab-flashcards">
+    <div class="study-card" style="text-align:center;">
+      <h1 style="margin-bottom:8px">Flashcards</h1>
+      <p style="color:var(--gray);margin-bottom:32px">Click card to flip. Mark known or needs review.</p>
+
+      <div id="flash-setup" style="margin-bottom:32px;">
+        <select id="flashSubject" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;min-width:200px;">
+          <option value="">Select Subject</option>
+        </select>
+        <button class="btn btn-primary" onclick="startFlashcards()" style="margin-left:12px;">Start</button>
+      </div>
+
+      <div id="flash-area" style="display:none;">
+        <div class="flash-card" id="flashCard" onclick="flipCard()">
+          <div class="front"><h3 id="flashQ">Question</h3><span class="flash-hint">Click to reveal answer</span></div>
+          <div class="back"><h3>Answer</h3><p id="flashA">Answer text</p><span class="flash-hint">Click to see question</span></div>
+        </div>
+        <div class="flash-controls">
+          <button class="btn-dont" onclick="markCard(false)">🔄 Review Again</button>
+          <button class="btn-know" onclick="markCard(true)">✅ I Know This</button>
+        </div>
+        <div class="flash-stats">
+          <span>Card <span id="cardNum">1</span> / <span id="cardTotal">10</span></span>
+          <span>Known: <span id="knownCount">0</span></span>
+          <span>Review: <span id="reviewCount">0</span></span>
+        </div>
+      </div>
+
+      <div id="flash-complete" style="display:none;text-align:center;padding:40px;background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow);">
+        <h2>Deck Complete!</h2>
+        <p id="flashResult" style="font-size:1.2rem;margin:20px 0;"></p>
+        <button class="btn btn-primary" onclick="resetFlashcards()">Study Again</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="js/auth.js?v=6"></script>
+<script src="js/quiz-data.js?v=6"></script>
+<script src="js/quiz.js?v=6"></script>
+<script src="js/flashcards.js?v=6"></script>
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.tab-btn[onclick="switchTab(\'' + name + '\')"]').classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+</script>
+<script src="js/mascot.js?v=6"></script>
+</body>
+</html>

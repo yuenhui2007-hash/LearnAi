@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Practice — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=6">
+<style>
+.exam-container { max-width: 900px; margin: 0 auto; padding: 120px 24px 60px; }
+.exam-card { background: var(--white); padding: 40px; border-radius: var(--radius-xl); box-shadow: var(--shadow); margin-bottom: 24px; }
+
+/* Tabs */
+.tab-bar { display: flex; gap: 4px; margin-bottom: 32px; border-bottom: 2px solid var(--gray-light); }
+.tab-btn { padding: 12px 24px; font-weight: 600; font-size: 0.95rem; color: var(--gray); background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: var(--transition); margin-bottom: -2px; }
+.tab-btn:hover { color: var(--primary); }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Mock Exam */
+.timer { position: fixed; top: 80px; right: 20px; background: var(--dark); color: var(--white); padding: 12px 20px; border-radius: var(--radius); font-weight: 700; font-size: 1.2rem; z-index: 100; }
+.timer.warning { background: #ef4444; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+.question-block { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--gray-light); }
+.question-block h4 { font-size: 1.1rem; margin-bottom: 12px; color: var(--dark); }
+.question-block .marks { color: var(--gray); font-size: 0.85rem; margin-bottom: 12px; }
+.question-block textarea { width: 100%; min-height: 120px; padding: 12px; border: 2px solid var(--gray-light); border-radius: var(--radius); font-family: inherit; font-size: 0.95rem; resize: vertical; }
+.question-block textarea:focus { outline: none; border-color: var(--primary); }
+.exam-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.exam-info { background: var(--light); padding: 16px 20px; border-radius: var(--radius); margin-bottom: 24px; }
+.exam-info p { margin: 4px 0; font-size: 0.9rem; color: var(--dark-light); }
+
+/* AI Marker */
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 8px; }
+.input-group input, .input-group textarea, .input-group select { width: 100%; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: var(--radius); font-family: inherit; font-size: 0.95rem; }
+.input-group textarea { min-height: 150px; resize: vertical; }
+.input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: var(--primary); }
+.mark-result { margin-top: 24px; padding: 24px; background: var(--light); border-radius: var(--radius-lg); }
+.mark-result h3 { color: var(--primary); margin-bottom: 12px; }
+.mark-section { margin-bottom: 16px; padding: 16px; background: var(--white); border-radius: var(--radius); border-left: 4px solid var(--primary); }
+.mark-section h4 { font-size: 1rem; margin-bottom: 8px; }
+.mark-section p { color: var(--dark-light); font-size: 0.95rem; line-height: 1.7; }
+.band-badge { display: inline-block; padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
+.band-a { background: #dcfce7; color: #166534; }
+.band-b { background: #dbeafe; color: #1e40af; }
+.band-c { background: #fef3c7; color: #92400e; }
+.band-d { background: #fee2e2; color: #991b1b; }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+                <li><a href="study-tools.html" class="nav-link">Study</a></li>
+                <li><a href="exam-practice.html" class="nav-link active">Practice</a></li>
+                <li><a href="tutor.html" class="nav-link">Tutor</a></li>
+                <li><a href="dashboard.html" class="nav-link">Progress</a></li>
+                <li id="navAuth"><a href="login.html" class="nav-link">Sign In</a></li>
+            </ul>
+  </div>
+</nav>
+
+<div class="timer" id="examTimer" style="display:none;">60:00</div>
+
+<section class="exam-container">
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('mock')">📝 Mock Exam</button>
+    <button class="tab-btn" onclick="switchTab('marker')">🤖 AI Marker</button>
+  </div>
+
+  <!-- Mock Exam Panel -->
+  <div class="tab-panel active" id="tab-mock">
+    <div id="mock-setup" class="exam-card">
+      <h1>Mock Exam Creator</h1>
+      <p>Generate a timed practice exam with structured questions</p>
+      <div style="margin:24px 0;">
+        <label style="display:block;margin-bottom:8px;font-weight:600;">Subject</label>
+        <select id="mockSubject" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;min-width:250px;">
+          <option value="">Select Subject</option>
+        </select>
+      </div>
+      <div style="margin:24px 0;">
+        <label style="display:block;margin-bottom:8px;font-weight:600;">Duration</label>
+        <select id="mockDuration" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;">
+          <option value="30">30 minutes</option>
+          <option value="60" selected>60 minutes</option>
+          <option value="90">90 minutes</option>
+          <option value="120">120 minutes</option>
+        </select>
+      </div>
+      <div style="margin:24px 0;">
+        <label style="display:block;margin-bottom:8px;font-weight:600;">Number of Questions</label>
+        <select id="mockCount" style="padding:12px 20px;border-radius:var(--radius);border:2px solid var(--gray-light);font-size:1rem;">
+          <option value="3">3 questions</option>
+          <option value="5" selected>5 questions</option>
+          <option value="8">8 questions</option>
+          <option value="10">10 questions</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="startMockExam()">Start Mock Exam</button>
+    </div>
+
+    <div id="mock-exam-area" style="display:none;">
+      <div class="exam-card">
+        <div class="exam-header"><h2 id="examTitle">Mock Exam</h2><span id="examInfo"></span></div>
+        <div class="exam-info">
+          <p><strong>Instructions:</strong> Answer all questions in the spaces provided. Show all working. Manage your time carefully.</p>
+          <p><strong>Total marks:</strong> <span id="totalMarks">0</span></p>
+        </div>
+        <div id="questionsContainer"></div>
+        <div style="text-align:center;margin-top:32px;">
+          <button class="btn btn-primary btn-lg" onclick="submitMockExam()">Submit Exam</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mock-results" class="exam-card" style="display:none;">
+      <h2>Exam Submitted</h2>
+      <p>Your answers have been saved. Use the <strong>AI Marker</strong> tab to get detailed feedback on your responses.</p>
+      <div id="savedAnswers" style="margin:24px 0;"></div>
+      <button class="btn btn-primary" onclick="resetMockExam()">Create New Exam</button>
+    </div>
+  </div>
+
+  <!-- AI Marker Panel -->
+  <div class="tab-panel" id="tab-marker">
+    <div class="exam-card">
+      <h1>AI Marker</h1>
+      <p>Get instant feedback on your essay answers. Paste your response and the question for AI-powered marking.</p>
+
+      <div class="input-group">
+        <label>Subject</label>
+        <select id="markerSubject">
+          <option value="">Select Subject</option>
+          <option value="physics">Physics</option>
+          <option value="chemistry">Chemistry</option>
+          <option value="biology">Biology</option>
+          <option value="maths">Mathematics</option>
+          <option value="economics">Economics</option>
+          <option value="geography">Geography</option>
+          <option value="history">History</option>
+          <option value="ict">ICT</option>
+          <option value="english">English</option>
+          <option value="psychology">Psychology</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Question</label>
+        <textarea id="markerQuestion" placeholder="Paste the exam question here..."></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Your Answer</label>
+        <textarea id="markerAnswer" placeholder="Paste your answer here..."></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Total Marks Available</label>
+        <input type="number" id="markerMarks" value="10" min="1" max="50">
+      </div>
+
+      <button class="btn btn-primary btn-lg" onclick="markAnswer()" id="markBtn">Mark My Answer</button>
+
+      <div id="markerResult"></div>
+    </div>
+  </div>
+
+</section>
+
+<script src="js/auth.js?v=6"></script>
+<script src="js/mock-exam.js?v=6"></script>
+<script src="js/ai-marker.js?v=6"></script>
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.tab-btn[onclick="switchTab(\'' + name + '\')"]').classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+</script>
+<script src="js/mascot.js?v=6"></script>
+</body>
+</html>
