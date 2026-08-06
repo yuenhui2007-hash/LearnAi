@@ -1,5 +1,16 @@
-// LearnAI Tutor — Enhanced Expert System
-// Designed to feel like ChatGPT. Swap fetchTutorResponse() for real API when you have a backend.
+// LearnAI Tutor — Hybrid AI Tutor
+// Tries Cloudflare Worker first (real AI), falls back to built-in knowledge base.
+// Set your Worker URL below after deployment.
+
+const API_URL = ''; // <-- PASTE YOUR CLOUDFLARE WORKER URL HERE, e.g. 'https://learnai-tutor.yourname.workers.dev'
+
+const SYSTEM_PROMPT = `You are the LearnAI Tutor, an expert Cambridge A-Level and IGCSE tutor.
+Rules:
+- Answer concisely but thoroughly.
+- Use LaTeX for equations: inline with \\( ... \\) and display with \\[ ... \\].
+- Include exam tips where relevant.
+- If the student asks a practice question, give a realistic exam-style question with a hint and a hidden answer.
+- Be encouraging and clear.`;
 
 const knowledgeBase = {
   greetings: {
@@ -1067,7 +1078,7 @@ function updateSuggestions() {
   });
 }
 
-function handleSend() {
+async function handleSend() {
   const text = userInput.value.trim();
   if (!text) return;
   userInput.value = '';
@@ -1078,18 +1089,60 @@ function handleSend() {
 
   showTyping();
 
+  // Try AI API first if configured
+  if (API_URL) {
+    try {
+      const messages = [{ role: 'system', content: SYSTEM_PROMPT }];
+      // Add last 6 conversation turns as context
+      const recent = conversationHistory.slice(-6);
+      recent.forEach(m => {
+        messages.push({ role: m.role === 'user' ? 'user' : 'assistant', content: m.text.replace(/<[^>]+>/g, '') });
+      });
+
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages })
+      });
+
+      const data = await res.json();
+      hideTyping();
+
+      if (data.reply) {
+        const formatted = formatAIReply(data.reply);
+        addMessage(formatted, 'bot');
+        conversationHistory.push({ role: 'bot', text: formatted });
+        if (conversationHistory.length > 10) conversationHistory = conversationHistory.slice(-10);
+        if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise();
+        return;
+      }
+    } catch (err) {
+      console.log('AI API failed, falling back to local:', err);
+    }
+  }
+
+  // Fallback to local knowledge base
   const thinkTime = 600 + Math.random() * 800;
   setTimeout(() => {
     hideTyping();
-    const response = getResponse(text);
+    const response = getLocalResponse(text);
     addMessage(response, 'bot');
     conversationHistory.push({ role: 'bot', text: response });
     if (conversationHistory.length > 10) conversationHistory = conversationHistory.slice(-10);
 
-    if (window.MathJax && window.MathJax.typesetPromise) {
-      window.MathJax.typesetPromise();
-    }
+    if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise();
   }, thinkTime);
+}
+
+function formatAIReply(text) {
+  // Convert markdown-style formatting to HTML
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/```(.*?)```/gs, '<div class="formula-block"><code>$1</code></div>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/\n/g, '<br>');
 }
 
 function addMessage(text, sender) {
@@ -1114,7 +1167,7 @@ function hideTyping() {
   if (t) t.remove();
 }
 
-function getResponse(text) {
+function getLocalResponse(text) {
   const lower = text.toLowerCase();
 
   if (knowledgeBase.greetings.patterns.some(p => lower.includes(p))) {
