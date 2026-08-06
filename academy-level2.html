@@ -158,6 +158,94 @@
         </div>
       </div>
 
+      <div class="module">
+        <h2>Module 5: Telegram Integration</h2>
+        <p>Connect your Claw AI Avatar to Telegram so users can interact with it via the Telegram app.</p>
+
+        <h3>Step 1: Create a Telegram Bot</h3>
+        <ol>
+          <li>Open Telegram and search for <strong>@BotFather</strong> (verify it is the official account).</li>
+          <li>Send the command: <code>/newbot</code></li>
+          <li>Enter your bot name when prompted.</li>
+          <li>Choose a unique username ending with <code>bot</code> (e.g., <code>zetrix_ai_bot</code>).</li>
+          <li>Copy the <strong>Bot Token</strong> provided by BotFather. You will need this later.</li>
+        </ol>
+
+        <h3>Step 2: Configure the Bot in Claw AI Avatar</h3>
+        <p>In the Claw AI Avatar / OpenClaw configuration, enable the Telegram channel and add the bot token:</p>
+        <div class="interactive-box" style="font-family:'Courier New',monospace;font-size:0.9rem">
+{<br>
+&nbsp;&nbsp;"channels": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"telegram": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"enabled": true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"botToken": "YOUR_BOT_TOKEN",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dmPolicy": "pairing",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"groups": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"*": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"requireMention": true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+        </div>
+        <p>The default <code>pairing</code> policy allows only approved users to interact with the bot.</p>
+
+        <h3>Step 3: Start the Gateway</h3>
+        <p>After saving the configuration, start (or restart) the Claw / OpenClaw gateway so the Telegram configuration is loaded.</p>
+
+        <h3>Step 4: Pair Your Telegram Account</h3>
+        <ol>
+          <li>Search for your new bot in Telegram and start a conversation by sending <code>/start</code>.</li>
+          <li>If pairing mode is enabled, the bot generates a pairing code.</li>
+          <li>Approve the pairing from the gateway using:
+            <div style="font-family:'Courier New',monospace;background:var(--light);padding:12px;border-radius:8px;margin:8px 0">
+              openclaw pairing list telegram<br>
+              openclaw pairing approve telegram &lt;PAIRING_CODE&gt;
+            </div>
+          </li>
+          <li>Pairing codes typically expire after one hour.</li>
+        </ol>
+
+        <h3>Step 5: Test the Bot</h3>
+        <p>Send a simple message such as <code>Hello</code> or <code>What can you do?</code>. If everything is configured correctly, Claw AI Avatar should respond through Telegram.</p>
+
+        <h3>Step 6: (Optional) Add the Bot to a Group</h3>
+        <ol>
+          <li>Add the bot to the group.</li>
+          <li>Keep <code>requireMention: true</code> if you want the bot to respond only when mentioned.</li>
+          <li>To let the bot see all group messages, disable BotFather's Privacy Mode using <code>/setprivacy</code> or make the bot a group administrator. After changing Privacy Mode, remove and re-add the bot for the change to take effect.</li>
+        </ol>
+
+        <h3>Configuration Summary</h3>
+        <table style="width:100%;border-collapse:collapse;margin:16px 0">
+          <tr style="background:var(--light)">
+            <th style="padding:10px;text-align:left;border-bottom:2px solid var(--gray-light)">Setting</th>
+            <th style="padding:10px;text-align:left;border-bottom:2px solid var(--gray-light)">Value</th>
+          </tr>
+          <tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Telegram Bot</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Created via @BotFather</td></tr>
+          <tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Bot Token</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Copied from BotFather</td></tr>
+          <tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Telegram Channel</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Enabled</td></tr>
+          <tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">DM Policy</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Pairing (recommended)</td></tr>
+          <tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Group Mention</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Enabled (requireMention: true)</td></tr>
+        </table>
+
+        <h3>Hosted Platform (Zetrix AI Inc.)</h3>
+        <p>If your organisation uses the hosted Zetrix AI platform:</p>
+        <ol>
+          <li>Sign in to the Zetrix AI Admin Portal.</li>
+          <li>Open <strong>Avatar Settings</strong> or <strong>Channel Integrations</strong>.</li>
+          <li>Select <strong>Telegram</strong> and paste the BotFather token.</li>
+          <li>Click <strong>Save</strong> or <strong>Connect</strong>.</li>
+          <li>Start a chat with the bot on Telegram and complete any pairing prompts.</li>
+        </ol>
+
+        <div class="assignment-box">
+          <h4>📋 Practical Assignment</h4>
+          <p>Create a Telegram bot via BotFather, configure it in your Claw settings, and send a test message. Take a screenshot of the conversation.</p>
+        </div>
+      </div>
+
       <div class="quiz-container">
         <h3>📝 Level 2 Quiz (80% to pass)</h3>
         <form id="quizForm">
@@ -201,6 +289,22 @@
               <label><input type="radio" name="q5" value="c"> Restart your computer</label>
             </div>
           </div>
+          <div class="quiz-question">
+            <p>6. What command creates a new Telegram bot?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q6" value="a"> /startbot</label>
+              <label><input type="radio" name="q6" value="b"> /newbot</label>
+              <label><input type="radio" name="q6" value="c"> /createbot</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>7. How do you let a bot see all messages in a group?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q7" value="a"> Disable Privacy Mode in BotFather</label>
+              <label><input type="radio" name="q7" value="b"> Send /unlock</label>
+              <label><input type="radio" name="q7" value="c"> It happens automatically</label>
+            </div>
+          </div>
           <button type="submit" class="btn" style="margin-top:16px">Submit Quiz</button>
         </form>
         <div id="quizForm-result" class="quiz-result"></div>
@@ -220,7 +324,7 @@
 if (!Academy.isLevelUnlocked(2)) {
   document.querySelector('.academy-container').innerHTML = '<div style="text-align:center;padding:60px"><h2>🔒 Level Locked</h2><p>Complete Level 1 to unlock this content.</p><a href="academy-level1.html" class="btn" style="margin-top:24px">Go to Level 1</a></div>';
 } else {
-  Academy.initQuiz('quizForm', ['c','b','b','b','b'], 80, function(score) {
+  Academy.initQuiz('quizForm', ['c','b','b','b','b','b','a'], 80, function(score) {
     Academy.markLevelCompleted(2, score);
     document.getElementById('nextLevelBtn').style.opacity = '1';
     document.getElementById('nextLevelBtn').style.pointerEvents = 'auto';

@@ -435,6 +435,31 @@ const knowledgeBase = {
     <div class="exam-tip-box"><strong>Warning:</strong> AI agents must always have human oversight</div>`
   },
 
+  'zetrix-telegram': {
+    patterns: ['telegram bot','botfather','telegram integration','connect telegram','pairing code','telegram group','bot token','privacy mode'],
+    response: `<strong>Telegram Integration for Claw AI Avatar</strong><br><br>
+    <strong>Step 1: Create a Telegram Bot</strong><br>
+    1. Open Telegram and search for <strong>@BotFather</strong><br>
+    2. Send <code>/newbot</code><br>
+    3. Enter bot name and choose username ending with <code>bot</code><br>
+    4. Copy the <strong>Bot Token</strong> from BotFather<br><br>
+    <strong>Step 2: Configure in Claw</strong><br>
+    <span class="formula">"channels": {"telegram": {"enabled": true, "botToken": "YOUR_TOKEN", "dmPolicy": "pairing"}}</span><br><br>
+    <strong>Step 3: Start Gateway</strong><br>
+    Restart the OpenClaw gateway to load the new config<br><br>
+    <strong>Step 4: Pair Your Account</strong><br>
+    1. Send <code>/start</code> to your bot<br>
+    2. Get pairing code from bot<br>
+    3. Approve via: <code>openclaw pairing approve telegram &lt;CODE&gt;</code><br><br>
+    <strong>Step 5: Test</strong><br>
+    Send "Hello" — bot should respond<br><br>
+    <strong>Step 6: Group Setup (Optional)</strong><br>
+    - Add bot to group<br>
+    - Disable Privacy Mode via <code>/setprivacy</code> in BotFather<br>
+    - Or make bot admin to see all messages<br><br>
+    <div class="exam-tip-box"><strong>Tip:</strong> Pairing codes expire after 1 hour. Keep <code>requireMention: true</code> in groups to avoid spam.</div>`
+  },
+
   'zetrix-prompt': {
     patterns: ['prompt formula','perfect prompt','prompt structure','role goal context format','prompt blocks','prompt builder'],
     response: `<strong>The Perfect Prompt Formula</strong><br><br>
