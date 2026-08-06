@@ -194,33 +194,60 @@
   }
 }
 
-/* External Resources section */
+/* External Resources - Collapsible */
 .external-resources {
-  background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
-  border-left: 4px solid #3b82f6;
-  padding: 20px 24px;
-  border-radius: 0 12px 12px 0;
-  margin: 24px 0;
+  margin: 16px 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
 }
-.external-resources h4 {
-  color: #1e40af;
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-.external-resources ul {
-  margin: 0;
-  padding-left: 20px;
-}
-.external-resources li {
-  margin-bottom: 8px;
-  color: #1e3a5f;
-  line-height: 1.6;
-}
-.external-resources a {
-  color: #2563eb;
+.ext-toggle {
+  background: #f8fafc;
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
   font-weight: 600;
+  color: #475569;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.ext-toggle:hover {
+  background: #f1f5f9;
+}
+.ext-toggle::after {
+  content: "▶";
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+.ext-toggle.active::after {
+  transform: rotate(90deg);
+}
+.ext-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f8fafc;
+}
+.ext-content.open {
+  max-height: 500px;
+}
+.ext-content ul {
+  margin: 0;
+  padding: 12px 20px;
+  list-style: none;
+}
+.ext-content li {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+.ext-content a {
+  color: #2563eb;
   text-decoration: none;
 }
-.external-resources a:hover {
+.ext-content a:hover {
   text-decoration: underline;
 }
