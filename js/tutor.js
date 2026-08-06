@@ -559,7 +559,7 @@ const knowledgeBase = {
   },
 
   // GEOMETRY
-  'geometry-pythagoras': {
+  'geography-plate-tectonics': {
     patterns: ['pythagoras','hypotenuse','right triangle','soh cah toa','trigonometry','sine rule','cosine rule'],
     response: `<strong>Pythagoras & Trigonometry</strong><br><br>
     <span class="formula">Pythagoras: a² + b² = c²</span><br>
@@ -574,7 +574,7 @@ const knowledgeBase = {
     <div class="exam-tip-box"><strong>Exam tip:</strong> Always label the triangle first. Identify which side is opposite, adjacent, hypotenuse relative to the angle given.</div>`
   },
 
-  'geometry-circle': {
+  'geography-coastal-erosion': {
     patterns: ['circle theorem','angle at centre','cyclic quadrilateral','tangent','chord','alternate segment'],
     response: `<strong>Circle Theorems</strong><br><br>
     <strong>1. Angle at centre = 2 × angle at circumference</strong><br>
