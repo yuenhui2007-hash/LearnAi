@@ -367,11 +367,11 @@ function renderQuiz() {
         if (inp.value === q.a) {
           lbl.style.borderColor = '#22c55e';
           lbl.style.background = '#dcfce7';
-          lbl.innerHTML += ' ✅';
+          lbl.innerHTML += ' ✅ <span style="color:#15803d;font-weight:700">+' + (Math.round(100/data.quiz.length)) + '</span>';
         } else if (inp.checked && inp.value !== q.a) {
           lbl.style.borderColor = '#ef4444';
           lbl.style.background = '#fee2e2';
-          lbl.innerHTML += ' ❌';
+          lbl.innerHTML += ' ❌ <span style="color:#b91c1c;font-weight:700">+0</span>';
         }
         inp.disabled = true;
       });
