@@ -275,6 +275,7 @@
         .stat-icon.purple { background: rgba(139, 92, 246, 0.15); }
         .stat-icon.red { background: rgba(239, 68, 68, 0.15); }
         .stat-icon.pink { background: rgba(236, 72, 153, 0.15); }
+        .stat-icon.orange { background: rgba(249, 115, 22, 0.15); }
         .stat-change {
             font-size: 0.8rem;
             font-weight: 600;
@@ -493,6 +494,10 @@
                 </a>
                 <a class="nav-item" onclick="showSection('content')">
                     <span>📚</span> Content
+                </a>
+                <a class="nav-item" onclick="showSection('assignments')">
+                    <span>📝</span> Assignments
+                    <span class="badge" id="navPendingCount">0</span>
                 </a>
             </div>
             <div class="nav-section">
@@ -811,6 +816,86 @@
                 </div>
             </div>
 
+            <!-- Assignments Section -->
+            <div id="assignments" class="section hidden">
+                <div class="stats-grid fade-in">
+                    <div class="stat-card">
+                        <div class="stat-header"><div class="stat-icon yellow">📝</div></div>
+                        <div class="stat-value" id="asgnTotal">0</div>
+                        <div class="stat-label">Total Submissions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header"><div class="stat-icon orange">⏳</div></div>
+                        <div class="stat-value" id="asgnPending">0</div>
+                        <div class="stat-label">Pending Review</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header"><div class="stat-icon green">✓</div></div>
+                        <div class="stat-value" id="asgnGraded">0</div>
+                        <div class="stat-label">Graded</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header"><div class="stat-icon blue">📊</div></div>
+                        <div class="stat-value" id="asgnAvg">0%</div>
+                        <div class="stat-label">Avg Score</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">📝 Assignment Submissions</span>
+                        <div style="display:flex;gap:8px">
+                            <select id="asgnFilter" style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text);outline:none" onchange="filterAssignments()">
+                                <option value="all">All Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="graded">Graded</option>
+                            </select>
+                            <select id="asgnDeptFilter" style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 14px;color:var(--text);outline:none" onchange="filterAssignments()">
+                                <option value="all">All Departments</option>
+                                <option value="hr">HR</option>
+                                <option value="finance">Finance</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="sales">Sales</option>
+                                <option value="support">Support</option>
+                                <option value="operations">Operations</option>
+                                <option value="legal">Legal</option>
+                                <option value="it">IT</option>
+                                <option value="executive">Executive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr><th>Student</th><th>Department</th><th>Module</th><th>Assignment</th><th>Words</th><th>Status</th><th>Score</th><th>Submitted</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody id="assignmentsTable">
+                                    <tr><td colspan="9" class="empty">Loading assignments...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assignment Grade Modal -->
+            <div id="gradeModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;padding:24px">
+                <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;max-width:700px;width:100%;max-height:90vh;overflow:auto;padding:32px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+                        <h2 style="font-size:1.3rem">📝 Grade Assignment</h2>
+                        <button onclick="closeGradeModal()" style="background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer">×</button>
+                    </div>
+                    <div id="gradeModalContent"></div>
+                    <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
+                        <label style="display:block;color:var(--text-muted);font-size:0.85rem;margin-bottom:6px">Score (0-100)</label>
+                        <input type="number" id="gradeScore" min="0" max="100" style="width:120px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);outline:none;margin-bottom:12px">
+                        <label style="display:block;color:var(--text-muted);font-size:0.85rem;margin-bottom:6px">Feedback</label>
+                        <textarea id="gradeFeedback" style="width:100%;min-height:80px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);outline:none;resize:vertical;margin-bottom:16px"></textarea>
+                        <button class="btn btn-primary" onclick="submitGrade()">Submit Grade</button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Settings Section -->
             <div id="settings" class="section hidden">
                 <div class="grid-2">
@@ -1095,6 +1180,119 @@
         document.getElementById('adminPassword').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') checkPassword();
         });
+
+        // ===== Assignments =====
+        var allAssignments = [];
+        var currentGradeId = null;
+
+        function loadAssignments() {
+            fetch(API_BASE + '/api/admin/assignments')
+                .then(r => r.json())
+                .then(d => {
+                    allAssignments = d.assignments || [];
+                    renderAssignments(allAssignments);
+                    updateAssignmentStats();
+                })
+                .catch(() => {
+                    document.getElementById('assignmentsTable').innerHTML = '<tr><td colspan="9" class="empty">Error loading assignments</td></tr>';
+                });
+        }
+
+        function updateAssignmentStats() {
+            var total = allAssignments.length;
+            var pending = allAssignments.filter(a => a.status === 'pending').length;
+            var graded = allAssignments.filter(a => a.status === 'graded').length;
+            var scores = allAssignments.filter(a => a.score !== undefined && a.score !== null).map(a => a.score);
+            var avg = scores.length > 0 ? Math.round(scores.reduce((s, v) => s + v, 0) / scores.length) : 0;
+            document.getElementById('asgnTotal').textContent = total;
+            document.getElementById('asgnPending').textContent = pending;
+            document.getElementById('asgnGraded').textContent = graded;
+            document.getElementById('asgnAvg').textContent = avg + '%';
+            document.getElementById('navPendingCount').textContent = pending;
+        }
+
+        function renderAssignments(list) {
+            var tbody = document.getElementById('assignmentsTable');
+            if (!list || list.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" class="empty">No submissions yet</td></tr>';
+                return;
+            }
+            tbody.innerHTML = list.map(a => {
+                var statusBadge = a.status === 'graded' ? 'badge-green' : 'badge-yellow';
+                return '<tr>' +
+                    '<td>' + (a.userName || 'Unknown') + '<br><span style="font-size:0.75rem;color:var(--text-dim)">' + (a.userEmail || '-') + '</span></td>' +
+                    '<td><span class="badge badge-blue">' + (a.dept || '-') + '</span></td>' +
+                    '<td>' + (a.moduleTitle || '-') + '</td>' +
+                    '<td>' + (a.assignmentTitle || '-') + '</td>' +
+                    '<td>' + (a.wordCount || 0) + '</td>' +
+                    '<td><span class="badge ' + statusBadge + '">' + (a.status || 'pending') + '</span></td>' +
+                    '<td>' + (a.score !== undefined ? a.score + '%' : '-') + '</td>' +
+                    '<td>' + (a.submittedAt ? new Date(a.submittedAt).toLocaleDateString() : '-') + '</td>' +
+                    '<td><button class="btn btn-primary" style="padding:4px 10px;font-size:0.75rem" onclick="openGradeModal(\'' + a.id + '\')">' + (a.status === 'graded' ? 'Re-grade' : 'Grade') + '</button></td>' +
+                '</tr>';
+            }).join('');
+        }
+
+        function filterAssignments() {
+            var statusFilter = document.getElementById('asgnFilter').value;
+            var deptFilter = document.getElementById('asgnDeptFilter').value;
+            var filtered = allAssignments.filter(a => {
+                var matchStatus = statusFilter === 'all' || a.status === statusFilter;
+                var matchDept = deptFilter === 'all' || a.dept === deptFilter;
+                return matchStatus && matchDept;
+            });
+            renderAssignments(filtered);
+        }
+
+        function openGradeModal(id) {
+            currentGradeId = id;
+            var a = allAssignments.find(x => x.id === id);
+            if (!a) return;
+            var content = document.getElementById('gradeModalContent');
+            content.innerHTML = '<div style="margin-bottom:16px"><strong>Student:</strong> ' + (a.userName || 'Unknown') + ' (' + (a.userEmail || '-') + ')<br>' +
+                '<strong>Department:</strong> ' + (a.dept || '-') + '<br>' +
+                '<strong>Module:</strong> ' + (a.moduleTitle || '-') + '<br>' +
+                '<strong>Assignment:</strong> ' + (a.assignmentTitle || '-') + '<br>' +
+                '<strong>Words:</strong> ' + (a.wordCount || 0) + '<br>' +
+                '<strong>Submitted:</strong> ' + (a.submittedAt ? new Date(a.submittedAt).toLocaleString() : '-') + '</div>' +
+                '<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;max-height:300px;overflow:auto;white-space:pre-wrap;font-size:0.85rem;line-height:1.7">' + escapeHtml(a.content || '') + '</div>';
+            document.getElementById('gradeScore').value = a.score !== undefined ? a.score : '';
+            document.getElementById('gradeFeedback').value = a.feedback || '';
+            document.getElementById('gradeModal').style.display = 'flex';
+        }
+
+        function closeGradeModal() {
+            document.getElementById('gradeModal').style.display = 'none';
+            currentGradeId = null;
+        }
+
+        function escapeHtml(text) {
+            var div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function submitGrade() {
+            if (!currentGradeId) return;
+            var score = parseInt(document.getElementById('gradeScore').value);
+            var feedback = document.getElementById('gradeFeedback').value.trim();
+            if (isNaN(score) || score < 0 || score > 100) { alert('Enter a score between 0 and 100'); return; }
+            fetch(API_BASE + '/api/admin/assignments/' + encodeURIComponent(currentGradeId) + '/grade', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ score: score, feedback: feedback })
+            })
+            .then(r => r.json())
+            .then(d => {
+                if (d.success) {
+                    closeGradeModal();
+                    loadAssignments();
+                } else {
+                    alert('Error: ' + (d.error || 'Could not grade'));
+                }
+            })
+            .catch(() => alert('Network error'));
+        }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
