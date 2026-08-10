@@ -1285,8 +1285,17 @@
             .then(r => r.json())
             .then(d => {
                 if (d.success) {
+                    // Update local data immediately so UI refreshes instantly
+                    var idx = allAssignments.findIndex(x => x.id === currentGradeId);
+                    if (idx !== -1) {
+                        allAssignments[idx].status = 'graded';
+                        allAssignments[idx].score = score;
+                        allAssignments[idx].feedback = feedback;
+                        allAssignments[idx].gradedAt = new Date().toISOString();
+                    }
                     closeGradeModal();
-                    loadAssignments();
+                    updateAssignmentStats();
+                    filterAssignments(); // Re-render table with current filters
                 } else {
                     alert('Error: ' + (d.error || 'Could not grade'));
                 }
