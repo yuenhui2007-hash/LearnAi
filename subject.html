@@ -54,7 +54,7 @@
     (function() {
         var params = new URLSearchParams(window.location.search);
         var subjectId = params.get('id');
-        var subject = window.subjects ? subjects[subjectId] : null;
+        var subject = typeof subjects !== 'undefined' ? subjects[subjectId] : null;
 
         if (!subject) {
             document.getElementById('subjectTitle').textContent = 'Subject Not Found';
