@@ -452,6 +452,18 @@
     </style>
 </head>
 <body>
+    <!-- Password Gate -->
+    <div id="passwordGate" style="position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:48px;width:100%;max-width:400px;text-align:center;">
+            <div style="font-size:3rem;margin-bottom:16px">🔐</div>
+            <h2 style="color:#fff;margin-bottom:8px">Admin Access</h2>
+            <p style="color:var(--text-muted);margin-bottom:24px;font-size:0.9rem">Enter your admin password to continue</p>
+            <input type="password" id="adminPassword" placeholder="Password" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 16px;color:var(--text);font-size:1rem;outline:none;margin-bottom:16px;text-align:center">
+            <button class="btn btn-primary" style="width:100%;padding:12px" onclick="checkPassword()">Unlock</button>
+            <p id="passwordError" style="color:var(--danger);margin-top:12px;font-size:0.85rem;display:none">Incorrect password</p>
+            <p style="color:var(--text-dim);margin-top:24px;font-size:0.75rem">Default: <code>admin123</code> — change in admin.html</p>
+        </div>
+    </div>
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
@@ -1073,9 +1085,25 @@
             loadActivity();
         }
 
+        // Password Gate
+        var ADMIN_PASSWORD = 'admin123';
+        function checkPassword() {
+            var input = document.getElementById('adminPassword').value;
+            if (input === ADMIN_PASSWORD) {
+                document.getElementById('passwordGate').style.display = 'none';
+                refreshData();
+            } else {
+                document.getElementById('passwordError').style.display = 'block';
+                document.getElementById('adminPassword').value = '';
+            }
+        }
+        document.getElementById('adminPassword').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkPassword();
+        });
+
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            refreshData();
+            // Don't auto-load data until password is entered
         });
     </script>
 </body>
