@@ -87,6 +87,16 @@
           <h4>🎯 Practice Task</h4>
           <p>Upload a job description. Ask AI to: (1) improve it, (2) create 5 interview questions, (3) draft an offer letter.</p>
         </div>
+        <div class="quiz-container" id="quiz-hr">
+          <h4>📝 HR Quiz (3 questions)</h4>
+          <form id="quizForm-hr">
+            <div class="quiz-question"><p>1. Which HR task can AI help with?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Firing employees</label><label><input type="radio" name="q1" value="b"> Screening CVs</label><label><input type="radio" name="q1" value="c"> Approving promotions</label></div></div>
+            <div class="quiz-question"><p>2. What can AI generate for onboarding?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Pay raises</label><label><input type="radio" name="q2" value="b"> Welcome emails and checklists</label><label><input type="radio" name="q2" value="c"> Background checks</label></div></div>
+            <div class="quiz-question"><p>3. Should AI draft conflict mediation scripts?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> No, never use AI for HR</label><label><input type="radio" name="q3" value="b"> Yes, as a starting draft for review</label><label><input type="radio" name="q3" value="c"> Yes, send without review</label></div></div>
+            <button type="submit" class="btn" style="margin-top:12px">Submit</button>
+          </form>
+          <div id="quizForm-hr-result" class="quiz-result"></div>
+        </div>
       </div>
 
       <div class="module">
@@ -104,6 +114,16 @@
         <div class="interactive-box">
           <h4>🎯 Practice Task</h4>
           <p>Upload a CSV of 50 transactions. Ask AI to identify anomalies and categorise spending.</p>
+        </div>
+        <div class="quiz-container" id="quiz-finance">
+          <h4>📝 Finance Quiz (3 questions)</h4>
+          <form id="quizForm-finance">
+            <div class="quiz-question"><p>1. What can AI help create from financial data?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Bank transfers</label><label><input type="radio" name="q1" value="b"> Executive summaries</label><label><input type="radio" name="q1" value="c"> Stock trades</label></div></div>
+            <div class="quiz-question"><p>2. Which Excel task can AI assist with?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Writing formulas and finding anomalies</label><label><input type="radio" name="q2" value="b"> Opening Excel files</label><label><input type="radio" name="q2" value="c"> Installing Excel</label></div></div>
+            <div class="quiz-question"><p>3. Can AI replace a financial auditor?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> Yes, fully</label><label><input type="radio" name="q3" value="b"> No, it assists but human review is needed</label><label><input type="radio" name="q3" value="c"> Only for small companies</label></div></div>
+            <button type="submit" class="btn" style="margin-top:12px">Submit</button>
+          </form>
+          <div id="quizForm-finance-result" class="quiz-result"></div>
         </div>
       </div>
 
@@ -128,6 +148,16 @@
             <li><strong>CRM Updates:</strong> Summarise calls, update records, follow-up reminders</li>
           </ul>
         </div>
+        <div class="quiz-container" id="quiz-marketing">
+          <h4>📝 Marketing & Sales Quiz (3 questions)</h4>
+          <form id="quizForm-marketing">
+            <div class="quiz-question"><p>1. What can AI generate for SEO?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Keywords and meta descriptions</label><label><input type="radio" name="q1" value="b"> Website hosting</label><label><input type="radio" name="q1" value="c"> Domain registration</label></div></div>
+            <div class="quiz-question"><p>2. Which is a sales use of AI?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Processing payroll</label><label><input type="radio" name="q2" value="b"> Drafting cold emails and proposals</label><label><input type="radio" name="q2" value="c"> Installing software</label></div></div>
+            <div class="quiz-question"><p>3. Can AI create customer personas?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> No, only humans can</label><label><input type="radio" name="q3" value="b"> Yes, based on data patterns</label><label><input type="radio" name="q3" value="c"> Only for B2B customers</label></div></div>
+            <button type="submit" class="btn" style="margin-top:12px">Submit</button>
+          </form>
+          <div id="quizForm-marketing-result" class="quiz-result"></div>
+        </div>
       </div>
 
       <div class="module">
@@ -145,6 +175,16 @@
         <div class="interactive-box">
           <h4>🎯 Roleplay Challenge</h4>
           <p>Use Claw to practice handling: (1) angry customer demanding refund, (2) confused user needing technical help, (3) customer asking for exception to policy.</p>
+        </div>
+        <div class="quiz-container" id="quiz-support">
+          <h4>📝 Customer Service Quiz (3 questions)</h4>
+          <form id="quizForm-support">
+            <div class="quiz-question"><p>1. What can AI draft for support tickets?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Refund approvals</label><label><input type="radio" name="q1" value="b"> Empathetic replies</label><label><input type="radio" name="q1" value="c"> New products</label></div></div>
+            <div class="quiz-question"><p>2. What should NOT be replaced by AI in support?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Knowledge base articles</label><label><input type="radio" name="q2" value="b"> Human empathy in crisis situations</label><label><input type="radio" name="q2" value="c"> Ticket summaries</label></div></div>
+            <div class="quiz-question"><p>3. Can AI detect angry customers?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> Yes, via sentiment analysis</label><label><input type="radio" name="q3" value="b"> No, AI cannot read emotions</label><label><input type="radio" name="q3" value="c"> Only if they use caps lock</label></div></div>
+            <button type="submit" class="btn" style="margin-top:12px">Submit</button>
+          </form>
+          <div id="quizForm-support-result" class="quiz-result"></div>
         </div>
       </div>
 
@@ -177,6 +217,16 @@
             <li><strong>Knowledge Management:</strong> Organise wiki, FAQ, troubleshooting guides</li>
           </ul>
         </div>
+        <div class="quiz-container" id="quiz-ops">
+          <h4>📝 Operations, Legal & IT Quiz (3 questions)</h4>
+          <form id="quizForm-ops">
+            <div class="quiz-question"><p>1. What can AI help write for operations?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Employment contracts</label><label><input type="radio" name="q1" value="b"> SOPs and workflow maps</label><label><input type="radio" name="q1" value="c"> Building blueprints</label></div></div>
+            <div class="quiz-question"><p>2. Can AI replace a lawyer for legal review?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Yes, always</label><label><input type="radio" name="q2" value="b"> No, it only assists</label><label><input type="radio" name="q2" value="c"> Only for non-profits</label></div></div>
+            <div class="quiz-question"><p>3. Which is an IT use of AI?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> Replacing developers</label><label><input type="radio" name="q3" value="b"> Debugging and writing scripts</label><label><input type="radio" name="q3" value="c"> Buying hardware</label></div></div>
+            <button type="submit" class="btn" style="margin-top:12px">Submit</button>
+          </form>
+          <div id="quizForm-ops-result" class="quiz-result"></div>
+        </div>
       </div>
 
       <div class="module">
@@ -195,52 +245,33 @@
           <h4>📋 Final Project</h4>
           <p>Choose your department. Complete a real work task using AI: write a document, analyse data, or prepare a presentation. Submit your AI-assisted output.</p>
         </div>
+        <div class="quiz-container" id="quiz-exec">
+          <h4>📝 Executive Leadership Quiz (3 questions)</h4>
+          <form id="quizForm-exec">
+            <div class="quiz-question"><p>1. What can AI help executives with?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Replacing board votes</label><label><input type="radio" name="q1" value="b"> SWOT analysis and decision support</label><label><input type="radio" name="q1" value="c"> Hiring employees directly</label></div></div>
+            <div class="quiz-question"><p>2. Can AI draft board reports?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> No, too sensitive</label><label><input type="radio" name="q2" value="b"> Yes, as drafts for review</label><label><input type="radio" name="q2" value="c"> Only if under 10 pages</label></div></div>
+            <div class="quiz-question"><p>3. What should executives remember about AI?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> AI makes final decisions</label><label><input type="radio" name="q3" value="b"> AI supports but doesn't replace human judgment</label><label><input type="radio" name="q3" value="c"> AI is only for junior staff</label></div></div>
+            <button type="submit" class="btn" style="margin-top:12px">Submit</button>
+          </form>
+          <div id="quizForm-exec-result" class="quiz-result"></div>
+        </div>
       </div>
 
-      <div class="quiz-container">
-        <h3>📝 Level 5 Quiz (80% to pass)</h3>
+      <div class="quiz-container" style="background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);margin-top:48px;">
+        <h3>📝 Final Level 5 Exam (80% to pass)</h3>
+        <p style="color:#92400e;margin-bottom:16px;font-size:0.9rem">Complete all department quizzes above to unlock. 10 questions covering all departments.</p>
         <form id="quizForm">
-          <div class="quiz-question">
-            <p>1. Which department uses AI for CV screening?</p>
-            <div class="quiz-options">
-              <label><input type="radio" name="q1" value="a"> Finance</label>
-              <label><input type="radio" name="q1" value="b"> HR</label>
-              <label><input type="radio" name="q1" value="c"> IT</label>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <p>2. Can AI replace a lawyer?</p>
-            <div class="quiz-options">
-              <label><input type="radio" name="q2" value="a"> Yes, completely</label>
-              <label><input type="radio" name="q2" value="b"> No, it only assists</label>
-              <label><input type="radio" name="q2" value="c"> For simple contracts only</label>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <p>3. What's a key sales use of AI?</p>
-            <div class="quiz-options">
-              <label><input type="radio" name="q3" value="a"> Payroll processing</label>
-              <label><input type="radio" name="q3" value="b"> Drafting cold emails and proposals</label>
-              <label><input type="radio" name="q3" value="c"> Network security</label>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <p>4. Which task is NOT suitable for AI in customer service?</p>
-            <div class="quiz-options">
-              <label><input type="radio" name="q4" value="a"> Drafting responses</label>
-              <label><input type="radio" name="q4" value="b"> Replacing human empathy in crises</label>
-              <label><input type="radio" name="q4" value="c"> Summarising tickets</label>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <p>5. What should executives use AI for?</p>
-            <div class="quiz-options">
-              <label><input type="radio" name="q5" value="a"> Replacing board decisions</label>
-              <label><input type="radio" name="q5" value="b"> Decision support and analysis</label>
-              <label><input type="radio" name="q5" value="c"> Hiring and firing employees</label>
-            </div>
-          </div>
-          <button type="submit" class="btn" style="margin-top:16px">Submit Quiz</button>
+          <div class="quiz-question"><p>1. Which department uses AI for CV screening?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Finance</label><label><input type="radio" name="q1" value="b"> HR</label><label><input type="radio" name="q1" value="c"> IT</label></div></div>
+          <div class="quiz-question"><p>2. Can AI replace a lawyer?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Yes, completely</label><label><input type="radio" name="q2" value="b"> No, it only assists</label><label><input type="radio" name="q2" value="c"> For simple contracts only</label></div></div>
+          <div class="quiz-question"><p>3. What's a key sales use of AI?</p><div class="quiz-options"><label><input type="radio" name="q3" value="a"> Payroll processing</label><label><input type="radio" name="q3" value="b"> Drafting cold emails and proposals</label><label><input type="radio" name="q3" value="c"> Network security</label></div></div>
+          <div class="quiz-question"><p>4. Which task is NOT suitable for AI in customer service?</p><div class="quiz-options"><label><input type="radio" name="q4" value="a"> Drafting responses</label><label><input type="radio" name="q4" value="b"> Replacing human empathy in crises</label><label><input type="radio" name="q4" value="c"> Summarising tickets</label></div></div>
+          <div class="quiz-question"><p>5. What should executives use AI for?</p><div class="quiz-options"><label><input type="radio" name="q5" value="a"> Replacing board decisions</label><label><input type="radio" name="q5" value="b"> Decision support and analysis</label><label><input type="radio" name="q5" value="c"> Hiring and firing employees</label></div></div>
+          <div class="quiz-question"><p>6. What can AI generate for onboarding?</p><div class="quiz-options"><label><input type="radio" name="q6" value="a"> Pay raises</label><label><input type="radio" name="q6" value="b"> Welcome emails and checklists</label><label><input type="radio" name="q6" value="c"> Background checks</label></div></div>
+          <div class="quiz-question"><p>7. Which Excel task can AI assist with?</p><div class="quiz-options"><label><input type="radio" name="q7" value="a"> Writing formulas and finding anomalies</label><label><input type="radio" name="q7" value="b"> Opening Excel files</label><label><input type="radio" name="q7" value="c"> Installing Excel</label></div></div>
+          <div class="quiz-question"><p>8. What can AI draft for support tickets?</p><div class="quiz-options"><label><input type="radio" name="q8" value="a"> Refund approvals</label><label><input type="radio" name="q8" value="b"> Empathetic replies</label><label><input type="radio" name="q8" value="c"> New products</label></div></div>
+          <div class="quiz-question"><p>9. What can AI help write for operations?</p><div class="quiz-options"><label><input type="radio" name="q9" value="a"> Employment contracts</label><label><input type="radio" name="q9" value="b"> SOPs and workflow maps</label><label><input type="radio" name="q9" value="c"> Building blueprints</label></div></div>
+          <div class="quiz-question"><p>10. Can AI detect angry customers?</p><div class="quiz-options"><label><input type="radio" name="q10" value="a"> Yes, via sentiment analysis</label><label><input type="radio" name="q10" value="b"> No, AI cannot read emotions</label><label><input type="radio" name="q10" value="c"> Only if they use caps lock</label></div></div>
+          <button type="submit" class="btn" style="margin-top:16px">Submit Final Exam</button>
         </form>
         <div id="quizForm-result" class="quiz-result"></div>
       </div>
@@ -259,7 +290,13 @@
 if (!Academy.isLevelUnlocked(5)) {
   document.querySelector('.academy-container').innerHTML = '<div style="text-align:center;padding:60px"><h2>🔒 Level Locked</h2><p>Complete Level 4 to unlock this content.</p><a href="academy-level4.html" class="btn" style="margin-top:24px">Go to Level 4</a></div>';
 } else {
-  Academy.initQuiz('quizForm', ['b','b','b','b','b'], 80, function(score) {
+  Academy.initQuiz('quizForm-hr', ['b','b','b'], 70, function(score){});
+  Academy.initQuiz('quizForm-finance', ['b','a','b'], 70, function(score){});
+  Academy.initQuiz('quizForm-marketing', ['a','b','b'], 70, function(score){});
+  Academy.initQuiz('quizForm-support', ['b','b','a'], 70, function(score){});
+  Academy.initQuiz('quizForm-ops', ['b','b','b'], 70, function(score){});
+  Academy.initQuiz('quizForm-exec', ['b','b','b'], 70, function(score){});
+  Academy.initQuiz('quizForm', ['b','b','b','b','b','b','a','b','b','a'], 80, function(score) {
     Academy.markLevelCompleted(5, score);
     document.getElementById('nextLevelBtn').style.opacity = '1';
     document.getElementById('nextLevelBtn').style.pointerEvents = 'auto';
