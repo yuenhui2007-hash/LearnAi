@@ -35,27 +35,8 @@
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-  <div class="container nav-container">
-    <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li class="nav-dropdown">
-          <a href="subjects.html" class="nav-link nav-dropdown-toggle">Subjects</a>
-          <div class="nav-dropdown-menu">
-            <a href="subjects.html?board=caie" class="nav-link">CAIE</a>
-            <a href="subjects.html?board=edexcel" class="nav-link">Edexcel</a>
-            <a href="subjects.html?board=ib" class="nav-link">IB</a>
-          </div>
-        </li>
-      <li><a href="tutor.html" class="nav-link">AI Tutor</a></li>
-      <li><a href="academy.html" class="nav-link">AI Academy</a></li>
-      <li><a href="dashboard.html" class="nav-link">My Progress</a></li>
-      <li id="navAuth"><a href="login.html" class="nav-link">Sign In / Sign Up</a></li>
-    </ul>
-  </div>
-</nav>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=4"></script>
 <section class="auth-section">
 <div class="container auth-container">
 <div class="auth-card">
@@ -80,14 +61,24 @@
 </div>
 </div>
 </section>
-<script src="js/oauth.js"></script>
+<script src="js/theme.js?v=4"></script>
+    <script src="js/oauth.js"></script>
 <script src="js/auth.js?v=4"></script>
+<script src="js/auth-guard.js"></script>
 <script>
+function showError(msg) {
+  var el = document.getElementById('error');
+  msg = String(msg).replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
 e.preventDefault();
-var email = document.getElementById('email').value;
+var email = document.getElementById('email').value.trim();
 var password = document.getElementById('password').value;
-var result = Auth.login(email, password);
+if (!email || email.indexOf('@') === -1) { showError('Please enter a valid email address.'); return; }
+if (!password || password.length < 6) { showError('Password must be at least 6 characters.'); return; }
+var result = await Auth.login(email, password);
 if (result.success) {
   try {
     var apiBase = window.location.origin.includes('localhost') ? 'http://localhost:10000/api' : window.location.origin + '/api';
@@ -102,9 +93,9 @@ if (result.success) {
   var redirect = params.get('redirect') || 'dashboard.html';
   window.location.href = redirect;
 }
-else { document.getElementById('error').textContent = result.error; document.getElementById('error').style.display = 'block'; }
+else { showError(result.error); }
 });
 </script>
-<script src="js/mascot.js?v=5"></script>
+<script src="js/mascot.js?v=4"></script>
 </body>
 </html>

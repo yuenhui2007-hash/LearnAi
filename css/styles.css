@@ -29,7 +29,7 @@
     --transition: all 0.3s ease;
 }
 
-[data-theme="dark"] {
+[data-theme="dark"], .dark {
     --primary: #818cf8;
     --primary-dark: #6366f1;
     --primary-light: #a5b4fc;
@@ -59,8 +59,8 @@
 html { scroll-behavior: smooth; }
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--dark);
-    background: var(--white);
+    color: var(--body-text);
+    background: var(--body-bg);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -376,6 +376,12 @@ img { max-width: 100%; display: block; }
 
 .animate-in { opacity: 1 !important; transform: translateY(0) !important; }
 
+/* Mascot */
+.mascot-container { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.mascot-speech { background: var(--card-bg); color: var(--body-text); padding: 10px 14px; border-radius: var(--radius); box-shadow: var(--shadow); font-size: 0.85rem; max-width: 200px; text-align: center; border: 1px solid var(--border-color); position: relative; }
+.mascot-dismiss { position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; border-radius: 50%; background: var(--gray-light); color: var(--dark); border: none; cursor: pointer; font-size: 1rem; line-height: 1; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+.mascot-dismiss:hover { background: var(--primary); color: var(--white); }
+
 /* Notes */
 .notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
 .notes-container h2 { font-size: 1.8rem; margin-bottom: 24px; color: var(--dark); }
@@ -397,7 +403,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
     .nav-toggle { display: flex; }
     .nav-menu {
-        position: fixed; top: 72px; left: 0; right: 0; background: var(--white);
+        position: fixed; top: 72px; left: 0; right: 0; background: var(--card-bg);
         flex-direction: column; padding: 20px; gap: 8px;
         box-shadow: var(--shadow-lg); transform: translateY(-150%); opacity: 0;
         transition: var(--transition);

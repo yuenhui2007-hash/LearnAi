@@ -9,6 +9,7 @@
 
   function setTheme(theme) {
     html.setAttribute('data-theme', theme);
+    html.classList.toggle('dark', theme === 'dark');
     localStorage.setItem(STORAGE_KEY, theme);
     updateToggleIcon(theme);
   }
@@ -27,8 +28,12 @@
   }
 
   function init() {
-    const saved = getTheme();
+    var saved = getTheme();
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
     html.setAttribute('data-theme', saved);
+    html.classList.toggle('dark', saved === 'dark');
 
     // Add toggle button if not present
     let btn = document.getElementById('themeToggle');

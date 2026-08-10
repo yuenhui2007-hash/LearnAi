@@ -4,6 +4,16 @@
 (function() {
     'use strict';
 
+    // ===== Utilities =====
+    window.Utils = {
+        sanitize: function(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        },
+        validateEmail: function(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email));
+        }
+    };
+
     // ===== Navbar =====
     var navbar = document.getElementById('navbar');
     var navToggle = document.getElementById('navToggle');
