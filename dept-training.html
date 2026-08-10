@@ -256,6 +256,7 @@ const departments = {
 };
 
 const data = departments[dept] || departments.hr;
+const API_BASE = 'https://learnai-backend-n0df.onrender.com';
 
 document.getElementById('deptTitle').textContent = data.title;
 document.getElementById('deptDesc').textContent = data.desc;
@@ -320,13 +321,22 @@ function markLessonDone(i) {
   saveProgress(p);
 }
 
-function submitAssignment(i) {
+async function submitAssignment(i) {
   const text = document.getElementById('work-'+i).value.trim();
   if (text.length < 50) { alert('Assignment too short. Minimum 50 characters.'); return; }
   const p = getProgress();
   if (!p.assignments) p.assignments = {};
   p.assignments[i] = { submitted: true, draft: text, wordCount: text.split(/\s+/).filter(w=>w.length>0).length, date: new Date().toISOString() };
   saveProgress(p);
+  // Sync to backend
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const userId = user.id || localStorage.getItem('auth_user_id') || 'anonymous';
+  try {
+    await fetch(API_BASE + '/api/admin/assignments/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, dept, moduleIndex: i, moduleTitle: data.lessons[i].title, assignmentTitle: data.lessons[i].assignment.title, content: text })
+    });
+  } catch(e) { console.log('Backend sync failed', e); }
 }
 
 function reopenAssignment(i) {
@@ -348,7 +358,23 @@ function renderQuiz() {
     let score = 0;
     data.quiz.forEach((q,i) => {
       const sel = form.querySelector(`input[name="q${i+1}"]:checked`);
-      if (sel && sel.value === q.a) score++;
+      const correct = sel && sel.value === q.a;
+      if (correct) score++;
+      // Show right/wrong per question
+      const labels = form.querySelectorAll(`input[name="q${i+1}"]`);
+      labels.forEach(inp => {
+        const lbl = inp.closest('label');
+        if (inp.value === q.a) {
+          lbl.style.borderColor = '#22c55e';
+          lbl.style.background = '#dcfce7';
+          lbl.innerHTML += ' ✅';
+        } else if (inp.checked && inp.value !== q.a) {
+          lbl.style.borderColor = '#ef4444';
+          lbl.style.background = '#fee2e2';
+          lbl.innerHTML += ' ❌';
+        }
+        inp.disabled = true;
+      });
     });
     const pct = Math.round((score/data.quiz.length)*100);
     const res = document.getElementById('quizForm-result');

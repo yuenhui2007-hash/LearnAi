@@ -24,4 +24,6 @@ users.set('demo-user-1', {
     createdAt: new Date().toISOString()
 });
 
-module.exports = { users, materials, studyPlans, sessions, analytics, workbooks, activityLogs, academyProgress };
+const assignments = new Map();
+
+module.exports = { users, materials, studyPlans, sessions, analytics, workbooks, activityLogs, academyProgress, assignments };
