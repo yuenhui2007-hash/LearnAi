@@ -256,6 +256,7 @@ const departments = {
 };
 
 const data = departments[dept] || departments.hr;
+const API_BASE = 'https://learnai-backend-n0df.onrender.com';
 
 document.getElementById('deptTitle').textContent = data.title;
 document.getElementById('deptDesc').textContent = data.desc;
@@ -320,13 +321,22 @@ function markLessonDone(i) {
   saveProgress(p);
 }
 
-function submitAssignment(i) {
+async function submitAssignment(i) {
   const text = document.getElementById('work-'+i).value.trim();
   if (text.length < 50) { alert('Assignment too short. Minimum 50 characters.'); return; }
   const p = getProgress();
   if (!p.assignments) p.assignments = {};
   p.assignments[i] = { submitted: true, draft: text, wordCount: text.split(/\s+/).filter(w=>w.length>0).length, date: new Date().toISOString() };
   saveProgress(p);
+  // Sync to backend
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const userId = user.id || localStorage.getItem('auth_user_id') || 'anonymous';
+  try {
+    await fetch(API_BASE + '/api/admin/assignments/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, dept, moduleIndex: i, moduleTitle: data.lessons[i].title, assignmentTitle: data.lessons[i].assignment.title, content: text })
+    });
+  } catch(e) { console.log('Backend sync failed', e); }
 }
 
 function reopenAssignment(i) {

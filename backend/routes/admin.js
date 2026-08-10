@@ -1,5 +1,5 @@
 const express = require('express');
-const { users, activityLogs, academyProgress } = require('../config/database');
+const { users, activityLogs, academyProgress, assignments } = require('../config/database');
 const router = express.Router();
 
 // GET /api/admin/users
@@ -81,6 +81,86 @@ router.get('/stats', (req, res) => {
                        allLogs.filter(l => l.action === 'logout').length
         }
     });
+});
+
+// ===== Assignment Submission (Employee) =====
+
+// POST /api/admin/assignments/submit
+router.post('/assignments/submit', (req, res) => {
+    const { userId, dept, moduleIndex, moduleTitle, assignmentTitle, content } = req.body;
+    if (!userId || !dept || content === undefined) {
+        return res.status(400).json({ success: false, error: 'Missing required fields' });
+    }
+    const id = `${userId}_${dept}_${moduleIndex}`;
+    assignments.set(id, {
+        id,
+        userId,
+        dept,
+        moduleIndex,
+        moduleTitle: moduleTitle || '',
+        assignmentTitle: assignmentTitle || '',
+        content,
+        wordCount: content.split(/\s+/).filter(w => w.length > 0).length,
+        status: 'pending',
+        submittedAt: new Date().toISOString()
+    });
+    res.json({ success: true, assignment: assignments.get(id) });
+});
+
+// GET /api/admin/assignments/status/:userId/:dept
+router.get('/assignments/status/:userId/:dept', (req, res) => {
+    const { userId, dept } = req.params;
+    const userAssignments = Array.from(assignments.values())
+        .filter(a => a.userId === userId && a.dept === dept)
+        .map(a => ({
+            moduleIndex: a.moduleIndex,
+            status: a.status,
+            score: a.score,
+            feedback: a.feedback,
+            submittedAt: a.submittedAt,
+            gradedAt: a.gradedAt
+        }));
+    res.json({ success: true, assignments: userAssignments });
+});
+
+// ===== Assignment Grading (Admin) =====
+
+// GET /api/admin/assignments
+router.get('/assignments', (req, res) => {
+    const all = Array.from(assignments.values()).map(a => {
+        const user = users.get(a.userId);
+        return {
+            id: a.id,
+            userId: a.userId,
+            userName: user ? user.name : 'Unknown',
+            userEmail: user ? user.email : 'Unknown',
+            dept: a.dept,
+            moduleIndex: a.moduleIndex,
+            moduleTitle: a.moduleTitle,
+            assignmentTitle: a.assignmentTitle,
+            content: a.content,
+            wordCount: a.wordCount,
+            status: a.status || 'pending',
+            score: a.score,
+            feedback: a.feedback,
+            gradedBy: a.gradedBy,
+            submittedAt: a.submittedAt,
+            gradedAt: a.gradedAt
+        };
+    }).sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
+    res.json({ success: true, count: all.length, assignments: all });
+});
+
+// POST /api/admin/assignments/:id/grade
+router.post('/assignments/:id/grade', (req, res) => {
+    const { score, feedback } = req.body;
+    const a = assignments.get(req.params.id);
+    if (!a) return res.status(404).json({ success: false, error: 'Assignment not found' });
+    a.status = 'graded';
+    a.score = score;
+    a.feedback = feedback;
+    a.gradedAt = new Date().toISOString();
+    res.json({ success: true, assignment: a });
 });
 
 module.exports = router;
