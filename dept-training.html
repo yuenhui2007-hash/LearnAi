@@ -358,7 +358,23 @@ function renderQuiz() {
     let score = 0;
     data.quiz.forEach((q,i) => {
       const sel = form.querySelector(`input[name="q${i+1}"]:checked`);
-      if (sel && sel.value === q.a) score++;
+      const correct = sel && sel.value === q.a;
+      if (correct) score++;
+      // Show right/wrong per question
+      const labels = form.querySelectorAll(`input[name="q${i+1}"]`);
+      labels.forEach(inp => {
+        const lbl = inp.closest('label');
+        if (inp.value === q.a) {
+          lbl.style.borderColor = '#22c55e';
+          lbl.style.background = '#dcfce7';
+          lbl.innerHTML += ' ✅';
+        } else if (inp.checked && inp.value !== q.a) {
+          lbl.style.borderColor = '#ef4444';
+          lbl.style.background = '#fee2e2';
+          lbl.innerHTML += ' ❌';
+        }
+        inp.disabled = true;
+      });
     });
     const pct = Math.round((score/data.quiz.length)*100);
     const res = document.getElementById('quizForm-result');
