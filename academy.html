@@ -45,7 +45,9 @@
 .feature-box p { font-size: 0.9rem; color: var(--gray); }
 .dept-section { padding: 60px 0; background: var(--light); }
 .dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
-.dept-card { background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-align: center; }
+.dept-card { background: white; padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-align: center; text-decoration: none; color: inherit; display: block; transition: transform 0.2s, box-shadow 0.2s; }
+.dept-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.dept-link { display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 600; font-size: 0.85rem; }
 .dept-card h4 { margin-bottom: 8px; }
 .dept-card p { font-size: 0.85rem; color: var(--gray); }
 .progress-tracker { position: fixed; bottom: 24px; right: 24px; background: white; padding: 16px 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); z-index: 100; }
@@ -245,15 +247,15 @@
       <p>Personalized learning paths for every role</p>
     </div>
     <div class="dept-grid">
-      <div class="dept-card"><h4>👥 HR</h4><p>Recruitment, interviews, performance reviews</p></div>
-      <div class="dept-card"><h4>💰 Finance</h4><p>Reports, Excel analysis, forecasting</p></div>
-      <div class="dept-card"><h4>📢 Marketing</h4><p>Campaigns, SEO, content, social media</p></div>
-      <div class="dept-card"><h4>🤝 Sales</h4><p>Prospecting, proposals, negotiations</p></div>
-      <div class="dept-card"><h4>🎧 Support</h4><p>Ticket handling, empathy, escalation</p></div>
-      <div class="dept-card"><h4>⚙️ Operations</h4><p>SOPs, workflows, project planning</p></div>
-      <div class="dept-card"><h4>⚖️ Legal</h4><p>Document review, compliance, contracts</p></div>
-      <div class="dept-card"><h4>💻 IT</h4><p>Debugging, scripts, documentation</p></div>
-      <div class="dept-card"><h4>👔 Executive</h4><p>Strategy, board reports, decisions</p></div>
+      <a href="dept-training.html?dept=hr" class="dept-card"><h4>👥 HR</h4><p>Recruitment, interviews, performance reviews</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=finance" class="dept-card"><h4>💰 Finance</h4><p>Reports, Excel analysis, forecasting</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=marketing" class="dept-card"><h4>📢 Marketing</h4><p>Campaigns, SEO, content, social media</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=sales" class="dept-card"><h4>🤝 Sales</h4><p>Prospecting, proposals, negotiations</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=support" class="dept-card"><h4>🎧 Support</h4><p>Ticket handling, empathy, escalation</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=operations" class="dept-card"><h4>⚙️ Operations</h4><p>SOPs, workflows, project planning</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=legal" class="dept-card"><h4>⚖️ Legal</h4><p>Document review, compliance, contracts</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=it" class="dept-card"><h4>💻 IT</h4><p>Debugging, scripts, documentation</p><span class="dept-link">Start Training →</span></a>
+      <a href="dept-training.html?dept=executive" class="dept-card"><h4>👔 Executive</h4><p>Strategy, board reports, decisions</p><span class="dept-link">Start Training →</span></a>
     </div>
   </div>
 </section>

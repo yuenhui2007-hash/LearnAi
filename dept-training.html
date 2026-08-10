@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department Training — LearnAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=3">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:24px}
+.dept-hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:100px 24px 48px;text-align:center;border-radius:0 0 24px 24px;margin-bottom:32px}
+.dept-hero h1{font-size:2rem;margin-bottom:8px}
+.dept-hero p{opacity:.85}
+.progress-tracker{background:#fff;padding:20px 24px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.progress-tracker .bar{flex:1;height:10px;background:#e2e8f0;border-radius:50px;overflow:hidden}
+.progress-tracker .fill{height:100%;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0%;transition:width .5s}
+.lesson-card{background:#fff;padding:28px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:20px;border-left:4px solid #6366f1}
+.lesson-card h3{font-size:1.1rem;margin-bottom:12px}
+.lesson-card ul{padding-left:20px;line-height:1.9;color:#475569}
+.lesson-card .tag{display:inline-block;background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:50px;font-size:.75rem;font-weight:600;margin-bottom:12px}
+.practice-box{background:#f0fdf4;border:1px solid #bbf7d0;padding:20px;border-radius:12px;margin:16px 0}
+.practice-box h4{color:#166534;margin-bottom:8px}
+.assignment-box{background:#fff7ed;border:2px solid #fdba74;padding:24px;border-radius:12px;margin:20px 0}
+.assignment-box h4{color:#9a3412;margin-bottom:12px}
+.assignment-box textarea{width:100%;min-height:100px;padding:12px;border:1px solid #fed7aa;border-radius:8px;font-family:inherit;font-size:.9rem;margin:12px 0;resize:vertical}
+.assignment-box textarea:focus{outline:none;border-color:#f97316}
+.assignment-box .deliverables{background:#fff;padding:16px;border-radius:8px;border:1px solid #fed7aa;margin:12px 0}
+.assignment-box .deliverables li{margin-bottom:6px;color:#7c2d12}
+.assignment-status{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;margin-top:8px}
+.assignment-status.pending{background:#fef3c7;color:#92400e}
+.assignment-status.submitted{background:#dcfce7;color:#166534}
+.submit-work-btn{background:#f97316;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;margin-top:8px}
+.submit-work-btn:disabled{background:#cbd5e1;cursor:not-allowed}
+.lock-msg{background:#fee2e2;color:#991b1b;padding:16px;border-radius:12px;margin:16px 0;text-align:center}
+.quiz-locked{opacity:.5;pointer-events:none;filter:grayscale(.5)}
+.quiz-box{background:#f8fafc;border:2px solid #e2e8f0;padding:28px;border-radius:16px;margin:24px 0}
+.quiz-box h3{margin-bottom:16px}
+.quiz-question{margin-bottom:16px}
+.quiz-question p{font-weight:600;margin-bottom:8px}
+.quiz-options label{display:block;padding:10px 14px;margin-bottom:6px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;transition:.2s}
+.quiz-options label:hover{border-color:#6366f1;background:#eef2ff}
+.quiz-options input{margin-right:8px}
+.quiz-result{margin-top:16px;padding:16px;border-radius:12px;display:none}
+.nav-btns{display:flex;gap:12px;margin-top:32px}
+.nav-btns a,.nav-btns button{padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:none;cursor:pointer;font-size:.9rem}
+.btn-primary{background:#6366f1;color:#fff}
+.btn-secondary{background:#f1f5f9;color:#475569}
+.completed-badge{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#166534;padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;margin-left:12px}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-container" style="display:flex;justify-content:space-between;align-items:center;padding:16px 24px">
+    <a href="index.html" class="logo"><span style="font-size:1.3rem">🎓</span> <span style="font-weight:700">LearnAI</span></a>
+    <a href="academy.html" style="color:#64748b;text-decoration:none;font-size:.9rem">← Back to Academy</a>
+  </div>
+</nav>
+
+<div class="dept-hero" id="deptHero">
+  <h1 id="deptTitle">Department Training</h1>
+  <p id="deptDesc">Personalized AI training for your role</p>
+</div>
+
+<div class="container">
+  <div class="progress-tracker">
+    <span style="font-size:.9rem;font-weight:600;white-space:nowrap">Progress</span>
+    <div class="bar"><div class="fill" id="progressFill"></div></div>
+    <span style="font-size:.9rem;font-weight:700;color:#6366f1" id="progressText">0%</span>
+  </div>
+
+  <div id="lessonsContainer"></div>
+
+  <div class="quiz-box" id="finalQuiz">
+    <h3>📝 Final Department Quiz (80% to pass)</h3>
+    <form id="quizForm"></form>
+    <div id="quizForm-result" class="quiz-result"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="academy.html" class="btn-secondary">← Back to Academy</a>
+    <button id="certBtn" class="btn-primary" style="display:none" onclick="issueDeptCert()">📜 Get Certificate</button>
+  </div>
+</div>
+
+<script src="js/auth.js?v=3"></script>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const dept = urlParams.get('dept') || 'hr';
+
+const departments = {
+  hr: {
+    title: '👥 HR Training',
+    desc: 'Master AI for recruitment, onboarding, and employee management',
+    color: '#8b5cf6',
+    lessons: [
+      {title:'AI-Powered Recruitment',tag:'Module 1',items:['Screen CVs with AI prompts','Draft inclusive job descriptions','Generate structured interview questions','Rank candidates objectively'],practice:'Upload a CV and ask AI to: (1) summarise qualifications, (2) list 3 strengths, (3) suggest 5 interview questions.',assignment:{title:'Recruitment Assignment',deliverables:['Submit an AI-improved job description (min 150 words)','Submit 5 AI-generated interview questions with rationale','Paste your AI prompt used for CV screening'],locked:false}},
+      {title:'Onboarding Automation',tag:'Module 2',items:['Generate welcome email templates','Create onboarding checklists','Build training schedules','Draft role-specific guides'],practice:'Create an onboarding checklist for a new marketing manager using AI.',assignment:{title:'Onboarding Assignment',deliverables:['Submit a welcome email template (min 100 words)','Submit a 10-item onboarding checklist','Paste your AI prompt and the generated schedule'],locked:true}},
+      {title:'Performance & Policies',tag:'Module 3',items:['Draft SMART goal frameworks','Write constructive feedback','Update HR policies with AI','Create mediation scripts'],practice:'Draft a performance review for an employee who meets expectations but lacks initiative.',assignment:{title:'Performance Assignment',deliverables:['Submit a SMART goal framework for a sales rep','Submit constructive feedback for underperformance (min 100 words)','Paste your AI prompt and policy excerpt'],locked:true}},
+      {title:'Conflict Resolution',tag:'Module 4',items:['Analyse conflict scenarios','Draft neutral investigation notes','Prepare mediation talking points','Document resolution steps'],practice:'Use AI to draft a mediation script for two team members in a disagreement over project ownership.',assignment:{title:'Conflict Assignment',deliverables:['Submit a mediation script (min 150 words)','List 3 investigation questions you would ask','Paste your AI prompt and response'],locked:true}}
+    ],
+    quiz: [
+      {q:'What is the best use of AI in recruitment?',a:'b',opts:['Making final hiring decisions','Screening CVs and drafting questions','Setting salary levels']},
+      {q:'Can AI replace a human in onboarding?',a:'b',opts:['Yes, completely','No, it assists with materials only','Only for remote employees']},
+      {q:'What should AI-generated feedback include?',a:'a',opts:['Specific examples and actionable steps','Generic praise only','Criticism without solutions']},
+      {q:'How should AI be used for HR policies?',a:'b',opts:['Publish without review','Draft for human review and approval','Ignore legal compliance']},
+      {q:'What is a key limitation of AI in conflict resolution?',a:'b',opts:['Cannot read emails','Lacks emotional intelligence and context','Is too expensive']}
+    ]
+  },
+  finance: {
+    title: '💰 Finance Training',
+    desc: 'Use AI for reporting, analysis, forecasting, and presentations',
+    color: '#10b981',
+    lessons: [
+      {title:'Financial Reporting with AI',tag:'Module 1',items:['Generate executive summaries','Extract insights from spreadsheets','Create variance reports','Automate monthly dashboards'],practice:'Upload a P&L spreadsheet. Ask AI to identify the top 3 cost drivers and suggest 2 cost-cutting measures.',assignment:{title:'Reporting Assignment',deliverables:['Submit an executive summary of a financial dataset (min 100 words)','List 3 cost drivers identified by AI','Paste the AI prompt you used'],locked:false}},
+      {title:'Excel & Data Analysis',tag:'Module 2',items:['Write complex formulas','Find anomalies in datasets','Build pivot tables with AI','Create charts and visualisations'],practice:'Give AI a list of 100 transactions and ask it to flag suspicious entries.',assignment:{title:'Excel Assignment',deliverables:['Submit 3 AI-generated Excel formulas with explanations','Describe 2 anomalies AI flagged and why','Paste your dataset description and prompt'],locked:true}},
+      {title:'Budgeting & Forecasting',tag:'Module 3',items:['Build budget scenarios','Run what-if analysis','Forecast revenue trends','Track budget vs actual'],practice:'Create a Q4 budget forecast using last year\'s data as a base. Ask AI to model 3 scenarios.',assignment:{title:'Budget Assignment',deliverables:['Submit a Q4 budget forecast with 3 scenarios','Explain assumptions for each scenario','Paste your AI prompt and output'],locked:true}},
+      {title:'Board-Ready Presentations',tag:'Module 4',items:['Structure financial decks','Write executive summaries','Create KPI dashboards','Prepare investor updates'],practice:'Draft a 5-slide board presentation summarising quarterly financial performance.',assignment:{title:'Presentation Assignment',deliverables:['Submit slide titles + speaker notes for 5 slides','List 3 KPIs you would include','Paste your AI prompt and deck outline'],locked:true}}
+    ],
+    quiz: [
+      {q:'What can AI generate from financial data?',a:'b',opts:['Bank transfers','Executive summaries','Audit opinions']},
+      {q:'Which Excel task suits AI best?',a:'a',opts:['Writing formulas and finding anomalies','Opening files','Installing add-ins']},
+      {q:'Can AI fully replace a financial auditor?',a:'b',opts:['Yes','No, human judgment is essential','Only for small firms']},
+      {q:'What is "variance analysis"?',a:'a',opts:['Comparing budget vs actual','Stock price prediction','Currency exchange']},
+      {q:'What should AI presentations include?',a:'b',opts:['Every transaction detail','Key metrics and actionable insights','Unverified projections']}
+    ]
+  },
+  marketing: {
+    title: '📢 Marketing Training',
+    desc: 'AI-driven campaigns, SEO, content, and social media',
+    color: '#f59e0b',
+    lessons: [
+      {title:'Campaign Creation',tag:'Module 1',items:['Generate campaign ideas','Write ad copy variations','Plan content calendars','Build audience segments'],practice:'Ask AI to create a 4-week product launch campaign with 3 ad copy variations per week.',assignment:{title:'Campaign Assignment',deliverables:['Submit a 4-week campaign plan with weekly themes','Submit 3 ad copy variations for Week 1','Paste your AI prompt and target audience description'],locked:false}},
+      {title:'SEO & Content',tag:'Module 2',items:['Research keywords','Write meta descriptions','Optimise blog posts','Generate content outlines'],practice:'Give AI a blog topic. Ask for: (1) 10 keywords, (2) an outline, (3) a meta description.',assignment:{title:'SEO Assignment',deliverables:['Submit 10 keywords with search intent labels','Submit a blog outline (min 5 sections)','Submit a meta description (150-160 chars)'],locked:true}},
+      {title:'Social Media',tag:'Module 3',items:['Create platform-specific posts','Generate hashtag sets','Plan posting schedules','Analyse engagement trends'],practice:'Create 5 LinkedIn posts and 5 Instagram captions for a new software feature launch.',assignment:{title:'Social Assignment',deliverables:['Submit 3 LinkedIn posts and 3 Instagram captions','Submit a hashtag strategy (10 hashtags)','Paste your AI prompts and posting schedule'],locked:true}},
+      {title:'Email & Analytics',tag:'Module 4',items:['Write subject lines','Build drip campaigns','Design A/B tests','Summarise campaign reports'],practice:'Draft a 3-email welcome sequence for new subscribers with subject line options.',assignment:{title:'Email Assignment',deliverables:['Submit a 3-email welcome sequence','Submit 5 subject line options with rationale','Paste your AI prompt and A/B test plan'],locked:true}}
+    ],
+    quiz: [
+      {q:'What can AI generate for SEO?',a:'a',opts:['Keywords and meta descriptions','Website hosting','Domain names']},
+      {q:'How should AI be used for social media?',a:'b',opts:['Post without review','Create drafts for approval','Replace community managers']},
+      {q:'What makes a good AI-generated subject line?',a:'a',opts:['Personalised and curiosity-driven','All caps with emojis','Generic and vague']},
+      {q:'Can AI build customer personas?',a:'b',opts:['No','Yes, based on data patterns','Only for B2C']},
+      {q:'What is A/B testing in marketing?',a:'a',opts:['Comparing two versions to see which performs better','Testing on two audiences','Running ads on two platforms']}
+    ]
+  },
+  sales: {
+    title: '🤝 Sales Training',
+    desc: 'Prospecting, proposals, and closing with AI assistance',
+    color: '#ef4444',
+    lessons: [
+      {title:'AI Prospecting',tag:'Module 1',items:['Research leads from LinkedIn','Draft personalised cold emails','Write LinkedIn connection requests','Build prospect lists'],practice:'Research a target company and draft a personalised cold email to their CTO.',assignment:{title:'Prospecting Assignment',deliverables:['Submit a prospect research summary (target company + persona)','Submit a personalised cold email (min 100 words)','Paste your AI prompt and LinkedIn message'],locked:false}},
+      {title:'Proposals & Pricing',tag:'Module 2',items:['Generate customised proposals','Build pricing tables','Write scope of work','Create comparison matrices'],practice:'Ask AI to create a proposal template for a software implementation project.',assignment:{title:'Proposal Assignment',deliverables:['Submit a proposal outline with scope, timeline, pricing','Submit a pricing table (3 tiers)','Paste your AI prompt and template'],locked:true}},
+      {title:'Objection Handling',tag:'Module 3',items:['Prepare responses to common objections','Roleplay difficult conversations','Draft follow-up sequences','Negotiate terms with AI prep'],practice:'List 5 common objections your prospects give. Ask AI to draft responses for each.',assignment:{title:'Objection Assignment',deliverables:['List 5 common objections in your industry','Submit AI-drafted responses for each (min 50 words each)','Paste your roleplay prompt and takeaway'],locked:true}},
+      {title:'CRM & Pipeline',tag:'Module 4',items:['Summarise sales calls','Update CRM records','Prioritise leads by score','Forecast pipeline revenue'],practice:'Paste a call transcript and ask AI to: (1) summarise key points, (2) identify next steps, (3) suggest follow-up email.',assignment:{title:'CRM Assignment',deliverables:['Submit a call summary with key points and next steps','Submit a follow-up email draft','Paste your transcript excerpt and AI prompt'],locked:true}}
+    ],
+    quiz: [
+      {q:'What is the best AI use for prospecting?',a:'b',opts:['Automatically calling leads','Researching and drafting personalised emails','Setting prices']},
+      {q:'Can AI write sales proposals?',a:'b',opts:['No','Yes, as customised drafts','Only for simple products']},
+      {q:'How should objection responses be used?',a:'a',opts:['As starting points for reps to personalise','Sent verbatim','Ignored']},
+      {q:'What can AI do with call transcripts?',a:'b',opts:['Make the sale','Summarise and suggest follow-ups','Replace the rep']},
+      {q:'What is a key limitation of AI in sales?',a:'b',opts:['Cannot write emails','Cannot build genuine human relationships','Cannot access the internet']}
+    ]
+  },
+  support: {
+    title: '🎧 Support Training',
+    desc: 'Deliver empathetic, efficient customer service with AI',
+    color: '#06b6d4',
+    lessons: [
+      {title:'Ticket Responses',tag:'Module 1',items:['Draft empathetic replies','Adjust tone for context','Include clear next steps','Link to relevant help articles'],practice:'Give AI an angry customer complaint. Ask it to draft 3 response options: apologetic, solution-focused, and escalated.',assignment:{title:'Ticket Assignment',deliverables:['Submit 3 response drafts for an angry customer (different tones)','Explain which tone you chose and why','Paste your complaint prompt and AI output'],locked:false}},
+      {title:'Escalation & Handover',tag:'Module 2',items:['Identify escalation triggers','Draft handover notes','Prioritise urgent tickets','Document case history'],practice:'Write escalation criteria for your team. Ask AI to create a handover template.',assignment:{title:'Escalation Assignment',deliverables:['Submit 5 escalation criteria for your team','Submit a handover note template (min 100 words)','Paste your AI prompt and criteria'],locked:true}},
+      {title:'Knowledge Base',tag:'Module 3',items:['Create help articles','Update FAQs','Write troubleshooting guides','Build internal wikis'],practice:'Ask AI to turn 10 recent support tickets into a structured FAQ page.',assignment:{title:'KB Assignment',deliverables:['Submit a 5-question FAQ with answers','Submit a troubleshooting flowchart (text outline)','Paste your ticket data and AI prompt'],locked:true}},
+      {title:'Quality & Compliance',tag:'Module 4',items:['Review conversations for tone','Check compliance language','Flag policy violations','Summarise resolution quality'],practice:'Paste a support conversation and ask AI to score it on empathy, accuracy, and policy compliance.',assignment:{title:'QA Assignment',deliverables:['Submit a conversation review with scores (1-5) for empathy, accuracy, compliance','List 2 improvements suggested by AI','Paste your conversation and AI prompt'],locked:true}}
+    ],
+    quiz: [
+      {q:'What tone should AI-drafted support replies have?',a:'a',opts:['Empathetic and helpful','Short and blunt','Overly formal']},
+      {q:'When should a ticket be escalated?',a:'b',opts:['Always','When it exceeds agent authority or technical limits','Never']},
+      {q:'Can AI update a knowledge base?',a:'b',opts:['No','Yes, by turning tickets into articles','Only once per month']},
+      {q:'What is sentiment analysis used for?',a:'a',opts:['Detecting frustrated customers early','Translating languages','Sending promotions']},
+      {q:'Should AI responses be sent without review?',a:'b',opts:['Yes, always','No, agents should review and personalise','Only for simple tickets']}
+    ]
+  },
+  operations: {
+    title: '⚙️ Operations Training',
+    desc: 'Streamline workflows, SOPs, and project planning with AI',
+    color: '#64748b',
+    lessons: [
+      {title:'SOPs & Workflows',tag:'Module 1',items:['Write standard procedures','Map process flows','Identify bottlenecks','Suggest optimisations'],practice:'Describe your current invoice approval process. Ask AI to write a formal SOP and suggest 2 improvements.',assignment:{title:'SOP Assignment',deliverables:['Submit a formal SOP for a process at your company (min 200 words)','List 2 AI-suggested improvements','Paste your process description and AI prompt'],locked:false}},
+      {title:'Project Planning',tag:'Module 2',items:['Build Gantt charts','Create risk registers','Allocate resources','Set milestone timelines'],practice:'Give AI a project brief. Ask for: (1) task breakdown, (2) timeline, (3) risk register.',assignment:{title:'Project Assignment',deliverables:['Submit a project task breakdown (min 8 tasks)','Submit a risk register with 5 risks and mitigations','Paste your project brief and AI prompt'],locked:true}},
+      {title:'Meeting Management',tag:'Module 3',items:['Auto-summarise meetings','Extract action items','Draft follow-up emails','Track decision logs'],practice:'Paste a meeting transcript and ask AI to: (1) summarise, (2) list action items with owners, (3) draft follow-up email.',assignment:{title:'Meeting Assignment',deliverables:['Submit a meeting summary (min 100 words)','List action items with owners and deadlines','Submit a follow-up email draft'],locked:true}},
+      {title:'Supply Chain & Logistics',tag:'Module 4',items:['Analyse vendor performance','Forecast inventory needs','Optimise delivery routes','Draft procurement documents'],practice:'Ask AI to create a vendor evaluation template and a purchase order template.',assignment:{title:'Procurement Assignment',deliverables:['Submit a vendor evaluation template (5 criteria)','Submit a purchase order template','Paste your AI prompts and outputs'],locked:true}}
+    ],
+    quiz: [
+      {q:'What can AI help write for operations?',a:'b',opts:['Employment contracts','SOPs and workflow maps','Building blueprints']},
+      {q:'How should AI be used for project planning?',a:'a',opts:['Create initial drafts and timelines','Replace project managers','Avoid using AI']},
+      {q:'What is a key benefit of AI meeting summaries?',a:'b',opts:['Replacing attendees','Extracting action items automatically','Recording audio']},
+      {q:'Can AI identify process bottlenecks?',a:'a',opts:['Yes, by analysing workflow descriptions','No, only humans can','Only in manufacturing']},
+      {q:'Should SOPs created by AI be reviewed?',a:'b',opts:['No, publish immediately','Yes, by subject matter experts','Only if over 10 pages']}
+    ]
+  },
+  legal: {
+    title: '⚖️ Legal Training',
+    desc: 'Assistive AI for document review, compliance, and research',
+    color: '#7c3aed',
+    lessons: [
+      {title:'Document Review',tag:'Module 1',items:['Summarise contracts','Extract key clauses','Flag unusual terms','Compare versions'],practice:'Upload a contract. Ask AI to: (1) summarise, (2) list key clauses, (3) flag any risky terms.',assignment:{title:'Review Assignment',deliverables:['Submit a contract summary (min 150 words)','List 5 key clauses extracted by AI','List 2 risky terms AI flagged'],locked:false}},
+      {title:'Compliance & Risk',tag:'Module 2',items:['Check against regulations','Flag compliance gaps','Track regulatory changes','Draft compliance checklists'],practice:'Ask AI to create a GDPR compliance checklist for your company website.',assignment:{title:'Compliance Assignment',deliverables:['Submit a compliance checklist (min 10 items)','Explain 2 gaps AI identified','Paste your regulation and AI prompt'],locked:true}},
+      {title:'Legal Research',tag:'Module 3',items:['Find relevant case law','Summarise legislation','Research precedents','Draft research memos'],practice:'Research a legal question relevant to your industry. Ask AI to summarise findings with sources.',assignment:{title:'Research Assignment',deliverables:['Submit a research memo on a legal question (min 200 words)','List 3 sources or precedents AI found','Paste your research question and AI prompt'],locked:true}},
+      {title:'Document Drafting',tag:'Module 4',items:['Draft NDAs and contracts','Write policy language','Create consent forms','Prepare legal correspondence'],practice:'Ask AI to draft an NDA template. Then ask it to flag what a lawyer must review before use.',assignment:{title:'Drafting Assignment',deliverables:['Submit an NDA or policy excerpt (min 150 words)','List 3 sections a lawyer must review','Paste your AI prompt and flagged items'],locked:true}}
+    ],
+    quiz: [
+      {q:'Can AI replace a lawyer?',a:'b',opts:['Yes, for all cases','No, it only assists','Yes, for contracts only']},
+      {q:'What is AI best at for legal work?',a:'a',opts:['Summarising and reviewing documents','Making court arguments','Setting legal fees']},
+      {q:'Should AI-drafted contracts be used without review?',a:'b',opts:['Yes, if they look correct','No, always have a lawyer review','Only for internal use']},
+      {q:'What is compliance checking?',a:'a',opts:['Ensuring actions meet regulations','Checking email responses','Verifying employee attendance']},
+      {q:'What must AI legal outputs include?',a:'b',opts:['Guarantees','Disclaimers that AI is not legal advice','Binding terms']}
+    ]
+  },
+  it: {
+    title: '💻 IT Training',
+    desc: 'Debug, document, and automate with AI assistance',
+    color: '#0ea5e9',
+    lessons: [
+      {title:'Code & Scripting',tag:'Module 1',items:['Generate automation scripts','Write SQL queries','Create Python utilities','Build shell scripts'],practice:'Ask AI to write a Python script that reads a CSV and sends summary emails.',assignment:{title:'Scripting Assignment',deliverables:['Submit a code snippet or script (any language)','Explain what it does in 2 sentences','Paste your AI prompt and the generated code'],locked:false}},
+      {title:'Debugging',tag:'Module 2',items:['Analyse error logs','Suggest fixes','Explain error causes','Recommend debugging steps'],practice:'Paste an error log and ask AI to: (1) explain the error, (2) suggest 3 fixes, (3) recommend prevention.',assignment:{title:'Debug Assignment',deliverables:['Submit an error log excerpt','Submit AI explanation + 3 suggested fixes','Submit prevention recommendation (min 50 words)'],locked:true}},
+      {title:'Documentation',tag:'Module 3',items:['Write API documentation','Create technical specs','Build onboarding guides','Maintain knowledge bases'],practice:'Give AI a code snippet. Ask it to write technical documentation including parameters and examples.',assignment:{title:'Docs Assignment',deliverables:['Submit API or function documentation (min 100 words)','Include parameters, return values, and example','Paste your code snippet and AI prompt'],locked:true}},
+      {title:'Infrastructure & Security',tag:'Module 4',items:['Draft security policies','Write incident response plans','Create system checklists','Analyse vulnerability reports'],practice:'Ask AI to draft an incident response plan for a data breach scenario.',assignment:{title:'Security Assignment',deliverables:['Submit an incident response plan outline (min 150 words)','List 5 response steps','Paste your scenario and AI prompt'],locked:true}}
+    ],
+    quiz: [
+      {q:'Can AI replace developers?',a:'b',opts:['Yes, completely','No, it assists with code generation','Only for frontend']},
+      {q:'What is a good use of AI for debugging?',a:'a',opts:['Analysing error logs and suggesting fixes','Deploying to production','Deleting buggy code']},
+      {q:'Can AI write documentation?',a:'b',opts:['No','Yes, from code snippets','Only for JavaScript']},
+      {q:'Should AI-generated scripts be tested?',a:'a',opts:['Yes, always in a safe environment','No, AI code is always correct','Only if over 50 lines']},
+      {q:'What can AI help with in security?',a:'b',opts:['Replacing firewalls','Drafting policies and response plans','Hacking prevention']}
+    ]
+  },
+  executive: {
+    title: '👔 Executive Training',
+    desc: 'Strategic decision-making and leadership with AI support',
+    color: '#1e293b',
+    lessons: [
+      {title:'Strategic Analysis',tag:'Module 1',items:['Run SWOT analyses','Analyse competitors','Research market trends','Build strategic frameworks'],practice:'Ask AI to conduct a SWOT analysis for your company and suggest 3 strategic priorities.',assignment:{title:'Strategy Assignment',deliverables:['Submit a SWOT analysis for your company/team','List 3 strategic priorities AI suggested','Paste your AI prompt and company context'],locked:false}},
+      {title:'Board & Investor Comms',tag:'Module 2',items:['Draft executive summaries','Build KPI dashboards','Write investor updates','Prepare board decks'],practice:'Draft a quarterly investor update: 3 achievements, 2 challenges, and 1 strategic pivot.',assignment:{title:'Comms Assignment',deliverables:['Submit an executive summary or investor update (min 150 words)','List 3 KPIs with current vs target values','Paste your AI prompt and outline'],locked:true}},
+      {title:'Decision Support',tag:'Module 3',items:['Model scenarios','Assess risks','Evaluate options','Build decision trees'],practice:'Present a major decision to AI. Ask it to: (1) list pros/cons, (2) model 3 scenarios, (3) flag risks.',assignment:{title:'Decision Assignment',deliverables:['Describe a real decision you face','Submit pros/cons list + 3 scenarios','Submit risk assessment (min 100 words)'],locked:true}},
+      {title:'Leadership & Culture',tag:'Module 4',items:['Draft town hall speeches','Write culture documents','Plan team communications','Create vision statements'],practice:'Ask AI to draft a town hall speech announcing a company restructuring, focusing on transparency and optimism.',assignment:{title:'Leadership Assignment',deliverables:['Submit a town hall speech or culture doc (min 200 words)','Explain the key message and tone choices','Paste your AI prompt and audience context'],locked:true}}
+    ],
+    quiz: [
+      {q:'What should executives use AI for?',a:'b',opts:['Replacing board votes','Decision support and analysis','Hiring without interviews']},
+      {q:'Can AI draft board reports?',a:'b',opts:['No, too sensitive','Yes, as drafts for executive review','Only for public companies']},
+      {q:'What is scenario modelling?',a:'a',opts:['Exploring possible futures based on variables','Building physical models','Creating 3D designs']},
+      {q:'Should AI make strategic decisions?',a:'b',opts:['Yes, it has more data','No, humans make final decisions','Only for cost-cutting']},
+      {q:'What is a key benefit of AI for executives?',a:'a',opts:['Faster synthesis of complex information','Replacing intuition','Eliminating meetings']}
+    ]
+  }
+};
+
+const data = departments[dept] || departments.hr;
+
+document.getElementById('deptTitle').textContent = data.title;
+document.getElementById('deptDesc').textContent = data.desc;
+document.getElementById('deptHero').style.background = `linear-gradient(135deg,${data.color},#1e293b)`;
+
+const container = document.getElementById('lessonsContainer');
+const STORAGE_KEY = 'dept_progress_' + dept;
+
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {lessons:[],assignments:{},quiz:false,score:0}; }
+  catch { return {lessons:[],assignments:{},quiz:false,score:0}; }
+}
+function saveProgress(p) { localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); updateUI(); }
+
+function isAssignmentUnlocked(i) {
+  if (i === 0) return true;
+  const p = getProgress();
+  return p.assignments[i-1] && p.assignments[i-1].submitted;
+}
+
+function allAssignmentsSubmitted() {
+  const p = getProgress();
+  return data.lessons.every((_,i) => p.assignments[i] && p.assignments[i].submitted);
+}
+
+function renderLessons() {
+  const prog = getProgress();
+  container.innerHTML = data.lessons.map((l,i) => {
+    const done = prog.lessons.includes(i);
+    const unlocked = isAssignmentUnlocked(i);
+    const asgn = prog.assignments[i] || {};
+    const a = l.assignment;
+    return `<div class="lesson-card" style="border-left-color:${data.color}">
+      <span class="tag" style="background:${data.color}15;color:${data.color}">${l.tag}</span>
+      <h3>${l.title}${done ? '<span class="completed-badge">✓ Completed</span>' : ''}</h3>
+      <ul>${l.items.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="practice-box"><h4>🎯 Practice Task</h4><p>${l.practice}</p></div>
+      <button class="btn-primary" style="padding:10px 20px;border-radius:8px;border:none;cursor:pointer;font-weight:600;margin-top:8px" onclick="markLessonDone(${i})">${done ? 'Reviewed' : 'Mark Complete'}</button>
+      ${!unlocked ? `<div class="lock-msg">🔒 Complete the previous assignment to unlock</div>` : `
+      <div class="assignment-box" id="asgn-${i}">
+        <h4>✏️ ${a.title}</h4>
+        <p style="color:#9a3412;font-size:.85rem;margin-bottom:8px">Complete and submit all deliverables below to proceed.</p>
+        <div class="deliverables">
+          <strong>Deliverables:</strong>
+          <ul style="margin-top:8px">${a.deliverables.map(d=>`<li>${d}</li>`).join('')}</ul>
+        </div>
+        ${asgn.submitted ? `
+          <div class="assignment-status submitted">✓ Submitted — ${asgn.wordCount || 0} words</div>
+          <button class="submit-work-btn" onclick="reopenAssignment(${i})">Edit Submission</button>
+        ` : `
+          <textarea id="work-${i}" placeholder="Type your assignment here... Paste prompts, outputs, and explanations.">${asgn.draft || ''}</textarea>
+          <button class="submit-work-btn" onclick="submitAssignment(${i})">Submit Assignment</button>
+        `}
+      </div>`}
+    </div>`;
+  }).join('');
+}
+
+function markLessonDone(i) {
+  const p = getProgress();
+  if (!p.lessons.includes(i)) p.lessons.push(i);
+  saveProgress(p);
+}
+
+function submitAssignment(i) {
+  const text = document.getElementById('work-'+i).value.trim();
+  if (text.length < 50) { alert('Assignment too short. Minimum 50 characters.'); return; }
+  const p = getProgress();
+  if (!p.assignments) p.assignments = {};
+  p.assignments[i] = { submitted: true, draft: text, wordCount: text.split(/\s+/).filter(w=>w.length>0).length, date: new Date().toISOString() };
+  saveProgress(p);
+}
+
+function reopenAssignment(i) {
+  const p = getProgress();
+  if (p.assignments[i]) { p.assignments[i].submitted = false; }
+  saveProgress(p);
+}
+
+function renderQuiz() {
+  const form = document.getElementById('quizForm');
+  form.innerHTML = data.quiz.map((q,i) => `
+    <div class="quiz-question"><p>${i+1}. ${q.q}</p><div class="quiz-options">
+      ${q.opts.map((o,ji) => `<label><input type="radio" name="q${i+1}" value="${String.fromCharCode(97+ji)}">${o}</label>`).join('')}
+    </div></div>
+  `).join('') + '<button type="submit" class="btn-primary" style="margin-top:12px;padding:12px 24px">Submit Quiz</button>';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let score = 0;
+    data.quiz.forEach((q,i) => {
+      const sel = form.querySelector(`input[name="q${i+1}"]:checked`);
+      if (sel && sel.value === q.a) score++;
+    });
+    const pct = Math.round((score/data.quiz.length)*100);
+    const res = document.getElementById('quizForm-result');
+    res.style.display = 'block';
+    const p = getProgress();
+    p.quiz = true; p.score = pct;
+    saveProgress(p);
+    if (pct >= 80) {
+      res.innerHTML = `<div style="background:#dcfce7;padding:16px;border-radius:12px;color:#166534"><strong>Passed! ${pct}%</strong><br>Department training complete.</div>`;
+      document.getElementById('certBtn').style.display = 'inline-block';
+    } else {
+      res.innerHTML = `<div style="background:#fee2e2;padding:16px;border-radius:12px;color:#991b1b"><strong>Try again. ${pct}%</strong><br>You need 80% to pass.</div>`;
+    }
+  });
+}
+
+function updateUI() {
+  const p = getProgress();
+  const total = data.lessons.length * 2 + 1;
+  const lessonDone = p.lessons.length;
+  const asgnDone = data.lessons.filter((_,i) => p.assignments[i] && p.assignments[i].submitted).length;
+  const quizDone = p.quiz && p.score >= 80 ? 1 : 0;
+  const pct = Math.round(((lessonDone + asgnDone + quizDone)/total)*100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = pct + '%';
+  renderLessons();
+  if (!allAssignmentsSubmitted()) {
+    document.getElementById('finalQuiz').classList.add('quiz-locked');
+    document.getElementById('finalQuiz').insertAdjacentHTML('afterbegin', '<div class="lock-msg" id="quizLockMsg">🔒 Complete all assignments above to unlock the final quiz</div>');
+  } else {
+    const lm = document.getElementById('quizLockMsg');
+    if (lm) lm.remove();
+    document.getElementById('finalQuiz').classList.remove('quiz-locked');
+  }
+  if (p.quiz && p.score >= 80) document.getElementById('certBtn').style.display = 'inline-block';
+}
+
+function issueDeptCert() {
+  const p = getProgress();
+  if (!p.quiz || p.score < 80) { alert('Pass the quiz first.'); return; }
+  alert(`🎉 ${data.title} Certificate Earned!\n\nScore: ${p.score}%\nDate: ${new Date().toLocaleDateString()}`);
+}
+
+renderQuiz();
+updateUI();
+</script>
+</body>
+</html>
