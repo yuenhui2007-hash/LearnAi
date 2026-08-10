@@ -4,6 +4,8 @@ backend/node_modules/
 
 # Environment
 .env
+.env.example
+backend/.env
 
 # Logs
 *.log
@@ -18,3 +20,10 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Package manifests (exposed dependency versions)
+package.json
+backend/package.json
+
+# Deployment configs with secrets
+render.yaml

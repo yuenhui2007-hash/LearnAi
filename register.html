@@ -43,7 +43,7 @@
 <div class="auth-card">
 <h1>Create Account</h1>
 <p class="auth-subtitle">Join LearnAI — it's free</p>
-<div class="demo-note">🔒 All data stays in your browser. No server.</div>
+<div class="demo-note">🔒 Secured server-side authentication.</div>
 <div class="social-login">
 <button class="btn btn-social" onclick="redirectToGoogleLogin()">🔴 Continue with Google</button>
 <button class="btn btn-social" onclick="redirectToAppleLogin()">⚫ Continue with Apple</button>
@@ -85,15 +85,6 @@ if (!email || email.indexOf('@') === -1) { showError('Please enter a valid email
 if (!password || password.length < 6) { showError('Password must be at least 6 characters.'); return; }
 var result = await Auth.register(email, password, name);
 if (result.success) {
-  try {
-    var apiBase = window.location.origin.includes('localhost') ? 'http://localhost:10000/api' : window.location.origin + '/api';
-    var res = await fetch(apiBase + '/auth/register', {
-      method: 'POST', headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({email: email, password: password, name: name})
-    });
-    var data = await res.json();
-    if (data.token) localStorage.setItem('auth_token', data.token);
-  } catch(err) { console.log('API register skipped (offline)'); }
   var params = new URLSearchParams(window.location.search);
   var redirect = params.get('redirect') || 'dashboard.html';
   window.location.href = redirect;
