@@ -11,19 +11,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subjects — LearnAI</title>
-    <meta name="description" content="Browse CAIE and IB subjects.">
+    <meta name="description" content="Browse CAIE, Edexcel and IB subjects.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=5">
-<link rel="stylesheet" href="css/znotes-style.css?v=5">
+    <link rel="stylesheet" href="css/styles.css?v=6">
+<link rel="stylesheet" href="css/znotes-style.css?v=6">
     <style>
-        /* Board selection cards */
         .board-selection {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 24px;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 40px auto;
         }
         .board-card {
@@ -75,8 +74,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-
-        /* Back button */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -94,11 +91,7 @@
         .back-btn:hover {
             background: var(--border, #e5e7eb);
         }
-
-        /* Hidden state */
         .hidden { display: none !important; }
-
-        /* Fade animation */
         .fade-in {
             animation: fadeIn 0.3s ease forwards;
         }
@@ -110,7 +103,7 @@
 </head>
 <body>
     <nav class="navbar" id="navbar"></nav>
-<script src="js/nav.js?v=5"></script>
+<script src="js/nav.js?v=6"></script>
 
     <section class="subjects-section">
         <div class="container">
@@ -120,7 +113,6 @@
                 <p style="color:var(--gray);margin-top:12px">Select your examination board to browse subjects.</p>
             </div>
 
-            <!-- Step 1: Board Selection -->
             <div id="boardSelection" class="board-selection">
                 <div class="board-card" onclick="showBoard('caie')">
                     <div class="board-icon">📚</div>
@@ -131,7 +123,7 @@
                 <div class="board-card" onclick="showBoard('edexcel')">
                     <div class="board-icon">📖</div>
                     <h3>Edexcel</h3>
-                    <p>Pearson Edexcel<br>A-Level &amp; IGCSE</p>
+                    <p>Pearson Edexcel<br>IAL, IGCSE &amp; GCSE</p>
                     <div class="board-arrow">→</div>
                 </div>
                 <div class="board-card" onclick="showBoard('ib')">
@@ -142,7 +134,6 @@
                 </div>
             </div>
 
-            <!-- Step 2: Subject Content -->
             <div id="subjectContent" class="hidden">
                 <button class="back-btn" onclick="showSelection()">
                     ← Back to Boards
@@ -152,10 +143,10 @@
         </div>
     </section>
 
-    <script src="js/theme.js?v=5"></script>
-    <script src="js/data.js?v=5"></script>
-    <script src="js/app.js?v=5"></script>
-    <script src="js/search.js?v=5"></script>
+    <script src="js/theme.js?v=6"></script>
+    <script src="js/data.js?v=6"></script>
+    <script src="js/app.js?v=6"></script>
+    <script src="js/search.js?v=6"></script>
     <script>
     const boardSelection = document.getElementById('boardSelection');
     const subjectContent = document.getElementById('subjectContent');
@@ -175,7 +166,6 @@
             renderIB();
         }
 
-        // Update title
         const titles = {
             caie: 'CAIE Subjects',
             edexcel: 'Edexcel Subjects',
@@ -183,7 +173,7 @@
         };
         const subtitles = {
             caie: 'Cambridge A-Level and IGCSE syllabus coverage.',
-            edexcel: 'Pearson Edexcel A-Level and IGCSE syllabus coverage.',
+            edexcel: 'Pearson Edexcel IAL, IGCSE and GCSE syllabus coverage.',
             ib: 'International Baccalaureate syllabus coverage.'
         };
         document.querySelector('.section-title').textContent = titles[board];
@@ -198,7 +188,7 @@
         container.innerHTML = '';
 
         document.querySelector('.section-title').textContent = 'Choose Your Board';
-        document.querySelector('.section-header p').textContent = 'Select CAIE or IB to browse subjects.';
+        document.querySelector('.section-header p').textContent = 'Select your examination board to browse subjects.';
     }
 
     function createSubjectCard(key, s) {
@@ -248,13 +238,11 @@
         const section = document.createElement('div');
         section.className = 'topic-section-group';
 
-        // A-Level
         section.appendChild(renderSectionTitle('A-Level'));
         section.appendChild(renderGrid(function(s) {
             return s.topics.some(function(t) { return t.alevel; });
         }));
 
-        // IGCSE
         section.appendChild(renderSectionTitle('IGCSE'));
         section.appendChild(renderGrid(function(s) {
             return s.topics.some(function(t) { return t.igcse; });
@@ -267,14 +255,19 @@
         const section = document.createElement('div');
         section.className = 'topic-section-group';
 
-        section.appendChild(renderSectionTitle('A-Level'));
+        section.appendChild(renderSectionTitle('IAL (International A-Level)'));
         section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel && t.alevel; });
+            return s.topics.some(function(t) { return t.edexcel_ial; });
         }));
 
         section.appendChild(renderSectionTitle('IGCSE'));
         section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel && t.igcse; });
+            return s.topics.some(function(t) { return t.edexcel_igcse; });
+        }));
+
+        section.appendChild(renderSectionTitle('GCSE'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.edexcel_gcse; });
         }));
 
         container.appendChild(section);
@@ -292,8 +285,8 @@
         container.appendChild(section);
     }
     </script>
-<script src="js/auth.js?v=5"></script>
-<script src="js/mascot.js?v=5"></script>
-<script src="js/pwa.js?v=5"></script>
+<script src="js/auth.js?v=6"></script>
+<script src="js/mascot.js?v=6"></script>
+<script src="js/pwa.js?v=6"></script>
 </body>
 </html>
