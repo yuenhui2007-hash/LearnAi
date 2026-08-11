@@ -26,8 +26,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Subjects</span>
-                <h2 class="section-title">All Cambridge Subjects</h2>
-                <p style="color:var(--gray);margin-top:12px">Complete syllabus coverage for A-Level, IGCSE, and IELTS.</p>
+                <h2 class="section-title">Browse Subjects</h2>
+                <p style="color:var(--gray);margin-top:12px">CAIE (A-Level &amp; IGCSE) and IB syllabus coverage.</p>
             </div>
 
             <div id="subjectSections"></div>
@@ -54,15 +54,7 @@
         return card;
     }
 
-    function renderSection(title, filterFn) {
-        const section = document.createElement('div');
-        section.className = 'topic-section-group';
-
-        const heading = document.createElement('h2');
-        heading.className = 'section-divider';
-        heading.textContent = title;
-        section.appendChild(heading);
-
+    function renderSubsection(title, filterFn) {
         const grid = document.createElement('div');
         grid.className = 'subjects-grid';
 
@@ -82,24 +74,51 @@
             grid.appendChild(empty);
         }
 
-        section.appendChild(grid);
+        return { grid, count };
+    }
+
+    function renderSection(title, subsections) {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        const heading = document.createElement('h2');
+        heading.className = 'section-divider';
+        heading.textContent = title;
+        section.appendChild(heading);
+
+        subsections.forEach(function(sub) {
+            const subHeading = document.createElement('h3');
+            subHeading.style.cssText = 'font-size:1.1rem;font-weight:600;color:var(--text-secondary);margin:24px 0 12px;';
+            subHeading.textContent = sub.title;
+            section.appendChild(subHeading);
+
+            const result = renderSubsection(sub.title, sub.filter);
+            section.appendChild(result.grid);
+        });
+
         container.appendChild(section);
     }
 
-    // A-Level subjects
-    renderSection('A-Level Subjects', function(s) {
-        return s.topics.some(function(t) { return t.alevel; });
-    });
+    // CAIE section: A-Level + IGCSE
+    renderSection('CAIE', [
+        { title: 'A-Level', filter: function(s) { return s.topics.some(function(t) { return t.alevel; }); } },
+        { title: 'IGCSE', filter: function(s) { return s.topics.some(function(t) { return t.igcse; }); } }
+    ]);
 
-    // IGCSE subjects
-    renderSection('IGCSE Subjects', function(s) {
-        return s.topics.some(function(t) { return t.igcse; });
-    });
+    // IB section
+    const ibSection = document.createElement('div');
+    ibSection.className = 'topic-section-group';
 
-    // IB subjects
-    renderSection('IB Subjects', function(s) {
+    const ibHeading = document.createElement('h2');
+    ibHeading.className = 'section-divider';
+    ibHeading.textContent = 'IB';
+    ibSection.appendChild(ibHeading);
+
+    const ibResult = renderSubsection('IB', function(s) {
         return s.topics.some(function(t) { return t.ib; });
     });
+    ibSection.appendChild(ibResult.grid);
+    container.appendChild(ibSection);
     </script>
 <script src="js/auth.js?v=4"></script>
 <script src="js/mascot.js?v=4"></script>
