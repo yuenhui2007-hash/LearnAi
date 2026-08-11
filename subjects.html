@@ -95,6 +95,11 @@
     renderSection('IGCSE Subjects', function(s) {
         return s.topics.some(function(t) { return t.igcse; });
     });
+
+    // IB subjects
+    renderSection('IB Subjects', function(s) {
+        return s.topics.some(function(t) { return t.ib; });
+    });
     </script>
 <script src="js/auth.js?v=4"></script>
 <script src="js/mascot.js?v=4"></script>

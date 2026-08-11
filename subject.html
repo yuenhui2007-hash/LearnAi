@@ -91,6 +91,31 @@
                 igcseList.appendChild(item);
             });
         }
+
+        // IB topics
+        var ibTopics = subject.topics.filter(function(t) { return t.ib; });
+        if (ibTopics.length > 0) {
+            var ibSection = document.createElement('div');
+            ibSection.className = 'topic-section-group';
+            ibSection.innerHTML = '<h2 class="section-divider">IB DP</h2><div class="topic-list" id="ibList"></div>';
+            container.appendChild(ibSection);
+
+            var ibList = document.getElementById('ibList');
+            ibTopics.forEach(function(topic) {
+                var completed = Progress.isCompleted(subjectId, topic.id);
+                var item = document.createElement('div');
+                item.className = 'topic-item';
+                var levelText = (topic.hl && topic.sl) ? 'HL & SL' : (topic.hl ? 'HL' : 'SL');
+                var badges = '<span style="display:inline-flex;gap:6px;margin-top:4px;">' +
+                    (topic.ib ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#ede9fe;color:#5b21b6;font-weight:600;">IB</span>' : '') +
+                    (topic.hl ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#dcfce7;color:#166534;font-weight:600;">HL</span>' : '') +
+                    (topic.sl ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#dbeafe;color:#1e40af;font-weight:600;">SL</span>' : '') +
+                    '</span>';
+                var notePath = 'notes/' + subjectId + '-' + topic.id + '.html';
+                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + levelText + '</p>' + badges + '</div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                ibList.appendChild(item);
+            });
+        }
     })();
     </script>
 <script src="js/auth.js?v=4"></script>

@@ -263,6 +263,133 @@ const subjects = {
             { id: 'i9', title: 'Impact of ICT on Society', alevel: true, igcse: true, as: true, a2: false },
             { id: 'i10', title: 'ICT in Business & Industry', alevel: true, igcse: true, as: false, a2: true }
         ]
+    },
+    'ib-physics': {
+        name: 'IB Physics',
+        code: 'IB DP Physics HL/SL',
+        icon: '⚛️',
+        topics: [
+            { id: 'ibp1', title: 'Measurements & Uncertainties', ib: true, hl: true, sl: true },
+            { id: 'ibp2', title: 'Mechanics', ib: true, hl: true, sl: true },
+            { id: 'ibp3', title: 'Thermal Physics', ib: true, hl: true, sl: true },
+            { id: 'ibp4', title: 'Waves', ib: true, hl: true, sl: true },
+            { id: 'ibp5', title: 'Electricity & Magnetism', ib: true, hl: true, sl: true },
+            { id: 'ibp6', title: 'Circular Motion & Gravitation', ib: true, hl: true, sl: true },
+            { id: 'ibp7', title: 'Atomic, Nuclear & Particle Physics', ib: true, hl: true, sl: true },
+            { id: 'ibp8', title: 'Energy Production', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-chemistry': {
+        name: 'IB Chemistry',
+        code: 'IB DP Chemistry HL/SL',
+        icon: '🧪',
+        topics: [
+            { id: 'ibc1', title: 'Stoichiometric Relationships', ib: true, hl: true, sl: true },
+            { id: 'ibc2', title: 'Atomic Structure', ib: true, hl: true, sl: true },
+            { id: 'ibc3', title: 'Periodicity', ib: true, hl: true, sl: true },
+            { id: 'ibc4', title: 'Chemical Bonding & Structure', ib: true, hl: true, sl: true },
+            { id: 'ibc5', title: 'Energetics & Thermochemistry', ib: true, hl: true, sl: true },
+            { id: 'ibc6', title: 'Chemical Kinetics', ib: true, hl: true, sl: true },
+            { id: 'ibc7', title: 'Equilibrium', ib: true, hl: true, sl: true },
+            { id: 'ibc8', title: 'Acids & Bases', ib: true, hl: true, sl: true },
+            { id: 'ibc9', title: 'Redox Processes', ib: true, hl: true, sl: true },
+            { id: 'ibc10', title: 'Organic Chemistry', ib: true, hl: true, sl: true },
+            { id: 'ibc11', title: 'Measurement & Data Processing', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-biology': {
+        name: 'IB Biology',
+        code: 'IB DP Biology HL/SL',
+        icon: '🧬',
+        topics: [
+            { id: 'ibb1', title: 'Cell Biology', ib: true, hl: true, sl: true },
+            { id: 'ibb2', title: 'Molecular Biology', ib: true, hl: true, sl: true },
+            { id: 'ibb3', title: 'Genetics', ib: true, hl: true, sl: true },
+            { id: 'ibb4', title: 'Ecology', ib: true, hl: true, sl: true },
+            { id: 'ibb5', title: 'Evolution & Biodiversity', ib: true, hl: true, sl: true },
+            { id: 'ibb6', title: 'Human Physiology', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-maths-aa': {
+        name: 'IB Mathematics: Analysis & Approaches',
+        code: 'IB DP Maths AA HL/SL',
+        icon: '📐',
+        topics: [
+            { id: 'ibmaa1', title: 'Number & Algebra', ib: true, hl: true, sl: true },
+            { id: 'ibmaa2', title: 'Functions', ib: true, hl: true, sl: true },
+            { id: 'ibmaa3', title: 'Geometry & Trigonometry', ib: true, hl: true, sl: true },
+            { id: 'ibmaa4', title: 'Statistics & Probability', ib: true, hl: true, sl: true },
+            { id: 'ibmaa5', title: 'Calculus', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-maths-ai': {
+        name: 'IB Mathematics: Applications & Interpretation',
+        code: 'IB DP Maths AI HL/SL',
+        icon: '📊',
+        topics: [
+            { id: 'ibmai1', title: 'Number & Algebra', ib: true, hl: true, sl: true },
+            { id: 'ibmai2', title: 'Functions', ib: true, hl: true, sl: true },
+            { id: 'ibmai3', title: 'Geometry & Trigonometry', ib: true, hl: true, sl: true },
+            { id: 'ibmai4', title: 'Statistics & Probability', ib: true, hl: true, sl: true },
+            { id: 'ibmai5', title: 'Calculus', ib: true, hl: true, sl: true },
+            { id: 'ibmai6', title: 'Mathematical Models', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-economics': {
+        name: 'IB Economics',
+        code: 'IB DP Economics HL/SL',
+        icon: '📈',
+        topics: [
+            { id: 'ibe1', title: 'Introduction to Economics', ib: true, hl: true, sl: true },
+            { id: 'ibe2', title: 'Microeconomics', ib: true, hl: true, sl: true },
+            { id: 'ibe3', title: 'Macroeconomics', ib: true, hl: true, sl: true },
+            { id: 'ibe4', title: 'The Global Economy', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-english': {
+        name: 'IB English A',
+        code: 'IB DP English A Lit / Lang & Lit HL/SL',
+        icon: '📖',
+        topics: [
+            { id: 'iben1', title: 'Readers, Writers & Texts', ib: true, hl: true, sl: true },
+            { id: 'iben2', title: 'Time & Space', ib: true, hl: true, sl: true },
+            { id: 'iben3', title: 'Intertextuality', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-history': {
+        name: 'IB History',
+        code: 'IB DP History HL/SL',
+        icon: '🏛️',
+        topics: [
+            { id: 'ibh1', title: 'Rights & Protest', ib: true, hl: true, sl: true },
+            { id: 'ibh2', title: 'Authoritarian States', ib: true, hl: true, sl: true },
+            { id: 'ibh3', title: 'The Cold War', ib: true, hl: true, sl: true },
+            { id: 'ibh4', title: 'Causes & Effects of 20th Century Wars', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-geography': {
+        name: 'IB Geography',
+        code: 'IB DP Geography HL/SL',
+        icon: '🌍',
+        topics: [
+            { id: 'ibg1', title: 'Changing Population', ib: true, hl: true, sl: true },
+            { id: 'ibg2', title: 'Climate Change', ib: true, hl: true, sl: true },
+            { id: 'ibg3', title: 'Global Resource Consumption', ib: true, hl: true, sl: true },
+            { id: 'ibg4', title: 'Freshwater', ib: true, hl: true, sl: true },
+            { id: 'ibg5', title: 'Extreme Environments', ib: true, hl: true, sl: true }
+        ]
+    },
+    'ib-psychology': {
+        name: 'IB Psychology',
+        code: 'IB DP Psychology HL/SL',
+        icon: '🧠',
+        topics: [
+            { id: 'ibps1', title: 'Biological Approach', ib: true, hl: true, sl: true },
+            { id: 'ibps2', title: 'Cognitive Approach', ib: true, hl: true, sl: true },
+            { id: 'ibps3', title: 'Sociocultural Approach', ib: true, hl: true, sl: true },
+            { id: 'ibps4', title: 'Abnormal Psychology', ib: true, hl: true, sl: true },
+            { id: 'ibps5', title: 'Developmental Psychology', ib: true, hl: true, sl: true }
+        ]
     }
 };
 
@@ -280,6 +407,9 @@ Object.keys(subjects).forEach(subjectId => {
             igcse: topic.igcse,
             as: topic.as,
             a2: topic.a2,
+            ib: topic.ib,
+            hl: topic.hl,
+            sl: topic.sl,
             icon: subject.icon,
             code: subject.code
         });

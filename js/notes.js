@@ -52,12 +52,26 @@
             baseName = baseName.slice(0, -6);
         }
 
-        // Pattern: SUBJECT-TOPIC  (e.g. physics-p1, chemistry-c1)
-        var dashIdx = baseName.indexOf('-');
-        if (dashIdx > 0) {
-            subjectId = baseName.substring(0, dashIdx);
-            topicId = baseName.substring(dashIdx + 1);
-        } else {
+        // Pattern: SUBJECT-TOPIC  (e.g. physics-p1, ib-physics-ibp1)
+        // Match longest known subject key prefix
+        if (window.subjects) {
+            var subjectKeys = Object.keys(subjects).sort(function(a,b){ return b.length - a.length; });
+            for (var k = 0; k < subjectKeys.length; k++) {
+                if (baseName.indexOf(subjectKeys[k] + '-') === 0) {
+                    subjectId = subjectKeys[k];
+                    topicId = baseName.substring(subjectKeys[k].length + 1);
+                    break;
+                }
+            }
+        }
+        if (!subjectId) {
+            var dashIdx = baseName.indexOf('-');
+            if (dashIdx > 0) {
+                subjectId = baseName.substring(0, dashIdx);
+                topicId = baseName.substring(dashIdx + 1);
+            }
+        }
+        if (!subjectId) {
             // Legacy files like a1.html — infer subject from back button
             var backBtnForSubject = document.querySelector('a.back-btn[href*="subject.html?id="]');
             if (backBtnForSubject) {
