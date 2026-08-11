@@ -20,7 +20,7 @@
 </head>
 <body>
 <nav class="navbar" id="navbar"></nav>
-<script src="js/nav.js?v=4"></script>
+<script src="js/nav.js?v=5"></script>
 
 <section class="dashboard-section">
 <div class="container">
@@ -77,9 +77,9 @@
 </div>
 </section>
 
-<script src="js/theme.js?v=4"></script>
-    <script src="js/data.js?v=4"></script>
-<script src="js/app.js?v=4"></script>
+<script src="js/theme.js?v=4" defer></script>
+    <script src="js/data.js?v=4" defer></script>
+<script src="js/app.js?v=4" defer></script>
 <script>
 (function() {
 const overall = Progress.getOverallProgress();
@@ -87,6 +87,7 @@ document.getElementById('overallProgress').textContent =
 overall.total > 0 ? overall.completed + '/' + overall.total + ' topics completed (' + overall.percent + '%)' : 'Start studying to track your progress';
 
 const container = document.getElementById('subjectProgress');
+var fragment = document.createDocumentFragment();
 Object.keys(subjects).forEach(function(key) {
 var s = subjects[key];
 var prog = Progress.getSubjectProgress(key, s.topics.length);
@@ -94,17 +95,26 @@ var card = document.createElement('a');
 card.href = 'subject.html?id=' + key;
 card.className = 'dashboard-card';
 card.innerHTML = '<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px"><span style="font-size:2.5rem">' + s.icon + '</span><div><h3>' + s.name + '</h3><p>' + s.code + '</p></div></div><p style="font-size:0.85rem;color:var(--gray)">' + s.topics.length + ' topics</p><div style="margin-top:12px"><div class="progress-bar"><div class="progress-fill" style="width:' + prog.percent + '%"></div></div><p class="progress-text">' + prog.completed + '/' + prog.total + ' complete (' + prog.percent + '%)</p></div>';
-container.appendChild(card);
+fragment.appendChild(card);
 });
+container.appendChild(fragment);
 
 var plannerTasks = Planner.get().slice(0, 5);
 var preview = document.getElementById('plannerPreview');
 if (plannerTasks.length === 0) {
 preview.innerHTML = '<p style="color:var(--gray)">No tasks yet. Use the planner to schedule your revision.</p>';
 } else {
-preview.innerHTML = plannerTasks.map(function(t) {
-return '<div style="padding:8px 0;border-bottom:1px solid var(--gray-light);' + (t.done ? 'text-decoration:line-through;color:var(--gray)' : '') + '">' + (t.done ? '✓' : '○') + ' ' + t.text + '</div>';
-}).join('');
+var plannerHTML = '';
+for (var i = 0; i < plannerTasks.length; i++) {
+var t = plannerTasks[i];
+plannerHTML += '<div style="padding:8px 0;border-bottom:1px solid var(--gray-light);' + (t.done ? 'text-decoration:line-through;color:var(--gray)' : '') + '">' + (t.done ? '✓' : '○') + ' ' + escapeHtml(t.text) + '</div>';
+}
+preview.innerHTML = plannerHTML;
+}
+function escapeHtml(text) {
+var div = document.createElement('div');
+div.textContent = text;
+return div.innerHTML;
 }
 })();
 
@@ -145,8 +155,8 @@ document.getElementById('importBtn').addEventListener('click', function(){ docum
 document.getElementById('importFile').addEventListener('change', function(e){ if(e.target.files[0]) importProgress(e.target.files[0]); });
 })();
 </script>
-<script src="js/mascot.js?v=4"></script>
-<script src="js/auth-guard.js?v=4"></script>
-<script src="js/pwa.js?v=4"></script>
+<script src="js/mascot.js?v=4" defer></script>
+<script src="js/auth-guard.js?v=4" defer></script>
+<script src="js/pwa.js?v=4" defer></script>
 </body>
 </html>
