@@ -117,7 +117,7 @@
             <div class="section-header">
                 <span class="section-tag">Subjects</span>
                 <h2 class="section-title">Choose Your Board</h2>
-                <p style="color:var(--gray);margin-top:12px">Select CAIE or IB to browse subjects.</p>
+                <p style="color:var(--gray);margin-top:12px">Select your examination board to browse subjects.</p>
             </div>
 
             <!-- Step 1: Board Selection -->
@@ -126,6 +126,12 @@
                     <div class="board-icon">📚</div>
                     <h3>CAIE</h3>
                     <p>Cambridge Assessment International Education<br>A-Level &amp; IGCSE</p>
+                    <div class="board-arrow">→</div>
+                </div>
+                <div class="board-card" onclick="showBoard('edexcel')">
+                    <div class="board-icon">📖</div>
+                    <h3>Edexcel</h3>
+                    <p>Pearson Edexcel<br>A-Level &amp; IGCSE</p>
                     <div class="board-arrow">→</div>
                 </div>
                 <div class="board-card" onclick="showBoard('ib')">
@@ -163,15 +169,25 @@
 
         if (board === 'caie') {
             renderCAIE();
+        } else if (board === 'edexcel') {
+            renderEdexcel();
         } else if (board === 'ib') {
             renderIB();
         }
 
         // Update title
-        document.querySelector('.section-title').textContent = board === 'caie' ? 'CAIE Subjects' : 'IB Subjects';
-        document.querySelector('.section-header p').textContent = board === 'caie'
-            ? 'Cambridge A-Level and IGCSE syllabus coverage.'
-            : 'International Baccalaureate syllabus coverage.';
+        const titles = {
+            caie: 'CAIE Subjects',
+            edexcel: 'Edexcel Subjects',
+            ib: 'IB Subjects'
+        };
+        const subtitles = {
+            caie: 'Cambridge A-Level and IGCSE syllabus coverage.',
+            edexcel: 'Pearson Edexcel A-Level and IGCSE syllabus coverage.',
+            ib: 'International Baccalaureate syllabus coverage.'
+        };
+        document.querySelector('.section-title').textContent = titles[board];
+        document.querySelector('.section-header p').textContent = subtitles[board];
     }
 
     function showSelection() {
@@ -242,6 +258,23 @@
         section.appendChild(renderSectionTitle('IGCSE'));
         section.appendChild(renderGrid(function(s) {
             return s.topics.some(function(t) { return t.igcse; });
+        }));
+
+        container.appendChild(section);
+    }
+
+    function renderEdexcel() {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        section.appendChild(renderSectionTitle('A-Level'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.edexcel && t.alevel; });
+        }));
+
+        section.appendChild(renderSectionTitle('IGCSE'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.edexcel && t.igcse; });
         }));
 
         container.appendChild(section);
