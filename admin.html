@@ -509,6 +509,12 @@
                     <span>⚙️</span> Settings
                 </a>
             </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Search</div>
+                <div class="nav-item" style="padding:8px 14px">
+                    <input type="text" id="sidebarSearch" placeholder="🔍 Search..." style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:0.85rem;width:100%;outline:none" onkeyup="handleGlobalSearch()">
+                </div>
+            </div>
         </nav>
         <div class="sidebar-footer">
             <div class="user-mini">
@@ -1148,13 +1154,54 @@
             renderActivity(filtered);
         }
 
-        // Global search
+        // Global search — routes to current section
+        function handleGlobalSearch() {
+            var term = document.getElementById('sidebarSearch').value.toLowerCase();
+            if (term.length < 2) return;
+            // Sync header search box
+            document.getElementById('globalSearch').value = document.getElementById('sidebarSearch').value;
+            // Determine active section
+            var active = document.querySelector('.nav-item.active');
+            var section = active ? active.getAttribute('onclick').match(/showSection\('([^']+)'\)/)[1] : 'users';
+            if (section === 'users' || section === 'dashboard' || section === 'analytics') {
+                showSection('users');
+                document.getElementById('userSearch').value = term;
+                filterUsers();
+            } else if (section === 'academy') {
+                showSection('academy');
+                document.getElementById('academySearch').value = term;
+                filterAcademy();
+            } else if (section === 'assignments') {
+                showSection('assignments');
+                document.getElementById('asgnFilter').value = 'all';
+                document.getElementById('asgnDeptFilter').value = 'all';
+                var filtered = allAssignments.filter(a =>
+                    (a.userName && a.userName.toLowerCase().includes(term)) ||
+                    (a.userEmail && a.userEmail.toLowerCase().includes(term)) ||
+                    (a.dept && a.dept.toLowerCase().includes(term)) ||
+                    (a.assignmentTitle && a.assignmentTitle.toLowerCase().includes(term))
+                );
+                renderAssignments(filtered);
+            } else if (section === 'activity') {
+                showSection('activity');
+                var filtered = allActivity.filter(l =>
+                    (l.userName && l.userName.toLowerCase().includes(term)) ||
+                    (l.userEmail && l.userEmail.toLowerCase().includes(term)) ||
+                    (l.action && l.action.toLowerCase().includes(term))
+                );
+                renderActivity(filtered);
+            } else {
+                showSection('users');
+                document.getElementById('userSearch').value = term;
+                filterUsers();
+            }
+        }
+
         function handleSearch() {
             var term = document.getElementById('globalSearch').value.toLowerCase();
             if (term.length < 2) return;
-            showSection('users');
-            document.getElementById('userSearch').value = term;
-            filterUsers();
+            document.getElementById('sidebarSearch').value = document.getElementById('globalSearch').value;
+            handleGlobalSearch();
         }
 
         // Refresh all data
