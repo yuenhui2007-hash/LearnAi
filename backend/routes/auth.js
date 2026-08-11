@@ -11,7 +11,7 @@ function getCookieOptions(req) {
     return {
         httpOnly: true,
         secure: isSecure,
-        sameSite: 'strict',
+        sameSite: isSecure ? 'none' : 'lax',
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     };
 }

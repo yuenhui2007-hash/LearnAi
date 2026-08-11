@@ -6,8 +6,8 @@ var page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
 var isProtected = protectedPages.indexOf(page) !== -1;
 var isAuthPage = page === 'login.html' || page === 'register.html';
 
-// Hide protected pages until auth check completes (prevents flash)
-if (isProtected) {
+// Hide pages until auth check completes (prevents flash/redirect loops)
+if (isProtected || isAuthPage) {
   document.documentElement.style.visibility = 'hidden';
 }
 
@@ -34,6 +34,8 @@ fetch('/api/auth/me', { credentials: 'include' })
     localStorage.removeItem('learnai_auth');
     if (isProtected) {
       window.location.replace('login.html?redirect=' + encodeURIComponent(window.location.href));
+    } else if (isAuthPage) {
+      document.documentElement.style.visibility = '';
     }
   });
 })();
