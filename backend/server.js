@@ -113,18 +113,6 @@ app.get('/api/health', (req, res) => {
 });
 
 // ===== Static Frontend =====
-// Block sensitive files
-app.use((req, res, next) => {
-    const blocked = ['package.json', '.env', '.env.example', '.gitignore'];
-    if (blocked.includes(req.path.split('/').pop())) {
-        return res.status(403).send('Forbidden');
-    }
-    next();
-});
-
-// Serve static files
-app.use(express.static(path.join(__dirname, '..')));
-
 // ===== Page-Level Protection Middleware =====
 const PROTECTED_PAGES = [
     '/dashboard.html',
@@ -179,8 +167,20 @@ function pageProtect(req, res, next) {
     next();
 }
 
-// Apply page protection BEFORE serving HTML files
-app.get('*.html', pageProtect);
+// Apply page protection BEFORE static files
+app.use(pageProtect);
+
+// Block sensitive files
+app.use((req, res, next) => {
+    const blocked = ['package.json', '.env', '.env.example', '.gitignore'];
+    if (blocked.includes(req.path.split('/').pop())) {
+        return res.status(403).send('Forbidden');
+    }
+    next();
+});
+
+// Serve static files
+app.use(express.static(path.join(__dirname, '..')));
 
 // ===== SPA Catch-All =====
 app.get('*', (req, res) => {
