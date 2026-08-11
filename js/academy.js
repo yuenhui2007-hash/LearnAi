@@ -3,7 +3,7 @@
   const STORAGE_KEY = 'zetrix_academy_progress';
   const API_BASE = window.location.origin.includes('localhost')
     ? 'http://localhost:10000/api'
-    : (window.location.origin + '/api');
+    : 'https://learnai-backend-n0df.onrender.com/api';
 
   function getAuthToken() {
     return localStorage.getItem('auth_token') || sessionStorage.getItem('auth_token');
