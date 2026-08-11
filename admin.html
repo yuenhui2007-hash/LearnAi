@@ -511,8 +511,11 @@
             </div>
             <div class="nav-section">
                 <div class="nav-section-title">Search</div>
+                <a class="nav-item" onclick="document.getElementById('sidebarSearch').focus()">
+                    <span>🔍</span> Search
+                </a>
                 <div class="nav-item" style="padding:8px 14px">
-                    <input type="text" id="sidebarSearch" placeholder="🔍 Search..." style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:0.85rem;width:100%;outline:none" onkeyup="handleGlobalSearch()">
+                    <input type="text" id="sidebarSearch" placeholder="Search..." style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:0.85rem;width:100%;outline:none" onkeyup="handleGlobalSearch()">
                 </div>
             </div>
         </nav>
