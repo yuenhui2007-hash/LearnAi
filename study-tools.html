@@ -5,7 +5,11 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Tools — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,7 +34,7 @@
 .subject-btn { padding: 16px; border: 2px solid var(--gray-light); background: var(--white); border-radius: var(--radius-lg); cursor: pointer; transition: var(--transition); text-align: center; font-weight: 600; }
 .subject-btn:hover, .subject-btn.active { border-color: var(--primary); background: rgba(99,102,241,0.05); color: var(--primary); }
 .question-box { margin-bottom: 32px; }
-.question-box h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--dark); }
+.question-box h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--body-text); }
 .option { display: block; padding: 14px 20px; margin-bottom: 10px; border: 2px solid var(--gray-light); border-radius: var(--radius); cursor: pointer; transition: var(--transition); background: var(--white); }
 .option:hover { border-color: var(--primary); background: rgba(99,102,241,0.03); }
 .option.correct { border-color: var(--accent); background: rgba(16,185,129,0.1); }
@@ -53,9 +57,9 @@
 .flash-card.flipped .front { display: none; }
 .flash-card.flipped .back { display: block; }
 .flash-card .back { display: none; }
-.flash-card .front h3 { font-size: 1.5rem; color: var(--dark); }
+.flash-card .front h3 { font-size: 1.5rem; color: var(--body-text); }
 .flash-card .back h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 16px; }
-.flash-card .back p { font-size: 1.1rem; color: var(--dark-light); line-height: 1.7; }
+.flash-card .back p { font-size: 1.1rem; color: var(--body-text); line-height: 1.7; }
 .flash-hint { position: absolute; bottom: 16px; font-size: 0.8rem; color: var(--gray); }
 .flash-controls { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
 .flash-controls button { padding: 12px 28px; border-radius: var(--radius); font-weight: 600; border: 2px solid var(--gray-light); background: var(--white); cursor: pointer; transition: var(--transition); }
@@ -141,7 +145,7 @@
         </div>
       </div>
 
-      <div id="flash-complete" style="display:none;text-align:center;padding:40px;background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow);">
+      <div id="flash-complete" style="display:none;text-align:center;padding:40px;background:var(--card-bg);border-radius:var(--radius-xl);box-shadow:var(--shadow);">
         <h2>Deck Complete!</h2>
         <p id="flashResult" style="font-size:1.2rem;margin:20px 0;"></p>
         <button class="btn btn-primary" onclick="resetFlashcards()">Study Again</button>
@@ -166,5 +170,6 @@ function switchTab(name) {
 }
 </script>
 <script src="js/mascot.js?v=6"></script>
+<script src="js/pwa.js?v=4"></script>
 </body>
 </html>

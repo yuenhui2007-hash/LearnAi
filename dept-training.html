@@ -9,53 +9,54 @@
 <link rel="stylesheet" href="css/styles.css?v=3">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
+body{font-family:Inter,sans-serif;background:var(--body-bg);color:var(--body-text);min-height:100vh}
 .container{max-width:900px;margin:0 auto;padding:24px}
 .dept-hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:100px 24px 48px;text-align:center;border-radius:0 0 24px 24px;margin-bottom:32px}
 .dept-hero h1{font-size:2rem;margin-bottom:8px}
 .dept-hero p{opacity:.85}
-.progress-tracker{background:#fff;padding:20px 24px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin-bottom:24px;display:flex;align-items:center;gap:16px}
-.progress-tracker .bar{flex:1;height:10px;background:#e2e8f0;border-radius:50px;overflow:hidden}
+.progress-tracker{background:var(--card-bg);padding:20px 24px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.progress-tracker .bar{flex:1;height:10px;background:var(--gray-light);border-radius:50px;overflow:hidden}
 .progress-tracker .fill{height:100%;background:linear-gradient(90deg,#6366f1,#8b5cf6);width:0%;transition:width .5s}
-.lesson-card{background:#fff;padding:28px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:20px;border-left:4px solid #6366f1}
+.lesson-card{background:var(--card-bg);padding:28px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:20px;border-left:4px solid #6366f1}
 .lesson-card h3{font-size:1.1rem;margin-bottom:12px}
 .lesson-card ul{padding-left:20px;line-height:1.9;color:#475569}
-.lesson-card .tag{display:inline-block;background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:50px;font-size:.75rem;font-weight:600;margin-bottom:12px}
-.practice-box{background:#f0fdf4;border:1px solid #bbf7d0;padding:20px;border-radius:12px;margin:16px 0}
+.lesson-card .tag{display:inline-block;background:var(--primary-light);color:var(--primary-dark);padding:4px 12px;border-radius:50px;font-size:.75rem;font-weight:600;margin-bottom:12px}
+.practice-box{background:var(--light);border:1px solid var(--gray-light);padding:20px;border-radius:12px;margin:16px 0}
 .practice-box h4{color:#166534;margin-bottom:8px}
-.assignment-box{background:#fff7ed;border:2px solid #fdba74;padding:24px;border-radius:12px;margin:20px 0}
+.assignment-box{background:var(--light);border:2px solid var(--gray-light);padding:24px;border-radius:12px;margin:20px 0}
 .assignment-box h4{color:#9a3412;margin-bottom:12px}
 .assignment-box textarea{width:100%;min-height:100px;padding:12px;border:1px solid #fed7aa;border-radius:8px;font-family:inherit;font-size:.9rem;margin:12px 0;resize:vertical}
 .assignment-box textarea:focus{outline:none;border-color:#f97316}
-.assignment-box .deliverables{background:#fff;padding:16px;border-radius:8px;border:1px solid #fed7aa;margin:12px 0}
+.assignment-box .deliverables{background:var(--card-bg);padding:16px;border-radius:8px;border:1px solid #fed7aa;margin:12px 0}
 .assignment-box .deliverables li{margin-bottom:6px;color:#7c2d12}
 .assignment-status{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;margin-top:8px}
-.assignment-status.pending{background:#fef3c7;color:#92400e}
-.assignment-status.submitted{background:#dcfce7;color:#166534}
-.submit-work-btn{background:#f97316;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;margin-top:8px}
-.submit-work-btn:disabled{background:#cbd5e1;cursor:not-allowed}
+.assignment-status.pending{background:var(--light);color:var(--body-text)}
+.assignment-status.submitted{background:var(--light);color:var(--body-text)}
+.submit-work-btn{background:var(--secondary);color:var(--white);border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;margin-top:8px}
+.submit-work-btn:disabled{background:var(--gray-light);cursor:not-allowed}
 .lock-msg{background:#fee2e2;color:#991b1b;padding:16px;border-radius:12px;margin:16px 0;text-align:center}
+[data-theme="dark"] .lock-msg, .dark .lock-msg { background: #450a0a; color: #f87171; }
 .quiz-locked{opacity:.5;pointer-events:none;filter:grayscale(.5)}
-.quiz-box{background:#f8fafc;border:2px solid #e2e8f0;padding:28px;border-radius:16px;margin:24px 0}
+.quiz-box{background:var(--light);border:2px solid var(--gray-light);padding:28px;border-radius:16px;margin:24px 0}
 .quiz-box h3{margin-bottom:16px}
 .quiz-question{margin-bottom:16px}
 .quiz-question p{font-weight:600;margin-bottom:8px}
-.quiz-options label{display:block;padding:10px 14px;margin-bottom:6px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;transition:.2s}
-.quiz-options label:hover{border-color:#6366f1;background:#eef2ff}
+.quiz-options label{display:block;padding:10px 14px;margin-bottom:6px;background:var(--card-bg);border:1px solid var(--gray-light);border-radius:8px;cursor:pointer;transition:.2s}
+.quiz-options label:hover{border-color:var(--primary);background:var(--primary-light)}
 .quiz-options input{margin-right:8px}
 .quiz-result{margin-top:16px;padding:16px;border-radius:12px;display:none}
 .nav-btns{display:flex;gap:12px;margin-top:32px}
 .nav-btns a,.nav-btns button{padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;border:none;cursor:pointer;font-size:.9rem}
 .btn-primary{background:#6366f1;color:#fff}
-.btn-secondary{background:#f1f5f9;color:#475569}
-.completed-badge{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#166534;padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;margin-left:12px}
+.btn-secondary{background:var(--light);color:var(--body-text)}
+.completed-badge{display:inline-flex;align-items:center;gap:6px;background:var(--light);color:var(--body-text);padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;margin-left:12px}
 </style>
 </head>
 <body>
 <nav class="navbar" id="navbar">
   <div class="container nav-container" style="display:flex;justify-content:space-between;align-items:center;padding:16px 24px">
     <a href="index.html" class="logo"><span style="font-size:1.3rem">🎓</span> <span style="font-weight:700">LearnAI</span></a>
-    <a href="academy.html" style="color:#64748b;text-decoration:none;font-size:.9rem">← Back to Academy</a>
+    <a href="academy.html" style="color:var(--gray);text-decoration:none;font-size:.9rem">← Back to Academy</a>
   </div>
 </nav>
 
@@ -68,7 +69,7 @@ body{font-family:Inter,sans-serif;background:#f8fafc;color:#1e293b;min-height:10
   <div class="progress-tracker">
     <span style="font-size:.9rem;font-weight:600;white-space:nowrap">Progress</span>
     <div class="bar"><div class="fill" id="progressFill"></div></div>
-    <span style="font-size:.9rem;font-weight:700;color:#6366f1" id="progressText">0%</span>
+    <span style="font-size:.9rem;font-weight:700;color:var(--primary)" id="progressText">0%</span>
   </div>
 
   <div id="lessonsContainer"></div>
@@ -298,7 +299,7 @@ function renderLessons() {
       ${!unlocked ? `<div class="lock-msg">🔒 Complete the previous assignment to unlock</div>` : `
       <div class="assignment-box" id="asgn-${i}">
         <h4>✏️ ${a.title}</h4>
-        <p style="color:#9a3412;font-size:.85rem;margin-bottom:8px">Complete and submit all deliverables below to proceed.</p>
+        <p style="color:var(--gray);font-size:.85rem;margin-bottom:8px">Complete and submit all deliverables below to proceed.</p>
         <div class="deliverables">
           <strong>Deliverables:</strong>
           <ul style="margin-top:8px">${a.deliverables.map(d=>`<li>${d}</li>`).join('')}</ul>
@@ -367,11 +368,11 @@ function renderQuiz() {
         if (inp.value === q.a) {
           lbl.style.borderColor = '#22c55e';
           lbl.style.background = '#dcfce7';
-          lbl.innerHTML += ' ✅ <span style="color:#15803d;font-weight:700">+' + (Math.round(100/data.quiz.length)) + '</span>';
+          lbl.innerHTML += ' ✅ <span style="color:var(--accent);font-weight:700">+' + (Math.round(100/data.quiz.length)) + '</span>';
         } else if (inp.checked && inp.value !== q.a) {
           lbl.style.borderColor = '#ef4444';
           lbl.style.background = '#fee2e2';
-          lbl.innerHTML += ' ❌ <span style="color:#b91c1c;font-weight:700">+0</span>';
+          lbl.innerHTML += ' ❌ <span style="color:#ef4444;font-weight:700">+0</span>';
         }
         inp.disabled = true;
       });
@@ -383,10 +384,10 @@ function renderQuiz() {
     p.quiz = true; p.score = pct;
     saveProgress(p);
     if (pct >= 80) {
-      res.innerHTML = `<div style="background:#dcfce7;padding:16px;border-radius:12px;color:#166534"><strong>Passed! ${pct}%</strong><br>Department training complete.</div>`;
+      res.innerHTML = `<div style="background:var(--light);padding:16px;border-radius:12px;color:var(--body-text)"><strong>Passed! ${pct}%</strong><br>Department training complete.</div>`;
       document.getElementById('certBtn').style.display = 'inline-block';
     } else {
-      res.innerHTML = `<div style="background:#fee2e2;padding:16px;border-radius:12px;color:#991b1b"><strong>Try again. ${pct}%</strong><br>You need 80% to pass.</div>`;
+      res.innerHTML = `<div style="background:var(--light);padding:16px;border-radius:12px;color:var(--body-text)"><strong>Try again. ${pct}%</strong><br>You need 80% to pass.</div>`;
     }
   });
 }

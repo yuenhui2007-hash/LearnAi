@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found — LearnAI</title>
 <meta name="description" content="The page you are looking for does not exist.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +17,7 @@
 <style>
 .error-section { padding: 160px 0 100px; background: var(--light); min-height: 100vh; text-align: center; }
 .error-code { font-size: 6rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 16px; }
-.error-title { font-size: 2rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+.error-title { font-size: 2rem; font-weight: 700; color: var(--body-text); margin-bottom: 12px; }
 .error-message { color: var(--gray); font-size: 1.1rem; max-width: 500px; margin: 0 auto 32px; }
 .error-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .mascot-wrap { margin-bottom: 32px; }
@@ -72,5 +76,6 @@
 <script src="js/theme.js?v=4"></script>
 <script src="js/auth.js?v=4"></script>
 <script src="js/mascot.js?v=4"></script>
+<script src="js/pwa.js?v=4"></script>
 </body>
 </html>

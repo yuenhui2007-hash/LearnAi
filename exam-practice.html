@@ -5,7 +5,11 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exam Practice — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,16 +29,17 @@
 
 /* Mock Exam */
 .timer { position: fixed; top: 80px; right: 20px; background: var(--dark); color: var(--white); padding: 12px 20px; border-radius: var(--radius); font-weight: 700; font-size: 1.2rem; z-index: 100; }
-.timer.warning { background: #ef4444; animation: pulse 1s infinite; }
+.timer.warning { background: #ef4444;
+  color: #fff; animation: pulse 1s infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
 .question-block { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--gray-light); }
-.question-block h4 { font-size: 1.1rem; margin-bottom: 12px; color: var(--dark); }
+.question-block h4 { font-size: 1.1rem; margin-bottom: 12px; color: var(--body-text); }
 .question-block .marks { color: var(--gray); font-size: 0.85rem; margin-bottom: 12px; }
 .question-block textarea { width: 100%; min-height: 120px; padding: 12px; border: 2px solid var(--gray-light); border-radius: var(--radius); font-family: inherit; font-size: 0.95rem; resize: vertical; }
 .question-block textarea:focus { outline: none; border-color: var(--primary); }
 .exam-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
 .exam-info { background: var(--light); padding: 16px 20px; border-radius: var(--radius); margin-bottom: 24px; }
-.exam-info p { margin: 4px 0; font-size: 0.9rem; color: var(--dark-light); }
+.exam-info p { margin: 4px 0; font-size: 0.9rem; color: var(--body-text); }
 
 /* AI Marker */
 .input-group { margin-bottom: 20px; }
@@ -46,12 +51,16 @@
 .mark-result h3 { color: var(--primary); margin-bottom: 12px; }
 .mark-section { margin-bottom: 16px; padding: 16px; background: var(--white); border-radius: var(--radius); border-left: 4px solid var(--primary); }
 .mark-section h4 { font-size: 1rem; margin-bottom: 8px; }
-.mark-section p { color: var(--dark-light); font-size: 0.95rem; line-height: 1.7; }
+.mark-section p { color: var(--body-text); font-size: 0.95rem; line-height: 1.7; }
 .band-badge { display: inline-block; padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
-.band-a { background: #dcfce7; color: #166534; }
-.band-b { background: #dbeafe; color: #1e40af; }
-.band-c { background: #fef3c7; color: #92400e; }
-.band-d { background: #fee2e2; color: #991b1b; }
+.band-a { background: #dcfce7; color: #166534;
+  [data-theme="dark"] & { background: #064e3b; color: #a7f3d0; } }
+.band-b { background: #dbeafe; color: #1e40af;
+  [data-theme="dark"] & { background: #172554; color: #93c5fd; } }
+.band-c { background: #fef3c7; color: #92400e;
+  [data-theme="dark"] & { background: #451a03; color: #fbbf24; } }
+.band-d { background: #fee2e2; color: #991b1b;
+  [data-theme="dark"] & { background: #450a0a; color: #f87171; } }
 </style>
 </head>
 <body>
@@ -182,5 +191,6 @@ function switchTab(name) {
 }
 </script>
 <script src="js/mascot.js?v=6"></script>
+<script src="js/pwa.js?v=4"></script>
 </body>
 </html>
