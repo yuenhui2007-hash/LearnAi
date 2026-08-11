@@ -135,8 +135,8 @@
             </div>
 
             <div id="subjectContent" class="hidden">
-                <button class="back-btn" onclick="showSelection()">
-                    ← Back to Boards
+                <button class="back-btn" id="backBtn" onclick="handleBack()">
+                    ← Back
                 </button>
                 <div id="subjectSections"></div>
             </div>
@@ -152,14 +152,17 @@
     const subjectContent = document.getElementById('subjectContent');
     const container = document.getElementById('subjectSections');
 
+    let currentBoard = null;
+
     function showBoard(board) {
+        currentBoard = board;
         boardSelection.classList.add('hidden');
         subjectContent.classList.remove('hidden');
         subjectContent.classList.add('fade-in');
         container.innerHTML = '';
 
         if (board === 'caie') {
-            renderCAIE();
+            renderCAIESelector();
         } else if (board === 'edexcel') {
             renderEdexcel();
         } else if (board === 'ib') {
@@ -167,12 +170,12 @@
         }
 
         const titles = {
-            caie: 'CAIE Subjects',
+            caie: 'CAIE',
             edexcel: 'Edexcel Subjects',
             ib: 'IB Subjects'
         };
         const subtitles = {
-            caie: 'Cambridge A-Level and IGCSE syllabus coverage.',
+            caie: 'Choose A-Level or IGCSE to browse subjects.',
             edexcel: 'Pearson Edexcel IAL, IGCSE and GCSE syllabus coverage.',
             ib: 'International Baccalaureate syllabus coverage.'
         };
@@ -180,7 +183,21 @@
         document.querySelector('.section-header p').textContent = subtitles[board];
     }
 
+    function handleBack() {
+        if (currentBoard === 'caie' && container.querySelector('.subjects-grid')) {
+            // Currently showing CAIE subjects, go back to CAIE selector
+            container.innerHTML = '';
+            renderCAIESelector();
+            document.querySelector('.section-title').textContent = 'CAIE';
+            document.querySelector('.section-header p').textContent = 'Choose A-Level or IGCSE to browse subjects.';
+        } else {
+            // Go back to board selection
+            showSelection();
+        }
+    }
+
     function showSelection() {
+        currentBoard = null;
         subjectContent.classList.add('hidden');
         subjectContent.classList.remove('fade-in');
         boardSelection.classList.remove('hidden');
@@ -189,6 +206,45 @@
 
         document.querySelector('.section-title').textContent = 'Choose Your Board';
         document.querySelector('.section-header p').textContent = 'Select your examination board to browse subjects.';
+    }
+
+    function showCAIELevel(level) {
+        container.innerHTML = '';
+        document.querySelector('.section-title').textContent = level === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
+        document.querySelector('.section-header p').textContent = level === 'alevel'
+            ? 'Cambridge A-Level syllabus coverage.'
+            : 'Cambridge IGCSE syllabus coverage.';
+
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        section.appendChild(renderSectionTitle(level === 'alevel' ? 'A-Level Subjects' : 'IGCSE Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return level === 'alevel' ? t.alevel : t.igcse; });
+        }));
+
+        container.appendChild(section);
+    }
+
+    function renderCAIESelector() {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '600px';
+        selector.innerHTML = `
+            <div class="board-card" onclick="showCAIELevel('alevel')">
+                <div class="board-icon">🎓</div>
+                <h3>A-Level</h3>
+                <p>Cambridge International A-Level<br>Advanced Level Programme</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showCAIELevel('igcse')">
+                <div class="board-icon">🏫</div>
+                <h3>IGCSE</h3>
+                <p>Cambridge IGCSE<br>International General Certificate</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
     }
 
     function createSubjectCard(key, s) {
@@ -234,22 +290,7 @@
         return heading;
     }
 
-    function renderCAIE() {
-        const section = document.createElement('div');
-        section.className = 'topic-section-group';
-
-        section.appendChild(renderSectionTitle('A-Level'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.alevel; });
-        }));
-
-        section.appendChild(renderSectionTitle('IGCSE'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.igcse; });
-        }));
-
-        container.appendChild(section);
-    }
+    // CAIE now uses renderCAIESelector + showCAIELevel instead
 
     function renderEdexcel() {
         const section = document.createElement('div');
