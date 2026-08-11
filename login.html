@@ -77,6 +77,13 @@ function showError(msg) {
   el.textContent = msg;
   el.style.display = 'block';
 }
+// Display OAuth/form errors from URL
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var err = params.get('error');
+  if (err) showError(decodeURIComponent(err));
+})();
+
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
 e.preventDefault();
 var email = document.getElementById('email').value.trim();
