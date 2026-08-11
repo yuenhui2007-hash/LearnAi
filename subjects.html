@@ -30,16 +30,7 @@
                 <p style="color:var(--gray);margin-top:12px">Complete syllabus coverage for A-Level, IGCSE, and IELTS.</p>
             </div>
 
-            <div class="subjects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="alevel">A-Level</button>
-                <button class="filter-btn" data-filter="igcse">IGCSE</button>
-                <button class="filter-btn" data-filter="ielts">IELTS</button>
-            </div>
-
-            <div class="subjects-grid" id="subjectsGrid">
-                <!-- Filled by JS -->
-            </div>
+            <div id="subjectSections"></div>
         </div>
     </section>
 
@@ -48,41 +39,67 @@
     <script src="js/app.js?v=4"></script>
     <script src="js/search.js?v=4"></script>
     <script>
-    const grid = document.getElementById('subjectsGrid');
-    function renderSubjects(filter) {
-        grid.innerHTML = '';
-        Object.keys(subjects).forEach(key => {
-            const s = subjects[key];
-            let show = false;
-            if (filter === 'all') show = true;
-            else if (filter === 'alevel' && s.topics.some(t => t.alevel)) show = true;
-            else if (filter === 'igcse' && s.topics.some(t => t.igcse)) show = true;
-            else if (filter === 'ielts' && key === 'english') show = true;
-            if (!show) return;
+    const container = document.getElementById('subjectSections');
 
-            const card = document.createElement('a');
-            card.href = 'subject.html?id=' + key;
-            card.className = 'subject-card';
-            card.dataset.filter = filter === 'all' ? 'all' : filter;
-            card.innerHTML = `
-                <div class="subject-icon">${s.icon}</div>
-                <h3>${s.name}</h3>
-                <p>${s.code}</p>
-                <span class="subject-tag">${s.topics.length} topics</span>
-            `;
-            grid.appendChild(card);
-        });
+    function createSubjectCard(key, s) {
+        const card = document.createElement('a');
+        card.href = 'subject.html?id=' + key;
+        card.className = 'subject-card';
+        card.innerHTML = `
+            <div class="subject-icon">${s.icon}</div>
+            <h3>${s.name}</h3>
+            <p>${s.code}</p>
+            <span class="subject-tag">${s.topics.length} topics</span>
+        `;
+        return card;
     }
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            renderSubjects(this.dataset.filter);
+    function renderSection(title, filterFn) {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        const heading = document.createElement('h2');
+        heading.className = 'section-divider';
+        heading.textContent = title;
+        section.appendChild(heading);
+
+        const grid = document.createElement('div');
+        grid.className = 'subjects-grid';
+
+        let count = 0;
+        Object.keys(subjects).forEach(key => {
+            const s = subjects[key];
+            if (filterFn(s)) {
+                grid.appendChild(createSubjectCard(key, s));
+                count++;
+            }
         });
+
+        if (count === 0) {
+            const empty = document.createElement('p');
+            empty.style.color = 'var(--gray)';
+            empty.textContent = 'No subjects available.';
+            grid.appendChild(empty);
+        }
+
+        section.appendChild(grid);
+        container.appendChild(section);
+    }
+
+    // A-Level subjects
+    renderSection('A-Level Subjects', function(s) {
+        return s.topics.some(function(t) { return t.alevel; });
     });
 
-    renderSubjects('all');
+    // IGCSE subjects
+    renderSection('IGCSE Subjects', function(s) {
+        return s.topics.some(function(t) { return t.igcse; });
+    });
+
+    // IB subjects
+    renderSection('IB Subjects', function(s) {
+        return s.topics.some(function(t) { return t.ib; });
+    });
     </script>
 <script src="js/auth.js?v=4"></script>
 <script src="js/mascot.js?v=4"></script>

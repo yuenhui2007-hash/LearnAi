@@ -23,6 +23,7 @@
           '<li><a href="' + prefix + 'academy.html" class="nav-link">AI Academy</a></li>' +
           '<li><a href="' + prefix + 'dashboard.html" class="nav-link">My Progress</a></li>' +
           '<li id="navAuth"><a href="' + prefix + 'login.html" class="nav-link">Sign In / Sign Up</a></li>' +
+          '<li><a href="' + prefix + 'search.html" class="nav-link">🔍 Search</a></li>' +
         '</ul>' +
       '</div>';
 

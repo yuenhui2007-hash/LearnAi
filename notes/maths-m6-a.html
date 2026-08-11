@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Series & Sequences — A-Level | LearnAI</title>
+<meta name="description" content="Series & Sequences notes for Cambridge 9709 · 0580. Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="../subject.html?id=maths" class="back-btn">← Back to Mathematics</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-as">AS Level</span>
+  </div>
+<h1>Series & Sequences</h1>
+<p style="color:var(--gray)">9709 · 0580</p>
+</div>
+
+<div class="notes-section">
+<h2>Detailed Notes</h2>
+<h3>1. Arithmetic</h3>
+<div class="formula-box">uₙ = a + (n-1)d<br>Sₙ = n/2 (2a + (n-1)d) = n/2 (a + l)</div>
+<h3>2. Geometric</h3>
+<div class="formula-box">uₙ = arⁿ⁻¹<br>Sₙ = a(1-rⁿ)/(1-r)<br>S∞ = a/(1-r) for |r|<1</div>
+</div>
+<div class="notes-section">
+<h3>Problem-Solving Strategies</h3>
+<ul>
+<li><strong>Read twice:</strong> Once for understanding, once for details</li>
+<li><strong>Identify the topic:</strong> What technique is being tested?</li>
+<li><strong>Write down formulae:</strong> Before substituting values</li>
+<li><strong>Check answers:</strong> Does the answer make sense? Re-substitute if possible</li>
+</ul>
+</div>
+<div class="notes-section">
+<h3>Common Algebraic Mistakes</h3>
+<ul>
+<li>(a + b)² ≠ a² + b² (it's a² + 2ab + b²)</li>
+<li>√(a + b) ≠ √a + √b</li>
+<li>1/(a + b) ≠ 1/a + 1/b</li>
+<li>When squaring both sides, check for extraneous solutions</li>
+</ul>
+<div class="common-mistake">Dividing by a variable without considering if it could be zero. Always state "assuming x ≠ 0" or check separately.</div>
+</div>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul><li>Arithmetic: uₙ = a+(n-1)d; Sₙ = n/2(2a+(n-1)d)</li><li>Geometric: uₙ = arⁿ⁻¹; Sₙ = a(1-rⁿ)/(1-r); S∞ = a/(1-r)</li></ul>
+</div>
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> Differentiate y = 3x⁴ + 2x² − 5x + 7</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+dy/dx = 3(4x³) + 2(2x) − 5(1) + 0<br>
+dy/dx = 12x³ + 4x − 5<br>
+<strong>Answer: dy/dx = 12x³ + 4x − 5</strong>
+</div>
+</div>
+<div class="common-mistake">Forgetting the +c (constant of integration) for indefinite integrals. You'll lose a mark!</div>
+<div class="key-point">The chain rule: if y = f(g(x)), then dy/dx = f'(g(x)) × g'(x). Use for functions inside functions.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>d/dx(xⁿ) = nxⁿ⁻¹</li>
+<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
+<li>Chain rule: dy/dx = dy/du × du/dx</li>
+<li>Stationary points: dy/dx = 0; d²y/dx² > 0 = min</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+
+<h2>Exam Tips</h2>
+<ul>
+<li>Read the question carefully — identify exactly what is being asked.</li>
+<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
+<li>Check units — ensure your final answer has the correct unit.</li>
+<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
+<li>Manage your time — don't spend too long on any single question.</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.physicsandmathstutor.com/maths-revision/a-level/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — Past papers & solutions</li>
+<li><a href="https://www.savemyexams.co.uk/notes/maths/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
+<li><a href="https://znotes.org/cie-a-level-maths-9709/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/maths/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/maths" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>

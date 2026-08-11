@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C3 Stoichiometry — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=chemistry" class="back-btn">← Back to Chemistry</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-as">AS Level</span>
+  </div>
+<h1>C3: Stoichiometry</h1>
+<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>The Mole Concept</h3>
+<p>The mole is the amount of substance containing the same number of particles (atoms, molecules, ions) as there are atoms in exactly 12 g of carbon-12. This number is Avogadro's constant: 6.02 × 10²³ mol⁻¹.</p>
+<div class="formula-box">
+n = mass / Mr &nbsp;&nbsp; or &nbsp;&nbsp; mass = n × Mr<br>
+n = number of particles / NA &nbsp;&nbsp; where NA = 6.02 × 10²³ mol⁻¹
+</div>
+
+<h3>Empirical and Molecular Formulae</h3>
+<p><strong>Empirical formula</strong> = simplest whole number ratio of atoms in a compound.</p>
+<p><strong>Molecular formula</strong> = actual number of atoms of each element in a molecule.</p>
+<p>To find empirical formula from percentage composition:</p>
+<ol>
+<li>Assume 100 g sample → mass of each element = percentage value</li>
+<li>Convert mass to moles (divide by Ar)</li>
+<li>Divide by smallest number of moles</li>
+<li>Multiply to get whole numbers if needed</li>
+</ol>
+
+<h3>Reacting Mass Calculations</h3>
+<p>Using balanced equations and mole ratios:</p>
+<ol>
+<li>Write balanced equation</li>
+<li>Calculate moles of known substance</li>
+<li>Use mole ratio from equation to find moles of unknown</li>
+<li>Convert to required quantity (mass, volume, etc.)</li>
+</ol>
+
+<h3>Concentration Calculations</h3>
+<div class="formula-box">
+Concentration (mol/dm³) = n / V (in dm³)<br>
+Concentration (g/dm³) = mass / V (in dm³)<br>
+1 dm³ = 1000 cm³
+</div>
+
+<h3>Molar Gas Volume</h3>
+<p>At room temperature and pressure (RTP, 20°C, 1 atm): 1 mole = 24 dm³</p>
+<p>At standard temperature and pressure (STP, 0°C, 1 atm): 1 mole = 22.4 dm³</p>
+<div class="formula-box">
+n = V / 24 (at RTP) &nbsp;&nbsp; or &nbsp;&nbsp; n = V / 22.4 (at STP)
+</div>
+
+<h3>Percentage Yield and Purity</h3>
+<div class="formula-box">
+% Yield = (actual yield / theoretical yield) × 100<br>
+% Purity = (mass of pure substance / mass of sample) × 100
+</div>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Ideal Gas Equation</h3>
+<div class="formula-box">
+PV = nRT<br>
+P = pressure (Pa), V = volume (m³), n = moles, R = 8.31 J K⁻¹ mol⁻¹, T = temperature (K)<br>
+T(K) = T(°C) + 273
+</div>
+<p>Assumptions of ideal gases:</p>
+<ul>
+<li>Particles have negligible volume compared to container</li>
+<li>No intermolecular forces</li>
+<li>Collisions are perfectly elastic</li>
+<li>Particles move in random motion</li>
+</ul>
+<p>Real gases deviate from ideal behaviour at high pressure and low temperature.</p>
+
+<h3>Avogadro's Law and Gas Volumes</h3>
+<p>Equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. This allows direct use of reacting gas volumes from equation coefficients.</p>
+<div class="formula-box">
+H₂(g) + Cl₂(g) → 2HCl(g)<br>
+1 vol + 1 vol → 2 vol
+</div>
+
+<h3>Standard Enthalpy Changes of Combustion and Formation</h3>
+<p>These are defined per mole and used in Hess's law calculations. (See C5 for more detail.)</p>
+
+<h3>Acid-Base Titrations</h3>
+<p>At equivalence point: moles of H⁺ = moles of OH⁻ (for monoprotic acids and monobasic bases)</p>
+<div class="formula-box">
+For monoprotic acid + monobasic base: MaVa = MbVb<br>
+For polyprotic: n₁M₁V₁ = n₂M₂V₂ where n = number of replaceable H⁺/OH⁻
+</div>
+
+<h3>Back Titrations</h3>
+<p>Used when direct titration is difficult:</p>
+<ol>
+<li>Add excess of one reagent to react with analyte</li>
+<li>Titrate the excess reagent</li>
+<li>Calculate amount reacted with analyte by difference</li>
+</ol>
+
+<h3>Redox Titrations</h3>
+<p>Common examples:</p>
+<ul>
+<li>Manganate(VII) with iron(II): MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O</li>
+<li>Iodine-thiosulfate: I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Partition Coefficient</h3>
+<p>When a solute is distributed between two immiscible solvents at equilibrium:</p>
+<div class="formula-box">
+Kpc = [solute] in solvent A / [solute] in solvent B (at constant T)
+</div>
+<p>The partition coefficient is constant at a given temperature and independent of total concentration. Used in solvent extraction and chromatography.</p>
+
+<h3>Equilibrium Constants in Terms of Concentration and Pressure</h3>
+<div class="formula-box">
+Kc = [products] / [reactants] (coefficients as powers)<br>
+Kp = (partial pressures of products) / (partial pressures of reactants)
+</div>
+<p>(See C7 Equilibria for full details.)</p>
+
+<h3>Born-Haber Cycles and Lattice Energy Calculations</h3>
+<p>Lattice energy calculations involve stoichiometric amounts and enthalpy changes per mole. (See C5 for more detail.)</p>
+</div>
+
+<div class="notes-section">
+
+<div class="worked-example">
+<h4>🧪 Worked Example</h4>
+<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
+mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
+<strong>Answer: 4.0 g</strong>
+</div>
+</div>
+<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
+<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>n = mass / Mᵣ</li>
+<li>n = concentration × volume (dm³)</li>
+<li>1 dm³ = 1000 cm³</li>
+<li>% yield = (actual / theoretical) × 100</li>
+</ul>
+</div>
+<h2>Last-Minute Summary</h2>
+<div class="highlight-box">
+<h4>🎯 Key Points to Remember</h4>
+<ul>
+<li>Mole: n = mass/Mr = V/24 (gas at RTP) = particles/NA</li>
+<li>Empirical formula: % → mass → moles → ratio → simplest integers</li>
+<li>Concentration: mol/dm³ = n/V; remember 1 dm³ = 1000 cm³</li>
+<li>PV = nRT; T in Kelvin; P in Pa; V in m³; R = 8.31</li>
+<li>Titration: use mole ratios carefully; watch for polyprotic acids</li>
+<li>Redox titrations: balance electrons; use mole ratios from balanced equations</li>
+<li>Partition coefficient: ratio of concentrations in two immiscible solvents</li>
+</ul>
+</div>
+<div class="highlight-box">
+<h4>⚠️ Common Mistakes</h4>
+<ul>
+<li>Forgetting to convert cm³ to dm³ (÷1000) in concentration calculations</li>
+<li>Using Celsius instead of Kelvin in gas equations</li>
+<li>Not balancing equations before doing mole ratio calculations</li>
+<li>Confusing empirical and molecular formula</li>
+<li>Forgetting the stoichiometric coefficients in Kc/Kp expressions</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
+<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
+<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

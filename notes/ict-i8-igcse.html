@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programming Concepts &amp; Algorithms — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=ict" class="back-btn">← Back to ICT</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Programming Concepts &amp; Algorithms</h1>
+<p style="color:var(--gray)">Topic i8 — Computational Thinking, Programming &amp; Problem Solving</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Computational Thinking</h3>
+<p>The thought process involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.</p>
+<ul>
+<li><strong>Decomposition:</strong> Breaking a complex problem into smaller, manageable sub-problems. Example: A game = menu system + graphics engine + physics + scoring.</li>
+<li><strong>Abstraction:</strong> Removing unnecessary detail to focus on essential features. Example: Representing a road map without showing every building.</li>
+<li><strong>Pattern Recognition:</strong> Identifying similarities or trends across problems or data. Example: Recognizing that sorting is needed in multiple parts of a program.</li>
+<li><strong>Algorithmic Thinking:</strong> Developing step-by-step instructions to solve a problem.</li>
+</ul>
+
+<h3>1.2 Algorithms</h3>
+<p>An <strong>algorithm</strong> is a finite sequence of well-defined instructions to solve a problem. Characteristics: unambiguous, finite steps, deterministic, produces output.</p>
+<p><strong>Ways to represent algorithms:</strong></p>
+<ul>
+<li><strong>Pseudocode:</strong> Structured English-like description. Not tied to any programming language.
+  <div class="formula-box">
+  INPUT number<br>
+  IF number MOD 2 = 0 THEN<br>
+    OUTPUT "Even"<br>
+  ELSE<br>
+    OUTPUT "Odd"<br>
+  ENDIF
+  </div>
+</li>
+<li><strong>Flowcharts:</strong> Visual representation using standard symbols.
+  <ul>
+  <li>Oval = Start/End</li>
+  <li>Rectangle = Process</li>
+  <li>Diamond = Decision</li>
+  <li>Parallelogram = Input/Output</li>
+  <li>Arrows = Flow direction</li>
+  </ul>
+</li>
+</ul>
+
+<h3>1.3 Programming Constructs</h3>
+<ul>
+<li><strong>Sequence:</strong> Instructions executed one after another in order.</li>
+<li><strong>Selection (Decision):</strong> IF...THEN...ELSE, CASE/SWITCH. Chooses different paths based on conditions.
+  <div class="formula-box">
+  IF score >= 80 THEN<br>
+    grade = "A"<br>
+  ELSE IF score >= 70 THEN<br>
+    grade = "B"<br>
+  ELSE<br>
+    grade = "C"<br>
+  ENDIF
+  </div>
+</li>
+<li><strong>Iteration (Looping):</strong>
+  <ul>
+  <li><strong>FOR loop:</strong> Count-controlled. Known number of repetitions. FOR i = 1 TO 10 ... ENDFOR</li>
+  <li><strong>WHILE loop:</strong> Condition-controlled. Checks before each iteration. WHILE count < 5 ... ENDWHILE</li>
+  <li><strong>REPEAT...UNTIL:</strong> Condition-controlled. Checks after each iteration (always runs at least once). REPEAT ... UNTIL count >= 5</li>
+  </ul>
+</li>
+</ul>
+
+<h3>1.4 Variables, Constants &amp; Data Types</h3>
+<ul>
+<li><strong>Variable:</strong> Named storage location whose value can change during program execution.</li>
+<li><strong>Constant:</strong> Named value that does not change. Declared once, used throughout. Improves readability and maintainability.</li>
+<li><strong>Data Types:</strong>
+  <ul>
+  <li><strong>Integer:</strong> Whole numbers (positive or negative).</li>
+  <li><strong>Real/Float:</strong> Numbers with decimal points.</li>
+  <li><strong>String:</strong> Text enclosed in quotes.</li>
+  <li><strong>Boolean:</strong> TRUE or FALSE.</li>
+  <li><strong>Char:</strong> Single character.</li>
+  </ul>
+</li>
+</ul>
+
+<h3>1.5 Basic Operations</h3>
+<ul>
+<li><strong>Arithmetic:</strong> +, −, *, /, DIV (integer division), MOD (remainder), ^ (power).</li>
+<li><strong>Relational:</strong> =, <>, <, >, <=, >= (compare values, return Boolean).</li>
+<li><strong>Logical:</strong> AND, OR, NOT (combine Boolean expressions).</li>
+<li><strong>Assignment:</strong> variable ← value or variable = value.</li>
+<li><strong>Input/Output:</strong> INPUT, OUTPUT, PRINT, DISPLAY, READ, WRITE.</li>
+</ul>
+
+<h3>1.6 Arrays</h3>
+<p>An <strong>array</strong> is a collection of elements of the same data type stored under one name, accessed by index.</p>
+<div class="formula-box">
+  DECLARE names[5] : STRING  // array of 5 strings, indices 0 to 4<br>
+  names[0] = "Alice"<br>
+  names[1] = "Bob"<br>
+  FOR i = 0 TO 4<br>
+    OUTPUT names[i]<br>
+  ENDFOR
+</div>
+<p><strong>1D arrays:</strong> Single list. <strong>2D arrays:</strong> Table with rows and columns (e.g., game board, spreadsheet data).</p>
+</div>
+
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 Structured Programming</h3>
+<ul>
+<li><strong>Modular design:</strong> Breaking programs into functions/procedures/modules. Each module has a single, well-defined purpose.</li>
+<li><strong>Function:</strong> Returns a value. Can be used in expressions. Example: y = Sqrt(x)</li>
+<li><strong>Procedure/Subroutine:</strong> Performs a task but does not return a value directly. Called to execute actions.</li>
+<li><strong>Parameters:</strong> Values passed to functions/procedures.
+  <ul>
+  <li><strong>By Value:</strong> Copy of data passed; original unchanged.</li>
+  <li><strong>By Reference:</strong> Address passed; changes affect original variable.</li>
+  </ul>
+</li>
+<li><strong>Local variables:</strong> Declared inside a function; exist only during function execution. Prevent naming conflicts.</li>
+<li><strong>Global variables:</strong> Accessible everywhere. Convenient but risky — can be modified unexpectedly; harder to debug.</li>
+</ul>
+
+<h3>2.2 String Handling &amp; File Operations</h3>
+<ul>
+<li><strong>String operations:</strong> LENGTH("Hello") → 5, LEFT("Hello",2) → "He", RIGHT("Hello",2) → "lo", MID("Hello",2,3) → "ell", UPPER/LOWER, ASC("A") → 65, CHR(65) → "A", NUM_TO_STRING, STRING_TO_NUM.</li>
+<li><strong>File handling:</strong> OPENFILE filename FOR READ/WRITE/APPEND, READFILE, WRITEFILE, CLOSEFILE, EOF (end of file marker).</li>
+</ul>
+<div class="formula-box">
+  OPENFILE "scores.txt" FOR READ<br>
+  WHILE NOT EOF("scores.txt")<br>
+    READFILE "scores.txt", line<br>
+    OUTPUT line<br>
+  ENDWHILE<br>
+  CLOSEFILE "scores.txt"
+</div>
+
+<h3>2.3 Searching Algorithms</h3>
+<ul>
+<li><strong>Linear Search:</strong> Check each element in order from start to end. Simple; works on unsorted data. Time complexity: O(n).
+  <div class="formula-box">
+  found = FALSE<br>
+  i = 0<br>
+  WHILE i < length AND NOT found<br>
+    IF array[i] = target THEN<br>
+      found = TRUE<br>
+      index = i<br>
+    ENDIF<br>
+    i = i + 1<br>
+  ENDWHILE
+  </div>
+</li>
+<li><strong>Binary Search:</strong> Requires sorted data. Repeatedly divides search interval in half. Time complexity: O(log n). Much faster for large datasets.
+  <div class="formula-box">
+  low = 0<br>
+  high = length - 1<br>
+  found = FALSE<br>
+  WHILE low <= high AND NOT found<br>
+    mid = (low + high) DIV 2<br>
+    IF array[mid] = target THEN<br>
+      found = TRUE<br>
+    ELSE IF array[mid] < target THEN<br>
+      low = mid + 1<br>
+    ELSE<br>
+      high = mid - 1<br>
+    ENDIF<br>
+  ENDWHILE
+  </div>
+</li>
+</ul>
+
+<h3>2.4 Sorting Algorithms</h3>
+<ul>
+<li><strong>Bubble Sort:</strong> Repeatedly swap adjacent elements if in wrong order. After each pass, largest unsorted element "bubbles" to end. Time: O(n²). Simple but inefficient.
+  <div class="formula-box">
+  FOR pass = 1 TO n-1<br>
+    FOR i = 0 TO n-pass-1<br>
+      IF array[i] > array[i+1] THEN<br>
+        temp = array[i]<br>
+        array[i] = array[i+1]<br>
+        array[i+1] = temp<br>
+      ENDIF<br>
+    NEXT i<br>
+  NEXT pass
+  </div>
+</li>
+<li><strong>Insertion Sort:</strong> Build sorted array one element at a time. Take next element, insert into correct position in sorted portion. Time: O(n²) worst, O(n) best (already sorted). Efficient for small or nearly sorted data.
+  <div class="formula-box">
+  FOR i = 1 TO n-1<br>
+    current = array[i]<br>
+    j = i - 1<br>
+    WHILE j >= 0 AND array[j] > current<br>
+      array[j+1] = array[j]<br>
+      j = j - 1<br>
+    ENDWHILE<br>
+    array[j+1] = current<br>
+  NEXT i
+  </div>
+</li>
+</ul>
+
+<h3>2.5 Error Types</h3>
+<ul>
+<li><strong>Syntax error:</strong> Code breaks language rules (missing bracket, misspelled keyword). Caught by compiler/interpreter before execution.</li>
+<li><strong>Runtime error:</strong> Occurs during execution (division by zero, file not found, array index out of bounds). Program crashes or behaves unexpectedly.</li>
+<li><strong>Logic error:</strong> Program runs but produces incorrect results. Hardest to find. Caused by flawed algorithm or incorrect conditions. Found through testing and debugging.</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Advanced Sorting &amp; Searching</h3>
+<ul>
+<li><strong>Merge Sort:</strong> Divide-and-conquer. Split array in half recursively, sort each half, merge sorted halves. Time: O(n log n) in all cases. Stable sort. Requires O(n) extra space.
+  <div class="formula-box">
+  MERGE_SORT(array):<br>
+    IF length <= 1 THEN RETURN array<br>
+    mid = length DIV 2<br>
+    left = MERGE_SORT(array[0:mid])<br>
+    right = MERGE_SORT(array[mid:length])<br>
+    RETURN MERGE(left, right)<br>
+  MERGE(left, right):<br>
+    result = []<br>
+    WHILE left not empty AND right not empty<br>
+      IF left[0] <= right[0] THEN append left[0] to result, remove left[0]<br>
+      ELSE append right[0] to result, remove right[0]<br>
+    append remaining elements<br>
+    RETURN result
+  </div>
+</li>
+<li><strong>Quick Sort:</strong> Divide-and-conquer. Choose pivot, partition array into elements < pivot and >= pivot, recursively sort partitions. Time: O(n log n) average, O(n²) worst (poor pivot choice). In-place (low space). Not stable.</li>
+<li><strong>Hashing:</strong> Map keys to array indices using hash function. Ideal search time: O(1). Collisions resolved by chaining (linked lists) or open addressing (probing).</li>
+</ul>
+
+<h3>3.2 Abstract Data Types (ADTs)</h3>
+<ul>
+<li><strong>Stack:</strong> LIFO (Last In, First Out). Operations: PUSH (add to top), POP (remove from top), PEEK (view top). Used: undo operations, function call stack, expression evaluation, backtracking.
+  <div class="formula-box">
+  Stack: []<br>
+  PUSH 5 → [5]<br>
+  PUSH 3 → [5, 3]<br>
+  POP → returns 3, stack is [5]<br>
+  PEEK → returns 5
+  </div>
+</li>
+<li><strong>Queue:</strong> FIFO (First In, First Out). Operations: ENQUEUE (add to rear), DEQUEUE (remove from front), FRONT (view front). Used: print queues, CPU scheduling, BFS traversal, buffering.
+  <div class="formula-box">
+  Queue: []<br>
+  ENQUEUE A → [A]<br>
+  ENQUEUE B → [A, B]<br>
+  DEQUEUE → returns A, queue is [B]
+  </div>
+</li>
+<li><strong>Linked List:</strong> Nodes containing data and pointer to next node. Dynamic size. Types: singly linked (one pointer), doubly linked (previous and next), circular. No random access — must traverse from head.</li>
+<li><strong>Tree:</strong> Hierarchical structure. Root node, parent-child relationships. Binary Tree: each node has at most 2 children. Binary Search Tree (BST): left < parent < right. Enables efficient search, insertion, deletion (O(log n) balanced).</li>
+</ul>
+
+<h3>3.3 Graph Algorithms</h3>
+<ul>
+<li><strong>Graph representation:</strong> Adjacency matrix (2D array, fast edge check, O(V²) space) or Adjacency list (linked lists per vertex, space-efficient for sparse graphs).</li>
+<li><strong>Breadth-First Search (BFS):</strong> Uses queue. Explores all neighbours at current depth before moving deeper. Finds shortest path in unweighted graphs.</li>
+<li><strong>Depth-First Search (DFS):</strong> Uses stack (or recursion). Explores as far as possible along each branch before backtracking. Used for maze solving, topological sort, cycle detection.</li>
+<li><strong>Dijkstra's Algorithm:</strong> Finds shortest path from source to all vertices in weighted graph with non-negative weights. Uses priority queue (min-heap). Time: O((V+E) log V).</li>
+</ul>
+
+<h3>3.4 Object-Oriented Programming (OOP)</h3>
+<ul>
+<li><strong>Class:</strong> Blueprint defining attributes (data) and methods (behaviour).</li>
+<li><strong>Object:</strong> Instance of a class.</li>
+<li><strong>Encapsulation:</strong> Bundling data and methods; hiding internal state (private/protected); exposing interfaces (public methods/getters/setters).</li>
+<li><strong>Inheritance:</strong> Subclass derives from superclass, inheriting attributes and methods. Enables code reuse and "is-a" relationships. Example: Car inherits from Vehicle.</li>
+<li><strong>Polymorphism:</strong> Same interface, different implementations. Method overriding (subclass redefines parent method) and method overloading (same name, different parameters).</li>
+<li><strong>Abstraction:</strong> Simplifying complex reality by modelling classes appropriate to the problem.</li>
+</ul>
+
+<h3>3.5 Recursion</h3>
+<p>A function that calls itself. Must have:</p>
+<ul>
+<li><strong>Base case:</strong> Condition that stops recursion.</li>
+<li><strong>Recursive case:</strong> Function calls itself with a simpler sub-problem.</li>
+</ul>
+<div class="formula-box">
+  FUNCTION factorial(n)<br>
+    IF n <= 1 THEN<br>
+      RETURN 1<br>
+    ELSE<br>
+      RETURN n * factorial(n - 1)<br>
+    ENDIF<br>
+  ENDFUNCTION<br><br>
+  factorial(5) = 5 × 4 × 3 × 2 × 1 = 120
+</div>
+<p>Other examples: Fibonacci, binary search, merge sort, tree traversals, Tower of Hanoi.</p>
+<p><strong>Pros:</strong> Elegant, mirrors mathematical definitions, reduces code. <strong>Cons:</strong> Stack overflow risk, can be slower than iteration, harder to debug.</p>
+</div>
+
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Computational thinking:</strong> Decomposition, Abstraction, Pattern Recognition, Algorithmic thinking.</li>
+<li><strong>Constructs:</strong> Sequence, Selection (IF/CASE), Iteration (FOR/WHILE/REPEAT).</li>
+<li><strong>Data types:</strong> Integer, Real, String, Boolean, Char. Arrays = collections accessed by index.</li>
+<li><strong>Modular programming:</strong> Functions (return value) vs Procedures (actions). Parameters by value or reference.</li>
+<li><strong>Searching:</strong> Linear O(n) — unsorted; Binary O(log n) — sorted.</li>
+<li><strong>Sorting:</strong> Bubble O(n²), Insertion O(n²), Merge O(n log n), Quick O(n log n) average.</li>
+<li><strong>Errors:</strong> Syntax (compile-time), Runtime (crash), Logic (wrong output).</li>
+<li><strong>ADTs:</strong> Stack (LIFO), Queue (FIFO), Linked List, Tree (BST).</li>
+<li><strong>Graphs:</strong> BFS (shortest unweighted), DFS (deep exploration), Dijkstra (shortest weighted).</li>
+<li><strong>OOP:</strong> Class, Object, Encapsulation, Inheritance, Polymorphism, Abstraction.</li>
+<li><strong>Recursion:</strong> Base case + recursive case. Elegant but watch stack overflow.</li>
+<li>Exam tip: For algorithm questions, always write pseudocode with clear indentation. State assumptions (e.g., "array is sorted for binary search").</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

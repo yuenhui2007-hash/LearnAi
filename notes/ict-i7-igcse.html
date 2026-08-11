@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spreadsheets, Word Processing &amp; Presentation — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=ict" class="back-btn">← Back to ICT</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Spreadsheets, Word Processing &amp; Presentation</h1>
+<p style="color:var(--gray)">Topic i7 — Productivity Software &amp; Data Analysis</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Word Processing</h3>
+<p>Software for creating, editing, and formatting text documents. Examples: Microsoft Word, Google Docs, LibreOffice Writer.</p>
+<ul>
+<li><strong>Formatting:</strong> Font (typeface, size, colour, bold, italic, underline), paragraph alignment (left, centre, right, justified), line spacing, indentation, bullets/numbering.</li>
+<li><strong>Styles:</strong> Predefined sets of formatting (Heading 1, Heading 2, Normal, Title). Applying styles ensures consistency and enables automatic table of contents generation.</li>
+<li><strong>Tables:</strong> Organize data in rows/columns; merge cells, borders, shading, formulas.</li>
+<li><strong>Mail Merge:</strong> Combine a template document with a data source (spreadsheet/database) to generate personalized letters, labels, or emails. Steps: create main document → link data source → insert merge fields → preview → complete merge.</li>
+<li><strong>Headers and Footers:</strong> Repeated content at top/bottom (page numbers, document title, date). Different for first page or odd/even pages.</li>
+<li><strong>Page Layout:</strong> Margins, orientation (portrait/landscape), paper size, columns, section breaks.</li>
+<li><strong>Proofing tools:</strong> Spell check, grammar check, thesaurus, word count, readability statistics.</li>
+</ul>
+
+<h3>1.2 Spreadsheets</h3>
+<p>A grid of cells identified by column letter and row number (e.g., B5). Used for calculations, data analysis, and visualization. Examples: Microsoft Excel, Google Sheets, LibreOffice Calc.</p>
+<ul>
+<li><strong>Cell references:</strong>
+  <ul>
+  <li><strong>Relative:</strong> A1 — changes when copied (A1 → B2 if dragged down-right).</li>
+  <li><strong>Absolute:</strong> $A$1 — stays fixed when copied.</li>
+  <li><strong>Mixed:</strong> $A1 or A$1 — one dimension fixed, one relative.</li>
+  </ul>
+</li>
+<li><strong>Formulas:</strong> Begin with =. Arithmetic: +, −, *, /, ^ (power). Example: =B2*C2+D2.</li>
+<li><strong>Common functions:</strong>
+  <ul>
+  <li><strong>SUM(range):</strong> Adds values. =SUM(A1:A10)</li>
+  <li><strong>AVERAGE(range):</strong> Mean of values.</li>
+  <li><strong>MAX/MIN(range):</strong> Largest/smallest value.</li>
+  <li><strong>COUNT(range):</strong> Counts numeric cells.</li>
+  <li><strong>COUNTA(range):</strong> Counts non-empty cells.</li>
+  <li><strong>IF(condition, true_value, false_value):</strong> Conditional logic. =IF(A1>=50,"Pass","Fail")</li>
+  <li><strong>AND/OR/NOT:</strong> Logical combinations. =IF(AND(A1>0,A1<100),"Valid","Invalid")</li>
+  <li><strong>VLOOKUP(lookup_value, table_array, col_index, range_lookup):</strong> Searches first column of table, returns value from specified column. Use FALSE for exact match.</li>
+  <li><strong>CONCATENATE / &amp;:</strong> Join text. =A1 & " " & B1</li>
+  </ul>
+</li>
+</ul>
+
+<h3>1.3 Spreadsheet Features</h3>
+<ul>
+<li><strong>Conditional formatting:</strong> Automatically formats cells based on their values (e.g., red if negative, green if positive, colour scales, data bars).</li>
+<li><strong>Sorting:</strong> Arrange data alphabetically/numerically by one or more columns. Ascending (A→Z, 0→9) or Descending.</li>
+<li><strong>Filtering:</strong> Display only rows meeting criteria. Standard filter or advanced filter with custom criteria.</li>
+<li><strong>Charts/Graphs:</strong> Visual representation of data.
+  <ul>
+  <li><strong>Column/Bar:</strong> Compare categories.</li>
+  <li><strong>Line:</strong> Show trends over time.</li>
+  <li><strong>Pie:</strong> Show proportions/percentages (must total 100%).</li>
+  <li><strong>Scatter (XY):</strong> Show correlation between two variables.</li>
+  </ul>
+  Chart elements: title, axis labels, legend, data labels, gridlines.
+</li>
+<li><strong>Pivot Tables:</strong> Summarize large datasets by grouping and aggregating. Drag fields to rows, columns, values, and filters areas.</li>
+</ul>
+
+<h3>1.4 Presentation Software</h3>
+<p>Create slideshows for visual communication. Examples: Microsoft PowerPoint, Google Slides, LibreOffice Impress, Prezi.</p>
+<ul>
+<li><strong>Slides:</strong> Individual pages containing text, images, charts, audio, video.</li>
+<li><strong>Master Slide:</strong> Template controlling default layout, fonts, colours, and backgrounds for all slides. Ensures consistency.</li>
+<li><strong>Transitions:</strong> Animations between slides (fade, slide, wipe). Use sparingly — professional presentations avoid excessive effects.</li>
+<li><strong>Animations:</strong> Effects on individual objects (appear, fly in, fade). Trigger: on click, with previous, after previous.</li>
+<li><strong>Design principles:</strong> Keep text minimal (6×6 rule: max 6 lines, 6 words per line), high contrast, readable fonts, relevant images, consistent colour scheme.</li>
+<li><strong>Presenter tools:</strong> Speaker notes, slide timings, rehearse tool, laser pointer, presenter view (current slide + next slide + notes + timer).</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 Advanced Spreadsheet Functions</h3>
+<div class="formula-box">
+=IFERROR(VLOOKUP(A2,Products!$A$2:$D$100,3,FALSE),"Not found")<br>
+=SUMIF(Sales!B:B,"Electronics",Sales!C:C)  // sum C where B = Electronics<br>
+=COUNTIFS(Scores!A:A,">=50",Scores!B:B,"Pass")  // multiple criteria<br>
+=ROUND(A1,2)  // round to 2 decimal places<br>
+=PMT(interest_rate/12, months, -loan_amount)  // loan payment<br>
+=NPV(discount_rate, cashflow_range) + initial_investment  // net present value
+</div>
+<ul>
+<li><strong>Nested IFs:</strong> =IF(A1>=80,"A",IF(A1>=70,"B",IF(A1>=60,"C","D")))</li>
+<li><strong>Lookups:</strong> VLOOKUP (vertical), HLOOKUP (horizontal), INDEX+MATCH (more flexible than VLOOKUP, works left-to-right or right-to-left).</li>
+<li><strong>Date/Time:</strong> TODAY(), NOW(), DATE(year,month,day), DATEDIF(start,end,"D"), YEAR(), MONTH(), DAY().</li>
+<li><strong>Text manipulation:</strong> LEFT(), RIGHT(), MID(), LEN(), TRIM(), UPPER(), LOWER(), PROPER(), SUBSTITUTE(), TEXT().</li>
+<li><strong>Financial:</strong> PMT, FV (future value), PV (present value), RATE, NPER, IRR (internal rate of return).</li>
+</ul>
+
+<h3>2.2 Data Analysis &amp; What-If Tools</h3>
+<ul>
+<li><strong>Goal Seek:</strong> Find input value needed to achieve a desired output. Example: What sales figure is needed for profit = $10,000?</li>
+<li><strong>Scenario Manager:</strong> Save and switch between multiple sets of input values (best case, worst case, expected case).</li>
+<li><strong>Data Tables:</strong> Show results of a formula for multiple input values simultaneously (one-variable or two-variable tables).</li>
+<li><strong>Solver:</strong> Advanced optimization tool finding maximum, minimum, or specific value by changing multiple variables subject to constraints.</li>
+</ul>
+
+<h3>2.3 Data Validation &amp; Protection</h3>
+<ul>
+<li><strong>Data validation:</strong> Restrict cell input (whole number between 1-100, date within range, list from dropdown, text length).</li>
+<li><strong>Input messages:</strong> Tooltip instructing user what to enter.</li>
+<li><strong>Error alerts:</strong> Stop, Warning, or Information when invalid data entered.</li>
+<li><strong>Worksheet protection:</strong> Lock cells or entire sheets with passwords. Allows view but prevents editing.</li>
+<li><strong>Workbook protection:</strong> Prevent adding, deleting, or hiding sheets.</li>
+</ul>
+
+<h3>2.4 Document Production Best Practices</h3>
+<ul>
+<li><strong>Templates:</strong> Pre-designed documents ensuring corporate branding, consistency, and efficiency.</li>
+<li><strong>Version control:</strong> Track Changes (Word), Suggesting mode (Google Docs), comments, compare documents.</li>
+<li><strong>Collaboration:</strong> Real-time co-authoring, sharing permissions (view, comment, edit), cloud storage (OneDrive, Google Drive, Dropbox).</li>
+<li><strong>Accessibility in documents:</strong> Heading styles for screen readers, alt text for images, readable fonts (sans-serif for screens), sufficient contrast, table headers.</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Spreadsheet Modelling</h3>
+<p>Spreadsheets are powerful tools for business modelling and decision support:</p>
+<ul>
+<li><strong>Model design principles:</strong> Separate inputs (assumptions), calculations, and outputs. Use distinct colour-coding (e.g., yellow for inputs, green for calculations, blue for outputs). Document assumptions clearly.</li>
+<li><strong>Sensitivity analysis:</strong> Test how changes in input variables affect outputs. Create tornado charts showing which variables have greatest impact.</li>
+<li><strong>Monte Carlo simulation:</strong> Uses random sampling and probability distributions to model uncertainty. Run thousands of iterations to produce probability distributions of outcomes. Add-ins: @RISK, Crystal Ball.</li>
+<li><strong>Regression analysis:</strong> Built-in LINEST function or Data Analysis ToolPak. Finds line of best fit (y = mx + c), R-squared (goodness of fit), standard error.</li>
+</ul>
+
+<h3>3.2 Macros &amp; Automation</h3>
+<ul>
+<li><strong>Macros:</strong> Recorded sequences of actions or written in VBA (Visual Basic for Applications). Automate repetitive tasks, create custom functions, build user forms.</li>
+<li><strong>Recording vs Writing:</strong> Recording is quick but rigid. Writing VBA allows loops, conditions, error handling, interaction with other Office applications.</li>
+<li><strong>Security:</strong> Macros can carry malware. Enable only from trusted sources. Digital signatures verify macro authenticity.</li>
+</ul>
+<div class="formula-box">
+Sub FormatReport()<br>
+  Dim ws As Worksheet<br>
+  Set ws = ThisWorkbook.Sheets("Sales")<br>
+  ws.Range("A1:Z1").Font.Bold = True<br>
+  ws.Range("A1:Z1").Interior.Color = RGB(200,220,255)<br>
+  MsgBox "Formatting complete!"<br>
+End Sub
+</div>
+
+<h3>3.3 Business Intelligence &amp; Dashboards</h3>
+<ul>
+<li><strong>Dashboards:</strong> Visual summaries of KPIs using charts, gauges, scorecards, and conditional formatting. Update automatically when source data changes.</li>
+<li><strong>Slicers &amp; Timelines:</strong> Interactive filters for pivot tables and pivot charts. Click buttons to filter data dynamically.</li>
+<li><strong>Power Query (Get &amp; Transform):</strong> Import, clean, and transform data from multiple sources (databases, web, CSV, JSON) before analysis.</li>
+<li><strong>Power Pivot:</strong> In-memory data modelling engine. Create relationships between tables, write DAX (Data Analysis Expressions) formulas for complex calculations.</li>
+</ul>
+
+<h3>3.4 Document Design &amp; Professional Communication</h3>
+<ul>
+<li><strong>Information design:</strong> Structure documents for readability — hierarchy (headings, subheadings), white space, visual grouping, alignment, proximity.</li>
+<li><strong>Typography:</strong> Serif fonts (Times New Roman) for print body text; sans-serif (Arial, Calibri) for screens and headings. Limit to 2–3 fonts per document.</li>
+<li><strong>Colour theory:</strong> Complementary colours for contrast; analogous for harmony. Consider colour blindness (avoid red-green combinations for critical info).</li>
+<li><strong>Data visualization principles (Tufte):</strong> Maximize data-ink ratio; avoid chartjunk; use small multiples; label directly when possible.</li>
+</ul>
+</div>
+
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Word:</strong> Styles ensure consistency; Mail Merge personalizes bulk documents; Headers/Footers repeat content.</li>
+<li><strong>Spreadsheet references:</strong> Relative (A1), Absolute ($A$1), Mixed ($A1 or A$1).</li>
+<li><strong>Key functions:</strong> SUM, AVERAGE, MAX, MIN, COUNT, IF, VLOOKUP, SUMIF, COUNTIFS, ROUND.</li>
+<li><strong>Charts:</strong> Column/Bar (compare), Line (trend), Pie (proportion), Scatter (correlation).</li>
+<li><strong>What-If:</strong> Goal Seek (one input), Scenario Manager (sets of inputs), Data Table (range), Solver (optimization).</li>
+<li><strong>Validation:</strong> Restrict input types; protection prevents accidental edits.</li>
+<li><strong>Presentation:</strong> Master slide for consistency; 6×6 rule; minimal transitions; speaker notes.</li>
+<li><strong>Advanced:</strong> INDEX+MATCH > VLOOKUP; Pivot Tables summarize; Power Query transforms; VBA automates.</li>
+<li><strong>Modelling:</strong> Separate inputs/calculations/outputs; sensitivity analysis; document assumptions.</li>
+<li>Exam tip: For spreadsheet questions, always specify cell references (absolute vs relative) when copying formulas.</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

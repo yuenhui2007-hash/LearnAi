@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C6 Reaction Kinetics — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=chemistry" class="back-btn">← Back to Chemistry</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>C6: Reaction Kinetics</h1>
+<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>Rate of Reaction</h3>
+<p>Rate of reaction is the change in concentration of reactants or products per unit time. It can be measured by:</p>
+<ul>
+<li>Mass loss (gas produced)</li>
+<li>Volume of gas evolved</li>
+<li>Change in colour intensity</li>
+<li>Change in pH</li>
+<li>Turbidity (precipitate formation)</li>
+</ul>
+<div class="formula-box">
+Rate = Δconcentration / Δtime<br>
+Units: mol dm⁻³ s⁻¹
+</div>
+
+<h3>Collision Theory</h3>
+<p>For a reaction to occur, particles must:</p>
+<ol>
+<li>Collide with each other</li>
+<li>Collide with sufficient energy (≥ activation energy)</li>
+<li>Collide with correct orientation</li>
+</ol>
+
+<h3>Factors Affecting Rate of Reaction</h3>
+<ul>
+<li><strong>Concentration:</strong> More particles per unit volume → more frequent collisions → faster rate</li>
+<li><strong>Temperature:</strong> Higher T → particles move faster → more energetic collisions → more collisions exceed Ea</li>
+<li><strong>Surface area:</strong> More exposed surface → more collision sites → faster rate</li>
+<li><strong>Catalyst:</strong> Provides alternative pathway with lower Ea → more molecules have sufficient energy</li>
+</ul>
+
+<h3>Catalysts</h3>
+<p>A catalyst speeds up a reaction without being chemically changed. It works by lowering the activation energy. It is not used up. Enzymes are biological catalysts. Transition metals often act as catalysts.</p>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Rate Equations</h3>
+<p>For a reaction: aA + bB → products, the rate equation is:</p>
+<div class="formula-box">
+Rate = k[A]ᵐ[B]ⁿ<br>
+Where m and n are orders with respect to A and B, found experimentally (not from stoichiometry)
+</div>
+
+<h3>Order of Reaction</h3>
+<ul>
+<li><strong>Zero order:</strong> Rate independent of [reactant]. Rate = k. Graph of [A] vs time is straight line.</li>
+<li><strong>First order:</strong> Rate ∝ [reactant]. Rate = k[A]. Half-life is constant.</li>
+<li><strong>Second order:</strong> Rate ∝ [reactant]². Rate = k[A]².</li>
+</ul>
+<p><strong>Overall order</strong> = m + n</p>
+
+<h3>Units of Rate Constant k</h3>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+<tr style="background:var(--light)"><th style="padding:10px;text-align:left">Overall Order</th><th style="padding:10px;text-align:left">Units of k</th></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">0</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">mol dm⁻³ s⁻¹</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">1</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">s⁻¹</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">2</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">dm³ mol⁻¹ s⁻¹</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">3</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">dm⁶ mol⁻² s⁻¹</td></tr>
+</table>
+
+<h3>Methods for Determining Order</h3>
+<p><strong>Initial rates method:</strong> Measure initial rate at different initial concentrations. Compare how rate changes when [reactant] is changed.</p>
+<p><strong>Graphical methods:</strong></p>
+<ul>
+<li>Plot [A] vs time: straight line = zero order; curve = first or second</li>
+<li>Plot ln[A] vs time: straight line = first order; gradient = -k</li>
+<li>Plot 1/[A] vs time: straight line = second order; gradient = k</li>
+</ul>
+
+<h3>Half-Life</h3>
+<p>For first-order reactions only:</p>
+<div class="formula-box">
+t½ = ln(2) / k = 0.693 / k<br>
+Half-life is independent of initial concentration
+</div>
+
+<h3>Arrhenius Equation</h3>
+<div class="formula-box">
+k = A e^(-Ea/RT)<br>
+k = rate constant, A = frequency factor, Ea = activation energy, R = 8.31 J K⁻¹ mol⁻¹, T = temperature (K)
+</div>
+<p>A plot of ln k vs 1/T gives a straight line with gradient = -Ea/R.</p>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Rate-Determining Step</h3>
+<p>In a multi-step reaction mechanism, the slowest step determines the overall rate. The rate equation reflects only the species involved in (or before) the rate-determining step.</p>
+<div class="formula-box">
+Example:<br>
+Step 1 (slow): NO₂ + NO₂ → NO₃ + NO (rate-determining)<br>
+Step 2 (fast): NO₃ + CO → NO₂ + CO₂<br>
+Overall: NO₂ + CO → NO + CO₂<br>
+Rate = k[NO₂]² (CO does not appear in rate equation)
+</div>
+
+<h3>Pre-Equilibrium</h3>
+<p>When a fast equilibrium precedes the rate-determining step, the concentration of intermediates can be expressed in terms of reactants using the equilibrium constant.</p>
+
+<h3>Activation Energy and Catalysis</h3>
+<p>Catalysts provide an alternative reaction pathway with lower activation energy. They do not change ΔH of the reaction. Homogeneous catalysts are in the same phase as reactants; heterogeneous catalysts are in a different phase (usually solid catalyst, gas/liquid reactants).</p>
+
+<h3>Enzyme Kinetics (Michaelis-Menten)</h3>
+<p>Enzymes are highly specific biological catalysts. The Michaelis constant (Km) relates to enzyme-substrate affinity. At high [substrate], the rate becomes independent of [substrate] (zero order with respect to substrate) as all active sites are occupied.</p>
+</div>
+
+<div class="notes-section">
+
+<div class="worked-example">
+<h4>🧪 Worked Example</h4>
+<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
+mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
+<strong>Answer: 4.0 g</strong>
+</div>
+</div>
+<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
+<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>n = mass / Mᵣ</li>
+<li>n = concentration × volume (dm³)</li>
+<li>1 dm³ = 1000 cm³</li>
+<li>% yield = (actual / theoretical) × 100</li>
+</ul>
+</div>
+<h2>Last-Minute Summary</h2>
+<div class="highlight-box">
+<h4>🎯 Key Points to Remember</h4>
+<ul>
+<li>Collision theory: collide + sufficient energy + correct orientation</li>
+<li>Rate = k[A]ᵐ[B]ⁿ; orders found experimentally</li>
+<li>Zero order: rate constant; First order: t½ = 0.693/k; Second order: 1/[A] vs time is linear</li>
+<li>Units of k depend on overall order</li>
+<li>Arrhenius: ln k vs 1/T; gradient = -Ea/R</li>
+<li>Rate-determining step controls overall rate</li>
+<li>Catalysts lower Ea; do not change ΔH or equilibrium position</li>
+<li>Temperature increases rate by increasing proportion of molecules with E ≥ Ea (Boltzmann distribution)</li>
+</ul>
+</div>
+<div class="highlight-box">
+<h4>⚠️ Common Mistakes</h4>
+<ul>
+<li>Using stoichiometric coefficients as orders in rate equations</li>
+<li>Confusing rate with rate constant</li>
+<li>Using minutes instead of seconds for time units</li>
+<li>Forgetting that catalysts don't affect equilibrium position or ΔH</li>
+<li>Not converting temperature to Kelvin in Arrhenius calculations</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
+<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
+<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>
