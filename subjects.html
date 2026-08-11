@@ -11,12 +11,102 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subjects — LearnAI</title>
-    <meta name="description" content="Browse all Cambridge A-Level and IGCSE subjects.">
+    <meta name="description" content="Browse CAIE and IB subjects.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=4">
-<link rel="stylesheet" href="css/znotes-style.css?v=4">
+    <link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/znotes-style.css?v=5">
+    <style>
+        /* Board selection cards */
+        .board-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .board-card {
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border, rgba(0,0,0,0.08));
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .board-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(99,102,241,0.12);
+            border-color: var(--primary, #6366f1);
+        }
+        .board-card .board-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary,#6366f1), var(--primary-light,#818cf8));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+        .board-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .board-card p {
+            color: var(--gray, #6b7280);
+            font-size: 0.95rem;
+        }
+        .board-card .board-arrow {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: var(--primary, #6366f1);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s ease;
+        }
+        .board-card:hover .board-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Back button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: var(--bg-elevated, #f3f4f6);
+            color: var(--text, #1f2937);
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover {
+            background: var(--border, #e5e7eb);
+        }
+
+        /* Hidden state */
+        .hidden { display: none !important; }
+
+        /* Fade animation */
+        .fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar" id="navbar"></nav>
@@ -26,20 +116,74 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Subjects</span>
-                <h2 class="section-title">Browse Subjects</h2>
-                <p style="color:var(--gray);margin-top:12px">CAIE (A-Level &amp; IGCSE) and IB syllabus coverage.</p>
+                <h2 class="section-title">Choose Your Board</h2>
+                <p style="color:var(--gray);margin-top:12px">Select CAIE or IB to browse subjects.</p>
             </div>
 
-            <div id="subjectSections"></div>
+            <!-- Step 1: Board Selection -->
+            <div id="boardSelection" class="board-selection">
+                <div class="board-card" onclick="showBoard('caie')">
+                    <div class="board-icon">📚</div>
+                    <h3>CAIE</h3>
+                    <p>Cambridge Assessment International Education<br>A-Level &amp; IGCSE</p>
+                    <div class="board-arrow">→</div>
+                </div>
+                <div class="board-card" onclick="showBoard('ib')">
+                    <div class="board-icon">🎓</div>
+                    <h3>IB</h3>
+                    <p>International Baccalaureate</p>
+                    <div class="board-arrow">→</div>
+                </div>
+            </div>
+
+            <!-- Step 2: Subject Content -->
+            <div id="subjectContent" class="hidden">
+                <button class="back-btn" onclick="showSelection()">
+                    ← Back to Boards
+                </button>
+                <div id="subjectSections"></div>
+            </div>
         </div>
     </section>
 
-    <script src="js/theme.js?v=4"></script>
-    <script src="js/data.js?v=4"></script>
-    <script src="js/app.js?v=4"></script>
-    <script src="js/search.js?v=4"></script>
+    <script src="js/theme.js?v=5"></script>
+    <script src="js/data.js?v=5"></script>
+    <script src="js/app.js?v=5"></script>
+    <script src="js/search.js?v=5"></script>
     <script>
+    const boardSelection = document.getElementById('boardSelection');
+    const subjectContent = document.getElementById('subjectContent');
     const container = document.getElementById('subjectSections');
+
+    function showBoard(board) {
+        boardSelection.classList.add('hidden');
+        subjectContent.classList.remove('hidden');
+        subjectContent.classList.add('fade-in');
+        container.innerHTML = '';
+
+        if (board === 'caie') {
+            renderCAIE();
+        } else if (board === 'ib') {
+            renderIB();
+        }
+
+        // Update title
+        document.querySelector('.section-title').textContent = board === 'caie' ? 'CAIE Subjects' : 'IB Subjects';
+        document.querySelector('.section-header p').textContent = board === 'caie'
+            ? 'Cambridge A-Level and IGCSE syllabus coverage.'
+            : 'International Baccalaureate syllabus coverage.';
+    }
+
+    function showSelection() {
+        subjectContent.classList.add('hidden');
+        subjectContent.classList.remove('fade-in');
+        boardSelection.classList.remove('hidden');
+        boardSelection.classList.add('fade-in');
+        container.innerHTML = '';
+
+        document.querySelector('.section-title').textContent = 'Choose Your Board';
+        document.querySelector('.section-header p').textContent = 'Select CAIE or IB to browse subjects.';
+    }
 
     function createSubjectCard(key, s) {
         const card = document.createElement('a');
@@ -54,7 +198,7 @@
         return card;
     }
 
-    function renderSubsection(title, filterFn) {
+    function renderGrid(filterFn) {
         const grid = document.createElement('div');
         grid.className = 'subjects-grid';
 
@@ -74,54 +218,49 @@
             grid.appendChild(empty);
         }
 
-        return { grid, count };
+        return grid;
     }
 
-    function renderSection(title, subsections) {
-        const section = document.createElement('div');
-        section.className = 'topic-section-group';
-
+    function renderSectionTitle(title) {
         const heading = document.createElement('h2');
         heading.className = 'section-divider';
         heading.textContent = title;
-        section.appendChild(heading);
+        return heading;
+    }
 
-        subsections.forEach(function(sub) {
-            const subHeading = document.createElement('h3');
-            subHeading.style.cssText = 'font-size:1.1rem;font-weight:600;color:var(--text-secondary);margin:24px 0 12px;';
-            subHeading.textContent = sub.title;
-            section.appendChild(subHeading);
+    function renderCAIE() {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
 
-            const result = renderSubsection(sub.title, sub.filter);
-            section.appendChild(result.grid);
-        });
+        // A-Level
+        section.appendChild(renderSectionTitle('A-Level'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.alevel; });
+        }));
+
+        // IGCSE
+        section.appendChild(renderSectionTitle('IGCSE'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.igcse; });
+        }));
 
         container.appendChild(section);
     }
 
-    // CAIE section: A-Level + IGCSE
-    renderSection('CAIE', [
-        { title: 'A-Level', filter: function(s) { return s.topics.some(function(t) { return t.alevel; }); } },
-        { title: 'IGCSE', filter: function(s) { return s.topics.some(function(t) { return t.igcse; }); } }
-    ]);
+    function renderIB() {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
 
-    // IB section
-    const ibSection = document.createElement('div');
-    ibSection.className = 'topic-section-group';
+        section.appendChild(renderSectionTitle('IB Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.ib; });
+        }));
 
-    const ibHeading = document.createElement('h2');
-    ibHeading.className = 'section-divider';
-    ibHeading.textContent = 'IB';
-    ibSection.appendChild(ibHeading);
-
-    const ibResult = renderSubsection('IB', function(s) {
-        return s.topics.some(function(t) { return t.ib; });
-    });
-    ibSection.appendChild(ibResult.grid);
-    container.appendChild(ibSection);
+        container.appendChild(section);
+    }
     </script>
-<script src="js/auth.js?v=4"></script>
-<script src="js/mascot.js?v=4"></script>
-<script src="js/pwa.js?v=4"></script>
+<script src="js/auth.js?v=5"></script>
+<script src="js/mascot.js?v=5"></script>
+<script src="js/pwa.js?v=5"></script>
 </body>
 </html>
