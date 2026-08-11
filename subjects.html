@@ -132,6 +132,12 @@
                     <p>International Baccalaureate</p>
                     <div class="board-arrow">→</div>
                 </div>
+                <div class="board-card" onclick="showBoard('ielts')">
+                    <div class="board-icon">📝</div>
+                    <h3>IELTS</h3>
+                    <p>International English Language Testing System<br>Academic &amp; General Training</p>
+                    <div class="board-arrow">→</div>
+                </div>
             </div>
 
             <div id="subjectContent" class="hidden">
@@ -168,17 +174,21 @@
             renderEdexcel();
         } else if (board === 'ib') {
             renderIB();
+        } else if (board === 'ielts') {
+            renderIELTS();
         }
 
         const titles = {
             caie: 'CAIE',
             edexcel: 'Edexcel Subjects',
-            ib: 'IB Subjects'
+            ib: 'IB Subjects',
+            ielts: 'IELTS'
         };
         const subtitles = {
             caie: 'Choose A-Level or IGCSE to browse subjects.',
             edexcel: 'Pearson Edexcel IAL, IGCSE and GCSE syllabus coverage.',
-            ib: 'International Baccalaureate syllabus coverage.'
+            ib: 'International Baccalaureate syllabus coverage.',
+            ielts: 'IELTS Academic and General Training preparation.'
         };
         document.querySelector('.section-title').textContent = titles[board];
         document.querySelector('.section-header p').textContent = subtitles[board];
@@ -337,6 +347,23 @@
         section.appendChild(renderSectionTitle('IB Subjects'));
         section.appendChild(renderGrid(function(s) {
             return s.topics.some(function(t) { return t.ib; });
+        }));
+
+        container.appendChild(section);
+    }
+
+    function renderIELTS() {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        section.appendChild(renderSectionTitle('Academic'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.ielts_academic; });
+        }));
+
+        section.appendChild(renderSectionTitle('General Training'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.ielts_general; });
         }));
 
         container.appendChild(section);
