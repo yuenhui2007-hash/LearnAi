@@ -25,67 +25,8 @@
   }
 
   function createSearchUI() {
-    var prefix = getPrefix();
-
-    searchWrap = document.createElement('div');
-    searchWrap.className = 'nav-search-wrap';
-    searchWrap.style.cssText = 'position:relative;display:flex;align-items:center;';
-
-    var btn = document.createElement('button');
-    btn.className = 'nav-search-btn';
-    btn.setAttribute('aria-label', 'Search');
-    btn.innerHTML = '🔍';
-    btn.style.cssText = 'background:none;border:none;font-size:1.1rem;cursor:pointer;padding:4px 8px;color:inherit;';
-
-    searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.className = 'nav-search-input';
-    searchInput.placeholder = 'Search topics… (press /)';
-    searchInput.style.cssText =
-      'width:0;opacity:0;padding:6px 10px;border:1px solid rgba(255,255,255,0.2);' +
-      'border-radius:8px;background:rgba(255,255,255,0.1);color:inherit;font-size:0.85rem;' +
-      'transition:width 0.2s,opacity 0.2s;outline:none;';
-
-    resultsDropdown = document.createElement('div');
-    resultsDropdown.className = 'nav-search-results';
-    resultsDropdown.style.cssText =
-      'position:absolute;top:calc(100% + 6px);right:0;width:280px;max-height:320px;overflow-y:auto;' +
-      'background:#1e293b;border:1px solid #334155;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);' +
-      'display:none;z-index:1000;padding:8px 0;';
-
-    btn.addEventListener('click', function() {
-      var active = searchInput.style.width !== '180px';
-      searchInput.style.width = active ? '180px' : '0';
-      searchInput.style.opacity = active ? '1' : '0';
-      if (active) searchInput.focus();
-    });
-
-    searchInput.addEventListener('input', function() {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(function() { performSearch(searchInput.value.trim()); }, 150);
-    });
-
-    searchInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        searchInput.value = '';
-        resultsDropdown.style.display = 'none';
-        searchInput.blur();
-      }
-    });
-
-    searchWrap.appendChild(btn);
-    searchWrap.appendChild(searchInput);
-    searchWrap.appendChild(resultsDropdown);
-
-    // Insert into navbar menu
-    var menu = document.getElementById('navMenu');
-    if (menu) {
-      var li = document.createElement('li');
-      li.className = 'nav-search-item';
-      li.style.cssText = 'display:flex;align-items:center;margin-left:8px;';
-      li.appendChild(searchWrap);
-      menu.appendChild(li);
-    }
+    // Search is now handled by nav.js search.html link — disable duplicate inline search
+    return;
   }
 
   function performSearch(query) {
