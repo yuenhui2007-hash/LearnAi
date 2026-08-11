@@ -377,6 +377,8 @@
             card.className = 'board-card';
             card.style.textDecoration = 'none';
             card.style.color = 'inherit';
+            card.style.display = 'block';
+            card.setAttribute('role', 'button');
             card.innerHTML = `
                 <div class="board-icon" style="background:linear-gradient(135deg, ${skill.color}, ${skill.color}88);">${skill.icon}</div>
                 <h3>${skill.title}</h3>

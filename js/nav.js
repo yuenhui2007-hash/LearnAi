@@ -17,6 +17,7 @@
               '<a href="' + prefix + 'subjects.html?board=caie" class="nav-link">CAIE</a>' +
               '<a href="' + prefix + 'subjects.html?board=edexcel" class="nav-link">Edexcel</a>' +
               '<a href="' + prefix + 'subjects.html?board=ib" class="nav-link">IB</a>' +
+              '<a href="' + prefix + 'subjects.html?board=ielts" class="nav-link">IELTS</a>' +
             '</div>' +
           '</li>' +
           '<li><a href="' + prefix + 'tutor.html" class="nav-link">AI Tutor</a></li>' +
