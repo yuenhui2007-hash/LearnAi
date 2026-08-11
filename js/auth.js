@@ -32,6 +32,7 @@ window.Auth = {
       });
       const data = await res.json();
       if (!res.ok) return { success: false, error: data.error || 'Invalid email or password.' };
+      localStorage.setItem('learnai_auth', JSON.stringify(data.user || {}));
       return { success: true, user: data.user };
     } catch (err) {
       return { success: false, error: 'Network error. Please try again.' };
