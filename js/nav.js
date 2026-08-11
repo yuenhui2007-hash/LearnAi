@@ -19,6 +19,7 @@
               '<a href="' + prefix + 'subjects.html?board=ib" class="nav-link">IB</a>' +
             '</div>' +
           '</li>' +
+          '<li><a href="' + prefix + 'search.html" class="nav-link">🔍 Search</a></li>' +
           '<li><a href="' + prefix + 'tutor.html" class="nav-link">AI Tutor</a></li>' +
           '<li><a href="' + prefix + 'academy.html" class="nav-link">AI Academy</a></li>' +
           '<li><a href="' + prefix + 'dashboard.html" class="nav-link">My Progress</a></li>' +
