@@ -10,12 +10,16 @@ var API_BASE = window.location.origin.includes('localhost')
   ? 'http://localhost:10000/api'
   : 'https://learnai-backend-n0df.onrender.com/api';
 
+function getAuthHeaders() {
+  var token = localStorage.getItem('auth_token');
+  return token ? { 'Authorization': 'Bearer ' + token } : {};
+}
+
 // Hide pages until auth check completes (prevents flash/redirect loops)
 if (isProtected || isAuthPage) {
   document.documentElement.style.visibility = 'hidden';
 }
 
-// Use Auth.getUser if available (same config as login/register)
 function checkAuth() {
   if (window.Auth && window.Auth.getUser) {
     window.Auth.getUser().then(function(user) {
@@ -24,7 +28,7 @@ function checkAuth() {
       handleUser(null);
     });
   } else {
-    fetch(API_BASE + '/auth/me', { credentials: 'include' })
+    fetch(API_BASE + '/auth/me', { headers: getAuthHeaders() })
       .then(function(res) {
         if (!res.ok) throw new Error('Not authenticated');
         return res.json();
@@ -49,6 +53,7 @@ function handleUser(user) {
     }
   } else {
     localStorage.removeItem('learnai_auth');
+    localStorage.removeItem('auth_token');
     if (isProtected) {
       window.location.replace('login.html?redirect=' + encodeURIComponent(window.location.href));
     } else if (isAuthPage) {
