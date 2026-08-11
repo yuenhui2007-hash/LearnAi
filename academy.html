@@ -6,274 +6,893 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zetrix AI Academy — LearnAI</title>
 <meta name="description" content="Zetrix AI Academy: Transform every employee into an AI-powered professional. 6 levels from fundamentals to advanced automation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=4">
-<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=7">
+<link rel="stylesheet" href="css/znotes-style.css?v=7">
 <style>
-.academy-hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); color: white; padding: 140px 0 80px; text-align: center; }
-.academy-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
-.academy-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
-.academy-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-bottom: 24px; }
-.level-path { padding: 60px 0; background: var(--light); }
-.path-container { max-width: 900px; margin: 0 auto; }
-.path-title { text-align: center; margin-bottom: 48px; }
-.path-title h2 { font-size: 2rem; margin-bottom: 8px; }
-.path-title p { color: var(--gray); }
-.level-card { background: var(--card-bg); border-radius: var(--radius-xl); padding: 32px; margin-bottom: 24px; box-shadow: var(--shadow); display: flex; gap: 24px; align-items: flex-start; transition: transform 0.3s; cursor: pointer; text-decoration: none; color: var(--body-text); }
-.level-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.level-number { width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; flex-shrink: 0; }
-.level-info h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--body-text); }
-.level-info p { color: var(--gray); font-size: 0.95rem; margin-bottom: 12px; }
-.level-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; }
-.level-meta span { display: flex; align-items: center; gap: 6px; }
-.level-meta .locked { color: var(--gray); }
-.level-meta .unlocked { color: var(--success); }
-.level-modules { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
-.module-tag { background: var(--light); padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
-.cert-section { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
-.cert-section h2 { font-size: 2rem; margin-bottom: 16px; color: #1e293b; }
-.cert-section p { max-width: 500px; margin: 0 auto 24px; color: #475569; }
-.features-section { padding: 60px 0; background: var(--white); }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 32px; }
-.feature-box { background: var(--light); padding: 28px; border-radius: var(--radius-lg); }
-.feature-box h4 { font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-.feature-box p { font-size: 0.9rem; color: var(--gray); }
-.dept-section { padding: 60px 0; background: var(--light); }
-.dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
-.dept-card { background: var(--card-bg); padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-align: center; text-decoration: none; color: var(--body-text); display: block; transition: transform 0.2s, box-shadow 0.2s; }
-.dept-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.dept-link { display: inline-block; margin-top: 12px; color: var(--primary); font-weight: 600; font-size: 0.85rem; }
-.dept-card h4 { margin-bottom: 8px; color: var(--body-text); }
-.dept-card p { font-size: 0.85rem; color: var(--gray); }
-.progress-tracker { position: fixed; bottom: 24px; right: 24px; background: var(--card-bg); padding: 16px 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); z-index: 100; }
-.progress-tracker h4 { font-size: 0.9rem; margin-bottom: 8px; }
-.progress-bar { width: 200px; height: 8px; background: var(--gray-light); border-radius: 50px; overflow: hidden; }
-.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 0%; transition: width 0.5s; }
+/* ===== HERO ===== */
+.academy-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #3730a3 100%);
+  color: white;
+  padding: 140px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.academy-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: floatBg 20s linear infinite;
+}
+@keyframes floatBg {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-60px); }
+}
+.academy-hero .container { position: relative; z-index: 1; }
+.academy-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.academy-hero p {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.academy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  display: block;
+}
+.hero-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* ===== STREAK BAR ===== */
+.streak-bar {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  padding: 16px 0;
+  position: relative;
+  z-index: 2;
+}
+.streak-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.streak-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c7d2fe;
+  font-size: 0.9rem;
+}
+.streak-item strong {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.streak-fire { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* ===== SKILL TREE ===== */
+.level-path {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  position: relative;
+}
+.path-container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.path-title { text-align: center; margin-bottom: 60px; }
+.path-title h2 { font-size: 2.2rem; margin-bottom: 12px; }
+.path-title p { color: var(--gray); font-size: 1.05rem; }
+
+/* Tree connector line */
+.tree-line {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  bottom: 100px;
+  width: 4px;
+  background: linear-gradient(180deg, #e2e8f0 0%, #e2e8f0 100%);
+  transform: translateX(-50%);
+  z-index: 0;
+  border-radius: 2px;
+}
+.tree-line-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 2px;
+  transition: height 1s ease;
+  height: 16.6%;
+}
+
+/* Level cards */
+.level-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 32px;
+}
+.level-wrapper:last-child { margin-bottom: 0; }
+
+.level-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--body-text);
+  border: 2px solid transparent;
+  position: relative;
+}
+.level-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(99,102,241,0.15);
+  border-color: #c7d2fe;
+}
+.level-card.active {
+  border-color: #6366f1;
+  box-shadow: 0 8px 30px rgba(99,102,241,0.2);
+}
+.level-card.completed {
+  border-color: #10b981;
+}
+.level-card.locked {
+  opacity: 0.6;
+  filter: grayscale(0.4);
+}
+.level-card.locked:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+/* Level number bubble */
+.level-number {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(99,102,241,0.3);
+}
+.level-number.completed {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  box-shadow: 0 8px 20px rgba(16,185,129,0.3);
+}
+.level-number.locked {
+  background: linear-gradient(135deg, #94a3b8 0%, #cbd5e1 100%);
+  box-shadow: none;
+}
+.level-number::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.level-card:hover .level-number::after {
+  border-color: rgba(99,102,241,0.3);
+}
+
+/* Checkmark for completed */
+.level-check {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 22px;
+  height: 22px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: white;
+  border: 2px solid #fff;
+}
+
+.level-info { flex: 1; min-width: 0; }
+.level-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+  color: #1e293b;
+  font-weight: 700;
+}
+.level-info p {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.level-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+}
+.level-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.level-meta .time { color: #64748b; }
+.level-meta .unlocked { color: #10b981; font-weight: 600; }
+.level-meta .locked { color: #94a3b8; }
+
+/* XP progress bar */
+.xp-bar {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 50px;
+  transition: width 1s ease;
+}
+.xp-fill.complete {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+.xp-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Module tags */
+.level-modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.module-tag {
+  background: #f1f5f9;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #475569;
+  transition: all 0.2s;
+}
+.level-card:hover .module-tag {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+/* Lock overlay */
+.lock-overlay {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+/* ===== BADGES SECTION ===== */
+.badges-section {
+  padding: 80px 0;
+  background: #fff;
+}
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.badge-item {
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 16px;
+  background: #f8fafc;
+  transition: all 0.3s;
+  position: relative;
+}
+.badge-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.badge-item.locked {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+.badge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 12px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+.badge-item.locked .badge-icon {
+  background: #e2e8f0;
+}
+.badge-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+.badge-desc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* ===== CERT SECTION ===== */
+.cert-section {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cert-section::before {
+  content: '🏆';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cert-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  color: #1e293b;
+  position: relative;
+}
+.cert-section p {
+  max-width: 500px;
+  margin: 0 auto 28px;
+  color: #475569;
+  font-size: 1.05rem;
+  position: relative;
+}
+
+/* ===== FEATURES ===== */
+.features-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.feature-box {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: all 0.3s;
+}
+.feature-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.feature-box h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feature-box p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* ===== FLOATING MASCOT ===== */
+.mascot-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  cursor: pointer;
+  animation: mascotBounce 3s ease-in-out infinite;
+}
+@keyframes mascotBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.mascot-bubble {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: #1e293b;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 16px 16px 4px 16px;
+  font-size: 0.85rem;
+  max-width: 220px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.mascot-float:hover .mascot-bubble {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mascot-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 25px rgba(99,102,241,0.4);
+  border: 3px solid #fff;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .academy-hero h1 { font-size: 2rem; }
-  .level-card { flex-direction: column; }
-  .progress-tracker { left: 16px; right: 16px; bottom: 16px; }
+  .academy-hero { padding: 100px 0 60px; }
+  .hero-stats { gap: 24px; }
+  .hero-stat-number { font-size: 1.6rem; }
+  .tree-line { left: 28px; }
+  .level-card { padding: 20px; }
+  .level-number { width: 48px; height: 48px; font-size: 1.1rem; }
+  .badges-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Entrance animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
 <body>
 <nav class="navbar" id="navbar"></nav>
-<script src="js/nav.js?v=5"></script>
+<script src="js/nav.js?v=7"></script>
 
+<!-- HERO -->
 <section class="academy-hero">
   <div class="container">
     <div class="academy-badge">🤖 Zetrix AI Academy</div>
-    <h1>Transform Every Employee Into an AI-Powered Professional</h1>
+    <h1>Transform Every Employee Into an<br>AI-Powered Professional</h1>
     <p>Master AI fundamentals, prompt engineering, AI avatars, and department-specific automation through 6 progressive levels with hands-on practice.</p>
     <a href="#levels" class="btn btn-white" style="margin-right:12px">Start Learning</a>
     <a href="#departments" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white">Department Courses</a>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">6</span>
+        <span class="hero-stat-label">Levels</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">17+</span>
+        <span class="hero-stat-label">Hours of Content</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">9</span>
+        <span class="hero-stat-label">Departments</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">∞</span>
+        <span class="hero-stat-label">Possibilities</span>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- STREAK BAR -->
+<section class="streak-bar">
+  <div class="container">
+    <div class="streak-inner">
+      <div class="streak-item">
+        <span class="streak-fire">🔥</span>
+        <span>Current Streak: <strong>3 days</strong></span>
+      </div>
+      <div class="streak-item">
+        <span>⭐</span>
+        <span>Total XP: <strong>1,240</strong></span>
+      </div>
+      <div class="streak-item">
+        <span>🎯</span>
+        <span>Next Badge: <strong>Level 2 Scholar</strong></span>
+      </div>
+      <div class="streak-item">
+        <span>📅</span>
+        <span>Joined: <strong>Aug 2026</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILL TREE -->
 <section class="level-path" id="levels">
   <div class="container path-container">
-    <div class="path-title">
-      <h2>Learning Journey</h2>
-      <p>Complete each level to unlock the next. Earn your certification.</p>
+    <div class="path-title fade-up">
+      <h2>Your Learning Journey</h2>
+      <p>Complete each level to unlock the next. Earn XP, badges, and your certification.</p>
     </div>
 
-    <a href="academy-level1.html" class="level-card">
-      <div class="level-number">1</div>
-      <div class="level-info">
-        <h3>AI Fundamentals</h3>
-        <p>What is AI, types of AI, generative AI, LLMs, limitations & myths</p>
-        <div class="level-meta">
-          <span>⏱️ 2 hours</span>
-          <span class="unlocked">🔓 Unlocked</span>
-        </div>
-        <div class="level-modules">
-          <span class="module-tag">What is AI?</span>
-          <span class="module-tag">How AI Thinks</span>
-          <span class="module-tag">Good vs Bad Prompts</span>
-        </div>
-      </div>
-    </a>
+    <div class="tree-line">
+      <div class="tree-line-progress" id="treeProgress"></div>
+    </div>
 
-    <a href="academy-level2.html" class="level-card">
-      <div class="level-number">2</div>
-      <div class="level-info">
-        <h3>Mastering Zetrix AI</h3>
-        <p>Dashboard, chat, file uploads, AI memory, assistants, templates</p>
-        <div class="level-meta">
-          <span>⏱️ 3 hours</span>
-          <span class="locked">🔒 Complete Level 1</span>
+    <!-- Level 1 -->
+    <div class="level-wrapper fade-up">
+      <a href="academy-level1.html" class="level-card active">
+        <div class="level-number">
+          1
+          <span class="level-check">✓</span>
         </div>
-        <div class="level-modules">
-          <span class="module-tag">Dashboard & Chat</span>
-          <span class="module-tag">File Uploads</span>
-          <span class="module-tag">AI Memory</span>
-          <span class="module-tag">Templates</span>
+        <div class="level-info">
+          <h3>AI Fundamentals</h3>
+          <p>What is AI, types of AI, generative AI, LLMs, limitations & myths</p>
+          <div class="level-meta">
+            <span class="time">⏱️ 2 hours</span>
+            <span class="unlocked">🔓 In Progress</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: 65%"></div>
+          </div>
+          <div class="xp-text">65% complete — 130 / 200 XP</div>
+          <div class="level-modules">
+            <span class="module-tag">✓ What is AI?</span>
+            <span class="module-tag">✓ How AI Thinks</span>
+            <span class="module-tag">○ Good vs Bad Prompts</span>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
 
-    <a href="academy-level3.html" class="level-card">
-      <div class="level-number">3</div>
-      <div class="level-info">
-        <h3>AI Avatar (Claw)</h3>
-        <p>Voice conversations, meetings, presentations, roleplaying, training</p>
-        <div class="level-meta">
-          <span>⏱️ 2 hours</span>
-          <span class="locked">🔒 Complete Level 2</span>
+    <!-- Level 2 -->
+    <div class="level-wrapper fade-up">
+      <a href="academy-level2.html" class="level-card">
+        <div class="level-number locked">2</div>
+        <div class="level-info">
+          <h3>Mastering Zetrix AI</h3>
+          <p>Dashboard, chat, file uploads, AI memory, assistants, templates</p>
+          <div class="level-meta">
+            <span class="time">⏱️ 3 hours</span>
+            <span class="locked">🔒 Complete Level 1</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: 0%"></div>
+          </div>
+          <div class="xp-text">0 / 300 XP</div>
+          <div class="level-modules">
+            <span class="module-tag">Dashboard & Chat</span>
+            <span class="module-tag">File Uploads</span>
+            <span class="module-tag">AI Memory</span>
+            <span class="module-tag">Templates</span>
+          </div>
         </div>
-        <div class="level-modules">
-          <span class="module-tag">Voice Conversations</span>
-          <span class="module-tag">Meeting Mode</span>
-          <span class="module-tag">Roleplay Scenarios</span>
-          <span class="module-tag">Customer Support</span>
-        </div>
-      </div>
-    </a>
+        <div class="lock-overlay">🔒</div>
+      </a>
+    </div>
 
-    <a href="academy-level4.html" class="level-card">
-      <div class="level-number">4</div>
-      <div class="level-info">
-        <h3>AI for Daily Work</h3>
-        <p>Travel planning, budgeting, learning, writing, scheduling, shopping</p>
-        <div class="level-meta">
-          <span>⏱️ 2 hours</span>
-          <span class="locked">🔒 Complete Level 3</span>
+    <!-- Level 3 -->
+    <div class="level-wrapper fade-up">
+      <a href="academy-level3.html" class="level-card locked">
+        <div class="level-number locked">3</div>
+        <div class="level-info">
+          <h3>AI Avatar (Claw)</h3>
+          <p>Voice conversations, meetings, presentations, roleplaying, training</p>
+          <div class="level-meta">
+            <span class="time">⏱️ 2 hours</span>
+            <span class="locked">🔒 Complete Level 2</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: 0%"></div>
+          </div>
+          <div class="xp-text">0 / 200 XP</div>
+          <div class="level-modules">
+            <span class="module-tag">Voice Conversations</span>
+            <span class="module-tag">Meeting Mode</span>
+            <span class="module-tag">Roleplay Scenarios</span>
+            <span class="module-tag">Customer Support</span>
+          </div>
         </div>
-        <div class="level-modules">
-          <span class="module-tag">Travel Planning</span>
-          <span class="module-tag">Budgeting</span>
-          <span class="module-tag">Language Learning</span>
-          <span class="module-tag">Writing Assistance</span>
-        </div>
-      </div>
-    </a>
+        <div class="lock-overlay">🔒</div>
+      </a>
+    </div>
 
-    <a href="academy-level5.html" class="level-card">
-      <div class="level-number">5</div>
-      <div class="level-info">
-        <h3>Department-Specific AI</h3>
-        <p>HR, Finance, Marketing, Sales, Customer Service, Operations, Legal, IT, Executive</p>
-        <div class="level-meta">
-          <span>⏱️ 4 hours</span>
-          <span class="locked">🔒 Complete Level 4</span>
+    <!-- Level 4 -->
+    <div class="level-wrapper fade-up">
+      <a href="academy-level4.html" class="level-card locked">
+        <div class="level-number locked">4</div>
+        <div class="level-info">
+          <h3>AI for Daily Work</h3>
+          <p>Travel planning, budgeting, learning, writing, scheduling, shopping</p>
+          <div class="level-meta">
+            <span class="time">⏱️ 2 hours</span>
+            <span class="locked">🔒 Complete Level 3</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: 0%"></div>
+          </div>
+          <div class="xp-text">0 / 200 XP</div>
+          <div class="level-modules">
+            <span class="module-tag">Travel Planning</span>
+            <span class="module-tag">Budgeting</span>
+            <span class="module-tag">Language Learning</span>
+            <span class="module-tag">Writing Assistance</span>
+          </div>
         </div>
-        <div class="level-modules">
-          <span class="module-tag">HR & Recruitment</span>
-          <span class="module-tag">Finance & Analysis</span>
-          <span class="module-tag">Marketing & Sales</span>
-          <span class="module-tag">Operations & Legal</span>
-        </div>
-      </div>
-    </a>
+        <div class="lock-overlay">🔒</div>
+      </a>
+    </div>
 
-    <a href="academy-level6.html" class="level-card">
-      <div class="level-number">6</div>
-      <div class="level-info">
-        <h3>Advanced AI Automation</h3>
-        <p>AI workflows, agents, multi-step prompts, document automation, custom GPTs, APIs</p>
-        <div class="level-meta">
-          <span>⏱️ 4 hours</span>
-          <span class="locked">🔒 Complete Level 5</span>
+    <!-- Level 5 -->
+    <div class="level-wrapper fade-up">
+      <a href="academy-level5.html" class="level-card locked">
+        <div class="level-number locked">5</div>
+        <div class="level-info">
+          <h3>Department-Specific AI</h3>
+          <p>HR, Finance, Marketing, Sales, Customer Service, Operations, Legal, IT, Executive</p>
+          <div class="level-meta">
+            <span class="time">⏱️ 4 hours</span>
+            <span class="locked">🔒 Complete Level 4</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: 0%"></div>
+          </div>
+          <div class="xp-text">0 / 400 XP</div>
+          <div class="level-modules">
+            <span class="module-tag">HR & Recruitment</span>
+            <span class="module-tag">Finance & Analysis</span>
+            <span class="module-tag">Marketing & Sales</span>
+            <span class="module-tag">Operations & Legal</span>
+          </div>
         </div>
-        <div class="level-modules">
-          <span class="module-tag">AI Workflows</span>
-          <span class="module-tag">Multi-step Prompts</span>
-          <span class="module-tag">Document Automation</span>
-          <span class="module-tag">API Integrations</span>
+        <div class="lock-overlay">🔒</div>
+      </a>
+    </div>
+
+    <!-- Level 6 -->
+    <div class="level-wrapper fade-up">
+      <a href="academy-level6.html" class="level-card locked">
+        <div class="level-number locked">6</div>
+        <div class="level-info">
+          <h3>Advanced AI Automation</h3>
+          <p>AI workflows, agents, multi-step prompts, document automation, custom GPTs, APIs</p>
+          <div class="level-meta">
+            <span class="time">⏱️ 4 hours</span>
+            <span class="locked">🔒 Complete Level 5</span>
+          </div>
+          <div class="xp-bar">
+            <div class="xp-fill" style="width: 0%"></div>
+          </div>
+          <div class="xp-text">0 / 400 XP</div>
+          <div class="level-modules">
+            <span class="module-tag">AI Workflows</span>
+            <span class="module-tag">Multi-step Prompts</span>
+            <span class="module-tag">Document Automation</span>
+            <span class="module-tag">API Integrations</span>
+          </div>
         </div>
-      </div>
-    </a>
+        <div class="lock-overlay">🔒</div>
+      </a>
+    </div>
   </div>
 </section>
 
+<!-- BADGES -->
+<section class="badges-section">
+  <div class="container">
+    <div class="path-title fade-up">
+      <h2>Achievement Badges</h2>
+      <p>Earn badges as you progress through your AI learning journey.</p>
+    </div>
+    <div class="badges-grid">
+      <div class="badge-item">
+        <div class="badge-icon">🌱</div>
+        <div class="badge-name">First Steps</div>
+        <div class="badge-desc">Started Level 1</div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-icon">💡</div>
+        <div class="badge-name">Prompt Master</div>
+        <div class="badge-desc">Complete Level 1</div>
+      </div>
+      <div class="badge-item locked">
+        <div class="badge-icon">🚀</div>
+        <div class="badge-name">Zetrix Pro</div>
+        <div class="badge-desc">Complete Level 2</div>
+      </div>
+      <div class="badge-item locked">
+        <div class="badge-icon">🎭</div>
+        <div class="badge-name">Avatar Creator</div>
+        <div class="badge-desc">Complete Level 3</div>
+      </div>
+      <div class="badge-item locked">
+        <div class="badge-icon">⚡</div>
+        <div class="badge-name">Productivity King</div>
+        <div class="badge-desc">Complete Level 4</div>
+      </div>
+      <div class="badge-item locked">
+        <div class="badge-icon">🏢</div>
+        <div class="badge-name">Department Hero</div>
+        <div class="badge-desc">Complete Level 5</div>
+      </div>
+      <div class="badge-item locked">
+        <div class="badge-icon">🤖</div>
+        <div class="badge-name">AI Architect</div>
+        <div class="badge-desc">Complete Level 6</div>
+      </div>
+      <div class="badge-item locked">
+        <div class="badge-icon">🔥</div>
+        <div class="badge-name">7-Day Streak</div>
+        <div class="badge-desc">Learn 7 days in a row</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATE -->
 <section class="cert-section" id="certSection">
   <div class="container">
-    <h2>🏆 Certified Zetrix AI Professional</h2>
-    <p>Complete all 6 levels, pass every quiz (80%+), finish practical assignments, and earn your official certification.</p>
-    <div style="font-size:4rem;margin:24px 0">📜</div>
-    <div id="certStatus">
-      <div style="background:var(--light);padding:16px;border-radius:12px;margin:16px 0;">
-        <p style="color:var(--gray);font-size:0.9rem;">Sign in to track your certificate eligibility.</p>
-      </div>
-    </div>
-    <button id="certBtn" class="btn btn-primary btn-lg" style="display:none;margin-top:12px;">📧 Get My Certificate</button>
+    <h2>🏆 Earn Your AI Certification</h2>
+    <p>Complete all 6 levels to receive your Zetrix AI Professional certificate. Share it on LinkedIn and showcase your AI skills.</p>
+    <a href="#levels" class="btn btn-primary" style="font-size:1.05rem;padding:14px 32px">Start Your Journey</a>
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features-section">
   <div class="container">
-    <div class="path-title">
-      <h2>Interactive Learning Features</h2>
-      <p>Hands-on practice, not just theory</p>
+    <div class="path-title fade-up">
+      <h2>Why Learn With Us?</h2>
+      <p>Practical, hands-on AI training designed for real-world application.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-box">
-        <h4>🧪 AI Sandbox</h4>
-        <p>Try every concept with real AI. No fake simulations — practice with actual prompts.</p>
+      <div class="feature-box fade-up">
+        <h4><span class="feature-icon" style="background:#dbeafe">🎯</span> Goal-Based Learning</h4>
+        <p>Each level builds on the last. No fluff — just practical skills you can use immediately at work.</p>
       </div>
-      <div class="feature-box">
-        <h4>🧩 Prompt Builder</h4>
-        <p>Drag and drop blocks to build perfect prompts: Role, Goal, Context, Format, Constraints.</p>
+      <div class="feature-box fade-up">
+        <h4><span class="feature-icon" style="background:#dcfce7">🛠️</span> Hands-On Practice</h4>
+        <p>Interactive exercises, real prompts, and live AI demonstrations throughout every module.</p>
       </div>
-      <div class="feature-box">
-        <h4>⚔️ AI Battles</h4>
-        <p>Compare two prompts side-by-side. Vote on which is better and learn why.</p>
+      <div class="feature-box fade-up">
+        <h4><span class="feature-icon" style="background:#fef3c7">📊</span> Track Progress</h4>
+        <p>XP points, streak counters, and visual progress bars keep you motivated and on track.</p>
       </div>
-      <div class="feature-box">
-        <h4>🔧 Prompt Repair</h4>
-        <p>Given a bad prompt, improve it. AI scores your fix out of 100.</p>
-      </div>
-      <div class="feature-box">
-        <h4>🎮 Gamification</h4>
-        <p>XP, levels, daily streaks, badges, and leaderboards for motivation.</p>
-      </div>
-      <div class="feature-box">
-        <h4>🎯 Scenario Simulator</h4>
-        <p>HR interviews, finance audits, customer complaints — every answer changes the scenario.</p>
+      <div class="feature-box fade-up">
+        <h4><span class="feature-icon" style="background:#fce7f3">🏅</span> Earn Badges</h4>
+        <p>Unlock achievement badges as you complete levels and maintain your learning streak.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="dept-section" id="departments">
-  <div class="container">
-    <div class="path-title">
-      <h2>Department Courses</h2>
-      <p>Personalized learning paths for every role</p>
-    </div>
-    <div class="dept-grid">
-      <a href="dept-training.html?dept=hr" class="dept-card"><h4>👥 HR</h4><p>Recruitment, interviews, performance reviews</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=finance" class="dept-card"><h4>💰 Finance</h4><p>Reports, Excel analysis, forecasting</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=marketing" class="dept-card"><h4>📢 Marketing</h4><p>Campaigns, SEO, content, social media</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=sales" class="dept-card"><h4>🤝 Sales</h4><p>Prospecting, proposals, negotiations</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=support" class="dept-card"><h4>🎧 Support</h4><p>Ticket handling, empathy, escalation</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=operations" class="dept-card"><h4>⚙️ Operations</h4><p>SOPs, workflows, project planning</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=legal" class="dept-card"><h4>⚖️ Legal</h4><p>Document review, compliance, contracts</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=it" class="dept-card"><h4>💻 IT</h4><p>Debugging, scripts, documentation</p><span class="dept-link">Start Training →</span></a>
-      <a href="dept-training.html?dept=executive" class="dept-card"><h4>👔 Executive</h4><p>Strategy, board reports, decisions</p><span class="dept-link">Start Training →</span></a>
-    </div>
-  </div>
-</section>
-
-<div class="progress-tracker" id="progressTracker">
-  <h4>📊 Your Progress</h4>
-  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-  <p style="font-size:0.8rem;margin-top:6px;color:var(--gray)"><span id="progressText">0%</span> completed</p>
+<!-- FLOATING MASCOT -->
+<div class="mascot-float" onclick="window.location.href='academy-level1.html'">
+  <div class="mascot-bubble">👋 Ready to learn? Click me to start Level 1!</div>
+  <div class="mascot-avatar">🤖</div>
 </div>
 
-<script src="js/theme.js?v=4"></script>
-    <script src="js/auth.js?v=4"></script>
-<script src="js/academy.js?v=4"></script>
-<script src="js/mascot.js?v=4"></script>
-<script src="js/pwa.js?v=4"></script>
+<script src="js/theme.js?v=7"></script>
+<script src="js/auth.js?v=7"></script>
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Animate XP bars on load
+setTimeout(() => {
+  document.querySelectorAll('.xp-fill').forEach(bar => {
+    const width = bar.style.width;
+    bar.style.width = '0%';
+    setTimeout(() => { bar.style.width = width; }, 100);
+  });
+}, 500);
+
+// Animate tree progress line
+setTimeout(() => {
+  const treeProgress = document.getElementById('treeProgress');
+  if (treeProgress) {
+    treeProgress.style.height = '16.6%';
+  }
+}, 800);
+</script>
+<script src="js/mascot.js?v=7"></script>
+<script src="js/pwa.js?v=7"></script>
 </body>
 </html>
