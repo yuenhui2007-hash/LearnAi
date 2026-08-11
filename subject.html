@@ -67,7 +67,8 @@
                 var item = document.createElement('div');
                 item.className = 'topic-item';
                 var stage = topic.as && topic.a2 ? 'AS & A2' : topic.as ? 'AS Level' : 'A2 Level';
-                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + stage + '</p></div><a href="notes/' + subjectId + '-' + topic.id + '.html" class="btn btn-primary">View Notes</a>';
+                var notePath = topic.alevel && topic.igcse ? 'notes/' + subjectId + '-' + topic.id + '-a.html' : 'notes/' + subjectId + '-' + topic.id + '.html';
+                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + stage + '</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
                 alevelList.appendChild(item);
             });
         }
@@ -85,7 +86,8 @@
                 var completed = Progress.isCompleted(subjectId, topic.id);
                 var item = document.createElement('div');
                 item.className = 'topic-item';
-                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IGCSE</p></div><a href="notes/' + subjectId + '-' + topic.id + '.html" class="btn btn-primary">View Notes</a>';
+                var notePath = topic.alevel && topic.igcse ? 'notes/' + subjectId + '-' + topic.id + '-igcse.html' : 'notes/' + subjectId + '-' + topic.id + '.html';
+                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IGCSE</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
                 igcseList.appendChild(item);
             });
         }

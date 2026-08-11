@@ -41,6 +41,16 @@
 
         var subjectId = null;
         var topicId = null;
+        var levelSuffix = ''; // '', '-a', or '-igcse'
+
+        // Detect level suffix from filename (-a or -igcse)
+        if (baseName.endsWith('-a')) {
+            levelSuffix = '-a';
+            baseName = baseName.slice(0, -2);
+        } else if (baseName.endsWith('-igcse')) {
+            levelSuffix = '-igcse';
+            baseName = baseName.slice(0, -6);
+        }
 
         // Pattern: SUBJECT-TOPIC  (e.g. physics-p1, chemistry-c1)
         var dashIdx = baseName.indexOf('-');
@@ -130,7 +140,9 @@
 
                 function makeLink(topic, label, isPrev) {
                     var a = document.createElement('a');
-                    a.href = subjectId + '-' + topic.id + '.html';
+                    // Use same level suffix for prev/next if topic is shared; otherwise no suffix
+                    var suffix = (topic.alevel && topic.igcse) ? levelSuffix : '';
+                    a.href = subjectId + '-' + topic.id + suffix + '.html';
                     a.className = 'topic-nav-link';
                     a.style.cssText = 'display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:var(--radius);background:var(--light);color:var(--dark);font-weight:600;text-decoration:none;font-size:0.9rem;transition:background .2s;';
                     a.textContent = (isPrev ? '\u2190 ' : '') + label + (isPrev ? '' : ' \u2192');

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software, OS &amp; Applications — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=ict" class="back-btn">← Back to ICT</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-as">AS Level</span>
+  </div>
+<h1>Software, OS &amp; Applications</h1>
+<p style="color:var(--gray)">Topic i4 — Systems Software, Utilities &amp; Application Software</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Types of Software</h3>
+<ul>
+<li><strong>System software:</strong> Manages hardware and provides platform for applications. Includes operating systems, device drivers, utilities.</li>
+<li><strong>Application software:</strong> Programs users run to perform tasks. General-purpose (word processor, spreadsheet) or special-purpose (payroll, booking system).</li>
+</ul>
+
+<h3>1.2 Operating System (OS) Functions</h3>
+<p>The OS is the intermediary between user and hardware. Core functions:</p>
+<ul>
+<li><strong>Memory management:</strong> Allocates RAM to processes; virtual memory; paging/segmentation.</li>
+<li><strong>Processor management:</strong> Scheduling (FIFO, SJF, round robin, priority); multitasking; interrupt handling.</li>
+<li><strong>File management:</strong> Organizes storage with directories/folders; file permissions; maintains file allocation table.</li>
+<li><strong>Device management:</strong> Controls peripherals via device drivers; buffers and spooling (e.g., print queue).</li>
+<li><strong>Security:</strong> User accounts, passwords, access rights, encryption.</li>
+<li><strong>User interface:</strong> GUI (windows, icons, menus, pointers), CLI (command line), voice, touch.</li>
+</ul>
+
+<h3>1.3 Utility Programs</h3>
+<ul>
+<li><strong>Disk defragmenter:</strong> Reorganizes fragmented files into contiguous blocks on HDD. Improves read speed. Not needed for SSDs.</li>
+<li><strong>Disk cleanup:</strong> Removes temporary files, recycle bin contents, cache.</li>
+<li><strong>Backup software:</strong> Copies data to secondary location. Full, incremental, differential strategies.</li>
+<li><strong>Compression utilities:</strong> Reduce file size (ZIP, RAR) for storage or transmission.</li>
+<li><strong>Antivirus / Anti-malware:</strong> Scans, detects, quarantines threats.</li>
+<li><strong>Firewall:</strong> Filters network traffic.</li>
+<li><strong>System monitors:</strong> Task Manager, Resource Monitor — show CPU, RAM, disk, network usage.</li>
+</ul>
+
+<h3>1.4 Application Software Types</h3>
+<ul>
+<li><strong>Word processing:</strong> Create, edit, format text documents. Features: spell check, mail merge, styles, tables, macros. Examples: Microsoft Word, Google Docs.</li>
+<li><strong>Spreadsheets:</strong> Grid of cells for calculations, charts, data analysis. Features: formulas, functions, pivot tables, conditional formatting. Examples: Excel, Google Sheets.</li>
+<li><strong>Presentation:</strong> Slides with text, images, animations. Examples: PowerPoint, Google Slides.</li>
+<li><strong>Database management:</strong> Store, query, and manage structured data. Examples: Access, MySQL, FileMaker.</li>
+<li><strong>Web browsers:</strong> Access and render web pages. Examples: Chrome, Firefox, Edge, Safari.</li>
+<li><strong>Email clients:</strong> Send/receive/manage emails. Examples: Outlook, Thunderbird, Apple Mail.</li>
+<li><strong>Graphics editing:</strong> Bitmap (Photoshop, GIMP) and vector (Illustrator, Inkscape).</li>
+<li><strong>Video editing:</strong> Timeline-based editing, transitions, effects. Examples: Premiere Pro, DaVinci Resolve, iMovie.</li>
+</ul>
+
+<h3>1.5 System Software vs Application Software</h3>
+<table style="width:100%;border-collapse:collapse;margin:16px 0;">
+<tr style="background:var(--light)"><th style="padding:8px;border:1px solid #ccc;text-align:left">Feature</th><th style="padding:8px;border:1px solid #ccc;text-align:left">System Software</th><th style="padding:8px;border:1px solid #ccc;text-align:left">Application Software</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Purpose</td><td style="padding:8px;border:1px solid #ccc">Manage hardware and system resources</td><td style="padding:8px;border:1px solid #ccc">Help user perform specific tasks</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">When it runs</td><td style="padding:8px;border:1px solid #ccc">Boots with computer; always running</td><td style="padding:8px;border:1px solid #ccc">Launched when needed</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Examples</td><td style="padding:8px;border:1px solid #ccc">Windows, macOS, Linux, drivers</td><td style="padding:8px;border:1px solid #ccc">Word, Excel, Photoshop, browsers</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">User interaction</td><td style="padding:8px;border:1px solid #ccc">Indirect (manages background)</td><td style="padding:8px;border:1px solid #ccc">Direct (user works with it)</td></tr>
+</table>
+</div>
+
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 OS Scheduling Algorithms</h3>
+<ul>
+<li><strong>First-Come First-Served (FCFS):</strong> Simple queue. Easy to implement but can cause convoy effect (short jobs wait behind long ones).</li>
+<li><strong>Shortest Job First (SJF):</strong> Minimizes average waiting time. Requires prediction of burst time. Can starve long jobs.</li>
+<li><strong>Round Robin:</strong> Fixed time quantum (e.g., 10ms) per process; cycles through queue. Fair, good response time; context-switch overhead.</li>
+<li><strong>Priority Scheduling:</strong> Highest priority runs first. Can be preemptive or non-preemptive. Risk of starvation for low-priority processes.</li>
+<li><strong>Multilevel Queue:</strong> Multiple queues with different priorities (e.g., system, interactive, batch, student).</li>
+</ul>
+
+<h3>2.2 Memory Management Techniques</h3>
+<ul>
+<li><strong>Single contiguous allocation:</strong> Entire memory to one program. Simple but wasteful.</li>
+<li><strong>Partitioned allocation:</strong> Fixed partitions (wastes space if program smaller) or dynamic partitions (fragmentation).</li>
+<li><strong>Paging:</strong> Physical memory divided into fixed-size frames; logical memory into same-size pages. Page table maps pages to frames. Eliminates external fragmentation.</li>
+<li><strong>Segmentation:</strong> Logical memory divided into variable-size segments (code, data, stack). Segment table maps segments to physical addresses. Matches program structure but can cause external fragmentation.</li>
+<li><strong>Virtual memory:</strong> Uses disk as extension of RAM. Page fault = needed page not in RAM; OS fetches from disk. Thrashing = excessive page faults degrade performance.</li>
+</ul>
+
+<h3>2.3 File Systems &amp; Storage</h3>
+<ul>
+<li><strong>FAT32:</strong> Older, compatible everywhere. 4GB max file size, 2TB max partition. No journaling.</li>
+<li><strong>NTFS (Windows):</strong> Journaling, encryption (EFS), compression, permissions, large file support.</li>
+<li><strong>ext4 (Linux):</strong> Journaling, extents, large volume/file support, backward compatible.</li>
+<li><strong>APFS (macOS):</strong> Optimized for SSDs, snapshots, encryption, space sharing.</li>
+<li><strong>Journaling:</strong> Logs changes before applying them. Prevents corruption from power failure.</li>
+</ul>
+
+<h3>2.4 Translation Software</h3>
+<ul>
+<li><strong>Compiler:</strong> Translates entire high-level program to machine code before execution. Output = executable file. Slower compilation but faster execution. Detects syntax errors. Examples: GCC, MSVC, Clang.</li>
+<li><strong>Interpreter:</strong> Translates and executes line-by-line. No separate executable. Easier debugging but slower execution. Examples: Python interpreter, JavaScript engine.</li>
+<li><strong>Assembler:</strong> Translates assembly language (mnemonics like MOV, ADD) into machine code (one-to-one). Used for low-level programming.</li>
+<li><strong>JIT (Just-In-Time) Compiler:</strong> Hybrid — compiles bytecode to machine code at runtime. Used by Java (JVM) and C# (.NET CLR).</li>
+</ul>
+
+<h3>2.5 Software Licensing</h3>
+<ul>
+<li><strong>Proprietary/Commercial:</strong> Closed source; user buys license. Source code not available. Examples: Microsoft Office, Adobe Creative Suite.</li>
+<li><strong>Open Source:</strong> Source code available; can modify and redistribute. Examples: Linux, LibreOffice, GIMP.</li>
+<li><strong>Freeware:</strong> Free to use but source not available. Examples: Skype (originally), Adobe Reader.</li>
+<li><strong>Shareware:</strong> Free trial with limited features or time; pay to unlock. Examples: WinRAR.</li>
+<li><strong>FOSS (Free and Open Source Software):</strong> Free as in freedom (GPL, MIT, Apache licenses).</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Real-Time Operating Systems (RTOS)</h3>
+<p>Guarantees response within strict time constraints. Used in embedded systems, medical devices, automotive, aerospace.</p>
+<ul>
+<li><strong>Hard real-time:</strong> Missing deadline = system failure (e.g., pacemaker, airbag controller).</li>
+<li><strong>Soft real-time:</strong> Missing deadline degrades quality but does not crash (e.g., video streaming, MP3 player).</li>
+</ul>
+<p>Features: deterministic scheduling, minimal interrupt latency, priority inheritance, no virtual memory (avoids page faults).</p>
+
+<h3>3.2 Distributed Operating Systems</h3>
+<p>Manages a group of independent computers as a single coherent system. Users perceive it as one machine. Examples: Google File System, Apache Hadoop. Challenges: consensus algorithms, CAP theorem (Consistency, Availability, Partition tolerance — pick two), fault tolerance.</p>
+
+<h3>3.3 System Development Life Cycle (SDLC)</h3>
+<ul>
+<li><strong>Waterfall:</strong> Linear sequential phases (requirements → design → implementation → testing → deployment → maintenance). Easy to manage; rigid; hard to change requirements later.</li>
+<li><strong>Agile/Scrum:</strong> Iterative sprints (2–4 weeks). Continuous feedback; adaptive; customer collaboration. Roles: Product Owner, Scrum Master, Development Team. Artifacts: Product Backlog, Sprint Backlog, Burndown Chart.</li>
+<li><strong>Spiral:</strong> Risk-driven; combines iterative with systematic risk analysis.</li>
+<li><strong>RAD (Rapid Application Development):</strong> Prototyping focus; quick iterations; user feedback throughout.</li>
+</ul>
+
+<h3>3.4 Software Testing</h3>
+<ul>
+<li><strong>White-box:</strong> Tester sees internal code. Tests paths, branches, loops. Measures code coverage.</li>
+<li><strong>Black-box:</strong> Tester sees only inputs/outputs. Tests requirements, boundaries, equivalence partitions.</li>
+<li><strong>Unit testing:</strong> Individual functions/modules. Automated with frameworks (JUnit, pytest).</li>
+<li><strong>Integration testing:</strong> Modules combined; test interfaces.</li>
+<li><strong>System testing:</strong> Complete system against specifications.</li>
+<li><strong>Acceptance testing:</strong> User/client validates against business needs.</li>
+<li><strong>Alpha testing:</strong> Internal, controlled environment.</li>
+<li><strong>Beta testing:</strong> Released to external users for real-world feedback.</li>
+</ul>
+
+<h3>3.5 Virtualisation &amp; Containers</h3>
+<ul>
+<li><strong>Virtual Machine (VM):</strong> Software emulation of a complete computer. Hypervisor (Type 1 = bare metal like VMware ESXi; Type 2 = hosted like VirtualBox) manages VMs. Each VM has its own OS. Heavy resource use.</li>
+<li><strong>Containers (Docker):</strong> Share host OS kernel; package only app + dependencies. Lightweight, fast startup, consistent across environments. Orchestrated by Kubernetes.</li>
+</ul>
+</div>
+
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>OS functions:</strong> memory, processor, file, device management + security + UI.</li>
+<li><strong>Scheduling:</strong> FCFS, SJF, Round Robin, Priority. Round Robin uses time quantum.</li>
+<li><strong>Memory management:</strong> paging (fixed frames/pages), segmentation (variable), virtual memory (disk extension).</li>
+<li><strong>Translation:</strong> Compiler (whole program → machine code), Interpreter (line-by-line), Assembler (assembly → machine code), JIT (runtime compilation).</li>
+<li><strong>File systems:</strong> FAT32 (old, limited), NTFS (Windows, journaling), ext4 (Linux), APFS (macOS SSD).</li>
+<li><strong>Licensing:</strong> Proprietary, Open Source, Freeware, Shareware. FOSS = free + open.</li>
+<li><strong>SDLC:</strong> Waterfall (linear), Agile/Scrum (iterative sprints), Spiral (risk-driven).</li>
+<li><strong>Testing:</strong> White-box (code visible) vs Black-box (interface only); Unit → Integration → System → Acceptance.</li>
+<li><strong>Virtualisation:</strong> VMs (full OS emulation) vs Containers (shared kernel, lightweight).</li>
+<li>Exam tip: For OS scheduling questions, always explain the impact on waiting time and turnaround time.</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

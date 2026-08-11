@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Databases &amp; Data Management — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="../subject.html?id=ict" class="back-btn">← Back to ICT</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Databases &amp; Data Management</h1>
+<p style="color:var(--gray)">Topic i5 — Relational Databases, SQL &amp; Data Integrity</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Flat-File vs Relational Databases</h3>
+<ul>
+<li><strong>Flat-file database:</strong> Single table. All data in one place. Simple but causes data redundancy and inconsistency. Example: a single spreadsheet with student records including repeated teacher names.</li>
+<li><strong>Relational database:</strong> Multiple linked tables. Data split logically to avoid duplication. Relationships connect tables via keys. Example: Students table + Teachers table + Classes table.</li>
+</ul>
+
+<h3>1.2 Key Database Terms</h3>
+<ul>
+<li><strong>Table/Relation:</strong> Collection of related records (rows).</li>
+<li><strong>Record/Row/Tuple:</strong> One complete set of data (e.g., one student).</li>
+<li><strong>Field/Column/Attribute:</strong> One type of data (e.g., FirstName, DateOfBirth).</li>
+<li><strong>Primary Key:</strong> Unique identifier for each record (e.g., StudentID). Cannot be null; must be unique.</li>
+<li><strong>Foreign Key:</strong> Field in one table that links to the primary key in another table. Creates relationships.</li>
+<li><strong>Composite Key:</strong> Primary key made of two or more fields combined.</li>
+<li><strong>Candidate Key:</strong> Any field or combination that could uniquely identify a record.</li>
+</ul>
+
+<h3>1.3 Data Types</h3>
+<table style="width:100%;border-collapse:collapse;margin:16px 0;">
+<tr style="background:var(--light)"><th style="padding:8px;border:1px solid #ccc;text-align:left">Type</th><th style="padding:8px;border:1px solid #ccc;text-align:left">Description</th><th style="padding:8px;border:1px solid #ccc;text-align:left">Examples</th></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Text/String</td><td style="padding:8px;border:1px solid #ccc">Alphanumeric characters</td><td style="padding:8px;border:1px solid #ccc">"John Smith", "A123"</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Integer</td><td style="padding:8px;border:1px solid #ccc">Whole numbers</td><td style="padding:8px;border:1px solid #ccc">25, -7, 0</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Real/Float</td><td style="padding:8px;border:1px solid #ccc">Numbers with decimals</td><td style="padding:8px;border:1px solid #ccc">3.14, 99.99</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Date/Time</td><td style="padding:8px;border:1px solid #ccc">Calendar dates and times</td><td style="padding:8px;border:1px solid #ccc">2025-09-01, 14:30:00</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Boolean</td><td style="padding:8px;border:1px solid #ccc">True or False</td><td style="padding:8px;border:1px solid #ccc">Yes/No, 1/0</td></tr>
+<tr><td style="padding:8px;border:1px solid #ccc">Currency</td><td style="padding:8px;border:1px solid #ccc">Monetary values</td><td style="padding:8px;border:1px solid #ccc">$49.99</td></tr>
+</table>
+
+<h3>1.4 Database Relationships</h3>
+<ul>
+<li><strong>One-to-One (1:1):</strong> One record in Table A links to exactly one in Table B. Example: Student → StudentDetails.</li>
+<li><strong>One-to-Many (1:M):</strong> One record in Table A links to many in Table B. Example: One Teacher teaches many Classes.</li>
+<li><strong>Many-to-Many (M:N):</strong> Many records in Table A link to many in Table B. Requires a junction/link table. Example: Students enroll in many Courses; Courses have many Students.</li>
+</ul>
+
+<h3>1.5 Validation Techniques</h3>
+<ul>
+<li><strong>Range check:</strong> Value must be within specified limits (e.g., age 0–120).</li>
+<li><strong>Type check:</strong> Data must match expected type (e.g., integer in a number field).</li>
+<li><strong>Length check:</strong> Data must be certain length (e.g., postcode 5–7 characters).</li>
+<li><strong>Presence check:</strong> Field cannot be left empty (e.g., email required).</li>
+<li><strong>Format check:</strong> Data matches a pattern (e.g., email regex, date DD/MM/YYYY).</li>
+<li><strong>Lookup/list check:</strong> Value must be from a predefined list (e.g., country dropdown).</li>
+<li><strong>Check digit:</strong> Extra digit calculated from others (e.g., ISBN, barcode) to detect transcription errors.</li>
+</ul>
+
+<h3>1.6 Querying a Database</h3>
+<p>A <strong>query</strong> retrieves specific data based on criteria. In a query-by-example (QBE) interface:</p>
+<ul>
+<li>Select fields to display.</li>
+<li>Set criteria (e.g., Grade = "A", Age &gt; 18).</li>
+<li>Sort ascending or descending.</li>
+<li>Use AND/OR logic for multiple criteria.</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 Normalisation</h3>
+<p>Process of organizing data to reduce redundancy and improve integrity.</p>
+<ul>
+<li><strong>First Normal Form (1NF):</strong> Atomic values (no repeating groups), each cell contains single value, primary key defined.<br>Example: Remove multiple phone numbers in one cell; create separate Phone table.</li>
+<li><strong>Second Normal Form (2NF):</strong> Must be in 1NF + no partial dependency (non-key attributes depend on entire primary key, not just part). Only relevant for composite keys.<br>Example: In (StudentID, CourseID) → Grade, InstructorName depends only on CourseID → move InstructorName to Course table.</li>
+<li><strong>Third Normal Form (3NF):</strong> Must be in 2NF + no transitive dependency (non-key attributes depend only on primary key, not on other non-key attributes).<br>Example: StudentID → Department → DepartmentHead. DepartmentHead depends on Department, not directly on StudentID → create Department table.</li>
+</ul>
+
+<h3>2.2 SQL (Structured Query Language)</h3>
+<p>Standard language for relational database management.</p>
+<div class="formula-box">
+-- Retrieve all columns for students aged over 18<br>
+SELECT * FROM Students WHERE Age > 18;<br><br>
+-- Retrieve specific columns, sorted<br>
+SELECT FirstName, LastName, Grade FROM Students<br>
+WHERE Grade IN ('A','B')<br>
+ORDER BY LastName ASC;<br><br>
+-- Join two tables<br>
+SELECT Students.FirstName, Classes.ClassName<br>
+FROM Students<br>
+INNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID<br>
+INNER JOIN Classes ON Enrollments.ClassID = Classes.ClassID;<br><br>
+-- Aggregate functions<br>
+SELECT COUNT(*) FROM Students;<br>
+SELECT AVG(Score) FROM Exams WHERE Subject = 'Math';<br>
+SELECT Department, MAX(Salary) FROM Employees GROUP BY Department HAVING MAX(Salary) > 50000;
+</div>
+
+<h3>2.3 SQL Data Definition &amp; Manipulation</h3>
+<div class="formula-box">
+-- CREATE TABLE<br>
+CREATE TABLE Students (<br>
+  StudentID INT PRIMARY KEY AUTO_INCREMENT,<br>
+  FirstName VARCHAR(50) NOT NULL,<br>
+  LastName VARCHAR(50) NOT NULL,<br>
+  DateOfBirth DATE,<br>
+  Email VARCHAR(100) UNIQUE,<br>
+  GPA DECIMAL(3,2) CHECK (GPA BETWEEN 0.00 AND 4.00)<br>
+);<br><br>
+-- INSERT<br>
+INSERT INTO Students (FirstName, LastName, DateOfBirth, Email, GPA)<br>
+VALUES ('Alice', 'Wong', '2006-03-15', 'alice@school.edu', 3.85);<br><br>
+-- UPDATE<br>
+UPDATE Students SET GPA = 3.90 WHERE StudentID = 101;<br><br>
+-- DELETE<br>
+DELETE FROM Students WHERE StudentID = 101;<br><br>
+-- ALTER<br>
+ALTER TABLE Students ADD COLUMN Phone VARCHAR(20);
+</div>
+
+<h3>2.4 Entity-Relationship Diagrams (ERDs)</h3>
+<p>Visual representation of database structure:</p>
+<ul>
+<li><strong>Entities:</strong> Represented as rectangles (tables).</li>
+<li><strong>Attributes:</strong> Listed inside entity or as ovals.</li>
+<li><strong>Relationships:</strong> Diamonds or lines connecting entities.</li>
+<li><strong>Cardinality:</strong> 1:1, 1:M, M:N shown on relationship lines.</li>
+<li><strong>Crow's foot notation:</strong> Single line = one, crow's foot = many, circle = zero.</li>
+</ul>
+
+<h3>2.5 Referential Integrity</h3>
+<ul>
+<li><strong>Cascade Update:</strong> If primary key changes, foreign keys update automatically.</li>
+<li><strong>Cascade Delete:</strong> If parent record deleted, child records delete automatically.</li>
+<li><strong>Restrict/No Action:</strong> Prevents deletion of parent if children exist.</li>
+<li><strong>Set Null:</strong> Sets foreign key to NULL if parent deleted (when allowed).</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Database Management Systems (DBMS)</h3>
+<p>Software managing databases: MySQL, PostgreSQL, Oracle, Microsoft SQL Server, MongoDB (NoSQL). Features:</p>
+<ul>
+<li><strong>ACID properties:</strong> Atomicity (all or nothing), Consistency (valid state), Isolation (transactions don't interfere), Durability (committed data survives crashes).</li>
+<li><strong>Concurrency control:</strong> Locking (pessimistic) vs Multiversion Concurrency Control MVCC (optimistic). Prevents lost updates, dirty reads, non-repeatable reads.</li>
+<li><strong>Transaction logs:</strong> Write-ahead logging for recovery after system failure.</li>
+</ul>
+
+<h3>3.2 Indexing &amp; Query Optimisation</h3>
+<ul>
+<li><strong>Index:</strong> Data structure (B-tree, hash) speeding up searches. Like a book index.</li>
+<li>Primary index on primary key; secondary index on frequently searched columns.</li>
+<li>Trade-off: indexes speed reads but slow writes (index must update).</li>
+<li><strong>Query optimiser:</strong> DBMS analyses SQL and chooses most efficient execution plan (which index, join order, scan type).</li>
+</ul>
+
+<h3>3.3 Relational Algebra</h3>
+<p>Mathematical foundation of SQL. Operations:</p>
+<ul>
+<li><strong>Selection (σ):</strong> Horizontal subset — choose rows meeting condition. σ<sub>Age&gt;18</sub>(Students)</li>
+<li><strong>Projection (π):</strong> Vertical subset — choose columns. π<sub>FirstName,LastName</sub>(Students)</li>
+<li><strong>Union (∪):</strong> Combine two compatible tables, remove duplicates.</li>
+<li><strong>Difference (−):</strong> Rows in one table but not the other.</li>
+<li><strong>Intersection (∩):</strong> Rows common to both tables.</li>
+<li><strong>Cartesian Product (×):</strong> All combinations of rows from two tables.</li>
+<li><strong>Join (⋈):</strong> Combine related rows from two tables. Natural join matches common columns; theta join matches arbitrary condition.</li>
+</ul>
+
+<h3>3.4 NoSQL &amp; Big Data</h3>
+<ul>
+<li><strong>Document stores (MongoDB):</strong> JSON-like documents, flexible schema, horizontal scaling.</li>
+<li><strong>Key-value stores (Redis):</strong> Simple key-value pairs, extremely fast caching.</li>
+<li><strong>Column-family (Cassandra, HBase):</strong> Optimized for massive write throughput.</li>
+<li><strong>Graph databases (Neo4j):</strong> Nodes and edges; ideal for social networks, recommendation engines.</li>
+<li><strong>CAP Theorem:</strong> Consistency, Availability, Partition Tolerance — distributed systems can guarantee at most two simultaneously.</li>
+</ul>
+
+<h3>3.5 Data Protection &amp; Ethics</h3>
+<ul>
+<li><strong>GDPR principles:</strong> Lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity/confidentiality, accountability.</li>
+<li><strong>Data anonymisation:</strong> Remove personally identifiable information (PII) for analysis.</li>
+<li><strong>Encryption at rest and in transit:</strong> Protect sensitive database fields (e.g., passwords hashed with bcrypt/Argon2, credit cards encrypted).</li>
+<li><strong>Audit trails:</strong> Log who accessed what data and when — essential for compliance.</li>
+</ul>
+</div>
+
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Relational databases</strong> use multiple linked tables; flat files are single-table and redundant.</li>
+<li><strong>Primary key</strong> uniquely identifies; <strong>foreign key</strong> links tables.</li>
+<li><strong>Relationships:</strong> 1:1, 1:M, M:N (needs junction table).</li>
+<li><strong>Normalisation:</strong> 1NF (atomic), 2NF (no partial dependency), 3NF (no transitive dependency).</li>
+<li><strong>SQL commands:</strong> SELECT, INSERT, UPDATE, DELETE, CREATE TABLE, ALTER, JOIN, GROUP BY, HAVING.</li>
+<li><strong>Validation:</strong> range, type, length, presence, format, lookup, check digit.</li>
+<li><strong>ACID:</strong> Atomicity, Consistency, Isolation, Durability.</li>
+<li><strong>Indexing</strong> speeds queries but slows writes.</li>
+<li><strong>NoSQL</strong> scales horizontally; document, key-value, column, graph types.</li>
+<li>Exam tip: Always state primary and foreign keys when designing a database. Draw ERDs with crow's foot notation.</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>
