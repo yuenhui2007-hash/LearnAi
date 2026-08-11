@@ -3,7 +3,7 @@
 
 const API_BASE = window.location.origin.includes('localhost')
   ? 'http://localhost:10000/api'
-  : window.location.origin + '/api';
+  : 'https://learnai-backend-n0df.onrender.com/api';
 
 window.Auth = {
   register: async function(email, password, name, phone) {

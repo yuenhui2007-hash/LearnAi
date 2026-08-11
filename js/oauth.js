@@ -15,7 +15,7 @@ const OAuth = {
     const top = window.screenY + (window.outerHeight - height) / 2;
     
     const popup = window.open(
-      '/api/oauth/google',
+      'https://learnai-backend-n0df.onrender.com/api/oauth/google',
       'google-oauth',
       `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
     );
@@ -47,7 +47,7 @@ const OAuth = {
     const top = window.screenY + (window.outerHeight - height) / 2;
 
     const popup = window.open(
-      '/api/oauth/apple',
+      'https://learnai-backend-n0df.onrender.com/api/oauth/apple',
       'apple-oauth',
       `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
     );
