@@ -1,20 +1,29 @@
 /**
  * LearnAI — Authentication Middleware
+ * Supports both MongoDB and in-memory database
  */
 
 const jwt = require('jsonwebtoken');
-const { users } = require('../config/database');
+const { users, isMongo, User } = require('../config/database');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'learnai-dev-secret-change-in-production';
 
-function authenticate(req, res, next) {
-    const token = req.headers.authorization?.replace('Bearer ', '');
+async function authenticate(req, res, next) {
+    const token = req.headers.authorization?.replace('Bearer ', '') || req.cookies?.token;
     if (!token) {
         return res.status(401).json({ error: 'Access denied. No token provided.' });
     }
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = users.get(decoded.id) || decoded;
+        let user;
+        if (isMongo && User) {
+            user = await User.findById(decoded.id).select('-password');
+            if (user) user = { id: user._id.toString(), ...user.toObject() };
+        }
+        if (!user) {
+            user = users.get(decoded.id) || decoded;
+        }
+        req.user = user;
         next();
     } catch (err) {
         res.status(401).json({ error: 'Invalid token' });
@@ -22,7 +31,7 @@ function authenticate(req, res, next) {
 }
 
 function generateToken(user) {
-    return jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_SECRET, { expiresIn: '7d' });
+    return jwt.sign({ id: user.id || user._id, email: user.email, role: user.role }, JWT_SECRET, { expiresIn: '7d' });
 }
 
 module.exports = { authenticate, generateToken, JWT_SECRET };

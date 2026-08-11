@@ -1,19 +1,26 @@
 /**
- * LearnAI — In-Memory Database (production: swap for MongoDB/PostgreSQL)
+ * LearnAI Database Layer
+ * Uses MongoDB when MONGODB_URI is set, falls back to in-memory Maps
  */
 
-const users = new Map();
-const materials = new Map();
-const studyPlans = new Map();
-const sessions = new Map();
-const analytics = new Map();
-const workbooks = new Map();
-const activityLogs = new Map();
-const academyProgress = new Map();
-const certificates = new Map();
+const mongoose = require('mongoose');
 
-// Seed demo user
-users.set('demo-user-1', {
+// In-memory fallback stores
+const memStores = {
+    users: new Map(),
+    materials: new Map(),
+    studyPlans: new Map(),
+    sessions: new Map(),
+    analytics: new Map(),
+    workbooks: new Map(),
+    activityLogs: new Map(),
+    academyProgress: new Map(),
+    certificates: new Map(),
+    assignments: new Map()
+};
+
+// Seed demo user for in-memory mode
+memStores.users.set('demo-user-1', {
     id: 'demo-user-1',
     email: 'demo@learnai.app',
     name: 'Demo Student',
@@ -24,6 +31,65 @@ users.set('demo-user-1', {
     createdAt: new Date().toISOString()
 });
 
-const assignments = new Map();
+// Mongoose Schemas
+let User, ActivityLog;
 
-module.exports = { users, materials, studyPlans, sessions, analytics, workbooks, activityLogs, academyProgress, assignments };
+function initMongo() {
+    if (!process.env.MONGODB_URI) {
+        console.log('[DB] Using in-memory database (set MONGODB_URI for MongoDB)');
+        return false;
+    }
+
+    const userSchema = new mongoose.Schema({
+        email: { type: String, required: true, unique: true },
+        name: { type: String, required: true },
+        password: { type: String, required: true },
+        role: { type: String, default: 'student', enum: ['student', 'admin'] },
+        grade: String,
+        subjects: [String],
+        interests: [String],
+        createdAt: { type: Date, default: Date.now }
+    });
+
+    const activitySchema = new mongoose.Schema({
+        userId: String,
+        userName: String,
+        userEmail: String,
+        action: String,
+        timestamp: { type: Date, default: Date.now },
+        ip: String
+    });
+
+    User = mongoose.model('User', userSchema);
+    ActivityLog = mongoose.model('ActivityLog', activitySchema);
+
+    mongoose.connect(process.env.MONGODB_URI)
+        .then(() => console.log('[DB] MongoDB connected'))
+        .catch(err => {
+            console.error('[DB] MongoDB connection failed, using in-memory:', err.message);
+        });
+
+    return true;
+}
+
+const isMongo = initMongo();
+
+// Unified API: exports same interface whether Mongo or in-memory
+module.exports = {
+    isMongo,
+    mongoose: isMongo ? mongoose : null,
+    User: isMongo ? User : null,
+    ActivityLog: isMongo ? ActivityLog : null,
+
+    // In-memory stores (always available as fallback)
+    users: memStores.users,
+    materials: memStores.materials,
+    studyPlans: memStores.studyPlans,
+    sessions: memStores.sessions,
+    analytics: memStores.analytics,
+    workbooks: memStores.workbooks,
+    activityLogs: memStores.activityLogs,
+    academyProgress: memStores.academyProgress,
+    certificates: memStores.certificates,
+    assignments: memStores.assignments
+};

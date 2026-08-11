@@ -15,6 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 const { authenticate, JWT_SECRET } = require('./middleware/auth');
+const { isMongo } = require('./config/database');
 
 // ===== Security Headers =====
 app.use(helmet({
@@ -81,6 +82,7 @@ app.use('/api/certificates', authenticate, require('./routes/certificates'));
 
 // ===== Auth Status Endpoint (for frontend) =====
 app.get('/api/auth/me', authenticate, (req, res) => {
+    if (!req.user) return res.status(401).json({ error: 'Not authenticated' });
     res.json({ user: { id: req.user.id, email: req.user.email, name: req.user.name, role: req.user.role } });
 });
 
@@ -178,6 +180,7 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`LearnAI Server running on port ${PORT}`);
+    console.log(`Database: ${isMongo ? 'MongoDB' : 'In-Memory (set MONGODB_URI for persistence)'}`);
 });
 
 module.exports = app;
