@@ -258,10 +258,19 @@
         }
         card.href = href;
         card.className = 'subject-card';
+
+        // Filter code based on CAIE level
+        var displayCode = s.code;
+        if (caieLevel === 'alevel' && s.code.indexOf('·') > -1) {
+            displayCode = s.code.split('·')[0].trim();
+        } else if (caieLevel === 'igcse' && s.code.indexOf('·') > -1) {
+            displayCode = s.code.split('·')[1].trim();
+        }
+
         card.innerHTML = `
             <div class="subject-icon">${s.icon}</div>
             <h3>${s.name}</h3>
-            <p>${s.code}</p>
+            <p>${displayCode}</p>
             <span class="subject-tag">${s.topics.length} topics</span>
         `;
         return card;
