@@ -25,6 +25,7 @@
 .interactive-box { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin: 20px 0; border-left: 4px solid var(--primary); }
 .interactive-box h4 { margin-bottom: 12px; }
 .quiz-container { background: var(--light); padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+[data-theme="dark"] .quiz-container, .dark .quiz-container { background: var(--gray-light); }
 .quiz-question { margin-bottom: 20px; }
 .quiz-question p { font-weight: 600; margin-bottom: 10px; }
 .quiz-options label { display: block; padding: 10px 14px; margin-bottom: 8px; background: var(--card-bg); border-radius: 8px; cursor: pointer; transition: background 0.2s; }
@@ -32,7 +33,17 @@
 .quiz-options input { margin-right: 8px; }
 .quiz-result { margin-top: 20px; padding: 16px; border-radius: 12px; display: none; }
 .assignment-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 24px 0; }
+[data-theme="dark"] .assignment-box, .dark .assignment-box { background: linear-gradient(135deg, #451a03 0%, #78350f 100%); }
 .assignment-box h4 { color: #92400e; margin-bottom: 8px; }
+[data-theme="dark"] .assignment-box h4, .dark .assignment-box h4 { color: #fbbf24; }
+.final-exam-box { background: linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+[data-theme="dark"] .final-exam-box, .dark .final-exam-box { background: linear-gradient(135deg,#451a03 0%,#78350f 100%); }
+.final-exam-box h3 { color: #92400e; }
+[data-theme="dark"] .final-exam-box h3, .dark .final-exam-box h3 { color: #fbbf24; }
+.final-exam-box p { color: #92400e; }
+.final-exam-hint { color: #92400e; margin-bottom: 16px; font-size: 0.9rem; }
+[data-theme="dark"] .final-exam-hint, .dark .final-exam-hint { color: #fde68a; }
+[data-theme="dark"] .final-exam-box p, .dark .final-exam-box p { color: #fde68a; }
 .nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--gray-light); }
  .dept-section { background: #f0f9ff; padding: 20px; border-radius: 12px; margin: 16px 0; border-left: 4px solid #0ea5e9; }
  @media (prefers-color-scheme: dark) { .dept-section { background: #082f49; } .dept-section h4 { color: #7dd3fc; } }
@@ -241,9 +252,9 @@
         </div>
       </div>
 
-      <div class="quiz-container" style="background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);margin-top:48px;">
+      <div class="quiz-container" class="final-exam-box" style="margin-top:48px;">
         <h3>📝 Final Level 5 Exam (80% to pass)</h3>
-        <p style="color:#92400e;margin-bottom:16px;font-size:0.9rem">Complete all department quizzes above to unlock. 10 questions covering all departments.</p>
+        <p class="final-exam-hint">Complete all department quizzes above to unlock. 10 questions covering all departments.</p>
         <form id="quizForm">
           <div class="quiz-question"><p>1. Which department uses AI for CV screening?</p><div class="quiz-options"><label><input type="radio" name="q1" value="a"> Finance</label><label><input type="radio" name="q1" value="b"> HR</label><label><input type="radio" name="q1" value="c"> IT</label></div></div>
           <div class="quiz-question"><p>2. Can AI replace a lawyer?</p><div class="quiz-options"><label><input type="radio" name="q2" value="a"> Yes, completely</label><label><input type="radio" name="q2" value="b"> No, it only assists</label><label><input type="radio" name="q2" value="c"> For simple contracts only</label></div></div>

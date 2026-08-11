@@ -25,6 +25,7 @@
 .interactive-box { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin: 20px 0; border-left: 4px solid var(--primary); }
 .interactive-box h4 { margin-bottom: 12px; }
 .quiz-container { background: var(--light); padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+[data-theme="dark"] .quiz-container, .dark .quiz-container { background: var(--gray-light); }
 .quiz-question { margin-bottom: 20px; }
 .quiz-question p { font-weight: 600; margin-bottom: 10px; }
 .quiz-options label { display: block; padding: 10px 14px; margin-bottom: 8px; background: var(--card-bg); border-radius: 8px; cursor: pointer; transition: background 0.2s; }
@@ -32,7 +33,9 @@
 .quiz-options input { margin-right: 8px; }
 .quiz-result { margin-top: 20px; padding: 16px; border-radius: 12px; display: none; }
 .assignment-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 24px 0; }
+[data-theme="dark"] .assignment-box, .dark .assignment-box { background: linear-gradient(135deg, #451a03 0%, #78350f 100%); }
 .assignment-box h4 { color: #92400e; margin-bottom: 8px; }
+[data-theme="dark"] .assignment-box h4, .dark .assignment-box h4 { color: #fbbf24; }
 .nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--gray-light); }
 .checkpoint { background: #dbeafe; padding: 20px; border-radius: 12px; margin: 16px 0; }
 .checkpoint h4 { color: #1e40af; margin-bottom: 8px; }
