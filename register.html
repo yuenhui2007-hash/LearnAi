@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Sign Up — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -49,8 +50,8 @@
 <p class="auth-subtitle">Join LearnAI — it's free</p>
 <div class="demo-note">🔒 Secured server-side authentication.</div>
 <div class="social-login">
-<a href="/api/oauth/google" class="btn btn-social">🔴 Continue with Google</a>
-<a href="/api/oauth/apple" class="btn btn-social">⚫ Continue with Apple</a>
+<button type="button" class="btn btn-social" onclick="window.location.href='/api/oauth/google'" referrerpolicy="strict-origin-when-cross-origin">🔴 Continue with Google</button>
+<button type="button" class="btn btn-social" onclick="window.location.href='/api/oauth/apple'" referrerpolicy="strict-origin-when-cross-origin">⚫ Continue with Apple</button>
 </div>
 <div class="divider">or</div>
 <form id="registerForm">

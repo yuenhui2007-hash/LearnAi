@@ -18,7 +18,7 @@ const OAuth = {
       '/api/oauth/google',
       'google-oauth',
       `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
-    );;
+    );
     
     // Listen for message from popup
     window.addEventListener('message', function handleMessage(e) {
@@ -45,24 +45,24 @@ const OAuth = {
     const height = 600;
     const left = window.screenX + (window.outerWidth - width) / 2;
     const top = window.screenY + (window.outerHeight - height) / 2;
-    
+
     const popup = window.open(
       '/api/oauth/apple',
       'apple-oauth',
       `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
     );
-    
+
     window.addEventListener('message', function handleMessage(e) {
       if (e.origin !== window.location.origin) return;
       if (e.data.type === 'oauth-success') {
         window.removeEventListener('message', handleMessage);
-        popup.close();
+        if (popup && !popup.closed) popup.close();
         window.location.href = e.data.redirect || '/dashboard.html';
       }
       if (e.data.type === 'oauth-error') {
         window.removeEventListener('message', handleMessage);
-        popup.close();
-        alert('Login failed: ' + (e.data.error || 'Unknown error'));
+        if (popup && !popup.closed) popup.close();
+        console.error('OAuth error:', e.data.error || 'Unknown error');
       }
     });
   }

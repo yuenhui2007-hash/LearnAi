@@ -6,7 +6,10 @@
 const jwt = require('jsonwebtoken');
 const { users, isMongo, User } = require('../config/database');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'learnai-dev-secret-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) {
+    throw new Error('JWT_SECRET environment variable is required');
+}
 
 async function authenticate(req, res, next) {
     const token = req.headers.authorization?.replace('Bearer ', '') || req.cookies?.token;
