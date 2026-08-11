@@ -306,6 +306,19 @@ function renderLessons() {
         </div>
         ${asgn.submitted ? `
           <div class="assignment-status submitted">✓ Submitted — ${asgn.wordCount || 0} words</div>
+          ${asgn.graded ? `
+            <div style="margin-top:12px;padding:16px;border-radius:12px;background:${asgn.band === 'Excellent' ? '#dcfce7' : asgn.band === 'Good' ? '#dbeafe' : asgn.band === 'Satisfactory' ? '#fef3c7' : '#fee2e2'};border:1px solid ${asgn.band === 'Excellent' ? '#22c55e' : asgn.band === 'Good' ? '#3b82f6' : asgn.band === 'Satisfactory' ? '#f59e0b' : '#ef4444'}">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+                <span style="font-size:1.5rem;font-weight:800;color:${asgn.band === 'Excellent' ? '#22c55e' : asgn.band === 'Good' ? '#3b82f6' : asgn.band === 'Satisfactory' ? '#f59e0b' : '#ef4444'}">${asgn.score}%</span>
+                <span style="font-weight:700;color:${asgn.band === 'Excellent' ? '#22c55e' : asgn.band === 'Good' ? '#3b82f6' : asgn.band === 'Satisfactory' ? '#f59e0b' : '#ef4444'}">${asgn.band}</span>
+              </div>
+              <p style="font-size:.85rem;color:var(--gray);margin-bottom:8px">🤖 Automated feedback:</p>
+              <ul style="font-size:.85rem;line-height:1.6;padding-left:18px">
+                ${asgn.feedback.map(f => '<li>' + f + '</li>').join('')}
+              </ul>
+              <p style="font-size:.75rem;color:var(--gray);margin-top:8px;font-style:italic">This is an automated preliminary grade. Your manager may review and adjust.</p>
+            </div>
+          ` : ''}
           <button class="submit-work-btn" onclick="reopenAssignment(${i})">Edit Submission</button>
         ` : `
           <textarea id="work-${i}" placeholder="Type your assignment here... Paste prompts, outputs, and explanations.">${asgn.draft || ''}</textarea>
@@ -327,23 +340,85 @@ async function submitAssignment(i) {
   if (text.length < 50) { alert('Assignment too short. Minimum 50 characters.'); return; }
   const p = getProgress();
   if (!p.assignments) p.assignments = {};
-  p.assignments[i] = { submitted: true, draft: text, wordCount: text.split(/\s+/).filter(w=>w.length>0).length, date: new Date().toISOString() };
+
+  // Auto-grade the submission
+  const grade = gradeAssignment(text, i);
+
+  p.assignments[i] = { submitted: true, graded: true, draft: text, wordCount: grade.wordCount, score: grade.score, band: grade.band, feedback: grade.feedback, date: new Date().toISOString() };
   saveProgress(p);
+
   // Sync to backend
   const user = JSON.parse(localStorage.getItem('user') || '{}');
   const userId = user.id || localStorage.getItem('auth_user_id') || 'anonymous';
   try {
     await fetch(API_BASE + '/api/admin/assignments/submit', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, dept, moduleIndex: i, moduleTitle: data.lessons[i].title, assignmentTitle: data.lessons[i].assignment.title, content: text })
+      body: JSON.stringify({ userId, dept, moduleIndex: i, moduleTitle: data.lessons[i].title, assignmentTitle: data.lessons[i].assignment.title, content: text, score: grade.score, band: grade.band })
     });
   } catch(e) { console.log('Backend sync failed', e); }
 }
 
 function reopenAssignment(i) {
   const p = getProgress();
-  if (p.assignments[i]) { p.assignments[i].submitted = false; }
+  if (p.assignments[i]) { p.assignments[i].submitted = false; p.assignments[i].graded = false; }
   saveProgress(p);
+}
+
+function gradeAssignment(text, i) {
+  const a = data.lessons[i].assignment;
+  const deliverables = a.deliverables || [];
+  const wordCount = text.split(/\s+/).filter(w => w.length > 0).length;
+  const sectionCount = text.split(/\n{2,}/).filter(s => s.trim().length > 20).length;
+  const hasList = /(\n\s*[-•*\d]\s+.{10,}){2,}/.test(text);
+  const lower = text.toLowerCase();
+
+  // Dynamic keyword extraction from deliverables
+  const keywordHints = [];
+  deliverables.forEach(d => {
+    const words = d.toLowerCase().match(/[a-z]{4,}/g) || [];
+    words.forEach(w => { if (!['submit','your','with','and','the','for','min','words','paste','you','would'].includes(w)) keywordHints.push(w); });
+  });
+  const uniqueKeywords = [...new Set(keywordHints)].slice(0, 8);
+  const matchedKeywords = uniqueKeywords.filter(k => lower.includes(k)).length;
+
+  let score = 100;
+  const feedback = [];
+
+  // Word count penalty
+  const minWords = deliverables.some(d => d.includes('min 200')) ? 200 :
+                   deliverables.some(d => d.includes('min 150')) ? 150 :
+                   deliverables.some(d => d.includes('min 100')) ? 100 : 80;
+  if (wordCount < minWords * 0.5) { score -= 25; feedback.push('Response is too short. Aim for at least ' + minWords + ' words.'); }
+  else if (wordCount < minWords) { score -= 10; feedback.push('Response is a bit short. Try to reach ' + minWords + ' words.'); }
+
+  // Keyword coverage
+  const kwRatio = uniqueKeywords.length > 0 ? matchedKeywords / uniqueKeywords.length : 1;
+  if (kwRatio < 0.3) { score -= 15; feedback.push('Include more topic-specific terms related to the deliverables.'); }
+
+  // Structure checks
+  if (!hasList) { score -= 10; feedback.push('Use bullet points or numbered lists to organise your deliverables.'); }
+  if (sectionCount < 2) { score -= 10; feedback.push('Break your response into clearly separated sections.'); }
+
+  // Length bonus
+  if (wordCount >= minWords * 1.5 && hasList && sectionCount >= 3) { score += 5; }
+
+  score = Math.max(0, Math.min(100, score));
+
+  // Determine band
+  let band, color;
+  if (score >= 80) { band = 'Excellent'; color = '#22c55e'; }
+  else if (score >= 60) { band = 'Good'; color = '#3b82f6'; }
+  else if (score >= 40) { band = 'Satisfactory'; color = '#f59e0b'; }
+  else { band = 'Needs Improvement'; color = '#ef4444'; }
+
+  return {
+    score,
+    band,
+    color,
+    wordCount,
+    feedback: feedback.length ? feedback : ['Well structured! Your submission covers the key requirements.'],
+    aiNote: 'This is an automated preliminary grade. Your manager may review and adjust.'
+  };
 }
 
 function renderQuiz() {
