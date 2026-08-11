@@ -29,7 +29,7 @@
                 <h1 id="subjectTitle">Loading...</h1>
                 <p id="subjectCode"></p>
             </div>
-            <div class="topic-list" id="topicList"></div>
+            <div id="topicSections"></div>
         </div>
     </section>
 
@@ -51,15 +51,44 @@
         document.getElementById('subjectTitle').textContent = subject.icon + ' ' + subject.name;
         document.getElementById('subjectCode').textContent = subject.code;
 
-        var list = document.getElementById('topicList');
-        subject.topics.forEach(function(topic) {
-            var completed = Progress.isCompleted(subjectId, topic.id);
-            var item = document.createElement('div');
-            item.className = 'topic-item';
-            var level = topic.alevel && topic.igcse ? 'A-Level & IGCSE' : topic.alevel ? 'A-Level' : 'IGCSE';
-            item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + level + '</p></div><a href="notes/' + subjectId + '-' + topic.id + '.html" class="btn btn-primary">View Notes</a>';
-            list.appendChild(item);
-        });
+        var container = document.getElementById('topicSections');
+
+        // A-Level topics (AS + A2)
+        var alevelTopics = subject.topics.filter(function(t) { return t.alevel; });
+        if (alevelTopics.length > 0) {
+            var alevelSection = document.createElement('div');
+            alevelSection.className = 'topic-section-group';
+            alevelSection.innerHTML = '<h2 class="section-divider">A-Level</h2><div class="topic-list" id="alevelList"></div>';
+            container.appendChild(alevelSection);
+
+            var alevelList = document.getElementById('alevelList');
+            alevelTopics.forEach(function(topic) {
+                var completed = Progress.isCompleted(subjectId, topic.id);
+                var item = document.createElement('div');
+                item.className = 'topic-item';
+                var stage = topic.as && topic.a2 ? 'AS & A2' : topic.as ? 'AS Level' : 'A2 Level';
+                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + stage + '</p></div><a href="notes/' + subjectId + '-' + topic.id + '.html" class="btn btn-primary">View Notes</a>';
+                alevelList.appendChild(item);
+            });
+        }
+
+        // IGCSE topics
+        var igcseTopics = subject.topics.filter(function(t) { return t.igcse; });
+        if (igcseTopics.length > 0) {
+            var igcseSection = document.createElement('div');
+            igcseSection.className = 'topic-section-group';
+            igcseSection.innerHTML = '<h2 class="section-divider">IGCSE</h2><div class="topic-list" id="igcseList"></div>';
+            container.appendChild(igcseSection);
+
+            var igcseList = document.getElementById('igcseList');
+            igcseTopics.forEach(function(topic) {
+                var completed = Progress.isCompleted(subjectId, topic.id);
+                var item = document.createElement('div');
+                item.className = 'topic-item';
+                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IGCSE</p></div><a href="notes/' + subjectId + '-' + topic.id + '.html" class="btn btn-primary">View Notes</a>';
+                igcseList.appendChild(item);
+            });
+        }
     })();
     </script>
 <script src="js/auth.js?v=4"></script>
