@@ -71,6 +71,7 @@ app.use((req, res, next) => {
 
 // ===== API Routes =====
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/oauth', require('./routes/oauth'));
 app.use('/api/users', authenticate, require('./routes/users'));
 app.use('/api/materials', authenticate, require('./routes/materials'));
 app.use('/api/study', authenticate, require('./routes/study'));

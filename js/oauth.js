@@ -1,87 +1,78 @@
 /**
- * OAuth Configuration for Google and Apple Sign-In
- * Replace CLIENT IDs with your actual credentials from:
- * - Google: https://console.cloud.google.com/apis/credentials
- * - Apple: https://developer.apple.com/account/resources/identifiers/list/serviceId
+ * OAuth Client for Google and Apple Sign-In
+ * Uses backend authorization code flow (PKCE) for security
  */
-const OAuthConfig = {
-  google: {
-    clientId: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
-    redirectUri: window.location.origin + '/oauth-callback.html',
-    scope: 'openid email profile',
-    authUrl: 'https://accounts.google.com/o/oauth2/v2/auth'
+
+const OAuth = {
+  /**
+   * Initiate Google OAuth login via backend
+   */
+  loginWithGoogle() {
+    // Open popup for OAuth flow
+    const width = 500;
+    const height = 600;
+    const left = window.screenX + (window.outerWidth - width) / 2;
+    const top = window.screenY + (window.outerHeight - height) / 2;
+    
+    const popup = window.open(
+      '/api/oauth/google',
+      'google-oauth',
+      `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
+    );;
+    
+    // Listen for message from popup
+    window.addEventListener('message', function handleMessage(e) {
+      if (e.origin !== window.location.origin) return;
+      if (e.data.type === 'oauth-success') {
+        window.removeEventListener('message', handleMessage);
+        popup.close();
+        // Auth cookie is already set by backend
+        window.location.href = e.data.redirect || '/dashboard.html';
+      }
+      if (e.data.type === 'oauth-error') {
+        window.removeEventListener('message', handleMessage);
+        popup.close();
+        alert('Login failed: ' + (e.data.error || 'Unknown error'));
+      }
+    });
   },
-  apple: {
-    clientId: 'YOUR_APPLE_SERVICES_ID',
-    redirectUri: window.location.origin + '/oauth-callback.html',
-    scope: 'name email',
-    authUrl: 'https://appleid.apple.com/auth/authorize'
+
+  /**
+   * Initiate Apple OAuth login via backend
+   */
+  loginWithApple() {
+    const width = 500;
+    const height = 600;
+    const left = window.screenX + (window.outerWidth - width) / 2;
+    const top = window.screenY + (window.outerHeight - height) / 2;
+    
+    const popup = window.open(
+      '/api/oauth/apple',
+      'apple-oauth',
+      `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
+    );
+    
+    window.addEventListener('message', function handleMessage(e) {
+      if (e.origin !== window.location.origin) return;
+      if (e.data.type === 'oauth-success') {
+        window.removeEventListener('message', handleMessage);
+        popup.close();
+        window.location.href = e.data.redirect || '/dashboard.html';
+      }
+      if (e.data.type === 'oauth-error') {
+        window.removeEventListener('message', handleMessage);
+        popup.close();
+        alert('Login failed: ' + (e.data.error || 'Unknown error'));
+      }
+    });
   }
 };
 
-function buildGoogleAuthUrl() {
-  const params = new URLSearchParams({
-    client_id: OAuthConfig.google.clientId,
-    redirect_uri: OAuthConfig.google.redirectUri,
-    response_type: 'token id_token',
-    scope: OAuthConfig.google.scope,
-    include_granted_scopes: 'true',
-    state: generateState()
-  });
-  return OAuthConfig.google.authUrl + '?' + params.toString();
-}
-
-function buildAppleAuthUrl() {
-  const params = new URLSearchParams({
-    client_id: OAuthConfig.apple.clientId,
-    redirect_uri: OAuthConfig.apple.redirectUri,
-    response_type: 'code id_token',
-    scope: OAuthConfig.apple.scope,
-    state: generateState(),
-    response_mode: 'fragment'
-  });
-  return OAuthConfig.apple.authUrl + '?' + params.toString();
-}
-
-function generateState() {
-  const arr = new Uint8Array(16);
-  crypto.getRandomValues(arr);
-  return Array.from(arr, b => b.toString(16).padStart(2, '0')).join('');
-}
-
+// Expose functions for onclick handlers
 function redirectToGoogleLogin() {
-  if (OAuthConfig.google.clientId.includes('YOUR_GOOGLE_CLIENT_ID')) {
-    alert('Google Sign-In is not configured yet.\n\nPlease set up your Google OAuth 2.0 Client ID in js/oauth.js\n\nGet one at: https://console.cloud.google.com/apis/credentials');
-    return;
-  }
-  window.location.href = buildGoogleAuthUrl();
+  OAuth.loginWithGoogle();
 }
 
 function redirectToAppleLogin() {
-  if (OAuthConfig.apple.clientId.includes('YOUR_APPLE_SERVICES_ID')) {
-    alert('Apple Sign-In is not configured yet.\n\nPlease set up your Apple Services ID in js/oauth.js\n\nGet one at: https://developer.apple.com/account/resources/identifiers/list/serviceId');
-    return;
-  }
-  window.location.href = buildAppleAuthUrl();
-}
-
-function handleOAuthCallback() {
-  const hash = window.location.hash.substring(1);
-  const params = new URLSearchParams(hash);
-  const idToken = params.get('id_token');
-  const error = params.get('error');
-  if (error) return { success: false, error: 'Authentication failed: ' + error };
-  if (idToken) {
-    const payload = JSON.parse(atob(idToken.split('.')[1]));
-    const user = {
-      email: payload.email,
-      name: payload.name || payload.given_name || payload.email.split('@')[0],
-      provider: payload.iss && payload.iss.includes('apple') ? 'apple' : 'google',
-      token: idToken
-    };
-    localStorage.setItem('learnai_user', JSON.stringify(user));
-    localStorage.setItem('learnai_token', idToken);
-    return { success: true, user };
-  }
-  return { success: false, error: 'No authentication token received' };
+  OAuth.loginWithApple();
 }
