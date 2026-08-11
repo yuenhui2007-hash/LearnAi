@@ -29,8 +29,13 @@ app.use(helmet({
             connectSrc: ["'self'"],
             frameAncestors: ["'none'"],
             baseUri: ["'self'"],
-            formAction: ["'self'"]
+            formAction: ["'self'", "https://accounts.google.com", "https://appleid.apple.com"]
         }
+    },
+    hsts: {
+        maxAge: 31536000,
+        includeSubDomains: true,
+        preload: true
     },
     crossOriginEmbedderPolicy: false
 }));
@@ -54,9 +59,18 @@ const authLimiter = rateLimit({
     max: 10,
     message: { error: 'Too many login attempts. Please try again later.' }
 });
+const oauthLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 10,
+    message: { error: 'Too many OAuth attempts. Please try again later.' }
+});
 app.use('/api/', apiLimiter);
 app.use('/api/auth/login', authLimiter);
 app.use('/api/auth/register', authLimiter);
+app.use('/api/oauth/google', oauthLimiter);
+app.use('/api/oauth/apple', oauthLimiter);
+app.use('/api/oauth/google/callback', oauthLimiter);
+app.use('/api/oauth/apple/callback', oauthLimiter);
 
 // ===== Body Parsing =====
 app.use(express.json({ limit: '10mb' }));
