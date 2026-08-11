@@ -353,20 +353,41 @@
     }
 
     function renderIELTS() {
-        const section = document.createElement('div');
-        section.className = 'topic-section-group';
+        const wrapper = document.createElement('div');
 
-        section.appendChild(renderSectionTitle('Academic'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.ielts_academic; });
-        }));
+        const intro = document.createElement('p');
+        intro.style.cssText = 'text-align:center;color:var(--gray);margin-bottom:32px;font-size:0.95rem;';
+        intro.textContent = 'Master all four IELTS skills. Click a skill to explore topics, tips, and practice materials.';
+        wrapper.appendChild(intro);
 
-        section.appendChild(renderSectionTitle('General Training'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.ielts_general; });
-        }));
+        const grid = document.createElement('div');
+        grid.className = 'board-selection';
+        grid.style.maxWidth = '900px';
 
-        container.appendChild(section);
+        const skills = [
+            { icon: '🎧', title: 'Listening', desc: '4 sections · 40 questions · 30 minutes', color: '#6366f1', link: 'ielts-listening.html' },
+            { icon: '📖', title: 'Reading', desc: '3 passages · 40 questions · 60 minutes', color: '#10b981', link: 'ielts-reading.html' },
+            { icon: '✍️', title: 'Writing', desc: '2 tasks · 60 minutes', color: '#f59e0b', link: 'ielts-writing.html' },
+            { icon: '🗣️', title: 'Speaking', desc: '3 parts · 11-14 minutes', color: '#ec4899', link: 'ielts-speaking.html' }
+        ];
+
+        skills.forEach(function(skill) {
+            const card = document.createElement('a');
+            card.href = skill.link;
+            card.className = 'board-card';
+            card.style.textDecoration = 'none';
+            card.style.color = 'inherit';
+            card.innerHTML = `
+                <div class="board-icon" style="background:linear-gradient(135deg, ${skill.color}, ${skill.color}88);">${skill.icon}</div>
+                <h3>${skill.title}</h3>
+                <p>${skill.desc}</p>
+                <div class="board-arrow" style="opacity:1;transform:none;color:${skill.color};">→</div>
+            `;
+            grid.appendChild(card);
+        });
+
+        wrapper.appendChild(grid);
+        container.appendChild(wrapper);
     }
     </script>
 <script src="js/auth.js?v=6"></script>
