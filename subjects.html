@@ -153,6 +153,7 @@
     const container = document.getElementById('subjectSections');
 
     let currentBoard = null;
+    let caieLevel = null;
 
     function showBoard(board) {
         currentBoard = board;
@@ -184,8 +185,9 @@
     }
 
     function handleBack() {
-        if (currentBoard === 'caie' && container.querySelector('.subjects-grid')) {
+        if (currentBoard === 'caie' && caieLevel) {
             // Currently showing CAIE subjects, go back to CAIE selector
+            caieLevel = null;
             container.innerHTML = '';
             renderCAIESelector();
             document.querySelector('.section-title').textContent = 'CAIE';
@@ -209,6 +211,7 @@
     }
 
     function showCAIELevel(level) {
+        caieLevel = level;
         container.innerHTML = '';
         document.querySelector('.section-title').textContent = level === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
         document.querySelector('.section-header p').textContent = level === 'alevel'
@@ -249,7 +252,11 @@
 
     function createSubjectCard(key, s) {
         const card = document.createElement('a');
-        card.href = 'subject.html?id=' + key;
+        var href = 'subject.html?id=' + key;
+        if (caieLevel) {
+            href += '&level=' + caieLevel;
+        }
+        card.href = href;
         card.className = 'subject-card';
         card.innerHTML = `
             <div class="subject-icon">${s.icon}</div>
