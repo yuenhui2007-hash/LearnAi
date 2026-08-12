@@ -15,12 +15,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=4">
-<link rel="stylesheet" href="css/znotes-style.css?v=4">
+    <link rel="stylesheet" href="css/styles.css?v=11">
+<link rel="stylesheet" href="css/znotes-style.css?v=11">
 </head>
 <body>
     <nav class="navbar" id="navbar"></nav>
-<script src="js/nav.js?v=5"></script>
+<script src="js/nav.js?v=11"></script>
 
     <section class="subject-section">
         <div class="container">
@@ -33,9 +33,9 @@
         </div>
     </section>
 
-    <script src="js/theme.js?v=4"></script>
-    <script src="js/data.js?v=4"></script>
-    <script src="js/app.js?v=4"></script>
+    <script src="js/theme.js?v=11"></script>
+    <script src="js/data.js?v=11"></script>
+    <script src="js/app.js?v=11"></script>
     <script>
     (function() {
         var params = new URLSearchParams(window.location.search);
@@ -65,73 +65,125 @@
 
         var container = document.getElementById('topicSections');
 
-        // A-Level topics (AS + A2)
-        var alevelTopics = subject.topics.filter(function(t) { return t.alevel && (!levelFilter || levelFilter === 'alevel'); });
-        if (alevelTopics.length > 0) {
-            var alevelSection = document.createElement('div');
-            alevelSection.className = 'topic-section-group';
-            alevelSection.innerHTML = '<h2 class="section-divider">A-Level</h2><div class="topic-list" id="alevelList"></div>';
-            container.appendChild(alevelSection);
-
-            var alevelList = document.getElementById('alevelList');
-            alevelTopics.forEach(function(topic) {
-                var completed = Progress.isCompleted(subjectId, topic.id);
-                var item = document.createElement('div');
-                item.className = 'topic-item';
-                var stage = topic.as && topic.a2 ? 'AS & A2' : topic.as ? 'AS Level' : 'A2 Level';
-                var notePath = topic.alevel && topic.igcse ? 'notes/' + subjectId + '-' + topic.id + '-a.html' : 'notes/' + subjectId + '-' + topic.id + '.html';
-                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + stage + '</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
-                alevelList.appendChild(item);
-            });
+        // Determine papers URL
+        var papersUrl = null;
+        if (levelFilter) {
+            papersUrl = 'papers/' + subjectId + '-' + levelFilter + '.html';
+        } else {
+            var hasAlevel = subject.topics.some(function(t) { return t.alevel; });
+            papersUrl = hasAlevel ? 'papers/' + subjectId + '-alevel.html' : 'papers/' + subjectId + '-igcse.html';
         }
 
-        // IGCSE topics
-        var igcseTopics = subject.topics.filter(function(t) { return t.igcse && (!levelFilter || levelFilter === 'igcse'); });
-        if (igcseTopics.length > 0) {
-            var igcseSection = document.createElement('div');
-            igcseSection.className = 'topic-section-group';
-            igcseSection.innerHTML = '<h2 class="section-divider">IGCSE</h2><div class="topic-list" id="igcseList"></div>';
-            container.appendChild(igcseSection);
+        // Tab selector: Notes / Past Year Papers
+        var activeTab = 'notes';
+        var tabWrap = document.createElement('div');
+        tabWrap.id = 'resourceTabs';
+        tabWrap.style.cssText = 'display:flex;gap:12px;margin-bottom:28px;';
+        tabWrap.innerHTML =
+            '<button id="tabNotes" style="flex:1;padding:12px 20px;border-radius:12px;border:2px solid #6366f1;background:#6366f1;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;">📚 Notes</button>' +
+            '<button id="tabPapers" style="flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;">📄 Past Year Papers</button>';
+        container.appendChild(tabWrap);
 
-            var igcseList = document.getElementById('igcseList');
-            igcseTopics.forEach(function(topic) {
-                var completed = Progress.isCompleted(subjectId, topic.id);
-                var item = document.createElement('div');
-                item.className = 'topic-item';
-                var notePath = topic.alevel && topic.igcse ? 'notes/' + subjectId + '-' + topic.id + '-igcse.html' : 'notes/' + subjectId + '-' + topic.id + '.html';
-                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IGCSE</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
-                igcseList.appendChild(item);
-            });
+        var contentWrap = document.createElement('div');
+        contentWrap.id = 'tabContent';
+        container.appendChild(contentWrap);
+
+        function renderNotes() {
+            activeTab = 'notes';
+            document.getElementById('tabNotes').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #6366f1;background:#6366f1;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+            document.getElementById('tabPapers').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+            contentWrap.innerHTML = '';
+
+            // A-Level topics (AS + A2)
+            var alevelTopics = subject.topics.filter(function(t) { return t.alevel && (!levelFilter || levelFilter === 'alevel'); });
+            if (alevelTopics.length > 0) {
+                var alevelSection = document.createElement('div');
+                alevelSection.className = 'topic-section-group';
+                alevelSection.innerHTML = '<h2 class="section-divider">A-Level</h2><div class="topic-list" id="alevelList"></div>';
+                contentWrap.appendChild(alevelSection);
+
+                var alevelList = document.getElementById('alevelList');
+                alevelTopics.forEach(function(topic) {
+                    var completed = Progress.isCompleted(subjectId, topic.id);
+                    var item = document.createElement('div');
+                    item.className = 'topic-item';
+                    var stage = topic.as && topic.a2 ? 'AS & A2' : topic.as ? 'AS Level' : 'A2 Level';
+                    var notePath = topic.alevel && topic.igcse ? 'notes/' + subjectId + '-' + topic.id + '-a.html' : 'notes/' + subjectId + '-' + topic.id + '.html';
+                    item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + stage + '</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                    alevelList.appendChild(item);
+                });
+            }
+
+            // IGCSE topics
+            var igcseTopics = subject.topics.filter(function(t) { return t.igcse && (!levelFilter || levelFilter === 'igcse'); });
+            if (igcseTopics.length > 0) {
+                var igcseSection = document.createElement('div');
+                igcseSection.className = 'topic-section-group';
+                igcseSection.innerHTML = '<h2 class="section-divider">IGCSE</h2><div class="topic-list" id="igcseList"></div>';
+                contentWrap.appendChild(igcseSection);
+
+                var igcseList = document.getElementById('igcseList');
+                igcseTopics.forEach(function(topic) {
+                    var completed = Progress.isCompleted(subjectId, topic.id);
+                    var item = document.createElement('div');
+                    item.className = 'topic-item';
+                    var notePath = topic.alevel && topic.igcse ? 'notes/' + subjectId + '-' + topic.id + '-igcse.html' : 'notes/' + subjectId + '-' + topic.id + '.html';
+                    item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IGCSE</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                    igcseList.appendChild(item);
+                });
+            }
+
+            // IB topics
+            var ibTopics = subject.topics.filter(function(t) { return t.ib; });
+            if (ibTopics.length > 0 && !levelFilter) {
+                var ibSection = document.createElement('div');
+                ibSection.className = 'topic-section-group';
+                ibSection.innerHTML = '<h2 class="section-divider">IB DP</h2><div class="topic-list" id="ibList"></div>';
+                contentWrap.appendChild(ibSection);
+
+                var ibList = document.getElementById('ibList');
+                ibTopics.forEach(function(topic) {
+                    var completed = Progress.isCompleted(subjectId, topic.id);
+                    var item = document.createElement('div');
+                    item.className = 'topic-item';
+                    var levelText = (topic.hl && topic.sl) ? 'HL & SL' : (topic.hl ? 'HL' : 'SL');
+                    var badges = '<span style="display:inline-flex;gap:6px;margin-top:4px;">' +
+                        (topic.ib ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#ede9fe;color:#5b21b6;font-weight:600;">IB</span>' : '') +
+                        (topic.hl ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#dcfce7;color:#166534;font-weight:600;">HL</span>' : '') +
+                        (topic.sl ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#dbeafe;color:#1e40af;font-weight:600;">SL</span>' : '') +
+                        '</span>';
+                    var notePath = 'notes/' + subjectId + '-' + topic.id + '.html';
+                    item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + levelText + '</p>' + badges + '</div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                    ibList.appendChild(item);
+                });
+            }
         }
 
-        // IB topics
-        var ibTopics = subject.topics.filter(function(t) { return t.ib; });
-        if (ibTopics.length > 0 && !levelFilter) {
-            var ibSection = document.createElement('div');
-            ibSection.className = 'topic-section-group';
-            ibSection.innerHTML = '<h2 class="section-divider">IB DP</h2><div class="topic-list" id="ibList"></div>';
-            container.appendChild(ibSection);
+        function renderPapers() {
+            activeTab = 'papers';
+            document.getElementById('tabNotes').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+            document.getElementById('tabPapers').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #f59e0b;background:#f59e0b;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+            contentWrap.innerHTML = '';
 
-            var ibList = document.getElementById('ibList');
-            ibTopics.forEach(function(topic) {
-                var completed = Progress.isCompleted(subjectId, topic.id);
-                var item = document.createElement('div');
-                item.className = 'topic-item';
-                var levelText = (topic.hl && topic.sl) ? 'HL & SL' : (topic.hl ? 'HL' : 'SL');
-                var badges = '<span style="display:inline-flex;gap:6px;margin-top:4px;">' +
-                    (topic.ib ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#ede9fe;color:#5b21b6;font-weight:600;">IB</span>' : '') +
-                    (topic.hl ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#dcfce7;color:#166534;font-weight:600;">HL</span>' : '') +
-                    (topic.sl ? '<span style="font-size:0.7rem;padding:2px 8px;border-radius:50px;background:#dbeafe;color:#1e40af;font-weight:600;">SL</span>' : '') +
-                    '</span>';
-                var notePath = 'notes/' + subjectId + '-' + topic.id + '.html';
-                item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>' + levelText + '</p>' + badges + '</div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
-                ibList.appendChild(item);
-            });
+            var section = document.createElement('div');
+            section.className = 'topic-section-group';
+            section.innerHTML = '<div style="text-align:center;padding:48px 24px;">' +
+                '<div style="font-size:3rem;margin-bottom:16px;">📄</div>' +
+                '<h3 style="font-size:1.3rem;margin-bottom:8px;">Past Year Papers</h3>' +
+                '<p style="color:#64748b;margin-bottom:24px;">Practice with real examination papers and mark schemes.</p>' +
+                '<a href="' + papersUrl + '" class="btn btn-primary" style="font-size:1.1rem;padding:14px 32px;">Browse Past Papers</a>' +
+                '</div>';
+            contentWrap.appendChild(section);
         }
+
+        document.getElementById('tabNotes').onclick = renderNotes;
+        document.getElementById('tabPapers').onclick = renderPapers;
+
+        renderNotes();
     })();
     </script>
-<script src="js/auth.js?v=4"></script>
-<script src="js/mascot.js?v=4"></script>
-<script src="js/pwa.js?v=4"></script>
+<script src="js/auth.js?v=11"></script>
+<script src="js/mascot.js?v=11"></script>
+<script src="js/pwa.js?v=11"></script>
 </body>
 </html>
