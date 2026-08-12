@@ -1,0 +1,3 @@
+# Document received via Telegram
+# File ID: BQACAgUAAxkBAAIIHmp71d-Vc6NldE8a9j6KLDZkc2pxAAIDIAACCWHhVy_gL4F4lCVRPQQ
+# Will fetch content and integrate into AI tutor brain
