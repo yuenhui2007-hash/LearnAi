@@ -103,6 +103,18 @@
             document.getElementById('tabPapers').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
             contentWrap.innerHTML = '';
 
+            // Comprehensive notes link (single-file full syllabus notes)
+            if (subject.comprehensiveNotes) {
+                var compSection = document.createElement('div');
+                compSection.style.cssText = 'background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);border-radius:16px;padding:24px;margin-bottom:28px;color:#fff;text-align:center;';
+                compSection.innerHTML =
+                    '<div style="font-size:2rem;margin-bottom:8px;">📚</div>' +
+                    '<h3 style="margin:0 0 8px;font-size:1.2rem;">Complete Syllabus Notes</h3>' +
+                    '<p style="margin:0 0 16px;opacity:0.9;font-size:0.95rem;">Full A-Level notes with worked examples, case studies & derivations.</p>' +
+                    '<a href="' + subject.comprehensiveNotes + '" style="display:inline-block;padding:10px 24px;border-radius:10px;background:#fff;color:#6366f1;font-weight:600;text-decoration:none;">Open Notes</a>';
+                contentWrap.appendChild(compSection);
+            }
+
             // A-Level topics (AS + A2)
             var alevelTopics = subject.topics.filter(function(t) { return t.alevel && (!levelFilter || levelFilter === 'alevel'); });
             if (alevelTopics.length > 0) {
