@@ -438,7 +438,6 @@ function submitQuiz() {
   dept.quiz.forEach((q, i) => {
     answers.push(quizAnswers[i]);
     const userAns = quizAnswers[i];
-    const userAns = quizAnswers[i];
     const isCorrect = userAns === q.a;
     if (isCorrect) correct++;
     const qEl = document.getElementById(`qq-${i}`);
