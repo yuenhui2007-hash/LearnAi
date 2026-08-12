@@ -65,7 +65,7 @@
 
         var container = document.getElementById('topicSections');
 
-        // Determine Papacambridge papers URL
+        // Determine PastPaperly papers URL
         var papersCode = '';
         if (levelFilter === 'alevel') {
             var parts = subject.code.split('·');
@@ -78,10 +78,10 @@
             var parts = subject.code.split('·');
             papersCode = parts[0].trim().split(' ')[0];
         }
-        // Build PapaCambridge URL slug from subject name
+        // Build PastPaperly URL slug from subject name
         var slug = subject.name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        var papersLevelPath = levelFilter === 'igcse' ? 'igcse' : 'as-and-a-level';
-        var papersUrl = 'https://pastpapers.papacambridge.com/papers/caie/' + papersLevelPath + '-' + slug + '-' + papersCode + '/';
+        var papersLevelPath = levelFilter === 'igcse' ? 'igcse' : 'a-level';
+        var papersUrl = 'https://pastpaperly.com/' + papersLevelPath + '/' + slug + '-' + papersCode + '/';
 
         // Tab selector: Notes / Past Year Papers
         var activeTab = 'notes';
@@ -196,4 +196,5 @@
 <script src="js/pwa.js?v=12"></script>
 </body>
 </html>
+
 
