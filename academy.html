@@ -368,6 +368,27 @@
   opacity: 0.4;
   filter: grayscale(1);
 }
+.badge-item.earned {
+  opacity: 1;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 2px solid #10b981;
+}
+.badge-item.earned .badge-icon {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+.badge-item.in-progress {
+  opacity: 1;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 2px solid #6366f1;
+  animation: pulse-border 2s ease-in-out infinite;
+}
+.badge-item.in-progress .badge-icon {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+@keyframes pulse-border {
+  0%, 100% { border-color: #6366f1; }
+  50% { border-color: #a5b4fc; }
+}
 .badge-icon {
   width: 64px;
   height: 64px;
@@ -837,11 +858,11 @@
     <div class="streak-inner">
       <div class="streak-item">
         <span class="streak-fire">🔥</span>
-        <span>Current Streak: <strong>3 days</strong></span>
+        <span>Current Streak: <strong>1 day</strong></span>
       </div>
       <div class="streak-item">
         <span>⭐</span>
-        <span>Total XP: <strong>1,240</strong></span>
+        <span>Total XP: <strong>305</strong></span>
       </div>
       <div class="streak-item">
         <span>🎯</span>
@@ -849,7 +870,7 @@
       </div>
       <div class="streak-item">
         <span>📅</span>
-        <span>Joined: <strong>Aug 2026</strong></span>
+        <span>Joined: <strong>12 Aug 2026</strong></span>
       </div>
     </div>
   </div>
@@ -864,7 +885,7 @@
     </div>
 
     <div class="tree-line">
-      <div class="tree-line-progress" id="treeProgress"></div>
+      <div class="tree-line-progress" id="treeProgress" style="height: 20%;"></div>
     </div>
 
     <!-- Level 1 -->
@@ -879,16 +900,16 @@
           <p>What is AI, types of AI, generative AI, LLMs, limitations & myths</p>
           <div class="level-meta">
             <span class="time">⏱️ 2 hours</span>
-            <span class="unlocked">🔓 In Progress</span>
+            <span class="unlocked">✅ Completed</span>
           </div>
           <div class="xp-bar">
-            <div class="xp-fill" style="width: 65%"></div>
+            <div class="xp-fill" style="width: 100%"></div>
           </div>
-          <div class="xp-text">65% complete — 130 / 200 XP</div>
+          <div class="xp-text">100% complete — 200 / 200 XP</div>
           <div class="level-modules">
             <span class="module-tag">✓ What is AI?</span>
             <span class="module-tag">✓ How AI Thinks</span>
-            <span class="module-tag">○ Good vs Bad Prompts</span>
+            <span class="module-tag">✓ Good vs Bad Prompts</span>
           </div>
         </div>
       </a>
@@ -896,27 +917,29 @@
 
     <!-- Level 2 -->
     <div class="level-wrapper fade-up">
-      <a href="academy-level2.html" class="level-card">
-        <div class="level-number locked">2</div>
+      <a href="academy-level2.html" class="level-card active">
+        <div class="level-number">
+          2
+          <span class="level-check">✓</span>
+        </div>
         <div class="level-info">
           <h3>Mastering Zetrix AI</h3>
           <p>Dashboard, chat, file uploads, AI memory, assistants, templates</p>
           <div class="level-meta">
             <span class="time">⏱️ 3 hours</span>
-            <span class="locked">🔒 Complete Level 1</span>
+            <span class="unlocked">🔓 In Progress</span>
           </div>
           <div class="xp-bar">
-            <div class="xp-fill" style="width: 0%"></div>
+            <div class="xp-fill" style="width: 35%"></div>
           </div>
-          <div class="xp-text">0 / 300 XP</div>
+          <div class="xp-text">35% complete — 105 / 300 XP</div>
           <div class="level-modules">
-            <span class="module-tag">Dashboard & Chat</span>
-            <span class="module-tag">File Uploads</span>
-            <span class="module-tag">AI Memory</span>
-            <span class="module-tag">Templates</span>
+            <span class="module-tag">✓ Dashboard & Chat</span>
+            <span class="module-tag">✓ File Uploads</span>
+            <span class="module-tag">○ AI Memory</span>
+            <span class="module-tag">○ Templates</span>
           </div>
         </div>
-        <div class="lock-overlay">🔒</div>
       </a>
     </div>
 
@@ -1034,20 +1057,20 @@
       <p>Earn badges as you progress through your AI learning journey.</p>
     </div>
     <div class="badges-grid">
-      <div class="badge-item">
+      <div class="badge-item earned">
         <div class="badge-icon">🌱</div>
         <div class="badge-name">First Steps</div>
         <div class="badge-desc">Started Level 1</div>
       </div>
-      <div class="badge-item">
+      <div class="badge-item earned">
         <div class="badge-icon">💡</div>
         <div class="badge-name">Prompt Master</div>
         <div class="badge-desc">Complete Level 1</div>
       </div>
-      <div class="badge-item locked">
+      <div class="badge-item in-progress">
         <div class="badge-icon">🚀</div>
         <div class="badge-name">Zetrix Pro</div>
-        <div class="badge-desc">Complete Level 2</div>
+        <div class="badge-desc">Complete Level 2 (in progress)</div>
       </div>
       <div class="badge-item locked">
         <div class="badge-icon">🎭</div>
