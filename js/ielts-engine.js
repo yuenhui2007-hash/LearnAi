@@ -70,12 +70,17 @@ class IELTSTestEngine {
     this.progressEl.textContent = `${answered}/${total}`;
   }
 
+  getTest() {
+    return this.data.tests.find(t => t.id === this.testId) || this.data.tests[0];
+  }
+
   getTotalQuestions() {
+    const test = this.getTest();
     if (this.skill === 'listening') {
-      return this.data.tests[0].audioScript.reduce((sum, s) => sum + s.questions.length, 0);
+      return test.audioScript.reduce((sum, s) => sum + s.questions.length, 0);
     }
     if (this.skill === 'reading') {
-      return this.data.tests[0].passages.reduce((sum, p) => sum + p.questions.length, 0);
+      return test.passages.reduce((sum, p) => sum + p.questions.length, 0);
     }
     return 0;
   }
@@ -93,7 +98,7 @@ class IELTSTestEngine {
   }
 
   renderListeningQuestion() {
-    const test = this.data.tests[0];
+    const test = this.getTest();
     const section = test.audioScript[this.currentSection];
     const question = section.questions[this.currentQuestion];
 
@@ -149,7 +154,7 @@ class IELTSTestEngine {
   }
 
   renderReadingQuestion() {
-    const test = this.data.tests[0];
+    const test = this.getTest();
     const passage = test.passages[this.currentSection];
     const question = passage.questions[this.currentQuestion];
 
@@ -369,27 +374,29 @@ class IELTSTestEngine {
   }
 
   getNavTotal() {
+    const test = this.getTest();
     if (this.skill === 'listening') {
-      return this.data.tests[0].audioScript.reduce((sum, s) => sum + s.questions.length, 0);
+      return test.audioScript.reduce((sum, s) => sum + s.questions.length, 0);
     }
     if (this.skill === 'reading') {
-      return this.data.tests[0].passages.reduce((sum, p) => sum + p.questions.length, 0);
+      return test.passages.reduce((sum, p) => sum + p.questions.length, 0);
     }
     return 0;
   }
 
   getGlobalQuestionNumber() {
+    const test = this.getTest();
     if (this.skill === 'listening') {
       let count = 0;
       for (let i = 0; i < this.currentSection; i++) {
-        count += this.data.tests[0].audioScript[i].questions.length;
+        count += test.audioScript[i].questions.length;
       }
       return count + this.currentQuestion + 1;
     }
     if (this.skill === 'reading') {
       let count = 0;
       for (let i = 0; i < this.currentSection; i++) {
-        count += this.data.tests[0].passages[i].questions.length;
+        count += test.passages[i].questions.length;
       }
       return count + this.currentQuestion + 1;
     }
@@ -473,7 +480,7 @@ class IELTSTestEngine {
   }
 
   nextQuestion() {
-    const test = this.data.tests[0];
+    const test = this.getTest();
     let currentList = this.skill === 'listening' ? test.audioScript : test.passages;
 
     this.currentQuestion++;
@@ -490,7 +497,7 @@ class IELTSTestEngine {
   }
 
   prevQuestion() {
-    const test = this.data.tests[0];
+    const test = this.getTest();
     let currentList = this.skill === 'listening' ? test.audioScript : test.passages;
 
     this.currentQuestion--;
@@ -527,7 +534,7 @@ class IELTSTestEngine {
   }
 
   jumpToQuestion(index) {
-    const test = this.data.tests[0];
+    const test = this.getTest();
     let currentList = this.skill === 'listening' ? test.audioScript : test.passages;
 
     let count = 0;
@@ -567,7 +574,7 @@ class IELTSTestEngine {
   }
 
   showAutoScoredResults() {
-    const test = this.data.tests[0];
+    const test = this.getTest();
     const questions = this.skill === 'listening'
       ? test.audioScript.flatMap(s => s.questions)
       : test.passages.flatMap(p => p.questions);
