@@ -471,27 +471,34 @@ This skill would benefit me in numerous ways. Beyond the personal satisfaction o
   },
 
   calculateWritingBand(taskNum, wordCount, minWords, issues, strengths, sentenceCount) {
-    let band = 5.0;
+    let band = 4.0; // Start lower — must earn higher bands
 
-    // Word count penalty
-    if (wordCount < minWords * 0.5) band -= 1.5;
-    else if (wordCount < minWords * 0.8) band -= 0.5;
-    else if (wordCount >= minWords * 1.2) band += 0.5;
+    // Word count penalty (strict)
+    if (wordCount < minWords * 0.5) band -= 2.0;
+    else if (wordCount < minWords * 0.7) band -= 1.0;
+    else if (wordCount < minWords * 0.9) band -= 0.5;
+    else if (wordCount >= minWords * 1.2) band += 0.25;
 
-    // Issue penalties
+    // Issue penalties (harsher)
     const highIssues = issues.filter(i => i.severity === 'high').length;
     const medIssues = issues.filter(i => i.severity === 'medium').length;
-    band -= highIssues * 0.5;
-    band -= medIssues * 0.25;
+    const lowIssues = issues.filter(i => i.severity === 'low').length;
+    band -= highIssues * 0.75;
+    band -= medIssues * 0.5;
+    band -= lowIssues * 0.25;
 
-    // Strength bonuses
-    band += strengths.length * 0.15;
+    // Strength bonuses (smaller — must truly excel)
+    band += strengths.length * 0.1;
 
-    // Sentence variety bonus
-    if (sentenceCount >= (taskNum === 1 ? 10 : 15)) band += 0.25;
+    // Sentence variety bonus (harder threshold)
+    if (sentenceCount >= (taskNum === 1 ? 12 : 18)) band += 0.15;
+
+    // Vocabulary diversity bonus (strict)
+    const lexicalDiversity = strengths.find(s => s.includes('diversity')) ? 0.5 : 0;
+    if (lexicalDiversity > 0.6) band += 0.15;
 
     // Clamp
-    return Math.max(3.0, Math.min(9.0, Math.round(band * 2) / 2));
+    return Math.max(2.5, Math.min(9.0, Math.round(band * 2) / 2));
   },
 
   // Analyse speaking (text-based assessment)
@@ -583,17 +590,21 @@ This skill would benefit me in numerous ways. Beyond the personal satisfaction o
       strengths.push(`Good use of complex structures (${foundComplex.length}).`);
     }
 
-    // Band estimate
-    let band = 5.0;
-    if (wordCount > 150) band += 0.5;
-    if (foundMarkers.length >= 3) band += 0.5;
-    if (foundComplex.length >= 3) band += 0.5;
-    if (diversity > 0.5) band += 0.5;
-    band -= issues.filter(i => i.severity === 'high').length * 0.5;
-    band -= issues.filter(i => i.severity === 'medium').length * 0.25;
-    band += strengths.length * 0.15;
+    // Band estimate (strict)
+    let band = 4.0;
+    if (wordCount > 180) band += 0.25;
+    if (foundMarkers.length >= 4) band += 0.25;
+    else if (foundMarkers.length < 2) band -= 0.5;
+    if (foundComplex.length >= 4) band += 0.25;
+    else if (foundComplex.length < 2) band -= 0.5;
+    if (diversity > 0.6) band += 0.25;
+    else if (diversity < 0.4) band -= 0.5;
+    band -= issues.filter(i => i.severity === 'high').length * 0.75;
+    band -= issues.filter(i => i.severity === 'medium').length * 0.5;
+    band -= issues.filter(i => i.severity === 'low').length * 0.25;
+    band += strengths.length * 0.1;
 
-    band = Math.max(3.0, Math.min(9.0, Math.round(band * 2) / 2));
+    band = Math.max(2.5, Math.min(9.0, Math.round(band * 2) / 2));
 
     feedback.push(`Word count: ${wordCount}`);
     feedback.push(`Discourse markers: ${foundMarkers.length}`);
