@@ -160,6 +160,7 @@
 
     let currentBoard = null;
     let caieLevel = null;
+    let edexcelLevel = null;
 
     function showBoard(board) {
         currentBoard = board;
@@ -171,7 +172,7 @@
         if (board === 'caie') {
             renderCAIESelector();
         } else if (board === 'edexcel') {
-            renderEdexcel();
+            renderEdexcelSelector();
         } else if (board === 'ib') {
             renderIB();
         } else if (board === 'ielts') {
@@ -202,6 +203,13 @@
             renderCAIESelector();
             document.querySelector('.section-title').textContent = 'CAIE';
             document.querySelector('.section-header p').textContent = 'Choose A-Level or IGCSE to browse subjects.';
+        } else if (currentBoard === 'edexcel' && edexcelLevel) {
+            // Currently showing Edexcel subjects, go back to Edexcel selector
+            edexcelLevel = null;
+            container.innerHTML = '';
+            renderEdexcelSelector();
+            document.querySelector('.section-title').textContent = 'Edexcel';
+            document.querySelector('.section-header p').textContent = 'Choose IAL, IGCSE or GCSE to browse subjects.';
         } else {
             // Go back to board selection
             showSelection();
@@ -234,6 +242,33 @@
         section.appendChild(renderSectionTitle(level === 'alevel' ? 'A-Level Subjects' : 'IGCSE Subjects'));
         section.appendChild(renderGrid(function(s) {
             return s.topics.some(function(t) { return level === 'alevel' ? t.alevel : t.igcse; });
+        }));
+
+        container.appendChild(section);
+    }
+
+    function showEdexcelLevel(level) {
+        edexcelLevel = level;
+        container.innerHTML = '';
+        const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
+        const subtitles = {
+            ial: 'Pearson Edexcel International A-Level syllabus coverage.',
+            igcse: 'Pearson Edexcel International GCSE syllabus coverage.',
+            gcse: 'Pearson Edexcel GCSE syllabus coverage.'
+        };
+        document.querySelector('.section-title').textContent = titles[level];
+        document.querySelector('.section-header p').textContent = subtitles[level];
+
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        section.appendChild(renderSectionTitle(level === 'ial' ? 'IAL Subjects' : level === 'igcse' ? 'IGCSE Subjects' : 'GCSE Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) {
+                if (level === 'ial') return t.edexcel_ial;
+                if (level === 'igcse') return t.edexcel_igcse;
+                return t.edexcel_gcse;
+            });
         }));
 
         container.appendChild(section);
@@ -318,26 +353,31 @@
 
     // CAIE now uses renderCAIESelector + showCAIELevel instead
 
-    function renderEdexcel() {
-        const section = document.createElement('div');
-        section.className = 'topic-section-group';
-
-        section.appendChild(renderSectionTitle('IAL (International A-Level)'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel_ial; });
-        }));
-
-        section.appendChild(renderSectionTitle('IGCSE'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel_igcse; });
-        }));
-
-        section.appendChild(renderSectionTitle('GCSE'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel_gcse; });
-        }));
-
-        container.appendChild(section);
+    function renderEdexcelSelector() {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '900px';
+        selector.innerHTML = `
+            <div class="board-card" onclick="showEdexcelLevel('ial')">
+                <div class="board-icon">🎓</div>
+                <h3>IAL</h3>
+                <p>International A-Level<br>Advanced Level Programme</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showEdexcelLevel('igcse')">
+                <div class="board-icon">🏫</div>
+                <h3>IGCSE</h3>
+                <p>International General Certificate<br>Secondary Education</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showEdexcelLevel('gcse')">
+                <div class="board-icon">📋</div>
+                <h3>GCSE</h3>
+                <p>General Certificate of<br>Secondary Education</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
     }
 
     function renderIB() {
