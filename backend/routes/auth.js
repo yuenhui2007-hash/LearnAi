@@ -5,6 +5,14 @@ const { users, activityLogs, isMongo, User, ActivityLog } = require('../config/d
 const { generateToken } = require('../middleware/auth');
 const router = express.Router();
 
+// Cookie options (httpOnly, secure in production)
+const COOKIE_OPTIONS = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'none',
+    maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+};
+
 // Register
 router.post('/register', async (req, res) => {
     const { email, password, name, role = 'student' } = req.body;
@@ -16,6 +24,7 @@ router.post('/register', async (req, res) => {
     }
 
     try {
+        // Check existing
         if (isMongo && User) {
             const existing = await User.findOne({ email });
             if (existing) return res.status(409).json({ error: 'Email already registered' });
@@ -25,9 +34,11 @@ router.post('/register', async (req, res) => {
             await user.save();
 
             const token = generateToken({ id: user._id.toString(), email: user.email, role: user.role });
-            return res.status(201).json({ user: { id: user._id.toString(), email: user.email, name: user.name, role: user.role }, token });
+            res.cookie('token', token, COOKIE_OPTIONS);
+            return res.status(201).json({ user: { id: user._id.toString(), email: user.email, name: user.name, role: user.role } });
         }
 
+        // In-memory fallback
         const existing = Array.from(users.values()).find(u => u.email === email);
         if (existing) return res.status(409).json({ error: 'Email already registered' });
 
@@ -43,7 +54,8 @@ router.post('/register', async (req, res) => {
         });
 
         const token = generateToken(user);
-        res.status(201).json({ user: { id, email, name, role }, token });
+        res.cookie('token', token, COOKIE_OPTIONS);
+        res.status(201).json({ user: { id, email, name, role } });
     } catch (err) {
         console.error('Register error:', err);
         res.status(500).json({ error: 'Registration failed' });
@@ -68,7 +80,8 @@ router.post('/login', async (req, res) => {
 
         const userId = user._id ? user._id.toString() : user.id;
         const token = generateToken({ id: userId, email: user.email, role: user.role });
-        res.json({ user: { id: userId, email: user.email, name: user.name, role: user.role }, token });
+        res.cookie('token', token, COOKIE_OPTIONS);
+        res.json({ user: { id: userId, email: user.email, name: user.name, role: user.role } });
     } catch (err) {
         console.error('Login error:', err);
         res.status(500).json({ error: 'Login failed' });
@@ -77,6 +90,7 @@ router.post('/login', async (req, res) => {
 
 // Logout
 router.post('/logout', (req, res) => {
+    res.clearCookie('token');
     res.json({ success: true });
 });
 

@@ -28,7 +28,7 @@ function checkAuth() {
       handleUser(null);
     });
   } else {
-    fetch(API_BASE + '/auth/me', { headers: getAuthHeaders() })
+    fetch(API_BASE + '/auth/me', { headers: getAuthHeaders(), credentials: 'include' })
       .then(function(res) {
         if (!res.ok) throw new Error('Not authenticated');
         return res.json();

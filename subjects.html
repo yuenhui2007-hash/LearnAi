@@ -15,8 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=6">
-<link rel="stylesheet" href="css/znotes-style.css?v=6">
+    <link rel="stylesheet" href="css/styles.css?v=10">
+<link rel="stylesheet" href="css/znotes-style.css?v=10">
     <style>
         .board-selection {
             display: grid;
@@ -103,7 +103,7 @@
 </head>
 <body>
     <nav class="navbar" id="navbar"></nav>
-<script src="js/nav.js?v=6"></script>
+<script src="js/nav.js?v=10"></script>
 
     <section class="subjects-section">
         <div class="container">
@@ -149,10 +149,10 @@
         </div>
     </section>
 
-    <script src="js/theme.js?v=6"></script>
-    <script src="js/data.js?v=6"></script>
-    <script src="js/app.js?v=6"></script>
-    <script src="js/search.js?v=6"></script>
+    <script src="js/theme.js?v=10"></script>
+    <script src="js/data.js?v=10"></script>
+    <script src="js/app.js?v=10"></script>
+    <script src="js/search.js?v=10"></script>
     <script>
     const boardSelection = document.getElementById('boardSelection');
     const subjectContent = document.getElementById('subjectContent');
@@ -160,6 +160,8 @@
 
     let currentBoard = null;
     let caieLevel = null;
+    let edexcelLevel = null;
+    let resourceType = null; // 'notes' or 'papers'
 
     function showBoard(board) {
         currentBoard = board;
@@ -171,7 +173,7 @@
         if (board === 'caie') {
             renderCAIESelector();
         } else if (board === 'edexcel') {
-            renderEdexcel();
+            renderEdexcelSelector();
         } else if (board === 'ib') {
             renderIB();
         } else if (board === 'ielts') {
@@ -196,12 +198,19 @@
 
     function handleBack() {
         if (currentBoard === 'caie' && caieLevel) {
-            // Currently showing CAIE subjects, go back to CAIE selector
+            // Currently showing resource selector, go back to CAIE selector
             caieLevel = null;
             container.innerHTML = '';
             renderCAIESelector();
             document.querySelector('.section-title').textContent = 'CAIE';
             document.querySelector('.section-header p').textContent = 'Choose A-Level or IGCSE to browse subjects.';
+        } else if (currentBoard === 'edexcel' && edexcelLevel) {
+            // Currently showing resource selector, go back to Edexcel selector
+            edexcelLevel = null;
+            container.innerHTML = '';
+            renderEdexcelSelector();
+            document.querySelector('.section-title').textContent = 'Edexcel';
+            document.querySelector('.section-header p').textContent = 'Choose IAL, IGCSE or GCSE to browse subjects.';
         } else {
             // Go back to board selection
             showSelection();
@@ -224,18 +233,34 @@
         caieLevel = level;
         container.innerHTML = '';
         document.querySelector('.section-title').textContent = level === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
-        document.querySelector('.section-header p').textContent = level === 'alevel'
-            ? 'Cambridge A-Level syllabus coverage.'
-            : 'Cambridge IGCSE syllabus coverage.';
+        document.querySelector('.section-header p').textContent = 'Select a subject to browse notes and topics.';
 
         const section = document.createElement('div');
         section.className = 'topic-section-group';
-
         section.appendChild(renderSectionTitle(level === 'alevel' ? 'A-Level Subjects' : 'IGCSE Subjects'));
         section.appendChild(renderGrid(function(s) {
             return s.topics.some(function(t) { return level === 'alevel' ? t.alevel : t.igcse; });
         }));
+        container.appendChild(section);
+    }
 
+    function showEdexcelLevel(level) {
+        edexcelLevel = level;
+        container.innerHTML = '';
+        const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
+        document.querySelector('.section-title').textContent = titles[level];
+        document.querySelector('.section-header p').textContent = 'Select a subject to browse notes and topics.';
+
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+        section.appendChild(renderSectionTitle(edexcelLevel === 'ial' ? 'IAL Subjects' : edexcelLevel === 'igcse' ? 'IGCSE Subjects' : 'GCSE Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) {
+                if (edexcelLevel === 'ial') return t.edexcel_ial;
+                if (edexcelLevel === 'igcse') return t.edexcel_igcse;
+                return t.edexcel_gcse;
+            });
+        }));
         container.appendChild(section);
     }
 
@@ -265,6 +290,9 @@
         var href = 'subject.html?id=' + key;
         if (caieLevel) {
             href += '&level=' + caieLevel;
+        }
+        if (edexcelLevel) {
+            href += '&level=' + edexcelLevel;
         }
         card.href = href;
         card.className = 'subject-card';
@@ -318,26 +346,31 @@
 
     // CAIE now uses renderCAIESelector + showCAIELevel instead
 
-    function renderEdexcel() {
-        const section = document.createElement('div');
-        section.className = 'topic-section-group';
-
-        section.appendChild(renderSectionTitle('IAL (International A-Level)'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel_ial; });
-        }));
-
-        section.appendChild(renderSectionTitle('IGCSE'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel_igcse; });
-        }));
-
-        section.appendChild(renderSectionTitle('GCSE'));
-        section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return t.edexcel_gcse; });
-        }));
-
-        container.appendChild(section);
+    function renderEdexcelSelector() {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '900px';
+        selector.innerHTML = `
+            <div class="board-card" onclick="showEdexcelLevel('ial')">
+                <div class="board-icon">🎓</div>
+                <h3>IAL</h3>
+                <p>International A-Level<br>Advanced Level Programme</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showEdexcelLevel('igcse')">
+                <div class="board-icon">🏫</div>
+                <h3>IGCSE</h3>
+                <p>International General Certificate<br>Secondary Education</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showEdexcelLevel('gcse')">
+                <div class="board-icon">📋</div>
+                <h3>GCSE</h3>
+                <p>General Certificate of<br>Secondary Education</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
     }
 
     function renderIB() {
@@ -358,6 +391,12 @@
         const intro = document.createElement('p');
         intro.style.cssText = 'text-align:center;color:var(--gray);margin-bottom:32px;font-size:0.95rem;';
         intro.textContent = 'Master all four IELTS skills. Click a skill to explore topics, tips, and practice materials.';
+
+        const practiceHub = document.createElement('a');
+        practiceHub.href = 'ielts-practice.html';
+        practiceHub.textContent = '→ Go to IELTS Practice Hub';
+        practiceHub.style.cssText = 'display:block;text-align:center;color:#6366f1;font-weight:600;margin-bottom:24px;font-size:1rem;text-decoration:none;';
+        wrapper.appendChild(practiceHub);
         wrapper.appendChild(intro);
 
         const grid = document.createElement('div');
@@ -392,8 +431,11 @@
         container.appendChild(wrapper);
     }
     </script>
-<script src="js/auth.js?v=6"></script>
-<script src="js/mascot.js?v=6"></script>
-<script src="js/pwa.js?v=6"></script>
+<script src="js/auth.js?v=10"></script>
+<script src="js/mascot.js?v=10"></script>
+<script src="js/pwa.js?v=10"></script>
 </body>
 </html>
+
+
+
