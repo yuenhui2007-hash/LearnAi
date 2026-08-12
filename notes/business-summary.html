@@ -3,28 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business (9609) — Syllabus Notes | LearnAI</title>
+    <title>Business (9609) — Complete Notes | LearnAI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css?v=12">
-    <link rel="stylesheet" href="../css/znotes-style.css?v=12">
     <style>
-        .summary-hero { background: linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%); color:#fff; padding:48px 24px; text-align:center; border-radius:0 0 24px 24px; margin-bottom:32px; }
-        .summary-hero h1 { font-size:2rem; margin:0 0 8px; }
-        .summary-hero p { opacity:0.9; margin:0; }
-        .summary-container { max-width:900px; margin:0 auto; padding:0 24px 48px; }
-        .unit-card { background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:24px; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
-        .unit-card h2 { color:#6366f1; margin:0 0 12px; font-size:1.25rem; }
-        .unit-card ul { margin:0; padding-left:20px; color:#475569; }
-        .unit-card li { margin-bottom:6px; }
-        .quick-formulas { background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:24px; margin-bottom:24px; }
-        .quick-formulas h3 { margin:0 0 12px; color:#0f172a; }
-        .formula-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
-        .formula-item { background:#fff; padding:12px 16px; border-radius:10px; border:1px solid #e2e8f0; font-size:0.9rem; }
-        .cta-box { background:linear-gradient(135deg,#10b981 0%,#059669 100%); color:#fff; border-radius:16px; padding:28px; text-align:center; margin-top:32px; }
-        .cta-box a { display:inline-block; margin-top:12px; padding:12px 28px; background:#fff; color:#059669; border-radius:10px; font-weight:600; text-decoration:none; }
-        .back-bar { padding:16px 24px; }
-        .back-bar a { color:#6366f1; text-decoration:none; font-weight:500; }
+        :root { --bus-primary:#6366f1; --bus-accent:#8b5cf6; --bus-success:#10b981; --bus-warning:#f59e0b; --bus-danger:#ef4444; }
+        * { box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#f8fafc; color:#1e293b; margin:0; }
+
+        /* Hero */
+        .bus-hero { background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4c1d95 100%); color:#fff; padding:64px 24px 48px; text-align:center; position:relative; overflow:hidden; }
+        .bus-hero::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%); animation:pulse 8s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+        .bus-hero h1 { font-size:2.4rem; font-weight:800; margin:0 0 12px; position:relative; }
+        .bus-hero p { font-size:1.1rem; opacity:0.85; margin:0; position:relative; }
+        .bus-hero .badge-row { display:flex; gap:10px; justify-content:center; margin-top:20px; flex-wrap:wrap; position:relative; }
+        .bus-hero .badge { background:rgba(255,255,255,0.12); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); padding:6px 16px; border-radius:50px; font-size:0.8rem; font-weight:600; }
+
+        /* Container */
+        .bus-container { max-width:960px; margin:0 auto; padding:32px 20px 64px; }
+
+        /* Formula Strip */
+        .formula-strip { background:#fff; border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05); border:1px solid #e2e8f0; }
+        .formula-strip h3 { margin:0 0 16px; font-size:1.1rem; color:#0f172a; display:flex; align-items:center; gap:8px; }
+        .formula-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
+        .formula-card { background:linear-gradient(135deg,#f1f5f9 0%,#e2e8f0 100%); padding:12px 14px; border-radius:10px; font-size:0.82rem; border-left:3px solid var(--bus-primary); transition:transform 0.15s; }
+        .formula-card:hover { transform:translateY(-2px); }
+        .formula-card strong { color:var(--bus-primary); display:block; margin-bottom:2px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px; }
+
+        /* Unit Cards */
+        .unit-card { background:#fff; border-radius:20px; margin-bottom:20px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.04); border:1px solid #e2e8f0; overflow:hidden; transition:box-shadow 0.2s; }
+        .unit-card:hover { box-shadow:0 10px 25px -5px rgba(0,0,0,0.08); }
+        .unit-header { padding:20px 24px; background:linear-gradient(90deg,var(--bus-primary),var(--bus-accent)); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; }
+        .unit-header h2 { margin:0; font-size:1.15rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+        .unit-header .toggle { font-size:1.4rem; transition:transform 0.3s; }
+        .unit-card.open .toggle { transform:rotate(180deg); }
+        .unit-body { max-height:0; overflow:hidden; transition:max-height 0.4s ease-out; }
+        .unit-card.open .unit-body { max-height:2000px; }
+        .unit-content { padding:20px 24px; }
+
+        /* Topic items */
+        .topic { margin-bottom:14px; padding-left:16px; border-left:3px solid #e2e8f0; transition:border-color 0.2s; }
+        .topic:hover { border-left-color:var(--bus-primary); }
+        .topic h4 { margin:0 0 6px; font-size:0.95rem; color:#0f172a; font-weight:700; }
+        .topic p { margin:0; font-size:0.88rem; color:#475569; line-height:1.6; }
+        .topic .tag { display:inline-block; background:#ede9fe; color:#5b21b6; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:600; margin-top:6px; }
+
+        /* Case Study Box */
+        .case-box { background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%); border:1px solid #a7f3d0; border-radius:12px; padding:16px; margin:16px 0; }
+        .case-box h5 { margin:0 0 8px; color:#065f46; font-size:0.85rem; display:flex; align-items:center; gap:6px; }
+        .case-box p { margin:0; font-size:0.85rem; color:#047857; line-height:1.5; }
+
+        /* Did You Know */
+        .dyk { background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 100%); border:1px solid #fed7aa; border-radius:12px; padding:14px 16px; margin:14px 0; display:flex; gap:12px; align-items:flex-start; }
+        .dyk-icon { font-size:1.4rem; flex-shrink:0; }
+        .dyk-text { font-size:0.85rem; color:#7c2d12; line-height:1.5; }
+        .dyk-text strong { color:#9a3412; }
+
+        /* CTA */
+        .cta-box { background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); color:#fff; border-radius:20px; padding:40px 32px; text-align:center; margin-top:36px; position:relative; overflow:hidden; }
+        .cta-box::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .cta-box h3 { margin:0 0 10px; font-size:1.4rem; position:relative; }
+        .cta-box p { margin:0 0 20px; opacity:0.8; font-size:0.95rem; position:relative; }
+        .cta-box a { display:inline-block; padding:14px 32px; background:#fff; color:#0f172a; border-radius:12px; font-weight:700; text-decoration:none; position:relative; transition:transform 0.15s,box-shadow 0.15s; }
+        .cta-box a:hover { transform:translateY(-2px); box-shadow:0 10px 20px -5px rgba(0,0,0,0.2); }
+
+        .back-bar { padding:16px 24px; background:#fff; border-bottom:1px solid #e2e8f0; }
+        .back-bar a { color:var(--bus-primary); text-decoration:none; font-weight:600; font-size:0.9rem; display:inline-flex; align-items:center; gap:6px; }
+
+        @media (max-width:640px) {
+            .bus-hero h1 { font-size:1.7rem; }
+            .formula-grid { grid-template-columns:1fr; }
+            .unit-header h2 { font-size:1rem; }
+        }
     </style>
 </head>
 <body>
@@ -35,129 +87,242 @@
         <a href="../subject.html?id=business">← Back to Business</a>
     </div>
 
-    <div class="summary-hero">
-        <h1>💼 Business (9609)</h1>
-        <p>Complete A-Level Syllabus Notes — Summarised</p>
+    <div class="bus-hero">
+        <h1>💼 Business Studies</h1>
+        <p>Cambridge A-Level 9609 — The complete playbook</p>
+        <div class="badge-row">
+            <span class="badge">📊 6 Units</span>
+            <span class="badge">📝 Essay Models</span>
+            <span class="badge">💡 Case Studies</span>
+            <span class="badge">🔢 All Formulas</span>
+        </div>
     </div>
 
-    <div class="summary-container">
-        <div class="quick-formulas">
-            <h3>📊 Quick Formula Sheet</h3>
+    <div class="bus-container">
+        <div class="formula-strip">
+            <h3>⚡ Formula Cheat Sheet</h3>
             <div class="formula-grid">
-                <div class="formula-item"><strong>Market Share</strong> = (Firm's Sales / Total Market Sales) × 100</div>
-                <div class="formula-item"><strong>Market Growth</strong> = [(New − Old) / Old] × 100</div>
-                <div class="formula-item"><strong>Gross Profit Margin</strong> = (Gross Profit / Revenue) × 100</div>
-                <div class="formula-item"><strong>Net Profit Margin</strong> = (Net Profit / Revenue) × 100</div>
-                <div class="formula-item"><strong>ROCE</strong> = (Operating Profit / Capital Employed) × 100</div>
-                <div class="formula-item"><strong>Current Ratio</strong> = Current Assets / Current Liabilities</div>
-                <div class="formula-item"><strong>Acid Test</strong> = (CA − Stock) / CL</div>
-                <div class="formula-item"><strong>Break-even</strong> = Fixed Costs / Contribution per unit</div>
-                <div class="formula-item"><strong>Contribution</strong> = Selling Price − Variable Cost</div>
-                <div class="formula-item"><strong>NPV</strong> = Σ [Cash Flow / (1+r)ⁿ]</div>
-                <div class="formula-item"><strong>Labour Productivity</strong> = Output / Number of Employees</div>
-                <div class="formula-item"><strong>Capacity Utilisation</strong> = (Actual Output / Max Capacity) × 100</div>
+                <div class="formula-card"><strong>Market Share</strong> (Firm Sales ÷ Total Market) × 100</div>
+                <div class="formula-card"><strong>Market Growth</strong> [(New − Old) ÷ Old] × 100</div>
+                <div class="formula-card"><strong>Gross Profit Margin</strong> (Gross Profit ÷ Revenue) × 100</div>
+                <div class="formula-card"><strong>Net Profit Margin</strong> (Net Profit ÷ Revenue) × 100</div>
+                <div class="formula-card"><strong>ROCE</strong> (Operating Profit ÷ Capital Employed) × 100</div>
+                <div class="formula-card"><strong>Current Ratio</strong> Current Assets ÷ Current Liabilities</div>
+                <div class="formula-card"><strong>Acid Test</strong> (CA − Stock) ÷ CL</div>
+                <div class="formula-card"><strong>Break-even</strong> Fixed Costs ÷ Contribution per unit</div>
+                <div class="formula-card"><strong>Contribution</strong> Selling Price − Variable Cost</div>
+                <div class="formula-card"><strong>NPV</strong> Σ [Cash Flow ÷ (1+r)ⁿ]</div>
+                <div class="formula-card"><strong>Labour Productivity</strong> Output ÷ Number of Employees</div>
+                <div class="formula-card"><strong>Capacity Utilisation</strong> (Actual ÷ Max Capacity) × 100</div>
             </div>
         </div>
 
-        <div class="unit-card">
-            <h2>Unit 1 — Business and its Environment</h2>
-            <ul>
-                <li><strong>Scarcity & Choice:</strong> Unlimited wants vs limited resources; opportunity cost</li>
-                <li><strong>Economic Systems:</strong> Free market, planned, mixed — features & evaluation</li>
-                <li><strong>Business Objectives:</strong> Profit max, sales max, survival, CSR, satisficing</li>
-                <li><strong>Stakeholders:</strong> Internal (employees, managers, shareholders) vs External (government, suppliers, community)</li>
-                <li><strong>Business Classification:</strong> By sector (primary, secondary, tertiary), size, ownership (sole trader, partnership, Ltd, Plc)</li>
-                <li><strong>External Environment:</strong> PESTLE analysis — Political, Economic, Social, Technological, Legal, Environmental</li>
-                <li><strong>Internal Growth:</strong> Organic growth through reinvesting profits</li>
-                <li><strong>External Growth:</strong> Mergers (horizontal, vertical, conglomerate) & takeovers</li>
-            </ul>
+        <div class="unit-card open" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🏢 Unit 1 — Business & Its Environment</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🔑 The Economic Problem</h4>
+                        <p>Unlimited wants + Limited resources = <strong>Scarcity</strong>. Every choice has an <strong>opportunity cost</strong> — the next best alternative you give up.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>⚖️ Economic Systems</h4>
+                        <p><strong>Free market:</strong> Private ownership, profit motive, consumer sovereignty (e.g., Singapore). <strong>Planned:</strong> Government controls everything (e.g., North Korea). <strong>Mixed:</strong> Most real-world economies combine both.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🎯 Business Objectives</h4>
+                        <p>Profit maximisation, sales maximisation, survival, satisficing (doing "enough"), CSR. Objectives change as businesses grow — a startup focuses on survival; a multinational on shareholder returns.</p>
+                        <span class="tag">Eval tip: Satisficing is realistic but lacks ambition</span>
+                    </div>
+                    <div class="topic">
+                        <h4>👥 Stakeholders</h4>
+                        <p><strong>Internal:</strong> Employees, managers, shareholders. <strong>External:</strong> Government, suppliers, customers, community, pressure groups. Conflicts arise — shareholders want dividends; employees want higher wages.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📈 External Growth</h4>
+                        <p><strong>Horizontal integration</strong> (same industry, same stage — e.g., Facebook buying Instagram). <strong>Vertical:</strong> backward (closer to raw materials) or forward (closer to consumer). <strong>Conglomerate:</strong> unrelated diversification.</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>🌍 Case Study: Disney Acquires Fox</h5>
+                        <p>Disney's $71.3bn acquisition of 21st Century Fox (2019) was horizontal integration — combining two entertainment giants to dominate streaming content and reduce competition.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="unit-card">
-            <h2>Unit 2 — Marketing</h2>
-            <ul>
-                <li><strong>Marketing Mix (4Ps):</strong> Product, Price, Place, Promotion (+ People, Process, Physical Evidence for services)</li>
-                <li><strong>Market Research:</strong> Primary (surveys, focus groups) vs Secondary (existing data); Qualitative vs Quantitative</li>
-                <li><strong>Segmentation:</strong> Demographic, geographic, psychographic, behavioural</li>
-                <li><strong>Targeting:</strong> Niche vs Mass marketing; Differentiated vs Undifferentiated</li>
-                <li><strong>Positioning:</strong> Perceptual maps; Unique Selling Proposition (USP)</li>
-                <li><strong>Product Life Cycle:</strong> Introduction → Growth → Maturity → Decline; strategies at each stage</li>
-                <li><strong>Boston Matrix:</strong> Stars, Cash Cows, Question Marks, Dogs</li>
-                <li><strong>Pricing Strategies:</strong> Penetration, skimming, cost-plus, competitive, psychological, promotional</li>
-                <li><strong>Promotion:</strong> Above-the-line (TV, radio, print) vs Below-the-line (sales promo, direct mail, social media)</li>
-                <li><strong>Digital Marketing:</strong> SEO, PPC, content marketing, influencer marketing, email marketing</li>
-                <li><strong>E-commerce:</strong> Benefits (global reach, 24/7, lower costs) vs Drawbacks (security, lack of personal touch)</li>
-            </ul>
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>📢 Unit 2 — Marketing</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🎨 The Marketing Mix (4Ps + 3Ps)</h4>
+                        <p><strong>Product</strong> (features, branding, packaging), <strong>Price</strong> (strategies below), <strong>Place</strong> (distribution channels), <strong>Promotion</strong> (advertising, PR, sales). For services add: <strong>People, Process, Physical Evidence</strong>.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>💰 Pricing Strategies</h4>
+                        <p><strong>Penetration:</strong> Low price to enter market (Netflix). <strong>Skimming:</strong> High price early adopters (Apple iPhone). <strong>Psychological:</strong> £9.99 not £10. <strong>Promotional:</strong> Loss leaders to attract customers.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📊 Boston Matrix</h4>
+                        <p><strong>Stars</strong> (high growth, high share — invest), <strong>Cash Cows</strong> (low growth, high share — milk for cash), <strong>Question Marks</strong> (high growth, low share — risky), <strong>Dogs</strong> (low growth, low share — divest).</p>
+                        <span class="tag">Exam trap: Don't keep Dogs hoping they'll improve</span>
+                    </div>
+                    <div class="topic">
+                        <h4>🔄 Product Life Cycle</h4>
+                        <p>Introduction → Growth → Maturity → Decline. At <strong>Introduction</strong>: heavy promotion, skimming/penetration. At <strong>Maturity</strong>: extension strategies (new flavours, new markets). At <strong>Decline</strong>: harvest or divest.</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> Coca-Cola uses <strong>product extension</strong> to keep its 130-year-old brand in the "Maturity" stage — Zero Sugar, Cherry, Vanilla, limited editions keep sales growing.</div>
+                    </div>
+                    <div class="topic">
+                        <h4>📱 Digital Marketing</h4>
+                        <p><strong>SEO</strong> (organic search ranking), <strong>PPC</strong> (pay-per-click ads), <strong>Influencer marketing</strong> (trusted voices), <strong>Content marketing</strong> (blogs, videos), <strong>Email marketing</strong> (highest ROI of any channel).</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="unit-card">
-            <h2>Unit 3 — Finance and Accounting</h2>
-            <ul>
-                <li><strong>Sources of Finance:</strong> Internal (retained profit, sale of assets) vs External (share capital, loans, overdrafts, debentures, venture capital, crowdfunding)</li>
-                <li><strong>Short vs Long-term:</strong> Working capital needs vs capital investment</li>
-                <li><strong>Cash Flow:</strong> Cash flow forecasting; causes of cash flow problems; solutions (debt factoring, sale and leaseback, overdrafts)</li>
-                <li><strong>Working Capital:</strong> Current assets − Current liabilities; management of inventory, receivables, payables</li>
-                <li><strong>Income Statement:</strong> Revenue − Cost of Sales = Gross Profit; Gross Profit − Expenses = Operating Profit; Operating Profit − Interest & Tax = Net Profit</li>
-                <li><strong>Statement of Financial Position:</strong> Assets (NCA + CA) = Equity + Liabilities (NCL + CL)</li>
-                <li><strong>Ratio Analysis:</strong> Profitability (GPM, NPM, ROCE), Liquidity (Current, Acid Test), Efficiency (Inventory turnover, Receivables days, Payables days), Gearing (Debt/Equity, Interest cover), Investor (EPS, Dividend yield, P/E)</li>
-                <li><strong>Investment Appraisal:</strong> Payback, ARR, NPV (with discount factors), IRR</li>
-                <li><strong>Break-even Analysis:</strong> Break-even output, margin of safety, contribution, C/S ratio</li>
-                <li><strong>Budgets:</strong> Purposes (planning, control, motivation, coordination); variance analysis (favourable vs adverse)</li>
-            </ul>
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>💵 Unit 3 — Finance & Accounting</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🏦 Sources of Finance</h4>
+                        <p><strong>Internal:</strong> Retained profit (no interest, no dilution), sale of assets. <strong>External:</strong> Share capital (permanent, dilutes control), loans (interest but keep control), overdrafts (flexible, expensive), debentures (long-term loans), venture capital (high growth potential), crowdfunding (validation + funding).</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📉 Cash Flow Problems & Solutions</h4>
+                        <p>Causes: Overtrading, late payments, seasonal demand, overstocking. Solutions: <strong>Debt factoring</strong> (sell receivables), <strong>sale and leaseback</strong> (sell assets, rent them back), overdrafts, improving credit control.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📊 Key Financial Statements</h4>
+                        <p><strong>Income Statement:</strong> Revenue − Cost of Sales = <strong>Gross Profit</strong>. Gross Profit − Expenses = <strong>Operating Profit</strong>. Operating Profit − Interest & Tax = <strong>Net Profit</strong>. <br><strong>Statement of Financial Position:</strong> Assets = Equity + Liabilities.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🔍 Ratio Analysis</h4>
+                        <p><strong>Profitability:</strong> GPM, NPM, ROCE. <strong>Liquidity:</strong> Current ratio (1.5–2.0 ideal), Acid test (1.0+ ideal). <strong>Efficiency:</strong> Inventory days, Receivables days, Payables days. <strong>Gearing:</strong> Debt/Equity ratio — high gearing = high risk but potentially high return.</p>
+                        <span class="tag">Exam tip: Always compare ratios over time or against competitors</span>
+                    </div>
+                    <div class="case-box">
+                        <h5>⚠️ Case Study: Thomas Cook Collapse (2019)</h5>
+                        <p>Thomas Cook had £1.7bn debt (high gearing) and negative cash flow for years. Despite selling assets, they couldn't meet obligations. Lesson: High gearing is dangerous in volatile industries.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>💹 Investment Appraisal</h4>
+                        <p><strong>Payback:</strong> How long to recover initial investment? Simple but ignores time value of money. <strong>NPV:</strong> Discount future cash flows — if positive, accept. <strong>ARR:</strong> Average annual profit ÷ average investment. <strong>IRR:</strong> Discount rate where NPV = 0.</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> Amazon didn't turn a profit for <strong>7 years</strong> (1997–2003) because it reinvested everything into growth. Investors accepted this because of the company's <strong>cash flow</strong> and <strong>market share trajectory</strong>.</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="unit-card">
-            <h2>Unit 4 — Operations Management</h2>
-            <ul>
-                <li><strong>Operations Role:</strong> Transforming inputs into outputs; adding value</li>
-                <li><strong>Methods of Production:</strong> Job, Batch, Flow (mass & continuous); cell production, lean production</li>
-                <li><strong>Lean Production:</strong> JIT (Just in Time), Kaizen (continuous improvement), TQM (Total Quality Management), Kanban, Andon</li>
-                <li><strong>Quality:</strong> Quality control (inspection) vs Quality assurance (systems) vs TQM (culture)</li>
-                <li><strong>Capacity:</strong> Capacity utilisation; ways to increase capacity (overtime, subcontracting, new premises)</li>
-                <li><strong>Stock Control:</strong> Buffer stock, reorder level, reorder quantity, lead time; JIT pros & cons</li>
-                <li><strong>Location:</strong> Factors (market access, labour, costs, infrastructure, government incentives)</li>
-                <li><strong>Scale:</strong> Internal economies of scale (technical, purchasing, managerial, financial, marketing, risk-bearing); Diseconomies of scale</li>
-                <li><strong>Innovation & R&D:</strong> Product vs Process innovation; importance of R&D for competitiveness</li>
-                <li><strong>Technology:</strong> CAD, CAM, CIM, AI, automation, robotics</li>
-                <li><strong>Sustainability:</strong> Triple bottom line (People, Planet, Profit); circular economy; CSR</li>
-            </ul>
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>⚙️ Unit 4 — Operations Management</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🏭 Methods of Production</h4>
+                        <p><strong>Job:</strong> One-off, customised (bespoke furniture). <strong>Batch:</strong> Groups of identical items (bread, clothing). <strong>Flow:</strong> Continuous production (oil refining, soft drinks). <strong>Cell production:</strong> Teams responsible for complete units (Toyota).</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🎯 Lean Production</h4>
+                        <p><strong>JIT:</strong> Materials arrive exactly when needed — reduces waste but risky if supply chain fails. <strong>Kaizen:</strong> Continuous improvement from all employees. <strong>TQM:</strong> Quality is everyone's responsibility, not just inspectors. <strong>Kanban:</strong> Visual signals control production flow.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📐 Economies of Scale</h4>
+                        <p><strong>Purchasing:</strong> Bulk-buy discounts. <strong>Technical:</strong> Indivisibility of equipment. <strong>Managerial:</strong> Specialists improve efficiency. <strong>Financial:</strong> Better interest rates. <strong>Marketing:</strong> Spreading fixed costs over more units. <strong>Risk-bearing:</strong> Diversification across products/markets.</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>🚗 Case Study: Toyota Production System</h5>
+                        <p>Toyota invented <strong>Lean Manufacturing</strong> after WWII when resources were scarce. Workers can stop the entire production line (Andon cord) if they spot defects. Result: Higher quality, less waste, lower costs — now copied worldwide.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🌱 Sustainability</h4>
+                        <p><strong>Triple Bottom Line:</strong> People (social impact), Planet (environmental), Profit (financial). <strong>Circular economy:</strong> Design out waste — products are reused, repaired, remanufactured, recycled.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="unit-card">
-            <h2>Unit 5 — People in Organisations</h2>
-            <ul>
-                <li><strong>Organisational Structure:</strong> Hierarchical (tall) vs Flat vs Matrix; span of control, chain of command, delegation, centralisation vs decentralisation</li>
-                <li><strong>Motivation Theories:</strong> Taylor (scientific management), Maslow (hierarchy of needs), Herzberg (two-factor theory: motivators & hygiene factors), Mayo (human relations), Adams (equity theory), Vroom (expectancy theory)</li>
-                <li><strong>Leadership Styles:</strong> Autocratic, Democratic, Laissez-faire, Paternalistic, Situational (Tannenbaum & Schmidt, Blake & Mouton)</li>
-                <li><strong>Recruitment:</strong> Job analysis, job description, person specification; internal vs external recruitment</li>
-                <li><strong>Selection:</strong> Application forms, CVs, interviews, assessment centres, psychometric tests</li>
-                <li><strong>Training:</strong> Induction, on-the-job, off-the-job; benefits (productivity, motivation, retention)</li>
-                <li><strong>Remuneration:</strong> Time-based, piece-rate, commission, salary, profit-sharing, fringe benefits</li>
-                <li><strong>Employment Legislation:</strong> Health & safety, equal opportunities, minimum wage, working time directives</li>
-                <li><strong>Communication:</strong> Formal vs informal; vertical, horizontal, diagonal; barriers and solutions</li>
-                <li><strong>Industrial Relations:</strong> Trade unions, collective bargaining, conciliation, arbitration, industrial action</li>
-            </ul>
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>👤 Unit 5 — People in Organisations</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🏗️ Organisational Structure</h4>
+                        <p><strong>Tall (hierarchical):</strong> Many layers, narrow span of control, clear promotion paths but slow communication. <strong>Flat:</strong> Few layers, wide span, faster decisions but managers overstretched. <strong>Matrix:</strong> Dual reporting (project + functional) — flexible but confusing.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🧠 Motivation Theories</h4>
+                        <p><strong>Taylor:</strong> Pay by output — efficient but dehumanising. <strong>Maslow:</strong> Hierarchy from physiological → safety → social → esteem → self-actualisation. <strong>Herzberg:</strong> Hygiene factors (prevent dissatisfaction) vs Motivators (create satisfaction). <strong>Mayo:</strong> Social factors matter more than money.</p>
+                        <span class="tag">Eval tip: Herzberg is most useful for managers — fix hygiene first, then add motivators</span>
+                    </div>
+                    <div class="topic">
+                        <h4>👔 Leadership Styles</h4>
+                        <p><strong>Autocratic:</strong> Decisions alone — fast but demotivating. <strong>Democratic:</strong> Consults team — better decisions but slower. <strong>Laissez-faire:</strong> Hands-off — works for experts, fails for novices. <strong>Situational:</strong> Adapt style to circumstances (Tannenbaum & Schmidt continuum).</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> Google studied 180 teams and found <strong>psychological safety</strong> (feeling safe to take risks) was the #1 predictor of team success — more than talent, structure, or leadership style.</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="unit-card">
-            <h2>Unit 6 — Strategic Management (A2)</h2>
-            <ul>
-                <li><strong>Strategic Analysis:</strong> SWOT (internal Strengths/Weaknesses, external Opportunities/Threats); PESTLE; Porter's Five Forces; Boston Matrix; Ansoff Matrix</li>
-                <li><strong>Strategic Choice:</strong> Ansoff Matrix (Market Penetration, Product Development, Market Development, Diversification); Investment appraisal; Decision trees (expected values)</li>
-                <li><strong>Strategic Implementation:</strong> Managing change (Lewin's model: unfreeze → change → refreeze); Kotter's 8-step change model; overcoming resistance</li>
-                <li><strong>Corporate Culture:</strong> Power, Role, Task, Person cultures (Handy); importance for strategy</li>
-                <li><strong>Globalisation:</strong> Drivers (technology, trade liberalisation, MNCs); impact on businesses; glocalisation</li>
-                <li><strong>International Trade:</strong> Free trade vs Protectionism (tariffs, quotas, subsidies, embargoes); WTO, trading blocs (EU, ASEAN, USMCA)</li>
-                <li><strong>Exchange Rates:</strong> Appreciation vs Depreciation; impact on exporters and importers</li>
-                <li><strong>Ethics & CSR:</strong> Ethical decision-making; stakeholder vs shareholder approach; sustainability reporting</li>
-                <li><strong>Contingency Planning:</strong> Risk assessment; crisis management; business continuity</li>
-            </ul>
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🌐 Unit 6 — Strategic Management (A2)</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🎯 Strategic Analysis Tools</h4>
+                        <p><strong>SWOT:</strong> Internal Strengths/Weaknesses + External Opportunities/Threats. <strong>PESTLE:</strong> Macro environment scan. <strong>Porter's Five Forces:</strong> Threat of new entrants, bargaining power of suppliers, bargaining power of buyers, threat of substitutes, competitive rivalry.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📈 Ansoff Matrix</h4>
+                        <p><strong>Market Penetration</strong> (existing product, existing market — safest). <strong>Product Development</strong> (new product, existing market). <strong>Market Development</strong> (existing product, new market). <strong>Diversification</strong> (new product, new market — riskiest).</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🔄 Managing Change</h4>
+                        <p><strong>Lewin's model:</strong> Unfreeze → Change → Refreeze. <strong>Kotter's 8 steps:</strong> Create urgency, form coalition, create vision, communicate, empower, generate short-term wins, consolidate, anchor in culture. Resistance comes from fear, habit, loss of status, misunderstanding.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🌍 Globalisation</h4>
+                        <p>Drivers: Technology, trade liberalisation, MNCs, transport improvements. Impact: Access to larger markets but increased competition. <strong>Glocalisation:</strong> Think global, act local (McDonald's adapts menus per country).</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>🍔 Case Study: McDonald's Glocalisation</h5>
+                        <p>McDonald's sells <strong>McSpicy Paneer</strong> in India (no beef), <strong>Teriyaki McBurger</strong> in Japan, and <strong>McArabia</strong> in the Middle East. Same brand, locally adapted products — the essence of glocalisation.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="cta-box">
             <h3>📚 Want the Full Notes?</h3>
-            <p>Worked examples, case studies, essay model answers, and more.</p>
-            <a href="../alevel-notes/business/ALEVEL_BUSINESS_NOTES.md">Open Complete Notes</a>
+            <p>Worked examples, case studies, essay model answers, and all formulas explained in depth.</p>
+            <a href="../alevel-notes/business/ALEVEL_BUSINESS_NOTES.md">Open Complete Notes →</a>
         </div>
     </div>
 
