@@ -302,6 +302,29 @@
         container.appendChild(section);
     }
 
+    function renderResourceSelector(board, level) {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '600px';
+        var onNotes = board === 'caie' ? 'showCAIEResources("notes")' : 'showEdexcelResources("notes")';
+        var onPapers = board === 'caie' ? 'showCAIEResources("papers")' : 'showEdexcelResources("papers")';
+        selector.innerHTML = `
+            <div class="board-card" onclick="` + onNotes + `">
+                <div class="board-icon">📝</div>
+                <h3>Notes</h3>
+                <p>Comprehensive topic notes<br>and study materials</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="` + onPapers + `">
+                <div class="board-icon">📄</div>
+                <h3>Past Year Papers</h3>
+                <p>Previous examination papers<br>with mark schemes</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
+    }
+
     function renderCAIESelector() {
         const selector = document.createElement('div');
         selector.className = 'board-selection';
@@ -325,15 +348,18 @@
 
     function createSubjectCard(key, s) {
         const card = document.createElement('a');
-        var href = 'subject.html?id=' + key;
-        if (caieLevel) {
-            href += '&level=' + caieLevel;
-        }
-        if (edexcelLevel) {
-            href += '&level=' + edexcelLevel;
-        }
-        if (resourceType) {
-            href += '&type=' + resourceType;
+        var href;
+        if (resourceType === 'papers' && caieLevel) {
+            // Link directly to dedicated past papers page
+            href = 'papers/' + key + '-' + caieLevel + '.html';
+        } else {
+            href = 'subject.html?id=' + key;
+            if (caieLevel) {
+                href += '&level=' + caieLevel;
+            }
+            if (edexcelLevel) {
+                href += '&level=' + edexcelLevel;
+            }
         }
         card.href = href;
         card.className = 'subject-card';
@@ -383,29 +409,6 @@
         heading.className = 'section-divider';
         heading.textContent = title;
         return heading;
-    }
-
-    function renderResourceSelector(board, level) {
-        const selector = document.createElement('div');
-        selector.className = 'board-selection';
-        selector.style.maxWidth = '600px';
-        var onNotes = board === 'caie' ? 'showCAIEResources("notes")' : 'showEdexcelResources("notes")';
-        var onPapers = board === 'caie' ? 'showCAIEResources("papers")' : 'showEdexcelResources("papers")';
-        selector.innerHTML = `
-            <div class="board-card" onclick="` + onNotes + `">
-                <div class="board-icon">📝</div>
-                <h3>Notes</h3>
-                <p>Comprehensive topic notes<br>and study materials</p>
-                <div class="board-arrow">→</div>
-            </div>
-            <div class="board-card" onclick="` + onPapers + `">
-                <div class="board-icon">📄</div>
-                <h3>Past Year Papers</h3>
-                <p>Previous examination papers<br>with mark schemes</p>
-                <div class="board-arrow">→</div>
-            </div>
-        `;
-        container.appendChild(selector);
     }
 
     // CAIE now uses renderCAIESelector + showCAIELevel instead
@@ -494,3 +497,6 @@
 <script src="js/pwa.js?v=6"></script>
 </body>
 </html>
+
+
+

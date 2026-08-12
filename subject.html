@@ -53,7 +53,15 @@
         if (levelFilter === 'alevel') titleText += ' — A-Level';
         else if (levelFilter === 'igcse') titleText += ' — IGCSE';
         document.getElementById('subjectTitle').textContent = titleText;
-        document.getElementById('subjectCode').textContent = subject.code;
+        var codeText = subject.code;
+        if (levelFilter === 'alevel') {
+            var parts = codeText.split('·');
+            codeText = parts[0].trim();
+        } else if (levelFilter === 'igcse') {
+            var parts = codeText.split('·');
+            codeText = parts[1] ? parts[1].trim() : codeText;
+        }
+        document.getElementById('subjectCode').textContent = codeText;
 
         var container = document.getElementById('topicSections');
 
