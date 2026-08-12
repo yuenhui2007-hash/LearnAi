@@ -298,12 +298,19 @@
         card.href = href;
         card.className = 'subject-card';
 
-        // Filter code based on CAIE level
+        // Filter code based on level (CAIE or Edexcel)
         var displayCode = s.code;
         if (caieLevel === 'alevel' && s.code.indexOf('·') > -1) {
             displayCode = s.code.split('·')[0].trim();
         } else if (caieLevel === 'igcse' && s.code.indexOf('·') > -1) {
             displayCode = s.code.split('·')[1].trim();
+        } else if (edexcelLevel === 'ial' && s.code.indexOf('·') > -1) {
+            displayCode = s.code.split('·')[0].trim();
+        } else if (edexcelLevel === 'igcse' && s.code.indexOf('·') > -1) {
+            displayCode = s.code.split('·')[1].trim();
+        } else if (edexcelLevel === 'gcse' && s.code.indexOf('·') > -1) {
+            var parts = s.code.split('·');
+            displayCode = parts.length >= 3 ? parts[2].trim() : s.code;
         }
 
         card.innerHTML = `

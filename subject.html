@@ -52,6 +52,8 @@
         var titleText = subject.icon + ' ' + subject.name;
         if (levelFilter === 'alevel') titleText += ' — A-Level';
         else if (levelFilter === 'igcse') titleText += ' — IGCSE';
+        else if (levelFilter === 'ial') titleText += ' — IAL';
+        else if (levelFilter === 'gcse') titleText += ' — GCSE';
         document.getElementById('subjectTitle').textContent = titleText;
         var codeText = subject.code;
         if (levelFilter === 'alevel') {
@@ -60,6 +62,12 @@
         } else if (levelFilter === 'igcse') {
             var parts = codeText.split('·');
             codeText = parts[1] ? parts[1].trim() : codeText;
+        } else if (levelFilter === 'ial') {
+            var parts = codeText.split('·');
+            codeText = parts[0].trim();
+        } else if (levelFilter === 'gcse') {
+            var parts = codeText.split('·');
+            codeText = parts.length >= 3 ? parts[2].trim() : codeText;
         }
         document.getElementById('subjectCode').textContent = codeText;
 
