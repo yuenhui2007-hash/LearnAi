@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Practice Hub — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=8">
+<style>
+.ielts-hub { padding: 120px 0 60px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); min-height: 100vh; color: #fff; }
+.ielts-hub-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hub-hero { text-align: center; padding: 40px 0 60px; }
+.hub-hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 12px; background: linear-gradient(135deg, #818cf8, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hub-hero p { font-size: 1.15rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+.hub-stats { display: flex; justify-content: center; gap: 48px; margin-top: 32px; flex-wrap: wrap; }
+.hub-stat { text-align: center; }
+.hub-stat .num { font-size: 2rem; font-weight: 800; color: #818cf8; }
+.hub-stat .lbl { font-size: 0.85rem; color: #64748b; }
+
+/* Skill Cards */
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 48px; }
+@media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr; } }
+
+.skill-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 32px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 24px 24px 0 0;
+}
+.skill-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
+
+.skill-card.listening::before { background: linear-gradient(90deg, #6366f1, #818cf8); }
+.skill-card.reading::before { background: linear-gradient(90deg, #10b981, #34d399); }
+.skill-card.writing::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.skill-card.speaking::before { background: linear-gradient(90deg, #ec4899, #f472b6); }
+
+.skill-icon-wrap {
+  width: 64px; height: 64px;
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.skill-card.listening .skill-icon-wrap { background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(129,140,248,0.2)); }
+.skill-card.reading .skill-icon-wrap { background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(52,211,153,0.2)); }
+.skill-card.writing .skill-icon-wrap { background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(251,191,36,0.2)); }
+.skill-card.speaking .skill-icon-wrap { background: linear-gradient(135deg, rgba(236,72,153,0.2), rgba(244,114,182,0.2)); }
+
+.skill-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.skill-card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+
+.skill-meta { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.skill-meta span { font-size: 0.8rem; color: #64748b; background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 8px; }
+
+.skill-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.skill-actions a {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-practice {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: #fff;
+}
+.btn-practice:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+.btn-info {
+  background: rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.btn-info:hover { background: rgba(255,255,255,0.12); }
+
+/* Features Section */
+.features-section { margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.06); }
+.features-section h2 { text-align: center; font-size: 1.8rem; margin-bottom: 32px; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
+.feature-item {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+.feature-item .f-icon { font-size: 2rem; margin-bottom: 12px; }
+.feature-item h4 { font-size: 1.1rem; margin-bottom: 8px; }
+.feature-item p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+
+/* Tips Section */
+.tips-section { margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.06); }
+.tips-section h2 { text-align: center; font-size: 1.8rem; margin-bottom: 32px; }
+.tips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 768px) { .tips-grid { grid-template-columns: 1fr; } }
+.tip-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 24px;
+  border-left: 3px solid #6366f1;
+}
+.tip-card h4 { font-size: 1rem; margin-bottom: 8px; color: #cbd5e1; }
+.tip-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  text-decoration: none;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+.back-link:hover { color: #cbd5e1; }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=8"></script>
+
+<section class="ielts-hub">
+  <div class="ielts-hub-container">
+
+    <a href="subjects.html" class="back-link">← Back to Subjects</a>
+
+    <div class="hub-hero">
+      <h1>IELTS Practice Hub</h1>
+      <p>Full-length practice tests with instant scoring, timed simulations, and detailed feedback. Prepare like it's the real exam.</p>
+      <div class="hub-stats">
+        <div class="hub-stat"><div class="num">4</div><div class="lbl">Skills Tested</div></div>
+        <div class="hub-stat"><div class="num">40+</div><div class="lbl">Practice Questions</div></div>
+        <div class="hub-stat"><div class="num">100</div><div class="lbl">Min Full Test</div></div>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <!-- Listening -->
+      <div class="skill-card listening">
+        <div class="skill-icon-wrap">🎧</div>
+        <h3>Listening</h3>
+        <p>4 sections with 40 questions. Practice with realistic audio transcripts covering social, academic, and educational contexts.</p>
+        <div class="skill-meta">
+          <span>30 minutes</span>
+          <span>40 questions</span>
+          <span>Auto-scored</span>
+        </div>
+        <div class="skill-actions">
+          <a href="ielts-test-listening.html" class="btn-practice">Start Practice Test</a>
+          <a href="ielts-listening.html" class="btn-info">Learn Format</a>
+        </div>
+      </div>
+
+      <!-- Reading -->
+      <div class="skill-card reading">
+        <div class="skill-icon-wrap">📖</div>
+        <h3>Reading</h3>
+        <p>3 academic passages with 30 questions. Test your comprehension with multiple choice, true/false, and completion questions.</p>
+        <div class="skill-meta">
+          <span>60 minutes</span>
+          <span>30 questions</span>
+          <span>Auto-scored</span>
+        </div>
+        <div class="skill-actions">
+          <a href="ielts-test-reading.html" class="btn-practice">Start Practice Test</a>
+          <a href="ielts-reading.html" class="btn-info">Learn Format</a>
+        </div>
+      </div>
+
+      <!-- Writing -->
+      <div class="skill-card writing">
+        <div class="skill-icon-wrap">✍️</div>
+        <h3>Writing</h3>
+        <p>Task 1: Analyse charts, graphs, or processes. Task 2: Write an essay on a given topic. Built-in timer and word counter.</p>
+        <div class="skill-meta">
+          <span>60 minutes</span>
+          <span>2 tasks</span>
+          <span>Self-reviewed</span>
+        </div>
+        <div class="skill-actions">
+          <a href="ielts-test-writing.html" class="btn-practice">Start Practice Test</a>
+          <a href="ielts-writing.html" class="btn-info">Learn Format</a>
+        </div>
+      </div>
+
+      <!-- Speaking -->
+      <div class="skill-card speaking">
+        <div class="skill-icon-wrap">🎤</div>
+        <h3>Speaking</h3>
+        <p>Part 1: Introduction interview. Part 2: Cue card long turn with prep timer. Part 3: Abstract discussion prompts.</p>
+        <div class="skill-meta">
+          <span>14 minutes</span>
+          <span>3 parts</span>
+          <span>Self-reviewed</span>
+        </div>
+        <div class="skill-actions">
+          <a href="ielts-test-speaking.html" class="btn-practice">Start Practice Test</a>
+          <a href="ielts-speaking.html" class="btn-info">Learn Format</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-section">
+      <h2>Why Practice Here?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="f-icon">⏱️</div>
+          <h4>Realistic Timing</h4>
+          <p>Exact IELTS time limits with a countdown timer. Learn to manage your time under pressure.</p>
+        </div>
+        <div class="feature-item">
+          <div class="f-icon">📊</div>
+          <h4>Instant Band Scores</h4>
+          <p>Listening and Reading are auto-scored with official IELTS band conversion tables.</p>
+        </div>
+        <div class="feature-item">
+          <div class="f-icon">📝</div>
+          <h4>Detailed Review</h4>
+          <p>See exactly which questions you got wrong with correct answers explained after submission.</p>
+        </div>
+        <div class="feature-item">
+          <div class="f-icon">🎯</div>
+          <h4>Varied Question Types</h4>
+          <p>Multiple choice, true/false, sentence completion, and matching — just like the real test.</p>
+        </div>
+        <div class="feature-item">
+          <div class="f-icon">📱</div>
+          <h4>Mobile Friendly</h4>
+          <p>Practice on any device. Split-screen reading layout for comfortable study sessions.</p>
+        </div>
+        <div class="feature-item">
+          <div class="f-icon">💾</div>
+          <h4>Progress Saved</h4>
+          <p>Your test history is stored locally so you can track improvement over time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tips-section">
+      <h2>Quick Tips for Test Day</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>🎧 Listening</h4>
+          <p>Read questions before the audio starts. Listen for signpost words like "firstly", "however", "in conclusion". Check your spelling — incorrect spelling loses marks.</p>
+        </div>
+        <div class="tip-card">
+          <h4>📖 Reading</h4>
+          <p>Skim passages first for main ideas. Don't get stuck on one question — move on and return later. The answers appear in order in the text.</p>
+        </div>
+        <div class="tip-card">
+          <h4>✍️ Writing</h4>
+          <p>Plan before you write. Task 2 carries double the marks of Task 1. Leave 5 minutes to proofread. Aim for variety in vocabulary and sentence structure.</p>
+        </div>
+        <div class="tip-card">
+          <h4>🎤 Speaking</h4>
+          <p>Don't memorise scripts — examiners can tell. Use the 1-minute prep time for bullet points. Extend answers with reasons and examples. It's okay to ask for clarification.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/theme.js?v=8"></script>
+<script src="js/auth.js?v=8"></script>
+</body>
+</html>
