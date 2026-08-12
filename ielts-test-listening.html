@@ -32,6 +32,15 @@
       <div class="test-intro-card">
         <div class="intro-icon" style="background:linear-gradient(135deg,#6366f1,#818cf8)">🎧</div>
         <h2 id="introTitle">IELTS Listening Test</h2>
+        <div class="test-selector" style="margin:16px 0;text-align:left;">
+          <label style="display:block;font-size:0.85rem;color:#64748b;margin-bottom:6px;font-weight:500;">Choose a test:</label>
+          <select id="testSelector" onchange="switchTest(this.value)" style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;font-size:0.95rem;color:#1e293b;cursor:pointer;">
+            <option value="listening-1">Test 1: Hotel Booking & Campus Tour (Easy)</option>
+            <option value="listening-2">Test 2: Job Interview & Museum Tour (Medium)</option>
+            <option value="listening-3">Test 3: Library & Festival Events (Medium)</option>
+            <option value="listening-4">Test 4: Travel & Community Events (Medium)</option>
+          </select>
+        </div>
         <div class="intro-meta">
           <div class="meta-item"><strong>Duration</strong><span id="introDuration">30 minutes</span></div>
           <div class="meta-item"><strong>Sections</strong><span id="introSections">4 sections</span></div>
@@ -64,6 +73,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   initIELTSTest('listening', 'listening-1');
 });
+
+function switchTest(testId) {
+  initIELTSTest('listening', testId);
+}
 </script>
 </body>
 </html>
