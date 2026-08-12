@@ -162,7 +162,7 @@ const subjects = {
     },
     english: {
         name: 'English',
-        code: '9093/0500 · IELTS',
+        code: '9093 · 0500',
         icon: '📖',
         topics: [
             { id: 'en1', title: 'Reading Comprehension', alevel: true, igcse: true, as: true, a2: false },
@@ -173,10 +173,6 @@ const subjects = {
             { id: 'en6', title: 'Literature Analysis — Drama', alevel: true, igcse: true, as: true, a2: false },
             { id: 'en7', title: 'Essay Writing Techniques', alevel: true, igcse: true, as: true, a2: true },
             { id: 'en8', title: 'Language Analysis & Commentary', alevel: true, igcse: true, as: false, a2: true },
-            { id: 'en9', title: 'IELTS Academic Writing', alevel: false, igcse: false, as: false, a2: false },
-            { id: 'en10', title: 'IELTS Academic Reading', alevel: false, igcse: false, as: false, a2: false },
-            { id: 'en11', title: 'IELTS Speaking', alevel: false, igcse: false, as: false, a2: false },
-            { id: 'en12', title: 'IELTS Listening', alevel: false, igcse: false, as: false, a2: false },
             { id: 'en13', title: 'Grammar & Vocabulary', alevel: true, igcse: true, as: true, a2: true }
         ]
     },
