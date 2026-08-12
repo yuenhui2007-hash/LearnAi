@@ -174,6 +174,63 @@
                     ibList.appendChild(item);
                 });
             }
+
+            // Edexcel IAL topics
+            var edexcelIalTopics = subject.topics.filter(function(t) { return t.edexcel_ial && (!levelFilter || levelFilter === 'ial'); });
+            if (edexcelIalTopics.length > 0) {
+                var ialSection = document.createElement('div');
+                ialSection.className = 'topic-section-group';
+                ialSection.innerHTML = '<h2 class="section-divider">IAL</h2><div class="topic-list" id="ialList"></div>';
+                contentWrap.appendChild(ialSection);
+
+                var ialList = document.getElementById('ialList');
+                edexcelIalTopics.forEach(function(topic) {
+                    var completed = Progress.isCompleted(subjectId, topic.id);
+                    var item = document.createElement('div');
+                    item.className = 'topic-item';
+                    var notePath = 'notes/' + subjectId + '-' + topic.id + '-ial.html';
+                    item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IAL</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                    ialList.appendChild(item);
+                });
+            }
+
+            // Edexcel IGCSE topics
+            var edexcelIgcseTopics = subject.topics.filter(function(t) { return t.edexcel_igcse && (!levelFilter || levelFilter === 'igcse'); });
+            if (edexcelIgcseTopics.length > 0) {
+                var eiSection = document.createElement('div');
+                eiSection.className = 'topic-section-group';
+                eiSection.innerHTML = '<h2 class="section-divider">IGCSE</h2><div class="topic-list" id="edexcelIgcseList"></div>';
+                contentWrap.appendChild(eiSection);
+
+                var eiList = document.getElementById('edexcelIgcseList');
+                edexcelIgcseTopics.forEach(function(topic) {
+                    var completed = Progress.isCompleted(subjectId, topic.id);
+                    var item = document.createElement('div');
+                    item.className = 'topic-item';
+                    var notePath = 'notes/' + subjectId + '-' + topic.id + '-igcse.html';
+                    item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>IGCSE</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                    eiList.appendChild(item);
+                });
+            }
+
+            // Edexcel GCSE topics
+            var edexcelGcseTopics = subject.topics.filter(function(t) { return t.edexcel_gcse && (!levelFilter || levelFilter === 'gcse'); });
+            if (edexcelGcseTopics.length > 0) {
+                var gcseSection = document.createElement('div');
+                gcseSection.className = 'topic-section-group';
+                gcseSection.innerHTML = '<h2 class="section-divider">GCSE</h2><div class="topic-list" id="gcseList"></div>';
+                contentWrap.appendChild(gcseSection);
+
+                var gcseList = document.getElementById('gcseList');
+                edexcelGcseTopics.forEach(function(topic) {
+                    var completed = Progress.isCompleted(subjectId, topic.id);
+                    var item = document.createElement('div');
+                    item.className = 'topic-item';
+                    var notePath = 'notes/' + subjectId + '-' + topic.id + '-gcse.html';
+                    item.innerHTML = '<div><h3>' + (completed ? '\u2713 ' : '') + topic.title + '</h3><p>GCSE</p></div><a href="' + notePath + '" class="btn btn-primary">View Notes</a>';
+                    gcseList.appendChild(item);
+                });
+            }
         }
 
         function renderPapers() {
