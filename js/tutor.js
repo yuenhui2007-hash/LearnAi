@@ -19,6 +19,18 @@ For general questions (weather, news, restaurants, etc.):
 Always be encouraging, clear, and concise. Be friendly and conversational.`;
 
 const knowledgeBase = {
+  'platform-auth': {
+    patterns: ['login','sign in','sign up','register','network error','can\'t log in','forgot password','account','auth','authentication'],
+    response: `<h4>LearnAI Account Help</h4>
+<p><strong>Having trouble signing in?</strong> Here are common fixes:</p>
+<ul>
+<li><strong>"Network error":</strong> Hard refresh the page (<kbd>Ctrl+Shift+R</kbd> on Windows, <kbd>Cmd+Shift+R</kbd> on Mac) to load the latest auth system.</li>
+<li><strong>Sign-in loops:</strong> Clear browser cookies for this site, then try again in an incognito/private window.</li>
+<li><strong>Password issues:</strong> Passwords must be at least 6 characters. There is no "forgot password" feature yet — create a new account if needed.</li>
+<li><strong>Google/Apple sign-in:</strong> Make sure popups are allowed for this site.</li>
+</ul>
+<p><strong>Still stuck?</strong> Contact support with your browser name and the exact error message.</p>`
+  },
   greetings: {
     patterns: ['hello','hi','hey','greetings','sup','yo','good morning','good afternoon','good evening','how are you','what\'s up'],
     response: "Hello! I'm your LearnAI Tutor. Ask me about any Cambridge subject — Physics, Chemistry, Biology, Maths, Economics, History, Geography, ICT, English, Psychology, or the Zetrix AI Academy. I explain concepts, solve problems, give exam tips, and quiz you with practice questions."
