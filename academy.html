@@ -1289,17 +1289,37 @@ const corpDepts = [
   }
 ];
 
+function getDeptProgress(deptId) {
+  try { return JSON.parse(localStorage.getItem(`learnai_dept_${deptId}_progress`) || '{}'); }
+  catch(e) { return {}; }
+}
+
 function renderDeptGrid() {
   const grid = document.getElementById('deptGrid');
   if (!grid) return;
-  grid.innerHTML = corpDepts.map(d => `
+  grid.innerHTML = corpDepts.map(d => {
+    const prog = getDeptProgress(d.id);
+    const quizDone = prog.quizCompletedAt;
+    const assignDone = prog.assignmentSubmittedAt;
+    const bothDone = quizDone && assignDone;
+    let statusHtml = '';
+    if (bothDone) {
+      statusHtml = `<div style="margin-top:10px;padding:6px 12px;background:#dcfce7;color:#065f46;border-radius:50px;font-size:0.78rem;font-weight:600;display:inline-block;">✓ Completed — ${prog.assignmentGrade || 'N/A'}</div>`;
+    } else if (quizDone) {
+      statusHtml = `<div style="margin-top:10px;padding:6px 12px;background:#dbeafe;color:#1e3a8a;border-radius:50px;font-size:0.78rem;font-weight:600;display:inline-block;">Quiz done — Assignment pending</div>`;
+    } else if (assignDone) {
+      statusHtml = `<div style="margin-top:10px;padding:6px 12px;background:#fef3c7;color:#78350f;border-radius:50px;font-size:0.78rem;font-weight:600;display:inline-block;">Assignment done — Quiz pending</div>`;
+    }
+    return `
     <a href="dept-course.html?dept=${d.id}" class="dept-card">
       <div class="dept-icon">${d.icon}</div>
       <h3>${d.name}</h3>
       <p>${d.desc}</p>
       <div class="dept-meta">${d.quiz.length} quiz questions • 1 assignment</div>
+      ${statusHtml}
     </a>
-  `).join('');
+  `;
+  }).join('');
 }
 
 // Init
