@@ -109,7 +109,7 @@ const subjects = {
         name: 'Economics',
         code: '9708 (A-Level) · 0455 (IGCSE)',
         icon: '📈',
-        comprehensiveNotes: 'alevel-notes/economics/ALEVEL_ECONOMICS_NOTES.md',
+        comprehensiveNotes: 'notes/economics-summary.html',
         topics: [
             { id: 'e1', title: 'Basic Economic Problem', alevel: true, igcse: true, as: true, a2: false },
             { id: 'e2', title: 'Demand, Supply & Price', alevel: true, igcse: true, as: true, a2: false },
@@ -128,7 +128,7 @@ const subjects = {
         name: 'Business',
         code: '9609 (A-Level) · 0450 (IGCSE)',
         icon: '💼',
-        comprehensiveNotes: 'alevel-notes/business/ALEVEL_BUSINESS_NOTES.md',
+        comprehensiveNotes: 'notes/business-summary.html',
         topics: [
             { id: 'bu1', title: 'Business Activity & Environment', alevel: true, igcse: true, as: true, a2: false },
             { id: 'bu2', title: 'Marketing', alevel: true, igcse: true, as: true, a2: false },
@@ -146,7 +146,7 @@ const subjects = {
         name: 'Accounting',
         code: '9706 (A-Level) · 0452 (IGCSE)',
         icon: '📋',
-        comprehensiveNotes: 'alevel-notes/accounting/ALEVEL_ACCOUNTING_NOTES.md',
+        comprehensiveNotes: 'notes/accounting-summary.html',
         topics: [
             { id: 'ac1', title: 'Accounting Principles & Concepts', alevel: true, igcse: true, as: true, a2: false },
             { id: 'ac2', title: 'Source Documents & Books of Prime Entry', alevel: true, igcse: true, as: true, a2: false },
