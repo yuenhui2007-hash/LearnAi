@@ -312,7 +312,10 @@ class IELTSTestEngine {
       part2.card.followUp.forEach(q => {
         html += `<li>${q}</li>`;
       });
-      html += `</ul></div>`;
+      const savedSpeak = this.answers[2] || '';
+      html += `</ul></div>
+        <label class="speaking-input-label">Type your Part 2 response for analysis:</label>
+        <textarea class="speaking-textarea" id="speakingInput" placeholder="After practicing, type your response here for instant AI feedback..." oninput="engine.saveSpeakingAnswer(this.value)">${savedSpeak}</textarea>`;
     } else {
       const part3 = test.part3;
       html += `<div class="speaking-part-content">
@@ -412,6 +415,10 @@ class IELTSTestEngine {
 
   saveWritingAnswer(val) {
     this.answers[this.currentSection] = val;
+  }
+
+  saveSpeakingAnswer(val) {
+    this.answers[2] = val;
   }
 
   updateWordCount() {
@@ -612,63 +619,126 @@ class IELTSTestEngine {
 
   showManualReviewResults() {
     const test = this.data.tests.find(t => t.id === this.testId) || this.data.tests[0];
-
-    let html = `<div class="score-card manual-review">
-      <div class="score-band">Self-Review Required</div>
-      <div class="score-details">Your answers have been saved. Use the IELTS band descriptors to assess your work.</div>
-    </div>`;
+    let html = '';
 
     if (this.skill === 'writing') {
-      html += `<div class="writing-review">
-        <h3>Task 1: ${test.task1.title}</h3>
-        <div class="submitted-answer">${(this.answers[0] || '<em>No answer submitted</em>').replace(/\n/g, '<br>')}</div>
-        <div class="word-count-display">Word count: ${this.answers[0] ? this.answers[0].trim().split(/\s+/).length : 0} words (min: 150)</div>
-        <h3>Task 2: ${test.task2.title}</h3>
-        <div class="submitted-answer">${(this.answers[1] || '<em>No answer submitted</em>').replace(/\n/g, '<br>')}</div>
-        <div class="word-count-display">Word count: ${this.answers[1] ? this.answers[1].trim().split(/\s+/).length : 0} words (min: 250)</div>
+      // Analyse both tasks
+      const t1Analysis = IELTSMarker.analyseWriting(1, this.answers[0], test.task1);
+      const t2Analysis = IELTSMarker.analyseWriting(2, this.answers[1], test.task2);
+      const overallBand = ((t1Analysis.bandEstimate + t2Analysis.bandEstimate) / 2).toFixed(1);
+      const model1 = IELTSMarker.getModelAnswer(this.testId, 'writing', 1);
+      const model2 = IELTSMarker.getModelAnswer(this.testId, 'writing', 2);
+
+      html += `<div class="score-card">
+        <div class="score-band">Band ${overallBand}</div>
+        <div class="score-details">Task 1: ${t1Analysis.bandEstimate.toFixed(1)} · Task 2: ${t2Analysis.bandEstimate.toFixed(1)}</div>
+        <div class="score-bar"><div class="score-fill" style="width:${(overallBand/9*100)}%"></div></div>
       </div>`;
 
-      html += `<div class="band-descriptors">
-        <h4>IELTS Writing Band Descriptors</h4>
-        <div class="descriptor">
-          <strong>Task Achievement/Response:</strong> Did you address all parts? Is your position clear? Are ideas supported?
-        </div>
-        <div class="descriptor">
-          <strong>Coherence & Cohesion:</strong> Is there logical organisation? Are paragraphs well-linked?
-        </div>
-        <div class="descriptor">
-          <strong>Lexical Resource:</strong> Is vocabulary varied and accurate? Any repetition or errors?
-        </div>
-        <div class="descriptor">
-          <strong>Grammatical Range & Accuracy:</strong> Are there complex sentences? How frequent are errors?
-        </div>
+      // Task 1 Analysis
+      html += `<div class="marker-task-block">
+        <h3>Task 1: ${test.task1.title} <span class="marker-band">Band ${t1Analysis.bandEstimate.toFixed(1)}</span></h3>
+        <div class="marker-submitted">${(this.answers[0] || '<em>No answer submitted</em>').replace(/\n/g, '<br>')}</div>
+        ${this.renderMarkerAnalysis(t1Analysis)}
+        ${model1 ? `<div class="model-answer-box"><h4>Model Answer</h4><div class="model-text">${model1.replace(/\n/g, '<br>')}</div></div>` : ''}
       </div>`;
+
+      // Task 2 Analysis
+      html += `<div class="marker-task-block">
+        <h3>Task 2: ${test.task2.title} <span class="marker-band">Band ${t2Analysis.bandEstimate.toFixed(1)}</span></h3>
+        <div class="marker-submitted">${(this.answers[1] || '<em>No answer submitted</em>').replace(/\n/g, '<br>')}</div>
+        ${this.renderMarkerAnalysis(t2Analysis)}
+        ${model2 ? `<div class="model-answer-box"><h4>Model Answer</h4><div class="model-text">${model2.replace(/\n/g, '<br>')}</div></div>` : ''}
+      </div>`;
+
     } else if (this.skill === 'speaking') {
-      html += `<div class="speaking-review">
-        <h3>Speaking Test: ${test.title}</h3>
-        <p>Practice your responses by recording yourself. Use the prompts below for self-assessment.</p>
-        <div class="band-descriptors">
-          <h4>IELTS Speaking Band Descriptors</h4>
-          <div class="descriptor">
-            <strong>Fluency & Coherence:</strong> Do you speak at length without hesitation? Are your ideas organised?
-          </div>
-          <div class="descriptor">
-            <strong>Lexical Resource:</strong> Is your vocabulary wide and precise? Do you use idiomatic language?
-          </div>
-          <div class="descriptor">
-            <strong>Grammatical Range & Accuracy:</strong> Do you use a mix of simple and complex structures?
-          </div>
-          <div class="descriptor">
-            <strong>Pronunciation:</strong> Is your speech clear? Is intonation natural?
-          </div>
-        </div>
+      // Analyse Part 2 (typed response)
+      const analysis = IELTSMarker.analyseSpeaking(this.testId, 2, this.answers[2] || '');
+      const model = IELTSMarker.getModelAnswer(this.testId, 'speaking', 2);
+
+      html += `<div class="score-card">
+        <div class="score-band">Band ${analysis.bandEstimate.toFixed(1)}</div>
+        <div class="score-details">Estimated based on Part 2 response analysis</div>
+        <div class="score-bar"><div class="score-fill" style="width:${(analysis.bandEstimate/9*100)}%"></div></div>
       </div>`;
+
+      html += `<div class="marker-task-block">
+        <h3>Part 2: ${test.part2.card.topic} <span class="marker-band">Band ${analysis.bandEstimate.toFixed(1)}</span></h3>
+        <div class="marker-submitted">${(this.answers[2] || '<em>No answer submitted. Practice speaking and type your response above for analysis.</em>').replace(/\n/g, '<br>')}</div>
+        ${this.renderMarkerAnalysis(analysis)}
+        ${model ? `<div class="model-answer-box"><h4>Model Answer</h4><div class="model-text">${model.replace(/\n/g, '<br>')}</div></div>` : ''}
+      </div>`;
+
+      // Show all parts for reference
+      html += `<div class="speaking-reference">
+        <h3>All Speaking Parts (Reference)</h3>
+        <div class="part-ref"><h4>Part 1: Introduction</h4>`;
+      test.part1.topics.forEach(t => {
+        html += `<div class="topic-ref"><strong>${t.topic}</strong><ul>${t.questions.map(q => `<li>${q}</li>`).join('')}</ul></div>`;
+      });
+      html += `</div>`;
+      html += `<div class="part-ref"><h4>Part 3: Discussion</h4><ol>${test.part3.questions.map(q => `<li>${q}</li>`).join('')}</ol></div>`;
+      html += `</div>`;
     }
 
     html += `<button class="btn-primary" onclick="location.reload()">Retake Test</button>
              <a href="ielts-practice.html" class="btn-secondary">Back to IELTS Practice</a>`;
 
     this.resultsEl.innerHTML = html;
+  }
+
+  renderMarkerAnalysis(analysis) {
+    if (!analysis || analysis.bandEstimate === 0) {
+      return '<div class="marker-empty">Submit an answer to receive detailed feedback.</div>';
+    }
+
+    let html = '<div class="marker-analysis">';
+
+    // Quick stats
+    html += '<div class="marker-stats">';
+    analysis.feedback.forEach(f => {
+      html += `<span class="marker-stat">${f}</span>`;
+    });
+    html += '</div>';
+
+    // Strengths
+    if (analysis.strengths && analysis.strengths.length > 0) {
+      html += '<div class="marker-section marker-strengths">';
+      html += '<h4>Strengths</h4>';
+      analysis.strengths.forEach(s => {
+        html += `<div class="marker-item good"><span class="marker-dot good"></span>${s}</div>`;
+      });
+      html += '</div>';
+    }
+
+    // Issues (pinpointed)
+    if (analysis.issues && analysis.issues.length > 0) {
+      html += '<div class="marker-section marker-issues">';
+      html += '<h4>Areas to Improve</h4>';
+      analysis.issues.forEach(issue => {
+        const severityClass = issue.severity === 'high' ? 'high' : issue.severity === 'medium' ? 'medium' : 'low';
+        html += `<div class="marker-item ${severityClass}">
+          <span class="marker-severity ${severityClass}">${issue.severity.toUpperCase()}</span>
+          <div class="marker-issue-text"><strong>${issue.message}</strong></div>
+          <div class="marker-suggestion">${issue.suggestion}</div>
+        </div>`;
+      });
+      html += '</div>';
+    }
+
+    // Improvements list
+    if (analysis.improvements && analysis.improvements.length > 0) {
+      html += '<div class="marker-section">';
+      html += '<h4>Action Items</h4>';
+      html += '<ul class="marker-list">';
+      analysis.improvements.forEach(imp => {
+        html += `<li>${imp}</li>`;
+      });
+      html += '</ul></div>';
+    }
+
+    html += '</div>';
+    return html;
   }
 
   saveResult() {
