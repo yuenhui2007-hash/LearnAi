@@ -15,12 +15,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=11">
-<link rel="stylesheet" href="css/znotes-style.css?v=11">
+    <link rel="stylesheet" href="css/styles.css?v=12">
+<link rel="stylesheet" href="css/znotes-style.css?v=12">
 </head>
 <body>
     <nav class="navbar" id="navbar"></nav>
-<script src="js/nav.js?v=11"></script>
+<script src="js/nav.js?v=12"></script>
 
     <section class="subject-section">
         <div class="container">
@@ -33,9 +33,9 @@
         </div>
     </section>
 
-    <script src="js/theme.js?v=11"></script>
-    <script src="js/data.js?v=11"></script>
-    <script src="js/app.js?v=11"></script>
+    <script src="js/theme.js?v=12"></script>
+    <script src="js/data.js?v=12"></script>
+    <script src="js/app.js?v=12"></script>
     <script>
     (function() {
         var params = new URLSearchParams(window.location.search);
@@ -65,14 +65,21 @@
 
         var container = document.getElementById('topicSections');
 
-        // Determine papers URL
-        var papersUrl = null;
-        if (levelFilter) {
-            papersUrl = 'papers/' + subjectId + '-' + levelFilter + '.html';
+        // Determine Papacambridge papers URL
+        var papersCode = '';
+        if (levelFilter === 'alevel') {
+            var parts = subject.code.split('·');
+            papersCode = parts[0].trim().split(' ')[0]; // e.g. "9701"
+        } else if (levelFilter === 'igcse') {
+            var parts = subject.code.split('·');
+            papersCode = parts[1] ? parts[1].trim().split(' ')[0] : subject.code.trim().split(' ')[0];
         } else {
-            var hasAlevel = subject.topics.some(function(t) { return t.alevel; });
-            papersUrl = hasAlevel ? 'papers/' + subjectId + '-alevel.html' : 'papers/' + subjectId + '-igcse.html';
+            // No level filter — default to alevel code if available, else igcse
+            var parts = subject.code.split('·');
+            papersCode = parts[0].trim().split(' ')[0];
         }
+        var papersLevelPath = levelFilter === 'igcse' ? 'igcse' : 'as-and-a-level';
+        var papersUrl = 'https://papers.papacambridge.com/cie/' + papersLevelPath + '/' + papersCode + '/';
 
         // Tab selector: Notes / Past Year Papers
         var activeTab = 'notes';
@@ -182,8 +189,8 @@
         renderNotes();
     })();
     </script>
-<script src="js/auth.js?v=11"></script>
-<script src="js/mascot.js?v=11"></script>
-<script src="js/pwa.js?v=11"></script>
+<script src="js/auth.js?v=12"></script>
+<script src="js/mascot.js?v=12"></script>
+<script src="js/pwa.js?v=12"></script>
 </body>
 </html>
