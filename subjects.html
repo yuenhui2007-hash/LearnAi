@@ -348,15 +348,18 @@
 
     function createSubjectCard(key, s) {
         const card = document.createElement('a');
-        var href = 'subject.html?id=' + key;
-        if (caieLevel) {
-            href += '&level=' + caieLevel;
-        }
-        if (edexcelLevel) {
-            href += '&level=' + edexcelLevel;
-        }
-        if (resourceType) {
-            href += '&type=' + resourceType;
+        var href;
+        if (resourceType === 'papers' && caieLevel) {
+            // Link directly to dedicated past papers page
+            href = 'papers/' + key + '-' + caieLevel + '.html';
+        } else {
+            href = 'subject.html?id=' + key;
+            if (caieLevel) {
+                href += '&level=' + caieLevel;
+            }
+            if (edexcelLevel) {
+                href += '&level=' + edexcelLevel;
+            }
         }
         card.href = href;
         card.className = 'subject-card';
@@ -494,5 +497,6 @@
 <script src="js/pwa.js?v=6"></script>
 </body>
 </html>
+
 
 
