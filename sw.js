@@ -2,7 +2,7 @@
  * LearnAI Service Worker — Offline Caching & PWA Support
  */
 
-const CACHE_NAME = 'learnai-v1';
+const CACHE_NAME = 'learnai-v2';
 const STATIC_ASSETS = [
   '/LearnAi/',
   '/LearnAi/index.html',
