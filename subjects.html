@@ -161,6 +161,8 @@
     let currentBoard = null;
     let caieLevel = null;
     let edexcelLevel = null;
+    let resourceType = null; // 'notes' or 'papers'
+
     function showBoard(board) {
         currentBoard = board;
         boardSelection.classList.add('hidden');
@@ -195,8 +197,21 @@
     }
 
     function handleBack() {
-        if (currentBoard === 'caie' && caieLevel) {
-            // Currently showing subjects, go back to CAIE selector
+        if (resourceType) {
+            // Currently showing subjects, go back to resource selector
+            resourceType = null;
+            container.innerHTML = '';
+            if (currentBoard === 'caie') {
+                renderResourceSelector('caie', caieLevel);
+                document.querySelector('.section-title').textContent = caieLevel === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
+            } else if (currentBoard === 'edexcel') {
+                renderResourceSelector('edexcel', edexcelLevel);
+                const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
+                document.querySelector('.section-title').textContent = titles[edexcelLevel];
+            }
+            document.querySelector('.section-header p').textContent = 'Choose Notes or Past Year Papers.';
+        } else if (currentBoard === 'caie' && caieLevel) {
+            // Currently showing resource selector, go back to CAIE selector
             caieLevel = null;
             container.innerHTML = '';
             renderCAIESelector();
@@ -231,16 +246,24 @@
         caieLevel = level;
         container.innerHTML = '';
         document.querySelector('.section-title').textContent = level === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
-        document.querySelector('.section-header p').textContent = level === 'alevel'
-            ? 'Select an A-Level subject.'
-            : 'Select an IGCSE subject.';
+        document.querySelector('.section-header p').textContent = 'Choose Notes or Past Year Papers.';
+        renderResourceSelector('caie', level);
+    }
+
+    function showCAIEResources(type) {
+        resourceType = type;
+        container.innerHTML = '';
+        document.querySelector('.section-title').textContent = (caieLevel === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE') + (type === 'papers' ? ' — Past Papers' : ' — Notes');
+        document.querySelector('.section-header p').textContent = type === 'papers'
+            ? 'Select a subject to browse past year papers.'
+            : 'Select a subject to browse notes and topics.';
 
         const section = document.createElement('div');
         section.className = 'topic-section-group';
 
-        section.appendChild(renderSectionTitle(level === 'alevel' ? 'A-Level Subjects' : 'IGCSE Subjects'));
+        section.appendChild(renderSectionTitle(caieLevel === 'alevel' ? 'A-Level Subjects' : 'IGCSE Subjects'));
         section.appendChild(renderGrid(function(s) {
-            return s.topics.some(function(t) { return level === 'alevel' ? t.alevel : t.igcse; });
+            return s.topics.some(function(t) { return caieLevel === 'alevel' ? t.alevel : t.igcse; });
         }));
 
         container.appendChild(section);
@@ -251,7 +274,18 @@
         container.innerHTML = '';
         const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
         document.querySelector('.section-title').textContent = titles[level];
-        document.querySelector('.section-header p').textContent = 'Select a subject.';
+        document.querySelector('.section-header p').textContent = 'Choose Notes or Past Year Papers.';
+        renderResourceSelector('edexcel', level);
+    }
+
+    function showEdexcelResources(type) {
+        resourceType = type;
+        container.innerHTML = '';
+        const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
+        document.querySelector('.section-title').textContent = titles[edexcelLevel] + (type === 'papers' ? ' — Past Papers' : ' — Notes');
+        document.querySelector('.section-header p').textContent = type === 'papers'
+            ? 'Select a subject to browse past year papers.'
+            : 'Select a subject to browse notes and topics.';
 
         const section = document.createElement('div');
         section.className = 'topic-section-group';
@@ -266,6 +300,29 @@
         }));
 
         container.appendChild(section);
+    }
+
+    function renderResourceSelector(board, level) {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '600px';
+        var onNotes = board === 'caie' ? 'showCAIEResources("notes")' : 'showEdexcelResources("notes")';
+        var onPapers = board === 'caie' ? 'showCAIEResources("papers")' : 'showEdexcelResources("papers")';
+        selector.innerHTML = `
+            <div class="board-card" onclick="` + onNotes + `">
+                <div class="board-icon">📝</div>
+                <h3>Notes</h3>
+                <p>Comprehensive topic notes<br>and study materials</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="` + onPapers + `">
+                <div class="board-icon">📄</div>
+                <h3>Past Year Papers</h3>
+                <p>Previous examination papers<br>with mark schemes</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
     }
 
     function renderCAIESelector() {
@@ -297,6 +354,9 @@
         }
         if (edexcelLevel) {
             href += '&level=' + edexcelLevel;
+        }
+        if (resourceType) {
+            href += '&type=' + resourceType;
         }
         card.href = href;
         card.className = 'subject-card';
@@ -434,4 +494,5 @@
 <script src="js/pwa.js?v=6"></script>
 </body>
 </html>
+
 
