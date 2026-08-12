@@ -26,7 +26,7 @@ app.use(helmet({
             styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
             fontSrc: ["'self'", "https://fonts.gstatic.com"],
             imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'"],
+            connectSrc: ["'self'", "https://learnai-backend-n0df.onrender.com", "https://yuenhui2007-hash.github.io"],
             frameAncestors: ["'none'"],
             baseUri: ["'self'"],
             formAction: ["'self'", "https://accounts.google.com", "https://appleid.apple.com"]

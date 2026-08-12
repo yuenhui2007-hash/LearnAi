@@ -12,7 +12,7 @@ if (isProtected) {
 }
 
 // Always verify auth with server (handles cookie-based OAuth login)
-fetch('/api/auth/me', { credentials: 'include' })
+fetch('https://learnai-backend-n0df.onrender.com/api/auth/me', { credentials: 'include' })
   .then(function(res) {
     if (!res.ok) throw new Error('Not authenticated');
     return res.json();
