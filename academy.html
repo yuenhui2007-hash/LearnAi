@@ -1098,17 +1098,6 @@
   </div>
 </section>
 
-<!-- QUIZ OVERLAY -->
-<div class="quiz-overlay" id="quizOverlay">
-  <div class="quiz-panel">
-    <button class="quiz-close" onclick="closeQuiz()">×</button>
-    <h2 id="quizTitle">Department Quiz</h2>
-    <p class="quiz-subtitle" id="quizSubtitle">Answer all questions, then submit your assignment.</p>
-    <div id="quizContent"></div>
-    <div id="assignmentContent"></div>
-  </div>
-</div>
-
 <!-- FEATURES -->
 <section class="features-section">
   <div class="container">
@@ -1300,200 +1289,37 @@ const corpDepts = [
   }
 ];
 
+function getDeptProgress(deptId) {
+  try { return JSON.parse(localStorage.getItem(`learnai_dept_${deptId}_progress`) || '{}'); }
+  catch(e) { return {}; }
+}
+
 function renderDeptGrid() {
   const grid = document.getElementById('deptGrid');
   if (!grid) return;
-  grid.innerHTML = corpDepts.map(d => `
-    <div class="dept-card" onclick="openDeptQuiz('${d.id}')">
+  grid.innerHTML = corpDepts.map(d => {
+    const prog = getDeptProgress(d.id);
+    const quizDone = prog.quizCompletedAt;
+    const assignDone = prog.assignmentSubmittedAt;
+    const bothDone = quizDone && assignDone;
+    let statusHtml = '';
+    if (bothDone) {
+      statusHtml = `<div style="margin-top:10px;padding:6px 12px;background:#dcfce7;color:#065f46;border-radius:50px;font-size:0.78rem;font-weight:600;display:inline-block;">✓ Completed — ${prog.assignmentGrade || 'N/A'}</div>`;
+    } else if (quizDone) {
+      statusHtml = `<div style="margin-top:10px;padding:6px 12px;background:#dbeafe;color:#1e3a8a;border-radius:50px;font-size:0.78rem;font-weight:600;display:inline-block;">Quiz done — Assignment pending</div>`;
+    } else if (assignDone) {
+      statusHtml = `<div style="margin-top:10px;padding:6px 12px;background:#fef3c7;color:#78350f;border-radius:50px;font-size:0.78rem;font-weight:600;display:inline-block;">Assignment done — Quiz pending</div>`;
+    }
+    return `
+    <a href="dept-course.html?dept=${d.id}" class="dept-card">
       <div class="dept-icon">${d.icon}</div>
       <h3>${d.name}</h3>
       <p>${d.desc}</p>
       <div class="dept-meta">${d.quiz.length} quiz questions • 1 assignment</div>
-    </div>
-  `).join('');
-}
-
-let activeDept = null;
-let quizAnswers = {};
-
-function openDeptQuiz(id) {
-  const dept = corpDepts.find(d => d.id === id);
-  if (!dept) return;
-  activeDept = dept;
-  quizAnswers = {};
-  document.getElementById('quizTitle').textContent = `${dept.icon} ${dept.name}`;
-  document.getElementById('quizSubtitle').textContent = 'Answer all questions, then submit your assignment for AI marking.';
-  renderQuiz();
-  renderAssignment();
-  document.getElementById('quizOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeQuiz() {
-  document.getElementById('quizOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function renderQuiz() {
-  const area = document.getElementById('quizContent');
-  const dept = activeDept;
-  let html = '<h3 style="margin-bottom:16px;color:#1e293b;">Quiz</h3>';
-  dept.quiz.forEach((q, i) => {
-    html += `<div class="quiz-question" id="qq-${i}">
-      <h4>${i + 1}. ${q.q}</h4>
-      <div class="quiz-options">`;
-    q.options.forEach((opt, j) => {
-      html += `<div class="quiz-opt" id="qqo-${i}-${j}" onclick="selectQuizAnswer(${i}, ${j})">
-        <input type="radio" name="qq-${i}" id="qqr-${i}-${j}">
-        <label for="qqr-${i}-${j}">${opt}</label>
-      </div>`;
-    });
-    html += `</div><div class="quiz-feedback" id="qqf-${i}"></div></div>`;
-  });
-  html += `<button class="btn btn-primary" style="margin-top:8px;width:100%;padding:12px;" onclick="submitQuiz()">Submit Quiz</button>`;
-  html += `<div id="quizResult" style="margin-top:16px;"></div>`;
-  area.innerHTML = html;
-}
-
-function selectQuizAnswer(qIdx, optIdx) {
-  quizAnswers[qIdx] = optIdx;
-  const qEl = document.getElementById(`qq-${qIdx}`);
-  qEl.querySelectorAll('.quiz-opt').forEach((el, j) => {
-    el.classList.toggle('selected', j === optIdx);
-  });
-}
-
-function submitQuiz() {
-  const dept = activeDept;
-  let correct = 0;
-  dept.quiz.forEach((q, i) => {
-    const userAns = quizAnswers[i];
-    const isCorrect = userAns === q.a;
-    if (isCorrect) correct++;
-    const qEl = document.getElementById(`qq-${i}`);
-    qEl.querySelectorAll('.quiz-opt').forEach((el, j) => {
-      el.classList.remove('selected');
-      if (j === q.a) el.classList.add('correct');
-      else if (j === userAns && !isCorrect) el.classList.add('wrong');
-      el.style.pointerEvents = 'none';
-    });
-    const fb = document.getElementById(`qqf-${i}`);
-    fb.classList.add('show');
-    fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'wrong');
-    fb.innerHTML = isCorrect ? '✓ Correct!' : `✗ Incorrect. Correct answer: <strong>${q.options[q.a]}</strong>`;
-  });
-  const pct = Math.round((correct / dept.quiz.length) * 100);
-  const res = document.getElementById('quizResult');
-  res.innerHTML = `<div style="padding:16px;background:#f8fafc;border-radius:10px;text-align:center;">
-    <div style="font-size:1.8rem;font-weight:700;color:${pct >= 80 ? '#059669' : pct >= 60 ? '#d97706' : '#dc2626'};">${correct} / ${dept.quiz.length}</div>
-    <div style="color:#64748b;margin-top:6px;font-size:0.95rem;">${pct}% — ${pct >= 80 ? 'Excellent!' : pct >= 60 ? 'Good job.' : 'Review and try again.'}</div>
-  </div>`;
-}
-
-function renderAssignment() {
-  const area = document.getElementById('assignmentContent');
-  const dept = activeDept;
-  area.innerHTML = `
-    <div class="assignment-block">
-      <h3>Assignment</h3>
-      <p>${dept.assignment}</p>
-      <textarea class="assignment-textarea" id="assignmentInput" placeholder="Type your response here (300–500 words recommended)..."></textarea>
-      <div class="assignment-actions">
-        <button class="btn btn-primary" style="background:#f59e0b;border-color:#f59e0b;color:#0f172a;" onclick="submitAssignment()">Submit for AI Marking</button>
-        <button class="btn btn-secondary" onclick="document.getElementById('assignmentInput').value=''" style="border-color:#cbd5e1;color:#475569;">Clear</button>
-      </div>
-      <div id="assignmentResult"></div>
-    </div>
+      ${statusHtml}
+    </a>
   `;
-}
-
-function submitAssignment() {
-  const input = document.getElementById('assignmentInput').value.trim();
-  const resultArea = document.getElementById('assignmentResult');
-  if (!input || input.length < 50) {
-    resultArea.innerHTML = `<div style="color:#dc2626;margin-top:12px;font-size:0.9rem;">Please write at least 50 words before submitting.</div>`;
-    return;
-  }
-  const wordCount = input.split(/\s+/).filter(w => w.length > 0).length;
-  const dept = activeDept;
-
-  let score = 0;
-  let rubric = [];
-
-  // Length
-  if (wordCount >= 400) { score += 20; rubric.push('<strong>Length (20/20):</strong> Comprehensive and well-developed.'); }
-  else if (wordCount >= 300) { score += 15; rubric.push('<strong>Length (15/20):</strong> Adequate, meets minimum.'); }
-  else if (wordCount >= 200) { score += 10; rubric.push('<strong>Length (10/20):</strong> Brief, could expand.'); }
-  else { score += 5; rubric.push('<strong>Length (5/20):</strong> Too short, lacks depth.'); }
-
-  // Structure
-  const hasNumbers = /\(\s*\d+\s*\)/.test(input) || /\d+\./.test(input) || /\d+\)/.test(input);
-  const hasSections = input.split(/\n/).filter(l => l.trim().length > 0).length >= 4;
-  if (hasNumbers && hasSections) { score += 20; rubric.push('<strong>Structure (20/20):</strong> Well-organized with clear numbered sections.'); }
-  else if (hasSections) { score += 12; rubric.push('<strong>Structure (12/20):</strong> Some organization but missing clear numbering.'); }
-  else { score += 5; rubric.push('<strong>Structure (5/20):</strong> Poorly organized, hard to follow.'); }
-
-  // Content Coverage
-  const contentChecks = {
-    hr: ['remote','flexibility','productivity','communication','performance','security'],
-    finance: ['salary','benefit','expense','budget','training','contingency','personnel'],
-    admin: ['onboarding','documentation','workspace','mentor','compliance','schedule'],
-    sales: ['value','case study','social proof','objection','call-to-action','demo'],
-    marketing: ['audience','KPI','channel','content','budget','social','email'],
-    ops: ['defect','root cause','process','quality','timeline','ROI','control'],
-    it: ['password','MFA','policy','incident','training','security','data'],
-    cs: ['de-escalation','listening','empathy','follow-up','escalate','angry'],
-    procurement: ['vendor','evaluation','criteria','risk','negotiation','score'],
-    legal: ['consent','privacy','breach','notification','rights','compliance'],
-    rnd: ['prototype','milestone','timeline','budget','market','features','metrics'],
-    qa: ['test','functional','defect','criteria','schedule','security','performance']
-  };
-  const checks = contentChecks[dept.id] || [];
-  const matched = checks.filter(kw => input.toLowerCase().includes(kw.toLowerCase())).length;
-  const coveragePct = Math.round((matched / checks.length) * 100);
-  if (coveragePct >= 80) { score += 30; rubric.push(`<strong>Content (30/30):</strong> Excellent — ${matched}/${checks.length} key topics.`); }
-  else if (coveragePct >= 50) { score += 20; rubric.push(`<strong>Content (20/30):</strong> Good — ${matched}/${checks.length} key topics.`); }
-  else if (coveragePct >= 25) { score += 10; rubric.push(`<strong>Content (10/30):</strong> Fair — ${matched}/${checks.length} key topics.`); }
-  else { score += 5; rubric.push(`<strong>Content (5/30):</strong> Weak — ${matched}/${checks.length} key topics.`); }
-
-  // Clarity & Tone
-  const sentences = input.split(/[.!?]+/).filter(s => s.trim().length > 0);
-  const avgLen = sentences.length ? sentences.map(s => s.trim().split(/\s+/).length).reduce((a,b) => a+b, 0) / sentences.length : 0;
-  const hasProf = /\b(therefore|however|furthermore|additionally|consequently|moreover|in conclusion|specifically|recommended|implementation|strategy|objective)\b/i.test(input);
-  if (avgLen >= 12 && avgLen <= 25 && hasProf) { score += 20; rubric.push('<strong>Clarity & Tone (20/20):</strong> Professional, clear, well-articulated.'); }
-  else if (hasProf || (avgLen >= 8 && avgLen <= 30)) { score += 14; rubric.push('<strong>Clarity & Tone (14/20):</strong> Generally clear with acceptable tone.'); }
-  else { score += 7; rubric.push('<strong>Clarity & Tone (7/20):</strong> Informal or unclear in places.'); }
-
-  // Grammar
-  const commonErrors = ['teh','recieve','seperate','occured','definately','goverment','accomodate','suprise','untill','wich'];
-  const errFound = commonErrors.filter(e => input.toLowerCase().includes(e)).length;
-  if (errFound === 0) { score += 10; rubric.push('<strong>Grammar (10/10):</strong> Clean, no obvious errors.'); }
-  else if (errFound <= 2) { score += 7; rubric.push(`<strong>Grammar (7/10):</strong> Minor issues (${errFound}).`); }
-  else { score += 4; rubric.push(`<strong>Grammar (4/10):</strong> Several issues (${errFound}).`); }
-
-  const grade = score >= 90 ? 'A' : score >= 80 ? 'B+' : score >= 70 ? 'B' : score >= 60 ? 'C+' : score >= 50 ? 'C' : 'D';
-  const badgeClass = score >= 80 ? 'excellent' : score >= 60 ? 'good' : score >= 50 ? 'average' : 'poor';
-
-  let feedback = [];
-  if (score >= 85) feedback.push('Outstanding work. Strong understanding and professional communication.');
-  else if (score >= 70) feedback.push('Good effort. Covers main requirements but could deepen analysis.');
-  else if (score >= 55) feedback.push('Adequate. Expand points, use clearer structure, and add more relevant terminology.');
-  else feedback.push('Needs significant improvement. Review requirements and resubmit with more detailed, structured content.');
-
-  if (wordCount < 250) feedback.push('Response is shorter than recommended. Aim for 300-500 words.');
-  if (!hasNumbers) feedback.push('Consider using numbered points for better readability.');
-  if (coveragePct < 50) feedback.push('Response misses several key topics. Review the prompt carefully.');
-
-  resultArea.innerHTML = `
-    <div class="ai-result">
-      <h4>🤖 AI Marking Result — ${dept.name}</h4>
-      <div class="score-pill ${badgeClass}">${score}/100 — Grade ${grade}</div>
-      <div style="margin-bottom:12px;color:#334155;font-size:0.95rem;">${feedback.join(' ')}</div>
-      <h4 style="color:#64748b;font-size:0.85rem;margin:12px 0 8px;">Rubric Breakdown</h4>
-      ${rubric.map(r => `<div class="rubric-row">${r}</div>`).join('')}
-      <div style="color:#94a3b8;font-size:0.78rem;margin-top:10px;">Word count: ${wordCount} | Submitted: ${new Date().toLocaleString()}</div>
-    </div>
-  `;
+  }).join('');
 }
 
 // Init

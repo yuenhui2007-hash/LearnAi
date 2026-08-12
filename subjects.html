@@ -161,7 +161,6 @@
     let currentBoard = null;
     let caieLevel = null;
     let edexcelLevel = null;
-    let resourceType = null; // 'notes' or 'papers'
 
     function showBoard(board) {
         currentBoard = board;
@@ -198,14 +197,14 @@
 
     function handleBack() {
         if (currentBoard === 'caie' && caieLevel) {
-            // Currently showing resource selector, go back to CAIE selector
+            // Currently showing subjects, go back to CAIE selector
             caieLevel = null;
             container.innerHTML = '';
             renderCAIESelector();
             document.querySelector('.section-title').textContent = 'CAIE';
             document.querySelector('.section-header p').textContent = 'Choose A-Level or IGCSE to browse subjects.';
         } else if (currentBoard === 'edexcel' && edexcelLevel) {
-            // Currently showing resource selector, go back to Edexcel selector
+            // Currently showing subjects, go back to Edexcel selector
             edexcelLevel = null;
             container.innerHTML = '';
             renderEdexcelSelector();
@@ -233,7 +232,9 @@
         caieLevel = level;
         container.innerHTML = '';
         document.querySelector('.section-title').textContent = level === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
-        document.querySelector('.section-header p').textContent = 'Select a subject to browse notes and topics.';
+        document.querySelector('.section-header p').textContent = level === 'alevel'
+            ? 'Select an A-Level subject.'
+            : 'Select an IGCSE subject.';
 
         const section = document.createElement('div');
         section.className = 'topic-section-group';
@@ -249,7 +250,7 @@
         container.innerHTML = '';
         const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
         document.querySelector('.section-title').textContent = titles[level];
-        document.querySelector('.section-header p').textContent = 'Select a subject to browse notes and topics.';
+        document.querySelector('.section-header p').textContent = 'Select a subject.';
 
         const section = document.createElement('div');
         section.className = 'topic-section-group';
@@ -436,6 +437,8 @@
 <script src="js/pwa.js?v=10"></script>
 </body>
 </html>
+
+
 
 
 
