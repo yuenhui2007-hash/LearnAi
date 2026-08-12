@@ -40,6 +40,7 @@
     (function() {
         var params = new URLSearchParams(window.location.search);
         var subjectId = params.get('id');
+        var levelFilter = params.get('level');
         var subject = typeof subjects !== 'undefined' ? subjects[subjectId] : null;
 
         if (!subject) {
@@ -48,13 +49,16 @@
             return;
         }
 
-        document.getElementById('subjectTitle').textContent = subject.icon + ' ' + subject.name;
+        var titleText = subject.icon + ' ' + subject.name;
+        if (levelFilter === 'alevel') titleText += ' — A-Level';
+        else if (levelFilter === 'igcse') titleText += ' — IGCSE';
+        document.getElementById('subjectTitle').textContent = titleText;
         document.getElementById('subjectCode').textContent = subject.code;
 
         var container = document.getElementById('topicSections');
 
         // A-Level topics (AS + A2)
-        var alevelTopics = subject.topics.filter(function(t) { return t.alevel; });
+        var alevelTopics = subject.topics.filter(function(t) { return t.alevel && (!levelFilter || levelFilter === 'alevel'); });
         if (alevelTopics.length > 0) {
             var alevelSection = document.createElement('div');
             alevelSection.className = 'topic-section-group';
@@ -74,7 +78,7 @@
         }
 
         // IGCSE topics
-        var igcseTopics = subject.topics.filter(function(t) { return t.igcse; });
+        var igcseTopics = subject.topics.filter(function(t) { return t.igcse && (!levelFilter || levelFilter === 'igcse'); });
         if (igcseTopics.length > 0) {
             var igcseSection = document.createElement('div');
             igcseSection.className = 'topic-section-group';
@@ -94,7 +98,7 @@
 
         // IB topics
         var ibTopics = subject.topics.filter(function(t) { return t.ib; });
-        if (ibTopics.length > 0) {
+        if (ibTopics.length > 0 && !levelFilter) {
             var ibSection = document.createElement('div');
             ibSection.className = 'topic-section-group';
             ibSection.innerHTML = '<h2 class="section-divider">IB DP</h2><div class="topic-list" id="ibList"></div>';

@@ -162,7 +162,7 @@ const subjects = {
     },
     english: {
         name: 'English',
-        code: '9093/0500 · IELTS',
+        code: '9093 · 0500',
         icon: '📖',
         topics: [
             { id: 'en1', title: 'Reading Comprehension', alevel: true, igcse: true, as: true, a2: false },
@@ -173,10 +173,6 @@ const subjects = {
             { id: 'en6', title: 'Literature Analysis — Drama', alevel: true, igcse: true, as: true, a2: false },
             { id: 'en7', title: 'Essay Writing Techniques', alevel: true, igcse: true, as: true, a2: true },
             { id: 'en8', title: 'Language Analysis & Commentary', alevel: true, igcse: true, as: false, a2: true },
-            { id: 'en9', title: 'IELTS Academic Writing', alevel: false, igcse: false, as: false, a2: false },
-            { id: 'en10', title: 'IELTS Academic Reading', alevel: false, igcse: false, as: false, a2: false },
-            { id: 'en11', title: 'IELTS Speaking', alevel: false, igcse: false, as: false, a2: false },
-            { id: 'en12', title: 'IELTS Listening', alevel: false, igcse: false, as: false, a2: false },
             { id: 'en13', title: 'Grammar & Vocabulary', alevel: true, igcse: true, as: true, a2: true }
         ]
     },
@@ -419,3 +415,166 @@ Object.keys(subjects).forEach(subjectId => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { subjects, allTopics };
 }
+
+// Edexcel subjects
+const edexcelSubjects = {
+    'edexcel-physics': {
+        name: 'Physics',
+        code: 'WPH13/14 (IAL) · 4PH1 (IGCSE) · 1PH0 (GCSE)',
+        icon: '⚛️',
+        topics: [
+            { id: 'ep1', title: 'Mechanics & Materials', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ep2', title: 'Waves & Electricity', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ep3', title: 'Thermal & Nuclear Physics', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ep4', title: 'Fields & Oscillations', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ep5', title: 'Astrophysics', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ep6', title: 'Solids, Fluids & Gases', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ep7', title: 'Magnetism & Electromagnetism', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ep8', title: 'Particle Model & Atomic Structure', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true }
+        ]
+    },
+    'edexcel-chemistry': {
+        name: 'Chemistry',
+        code: 'WCH13/14 (IAL) · 4CH1 (IGCSE) · 1CH0 (GCSE)',
+        icon: '🧪',
+        topics: [
+            { id: 'ec1', title: 'Atomic Structure & Periodicity', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ec2', title: 'Bonding & Structure', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ec3', title: 'Energetics & Kinetics', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ec4', title: 'Equilibria & Redox', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ec5', title: 'Organic Chemistry', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ec6', title: 'Inorganic & Transition Metals', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ec7', title: 'Acids, Bases & Salts', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ec8', title: 'Electrolysis & Energy Changes', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true }
+        ]
+    },
+    'edexcel-biology': {
+        name: 'Biology',
+        code: 'WBI13/14 (IAL) · 4BI1 (IGCSE) · 1BI0 (GCSE)',
+        icon: '🧬',
+        topics: [
+            { id: 'eb1', title: 'Cell Biology & Organisation', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eb2', title: 'Genetics & Evolution', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eb3', title: 'Physiology & Homeostasis', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eb4', title: 'Ecology & Conservation', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eb5', title: 'Microbiology & Biotechnology', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'eb6', title: 'Neuroscience & Behaviour', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'eb7', title: 'Inheritance & Variation', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eb8', title: 'Human Body Systems', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true }
+        ]
+    },
+    'edexcel-maths': {
+        name: 'Mathematics',
+        code: 'WMA13/14 (IAL) · 4MA1 (IGCSE) · 1MA1 (GCSE)',
+        icon: '📐',
+        topics: [
+            { id: 'em1', title: 'Algebra & Functions', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'em2', title: 'Coordinate Geometry', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'em3', title: 'Trigonometry', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'em4', title: 'Calculus', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'em5', title: 'Vectors & Mechanics', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'em6', title: 'Statistics & Probability', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'em7', title: 'Sequences & Series', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'em8', title: 'Numerical Methods', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false }
+        ]
+    },
+    'edexcel-economics': {
+        name: 'Economics',
+        code: 'WEC13/14 (IAL) · 4EC1 (IGCSE) · 1EC0 (GCSE)',
+        icon: '📈',
+        topics: [
+            { id: 'ee1', title: 'Microeconomics — Markets', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ee2', title: 'Microeconomics — Market Failure', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ee3', title: 'Macroeconomics — Performance', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ee4', title: 'Macroeconomics — Policy', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ee5', title: 'International Economics', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ee6', title: 'Development Economics', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ee7', title: 'Labour Markets', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false }
+        ]
+    },
+    'edexcel-business': {
+        name: 'Business',
+        code: 'WBS13/14 (IAL) · 4BS1 (IGCSE)',
+        icon: '💼',
+        topics: [
+            { id: 'ebu1', title: 'Business Objectives & Strategy', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: false },
+            { id: 'ebu2', title: 'Marketing & People', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: false },
+            { id: 'ebu3', title: 'Operations & Finance', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: false },
+            { id: 'ebu4', title: 'Global Business', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'ebu5', title: 'Entrepreneurship', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: false }
+        ]
+    },
+    'edexcel-english': {
+        name: 'English Language',
+        code: 'WEN13/14 (IAL) · 4EA1 (IGCSE) · 1EN0 (GCSE)',
+        icon: '📖',
+        topics: [
+            { id: 'een1', title: 'Reading & Comprehension', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'een2', title: 'Creative Writing', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'een3', title: 'Transactional Writing', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'een4', title: 'Linguistic Analysis', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'een5', title: 'Language & Gender/Power', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'een6', title: 'Child Language Acquisition', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false }
+        ]
+    },
+    'edexcel-history': {
+        name: 'History',
+        code: 'WHI13/14 (IAL) · 4HI1 (IGCSE) · 1HI0 (GCSE)',
+        icon: '🏛️',
+        topics: [
+            { id: 'eh1', title: 'Russia 1917–1991', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eh2', title: 'Mao\'s China 1949–1976', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eh3', title: 'Cold War 1945–1991', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eh4', title: 'British Empire 1763–1914', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'eh5', title: 'Civil Rights in USA', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eh6', title: 'Weimar & Nazi Germany', edexcel_ial: false, edexcel_igcse: true, edexcel_gcse: true }
+        ]
+    },
+    'edexcel-geography': {
+        name: 'Geography',
+        code: 'WGE13/14 (IAL) · 4GE1 (IGCSE) · 1GE0 (GCSE)',
+        icon: '🌍',
+        topics: [
+            { id: 'eg1', title: 'Tectonic Processes & Hazards', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eg2', title: 'Coastal Landscapes', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eg3', title: 'Globalisation', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eg4', title: 'Regeneration', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'eg5', title: 'Water Cycle & Security', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'eg6', title: 'Carbon Cycle & Energy', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false },
+            { id: 'eg7', title: 'Superpowers & Migration', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false }
+        ]
+    },
+    'edexcel-computer-science': {
+        name: 'Computer Science',
+        code: 'WCS13/14 (IAL) · 4CP1 (IGCSE) · 1CP0 (GCSE)',
+        icon: '💻',
+        topics: [
+            { id: 'ecs1', title: 'Algorithms & Programming', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ecs2', title: 'Data Structures', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ecs3', title: 'Computer Systems', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ecs4', title: 'Networks & Security', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ecs5', title: 'Databases & SQL', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: true },
+            { id: 'ecs6', title: 'Boolean Algebra & Logic', edexcel_ial: true, edexcel_igcse: true, edexcel_gcse: true },
+            { id: 'ecs7', title: 'Software Development', edexcel_ial: true, edexcel_igcse: false, edexcel_gcse: false }
+        ]
+    }
+};
+
+Object.assign(subjects, edexcelSubjects);
+
+Object.keys(edexcelSubjects).forEach(subjectId => {
+    const subject = edexcelSubjects[subjectId];
+    subject.topics.forEach(topic => {
+        allTopics.push({
+            id: topic.id,
+            subject: subjectId,
+            subjectName: subject.name,
+            title: topic.title,
+            edexcel_ial: topic.edexcel_ial,
+            edexcel_igcse: topic.edexcel_igcse,
+            edexcel_gcse: topic.edexcel_gcse,
+            icon: subject.icon,
+            code: subject.code
+        });
+    });
+});

@@ -12,6 +12,7 @@ const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 10000;
 
 const { authenticate, JWT_SECRET } = require('./middleware/auth');
@@ -37,12 +38,14 @@ app.use(helmet({
         includeSubDomains: true,
         preload: true
     },
-    crossOriginEmbedderPolicy: false
+    crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: { policy: 'cross-origin' }
 }));
 
 // ===== CORS =====
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://yuenhui2007-hash.github.io';
 app.use(cors({
-    origin: process.env.FRONTEND_URL || true,
+    origin: FRONTEND_URL,
     credentials: true
 }));
 
@@ -103,7 +106,8 @@ app.get('/api/auth/me', authenticate, (req, res) => {
 
 // ===== Logout (clear cookie) =====
 app.post('/api/auth/logout', (req, res) => {
-    res.clearCookie('token');
+    const isSecure = req.secure || req.headers['x-forwarded-proto'] === 'https';
+    res.clearCookie('token', { httpOnly: true, secure: isSecure, sameSite: isSecure ? 'none' : 'lax' });
     res.json({ success: true });
 });
 

@@ -8,7 +8,8 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');
 const { users, activityLogs, isMongo, User, ActivityLog } = require('../config/database');
-const { generateToken, COOKIE_OPTIONS } = require('./auth');
+const { generateToken } = require('./auth');
+const { getCookieOptions } = require('./auth');
 const router = express.Router();
 
 // In-memory store for OAuth state (use Redis in production)
@@ -237,15 +238,15 @@ router.get('/google/callback', async (req, res) => {
         
         // Validate ID token
         const oauthData = await validateGoogleToken(tokens.id_token);
-        
+
         // Find or create user
         const user = await findOrCreateOAuthUser(oauthData);
-        
+
         // Generate JWT and set cookie
         const userId = user._id ? user._id.toString() : user.id;
         const token = generateToken({ id: userId, email: user.email, role: user.role });
-        res.cookie('token', token, COOKIE_OPTIONS);
-        
+        res.cookie('token', token, getCookieOptions(req));
+
         // Log activity
         if (isMongo && ActivityLog) {
             await new ActivityLog({
@@ -356,15 +357,15 @@ router.post('/apple/callback', async (req, res) => {
         } else {
             throw new Error('No authentication code or token received');
         }
-        
+
         // Find or create user
         const user = await findOrCreateOAuthUser(oauthData);
-        
+
         // Generate JWT and set cookie
         const userId = user._id ? user._id.toString() : user.id;
         const token = generateToken({ id: userId, email: user.email, role: user.role });
-        res.cookie('token', token, COOKIE_OPTIONS);
-        
+        res.cookie('token', token, getCookieOptions(req));
+
         // Log activity
         if (isMongo && ActivityLog) {
             await new ActivityLog({

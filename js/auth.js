@@ -5,17 +5,23 @@ const API_BASE = window.location.origin.includes('localhost')
   ? 'http://localhost:10000/api'
   : 'https://learnai-backend-n0df.onrender.com/api';
 
+function getAuthHeaders() {
+  const token = localStorage.getItem('auth_token');
+  return token ? { 'Authorization': 'Bearer ' + token } : {};
+}
+
 window.Auth = {
-  register: async function(email, password, name, phone) {
+  register: async function(email, password, name) {
     try {
       const res = await fetch(API_BASE + '/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({ email, password, name, phone })
+        body: JSON.stringify({ email, password, name })
       });
       const data = await res.json();
       if (!res.ok) return { success: false, error: data.error || 'Registration failed' };
+      if (data.token) localStorage.setItem('auth_token', data.token);
+      if (data.user) localStorage.setItem('learnai_auth', JSON.stringify(data.user));
       return { success: true, user: data.user };
     } catch (err) {
       return { success: false, error: 'Network error. Please try again.' };
@@ -27,12 +33,12 @@ window.Auth = {
       const res = await fetch(API_BASE + '/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
         body: JSON.stringify({ email, password })
       });
       const data = await res.json();
       if (!res.ok) return { success: false, error: data.error || 'Invalid email or password.' };
-      localStorage.setItem('learnai_auth', JSON.stringify(data.user || {}));
+      if (data.token) localStorage.setItem('auth_token', data.token);
+      if (data.user) localStorage.setItem('learnai_auth', JSON.stringify(data.user));
       return { success: true, user: data.user };
     } catch (err) {
       return { success: false, error: 'Network error. Please try again.' };
@@ -43,7 +49,7 @@ window.Auth = {
     try {
       await fetch(API_BASE + '/auth/logout', {
         method: 'POST',
-        credentials: 'include'
+        headers: getAuthHeaders()
       });
     } catch (err) {}
     localStorage.removeItem('learnai_auth');
@@ -55,7 +61,7 @@ window.Auth = {
     try {
       const res = await fetch(API_BASE + '/auth/me', {
         method: 'GET',
-        credentials: 'include'
+        headers: getAuthHeaders()
       });
       if (!res.ok) return null;
       const data = await res.json();

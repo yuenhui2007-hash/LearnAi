@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Statistics & Probability — IB Mathematics: Analysis & Approaches Notes | LearnAI</title>
-<meta name="description" content="Statistics & Probability notes for IB Mathematics: Analysis & Approaches (IB DP Maths AA HL/SL). Detailed study notes and last-minute summary.">
+<meta name="description" content="Statistics & Probability notes for IB Mathematics: Analysis & Approaches (IB DP Mathematics: Analysis & Approaches HL/SL). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=4">
@@ -79,22 +79,117 @@
 <span class="level-badge badge-sl">SL</span>
 </div>
 <h1>Statistics & Probability</h1>
-<p style="color:var(--gray)">IB DP Maths AA HL/SL</p>
+<p style="color:var(--gray)">IB DP Mathematics: Analysis & Approaches HL/SL — Topic 4</p>
 </div>
-
 <div class="notes-section">
 <h2>Overview</h2>
-<p>This topic covers the IB DP syllabus requirements for <strong>Statistics & Probability</strong>. Use these notes alongside your textbook and past paper practice for the best preparation.</p>
+<p>Statistics and Probability (Topic 4) covers data analysis, probability rules, distributions, and regression. HL students study additional distributions and hypothesis testing. This topic is heavily tested in Paper 2 and is useful for the IA.</p>
 </div>
 
 <div class="notes-section">
-<h2>Key Concepts</h2>
+<h2>4.1 Descriptive Statistics</h2>
+<div class="formula-box">
+Mean: x̄ = Σx / n<br>
+Median: middle value when data is ordered<br>
+Mode: most frequent value<br><br>
+Variance: σ² = Σ(x − x̄)² / n (population) or s² = Σ(x − x̄)² / (n−1) (sample)<br>
+Standard deviation: σ = √variance<br>
+Interquartile range: IQR = Q₃ − Q₁
+</div>
+</div>
+
+<div class="notes-section">
+<h2>4.2 Probability</h2>
+<div class="formula-box">
+P(A ∪ B) = P(A) + P(B) − P(A ∩ B)<br>
+P(A ∩ B) = P(A) × P(B|A) = P(B) × P(A|B)<br>
+Conditional probability: P(A|B) = P(A ∩ B) / P(B)<br>
+Independent events: P(A ∩ B) = P(A) × P(B)<br>
+Mutually exclusive: P(A ∩ B) = 0
+</div>
+</div>
+
+<div class="notes-section">
+<h2>4.3 Discrete Distributions</h2>
+
+<h3>Binomial Distribution</h3>
+<div class="formula-box">
+X ~ B(n, p)<br>
+P(X = r) = (n choose r) p^r (1−p)^(n−r)<br>
+E(X) = np, Var(X) = np(1−p)
+</div>
+
+<h3>Worked Example 1: Binomial</h3>
+<p><strong>Question:</strong> A fair die is rolled 10 times. Find the probability of getting exactly 3 sixes.</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">
+X ~ B(10, 1/6)<br>
+P(X = 3) = (10 choose 3)(1/6)³(5/6)⁷ = 120 × (1/216) × (5/6)⁷ ≈ 0.155
+</div>
+</div>
+
+<div class="notes-section">
+<h2>4.4 Continuous Distributions</h2>
+
+<h3>Normal Distribution</h3>
+<div class="formula-box">
+X ~ N(μ, σ²)<br>
+Standardise: Z = (X − μ)/σ<br>
+Z ~ N(0, 1)<br>
+Use GDC or tables to find probabilities.
+</div>
+</div>
+
+<div class="notes-section">
+<h2>4.5 Correlation & Regression</h2>
+<div class="formula-box">
+Pearson's correlation coefficient: r = cov(X,Y) / (σ_X σ_Y)<br>
+−1 ≤ r ≤ 1; r close to ±1 indicates strong linear correlation<br><br>
+Regression line: y = ax + b<br>
+a = cov(X,Y) / var(X), b = ȳ − a x̄
+</div>
+<p>Extrapolation beyond the data range is unreliable.</p>
+</div>
+
+<div class="notes-section">
+<h2>4.6 Hypothesis Testing [HL only]</h2>
+<div class="formula-box">
+Null hypothesis (H₀): statement of no effect<br>
+Alternative hypothesis (H₁): statement of effect<br><br>
+p-value: probability of obtaining results at least as extreme as observed, assuming H₀ is true<br>
+If p-value < significance level (α), reject H₀
+</div>
+<div class="highlight-box">
+<h4>HL Exam Focus</h4>
+<p>May 2024 HL Paper 3: Chi-squared test for independence with contingency table.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Common Misconceptions</h2>
 <ul>
-<li>Core syllabus definitions and theory</li>
-<li>HL extensions where applicable</li>
-<li>Connections to the IB Internal Assessment (IA)</li>
-<li>Paper 1, Paper 2 and Paper 3 relevance</li>
+<li><strong>Correlation vs. causation:</strong> Correlation does not imply causation.</li>
+<li><strong>Independent vs. mutually exclusive:</strong> Independent events can occur together; mutually exclusive events cannot.</li>
+<li><strong>Normal distribution:</strong> The total area under the curve is 1, not the height.</li>
+<li><strong>p-value:</strong> A small p-value means the data is unlikely under H₀, not that H₀ is definitely false.</li>
 </ul>
+</div>
+
+<div class="notes-section">
+<h2>Exam-Specific Information</h2>
+<ul>
+<li><strong>Paper 1:</strong> 2–3 questions on probability and basic statistics.</li>
+<li><strong>Paper 2:</strong> Structured questions on distributions, regression, and data analysis.</li>
+<li><strong>Paper 3 (HL):</strong> Hypothesis testing and advanced probability.</li>
+<li><strong>IA:</strong> Statistical investigations (correlation studies, probability simulations) are popular.</li>
+</ul>
+<div class="highlight-box">
+<h4>Past Paper Trends (2019–2024)</h4>
+<p>November 2023: Normal distribution with inverse normal calculation.<br>
+May 2023: Binomial probability with conditional probability.<br>
+November 2022: Regression line and correlation coefficient interpretation.<br>
+May 2022: HL t-test for paired data.</p>
+</div>
 </div>
 
 <div class="notes-section">
@@ -106,8 +201,8 @@
 <li><a href="https://www.revisionvillage.com/" target="_blank" rel="noopener">Revision Village</a> — IB-specific video tutorials & question bank</li>
 <li><a href="https://ibdocuments.com/" target="_blank" rel="noopener">IB Documents</a> — Past papers, mark schemes & syllabi</li>
 <li><a href="https://ib.academy/" target="_blank" rel="noopener">IB Academy</a> — Study guides and free resources</li>
-<li><a href="https://www.canaelite.com/" target="_blank" rel="noopener">Cana Academy</a> — IB tutoring & notes</li>
-<li><a href="https://www.thinkib.net/" target="_blank" rel="noopener">ThinkIB</a> — Teacher resources & student materials</li>
+<li><a href="https://www.examsolutions.net/" target="_blank" rel="noopener">Exam Solutions</a> — Maths worked examples</li>
+<li><a href="https://www.geogebra.org/" target="_blank" rel="noopener">GeoGebra</a> — Statistics and regression tools</li>
 </ul>
 </div>
 </div>
@@ -116,33 +211,35 @@
 <div class="notes-section">
 <h2>Practice Questions</h2>
 <ul>
-<li>Review past IB exam papers for this topic</li>
-<li>Attempt Paper 1 (MCQ) and Paper 2 (structured) questions</li>
-<li>For HL students, practise Paper 3 option-style questions</li>
-<li>Use the IB question bank on Revision Village for targeted drills</li>
+<li>Given P(A) = 0.4, P(B) = 0.5, and P(A ∩ B) = 0.2, find P(A ∪ B) and determine if A and B are independent.</li>
+<li>X ~ B(15, 0.3). Find P(X ≥ 5).</li>
+<li>X ~ N(50, 25). Find P(X > 58).</li>
+<li>HL: Carry out a hypothesis test at the 5% level to test whether a coin is biased, given 65 heads in 100 tosses.</li>
 </ul>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Revise key definitions using flashcards</li>
-<li>Practise at least 3 past paper questions under timed conditions</li>
-<li>Check the command terms (state, explain, evaluate, discuss)</li>
-<li>Review the mark scheme for common wording</li>
+<li>Mean, median, mode; variance = Σ(x−x̄)²/n; sd = √variance.</li>
+<li>P(A ∪ B) = P(A) + P(B) − P(A ∩ B).</li>
+<li>Binomial: P(X=r) = (nCr)p^r(1−p)^(n−r); E(X)=np, Var=np(1−p).</li>
+<li>Normal: standardise with Z = (X−μ)/σ.</li>
+<li>Regression: y = ax + b; r measures linear correlation.</li>
+<li>HL: Hypothesis testing with p-values; reject H₀ if p < α.</li>
 </ul>
 </div>
 
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>Read each question carefully and identify the command term.</li>
-<li>Show all working for calculation questions — method marks are generous.</li>
-<li>Use correct units and significant figures throughout.</li>
-<li>Plan essay-style answers before writing — structure with introduction, body, and conclusion.</li>
+<li>Read each question carefully and identify the command term before answering.</li>
+<li>Show all working — method marks are generous in IB Mathematics.</li>
+<li>Give exact answers unless asked for decimal approximations.</li>
+<li>For probability questions, draw a tree diagram or Venn diagram.</li>
+<li>For normal distribution, always draw a sketch and shade the required area.</li>
 </ul>
 </div>
-
 </div>
 </div>
 </section>
