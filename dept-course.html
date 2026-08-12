@@ -377,6 +377,17 @@ const params = new URLSearchParams(window.location.search);
 const deptId = params.get('dept');
 const dept = corpDepts.find(d => d.id === deptId);
 
+function getProgressKey(key) { return `learnai_dept_${deptId}_${key}`; }
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem(getProgressKey('progress')) || '{}'); }
+  catch(e) { return {}; }
+}
+function saveProgress(data) {
+  localStorage.setItem(getProgressKey('progress'), JSON.stringify(data));
+}
+
+const progress = loadProgress();
+
 if (!dept) {
   document.getElementById('deptTitle').textContent = 'Department Not Found';
   document.getElementById('deptDesc').textContent = 'Please select a valid department from the Academy page.';
@@ -386,6 +397,10 @@ if (!dept) {
   document.getElementById('quizHeading').textContent = `${dept.quiz.length} Questions`;
   document.getElementById('assignmentText').textContent = dept.assignment;
   renderQuiz();
+  if (progress.assignmentScore !== undefined) {
+    document.getElementById('assignmentInput').value = progress.assignmentText || '';
+    showStoredAssignmentResult();
+  }
 }
 
 let quizAnswers = {};
@@ -419,7 +434,10 @@ function selectAnswer(qIdx, optIdx) {
 
 function submitQuiz() {
   let correct = 0;
+  const answers = [];
   dept.quiz.forEach((q, i) => {
+    answers.push(quizAnswers[i]);
+    const userAns = quizAnswers[i];
     const userAns = quizAnswers[i];
     const isCorrect = userAns === q.a;
     if (isCorrect) correct++;
@@ -440,7 +458,14 @@ function submitQuiz() {
   res.innerHTML = `<div style="padding:20px;background:#f8fafc;border-radius:12px;text-align:center;margin-top:16px;">
     <div style="font-size:2rem;font-weight:700;color:${pct >= 80 ? '#059669' : pct >= 60 ? '#d97706' : '#dc2626'};">${correct} / ${dept.quiz.length}</div>
     <div style="color:#64748b;margin-top:6px;">${pct}% — ${pct >= 80 ? 'Excellent!' : pct >= 60 ? 'Good job.' : 'Review and try again.'}</div>
+    <div style="color:#059669;font-size:0.85rem;margin-top:8px;font-weight:600;">✓ Progress saved</div>
   </div>`;
+  progress.quizCorrect = correct;
+  progress.quizTotal = dept.quiz.length;
+  progress.quizPct = pct;
+  progress.quizAnswers = answers;
+  progress.quizCompletedAt = new Date().toISOString();
+  saveProgress(progress);
 }
 
 function submitAssignment() {
@@ -451,6 +476,9 @@ function submitAssignment() {
     return;
   }
   const wordCount = input.split(/\s+/).filter(w => w.length > 0).length;
+
+  progress.assignmentText = input;
+  progress.assignmentWordCount = wordCount;
 
   let score = 0;
   let rubric = [];
@@ -522,8 +550,32 @@ function submitAssignment() {
       <h4 style="color:#64748b;font-size:0.85rem;margin:12px 0 8px;">Rubric Breakdown</h4>
       ${rubric.map(r => `<div class="rubric-row">${r}</div>`).join('')}
       <div style="color:#94a3b8;font-size:0.78rem;margin-top:10px;">Word count: ${wordCount} | Submitted: ${new Date().toLocaleString()}</div>
+      <div style="color:#059669;font-size:0.85rem;margin-top:8px;font-weight:600;">✓ Progress saved locally</div>
     </div>
   `;
+  progress.assignmentScore = score;
+  progress.assignmentGrade = grade;
+  progress.assignmentRubric = rubric;
+  progress.assignmentFeedback = feedback;
+  progress.assignmentSubmittedAt = new Date().toISOString();
+  saveProgress(progress);
+}
+
+function showStoredAssignmentResult() {
+  const resultArea = document.getElementById('assignmentResult');
+  if (!progress.assignmentScore !== undefined && progress.assignmentRubric) {
+    const badgeClass = progress.assignmentScore >= 80 ? 'excellent' : progress.assignmentScore >= 60 ? 'good' : progress.assignmentScore >= 50 ? 'average' : 'poor';
+    resultArea.innerHTML = `
+      <div class="ai-result">
+        <h4>🤖 Previous AI Marking Result — ${dept.name}</h4>
+        <div class="score-pill ${badgeClass}">${progress.assignmentScore}/100 — Grade ${progress.assignmentGrade || 'N/A'}</div>
+        <div style="margin-bottom:12px;color:#334155;font-size:0.95rem;">${(progress.assignmentFeedback || []).join(' ')}</div>
+        <h4 style="color:#64748b;font-size:0.85rem;margin:12px 0 8px;">Rubric Breakdown</h4>
+        ${(progress.assignmentRubric || []).map(r => `<div class="rubric-row">${r}</div>`).join('')}
+        <div style="color:#94a3b8;font-size:0.78rem;margin-top:10px;">Word count: ${progress.assignmentWordCount || 0} | Submitted: ${progress.assignmentSubmittedAt ? new Date(progress.assignmentSubmittedAt).toLocaleString() : 'N/A'}</div>
+      </div>
+    `;
+  }
 }
 </script>
 </body>
