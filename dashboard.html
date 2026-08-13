@@ -42,17 +42,33 @@
 <div style="margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap;">
 <button class="btn btn-outline" id="exportBtn">Export Progress</button>
 <button class="btn btn-outline" id="importBtn">Import Progress</button>
+<button class="btn btn-outline" id="settingsBtn">⚙️ Display Settings</button>
 <input type="file" id="importFile" accept="application/json" style="display:none">
 </div>
 
-<div class="dashboard-grid" id="subjectProgress"></div>
+<!-- Display Settings Panel -->
+<div id="settingsPanel" style="display:none;margin-bottom:24px;padding:20px;background:#1e293b;border-radius:12px;">
+<h3 style="margin-bottom:16px;color:#fff;">Choose what to display</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showSubjects" checked> Cambridge Subjects</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showDepartments" checked> Department Courses</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showStudyTools" checked> Study & Practice</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showPlanner" checked> Planner Preview</label>
+</div>
+<div style="margin-top:16px;display:flex;gap:12px;">
+<button class="btn btn-primary" id="saveSettingsBtn">Save Preferences</button>
+<button class="btn btn-outline" id="cancelSettingsBtn">Cancel</button>
+</div>
+</div>
 
-<div style="margin-top:60px">
+<div class="dashboard-grid" id="subjectProgress" style="display:none;"></div>
+
+<div id="deptSection" style="margin-top:60px;display:none;">
 <h2 style="margin-bottom:24px">Department Courses</h2>
 <div class="dashboard-grid" id="deptProgress"></div>
 </div>
 
-<div style="margin-top:60px">
+<div id="studySection" style="margin-top:60px;display:none;">
 <h2 style="margin-bottom:24px">Study & Practice</h2>
 <div class="dashboard-grid">
 <a href="study-tools.html" class="dashboard-card" style="text-decoration:none;color:inherit">
@@ -79,7 +95,7 @@
 </div>
 </div>
 
-<div style="margin-top:60px">
+<div id="plannerSection" style="margin-top:60px;display:none;">
 <h2 style="margin-bottom:24px">Planner Preview</h2>
 <div class="dashboard-card">
 <div id="plannerPreview"></div>
@@ -196,6 +212,42 @@ reader.readAsText(file);
 document.getElementById('exportBtn').addEventListener('click', exportProgress);
 document.getElementById('importBtn').addEventListener('click', function(){ document.getElementById('importFile').click(); });
 document.getElementById('importFile').addEventListener('change', function(e){ if(e.target.files[0]) importProgress(e.target.files[0]); });
+})();
+
+// Display Settings
+(function(){
+function loadSettings(){
+  var defaults = { showSubjects:true, showDepartments:true, showStudyTools:true, showPlanner:true };
+  try { return Object.assign(defaults, JSON.parse(localStorage.getItem('learnai_dashboard_settings') || '{}')); }
+  catch(e){ return defaults; }
+}
+function saveSettings(){
+  var settings = {
+    showSubjects: document.getElementById('showSubjects').checked,
+    showDepartments: document.getElementById('showDepartments').checked,
+    showStudyTools: document.getElementById('showStudyTools').checked,
+    showPlanner: document.getElementById('showPlanner').checked
+  };
+  localStorage.setItem('learnai_dashboard_settings', JSON.stringify(settings));
+  applySettings(settings);
+  document.getElementById('settingsPanel').style.display = 'none';
+}
+function applySettings(s){
+  document.getElementById('subjectProgress').style.display = s.showSubjects ? 'grid' : 'none';
+  document.getElementById('deptSection').style.display = s.showDepartments ? 'block' : 'none';
+  document.getElementById('studySection').style.display = s.showStudyTools ? 'block' : 'none';
+  document.getElementById('plannerSection').style.display = s.showPlanner ? 'block' : 'none';
+}
+var settings = loadSettings();
+document.getElementById('showSubjects').checked = settings.showSubjects;
+document.getElementById('showDepartments').checked = settings.showDepartments;
+document.getElementById('showStudyTools').checked = settings.showStudyTools;
+document.getElementById('showPlanner').checked = settings.showPlanner;
+applySettings(settings);
+
+document.getElementById('settingsBtn').addEventListener('click', function(){ document.getElementById('settingsPanel').style.display = 'block'; });
+document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
+document.getElementById('cancelSettingsBtn').addEventListener('click', function(){ document.getElementById('settingsPanel').style.display = 'none'; });
 })();
 </script>
 <script src="js/mascot.js?v=4" defer></script>
