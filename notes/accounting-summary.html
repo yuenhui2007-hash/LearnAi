@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting (9706) — Complete Notes | LearnAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=12">
+    <style>
+        :root { --acc-primary:#059669; --acc-accent:#10b981; --acc-dark:#064e3b; }
+        * { box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#f0fdf4; color:#1e293b; margin:0; }
+
+        .acc-hero { background:linear-gradient(135deg,#064e3b 0%,#065f46 50%,#047857 100%); color:#fff; padding:64px 24px 48px; text-align:center; position:relative; overflow:hidden; }
+        .acc-hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E"); }
+        .acc-hero h1 { font-size:2.4rem; font-weight:800; margin:0 0 12px; position:relative; }
+        .acc-hero p { font-size:1.1rem; opacity:0.85; margin:0; position:relative; }
+        .acc-hero .badge-row { display:flex; gap:10px; justify-content:center; margin-top:20px; flex-wrap:wrap; position:relative; }
+        .acc-hero .badge { background:rgba(255,255,255,0.12); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); padding:6px 16px; border-radius:50px; font-size:0.8rem; font-weight:600; }
+
+        .acc-container { max-width:960px; margin:0 auto; padding:32px 20px 64px; }
+
+        .formula-strip { background:#fff; border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05); border:1px solid #d1fae5; }
+        .formula-strip h3 { margin:0 0 16px; font-size:1.1rem; color:#064e3b; display:flex; align-items:center; gap:8px; }
+        .formula-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
+        .formula-card { background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%); padding:12px 14px; border-radius:10px; font-size:0.82rem; border-left:3px solid var(--acc-primary); transition:transform 0.15s; }
+        .formula-card:hover { transform:translateY(-2px); }
+        .formula-card strong { color:var(--acc-dark); display:block; margin-bottom:2px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px; }
+
+        .unit-card { background:#fff; border-radius:20px; margin-bottom:20px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.04); border:1px solid #d1fae5; overflow:hidden; transition:box-shadow 0.2s; }
+        .unit-card:hover { box-shadow:0 10px 25px -5px rgba(0,0,0,0.08); }
+        .unit-header { padding:20px 24px; background:linear-gradient(90deg,var(--acc-primary),var(--acc-accent)); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; }
+        .unit-header h2 { margin:0; font-size:1.15rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+        .unit-header .toggle { font-size:1.4rem; transition:transform 0.3s; }
+        .unit-card.open .toggle { transform:rotate(180deg); }
+        .unit-body { max-height:0; overflow:hidden; transition:max-height 0.4s ease-out; }
+        .unit-card.open .unit-body { max-height:2000px; }
+        .unit-content { padding:20px 24px; }
+
+        .topic { margin-bottom:14px; padding-left:16px; border-left:3px solid #d1fae5; transition:border-color 0.2s; }
+        .topic:hover { border-left-color:var(--acc-primary); }
+        .topic h4 { margin:0 0 6px; font-size:0.95rem; color:#064e3b; font-weight:700; }
+        .topic p { margin:0; font-size:0.88rem; color:#475569; line-height:1.6; }
+        .topic .tag { display:inline-block; background:#ecfdf5; color:#065f46; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:600; margin-top:6px; }
+
+        .case-box { background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 100%); border:1px solid #fed7aa; border-radius:12px; padding:16px; margin:16px 0; }
+        .case-box h5 { margin:0 0 8px; color:#9a3412; font-size:0.85rem; display:flex; align-items:center; gap:6px; }
+        .case-box p { margin:0; font-size:0.85rem; color:#7c2d12; line-height:1.5; }
+
+        .dyk { background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%); border:1px solid #bfdbfe; border-radius:12px; padding:14px 16px; margin:14px 0; display:flex; gap:12px; align-items:flex-start; }
+        .dyk-icon { font-size:1.4rem; flex-shrink:0; }
+        .dyk-text { font-size:0.85rem; color:#1e40af; line-height:1.5; }
+        .dyk-text strong { color:#1e3a8a; }
+
+        .cta-box { background:linear-gradient(135deg,#064e3b 0%,#065f46 100%); color:#fff; border-radius:20px; padding:40px 32px; text-align:center; margin-top:36px; position:relative; overflow:hidden; }
+        .cta-box::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .cta-box h3 { margin:0 0 10px; font-size:1.4rem; position:relative; }
+        .cta-box p { margin:0 0 20px; opacity:0.8; font-size:0.95rem; position:relative; }
+        .cta-box a { display:inline-block; padding:14px 32px; background:#fff; color:#064e3b; border-radius:12px; font-weight:700; text-decoration:none; position:relative; transition:transform 0.15s,box-shadow 0.15s; }
+        .cta-box a:hover { transform:translateY(-2px); box-shadow:0 10px 20px -5px rgba(0,0,0,0.2); }
+
+        .back-bar { padding:16px 24px; background:#fff; border-bottom:1px solid #d1fae5; }
+        .back-bar a { color:var(--acc-primary); text-decoration:none; font-weight:600; font-size:0.9rem; display:inline-flex; align-items:center; gap:6px; }
+
+        @media (max-width:640px) { .acc-hero h1 { font-size:1.7rem; } .formula-grid { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar"></nav>
+    <script src="../js/nav.js?v=12"></script>
+
+    <div class="back-bar">
+        <a href="../subject.html?id=accounting">← Back to Accounting</a>
+    </div>
+
+    <div class="acc-hero">
+        <h1>📋 Accounting</h1>
+        <p>Cambridge A-Level 9706 — The numbers that tell stories</p>
+        <div class="badge-row">
+            <span class="badge">📊 4 Units</span>
+            <span class="badge">🧮 Worked Examples</span>
+            <span class="badge">📈 Ratio Analysis</span>
+            <span class="badge">💡 Exam Tips</span>
+        </div>
+    </div>
+
+    <div class="acc-container">
+        <div class="formula-strip">
+            <h3>⚡ Formula Cheat Sheet</h3>
+            <div class="formula-grid">
+                <div class="formula-card"><strong>Gross Profit</strong> Net Sales − Cost of Sales</div>
+                <div class="formula-card"><strong>Net Profit</strong> Gross Profit − Operating Expenses</div>
+                <div class="formula-card"><strong>Current Ratio</strong> Current Assets ÷ Current Liabilities</div>
+                <div class="formula-card"><strong>Acid Test</strong> (CA − Inventory) ÷ CL</div>
+                <div class="formula-card"><strong>ROCE</strong> (Operating Profit ÷ Capital Employed) × 100</div>
+                <div class="formula-card"><strong>Inventory Days</strong> (Avg Inventory ÷ COS) × 365</div>
+                <div class="formula-card"><strong>Receivables Days</strong> (Receivables ÷ Revenue) × 365</div>
+                <div class="formula-card"><strong>Payables Days</strong> (Payables ÷ Credit Purchases) × 365</div>
+                <div class="formula-card"><strong>Gearing</strong> (NCL ÷ Capital Employed) × 100</div>
+                <div class="formula-card"><strong>Interest Cover</strong> Operating Profit ÷ Interest Payable</div>
+                <div class="formula-card"><strong>EPS</strong> Profit after Tax ÷ Number of Ordinary Shares</div>
+                <div class="formula-card"><strong>Contribution</strong> Selling Price − Variable Cost</div>
+                <div class="formula-card"><strong>Break-even</strong> Fixed Costs ÷ Contribution per unit</div>
+                <div class="formula-card"><strong>NPV</strong> Σ [Cash Flow_t ÷ (1 + r)^t]</div>
+            </div>
+        </div>
+
+        <div class="unit-card open" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>📒 Unit 1 — Financial Accounting</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🔄 The Accounting Cycle</h4>
+                        <p>Every transaction follows a journey: <strong>Source Documents</strong> → <strong>Books of Prime Entry</strong> → <strong>Ledgers</strong> → <strong>Trial Balance</strong> → <strong>Financial Statements</strong>. Miss one step and the whole system breaks.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>⚖️ Double Entry — The Golden Rule</h4>
+                        <p>Every debit has an equal credit. <strong>DEAD CLIC</strong>: <strong>D</strong>ebits increase <strong>E</strong>xpenses, <strong>A</strong>ssets, <strong>D</strong>rawings. <strong>C</strong>redits increase <strong>L</strong>iabilities, <strong>I</strong>ncome, <strong>C</strong>apital. If your trial balance doesn't balance, something's wrong.</p>
+                        <span class="tag">Mnemonic: DEAD CLIC</span>
+                    </div>
+                    <div class="topic">
+                        <h4>📚 Books of Prime Entry</h4>
+                        <p><strong>Sales Day Book</strong> (credit sales), <strong>Purchases Day Book</strong> (credit purchases), <strong>Cash Book</strong> (all cash/bank), <strong>Journal</strong> (non-routine), <strong>Petty Cash Book</strong> (small expenses). These are the first place transactions are recorded before posting to ledgers.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🔍 Bank Reconciliation</h4>
+                        <p>Why doesn't your cash book match your bank statement? <strong>Unpresented cheques</strong> (you recorded, bank hasn't), <strong>uncredited deposits</strong> (you paid in, bank hasn't processed), <strong>bank charges, standing orders, dishonoured cheques</strong>. Always update the cash book first, then reconcile.</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>⚠️ Case Study: The Suspense Account</h5>
+                        <p>A trial balance is $500 out. Investigation finds: a $250 sales invoice was only credited to the customer (no debit), and a $250 purchase was debited twice. Both errors go through the <strong>suspense account</strong> — a temporary holding account that must balance to zero once all errors are found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>📊 Unit 2 — Financial Statements</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>👤 Sole Trader Accounts</h4>
+                        <p><strong>Income Statement:</strong> Revenue − Cost of Sales = Gross Profit. Gross Profit − Expenses = Net Profit. Adjust for accruals, prepayments, depreciation, bad debts, and provision for doubtful debts.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🤝 Partnership Accounts</h4>
+                        <p>Partners share profits according to the <strong>partnership agreement</strong>. The <strong>appropriation account</strong> shows: Interest on capital (reward for investment), Salaries (reward for work), Residual profit (shared in profit-sharing ratio). Current accounts track each partner's drawings and share.</p>
+                        <span class="tag">Exam tip: Always check for guaranteed minimum profit for new partners</span>
+                    </div>
+                    <div class="topic">
+                        <h4>🏢 Limited Companies</h4>
+                        <p><strong>Share capital:</strong> Authorised (max allowed), Issued (actually sold), Called-up (asked for), Paid-up (received). <strong>Types of shares:</strong> Ordinary (voting rights, variable dividends) vs Preference (fixed dividend, no voting). <strong>Reserves:</strong> Share premium, revaluation, general, retained earnings.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🏭 Manufacturing Accounts</h4>
+                        <p><strong>Prime Cost</strong> = Direct Materials + Direct Labour + Direct Expenses. <strong>Factory Overheads</strong> = Indirect costs (rent, power, depreciation, supervisor salaries). <strong>Total Manufacturing Cost</strong> = Prime Cost + Factory Overheads. Add opening WIP, deduct closing WIP = <strong>Cost of Production</strong> transferred to Income Statement.</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> <strong>Enron</strong> (2001) used off-balance-sheet entities to hide $38bn in debt. They exploited accounting loopholes in Special Purpose Entities (SPEs). The scandal led to the <strong>Sarbanes-Oxley Act</strong> and the collapse of Arthur Andersen — one of the "Big Five" accounting firms.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>📈 Unit 3 — Analysis & Communication</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>💰 Profitability Ratios</h4>
+                        <p><strong>Gross Profit Margin:</strong> How much of each sale is gross profit? <strong>Net Profit Margin:</strong> How much of each sale is net profit? <strong>ROCE:</strong> Return on capital employed — the ultimate measure of efficiency. Higher is better, but compare against industry averages.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>💧 Liquidity Ratios</h4>
+                        <p><strong>Current ratio</strong> (ideal 1.5–2.0): Can we pay short-term debts? <strong>Acid test</strong> (ideal 1.0+): Same, but excluding inventory (might not sell). Below 1.0 = danger zone. Above 2.0 = might be holding too much idle cash.</p>
+                        <span class="tag">Warning: A high current ratio can hide slow-moving stock</span>
+                    </div>
+                    <div class="topic">
+                        <h4>⚙️ Efficiency Ratios</h4>
+                        <p><strong>Inventory days:</strong> How long stock sits in the warehouse? <strong>Receivables days:</strong> How long customers take to pay? <strong>Payables days:</strong> How long we take to pay suppliers? The goal: collect fast, pay slow (but not too slow — damages relationships).</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📊 Cash Flow Statements (IAS 7)</h4>
+                        <p>Three sections: <strong>Operating</strong> (day-to-day business), <strong>Investing</strong> (buying/selling assets), <strong>Financing</strong> (loans, shares, dividends). A company can be profitable but have negative cash flow — this is how businesses fail despite profit.</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>📉 Case Study: Comet Electricals (2012)</h5>
+                        <p>Comet was profitable on paper but had <strong>negative operating cash flow</strong> — customers weren't paying, and suppliers demanded cash. The business collapsed within months. Profit ≠ Cash.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🧮 Unit 4 — Cost & Management Accounting</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🏷️ Cost Classification</h4>
+                        <p>By element: Materials, Labour, Overheads. By behaviour: <strong>Fixed</strong> (rent, salaries), <strong>Variable</strong> (raw materials), <strong>Semi-variable</strong> (utilities). By traceability: <strong>Direct</strong> (traceable to product) vs <strong>Indirect</strong> (must be apportioned).</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📐 Overhead Absorption</h4>
+                        <p>Three stages: <strong>Allocation</strong> (direct assignment) → <strong>Apportionment</strong> (fair sharing by floor area, machine hours, employees) → <strong>Absorption</strong> (charge to products using OAR). Under-absorption = not enough overhead charged. Over-absorption = too much charged.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📉 Marginal Costing & Break-even</h4>
+                        <p><strong>Contribution</strong> = Selling Price − Variable Cost. <strong>Break-even</strong> = Fixed Costs ÷ Contribution per unit. <strong>Margin of safety</strong> = how much sales can fall before loss. <strong>C/S ratio</strong> = Contribution ÷ Sales. Marginal costing is for decisions; absorption costing is for financial reporting.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📋 Standard Costing & Variances</h4>
+                        <p>Set a standard cost, compare with actual, investigate differences. <strong>Material price variance:</strong> Did we pay more/less than expected? <strong>Material usage variance:</strong> Did we use more/less than expected? Same for labour (rate and efficiency). Favourable = good for profit. Adverse = bad.</p>
+                        <span class="tag">Eval tip: Don't blame workers for adverse variances — check material quality first</span>
+                    </div>
+                    <div class="topic">
+                        <h4>💹 Investment Appraisal</h4>
+                        <p><strong>Payback:</strong> How long to recover investment? Simple but ignores later cash flows. <strong>NPV:</strong> Discount future cash flows — if positive, accept. <strong>IRR:</strong> The discount rate where NPV = 0. If IRR > cost of capital, accept. <strong>ARR:</strong> Average profit ÷ average investment.</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> The <strong>Concorde fallacy</strong> (sunk cost fallacy) is named after the failed supersonic jet. British and French governments kept investing because they'd already spent so much — ignoring that future costs exceeded future benefits. In accounting, <strong>sunk costs are irrelevant to future decisions</strong>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>📚 Want the Full Notes?</h3>
+            <p>Worked ledger exercises, variance calculations, NPV examples, and exam tips.</p>
+            <a href="../alevel-notes/accounting/ALEVEL_ACCOUNTING_NOTES.md">Open Complete Notes →</a>
+        </div>
+    </div>
+
+    <script src="../js/theme.js?v=12"></script>
+    <script src="../js/auth.js?v=12"></script>
+    <script src="../js/mascot.js?v=12"></script>
+    <script src="../js/pwa.js?v=12"></script>
+</body>
+</html>

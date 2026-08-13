@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics (9708) — Complete Notes | LearnAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=12">
+    <style>
+        :root { --eco-primary:#d97706; --eco-accent:#f59e0b; --eco-dark:#92400e; }
+        * { box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#fffbeb; color:#1e293b; margin:0; }
+
+        .eco-hero { background:linear-gradient(135deg,#78350f 0%,#92400e 50%,#b45309 100%); color:#fff; padding:64px 24px 48px; text-align:center; position:relative; overflow:hidden; }
+        .eco-hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E"); }
+        .eco-hero h1 { font-size:2.4rem; font-weight:800; margin:0 0 12px; position:relative; }
+        .eco-hero p { font-size:1.1rem; opacity:0.85; margin:0; position:relative; }
+        .eco-hero .badge-row { display:flex; gap:10px; justify-content:center; margin-top:20px; flex-wrap:wrap; position:relative; }
+        .eco-hero .badge { background:rgba(255,255,255,0.12); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); padding:6px 16px; border-radius:50px; font-size:0.8rem; font-weight:600; }
+
+        .eco-container { max-width:960px; margin:0 auto; padding:32px 20px 64px; }
+
+        .formula-strip { background:#fff; border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05); border:1px solid #fde68a; }
+        .formula-strip h3 { margin:0 0 16px; font-size:1.1rem; color:#78350f; display:flex; align-items:center; gap:8px; }
+        .formula-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
+        .formula-card { background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); padding:12px 14px; border-radius:10px; font-size:0.82rem; border-left:3px solid var(--eco-primary); transition:transform 0.15s; }
+        .formula-card:hover { transform:translateY(-2px); }
+        .formula-card strong { color:var(--eco-dark); display:block; margin-bottom:2px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px; }
+
+        .unit-card { background:#fff; border-radius:20px; margin-bottom:20px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.04); border:1px solid #fde68a; overflow:hidden; transition:box-shadow 0.2s; }
+        .unit-card:hover { box-shadow:0 10px 25px -5px rgba(0,0,0,0.08); }
+        .unit-header { padding:20px 24px; background:linear-gradient(90deg,var(--eco-primary),var(--eco-accent)); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:space-between; user-select:none; }
+        .unit-header h2 { margin:0; font-size:1.15rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+        .unit-header .toggle { font-size:1.4rem; transition:transform 0.3s; }
+        .unit-card.open .toggle { transform:rotate(180deg); }
+        .unit-body { max-height:0; overflow:hidden; transition:max-height 0.4s ease-out; }
+        .unit-card.open .unit-body { max-height:2000px; }
+        .unit-content { padding:20px 24px; }
+
+        .topic { margin-bottom:14px; padding-left:16px; border-left:3px solid #fde68a; transition:border-color 0.2s; }
+        .topic:hover { border-left-color:var(--eco-primary); }
+        .topic h4 { margin:0 0 6px; font-size:0.95rem; color:#78350f; font-weight:700; }
+        .topic p { margin:0; font-size:0.88rem; color:#475569; line-height:1.6; }
+        .topic .tag { display:inline-block; background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:600; margin-top:6px; }
+
+        .case-box { background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%); border:1px solid #a7f3d0; border-radius:12px; padding:16px; margin:16px 0; }
+        .case-box h5 { margin:0 0 8px; color:#065f46; font-size:0.85rem; display:flex; align-items:center; gap:6px; }
+        .case-box p { margin:0; font-size:0.85rem; color:#047857; line-height:1.5; }
+
+        .dyk { background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%); border:1px solid #bfdbfe; border-radius:12px; padding:14px 16px; margin:14px 0; display:flex; gap:12px; align-items:flex-start; }
+        .dyk-icon { font-size:1.4rem; flex-shrink:0; }
+        .dyk-text { font-size:0.85rem; color:#1e40af; line-height:1.5; }
+        .dyk-text strong { color:#1e3a8a; }
+
+        .cta-box { background:linear-gradient(135deg,#78350f 0%,#92400e 100%); color:#fff; border-radius:20px; padding:40px 32px; text-align:center; margin-top:36px; position:relative; overflow:hidden; }
+        .cta-box::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .cta-box h3 { margin:0 0 10px; font-size:1.4rem; position:relative; }
+        .cta-box p { margin:0 0 20px; opacity:0.8; font-size:0.95rem; position:relative; }
+        .cta-box a { display:inline-block; padding:14px 32px; background:#fff; color:#78350f; border-radius:12px; font-weight:700; text-decoration:none; position:relative; transition:transform 0.15s,box-shadow 0.15s; }
+        .cta-box a:hover { transform:translateY(-2px); box-shadow:0 10px 20px -5px rgba(0,0,0,0.2); }
+
+        .back-bar { padding:16px 24px; background:#fff; border-bottom:1px solid #fde68a; }
+        .back-bar a { color:var(--eco-primary); text-decoration:none; font-weight:600; font-size:0.9rem; display:inline-flex; align-items:center; gap:6px; }
+
+        @media (max-width:640px) { .eco-hero h1 { font-size:1.7rem; } .formula-grid { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar"></nav>
+    <script src="../js/nav.js?v=12"></script>
+
+    <div class="back-bar">
+        <a href="../subject.html?id=economics">← Back to Economics</a>
+    </div>
+
+    <div class="eco-hero">
+        <h1>📈 Economics</h1>
+        <p>Cambridge A-Level 9708 — Why the world works the way it does</p>
+        <div class="badge-row">
+            <span class="badge">📊 5 Units</span>
+            <span class="badge">📉 Diagrams</span>
+            <span class="badge">🌍 Case Studies</span>
+            <span class="badge">✍️ Essay Models</span>
+        </div>
+    </div>
+
+    <div class="eco-container">
+        <div class="formula-strip">
+            <h3>⚡ Formula Cheat Sheet</h3>
+            <div class="formula-grid">
+                <div class="formula-card"><strong>PED</strong> (%ΔQd) ÷ (%ΔP)</div>
+                <div class="formula-card"><strong>YED</strong> (%ΔQd) ÷ (%ΔY)</div>
+                <div class="formula-card"><strong>XED</strong> (%ΔQa) ÷ (%ΔPb)</div>
+                <div class="formula-card"><strong>PES</strong> (%ΔQs) ÷ (%ΔP)</div>
+                <div class="formula-card"><strong>Total Revenue</strong> Price × Quantity</div>
+                <div class="formula-card"><strong>GDP</strong> C + I + G + (X − M)</div>
+                <div class="formula-card"><strong>Multiplier</strong> 1 ÷ (1 − MPC)</div>
+                <div class="formula-card"><strong>Terms of Trade</strong> (Export PI ÷ Import PI) × 100</div>
+                <div class="formula-card"><strong>Inflation</strong> [(PI_t − PI_t-1) ÷ PI_t-1] × 100</div>
+                <div class="formula-card"><strong>Break-even</strong> FC ÷ Contribution per unit</div>
+                <div class="formula-card"><strong>NPV</strong> Σ [CF_t ÷ (1 + r)^t]</div>
+                <div class="formula-card"><strong>Consumer Surplus</strong> WTP − Actual Price</div>
+            </div>
+        </div>
+
+        <div class="unit-card open" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🌱 Unit 1 — Basic Economic Ideas</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>🔑 Scarcity, Choice & Opportunity Cost</h4>
+                        <p>Human wants are <strong>unlimited</strong>, resources are <strong>limited</strong>. This forces choices. <strong>Opportunity cost</strong> is the next best alternative you give up. It's not just "what you lose" — it's specifically the <strong>best</strong> alternative forgone.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📐 Production Possibility Curve (PPC)</h4>
+                        <p>Shows maximum output combinations of two goods. <strong>Concave (bowed out)</strong> = increasing opportunity cost (resources aren't perfectly transferable). <strong>Points inside</strong> = inefficient. <strong>Points outside</strong> = unattainable with current resources. An <strong>outward shift</strong> = economic growth.</p>
+                        <span class="tag">Exam tip: Movement along = reallocation. Shift = growth/decline.</span>
+                    </div>
+                    <div class="topic">
+                        <h4>⚖️ Economic Systems</h4>
+                        <p><strong>Free market:</strong> Price signals allocate resources. Efficient but creates inequality. <strong>Planned:</strong> Government decides. Equal but inefficient. <strong>Mixed:</strong> Most real economies — markets dominate, government intervenes to fix failures.</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> The concept of opportunity cost was formalised by <strong>Friedrich von Wieser</strong> in the 1880s, but the idea traces back to <strong>Adam Smith</strong> and the French Physiocrats. Every time you scroll TikTok instead of studying, you're experiencing it firsthand.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>⚖️ Unit 2 — The Price System & Theory of the Firm</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>📉 Demand & Supply</h4>
+                        <p><strong>Law of demand:</strong> Price falls → quantity demanded rises (income effect + substitution effect). <strong>Law of supply:</strong> Price rises → quantity supplied rises (profit motive). Equilibrium where Qd = Qs. Shifts: income, tastes, input prices, technology, taxes.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📊 Elasticities</h4>
+                        <p><strong>PED:</strong> How responsive is demand to price changes? >1 = elastic (luxuries). <1 = inelastic (necessities). <strong>YED:</strong> Normal goods (>0) vs inferior goods (<0). <strong>XED:</strong> Positive = substitutes, negative = complements. <strong>PES:</strong> How responsive is supply? More time = more elastic.</p>
+                        <span class="tag">Key determinant: Availability of substitutes</span>
+                    </div>
+                    <div class="topic">
+                        <h4>🏢 Theory of the Firm</h4>
+                        <p><strong>Profit maximisation:</strong> MC = MR (and MC rising). <strong>Shut-down:</strong> In short run, continue if P > AVC. In long run, exit if P < AC. Costs: TFC, TVC, TC, AFC, AVC, AC, MC. Revenue: TR, AR (= price), MR.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🏭 Market Structures</h4>
+                        <p><strong>Perfect competition:</strong> Many firms, identical products, no barriers, normal profit in long run. <strong>Monopoly:</strong> One firm, barriers to entry, supernormal profit, inefficiency (P > MC). <strong>Oligopoly:</strong> Few firms, interdependence, game theory, kinked demand curve. <strong>Monopolistic competition:</strong> Many firms, differentiated products, excess capacity.</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>🍎 Case Study: Apple's Pricing Power</h5>
+                        <p>Apple has <strong>inelastic demand</strong> for iPhones (loyal customers, ecosystem lock-in). This means they can raise prices without losing many customers — explaining why iPhone prices rose from $499 (2007) to $1,099+ today while maintaining market share.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>⚠️ Market Failure</h4>
+                        <p><strong>Negative externalities:</strong> Social cost > Private cost (pollution, congestion). <strong>Positive externalities:</strong> Social benefit > Private benefit (education, vaccines). <strong>Public goods:</strong> Non-excludable, non-rivalrous (defence, street lights). <strong>Merit/demerit goods:</strong> Information failure leads to under/over-consumption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🏛️ Unit 3 — Government Microeconomic Intervention</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>💰 Taxes & Subsidies</h4>
+                        <p><strong>Specific tax:</strong> Fixed amount per unit (shifts supply up parallel). <strong>Ad valorem tax:</strong> Percentage of price (rotates supply curve). <strong>Incidence:</strong> Who bears the burden? Depends on elasticity — more inelastic side bears more. Subsidies lower costs; distribution also depends on elasticity.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📋 Price Controls</h4>
+                        <p><strong>Maximum price (ceiling):</strong> Below equilibrium → shortage, queues, black markets. Used for rent control, essential goods. <strong>Minimum price (floor):</strong> Above equilibrium → surplus. Used for minimum wage, agricultural price supports. Both create deadweight loss.</p>
+                        <span class="tag">Eval tip: Price controls help consumers/producers short-term but distort markets long-term</span>
+                    </div>
+                    <div class="topic">
+                        <h4>🛡️ Regulation & Competition Policy</h4>
+                        <p>Governments regulate to prevent abuse of monopoly power, protect consumers, ensure quality, and correct information asymmetries. <strong>Competition policy:</strong> Anti-trust laws, merger control, price-fixing prohibition. <strong>Privatisation:</strong> State → private ownership. Arguments for (efficiency, competition) and against (job losses, profit over service).</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>🏠 Case Study: Rent Control in Berlin</h5>
+                        <p>Berlin introduced rent caps in 2020. Result: <strong>housing supply fell</strong> as landlords converted rentals to sales or Airbnb. Courts eventually ruled it unconstitutional. Classic example of maximum price causing shortages and unintended consequences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🌍 Unit 4 — The Macroeconomy</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>📊 National Income & Circular Flow</h4>
+                        <p><strong>GDP</strong> = C + I + G + (X − M). Measured by expenditure, income, or output methods. <strong>Real GDP</strong> adjusts for inflation. <strong>Circular flow:</strong> Injections (I, G, X) must equal leakages (S, T, M) for equilibrium.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📈 Aggregate Demand & Supply</h4>
+                        <p><strong>AD</strong> = total spending in the economy. Shifts right with expansionary fiscal/monetary policy, confidence, export growth. <strong>SRAS</strong> is upward sloping (sticky wages). <strong>LRAS</strong> is vertical at full employment output. Only supply-side policies shift LRAS.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>💼 Unemployment</h4>
+                        <p><strong>Frictional:</strong> Between jobs (inevitable, short-term). <strong>Structural:</strong> Skills/location mismatch (needs retraining). <strong>Cyclical:</strong> Insufficient AD (recession). <strong>Natural rate</strong> = frictional + structural. Only supply-side policies reduce natural rate.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📉 Inflation</h4>
+                        <p><strong>Demand-pull:</strong> "Too much money chasing too few goods." <strong>Cost-push:</strong> Rising input costs (oil, wages). <strong>Monetary:</strong> Excessive money supply growth (Friedman). Costs: menu costs, shoe-leather costs, redistribution, uncertainty, fiscal drag.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>💱 Balance of Payments & Exchange Rates</h4>
+                        <p><strong>Current account</strong> deficits caused by loss of competitiveness, strong currency, low savings. <strong>Exchange rate systems:</strong> Fixed (peg), floating (market-determined), managed float (most common). <strong>J-curve:</strong> Depreciation worsens deficit short-term before improving it.</p>
+                    </div>
+                    <div class="dyk">
+                        <span class="dyk-icon">💡</span>
+                        <div class="dyk-text"><strong>Did you know?</strong> Venezuela's inflation hit <strong>1,000,000%</strong> in 2018. The cause? The government printed money to finance deficits while output collapsed. This is <strong>hyperinflation</strong> — when money becomes literally worthless. People weighed cash instead of counting it.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card" onclick="this.classList.toggle('open')">
+            <div class="unit-header">
+                <h2>🎯 Unit 5 — Government Macroeconomic Intervention</h2>
+                <span class="toggle">▼</span>
+            </div>
+            <div class="unit-body">
+                <div class="unit-content">
+                    <div class="topic">
+                        <h4>💷 Fiscal Policy</h4>
+                        <p>Government spending and taxation. <strong>Expansionary:</strong> Cut taxes, increase spending → boosts AD. <strong>Contractionary:</strong> Raise taxes, cut spending → reduces AD. <strong>Automatic stabilisers:</strong> Welfare spending rises and tax revenue falls during recessions without government action.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🏦 Monetary Policy</h4>
+                        <p>Central bank controls interest rates and money supply. <strong>Transmission mechanism:</strong> Interest rate ↓ → borrowing cheaper → investment and consumption ↑ → AD ↑. <strong>Quantitative easing:</strong> Central bank buys assets to inject money when interest rates are near zero.</p>
+                        <span class="tag">Limitation: Liquidity trap — cutting rates doesn't work if people hoard cash</span>
+                    </div>
+                    <div class="topic">
+                        <h4>📐 Supply-Side Policy</h4>
+                        <p>Aims to shift LRAS right. <strong>Labour market:</strong> Education, training, reducing union power. <strong>Product markets:</strong> Deregulation, competition policy. <strong>Capital markets:</strong> R&D subsidies, tax incentives for investment, infrastructure. Long time lags but non-inflationary growth.</p>
+                    </div>
+                    <div class="topic">
+                        <h4>📉 Phillips Curve</h4>
+                        <p><strong>Short-run:</strong> Inverse relationship between inflation and unemployment (sticky wages allow trade-off). <strong>Long-run:</strong> Vertical at natural rate — no permanent trade-off. Expectations adjust. <strong>Expectations-augmented:</strong> Actual inflation = Expected inflation − α(Unemployment gap).</p>
+                    </div>
+                    <div class="topic">
+                        <h4>🌏 International Trade & Development</h4>
+                        <p><strong>Comparative advantage:</strong> Trade benefits all countries when they specialise in what they produce at lowest opportunity cost. <strong>Protectionism:</strong> Tariffs, quotas, subsidies protect domestic industries but raise prices and invite retaliation. <strong>Development:</strong> Measured by HDI (health, education, income). Barriers: low savings, poor infrastructure, weak institutions, debt.</p>
+                    </div>
+                    <div class="case-box">
+                        <h5>🇸🇬 Case Study: Singapore's Exchange Rate Policy</h5>
+                        <p>Unlike most countries, Singapore uses <strong>exchange rate policy</strong> instead of interest rates. The MAS manages the SGD against a trade-weighted basket. During 2022 inflation, they allowed faster SGD appreciation — making imports cheaper and controlling imported inflation without raising interest rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>📚 Want the Full Notes?</h3>
+            <p>Derivations, worked examples, diagrams, case studies, and essay model answers.</p>
+            <a href="../alevel-notes/economics/ALEVEL_ECONOMICS_NOTES.md">Open Complete Notes →</a>
+        </div>
+    </div>
+
+    <script src="../js/theme.js?v=12"></script>
+    <script src="../js/auth.js?v=12"></script>
+    <script src="../js/mascot.js?v=12"></script>
+    <script src="../js/pwa.js?v=12"></script>
+</body>
+</html>

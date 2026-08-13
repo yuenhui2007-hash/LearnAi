@@ -298,12 +298,24 @@
         card.href = href;
         card.className = 'subject-card';
 
-        // Filter code based on CAIE level
+        // Filter code based on level (CAIE or Edexcel)
+        // Use regex to split on middle-dot (U+00B7) or similar separators with surrounding whitespace
         var displayCode = s.code;
-        if (caieLevel === 'alevel' && s.code.indexOf('·') > -1) {
-            displayCode = s.code.split('·')[0].trim();
-        } else if (caieLevel === 'igcse' && s.code.indexOf('·') > -1) {
-            displayCode = s.code.split('·')[1].trim();
+        var parts = s.code ? s.code.split(/\s*\u00B7\s*/) : [s.code];
+        if (parts.length < 2) {
+            // fallback: try with regular space-dot-space pattern
+            parts = s.code ? s.code.split(/\s+\·\s+/) : [s.code];
+        }
+        if (caieLevel === 'alevel' && parts.length > 1) {
+            displayCode = parts[0].trim();
+        } else if (caieLevel === 'igcse' && parts.length > 1) {
+            displayCode = parts[1] ? parts[1].trim() : s.code;
+        } else if (edexcelLevel === 'ial' && parts.length > 1) {
+            displayCode = parts[0].trim();
+        } else if (edexcelLevel === 'igcse' && parts.length > 1) {
+            displayCode = parts[1] ? parts[1].trim() : s.code;
+        } else if (edexcelLevel === 'gcse' && parts.length > 1) {
+            displayCode = parts.length >= 3 ? parts[2].trim() : s.code;
         }
 
         card.innerHTML = `
