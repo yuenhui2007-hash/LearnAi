@@ -569,8 +569,7 @@ class IELTSTestEngine {
       this.showManualReviewResults();
     }
 
-    // Save to localStorage
-    this.saveResult();
+    // Save to localStorage (band saved after results render)
   }
 
   showAutoScoredResults() {
@@ -598,10 +597,20 @@ class IELTSTestEngine {
 
       if (isCorrect) correct += q.marks;
 
+      let explanationHTML = '';
+      if (!isCorrect && typeof IELTSFeedback !== 'undefined') {
+        const expl = IELTSFeedback.generateExplanation(q, userAns, this.skill);
+        explanationHTML = `<div class="result-explanation">
+          <div class="expl-why"><strong>Why:</strong> ${expl.whyWrong}</div>
+          <div class="expl-tip"><strong>Tip:</strong> ${expl.tip}</div>
+        </div>`;
+      }
+
       reviewHTML += `<div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
         <div class="result-q">Q${i + 1}: ${q.q}</div>
         <div class="result-answer">Your answer: ${userAns !== undefined ? (typeof userAns === 'boolean' ? (userAns ? 'True' : 'False') : userAns) : '<em>Not answered</em>'}</div>
         ${!isCorrect ? `<div class="result-correct">Correct answer: ${q.type === 'multiple' ? q.options[q.a] : q.answer}</div>` : ''}
+        ${explanationHTML}
         <div class="result-status">${isCorrect ? 'Correct' : 'Incorrect'}</div>
       </div>`;
     });
@@ -617,11 +626,38 @@ class IELTSTestEngine {
       <div class="score-bar"><div class="score-fill" style="width:${(correct/totalMarks*100)}%"></div></div>
     </div>`;
 
+    // AI Teaching Feedback
+    if (typeof IELTSFeedback !== 'undefined') {
+      const scoreObj = { band: score.band, raw: score.raw, total: totalMarks };
+      const allIssues = [];
+      const allStrengths = [];
+
+      // Analyze wrong answers by type for study plan
+      const wrongByType = IELTSFeedback.analyzeWrongByType(this.answers, questions);
+      Object.entries(wrongByType).forEach(([type, count]) => {
+        if (count > 2) {
+          allIssues.push({ type: type + '_questions', severity: 'medium', message: `${count} wrong ${type} questions`, suggestion: 'Review this question type strategy' });
+        }
+      });
+
+      const studyPlan = IELTSFeedback.generateStudyPlan(this.skill, this.testId, scoreObj, allIssues, allStrengths, this.answers, questions);
+      html += IELTSFeedback.renderStudyPlan(studyPlan);
+
+      const breakdown = IELTSFeedback.buildSkillBreakdown(this.skill, allIssues, allStrengths, scoreObj);
+      html += IELTSFeedback.renderSkillBreakdown(breakdown);
+
+      const history = IELTSFeedback.getProgressHistory(this.skill);
+      if (history.length >= 2) {
+        html += IELTSFeedback.renderProgressChart(history);
+      }
+    }
+
     html += reviewHTML;
     html += `<button class="btn-primary" onclick="location.reload()">Retake Test</button>
              <a href="ielts-practice.html" class="btn-secondary">Back to IELTS Practice</a>`;
 
     this.resultsEl.innerHTML = html;
+    this.saveResult(score);
   }
 
   showManualReviewResults() {
@@ -688,6 +724,29 @@ class IELTSTestEngine {
       html += `</div>`;
     }
 
+    // AI Teaching Feedback for Writing/Speaking
+    if (typeof IELTSFeedback !== 'undefined') {
+      let allIssues = [], allStrengths = [];
+      if (this.skill === 'writing') {
+        allIssues = [...t1Analysis.issues, ...t2Analysis.issues];
+        allStrengths = [...t1Analysis.strengths, ...t2Analysis.strengths];
+      } else {
+        allIssues = analysis.issues;
+        allStrengths = analysis.strengths;
+      }
+      const scoreObj = { band: parseFloat(overallBand || analysis.bandEstimate), raw: 0, total: 0 };
+      const studyPlan = IELTSFeedback.generateStudyPlan(this.skill, this.testId, scoreObj, allIssues, allStrengths, this.answers, []);
+      html += IELTSFeedback.renderStudyPlan(studyPlan);
+
+      const breakdown = IELTSFeedback.buildSkillBreakdown(this.skill, allIssues, allStrengths, scoreObj);
+      html += IELTSFeedback.renderSkillBreakdown(breakdown);
+
+      const history = IELTSFeedback.getProgressHistory(this.skill);
+      if (history.length >= 2) {
+        html += IELTSFeedback.renderProgressChart(history);
+      }
+    }
+
     html += `<button class="btn-primary" onclick="location.reload()">Retake Test</button>
              <a href="ielts-practice.html" class="btn-secondary">Back to IELTS Practice</a>`;
 
@@ -748,14 +807,15 @@ class IELTSTestEngine {
     return html;
   }
 
-  saveResult() {
+  saveResult(score) {
     const results = JSON.parse(localStorage.getItem('ieltsResults') || '[]');
     results.push({
       skill: this.skill,
       testId: this.testId,
       date: new Date().toISOString(),
       answers: this.answers,
-      timeSpent: this.data.duration * 60 - this.timeRemaining
+      timeSpent: this.data.duration * 60 - this.timeRemaining,
+      band: score && score.band ? score.band : 0
     });
     localStorage.setItem('ieltsResults', JSON.stringify(results.slice(-50)));
   }
