@@ -12,7 +12,10 @@
         * { box-sizing:border-box; }
         body { font-family:'Inter',sans-serif; background:#f0fdf4; color:#1e293b; margin:0; }
 
-        .acc-hero { background:linear-gradient(135deg,#064e3b 0%,#065f46 50%,#047857 100%); color:#fff; padding:64px 24px 48px; text-align:center; position:relative; overflow:hidden; }
+        .acc-hero { background:linear-gradient(135deg,#064e3b 0%,#065f46 50%,#047857 100%); color:#fff; padding:48px 24px 48px; text-align:center; position:relative; overflow:hidden; }
+        .acc-back { position:absolute; top:16px; left:24px; z-index:10; }
+        .acc-back a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.9rem; font-weight:500; display:inline-flex; align-items:center; gap:6px; transition:color 0.2s; }
+        .acc-back a:hover { color:#fff; }
         .acc-hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E"); }
         .acc-hero h1 { font-size:2.4rem; font-weight:800; margin:0 0 12px; position:relative; }
         .acc-hero p { font-size:1.1rem; opacity:0.85; margin:0; position:relative; }
@@ -75,6 +78,7 @@
     </div>
 
     <div class="acc-hero">
+        <div class="acc-back"><a href="../subject.html?id=accounting&level=alevel">← Back to Accounting</a></div>
         <h1>📋 Accounting</h1>
         <p>Cambridge A-Level 9706 — The numbers that tell stories</p>
         <div class="badge-row">
