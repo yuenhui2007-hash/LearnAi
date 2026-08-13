@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design &amp; HTML/CSS — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Web Design &amp; HTML/CSS</h1>
+<p style="color:var(--gray)">Topic i6 — Web Technologies, Standards &amp; Development</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 How the Web Works</h3>
+<ul>
+<li><strong>Client-server model:</strong> Browser (client) requests pages; web server (e.g., Apache, Nginx, IIS) responds with files.</li>
+<li><strong>HTTP (HyperText Transfer Protocol):</strong> Stateless request-response protocol. Port 80. HTTPS = encrypted via TLS, port 443.</li>
+<li><strong>URL anatomy:</strong> <code>https://www.example.com:443/products?id=42</code> → protocol + subdomain + domain + TLD + port + path + query string.</li>
+<li><strong>DNS resolution:</strong> Browser checks cache → OS cache → router cache → ISP DNS → recursive query to authoritative DNS → IP address returned.</li>
+<li><strong>Web hosting:</strong> Shared (cheap, limited), VPS (virtual private), Dedicated (full server), Cloud (scalable, pay-as-you-go).</li>
+</ul>
+
+<h3>1.2 HTML Basics</h3>
+<p>HTML (HyperText Markup Language) structures web content using elements (tags).</p>
+<div class="formula-box">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+  &lt;meta charset="UTF-8"&gt;<br>
+  &lt;title&gt;My Page&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+  &lt;h1&gt;Heading&lt;/h1&gt;<br>
+  &lt;p&gt;This is a &lt;strong&gt;paragraph&lt;/strong&gt; with &lt;em&gt;emphasis&lt;/em&gt;.&lt;/p&gt;<br>
+  &lt;a href="https://example.com"&gt;Link&lt;/a&gt;<br>
+  &lt;img src="photo.jpg" alt="Description" width="300"&gt;<br>
+  &lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</div>
+
+<h3>1.3 Common HTML Elements</h3>
+<ul>
+<li><strong>Structural:</strong> &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt; — semantic HTML5.</li>
+<li><strong>Text:</strong> &lt;h1&gt; to &lt;h6&gt;, &lt;p&gt;, &lt;br&gt;, &lt;hr&gt;, &lt;blockquote&gt;, &lt;pre&gt;.</li>
+<li><strong>Formatting:</strong> &lt;strong&gt;/&lt;b&gt;, &lt;em&gt;/&lt;i&gt;, &lt;mark&gt;, &lt;small&gt;, &lt;sub&gt;, &lt;sup&gt;.</li>
+<li><strong>Lists:</strong> &lt;ul&gt; (unordered/bullet), &lt;ol&gt; (ordered/numbered), &lt;li&gt; (list item), &lt;dl&gt;/&lt;dt&gt;/&lt;dd&gt; (definition list).</li>
+<li><strong>Links:</strong> &lt;a href="..." target="_blank"&gt; — target values: _self, _blank, _parent, _top.</li>
+<li><strong>Images &amp; Media:</strong> &lt;img&gt; (src, alt, width, height), &lt;audio&gt; (controls, src), &lt;video&gt; (controls, width, height, poster).</li>
+<li><strong>Tables:</strong> &lt;table&gt;, &lt;tr&gt; (row), &lt;th&gt; (header), &lt;td&gt; (data), &lt;caption&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;.</li>
+<li><strong>Forms:</strong> &lt;form&gt; (action, method="GET/POST"), &lt;input&gt; (type: text, password, email, number, checkbox, radio, date, file, submit), &lt;textarea&gt;, &lt;select&gt;/&lt;option&gt;, &lt;label&gt; (for attribute links to input id).</li>
+</ul>
+
+<h3>1.4 Introduction to CSS</h3>
+<p>CSS (Cascading Style Sheets) controls presentation. Three ways to apply:</p>
+<ul>
+<li><strong>Inline:</strong> &lt;p style="color:red;"&gt; — highest specificity, hard to maintain.</li>
+<li><strong>Internal:</strong> &lt;style&gt; in &lt;head&gt; — for single-page sites.</li>
+<li><strong>External:</strong> &lt;link rel="stylesheet" href="styles.css"&gt; — preferred for multi-page sites; separation of concerns.</li>
+</ul>
+<p><strong>CSS Syntax:</strong></p>
+<div class="formula-box">
+selector {<br>
+  property: value;<br>
+  property2: value2;<br>
+}<br><br>
+/* Examples */<br>
+h1 { color: navy; font-size: 24px; }<br>
+.intro { background-color: #f0f0f0; padding: 10px; }<br>
+#header { width: 100%; height: 60px; }
+</div>
+
+<h3>1.5 CSS Selectors</h3>
+<ul>
+<li><strong>Element:</strong> p, h1, div — selects all of that element.</li>
+<li><strong>Class:</strong> .classname — reusable; multiple elements can share.</li>
+<li><strong>ID:</strong> #idname — unique per page; highest specificity.</li>
+<li><strong>Descendant:</strong> div p — selects &lt;p&gt; inside &lt;div&gt;.</li>
+<li><strong>Child:</strong> div &gt; p — direct child only.</li>
+<li><strong>Adjacent sibling:</strong> h1 + p — &lt;p&gt; immediately after &lt;h1&gt;.</li>
+<li><strong>Attribute:</strong> [type="submit"], [href^="https"] — based on attributes.</li>
+<li><strong>Pseudo-class:</strong> :hover, :focus, :nth-child(odd), :first-child.</li>
+<li><strong>Pseudo-element:</strong> ::before, ::after, ::first-line.</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 CSS Box Model</h3>
+<p>Every element is a rectangular box:</p>
+<div class="formula-box">
+  Total width = content width + padding-left + padding-right + border-left + border-right + margin-left + margin-right<br>
+  box-sizing: border-box; /* includes padding and border in width */
+</div>
+<ul>
+<li><strong>Content:</strong> Text, images, or other media.</li>
+<li><strong>Padding:</strong> Space between content and border (inside the box).</li>
+<li><strong>Border:</strong> Line around padding. Properties: width, style (solid, dashed, dotted), color.</li>
+<li><strong>Margin:</strong> Space outside the border, separating elements. Margin collapse occurs when vertical margins overlap.</li>
+</ul>
+
+<h3>2.2 CSS Layout Techniques</h3>
+<ul>
+<li><strong>Display property:</strong> block (full width), inline (within text flow), inline-block (inline but accepts dimensions), none (hidden), flex, grid.</li>
+<li><strong>Positioning:</strong>
+  <ul>
+  <li><strong>Static:</strong> Default; normal document flow.</li>
+  <li><strong>Relative:</strong> Offset from normal position (top, left, etc.).</li>
+  <li><strong>Absolute:</strong> Positioned relative to nearest positioned ancestor.</li>
+  <li><strong>Fixed:</strong> Relative to viewport; stays on screen when scrolling.</li>
+  <li><strong>Sticky:</strong> Toggles between relative and fixed based on scroll position.</li>
+  </ul>
+</li>
+<li><strong>Float:</strong> Older layout method; moves element left/right with text wrapping. Clearfix needed. Largely replaced by Flexbox/Grid.</li>
+<li><strong>Flexbox:</strong> One-dimensional layout (row or column). Properties: display:flex, justify-content, align-items, flex-direction, flex-wrap, gap.</li>
+<li><strong>CSS Grid:</strong> Two-dimensional layout (rows and columns). Properties: display:grid, grid-template-columns, grid-template-rows, grid-gap, grid-area.</li>
+</ul>
+
+<h3>2.3 Responsive Web Design (RWD)</h3>
+<p>Websites adapt to different screen sizes:</p>
+<ul>
+<li><strong>Viewport meta tag:</strong> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</li>
+<li><strong>Media queries:</strong> Apply CSS conditionally based on device characteristics.
+  <div class="formula-box">
+    @media screen and (max-width: 600px) {<br>
+      nav { flex-direction: column; }<br>
+      body { font-size: 14px; }<br>
+    }
+  </div>
+</li>
+<li><strong>Fluid layouts:</strong> Use percentages, vw/vh, fr units instead of fixed pixels.</li>
+<li><strong>Flexible images:</strong> max-width: 100%; height: auto; prevents overflow.</li>
+<li><strong>Mobile-first approach:</strong> Design for small screens first, then enhance for larger screens with min-width media queries.</li>
+</ul>
+
+<h3>2.4 JavaScript Fundamentals</h3>
+<p>JavaScript adds interactivity to web pages. It runs in the browser (client-side) or on servers (Node.js).</p>
+<div class="formula-box">
+// Variables<br>
+let name = "Alice";      // block-scoped, reassignable<br>
+const PI = 3.14159;     // block-scoped, constant<br>
+var count = 0;          // function-scoped (legacy)<br><br>
+// Functions<br>
+function greet(user) {<br>
+  return "Hello, " + user;<br>
+}<br>
+const add = (a, b) => a + b;<br><br>
+// DOM manipulation<br>
+document.getElementById("btn").addEventListener("click", function() {<br>
+  document.querySelector(".message").textContent = "Clicked!";<br>
+});<br><br>
+// Conditionals & loops<br>
+if (score >= 50) { status = "Pass"; }<br>
+for (let i = 0; i < 5; i++) { console.log(i); }
+</div>
+
+<h3>2.5 Web Standards &amp; Accessibility</h3>
+<ul>
+<li><strong>W3C:</strong> World Wide Web Consortium sets standards (HTML, CSS, WCAG).</li>
+<li><strong>WCAG (Web Content Accessibility Guidelines):</strong> Perceivable, Operable, Understandable, Robust (POUR).</li>
+<li><strong>Accessibility techniques:</strong> Alt text for images, semantic HTML, ARIA labels, keyboard navigation, sufficient colour contrast (4.5:1 minimum), resizable text.</li>
+<li><strong>Validation:</strong> W3C Markup Validator checks HTML; CSS Validator checks stylesheets.</li>
+</ul>
+</div>
+
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Server-Side Technologies</h3>
+<ul>
+<li><strong>Server-side scripting:</strong> Code executed on the server before HTML is sent to client. Enables dynamic content, database access, user authentication.</li>
+<li><strong>PHP:</strong> Widely used, embedded in HTML. Connects to MySQL easily. Example:
+  <div class="formula-box">
+    &lt;?php<br>
+    $conn = new mysqli("localhost", "user", "pass", "db");<br>
+    $result = $conn->query("SELECT * FROM Students");<br>
+    while($row = $result->fetch_assoc()) {<br>
+      echo "&lt;p&gt;" . $row["FirstName"] . "&lt;/p&gt;";<br>
+    }<br>
+    ?&gt;
+  </div>
+</li>
+<li><strong>Python (Flask/Django):</strong> Flask is lightweight micro-framework; Django is full-featured with ORM, admin panel, security built-in.</li>
+<li><strong>Node.js + Express:</strong> JavaScript on the server. Non-blocking I/O, event-driven. JSON-native.</li>
+<li><strong>ASP.NET:</strong> Microsoft's framework for C# web applications.</li>
+</ul>
+
+<h3>3.2 Databases &amp; Web Integration</h3>
+<ul>
+<li><strong>CRUD operations:</strong> Create (INSERT), Read (SELECT), Update (UPDATE), Delete (DELETE).</li>
+<li><strong>SQL Injection:</strong> Malicious input manipulating queries. Prevention: parameterized queries/prepared statements.
+  <div class="formula-box">
+    // Vulnerable<br>
+    $query = "SELECT * FROM Users WHERE username='" . $_GET['u'] . "'";<br><br>
+    // Secure (parameterized)<br>
+    $stmt = $pdo->prepare("SELECT * FROM Users WHERE username = ?");<br>
+    $stmt->execute([$_GET['u']]);
+  </div>
+</li>
+<li><strong>Session management:</strong> HTTP is stateless; sessions (server-side) and cookies (client-side) maintain state. Session ID stored in cookie; data stored server-side.</li>
+<li><strong>JSON &amp; AJAX:</strong> Asynchronous JavaScript and XML (now mostly JSON). Fetch API retrieves data without full page reload.
+  <div class="formula-box">
+    fetch('/api/data')<br>
+      .then(response => response.json())<br>
+      .then(data => console.log(data));<br>
+  </div>
+</li>
+</ul>
+
+<h3>3.3 Web Security</h3>
+<ul>
+<li><strong>XSS (Cross-Site Scripting):</strong> Injecting malicious scripts into web pages viewed by others. Prevention: escape output, Content Security Policy (CSP), validate input.</li>
+<li><strong>CSRF (Cross-Site Request Forgery):</strong> Tricking authenticated users into unwanted actions. Prevention: CSRF tokens, SameSite cookies.</li>
+<li><strong>HTTPS/TLS:</strong> Encrypts data in transit. Certificates from CAs. HSTS header forces HTTPS.</li>
+<li><strong>Password security:</strong> Hash with bcrypt/Argon2 (slow, salted). Never store plaintext. Implement rate limiting on login attempts.</li>
+</ul>
+
+<h3>3.4 APIs &amp; Modern Web Architecture</h3>
+<ul>
+<li><strong>REST (Representational State Transfer):</strong> Stateless architecture using HTTP methods: GET (read), POST (create), PUT/PATCH (update), DELETE (remove). Resources identified by URLs. Returns JSON/XML.</li>
+<li><strong>GraphQL:</strong> Query language allowing clients to request exactly the data they need. Single endpoint. Reduces over-fetching.</li>
+<li><strong>WebSockets:</strong> Full-duplex persistent connection for real-time data (chat, gaming, live updates).</li>
+<li><strong>Progressive Web Apps (PWA):</strong> Web apps that work offline, send push notifications, install to home screen. Use service workers and manifest files.</li>
+</ul>
+
+<h3>3.5 Search Engine Optimisation (SEO)</h3>
+<ul>
+<li><strong>On-page:</strong> Title tags, meta descriptions, header hierarchy, keyword-rich content, alt text, internal links, clean URLs, fast loading (Core Web Vitals).</li>
+<li><strong>Technical:</strong> Mobile-friendly, HTTPS, XML sitemap, robots.txt, structured data (Schema.org), canonical tags.</li>
+<li><strong>Off-page:</strong> Backlinks from reputable sites, social signals, domain authority.</li>
+</ul>
+</div>
+
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>HTML</strong> structures content; <strong>CSS</strong> styles it; <strong>JavaScript</strong> adds interactivity.</li>
+<li><strong>Semantic HTML5:</strong> header, nav, main, article, section, aside, footer — improves accessibility and SEO.</li>
+<li><strong>CSS Box Model:</strong> content → padding → border → margin. Use box-sizing: border-box.</li>
+<li><strong>Layouts:</strong> Flexbox (1D), Grid (2D). Float is legacy.</li>
+<li><strong>Responsive:</strong> viewport meta tag + media queries + fluid units + flexible images.</li>
+<li><strong>JavaScript:</strong> let/const, arrow functions, DOM manipulation, event listeners.</li>
+<li><strong>Server-side:</strong> PHP, Python (Flask/Django), Node.js. Use parameterized queries to prevent SQL injection.</li>
+<li><strong>Security:</strong> HTTPS, XSS prevention (escape output), CSRF tokens, strong password hashing.</li>
+<li><strong>REST API:</strong> GET/POST/PUT/DELETE + stateless + JSON.</li>
+<li><strong>SEO:</strong> semantic HTML, alt text, mobile-friendly, fast load, backlinks.</li>
+<li>Exam tip: For web design questions, always mention accessibility (alt text, contrast, keyboard nav) and responsive design.</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

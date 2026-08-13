@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revision Planner — LearnAI</title>
+<meta name="description" content="Plan your Cambridge exam revision schedule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<style>
+.planner-section { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.planner-input { display: flex; gap: 12px; margin-bottom: 32px; }
+.planner-input input { flex: 1; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: var(--radius); font-size: 1rem; }
+.planner-input input:focus { outline: none; border-color: var(--primary); }
+.planner-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--white); border-radius: var(--radius); margin-bottom: 8px; transition: var(--transition); }
+.planner-item.done { opacity: 0.6; }
+.planner-item.done span { text-decoration: line-through; color: var(--gray); }
+.planner-item input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; }
+.planner-delete { margin-left: auto; background: none; border: none; color: var(--gray); font-size: 1.2rem; cursor: pointer; padding: 4px 8px; }
+.planner-delete:hover { color: #ef4444; }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=5"></script>
+
+<section class="planner-section">
+<div class="container">
+<div style="max-width: 700px; margin: 0 auto;">
+<h1 style="margin-bottom: 8px">Revision Planner</h1>
+<p style="color: var(--gray); margin-bottom: 32px">Schedule your study tasks. All data stays in your browser.</p>
+
+<div class="planner-input">
+<input type="text" id="plannerInput" placeholder="e.g. Revise Physics — Kinematics">
+<button class="btn btn-primary" onclick="addTask()">Add Task</button>
+</div>
+
+<div id="plannerList"></div>
+</div>
+</div>
+</section>
+
+<script src="js/theme.js?v=4"></script>
+    <script src="js/app.js?v=4"></script>
+<script>
+function addTask() {
+const input = document.getElementById('plannerInput');
+const text = input.value.trim();
+if (text) { Planner.add(text); input.value = ''; }
+}
+document.getElementById('plannerInput').addEventListener('keypress', function(e) {
+if (e.key === 'Enter') addTask();
+});
+Planner.render();
+</script>
+<script src="js/auth-guard.js?v=4"></script>
+<script src="js/auth.js?v=4"></script>
+<script src="js/mascot.js?v=4"></script>
+<script src="js/pwa.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Representation & Binary — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-as">AS Level</span>
+  </div>
+<h1>Data Representation & Binary</h1>
+<p style="color:var(--gray)">ict-i3</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2><h3>Number Systems</h3><ul><li><strong>Binary (base 2):</strong> 0 and 1; computers use binary</li><li><strong>Denary (base 10):</strong> 0–9; human-readable</li><li><strong>Hexadecimal (base 16):</strong> 0–9, A–F; compact representation of binary</li></ul><h3>Binary Conversion</h3><div class="formula-box">Binary to denary: 1011 = 1×8 + 0×4 + 1×2 + 1×1 = 11<br>Denary to binary: Repeated division by 2, remainders read upwards</div><h3>Binary Arithmetic</h3><ul><li><strong>Addition:</strong> 0+0=0, 0+1=1, 1+1=10 (carry 1)</li><li><strong>Overflow:</strong> Result exceeds available bits</li></ul><h3>Character Encoding</h3><ul><li><strong>ASCII:</strong> 7 bits; 128 characters</li><li><strong>Unicode:</strong> Variable length; supports all world languages</li></ul></div>
+<div class="notes-section"><h2>📗 AS Level Content</h2><h3>Binary Representations</h3><ul><li><strong>Integers:</strong> Signed (two's complement) vs unsigned</li><li><strong>Floating point:</strong> Mantissa and exponent; IEEE 754 standard</li><li><strong>Images:</strong> Bitmap (pixels) vs Vector (mathematical shapes)</li></ul><h3>Two's Complement</h3><div class="formula-box">Positive 5: 00000101<br>Negative 5: invert + 1 → 11111011</div></div>
+<div class="notes-section"><h2>📙 A2 Level Content</h2><h3>Data Compression</h3><ul><li><strong>Lossless:</strong> Run-length encoding, Huffman coding — no data lost</li><li><strong>Lossy:</strong> JPEG, MP3 — removes imperceptible data</li></ul><h3>Sound Representation</h3><ul><li><strong>Sampling rate:</strong> Measurements per second (Hz)</li><li><strong>Bit depth:</strong> Bits per sample</li><li><strong>File size:</strong> Sample rate × bit depth × duration × channels</li></ul></div>
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3><ul><li><strong>Binary:</strong> Base 2; computers use binary</li><li><strong>Hex:</strong> Compact binary representation</li><li><strong>ASCII:</strong> 7-bit character encoding</li><li><strong>Two's complement:</strong> Negative number representation</li><li><strong>Compression:</strong> Lossless vs lossy</li></ul></div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

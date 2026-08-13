@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking Test — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/ielts-test.css?v=8">
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=8"></script>
+
+<section class="ielts-test-page">
+  <div class="ielts-test-container">
+
+    <div class="test-header-bar">
+      <div class="test-title">IELTS Speaking Test</div>
+      <div class="test-timer" id="testTimer">14:00</div>
+    </div>
+
+    <div id="testIntro">
+      <div class="test-intro-card">
+        <div class="intro-icon" style="background:linear-gradient(135deg,#ec4899,#f472b6)">🎤</div>
+        <h2 id="introTitle">IELTS Speaking Test</h2>
+        <div class="test-selector" style="margin:16px 0;text-align:left;">
+          <label style="display:block;font-size:0.85rem;color:#64748b;margin-bottom:6px;font-weight:500;">Choose a test:</label>
+          <select id="testSelector" onchange="switchTest(this.value)" style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;font-size:0.95rem;color:#1e293b;cursor:pointer;">
+            <option value="speaking-1">Test 1: Travel & Tourism (Easy)</option>
+            <option value="speaking-2">Test 2: Technology & Communication (Medium)</option>
+            <option value="speaking-3">Test 3: Education & Learning (Hard)</option>
+            <option value="speaking-4">Test 4: Health & Fitness (Medium)</option>
+            <option value="speaking-5">Test 5: Work & Career (Medium)</option>
+            <option value="speaking-6">Test 6: Environment & Nature (Hard)</option>
+          </select>
+        </div>
+        <div class="intro-meta">
+          <div class="meta-item"><strong>Duration</strong><span id="introDuration">14 minutes</span></div>
+          <div class="meta-item"><strong>Parts</strong><span id="introSections">3 parts</span></div>
+          <div class="meta-item"><strong>Style</strong><span>Face-to-face simulation</span></div>
+        </div>
+        <div class="intro-instructions" id="introInstructions">
+          Part 1: Introduction (4-5 min). Part 2: Long turn with 1 min preparation (3-4 min). Part 3: Discussion (4-5 min).
+        </div>
+        <button class="btn-start-test" onclick="engine.start()">Start Test</button>
+        <a href="ielts-practice.html" style="display:block;margin-top:16px;color:#64748b;font-size:0.9rem;">Back to Practice Hub</a>
+      </div>
+    </div>
+
+    <div id="testArea">
+      <div id="testContainer"></div>
+    </div>
+
+    <div id="testResults"></div>
+
+  </div>
+</section>
+
+<script src="js/theme.js?v=8"></script>
+<script src="js/auth.js?v=8"></script>
+<script src="js/ielts-data.js?v=8"></script>
+<script src="js/ielts-marker.js?v=8"></script>
+<script src="js/ielts-feedback.js?v=8"></script>
+<script src="js/ielts-engine.js?v=8"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initIELTSTest('speaking', 'speaking-1');
+});
+
+function switchTest(testId) {
+  initIELTSTest('speaking', testId);
+}
+</script>
+</body>
+</html>

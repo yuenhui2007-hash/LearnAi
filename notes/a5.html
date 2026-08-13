@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trial Balance — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span></div>
+<h1>Trial Balance</h1>
+<p style="color:var(--gray)">0452 / 9706 — Checking the Arithmetical Accuracy of Ledgers</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>Purpose of a Trial Balance</h3>
+<p>A trial balance is a list of all ledger account balances at a specific date. It checks the <strong>arithmetical accuracy</strong> of the double-entry bookkeeping. If total debits equal total credits, the ledger is mathematically correct (though errors like omission or wrong account may still exist).</p>
+
+<h3>How to Extract a Trial Balance</h3>
+<ol>
+<li>Balance every ledger account</li>
+<li>Determine whether each balance is a debit or credit:</li>
+<ul>
+<li>Assets, Expenses, Drawings → <strong>Debit balances</strong></li>
+<li>Liabilities, Income, Capital → <strong>Credit balances</strong></li>
+</ul>
+<li>List all balances in debit and credit columns</li>
+<li>Total both columns — they MUST agree</li>
+</ol>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Limitations of the Trial Balance</h3>
+<p>A balanced trial balance does NOT guarantee error-free accounts. Errors NOT revealed:</p>
+<ul>
+<li><strong>Error of omission:</strong> Entire transaction not recorded</li>
+<li><strong>Error of commission:</strong> Correct amount, wrong account (same category)</li>
+<li><strong>Error of principle:</strong> Correct amount, wrong category (e.g., asset vs expense)</li>
+<li><strong>Compensating errors:</strong> Two errors that cancel each other</li>
+<li><strong>Original entry error:</strong> Same wrong figure in both debit and credit</li>
+<li><strong>Reversal:</strong> Debits and credits swapped but equal</li>
+</ul>
+
+<h3>Suspense Account</h3>
+<p>When the trial balance doesn't balance:</p>
+<ol>
+<li>Open a Suspense Account with the difference</li>
+<li>If debit total > credit total: Suspense Account has credit balance</li>
+<li>If credit total > debit total: Suspense Account has debit balance</li>
+<li>Find and correct errors, clearing the suspense account</li>
+</ol>
+<div class="formula-box">
+Example: Debit column = $50,200; Credit column = $49,800<br>
+Difference = $400 (debits higher)<br>
+→ Suspense Account credited with $400<br>
+When error found (e.g., cash sale of $400 not recorded):<br>
+Dr Cash $400, Cr Suspense $400<br>
+Suspense account now = $0
+</div>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Extended Trial Balance (ETB)</h3>
+<p>An extended trial balance is used to prepare financial statements and includes adjustment columns:</p>
+<ul>
+<li>Start with unadjusted trial balance</li>
+<li>Add adjustments in separate debit/credit columns (accruals, prepayments, depreciation, bad debts, etc.)</li>
+<li>Calculate extended balances</li>
+<li>Sort into Statement of Profit or Loss and Statement of Financial Position columns</li>
+</ul>
+<div class="formula-box">
+Extended Trial Balance Columns:<br>
+1. Unadjusted TB (Dr/Cr)<br>
+2. Adjustments (Dr/Cr)<br>
+3. Extended TB (Dr/Cr)<br>
+4. Income Statement (Dr/Cr)<br>
+5. Statement of Financial Position (Dr/Cr)
+</div>
+</div>
+
+<div class="notes-section">
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> See the detailed notes above for practice questions on this topic.</p>
+<div class="solution">
+<strong>Solution:</strong> Work through the examples in the detailed notes. Practice is essential for exam success.
+</div>
+</div>
+<div class="common-mistake">Always read the question carefully and identify the command words before answering.</div>
+<div class="key-point">Focus on understanding concepts, not just memorising facts. This is key to exam success.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Read the question carefully</li>
+<li>Plan your answer before writing</li>
+<li>Use specific evidence and examples</li>
+<li>Check your work before submitting</li>
+</ul>
+</div>
+<h2>Last-Minute Summary</h2>
+<ul>
+<li><strong>Trial Balance</strong> checks arithmetical accuracy — total debits MUST equal total credits</li>
+<li><strong>Debit balances:</strong> Assets, Expenses, Drawings</li>
+<li><strong>Credit balances:</strong> Liabilities, Income, Capital</li>
+<li>Balanced TB ≠ error-free (omission, commission, principle, compensating, original entry, reversal all possible)</li>
+<li><strong>Suspense account</strong> = temporary account for TB differences; must be cleared</li>
+<li>If debits > credits → suspense has credit balance; vice versa</li>
+<li><strong>Extended Trial Balance</strong> includes adjustment columns then splits to IS and SOFP</li>
+<li>Adjustments affect BOTH P&L and SOFP simultaneously</li>
+<li>Always check: every adjustment has equal debit and credit entries</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

@@ -1,0 +1,27 @@
+{
+  "name": "LearnAI — Cambridge Study Platform",
+  "short_name": "LearnAI",
+  "description": "AI-powered study notes, tutoring, and revision tools for Cambridge A-Level, IGCSE & IELTS",
+  "start_url": "/LearnAi/index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/mascot-new.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/mascot-new.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}

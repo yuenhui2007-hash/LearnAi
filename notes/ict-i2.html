@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Networks, Internet & Security — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-igcse">IGCSE</span>
+<span class="level-badge badge-as">AS</span>
+<span class="level-badge badge-a2">A2</span>
+</div>
+<h1>Networks, Internet & Security</h1>
+<p style="color:var(--gray)">ict-i2</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2><h3>Network Types</h3><ul><li><strong>LAN (Local Area Network):</strong> Limited area; home, school, office</li><li><strong>WAN (Wide Area Network):</strong> Spans large distances; internet is largest WAN</li><li><strong>WLAN:</strong> Wireless LAN using WiFi</li></ul><h3>Network Hardware</h3><ul><li><strong>Router:</strong> Connects networks; directs traffic</li><li><strong>Switch:</strong> Connects devices within LAN</li><li><strong>Hub:</strong> Broadcasts to all devices (less efficient)</li><li><strong>Modem:</strong> Converts digital to analogue signals</li></ul><h3>Internet & WWW</h3><ul><li><strong>Internet:</strong> Global network of networks</li><li><strong>WWW (World Wide Web):</strong> Information system using HTTP</li><li><strong>URL:</strong> Uniform Resource Locator; web address</li><li><strong>IP Address:</strong> Unique identifier for devices</li></ul></div>
+<div class="notes-section"><h2>📗 AS Level Content</h2><h3>Network Topologies</h3><ul><li><strong>Bus:</strong> Single cable; cheap but single point of failure</li><li><strong>Star:</strong> Central hub/switch; easy to manage; hub failure critical</li><li><strong>Mesh:</strong> Multiple paths; redundant but expensive</li></ul><h3>Security Threats</h3><ul><li><strong>Malware:</strong> Viruses, worms, trojans, ransomware, spyware</li><li><strong>Phishing:</strong> Fake emails/websites to steal credentials</li><li><strong>DDoS:</strong> Overwhelm server with traffic</li></ul></div>
+<div class="notes-section"><h2>📙 A2 Level Content</h2><h3>Security Measures</h3><ul><li><strong>Firewall:</strong> Filters traffic based on rules</li><li><strong>Encryption:</strong> SSL/TLS for websites; AES for data</li><li><strong>Authentication:</strong> Passwords, 2FA, biometrics</li><li><strong>VPN:</strong> Encrypted tunnel for secure remote access</li><li><strong>Penetration testing:</strong> Ethical hacking to find vulnerabilities</li></ul></div>
+<div 
+<div class="worked-example">
+<h4>💻 Worked Example</h4>
+<p><strong>Question:</strong> Convert denary 157 to 8-bit binary.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+128 + 16 + 8 + 4 + 1 = 157<br>
+1 0 0 1 1 1 0 1<br>
+<strong>Answer: 10011101</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing bits and bytes. 1 byte = 8 bits. File sizes in bytes; transfer speeds in bits.</div>
+<div class="key-point">Fetch-decode-execute: 1) Fetch instruction from memory, 2) Decode operation, 3) Execute. Repeats millions of times/second.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>CPU: ALU + CU + Registers</li>
+<li>RAM: Volatile; ROM: Non-volatile</li>
+<li>LAN: Local; WAN: Wide</li>
+<li>Binary to hex: Group in 4s from right</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3><ul><li><strong>LAN vs WAN:</strong> Local vs Wide area</li><li><strong>Router, Switch, Hub:</strong> Network hardware</li><li><strong>Internet ≠ WWW</strong></li><li><strong>Threats:</strong> Malware, phishing, DDoS</li><li><strong>Protection:</strong> Firewall, encryption, 2FA, VPN</li></ul></div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.teach-ict.com/" target="_blank" rel="noopener">Teach-ICT</a> — Computing & ICT lessons</li>
+<li><a href="https://www.savemyexams.co.uk/notes/computer-science/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-ict-0417/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/computer-science/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/computer-science" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

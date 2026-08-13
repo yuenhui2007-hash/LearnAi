@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control Accounts — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span></div>
+<h1>Control Accounts</h1>
+<p style="color:var(--gray)">0452 / 9706 — Sales and Purchases Ledger Controls</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>Purpose of Control Accounts</h3>
+<p>Control accounts are summary accounts in the General Ledger that mirror the total of all individual accounts in the subsidiary (sales/purchases) ledgers. They serve as a check on the accuracy of the ledger system and help detect errors and fraud.</p>
+<ul>
+<li><strong>Sales Ledger Control Account:</strong> Total amount owed by ALL credit customers</li>
+<li><strong>Purchases Ledger Control Account:</strong> Total amount owed TO ALL credit suppliers</li>
+</ul>
+
+<h3>Sales Ledger Control Account Format</h3>
+<div class="formula-box">
+Sales Ledger Control Account<br>
+-----------------------------------------------<br>
+Dr Side (Increases receivables):<br>
+  Balance b/d (opening debit)<br>
+  Credit sales (from Sales Day Book)<br>
+  Dishonoured cheques<br>
+  Interest charged on overdue accounts<br>
+<br>
+Cr Side (Decreases receivables):<br>
+  Cash/bank received from customers<br>
+  Sales returns (from Sales Returns Day Book)<br>
+  Discount allowed<br>
+  Irrecoverable debts written off<br>
+  Set-offs (contra with purchases ledger)<br>
+  Balance c/d (closing debit)<br>
+</div>
+
+<h3>Purchases Ledger Control Account Format</h3>
+<div class="formula-box">
+Purchases Ledger Control Account<br>
+-----------------------------------------------<br>
+Dr Side (Decreases payables):<br>
+  Cash/bank paid to suppliers<br>
+  Purchases returns (from Purchases Returns Day Book)<br>
+  Discount received<br>
+  Set-offs (contra with sales ledger)<br>
+  Balance c/d (closing credit)<br>
+<br>
+Cr Side (Increases payables):<br>
+  Balance b/d (opening credit)<br>
+  Credit purchases (from Purchases Day Book)<br>
+  Interest charged by suppliers<br>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Reconciling the Control Account</h3>
+<p>The balance on the control account should equal the sum of all individual balances in the subsidiary ledger:</p>
+<ol>
+<li>Extract list of individual balances from sales/purchases ledger</li>
+<li>Calculate total</li>
+<li>Compare with control account balance</li>
+<li>If different, investigate errors in either the individual accounts or the control account</li>
+</ol>
+
+<h3>Common Errors Found</h3>
+<ul>
+<li><strong>Casting errors:</strong> Day book totals added incorrectly</li>
+<li><strong>Omission:</strong> Transaction recorded in individual account but not control (or vice versa)</li>
+<li><strong>Wrong amount:</strong> Different figures in individual and control account</li>
+<li><strong>Transposition:</strong> Digits reversed (e.g., $540 recorded as $450)</li>
+<li><strong>Contra entry omitted:</strong> Set-off between sales and purchases ledger not recorded in both</li>
+</ul>
+
+<h3>Contra Entries (Set-offs)</h3>
+<p>When a business is both a customer and supplier of the same party:</p>
+<div class="formula-box">
+Set-off $500: Business owes supplier $500 and customer owes business $500<br>
+Journal entry:<br>
+Dr Purchases Ledger Control $500<br>
+Cr Sales Ledger Control $500<br>
+(Also post to individual accounts in each subsidiary ledger)
+</div>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Self-Balancing Ledgers</h3>
+<p>A self-balancing ledger system means each ledger (general, sales, purchases) can be checked independently:</p>
+<ul>
+<li>General ledger control accounts for sales and purchases ledgers</li>
+<li>Adjustment accounts in the subsidiary ledgers for the general ledger</li>
+<li>Each ledger balances on its own — errors localised faster</li>
+</ul>
+
+<h3>Advantages of Control Accounts</h3>
+<ul>
+<li><strong>Fraud prevention:</strong> Separation of duties; one person maintains control, another the subsidiary ledger</li>
+<li><strong>Error detection:</strong> Discrepancies highlight where to investigate</li>
+<li><strong>Quick totals:</strong> Total receivables/payables known without listing all accounts</li>
+<li><strong>Efficiency:</strong> Trial balance extracted from general ledger only; subsidiary ledgers not needed</li>
+</ul>
+
+<h3>Limitations</h3>
+<ul>
+<li>Compensating errors may hide problems</li>
+<li>Errors in both control and subsidiary may cancel out</li>
+<li>Doesn't detect errors where the same wrong entry appears in both</li>
+</ul>
+</div>
+
+<div class="notes-section">
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> See the detailed notes above for practice questions on this topic.</p>
+<div class="solution">
+<strong>Solution:</strong> Work through the examples in the detailed notes. Practice is essential for exam success.
+</div>
+</div>
+<div class="common-mistake">Always read the question carefully and identify the command words before answering.</div>
+<div class="key-point">Focus on understanding concepts, not just memorising facts. This is key to exam success.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Read the question carefully</li>
+<li>Plan your answer before writing</li>
+<li>Use specific evidence and examples</li>
+<li>Check your work before submitting</li>
+</ul>
+</div>
+<h2>Last-Minute Summary</h2>
+<ul>
+<li><strong>Control accounts</strong> = summary accounts in General Ledger for subsidiary ledgers</li>
+<li><strong>Sales Ledger Control</strong> = total owed by ALL customers (Dr balance normally)</li>
+<li><strong>Purchases Ledger Control</strong> = total owed TO ALL suppliers (Cr balance normally)</li>
+<li>SLC Dr: opening balance, credit sales, dishonoured cheques, interest</li>
+<li>SLC Cr: cash received, sales returns, discount allowed, bad debts, set-offs, closing balance</li>
+<li>PLC Dr: cash paid, purchases returns, discount received, set-offs, closing balance</li>
+<li>PLC Cr: opening balance, credit purchases, interest</li>
+<li>Control balance MUST equal sum of individual balances in subsidiary ledger</li>
+<li><strong>Contra/set-off:</strong> customer is also supplier → Dr PLC, Cr SLC</li>
+<li>Control accounts help detect errors, prevent fraud, and provide quick totals</li>
+<li>Does NOT detect: omission in both, compensating errors, same wrong amount in both</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

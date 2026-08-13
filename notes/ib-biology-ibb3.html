@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genetics — IB Biology Notes | LearnAI</title>
+<meta name="description" content="Genetics notes for IB Biology (IB DP Biology HL/SL). Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-ib { background: #ede9fe; color: #5b21b6; }
+.badge-hl { background: #dcfce7; color: #166534; }
+.badge-sl { background: #dbeafe; color: #1e40af; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.external-resources { margin: 16px 0; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.ext-toggle { background: #f8fafc; padding: 10px 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #475569; border: none; width: 100%; text-align: left; }
+.ext-toggle:hover { background: #f1f5f9; }
+.ext-toggle::after { content: "▶"; font-size: 0.75rem; transition: transform 0.2s; }
+.ext-toggle.active::after { transform: rotate(90deg); }
+.ext-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #f8fafc; }
+.ext-content.open { max-height: 500px; }
+.ext-content ul { margin: 0; padding: 12px 20px; list-style: none; }
+.ext-content li { margin-bottom: 6px; font-size: 0.85rem; }
+.ext-content a { color: #2563eb; text-decoration: none; }
+.ext-content a:hover { text-decoration: underline; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-ib">IB DP</span>
+<span class="level-badge badge-hl">HL</span>
+<span class="level-badge badge-sl">SL</span>
+</div>
+<h1>Genetics</h1>
+<p style="color:var(--gray)">IB DP Biology HL/SL — Topic 3</p>
+</div>
+<div class="notes-section">
+<h2>Overview</h2>
+<p>Genetics (Topic 3) covers inheritance patterns, meiosis, genetic modification, and biotechnology. This topic requires understanding of both theoretical principles and practical applications. Genetic crosses and pedigree analysis are common in Paper 1 and Paper 2.</p>
+</div>
+
+<div class="notes-section">
+<h2>3.1 Genes & Chromosomes</h2>
+<ul>
+<li><strong>Gene:</strong> a heritable factor consisting of a length of DNA that influences a specific characteristic.</li>
+<li><strong>Allele:</strong> one specific form of a gene, differing by base sequence.</li>
+<li><strong>Locus:</strong> specific position of a gene on a chromosome.</li>
+<li><strong>Genome:</strong> the whole genetic information of an organism.</li>
+</ul>
+<p>Humans have 23 pairs of chromosomes (46 total). One pair = sex chromosomes (XX female, XY male); 22 pairs = autosomes.</p>
+</div>
+
+<div class="notes-section">
+<h2>3.2 Meiosis</h2>
+<p>Meiosis produces haploid gametes (n) from diploid cells (2n), introducing genetic variation.</p>
+<ul>
+<li><strong>Meiosis I:</strong> homologous chromosomes separate (reduction division).</li>
+<li><strong>Meiosis II:</strong> sister chromatids separate (equational division, similar to mitosis).</li>
+</ul>
+
+<h3>Sources of Genetic Variation</h3>
+<ul>
+<li><strong>Crossing over:</strong> exchange of genetic material between non-sister chromatids in prophase I.</li>
+<li><strong>Independent assortment:</strong> random orientation of homologous pairs at metaphase I.</li>
+<li><strong>Random fertilisation:</strong> any sperm can fertilise any egg.</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>3.3 Inheritance</h2>
+
+<h3>Monohybrid Cross</h3>
+<p>Cross involving one gene. Use Punnett squares to predict offspring ratios.</p>
+<div class="formula-box">
+Genotypic ratio (heterozygous × heterozygous): 1:2:1 (AA:Aa:aa)<br>
+Phenotypic ratio (complete dominance): 3:1
+</div>
+
+<h3>Dihybrid Cross</h3>
+<p>Cross involving two genes. Expected phenotypic ratio for heterozygous × heterozygous = 9:3:3:1.</p>
+
+<h3>Non-Mendelian Inheritance</h3>
+<ul>
+<li><strong>Incomplete dominance:</strong> heterozygote has intermediate phenotype (e.g., pink snapdragons).</li>
+<li><strong>Codominance:</strong> both alleles expressed (e.g., ABO blood groups).</li>
+<li><strong>Multiple alleles:</strong> more than two alleles for a gene (e.g., ABO: Iᴬ, Iᴮ, i).</li>
+<li><strong>Sex linkage:</strong> gene on a sex chromosome (e.g., red-green colour blindness, haemophilia — X-linked recessive).</li>
+</ul>
+
+<h3>Worked Example: Sex Linkage</h3>
+<p><strong>Question:</strong> A carrier female for haemophilia (XᴴXʰ) marries a normal male (XᴴY). What is the probability their son will have haemophilia?</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">
+Sons inherit Y from father and X from mother.<br>
+Mother's gametes: Xᴴ or Xʰ (50% each).<br>
+Probability son has haemophilia = 50% (receives Xʰ from mother).
+</div>
+</div>
+
+<div class="notes-section">
+<h2>3.4 Genetic Modification</h2>
+<ul>
+<li><strong>Plasmids:</strong> small circular DNA used as vectors in bacteria.</li>
+<li><strong>Restriction enzymes:</strong> cut DNA at specific recognition sites, producing sticky or blunt ends.</li>
+<li><strong>DNA ligase:</strong> joins DNA fragments.</li>
+<li><strong>Promoter:</strong> DNA sequence that initiates transcription.</li>
+</ul>
+<p>Applications: insulin production, golden rice (vitamin A), herbicide-resistant crops, gene therapy.</p>
+</div>
+
+<div class="notes-section">
+<h2>3.5 Biotechnology</h2>
+<ul>
+<li><strong>PCR:</strong> amplifies DNA sequences using primers, DNA polymerase, and thermal cycling.</li>
+<li><strong>Gel electrophoresis:</strong> separates DNA fragments by size; smaller fragments travel further.</li>
+<li><strong>DNA profiling:</strong> used in forensics, paternity testing, and evolutionary studies.</li>
+<li><strong>Cloning:</strong> somatic cell nuclear transfer (e.g., Dolly the sheep).</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Common Misconceptions</h2>
+<ul>
+<li><strong>Meiosis vs. mitosis:</strong> Meiosis produces genetically different haploid cells; mitosis produces identical diploid cells.</li>
+<li><strong>Dominant vs. common:</strong> A dominant allele is not necessarily more common in a population.</li>
+<li><strong>Sex-linked inheritance:</strong> Males cannot be carriers for X-linked recessive traits — they are either affected or unaffected.</li>
+<li><strong>Genetic modification:</strong> GM does not always involve adding genes from different species — it can also involve gene editing (e.g., CRISPR).</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Exam-Specific Information</h2>
+<ul>
+<li><strong>Paper 1:</strong> 4–5 MCQs on inheritance patterns, pedigree analysis, and genetic terminology.</li>
+<li><strong>Paper 2:</strong> Structured questions on genetic crosses, meiosis, genetic modification, and biotechnology.</li>
+<li><strong>Paper 3:</strong> Data analysis of gel electrophoresis or breeding experiments.</li>
+<li><strong>IA:</strong> Genetics simulations, PCR analysis, and breeding experiments are possible IA topics.</li>
+</ul>
+<div class="highlight-box">
+<h4>Past Paper Trends (2019–2024)</h4>
+<p>November 2023: Dihybrid cross with linkage (recombination frequency calculation).<br>
+May 2023: Gel electrophoresis data analysis for paternity testing.<br>
+November 2022: CRISPR-Cas9 mechanism and applications.<br>
+May 2022: X-linked inheritance pedigree analysis.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>External Resources</h2>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.revisionvillage.com/" target="_blank" rel="noopener">Revision Village</a> — IB-specific video tutorials & question bank</li>
+<li><a href="https://ibdocuments.com/" target="_blank" rel="noopener">IB Documents</a> — Past papers, mark schemes & syllabi</li>
+<li><a href="https://ib.academy/" target="_blank" rel="noopener">IB Academy</a> — Study guides and free resources</li>
+<li><a href="https://www.bioninja.com.au/" target="_blank" rel="noopener">BioNinja</a> — IB Biology topic summaries</li>
+<li><a href="https://www.khanacademy.org/science/biology" target="_blank" rel="noopener">Khan Academy</a> — Genetics tutorials</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Practice Questions</h2>
+<ul>
+<li>A heterozygous tall plant (Tt) is crossed with a homozygous recessive short plant (tt). Predict the genotypic and phenotypic ratios of the offspring.</li>
+<li>Explain how crossing over and independent assortment contribute to genetic variation.</li>
+<li>Describe the process of producing recombinant DNA using plasmids and restriction enzymes.</li>
+<li>A man with blood group A (heterozygous) marries a woman with blood group B (heterozygous). What are the possible blood groups of their children?</li>
+</ul>
+</div>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>Gene = DNA segment; allele = variant of a gene.</li>
+<li>Meiosis: crossing over + independent assortment → genetic variation.</li>
+<li>Monohybrid ratio: 3:1; Dihybrid ratio: 9:3:3:1.</li>
+<li>Incomplete dominance, codominance, multiple alleles, sex linkage extend Mendelian rules.</li>
+<li>GM: restriction enzymes, plasmids, ligase, promoter.</li>
+<li>PCR amplifies DNA; gel electrophoresis separates by size.</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Read each question carefully and identify the command term before answering.</li>
+<li>Use correct genetic notation (e.g., superscripts for multiple alleles: Iᴬ, Iᴮ).</li>
+<li>For genetic crosses, show the Punnett square clearly.</li>
+<li>In pedigree questions, determine whether the trait is dominant/recessive and autosomal/sex-linked first.</li>
+<li>For biotechnology questions, describe the steps in logical order.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinematics & Dynamics — IGCSE | LearnAI</title>
+<meta name="description" content="Kinematics & Dynamics notes for Cambridge 0625 (IGCSE). Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Kinematics & Dynamics</h1>
+<p style="color:var(--gray)">0625 (IGCSE)</p>
+</div>
+
+<div class="notes-section">
+<h2>Detailed Notes</h2>
+<h3>1. Kinematics</h3>
+<p><strong>Kinematics</strong> is the study of motion without considering the forces causing it.</p>
+<ul>
+<li><strong>Displacement (s)</strong> — distance moved in a specified direction (vector).</li>
+<li><strong>Velocity (v)</strong> — rate of change of displacement (vector).</li>
+<li><strong>Speed</strong> — rate of change of distance (scalar).</li>
+<li><strong>Acceleration (a)</strong> — rate of change of velocity (vector).</li>
+</ul>
+<div class="formula-box">
+s = ut + ½at²<br>
+v = u + at<br>
+v² = u² + 2as<br>
+s = ½(u + v)t
+</div>
+<p>These equations apply only for <strong>uniform acceleration</strong> in a straight line.</p>
+<h3>2. Graphs of Motion</h3>
+<ul>
+<li><strong>Displacement-time graph:</strong> gradient = velocity.</li>
+<li><strong>Velocity-time graph:</strong> gradient = acceleration; area under graph = displacement.</li>
+<li><strong>Acceleration-time graph:</strong> area under graph = change in velocity.</li>
+</ul>
+<h3>3. Dynamics</h3>
+<p><strong>Newton's Laws of Motion:</strong></p>
+<ul>
+<li><strong>First Law:</strong> A body remains at rest or moves with constant velocity unless acted upon by a resultant force.</li>
+<li><strong>Second Law:</strong> F = ma. The resultant force is proportional to the rate of change of momentum.</li>
+<li><strong>Third Law:</strong> When body A exerts a force on body B, body B exerts an equal and opposite force on body A.</li>
+</ul>
+<div class="formula-box">
+Momentum: p = mv<br>
+Impulse: FΔt = Δ(mv)<br>
+Conservation of momentum: total momentum before = total momentum after (in a closed system)
+</div>
+<h3>4. Projectile Motion</h3>
+<ul>
+<li>Horizontal motion: constant velocity (aₓ = 0).</li>
+<li>Vertical motion: constant acceleration due to gravity (aᵧ = g ≈ 9.81 m/s²).</li>
+<li>Horizontal and vertical motions are independent.</li>
+</ul>
+</div>
+<div class="notes-section">
+<h3>Additional Applications</h3>
+<ul>
+<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
+<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
+<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
+</ul>
+</div>
+<div class="notes-section">
+<h3>Common Exam Question Types</h3>
+<ul>
+<li>Definition questions — state precisely, use correct terminology</li>
+<li>Calculation questions — show working, include units, check significant figures</li>
+<li>Explanation questions — use "because" to link cause and effect</li>
+<li>Graph questions — read axes carefully, describe trends using data</li>
+</ul>
+<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+</div>
+<div class="notes-section">
+<h3>7. Projectile Motion — Full Analysis</h3>
+<ul>
+<li><strong>Horizontal:</strong> aₓ = 0, vₓ = u cos θ (constant), sₓ = ut cos θ</li>
+<li><strong>Vertical:</strong> aᵧ = −g, vᵧ = u sin θ − gt, sᵧ = ut sin θ − ½gt²</li>
+<li><strong>Time of flight:</strong> T = 2u sin θ / g (when landing at same height)</li>
+<li><strong>Max height:</strong> H = u² sin²θ / 2g (at t = u sin θ / g)</li>
+<li><strong>Range:</strong> R = u² sin 2θ / g (max at θ = 45°)</li>
+</ul>
+<div class="diagram-box">
+<h4>📊 Projectile Trajectory</h4>
+<svg viewBox="0 0 400 200" style="width:100%;max-width:400px;margin:10px auto;display:block;">
+<path d="M 20 180 Q 200 20 380 180" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<line x1="20" y1="180" x2="380" y2="180" stroke="#333" stroke-width="1"/>
+<line x1="20" y1="180" x2="20" y2="20" stroke="#333" stroke-width="1"/>
+<text x="370" y="195" font-size="10">x</text>
+<text x="5" y="25" font-size="10">y</text>
+<circle cx="20" cy="180" r="4" fill="#ef4444"/>
+<text x="10" y="170" font-size="9" fill="#ef4444">u, θ</text>
+<circle cx="200" cy="100" r="4" fill="#f59e0b"/>
+<text x="205" y="95" font-size="9" fill="#92400e">Max height</text>
+<line x1="200" y1="100" x2="200" y2="180" stroke="#f59e0b" stroke-dasharray="3"/>
+<text x="190" y="195" font-size="9">R/2</text>
+</svg>
+</div>
+</div>
+<div class="notes-section">
+<h3>8. Motion Graphs Summary</h3>
+<table class="compare-table">
+<tr><th>Graph</th><th>Gradient gives</th><th>Area gives</th></tr>
+<tr><td>Displacement-time</td><td>Velocity</td><td>—</td></tr>
+<tr><td>Velocity-time</td><td>Acceleration</td><td>Displacement</td></tr>
+<tr><td>Acceleration-time</td><td>Jerk</td><td>Change in velocity</td></tr>
+</table>
+<div class="common-mistake">The area under a velocity-time graph gives displacement, NOT distance. If the curve goes below the time axis, that area represents negative displacement (backward motion).</div>
+</div>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>4 SUVAT equations for uniform acceleration: v=u+at, s=ut+½at², v²=u²+2as, s=½(u+v)t</li>
+<li>Displacement-time gradient = velocity; Velocity-time gradient = acceleration, area = displacement</li>
+<li>Newton's 1st: body at rest stays at rest unless resultant force acts</li>
+<li>Newton's 2nd: F = ma</li>
+<li>Newton's 3rd: action = reaction (equal and opposite)</li>
+<li>Momentum p = mv; conserved in closed system</li>
+<li>Impulse = FΔt = change in momentum</li>
+<li>Projectiles: horizontal = constant velocity, vertical = constant acceleration (g)</li>
+</ul>
+</div>
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+At max height, v = 0. Using v² = u² + 2as:<br>
+0 = 20² + 2(−9.81)s<br>
+0 = 400 − 19.62s<br>
+s = 400 / 19.62 = 20.4 m<br>
+<strong>Answer: 20.4 m</strong>
+</div>
+</div>
+<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
+<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>v = u + at (no displacement)</li>
+<li>s = ut + ½at² (no final velocity)</li>
+<li>v² = u² + 2as (no time)</li>
+<li>s = ½(u+v)t (no acceleration)</li>
+<li>All apply only for constant acceleration</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+
+<h2>Exam Tips</h2>
+<ul>
+<li>Read the question carefully — identify exactly what is being asked.</li>
+<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
+<li>Check units — ensure your final answer has the correct unit.</li>
+<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
+<li>Manage your time — don't spend too long on any single question.</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.physicsandmathstutor.com/physics-revision/a-level/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — Past papers & revision notes</li>
+<li><a href="https://www.savemyexams.co.uk/notes/physics/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
+<li><a href="https://znotes.org/cie-a-level-physics-9702/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/physics/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes & explanations</li>
+<li><a href="https://simplestudy.ie/subject/physics" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vectors in Geography — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Vectors in Geography</h1>
+<p style="color:var(--gray)">Geography G7</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Vector Basics</h3>
+<p>A <strong>vector</strong> has both magnitude and direction. Scalars have magnitude only.</p>
+<p>Notation: **a**, a⃗, or AB⃗ (vector from A to B).</p>
+<p>A vector in component form: **v** = (x, y) in 2D or (x, y, z) in 3D.</p>
+
+<h3>1.2 Vector Operations</h3>
+<div class="formula-box">Addition: (a, b) + (c, d) = (a+c, b+d)
+Subtraction: (a, b) − (c, d) = (a−c, b−d)
+Scalar multiplication: k(a, b) = (ka, kb)
+Magnitude: |**v**| = √(x² + y²) or √(x² + y² + z²)</div>
+
+<h3>1.3 Position Vectors</h3>
+<p>If O is the origin, the position vector of point P is OP⃗.</p>
+<p>The vector from A to B is: AB⃗ = OB⃗ − OA⃗ = **b** − **a**</p>
+
+<h3>1.4 Worked Example — Position Vectors</h3>
+<p><strong>Problem:</strong> A = (2, 3), B = (5, 7). Find vector AB⃗ and its magnitude.</p>
+<p><strong>Solution:</strong></p>
+<p>AB⃗ = (5−2, 7−3) = (3, 4)</p>
+<p>|AB⃗| = √(3² + 4²) = √25 = 5</p>
+
+<h3>1.5 Unit Vectors</h3>
+<p>A <strong>unit vector</strong> has magnitude 1. The unit vector in direction of **v** is:</p>
+<div class="formula-box">**v̂** = **v** / |**v**|</div>
+<p>Standard unit vectors: **i** = (1,0,0), **j** = (0,1,0), **k** = (0,0,1)</p>
+
+<h3>1.6 Section Formula (IGCSE Extended)</h3>
+<p>Point P dividing AB in ratio m:n has position vector:</p>
+<div class="formula-box">**p** = (n**a** + m**b**) / (m + n)</div>
+<p>For midpoint: **p** = (**a** + **b**) / 2</p>
+</div>
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 Scalar (Dot) Product</h3>
+<div class="formula-box">**a** · **b** = |**a**| |**b**| cos θ = a₁b₁ + a₂b₂ + a₃b₃</div>
+<p>Properties:</p>
+<ul>
+<li>Commutative: **a** · **b** = **b** · **a**</li>
+<li>**a** · **a** = |**a**|²</li>
+<li>If **a** ⊥ **b**, then **a** · **b** = 0</li>
+</ul>
+
+<h3>2.2 Finding Angles Between Vectors</h3>
+<div class="formula-box">cos θ = (**a** · **b**) / (|**a**| |**b**|)</div>
+<p><strong>Worked Example:</strong> Find angle between **a** = (1, 2, 2) and **b** = (3, 0, 4).</p>
+<p>**a** · **b** = 3 + 0 + 8 = 11</p>
+<p>|**a**| = √(1+4+4) = 3, |**b**| = √(9+0+16) = 5</p>
+<p>cos θ = 11/15, so θ = cos⁻¹(11/15) ≈ 42.8°</p>
+
+<h3>2.3 Vector Equation of a Line</h3>
+<div class="formula-box">**r** = **a** + λ**d**</div>
+<p>where **a** is a point on the line, **d** is the direction vector, and λ is a scalar parameter.</p>
+<p>Cartesian form: (x − a₁)/d₁ = (y − a₂)/d₂ = (z − a₃)/d₃</p>
+
+<h3>2.4 Finding Line Intersections</h3>
+<p>Set the parametric equations equal and solve for parameters. If consistent: lines intersect. If inconsistent: lines are skew (in 3D) or parallel.</p>
+
+<h3>2.5 Shortest Distance from Point to Line</h3>
+<p>For line **r** = **a** + λ**d** and point P with position vector **p**:</p>
+<div class="formula-box">Distance = |(**p** − **a**) × **d**| / |**d**|</div>
+</div>
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 Vector (Cross) Product</h3>
+<div class="formula-box">**a** × **b** = |**a**| |**b**| sin θ **n̂**
+where **n̂** is unit vector perpendicular to both **a** and **b** (right-hand rule).</div>
+<p>In components:</p>
+<div class="formula-box">**a** × **b** = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁)</div>
+<p>Properties:</p>
+<ul>
+<li>Anti-commutative: **a** × **b** = −(**b** × **a**)</li>
+<li>**a** × **a** = **0**</li>
+<li>|**a** × **b**| = area of parallelogram with sides **a** and **b**</li>
+</ul>
+
+<h3>3.2 Scalar Triple Product</h3>
+<div class="formula-box">[**a**, **b**, **c**] = **a** · (**b** × **c**) = det[**a** **b** **c**]</div>
+<p>This gives the volume of the parallelepiped with edges **a**, **b**, **c**.</p>
+<p>If [**a**, **b**, **c**] = 0, the vectors are coplanar.</p>
+
+<h3>3.3 Vector Equation of a Plane</h3>
+<div class="formula-box">**r** · **n** = d  (where **n** is normal vector)
+or **r** = **a** + λ**b** + μ**c** (parametric form)</div>
+<p>Cartesian form: ax + by + cz = d, where (a,b,c) = **n**</p>
+
+<h3>3.4 Distance from Point to Plane</h3>
+<div class="formula-box">Distance = |**n** · **p** − d| / |**n**| = |ax₀ + by₀ + cz₀ − d| / √(a²+b²+c²)</div>
+
+<h3>3.5 Line-Plane Intersection</h3>
+<p>Substitute line equation **r** = **a** + λ**d** into plane equation **r** · **n** = d.</p>
+<p>Solve for λ. If **d** · **n** = 0: line is parallel to plane (no intersection or line lies in plane).</p>
+
+<h3>3.6 Vector Geometry Proofs</h3>
+<p><strong>Example:</strong> Prove that the medians of a triangle are concurrent (centroid divides each median in ratio 2:1).</p>
+<p><strong>Proof:</strong> Let vertices have position vectors **a**, **b**, **c**.</p>
+<p>Midpoint of BC: **m** = (**b** + **c**)/2</p>
+<p>Point on median from A dividing it 2:1: (**a** + 2**m**)/3 = (**a** + **b** + **c**)/3</p>
+<p>By symmetry, this same point lies on all three medians. ∎</p>
+</div>
+<div 
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> Find the interior angle of a regular decagon.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+n = 10<br>
+Interior angle = (n − 2) × 180° / n<br>
+= (10 − 2) × 180° / 10 = 8 × 18° = 144°<br>
+<strong>Answer: 144°</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing interior and exterior angles. Exterior angles of ANY polygon always sum to 360°.</div>
+<div class="key-point">For regular polygons: interior + exterior = 180°. Use this to check your answers.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Interior angle sum = (n − 2) × 180°</li>
+<li>Exterior angle sum = 360°</li>
+<li>Regular polygon interior = (n−2)×180°/n</li>
+<li>Pythagoras: a² + b² = c²</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Vector magnitude:</strong> |**v**| = √(x²+y²+z²)</li>
+<li><strong>Unit vector:</strong> **v̂** = **v**/|**v**|</li>
+<li><strong>Section formula:</strong> **p** = (n**a** + m**b**)/(m+n)</li>
+<li><strong>Dot product:</strong> **a**·**b** = |**a**||**b**|cos θ = a₁b₁+a₂b₂+a₃b₃</li>
+<li><strong>Cross product:</strong> **a**×**b** = |**a**||**b**|sin θ **n̂**</li>
+<li><strong>Line:</strong> **r** = **a** + λ**d**</li>
+<li><strong>Plane:</strong> **r**·**n** = d or ax+by+cz = d</li>
+<li><strong>Point-line distance:</strong> |(**p**−**a**)×**d**|/|**d**|</li>
+<li><strong>Point-plane distance:</strong> |**n**·**p**−d|/|**n**|</li>
+<li><strong>Scalar triple product:</strong> volume of parallelepiped, test for coplanarity</li>
+<li><strong>Angle between vectors:</strong> cos θ = (**a**·**b**)/(|**a**||**b**|)</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.physicsandmathstutor.com/maths-revision/gcse/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — GCSE maths resources</li>
+<li><a href="https://www.savemyexams.co.uk/notes/maths/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-maths-0580/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/maths/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/maths" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

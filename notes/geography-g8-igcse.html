@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transformations & Matrices — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-igcse">IGCSE</span>
+  </div>
+<h1>Transformations & Matrices</h1>
+<p style="color:var(--gray)">Geography G8</p>
+</div>
+<div class="notes-section"><h2>📘 IGCSE Content</h2>
+<h3>1.1 Types of Transformations</h3>
+<ul>
+<li><strong>Translation:</strong> Sliding without rotation or resizing. Described by vector (a, b).</li>
+<li><strong>Reflection:</strong> Mirror image across a line. The mirror line is the perpendicular bisector of any segment joining a point to its image.</li>
+<li><strong>Rotation:</strong> Turning about a fixed point (centre) through a given angle. Positive = anticlockwise.</li>
+<li><strong>Enlargement:</strong> Scaling from a centre point by scale factor k. If k < 0, the image is on the opposite side of the centre.</li>
+</ul>
+
+<h3>1.2 Describing Transformations</h3>
+<p>Always state:</p>
+<ul>
+<li>For translation: the column vector.</li>
+<li>For reflection: the equation of the mirror line.</li>
+<li>For rotation: the centre, angle, and direction (clockwise/anticlockwise).</li>
+<li>For enlargement: the centre and scale factor.</li>
+</ul>
+
+<h3>1.3 Combining Transformations</h3>
+<p>Transformations are performed right to left. If T₁ followed by T₂, the combined transformation is T₂ ∘ T₁.</p>
+<p>Note: The order matters! Reflection then rotation is generally different from rotation then reflection.</p>
+
+<h3>1.4 Worked Example — Describing a Transformation</h3>
+<p><strong>Problem:</strong> Triangle ABC with A(1,1), B(3,1), C(2,3) is mapped to A′(−1,1), B′(−3,1), C′(−2,3). Describe the transformation.</p>
+<p><strong>Solution:</strong></p>
+<p>Points are reflected across the y-axis (x = 0). The y-coordinates stay the same, x-coordinates change sign.</p>
+<p>Transformation: Reflection in the line x = 0 (the y-axis).</p>
+
+<h3>1.5 Matrix Representation (IGCSE Additional)</h3>
+<p>A point (x, y) can be represented as a column vector (x, y)ᵀ.</p>
+<p>A 2×2 matrix transforms points by multiplication:</p>
+<div class="formula-box">(x′, y′)ᵀ = M (x, y)ᵀ</div>
+</div>
+<div class="notes-section"><h2>📗 AS Level Content</h2>
+<h3>2.1 Standard Transformation Matrices</h3>
+<div class="formula-box">Reflection in x-axis: [1  0; 0 −1]
+Reflection in y-axis: [−1  0; 0  1]
+Reflection in y = x: [0  1; 1  0]
+Reflection in y = −x: [0  −1; −1  0]
+Rotation 90° anticlockwise about O: [0  −1; 1  0]
+Rotation 180° about O: [−1  0; 0  −1]
+Rotation θ about O: [cos θ  −sin θ; sin θ  cos θ]
+Enlargement scale factor k, centre O: [k  0; 0  k]
+Stretch x-direction factor a: [a  0; 0  1]
+Stretch y-direction factor b: [1  0; 0  b]
+Shear x-direction factor k: [1  k; 0  1]</div>
+
+<h3>2.2 Matrix Multiplication for Combined Transformations</h3>
+<p>If T₁ has matrix M₁ and T₂ has matrix M₂, then T₂ followed by T₁ has matrix M₁M₂.</p>
+<p>Note: Matrix multiplication is not commutative! M₁M₂ ≠ M₂M₁ in general.</p>
+
+<h3>2.3 Determinant and Area Scale Factor</h3>
+<div class="formula-box">For matrix M = [a  b; c  d]:
+det(M) = ad − bc
+Area of image = |det(M)| × Area of object</div>
+<p>If det(M) > 0: transformation preserves orientation (direct).</p>
+<p>If det(M) < 0: transformation reverses orientation (opposite).</p>
+
+<h3>2.4 Inverse Transformations</h3>
+<p>The inverse of transformation matrix M is:</p>
+<div class="formula-box">M⁻¹ = (1/det(M)) [d  −b; −c  a]</div>
+<p>The inverse represents the transformation that maps the image back to the original.</p>
+
+<h3>2.5 Invariant Points and Lines</h3>
+<ul>
+<li><strong>Invariant point:</strong> A point that maps to itself.</li>
+<li><strong>Invariant line:</strong> A line that maps to itself (points on it may move, but stay on the line).</li>
+</ul>
+<p>For matrix M, invariant points satisfy M**v** = **v**, i.e., (M − I)**v** = **0**.</p>
+</div>
+<div class="notes-section"><h2>📙 A2 Level Content</h2>
+<h3>3.1 3D Transformation Matrices</h3>
+<p>Transformations in 3D use 3×3 matrices:</p>
+<div class="formula-box">Rotation about z-axis by θ:
+[cos θ  −sin θ  0;
+ sin θ   cos θ  0;
+ 0       0      1]
+
+Rotation about x-axis by θ:
+[1  0       0;
+ 0  cos θ  −sin θ;
+ 0  sin θ   cos θ]</div>
+
+<h3>3.2 Eigenvalues and Eigenvectors</h3>
+<p>An <strong>eigenvector</strong> of matrix M is a non-zero vector **v** such that:</p>
+<div class="formula-box">M**v** = λ**v</div>
+<p>where λ is the <strong>eigenvalue</strong>.</p>
+<p>Eigenvectors represent invariant directions. Eigenvalues represent the scale factor in those directions.</p>
+<p>To find eigenvalues: solve det(M − λI) = 0 (characteristic equation).</p>
+
+<h3>3.3 Diagonalisation</h3>
+<p>If matrix M has eigenvectors **v₁**, **v₂** with eigenvalues λ₁, λ₂, then:</p>
+<div class="formula-box">M = PDP⁻¹
+where P = [**v₁** **v₂**] and D = diag(λ₁, λ₂)</div>
+<p>This simplifies computing Mⁿ: Mⁿ = PDⁿP⁻¹.</p>
+
+<h3>3.4 Affine Transformations</h3>
+<p>An <strong>affine transformation</strong> preserves collinearity and ratios of distances along lines. It combines linear transformations with translations.</p>
+<div class="formula-box">**x′** = M**x** + **t**</div>
+<p>Using homogeneous coordinates (x, y, 1), affine transformations can be represented as 3×3 matrices:</p>
+<div class="formula-box">[x′; y′; 1] = [M  t; 0 0 1] [x; y; 1]</div>
+
+<h3>3.5 Singular Value Decomposition (Introduction)</h3>
+<p>Any real matrix M can be decomposed as M = UΣVᵀ where U and V are orthogonal and Σ is diagonal. This reveals the fundamental geometric action: rotation, scaling along axes, then rotation.</p>
+</div>
+<div 
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> Find the interior angle of a regular decagon.</p>
+<div class="solution">
+<strong>Solution:</strong><br>
+n = 10<br>
+Interior angle = (n − 2) × 180° / n<br>
+= (10 − 2) × 180° / 10 = 8 × 18° = 144°<br>
+<strong>Answer: 144°</strong>
+</div>
+</div>
+<div class="common-mistake">Confusing interior and exterior angles. Exterior angles of ANY polygon always sum to 360°.</div>
+<div class="key-point">For regular polygons: interior + exterior = 180°. Use this to check your answers.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Interior angle sum = (n − 2) × 180°</li>
+<li>Exterior angle sum = 360°</li>
+<li>Regular polygon interior = (n−2)×180°/n</li>
+<li>Pythagoras: a² + b² = c²</li>
+</ul>
+</div>
+class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Translation:</strong> vector (a, b)</li>
+<li><strong>Reflection:</strong> state mirror line</li>
+<li><strong>Rotation:</strong> state centre, angle, direction</li>
+<li><strong>Enlargement:</strong> state centre, scale factor k</li>
+<li><strong>Rotation matrix:</strong> [cos θ  −sin θ; sin θ  cos θ]</li>
+<li><strong>Reflection in y=x:</strong> [0 1; 1 0]</li>
+<li><strong>Determinant:</strong> ad − bc = area scale factor</li>
+<li><strong>Inverse:</strong> (1/det) [d −b; −c a]</li>
+<li><strong>Combined transformations:</strong> right to left, matrix multiply</li>
+<li><strong>Eigenvalue:</strong> M**v** = λ**v</li>
+<li><strong>Characteristic equation:</strong> det(M − λI) = 0</li>
+<li><strong>3D rotations:</strong> about x, y, or z axis using 3×3 matrices</li>
+</ul>
+</div>
+</div>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.physicsandmathstutor.com/maths-revision/gcse/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — GCSE maths resources</li>
+<li><a href="https://www.savemyexams.co.uk/notes/maths/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions</li>
+<li><a href="https://znotes.org/cie-igcse-maths-0580/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
+<li><a href="https://www.tutorchase.com/revision-notes/maths/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
+<li><a href="https://simplestudy.ie/subject/maths" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

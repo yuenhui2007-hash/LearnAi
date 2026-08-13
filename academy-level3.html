@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+<title>Level 3: AI Avatar (Claw) — Zetrix AI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<style>
+.academy-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.academy-container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.level-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.level-header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.module { margin-bottom: 48px; }
+.module h2 { font-size: 1.4rem; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.module h3 { font-size: 1.1rem; margin: 24px 0 12px; }
+.module p, .module li { line-height: 1.8; color: var(--body-text); margin-bottom: 10px; }
+.module ul { padding-left: 24px; }
+.interactive-box { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin: 20px 0; border-left: 4px solid var(--primary); }
+.interactive-box h4 { margin-bottom: 12px; }
+.quiz-container { background: var(--light); padding: 32px; border-radius: var(--radius-xl); margin-top: 32px; }
+[data-theme="dark"] .quiz-container, .dark .quiz-container { background: var(--gray-light); }
+.quiz-question { margin-bottom: 20px; }
+.quiz-question p { font-weight: 600; margin-bottom: 10px; }
+.quiz-options label { display: block; padding: 10px 14px; margin-bottom: 8px; background: var(--card-bg); border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+.quiz-options label:hover { background: var(--primary-light); }
+.quiz-options input { margin-right: 8px; }
+.quiz-result { margin-top: 20px; padding: 16px; border-radius: 12px; display: none; }
+.assignment-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 24px 0; }
+[data-theme="dark"] .assignment-box, .dark .assignment-box { background: linear-gradient(135deg, #451a03 0%, #78350f 100%); }
+.assignment-box h4 { color: #92400e; margin-bottom: 8px; }
+[data-theme="dark"] .assignment-box h4, .dark .assignment-box h4 { color: #fbbf24; }
+.nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--gray-light); }
+.scenario-card { background: #f0fdf4; padding: 20px; border-radius: 12px; margin: 12px 0; border-left: 4px solid #22c55e; }
+@media (prefers-color-scheme: dark) { .scenario-card { background: #064e3b; border-left-color: #34d399; } .scenario-card h4 { color: #a7f3d0; } }
+[data-theme="dark"] .scenario-card, .dark .scenario-card { background: #064e3b; border-left-color: #34d399; }
+[data-theme="dark"] .scenario-card h4, .dark .scenario-card h4 { color: #a7f3d0; }
+.scenario-card h4 { color: #166534; margin-bottom: 8px; }
+@media (max-width: 768px) { .academy-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=5"></script>
+
+<section class="academy-page">
+  <div class="container">
+    <div class="academy-container">
+      <div class="level-header">
+        <span style="color:var(--primary);font-weight:600">Level 3 of 6</span>
+        <h1>AI Avatar (Claw)</h1>
+        <p style="color:var(--gray)">Voice conversations, meetings, presentations, roleplaying, and training. Estimated time: 2 hours.</p>
+      </div>
+
+      <div class="module">
+        <h2>Module 1: What is Claw?</h2>
+        <p>Claw is Zetrix AI's interactive avatar system. Unlike text-only AI, Claw engages through:</p>
+        <ul>
+          <li><strong>Voice conversations:</strong> Natural spoken dialogue</li>
+          <li><strong>Visual presence:</strong> Animated avatar for presentations</li>
+          <li><strong>Scenario roleplay:</strong> Practice difficult conversations</li>
+          <li><strong>Meeting mode:</strong> AI participant that takes notes and answers questions</li>
+        </ul>
+
+        <h3>When to Use Claw vs Text Chat</h3>
+        <table style="width:100%;border-collapse:collapse;margin:16px 0">
+          <tr style="background:var(--light)">
+            <th style="padding:12px;text-align:left;border-bottom:2px solid var(--gray-light)">Use Claw For</th>
+            <th style="padding:12px;text-align:left;border-bottom:2px solid var(--gray-light)">Use Text Chat For</th>
+          </tr>
+          <tr>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Practice presentations</td>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Quick factual queries</td>
+          </tr>
+          <tr>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Roleplay interviews</td>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Document analysis</td>
+          </tr>
+          <tr>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Customer service training</td>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Code debugging</td>
+          </tr>
+          <tr>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Meeting participation</td>
+            <td style="padding:12px;border-bottom:1px solid var(--gray-light)">Data analysis</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="module">
+        <h2>Module 2: Voice Conversations</h2>
+        <h3>Getting Started</h3>
+        <ul>
+          <li>Click the microphone icon to start voice mode</li>
+          <li>Speak naturally — Claw understands context and follow-ups</li>
+          <li>Use "Hey Claw" wake word for hands-free activation</li>
+          <li>Interrupt anytime — Claw adapts to your pace</li>
+        </ul>
+
+        <h3>Voice Commands</h3>
+        <ul>
+          <li>"Claw, summarise this document"</li>
+          <li>"Switch to presentation mode"</li>
+          <li>"Save this to my notes"</li>
+          <li>"Roleplay: You're an angry customer"</li>
+          <li>" slower please" / "Explain that again"</li>
+        </ul>
+
+        <div class="interactive-box">
+          <h4>🎯 Practice Task</h4>
+          <p>Start a voice conversation with Claw. Ask it to explain a complex topic from your work. Practice interrupting and asking follow-up questions.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 3: Roleplay Scenarios</h2>
+        <p>Claw can simulate realistic scenarios for practice. You cannot skip — must complete the conversation.</p>
+
+        <div class="scenario-card">
+          <h4>🎯 Customer Complaint</h4>
+          <p>Claw plays an angry customer who received a damaged product. Your goal: de-escalate, apologise, and offer a solution.</p>
+        </div>
+
+        <div class="scenario-card">
+          <h4>🎯 Sales Pitch</h4>
+          <p>Claw is a sceptical prospect. Practice handling objections and closing the deal.</p>
+        </div>
+
+        <div class="scenario-card">
+          <h4>🎯 Interview Practice</h4>
+          <p>Claw is the hiring manager. Answer behavioural and technical questions. Get instant feedback on your responses.</p>
+        </div>
+
+        <div class="scenario-card">
+          <h4>🎯 Performance Review</h4>
+          <p>Practice giving constructive feedback to an underperforming team member (played by Claw).</p>
+        </div>
+
+        <div class="scenario-card">
+          <h4>🎯 Negotiation</h4>
+          <p>Claw is a vendor pushing for higher prices. Negotiate better terms while maintaining the relationship.</p>
+        </div>
+
+        <div class="assignment-box">
+          <h4>📋 Assignment</h4>
+          <p>Complete 3 roleplay scenarios with Claw. Submit screenshots of your completed conversations.</p>
+        </div>
+      </div>
+
+      <div class="module">
+        <h2>Module 4: Presentation Mode</h2>
+        <h3>Using Claw for Presentations</h3>
+        <ul>
+          <li><strong>Co-presenter:</strong> Claw can introduce sections or answer audience questions</li>
+          <li><strong>Q&A backup:</strong> Audience asks questions; Claw provides answers on screen</li>
+          <li><strong>Rehearsal:</strong> Practice your presentation; Claw gives feedback on pacing and clarity</li>
+          <li><strong>Live demos:</strong> Claw can demonstrate features while you explain</li>
+        </ul>
+
+        <h3>Setup</h3>
+        <ul>
+          <li>Upload your slide deck to Claw beforehand</li>
+          <li>Set context: "You're co-presenting a Q3 review to the board"</li>
+          <li>Configure response length: "Keep answers under 30 seconds"</li>
+          <li>Enable visual mode for avatar display</li>
+        </ul>
+      </div>
+
+      <div class="quiz-container">
+        <h3>📝 Level 3 Quiz (80% to pass)</h3>
+        <form id="quizForm">
+          <div class="quiz-question">
+            <p>1. What is Claw's primary advantage over text chat?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="a"> It's cheaper</label>
+              <label><input type="radio" name="q1" value="b"> Voice + visual interaction</label>
+              <label><input type="radio" name="q1" value="c"> It works offline</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>2. What wake word activates Claw?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="a"> Hey Zetrix</label>
+              <label><input type="radio" name="q2" value="b"> Hey Claw</label>
+              <label><input type="radio" name="q2" value="c"> Hello AI</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>3. In roleplay mode, can you skip scenarios?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="a"> Yes, anytime</label>
+              <label><input type="radio" name="q3" value="b"> No, must complete the conversation</label>
+              <label><input type="radio" name="q3" value="c"> Only after 5 minutes</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>4. What should you upload before a presentation?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="a"> Your CV</label>
+              <label><input type="radio" name="q4" value="b"> Your slide deck</label>
+              <label><input type="radio" name="q4" value="c"> Your password</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>5. Which scenario is NOT built into Claw?</p>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="a"> Customer complaint</label>
+              <label><input type="radio" name="q5" value="b"> Tax filing</label>
+              <label><input type="radio" name="q5" value="c"> Sales pitch</label>
+            </div>
+          </div>
+          <button type="submit" class="btn" style="margin-top:16px">Submit Quiz</button>
+        </form>
+        <div id="quizForm-result" class="quiz-result"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="academy-level2.html" class="btn btn-secondary">← Previous Level</a>
+        <a href="academy-level4.html" class="btn" id="nextLevelBtn" style="opacity:0.5;pointer-events:none">Next Level →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/theme.js?v=4"></script>
+    <script src="js/auth.js?v=4"></script>
+<script src="js/academy.js?v=4"></script>
+<script>
+if (!Academy.isLevelUnlocked(3)) {
+  document.querySelector('.academy-container').innerHTML = '<div style="text-align:center;padding:60px"><h2>🔒 Level Locked</h2><p>Complete Level 2 to unlock this content.</p><a href="academy-level2.html" class="btn" style="margin-top:24px">Go to Level 2</a></div>';
+} else {
+  Academy.initQuiz('quizForm', ['b','b','b','b','b'], 80, function(score) {
+    Academy.markLevelCompleted(3, score);
+    document.getElementById('nextLevelBtn').style.opacity = '1';
+    document.getElementById('nextLevelBtn').style.pointerEvents = 'auto';
+  });
+}
+</script>
+<script src="js/mascot.js?v=4"></script>
+</body>
+</html>

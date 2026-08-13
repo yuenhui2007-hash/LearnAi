@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Double Entry — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span></div>
+<h1>Double Entry</h1>
+<p style="color:var(--gray)">0452 / 9706 — The Debit-Credit System</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>The Golden Rule</h3>
+<p>Double entry means every transaction has TWO equal and opposite effects. For every debit there must be an equal credit. The total debits always equal total credits.</p>
+<div class="formula-box">
+<strong>DEAD CLIC</strong><br>
+Debits increase: Expenses, Assets, Drawings<br>
+Credits increase: Liabilities, Income, Capital
+</div>
+
+<h3>Rules for Different Account Types</h3>
+<ul>
+<li><strong>Assets:</strong> Debit = Increase, Credit = Decrease</li>
+<li><strong>Liabilities:</strong> Debit = Decrease, Credit = Increase</li>
+<li><strong>Capital:</strong> Debit = Decrease (drawings), Credit = Increase</li>
+<li><strong>Income:</strong> Debit = Decrease, Credit = Increase</li>
+<li><strong>Expenses:</strong> Debit = Increase, Credit = Decrease</li>
+</ul>
+
+<h3>Common Transactions — Journal Entries</h3>
+<p><strong>1. Started business with cash:</strong></p>
+<div class="formula-box">
+Dr Cash $10,000<br>
+Cr Capital $10,000
+</div>
+<p><strong>2. Bought inventory on credit:</strong></p>
+<div class="formula-box">
+Dr Purchases $4,000<br>
+Cr Trade Payables $4,000
+</div>
+<p><strong>3. Sold goods for cash:</strong></p>
+<div class="formula-box">
+Dr Cash $2,500<br>
+Cr Sales $2,500
+</div>
+<p><strong>4. Paid rent by cheque:</strong></p>
+<div class="formula-box">
+Dr Rent Expense $800<br>
+Cr Bank $800
+</div>
+<p><strong>5. Owner withdrew cash:</strong></p>
+<div class="formula-box">
+Dr Drawings $500<br>
+Cr Cash $500
+</div>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Balancing Accounts</h3>
+<p>At period end, accounts are balanced to find the closing balance:</p>
+<ol>
+<li>Total both sides</li>
+<li>Insert the balancing figure on the smaller side (this is the "balance c/d")</li>
+<li>The totals of both sides now equal — write them on the same line</li>
+<li>Bring the balance down ("b/d") on the opposite side to start the next period</li>
+</ol>
+
+<h3>Discounts</h3>
+<ul>
+<li><strong>Trade discount:</strong> Deducted at point of sale (e.g., bulk discount) — not recorded in books; deducted before entry</li>
+<li><strong>Cash discount:</strong> Early payment incentive — recorded as Discount Received (income) or Discount Allowed (expense)</li>
+</ul>
+<div class="formula-box">
+Discount Allowed (to customers): Dr Discount Allowed, Cr Trade Receivables<br>
+Discount Received (from suppliers): Dr Trade Payables, Cr Discount Received
+</div>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Complex Adjustments</h3>
+<ul>
+<li><strong>Accruals:</strong> Expenses incurred but not yet paid — Dr Expense, Cr Accruals (liability)</li>
+<li><strong>Prepayments:</strong> Expenses paid in advance — Dr Prepayment (asset), Cr Expense</li>
+<li><strong>Irrecoverable debts:</strong> Debt known to be uncollectable — Dr Irrecoverable Debts Expense, Cr Trade Receivables</li>
+<li><strong>Allowance for doubtful debts:</strong> Estimate of future bad debts — Dr Doubtful Debts Expense, Cr Allowance for Doubtful Debts (contra asset)</li>
+</ul>
+
+<h3>Stock Valuation (IAS 2)</h3>
+<p>Inventory must be valued at the <strong>lower of cost and net realisable value (NRV)</strong>:</p>
+<div class="formula-box">
+NRV = Expected Selling Price − Estimated Costs of Completion/Sale<br>
+If NRV < Cost, write down to NRV: Dr Cost of Sales, Cr Inventory
+</div>
+</div>
+
+<div class="notes-section">
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> See the detailed notes above for practice questions on this topic.</p>
+<div class="solution">
+<strong>Solution:</strong> Work through the examples in the detailed notes. Practice is essential for exam success.
+</div>
+</div>
+<div class="common-mistake">Always read the question carefully and identify the command words before answering.</div>
+<div class="key-point">Focus on understanding concepts, not just memorising facts. This is key to exam success.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Read the question carefully</li>
+<li>Plan your answer before writing</li>
+<li>Use specific evidence and examples</li>
+<li>Check your work before submitting</li>
+</ul>
+</div>
+<h2>Last-Minute Summary</h2>
+<ul>
+<li><strong>DEAD CLIC:</strong> Debits increase Expenses, Assets, Drawings; Credits increase Liabilities, Income, Capital</li>
+<li>Every transaction = at least one debit and one credit of equal value</li>
+<li><strong>Assets:</strong> Debit ↑ Credit ↓ | <strong>Liabilities:</strong> Debit ↓ Credit ↑ | <strong>Capital:</strong> Debit ↓ Credit ↑</li>
+<li><strong>Income:</strong> Credit ↑ | <strong>Expenses:</strong> Debit ↑</li>
+<li>Balance c/d on the smaller side; balance b/d on the opposite side</li>
+<li><strong>Trade discount:</strong> not recorded; <strong>Cash discount:</strong> Discount Allowed (expense) / Discount Received (income)</li>
+<li><strong>Accruals:</strong> owe but not paid; <strong>Prepayments:</strong> paid but not yet used</li>
+<li><strong>Irrecoverable debt:</strong> remove from receivables; <strong>Allowance:</strong> estimate future bad debts</li>
+<li>Inventory at <strong>lower of cost and NRV</strong></li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

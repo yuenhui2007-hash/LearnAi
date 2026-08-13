@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <!-- Tail -->
+  <ellipse cx="35" cy="180" rx="25" ry="12" fill="#4ADE80" transform="rotate(-20 35 180)"/>
+  <!-- Body -->
+  <ellipse cx="100" cy="160" rx="55" ry="45" fill="#4ADE80"/>
+  <!-- Belly -->
+  <ellipse cx="100" cy="165" rx="35" ry="30" fill="#86EFAC"/>
+  <!-- Left Leg -->
+  <ellipse cx="75" cy="205" rx="15" ry="20" fill="#4ADE80"/>
+  <ellipse cx="75" cy="220" rx="18" ry="8" fill="#22C55E"/>
+  <!-- Right Leg -->
+  <ellipse cx="125" cy="205" rx="15" ry="20" fill="#4ADE80"/>
+  <ellipse cx="125" cy="220" rx="18" ry="8" fill="#22C55E"/>
+  <!-- Left Arm -->
+  <ellipse cx="55" cy="150" rx="12" ry="8" fill="#4ADE80" transform="rotate(30 55 150)"/>
+  <!-- Right Arm holding pencil -->
+  <ellipse cx="145" cy="150" rx="12" ry="8" fill="#4ADE80" transform="rotate(-30 145 150)"/>
+  <!-- Pencil -->
+  <rect x="150" y="130" width="6" height="35" fill="#FBBF24" transform="rotate(-25 150 130)"/>
+  <polygon points="153,128 156,132 150,132" fill="#F59E0B" transform="rotate(-25 153 128)"/>
+  <!-- Head -->
+  <circle cx="100" cy="85" r="40" fill="#4ADE80"/>
+  <!-- Snout -->
+  <ellipse cx="100" cy="105" rx="28" ry="18" fill="#86EFAC"/>
+  <!-- Nostrils -->
+  <circle cx="92" cy="100" r="3" fill="#22C55E"/>
+  <circle cx="108" cy="100" r="3" fill="#22C55E"/>
+  <!-- Smile -->
+  <path d="M 85 112 Q 100 122 115 112" stroke="#166534" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="88" cy="78" r="10" fill="white"/>
+  <circle cx="112" cy="78" r="10" fill="white"/>
+  <!-- Pupils -->
+  <circle cx="90" cy="78" r="5" fill="#1E293B"/>
+  <circle cx="110" cy="78" r="5" fill="#1E293B"/>
+  <!-- Eye shine -->
+  <circle cx="92" cy="76" r="2" fill="white"/>
+  <circle cx="112" cy="76" r="2" fill="white"/>
+  <!-- Glasses -->
+  <circle cx="88" cy="78" r="14" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+  <circle cx="112" cy="78" r="14" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+  <line x1="102" y1="78" x2="98" y2="78" stroke="#1E293B" stroke-width="2.5"/>
+  <!-- Spikes -->
+  <polygon points="70,55 65,40 80,50" fill="#22C55E"/>
+  <polygon points="90,48 85,33 100,45" fill="#22C55E"/>
+  <polygon points="110,50 105,35 120,48" fill="#22C55E"/>
+  <polygon points="130,58 125,43 138,55" fill="#22C55E"/>
+  <!-- Book -->
+  <rect x="130" y="170" width="30" height="22" rx="3" fill="#3B82F6"/>
+  <rect x="132" y="172" width="26" height="18" rx="2" fill="#60A5FA"/>
+  <line x1="145" y1="172" x2="145" y2="190" stroke="#1E40AF" stroke-width="1"/>
+  <!-- Book pages -->
+  <line x1="134" y1="175" x2="143" y2="175" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="134" y1="178" x2="143" y2="178" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="147" y1="175" x2="156" y2="175" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="147" y1="178" x2="156" y2="178" stroke="white" stroke-width="1" opacity="0.5"/>
+</svg>

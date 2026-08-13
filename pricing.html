@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<style>
+.pricing-section { padding: 140px 0 80px; background: #0f172a; min-height: 100vh; }
+.pricing-header { text-align: center; margin-bottom: 48px; }
+.pricing-header h1 { color: #fff; font-size: 2.4rem; margin-bottom: 12px; }
+.pricing-header p { color: #94a3b8; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+
+.billing-toggle { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 48px; }
+.billing-toggle span { color: #94a3b8; font-size: .95rem; font-weight: 500; }
+.billing-toggle span.active { color: #fff; }
+.toggle-switch { position: relative; width: 56px; height: 30px; background: #334155; border-radius: 15px; cursor: pointer; transition: background .3s; }
+.toggle-switch.active { background: #6366f1; }
+.toggle-switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; background: #fff; border-radius: 50%; transition: transform .3s; }
+.toggle-switch.active::after { transform: translateX(26px); }
+.discount-badge { display: inline-block; background: #10b981; color: #fff; font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 50px; margin-left: 8px; }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.pricing-card { background: #1e293b; border-radius: 20px; padding: 40px 32px; border: 2px solid #334155; transition: all .3s; position: relative; }
+.pricing-card:hover { transform: translateY(-4px); border-color: #475569; }
+.pricing-card.popular { border-color: #6366f1; }
+.popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #6366f1; color: #fff; font-size: .75rem; font-weight: 700; padding: 6px 16px; border-radius: 50px; }
+
+.plan-name { color: #fff; font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+.plan-desc { color: #94a3b8; font-size: .9rem; margin-bottom: 24px; }
+.plan-price { color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 4px; }
+.plan-price span { font-size: 1rem; font-weight: 400; color: #94a3b8; }
+.plan-original { color: #64748b; font-size: .9rem; text-decoration: line-through; margin-bottom: 24px; }
+.plan-features { list-style: none; padding: 0; margin: 0 0 32px; }
+.plan-features li { color: #cbd5e1; font-size: .9rem; padding: 8px 0; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #334155; }
+.plan-features li::before { content: '✓'; color: #10b981; font-weight: 700; }
+.plan-features li.na { color: #64748b; }
+.plan-features li.na::before { content: '✗'; color: #ef4444; }
+
+.btn-pricing { display: block; width: 100%; text-align: center; padding: 14px; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all .2s; }
+.btn-pricing-primary { background: #6366f1; color: #fff; border: none; }
+.btn-pricing-primary:hover { background: #4f46e5; }
+.btn-pricing-outline { background: transparent; color: #cbd5e1; border: 2px solid #475569; }
+.btn-pricing-outline:hover { border-color: #6366f1; color: #6366f1; }
+
+@media (max-width: 768px) {
+  .pricing-header h1 { font-size: 1.8rem; }
+  .pricing-grid { grid-template-columns: 1fr; padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=5"></script>
+
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-header">
+      <h1>Choose Your Plan</h1>
+      <p>Unlock full access to AI tutoring, practice exams, flashcards, and personalized study plans.</p>
+    </div>
+
+    <div class="billing-toggle">
+      <span id="labelMonthly" class="active">Monthly</span>
+      <div class="toggle-switch" id="billingToggle"></div>
+      <span id="labelYearly">Yearly <span class="discount-badge">Save 20%</span></span>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free Plan -->
+      <div class="pricing-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-desc">Basic access for casual learners</div>
+        <div class="plan-price" data-monthly="0" data-yearly="0">$0<span>/month</span></div>
+        <div class="plan-original" style="visibility:hidden;">&nbsp;</div>
+        <ul class="plan-features">
+          <li>Browse all subject notes</li>
+          <li>Basic progress tracking</li>
+          <li>Revision planner</li>
+          <li class="na">AI Tutor (limited)</li>
+          <li class="na">Practice quizzes</li>
+          <li class="na">Flashcards</li>
+          <li class="na">Mock exams</li>
+          <li class="na">AI Academy access</li>
+        </ul>
+        <a href="register.html" class="btn-pricing btn-pricing-outline">Get Started Free</a>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="plan-name">Standard</div>
+        <div class="plan-desc">Full study toolkit for serious students</div>
+        <div class="plan-price" data-monthly="10" data-yearly="96">$10<span>/month</span></div>
+        <div class="plan-original" id="stdOriginal" style="visibility:hidden;">$120/year</div>
+        <ul class="plan-features">
+          <li>Everything in Free</li>
+          <li>Unlimited AI Tutor</li>
+          <li>Practice quizzes</li>
+          <li>Flashcards</li>
+          <li>Mock exams</li>
+          <li class="na">AI Academy access</li>
+          <li class="na">Personalized study plans</li>
+          <li class="na">Priority support</li>
+        </ul>
+        <a href="payment.html?plan=standard&billing=monthly" class="btn-pricing btn-pricing-primary" id="stdBtn">Subscribe Now</a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card">
+        <div class="plan-name">Premium</div>
+        <div class="plan-desc">Complete AI-powered learning experience</div>
+        <div class="plan-price" data-monthly="30" data-yearly="288">$30<span>/month</span></div>
+        <div class="plan-original" id="premOriginal" style="visibility:hidden;">$360/year</div>
+        <ul class="plan-features">
+          <li>Everything in Standard</li>
+          <li>AI Academy full access</li>
+          <li>Personalized study plans</li>
+          <li>Priority support</li>
+          <li>Downloadable workbooks</li>
+          <li>Parent / teacher dashboard</li>
+          <li>Print-on-demand materials</li>
+          <li>Early access to new features</li>
+        </ul>
+        <a href="payment.html?plan=premium&billing=monthly" class="btn-pricing btn-pricing-primary" id="premBtn">Subscribe Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+        <p>AI-powered education platform for Cambridge A-Level, IGCSE & IELTS.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="tutor.html">AI Tutor</a></li>
+          <li><a href="academy.html">AI Academy</a></li>
+          <li><a href="dashboard.html">My Progress</a></li>
+          <li><a href="planner.html">Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LearnAI. Not affiliated with Cambridge Assessment International Education.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var isYearly = false;
+  var toggle = document.getElementById('billingToggle');
+  var labelMonthly = document.getElementById('labelMonthly');
+  var labelYearly = document.getElementById('labelYearly');
+  var stdOriginal = document.getElementById('stdOriginal');
+  var premOriginal = document.getElementById('premOriginal');
+  var stdBtn = document.getElementById('stdBtn');
+  var premBtn = document.getElementById('premBtn');
+
+  function updatePrices() {
+    document.querySelectorAll('.plan-price').forEach(function(el){
+      var monthly = parseFloat(el.dataset.monthly);
+      var yearly = parseFloat(el.dataset.yearly);
+      var price = isYearly ? yearly : monthly;
+      var period = isYearly ? '/year' : '/month';
+      el.innerHTML = (price === 0 ? '$0' : '$' + price) + '<span>' + period + '</span>';
+    });
+
+    if (isYearly) {
+      stdOriginal.style.visibility = 'visible';
+      premOriginal.style.visibility = 'visible';
+      stdOriginal.textContent = '$120/year';
+      premOriginal.textContent = '$360/year';
+      stdBtn.href = 'payment.html?plan=standard&billing=yearly';
+      premBtn.href = 'payment.html?plan=premium&billing=yearly';
+    } else {
+      stdOriginal.style.visibility = 'hidden';
+      premOriginal.style.visibility = 'hidden';
+      stdBtn.href = 'payment.html?plan=standard&billing=monthly';
+      premBtn.href = 'payment.html?plan=premium&billing=monthly';
+    }
+  }
+
+  toggle.addEventListener('click', function(){
+    isYearly = !isYearly;
+    toggle.classList.toggle('active', isYearly);
+    labelMonthly.classList.toggle('active', !isYearly);
+    labelYearly.classList.toggle('active', isYearly);
+    updatePrices();
+  });
+})();
+</script>
+<script src="js/theme.js?v=4"></script>
+<script src="js/auth.js?v=4"></script>
+<script src="js/mascot.js?v=4"></script>
+<script src="js/pwa.js?v=4"></script>
+</body>
+</html>

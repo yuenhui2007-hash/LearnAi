@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Progress v2 — LearnAI</title>
+<meta name="description" content="Track your Cambridge study progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<style>
+  /* Perf fix: disable expensive backdrop-filter on dashboard */
+  .navbar, .nav-dropdown-menu { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=5"></script>
+
+<section class="dashboard-section">
+<div class="container">
+<div class="dashboard-header">
+<div>
+<h1>My Progress</h1>
+<p id="overallProgress" style="color:var(--gray)">Loading...</p>
+</div>
+<a href="subjects.html" class="btn btn-primary">Browse Subjects</a>
+</div>
+
+<div style="margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap;">
+<button class="btn btn-outline" id="exportBtn">Export Progress</button>
+<button class="btn btn-outline" id="importBtn">Import Progress</button>
+<button class="btn btn-outline" id="settingsBtn">⚙️ Display Settings</button>
+<input type="file" id="importFile" accept="application/json" style="display:none">
+</div>
+
+<!-- Display Settings Panel -->
+<div id="settingsPanel" style="display:none;margin-bottom:24px;padding:20px;background:#1e293b;border-radius:12px;">
+<h3 style="margin-bottom:16px;color:#fff;">Choose what to display</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showSubjects" checked> Cambridge Subjects</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showDepartments" checked> Department Courses</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showStudyTools" checked> Study & Practice</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showPlanner" checked> Planner Preview</label>
+</div>
+<div style="margin-top:16px;display:flex;gap:12px;">
+<button class="btn btn-primary" id="saveSettingsBtn">Save Preferences</button>
+<button class="btn btn-outline" id="cancelSettingsBtn">Cancel</button>
+</div>
+</div>
+
+<div class="dashboard-grid" id="subjectProgress"></div>
+
+<div id="deptSection" style="margin-top:60px;">
+<h2 style="margin-bottom:24px">Department Courses</h2>
+<div class="dashboard-grid" id="deptProgress"></div>
+</div>
+
+<div id="studySection" style="margin-top:60px;">
+<h2 style="margin-bottom:24px">Study & Practice</h2>
+<div class="dashboard-grid">
+<a href="study-tools.html" class="dashboard-card" style="text-decoration:none;color:inherit">
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+<span style="font-size:2.5rem">📝</span>
+<div><h3>Study Tools</h3><p style="color:var(--gray)">Quiz & Flashcards</p></div>
+</div>
+<p style="font-size:0.85rem;color:var(--gray)">Test your knowledge with subject quizzes and interactive flashcards.</p>
+</a>
+<a href="exam-practice.html" class="dashboard-card" style="text-decoration:none;color:inherit">
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+<span style="font-size:2.5rem">📝</span>
+<div><h3>Exam Practice</h3><p style="color:var(--gray)">Mock Exams & AI Marker</p></div>
+</div>
+<p style="font-size:0.85rem;color:var(--gray)">Timed mock exams and AI-powered essay marking.</p>
+</a>
+<a href="planner.html" class="dashboard-card" style="text-decoration:none;color:inherit">
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+<span style="font-size:2.5rem">📅</span>
+<div><h3>Revision Planner</h3><p style="color:var(--gray)">Schedule your study</p></div>
+</div>
+<p style="font-size:0.85rem;color:var(--gray)">Plan and track your revision tasks.</p>
+</a>
+</div>
+</div>
+
+<div id="plannerSection" style="margin-top:60px;">
+<h2 style="margin-bottom:24px">Planner Preview</h2>
+<div class="dashboard-card">
+<div id="plannerPreview"></div>
+<a href="planner.html" class="btn btn-outline" style="margin-top:16px">Open Full Planner</a>
+</div>
+</div>
+</div>
+</section>
+
+<script src="js/theme.js?v=4"></script>
+<script src="js/data.js?v=4"></script>
+<script src="js/app.js?v=4"></script>
+<script>
+(function() {
+// Subject progress (Cambridge)
+try {
+const overall = Progress.getOverallProgress();
+document.getElementById('overallProgress').textContent =
+overall.total > 0 ? overall.completed + '/' + overall.total + ' topics completed (' + overall.percent + '%)' : 'Start studying to track your progress';
+
+const container = document.getElementById('subjectProgress');
+var fragment = document.createDocumentFragment();
+Object.keys(subjects).forEach(function(key) {
+var s = subjects[key];
+var prog = Progress.getSubjectProgress(key, s.topics.length);
+var card = document.createElement('a');
+card.href = 'subject.html?id=' + key;
+card.className = 'dashboard-card';
+card.innerHTML = '<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px"><span style="font-size:2.5rem">' + s.icon + '</span><div><h3>' + s.name + '</h3><p>' + s.code + '</p></div></div><p style="font-size:0.85rem;color:var(--gray)">' + s.topics.length + ' topics</p><div style="margin-top:12px"><div class="progress-bar"><div class="progress-fill" style="width:' + prog.percent + '%"></div></div><p class="progress-text">' + prog.completed + '/' + prog.total + ' complete (' + prog.percent + '%)</p></div>';
+fragment.appendChild(card);
+});
+container.appendChild(fragment);
+} catch(e) {
+  document.getElementById('overallProgress').textContent = 'Start studying to track your progress';
+  document.getElementById('subjectProgress').innerHTML = '<p style="color:var(--gray)">No subject progress yet. Browse subjects to begin.</p>';
+}
+
+// Department progress
+var deptContainer = document.getElementById('deptProgress');
+var deptFragment = document.createDocumentFragment();
+var deptIds = ['hr','finance','admin','sales','marketing','ops','it','cs','procurement','legal','rnd','qa'];
+var deptNames = {hr:'Human Resources',finance:'Finance',admin:'Administration',sales:'Sales',marketing:'Marketing',ops:'Operations',it:'IT',cs:'Customer Service',procurement:'Procurement',legal:'Legal',rnd:'R&D',qa:'Quality Assurance'};
+var deptIcons = {hr:'👥',finance:'💰',admin:'📋',sales:'📈',marketing:'📣',ops:'⚙️',it:'💻',cs:'🎧',procurement:'🛒',legal:'⚖️',rnd:'🔬',qa:'✅'};
+var deptCompleted = 0;
+deptIds.forEach(function(id) {
+  var prog = JSON.parse(localStorage.getItem('learnai_dept_' + id + '_progress') || '{}');
+  var quizDone = prog.quizCompletedAt;
+  var assignDone = prog.assignmentSubmittedAt;
+  var score = prog.assignmentScore || 0;
+  if (quizDone && assignDone) deptCompleted++;
+  var card = document.createElement('a');
+  card.href = 'dept-course.html?dept=' + id;
+  card.className = 'dashboard-card';
+  card.style.textDecoration = 'none';
+  card.style.color = 'inherit';
+  var statusText = quizDone && assignDone ? '✓ Completed — Grade ' + (prog.assignmentGrade || 'N/A') : quizDone ? 'Quiz done' : assignDone ? 'Assignment done' : 'Not started';
+  var statusColor = quizDone && assignDone ? '#059669' : quizDone || assignDone ? '#d97706' : '#94a3b8';
+  card.innerHTML = '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;overflow:hidden;"><span style="font-size:2rem;flex-shrink:0;">' + deptIcons[id] + '</span><div style="min-width:0;flex:1;"><h3 style="font-size:1rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + deptNames[id] + '</h3><p style="color:var(--gray);font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + statusText + '</p></div></div><div class="progress-bar"><div class="progress-fill" style="width:' + (quizDone && assignDone ? 100 : quizDone || assignDone ? 50 : 0) + '%;background:' + statusColor + '"></div></div><p class="progress-text">' + (quizDone && assignDone ? '2/2 complete' : quizDone || assignDone ? '1/2 complete' : '0/2 complete') + '</p>';
+  deptFragment.appendChild(card);
+});
+deptContainer.appendChild(deptFragment);
+
+var plannerTasks = Planner.get().slice(0, 5);
+var preview = document.getElementById('plannerPreview');
+if (plannerTasks.length === 0) {
+preview.innerHTML = '<p style="color:var(--gray)">No tasks yet. Use the planner to schedule your revision.</p>';
+} else {
+var plannerHTML = '';
+for (var i = 0; i < plannerTasks.length; i++) {
+var t = plannerTasks[i];
+plannerHTML += '<div style="padding:8px 0;border-bottom:1px solid var(--gray-light);' + (t.done ? 'text-decoration:line-through;color:var(--gray)' : '') + '">' + (t.done ? '✓' : '○') + ' ' + escapeHtml(t.text) + '</div>';
+}
+preview.innerHTML = plannerHTML;
+}
+function escapeHtml(text) {
+var div = document.createElement('div');
+div.textContent = text;
+return div.innerHTML;
+}
+})();
+
+// Export / Import
+(function(){
+function exportProgress(){
+var data = {};
+['learnai_progress','learnai_planner','learnai_users'].forEach(function(k){
+var v = localStorage.getItem(k);
+if(v !== null) data[k] = v;
+});
+var blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+var a = document.createElement('a');
+a.href = URL.createObjectURL(blob);
+a.download = 'learnai-progress-' + new Date().toISOString().slice(0,10) + '.json';
+a.click();
+URL.revokeObjectURL(a.href);
+}
+function importProgress(file){
+var reader = new FileReader();
+reader.onload = function(e){
+try{
+var data = JSON.parse(e.target.result);
+var keys = Object.keys(data);
+var valid = ['learnai_progress','learnai_planner','learnai_users'];
+var hasValid = keys.some(function(k){ return valid.indexOf(k) !== -1; });
+if(!hasValid){ alert('Invalid LearnAI backup file.'); return; }
+if(!confirm('This will overwrite your current progress. Continue?')) return;
+keys.forEach(function(k){ localStorage.setItem(k, data[k]); });
+alert('Progress imported! The page will now refresh.');
+location.reload();
+}catch(err){ alert('Error reading file: ' + err.message); }
+};
+reader.readAsText(file);
+}
+document.getElementById('exportBtn').addEventListener('click', exportProgress);
+document.getElementById('importBtn').addEventListener('click', function(){ document.getElementById('importFile').click(); });
+document.getElementById('importFile').addEventListener('change', function(e){ if(e.target.files[0]) importProgress(e.target.files[0]); });
+})();
+
+// Display Settings
+(function(){
+function loadSettings(){
+  var defaults = { showSubjects:true, showDepartments:true, showStudyTools:true, showPlanner:true };
+  try { return Object.assign(defaults, JSON.parse(localStorage.getItem('learnai_dashboard_settings') || '{}')); }
+  catch(e){ return defaults; }
+}
+function saveSettings(){
+  var settings = {
+    showSubjects: document.getElementById('showSubjects').checked,
+    showDepartments: document.getElementById('showDepartments').checked,
+    showStudyTools: document.getElementById('showStudyTools').checked,
+    showPlanner: document.getElementById('showPlanner').checked
+  };
+  localStorage.setItem('learnai_dashboard_settings', JSON.stringify(settings));
+  applySettings(settings);
+  document.getElementById('settingsPanel').style.display = 'none';
+}
+function applySettings(s){
+  if (!s.showSubjects && !s.showDepartments && !s.showStudyTools && !s.showPlanner) {
+    s = { showSubjects:true, showDepartments:true, showStudyTools:true, showPlanner:true };
+  }
+  document.getElementById('subjectProgress').style.display = s.showSubjects ? 'grid' : 'none';
+  document.getElementById('deptSection').style.display = s.showDepartments ? 'block' : 'none';
+  document.getElementById('studySection').style.display = s.showStudyTools ? 'block' : 'none';
+  document.getElementById('plannerSection').style.display = s.showPlanner ? 'block' : 'none';
+}
+var settings = loadSettings();
+document.getElementById('showSubjects').checked = settings.showSubjects;
+document.getElementById('showDepartments').checked = settings.showDepartments;
+document.getElementById('showStudyTools').checked = settings.showStudyTools;
+document.getElementById('showPlanner').checked = settings.showPlanner;
+applySettings(settings);
+
+document.getElementById('settingsBtn').addEventListener('click', function(){ document.getElementById('settingsPanel').style.display = 'block'; });
+document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
+document.getElementById('cancelSettingsBtn').addEventListener('click', function(){ document.getElementById('settingsPanel').style.display = 'none'; });
+})();
+</script>
+<script src="js/mascot.js?v=4" defer></script>
+<script src="js/auth-guard.js?v=4" defer></script>
+<script src="js/pwa.js?v=4" defer></script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects — LearnAI</title>
+    <meta name="description" content="Browse CAIE, Edexcel and IB subjects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=10">
+<link rel="stylesheet" href="css/znotes-style.css?v=10">
+    <style>
+        .board-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .board-card {
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border, rgba(0,0,0,0.08));
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .board-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(99,102,241,0.12);
+            border-color: var(--primary, #6366f1);
+        }
+        .board-card .board-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary,#6366f1), var(--primary-light,#818cf8));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+        .board-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .board-card p {
+            color: var(--gray, #6b7280);
+            font-size: 0.95rem;
+        }
+        .board-card .board-arrow {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: var(--primary, #6366f1);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s ease;
+        }
+        .board-card:hover .board-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: var(--bg-elevated, #f3f4f6);
+            color: var(--text, #1f2937);
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover {
+            background: var(--border, #e5e7eb);
+        }
+        .hidden { display: none !important; }
+        .fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=10"></script>
+
+    <section class="subjects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Subjects</span>
+                <h2 class="section-title">Choose Your Board</h2>
+                <p style="color:var(--gray);margin-top:12px">Select your examination board to browse subjects.</p>
+            </div>
+
+            <div id="boardSelection" class="board-selection">
+                <div class="board-card" onclick="showBoard('caie')">
+                    <div class="board-icon">📚</div>
+                    <h3>CAIE</h3>
+                    <p>Cambridge Assessment International Education<br>A-Level &amp; IGCSE</p>
+                    <div class="board-arrow">→</div>
+                </div>
+                <div class="board-card" onclick="showBoard('edexcel')">
+                    <div class="board-icon">📖</div>
+                    <h3>Edexcel</h3>
+                    <p>Pearson Edexcel<br>IAL, IGCSE &amp; GCSE</p>
+                    <div class="board-arrow">→</div>
+                </div>
+                <div class="board-card" onclick="showBoard('ib')">
+                    <div class="board-icon">🎓</div>
+                    <h3>IB</h3>
+                    <p>International Baccalaureate</p>
+                    <div class="board-arrow">→</div>
+                </div>
+                <div class="board-card" onclick="showBoard('ielts')">
+                    <div class="board-icon">📝</div>
+                    <h3>IELTS</h3>
+                    <p>International English Language Testing System<br>Academic &amp; General Training</p>
+                    <div class="board-arrow">→</div>
+                </div>
+            </div>
+
+            <div id="subjectContent" class="hidden">
+                <button class="back-btn" id="backBtn" onclick="handleBack()">
+                    ← Back
+                </button>
+                <div id="subjectSections"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/theme.js?v=10"></script>
+    <script src="js/data.js?v=10"></script>
+    <script src="js/app.js?v=10"></script>
+    <script src="js/search.js?v=10"></script>
+    <script>
+    const boardSelection = document.getElementById('boardSelection');
+    const subjectContent = document.getElementById('subjectContent');
+    const container = document.getElementById('subjectSections');
+
+    let currentBoard = null;
+    let caieLevel = null;
+    let edexcelLevel = null;
+
+    function showBoard(board) {
+        currentBoard = board;
+        boardSelection.classList.add('hidden');
+        subjectContent.classList.remove('hidden');
+        subjectContent.classList.add('fade-in');
+        container.innerHTML = '';
+
+        if (board === 'caie') {
+            renderCAIESelector();
+        } else if (board === 'edexcel') {
+            renderEdexcelSelector();
+        } else if (board === 'ib') {
+            renderIB();
+        } else if (board === 'ielts') {
+            renderIELTS();
+        }
+
+        const titles = {
+            caie: 'CAIE',
+            edexcel: 'Edexcel Subjects',
+            ib: 'IB Subjects',
+            ielts: 'IELTS'
+        };
+        const subtitles = {
+            caie: 'Choose A-Level or IGCSE to browse subjects.',
+            edexcel: 'Pearson Edexcel IAL, IGCSE and GCSE syllabus coverage.',
+            ib: 'International Baccalaureate syllabus coverage.',
+            ielts: 'IELTS Academic and General Training preparation.'
+        };
+        document.querySelector('.section-title').textContent = titles[board];
+        document.querySelector('.section-header p').textContent = subtitles[board];
+    }
+
+    function handleBack() {
+        if (currentBoard === 'caie' && caieLevel) {
+            // Currently showing subjects, go back to CAIE selector
+            caieLevel = null;
+            container.innerHTML = '';
+            renderCAIESelector();
+            document.querySelector('.section-title').textContent = 'CAIE';
+            document.querySelector('.section-header p').textContent = 'Choose A-Level or IGCSE to browse subjects.';
+        } else if (currentBoard === 'edexcel' && edexcelLevel) {
+            // Currently showing subjects, go back to Edexcel selector
+            edexcelLevel = null;
+            container.innerHTML = '';
+            renderEdexcelSelector();
+            document.querySelector('.section-title').textContent = 'Edexcel';
+            document.querySelector('.section-header p').textContent = 'Choose IAL, IGCSE or GCSE to browse subjects.';
+        } else {
+            // Go back to board selection
+            showSelection();
+        }
+    }
+
+    function showSelection() {
+        currentBoard = null;
+        subjectContent.classList.add('hidden');
+        subjectContent.classList.remove('fade-in');
+        boardSelection.classList.remove('hidden');
+        boardSelection.classList.add('fade-in');
+        container.innerHTML = '';
+
+        document.querySelector('.section-title').textContent = 'Choose Your Board';
+        document.querySelector('.section-header p').textContent = 'Select your examination board to browse subjects.';
+    }
+
+    function showCAIELevel(level) {
+        caieLevel = level;
+        container.innerHTML = '';
+        document.querySelector('.section-title').textContent = level === 'alevel' ? 'CAIE A-Level' : 'CAIE IGCSE';
+        document.querySelector('.section-header p').textContent = level === 'alevel'
+            ? 'Select an A-Level subject.'
+            : 'Select an IGCSE subject.';
+
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+        section.appendChild(renderSectionTitle(level === 'alevel' ? 'A-Level Subjects' : 'IGCSE Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return level === 'alevel' ? t.alevel : t.igcse; });
+        }));
+        container.appendChild(section);
+    }
+
+    function showEdexcelLevel(level) {
+        edexcelLevel = level;
+        container.innerHTML = '';
+        const titles = { ial: 'Edexcel IAL', igcse: 'Edexcel IGCSE', gcse: 'Edexcel GCSE' };
+        document.querySelector('.section-title').textContent = titles[level];
+        document.querySelector('.section-header p').textContent = 'Select a subject.';
+
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+        section.appendChild(renderSectionTitle(edexcelLevel === 'ial' ? 'IAL Subjects' : edexcelLevel === 'igcse' ? 'IGCSE Subjects' : 'GCSE Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) {
+                if (edexcelLevel === 'ial') return t.edexcel_ial;
+                if (edexcelLevel === 'igcse') return t.edexcel_igcse;
+                return t.edexcel_gcse;
+            });
+        }));
+        container.appendChild(section);
+    }
+
+    function renderCAIESelector() {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '600px';
+        selector.innerHTML = `
+            <div class="board-card" onclick="showCAIELevel('alevel')">
+                <div class="board-icon">🎓</div>
+                <h3>A-Level</h3>
+                <p>Cambridge International A-Level<br>Advanced Level Programme</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showCAIELevel('igcse')">
+                <div class="board-icon">🏫</div>
+                <h3>IGCSE</h3>
+                <p>Cambridge IGCSE<br>International General Certificate</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
+    }
+
+    function createSubjectCard(key, s) {
+        const card = document.createElement('a');
+        var href = 'subject.html?id=' + key;
+        if (caieLevel) {
+            href += '&level=' + caieLevel;
+        }
+        if (edexcelLevel) {
+            href += '&level=' + edexcelLevel;
+        }
+        card.href = href;
+        card.className = 'subject-card';
+
+        // Filter code based on level (CAIE or Edexcel)
+        // Use regex to split on middle-dot (U+00B7) or similar separators with surrounding whitespace
+        var displayCode = s.code;
+        var parts = s.code ? s.code.split(/\s*\u00B7\s*/) : [s.code];
+        if (parts.length < 2) {
+            // fallback: try with regular space-dot-space pattern
+            parts = s.code ? s.code.split(/\s+\·\s+/) : [s.code];
+        }
+        if (caieLevel === 'alevel' && parts.length > 1) {
+            displayCode = parts[0].trim();
+        } else if (caieLevel === 'igcse' && parts.length > 1) {
+            displayCode = parts[1] ? parts[1].trim() : s.code;
+        } else if (edexcelLevel === 'ial' && parts.length > 1) {
+            displayCode = parts[0].trim();
+        } else if (edexcelLevel === 'igcse' && parts.length > 1) {
+            displayCode = parts[1] ? parts[1].trim() : s.code;
+        } else if (edexcelLevel === 'gcse' && parts.length > 1) {
+            displayCode = parts.length >= 3 ? parts[2].trim() : s.code;
+        }
+
+        card.innerHTML = `
+            <div class="subject-icon">${s.icon}</div>
+            <h3>${s.name}</h3>
+            <p>${displayCode}</p>
+            <span class="subject-tag">${s.topics.length} topics</span>
+        `;
+        return card;
+    }
+
+    function renderGrid(filterFn) {
+        const grid = document.createElement('div');
+        grid.className = 'subjects-grid';
+
+        let count = 0;
+        Object.keys(subjects).forEach(key => {
+            const s = subjects[key];
+            if (filterFn(s)) {
+                grid.appendChild(createSubjectCard(key, s));
+                count++;
+            }
+        });
+
+        if (count === 0) {
+            const empty = document.createElement('p');
+            empty.style.color = 'var(--gray)';
+            empty.textContent = 'No subjects available.';
+            grid.appendChild(empty);
+        }
+
+        return grid;
+    }
+
+    function renderSectionTitle(title) {
+        const heading = document.createElement('h2');
+        heading.className = 'section-divider';
+        heading.textContent = title;
+        return heading;
+    }
+
+    // CAIE now uses renderCAIESelector + showCAIELevel instead
+
+    function renderEdexcelSelector() {
+        const selector = document.createElement('div');
+        selector.className = 'board-selection';
+        selector.style.maxWidth = '900px';
+        selector.innerHTML = `
+            <div class="board-card" onclick="showEdexcelLevel('ial')">
+                <div class="board-icon">🎓</div>
+                <h3>IAL</h3>
+                <p>International A-Level<br>Advanced Level Programme</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showEdexcelLevel('igcse')">
+                <div class="board-icon">🏫</div>
+                <h3>IGCSE</h3>
+                <p>International General Certificate<br>Secondary Education</p>
+                <div class="board-arrow">→</div>
+            </div>
+            <div class="board-card" onclick="showEdexcelLevel('gcse')">
+                <div class="board-icon">📋</div>
+                <h3>GCSE</h3>
+                <p>General Certificate of<br>Secondary Education</p>
+                <div class="board-arrow">→</div>
+            </div>
+        `;
+        container.appendChild(selector);
+    }
+
+    function renderIB() {
+        const section = document.createElement('div');
+        section.className = 'topic-section-group';
+
+        section.appendChild(renderSectionTitle('IB Subjects'));
+        section.appendChild(renderGrid(function(s) {
+            return s.topics.some(function(t) { return t.ib; });
+        }));
+
+        container.appendChild(section);
+    }
+
+    function renderIELTS() {
+        const wrapper = document.createElement('div');
+
+        const intro = document.createElement('p');
+        intro.style.cssText = 'text-align:center;color:var(--gray);margin-bottom:32px;font-size:0.95rem;';
+        intro.textContent = 'Master all four IELTS skills. Click a skill to explore topics, tips, and practice materials.';
+
+        const practiceHub = document.createElement('a');
+        practiceHub.href = 'ielts-practice.html';
+        practiceHub.textContent = '→ Go to IELTS Practice Hub';
+        practiceHub.style.cssText = 'display:block;text-align:center;color:#6366f1;font-weight:600;margin-bottom:24px;font-size:1rem;text-decoration:none;';
+        wrapper.appendChild(practiceHub);
+        wrapper.appendChild(intro);
+
+        const grid = document.createElement('div');
+        grid.className = 'board-selection';
+        grid.style.maxWidth = '900px';
+
+        const skills = [
+            { icon: '🎧', title: 'Listening', desc: '4 sections · 40 questions · 30 minutes', color: '#6366f1', link: 'ielts-listening.html' },
+            { icon: '📖', title: 'Reading', desc: '3 passages · 40 questions · 60 minutes', color: '#10b981', link: 'ielts-reading.html' },
+            { icon: '✍️', title: 'Writing', desc: '2 tasks · 60 minutes', color: '#f59e0b', link: 'ielts-writing.html' },
+            { icon: '🗣️', title: 'Speaking', desc: '3 parts · 11-14 minutes', color: '#ec4899', link: 'ielts-speaking.html' }
+        ];
+
+        skills.forEach(function(skill) {
+            const card = document.createElement('a');
+            card.href = skill.link;
+            card.className = 'board-card';
+            card.style.textDecoration = 'none';
+            card.style.color = 'inherit';
+            card.style.display = 'block';
+            card.setAttribute('role', 'button');
+            card.innerHTML = `
+                <div class="board-icon" style="background:linear-gradient(135deg, ${skill.color}, ${skill.color}88);">${skill.icon}</div>
+                <h3>${skill.title}</h3>
+                <p>${skill.desc}</p>
+                <div class="board-arrow" style="opacity:1;transform:none;color:${skill.color};">→</div>
+            `;
+            grid.appendChild(card);
+        });
+
+        wrapper.appendChild(grid);
+        container.appendChild(wrapper);
+    }
+    </script>
+<script src="js/auth.js?v=10"></script>
+<script src="js/mascot.js?v=10"></script>
+<script src="js/pwa.js?v=10"></script>
+</body>
+</html>
+
+
+
+
+

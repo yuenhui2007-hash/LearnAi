@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing Band 9 Guide — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=7">
+<style>
+.ielts-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.ielts-container { max-width: 960px; margin: 0 auto; background: #fff; padding: 48px; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.ielts-header { text-align: center; margin-bottom: 48px; }
+.ielts-header h1 { font-size: 2rem; margin-bottom: 8px; }
+.ielts-header p { color: #64748b; }
+.band-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #fff; padding: 4px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; margin-bottom: 16px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 1.4rem; color: #d97706; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #fef3c7; }
+.section h3 { font-size: 1.15rem; color: #92400e; margin: 24px 0 12px; }
+.prompt-box { background: #fefce8; border: 1px solid #fde68a; padding: 20px; border-radius: 12px; margin: 16px 0; }
+.prompt-box h4 { color: #92400e; margin-bottom: 8px; font-size: 0.95rem; }
+.model-answer { background: #f0fdf4; border: 1px solid #86efac; padding: 24px; border-radius: 12px; margin: 16px 0; }
+.model-answer h4 { color: #166534; margin-bottom: 12px; font-size: 0.95rem; }
+.model-answer p { line-height: 1.9; margin-bottom: 12px; color: #1f2937; }
+.annotation { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 12px 0; }
+.annotation h4 { color: #1e40af; margin-bottom: 8px; font-size: 0.9rem; }
+.annotation ul { padding-left: 20px; margin: 0; }
+.annotation li { margin-bottom: 6px; color: #374151; font-size: 0.92rem; line-height: 1.6; }
+.step-box { background: #faf5ff; border: 1px solid #d8b4fe; padding: 20px; border-radius: 12px; margin: 16px 0; }
+.step-box h4 { color: #6b21a8; margin-bottom: 10px; }
+.step-box ol { padding-left: 20px; margin: 0; }
+.step-box li { margin-bottom: 8px; color: #4b5563; line-height: 1.6; }
+.criteria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
+.criteria-card { background: #f9fafb; border: 1px solid #e5e7eb; padding: 16px; border-radius: 12px; }
+.criteria-card h4 { color: #d97706; font-size: 0.9rem; margin-bottom: 6px; }
+.criteria-card p { font-size: 0.85rem; color: #6b7280; margin: 0; }
+.vocab-highlight { background: #fef3c7; padding: 2px 6px; border-radius: 4px; font-weight: 500; }
+.structure-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 2px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-right: 6px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 12px; background: #f3f4f6; color: #374151; font-weight: 500; text-decoration: none; margin-bottom: 24px; transition: all 0.2s; }
+.back-btn:hover { background: #e5e7eb; }
+.nav-links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.nav-links a { padding: 8px 16px; background: #f3f4f6; border-radius: 8px; text-decoration: none; color: #374151; font-size: 0.9rem; font-weight: 500; }
+.nav-links a:hover { background: #e5e7eb; }
+.nav-links a.active { background: #f59e0b; color: #fff; }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=7"></script>
+
+<section class="ielts-page">
+  <div class="container">
+    <div class="ielts-container">
+      <div class="ielts-header">
+        <a href="ielts-writing.html" class="back-btn">← Back to Writing</a>
+        <div class="band-badge">BAND 9 MASTERCLASS</div>
+        <h1>IELTS Writing Band 9 Guide</h1>
+        <p>Step-by-step model answers with annotations for Task 1 & Task 2</p>
+      </div>
+
+      <div class="nav-links">
+        <a href="#task1">Task 1: Academic</a>
+        <a href="#task1gt">Task 1: General Training</a>
+        <a href="#task2">Task 2: Essay</a>
+        <a href="#criteria">Marking Criteria</a>
+      </div>
+
+      <!-- TASK 1 ACADEMIC -->
+      <div class="section" id="task1">
+        <h2>Task 1 Academic — Line Graph (Band 9)</h2>
+
+        <div class="prompt-box">
+          <h4>The Prompt</h4>
+          <p><strong>The graph below shows the average monthly temperatures in three cities (London, New York, Sydney) over the course of a year.</strong></p>
+          <p><strong>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</strong></p>
+          <p style="color:#6b7280; font-size:0.85rem; margin-top:8px;">Write at least 150 words. You should spend about 20 minutes on this task.</p>
+        </div>
+
+        <div class="step-box">
+          <h4>Step 1: Analyse the Data (2 minutes)</h4>
+          <ol>
+            <li><strong>Identify the type:</strong> Line graph showing temperature trends across 12 months</li>
+            <li><strong>Spot the overall pattern:</strong> Northern hemisphere cities (London, NY) peak in summer; Sydney (southern hemisphere) peaks in winter</li>
+            <li><strong>Key comparisons:</strong> NY has the widest range; Sydney is most stable; London is coolest overall</li>
+            <li><strong>Notable points:</strong> All three converge around March/April and Sept/Oct; December gap is largest</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>Step 2: Plan Your Structure (2 minutes)</h4>
+          <ol>
+            <li><span class="structure-tag">Introduction</span> Paraphrase the prompt — don't copy</li>
+            <li><span class="structure-tag">Overview</span> 2-3 sentences on the main trends (no data yet)</li>
+            <li><span class="structure-tag">Body 1</span> Northern hemisphere pattern (London + NY)</li>
+            <li><span class="structure-tag">Body 2</span> Southern hemisphere contrast (Sydney) + intersection points</li>
+          </ol>
+        </div>
+
+        <div class="model-answer">
+          <h4>Band 9 Model Answer (186 words)</h4>
+          <p><span class="structure-tag">Introduction</span></p>
+          <p>The line graph illustrates how average monthly temperatures fluctuate over a twelve-month period in three distinct cities: London, New York, and Sydney.</p>
+
+          <p><span class="structure-tag">Overview</span></p>
+          <p>Overall, it is evident that while London and New York follow a broadly similar seasonal pattern, Sydney experiences the inverse trend. Furthermore, New York demonstrates the greatest temperature variation throughout the year, whereas Sydney remains relatively stable.</p>
+
+          <p><span class="structure-tag">Body 1</span></p>
+          <p>Looking first at the two northern hemisphere cities, both London and New York reach their lowest temperatures in January, at approximately 5°C and 4°C respectively. Thereafter, both cities exhibit a steady upward trend, with New York climbing more sharply to a peak of roughly 29°C in July. London, by contrast, peaks at a more modest 23°C in the same month. Following this apex, temperatures in both cities decline gradually, returning to their winter lows by December.</p>
+
+          <p><span class="structure-tag">Body 2</span></p>
+          <p>Sydney, located in the southern hemisphere, displays an opposing trajectory. Its warmest period occurs between December and February, when temperatures hover around 25°C. Conversely, the coldest months are June through August, with averages dipping to approximately 16°C. Interestingly, the three cities' temperatures converge during the transitional months of March-April and September-October, when all three experience nearly identical readings of around 15-18°C.</p>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Task Achievement</h4>
+          <ul>
+            <li>Every sentence reports or compares data — no filler</li>
+            <li>All key features covered: peaks, troughs, trends, intersections</li>
+            <li>Overview identifies the two MAIN patterns without listing numbers</li>
+            <li>150+ words achieved without padding (186 words = precise)</li>
+            <li>No opinion, no conclusion paragraph — strictly summary</li>
+          </ul>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Coherence & Cohesion</h4>
+          <ul>
+            <li><strong>Paragraphing:</strong> Clear 4-paragraph structure with logical flow</li>
+            <li><strong>Cohesive devices:</strong> "Overall," "Looking first at," "Thereafter," "by contrast," "Conversely," "Interestingly" — varied and natural</li>
+            <li><strong>Referencing:</strong> "both cities," "the same month," "its warmest period" — avoids repetition</li>
+            <li><strong>Topic sentences:</strong> Each body paragraph opens with a clear focus</li>
+          </ul>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Lexical Resource</h4>
+          <ul>
+            <li><span class="vocab-highlight">fluctuate</span> — precise verb for varying data</li>
+            <li><span class="vocab-highlight">exhibit a steady upward trend</span> — academic phrasing</li>
+            <li><span class="vocab-highlight">hover around</span> — natural collocation for stable data</li>
+            <li><span class="vocab-highlight">dip to approximately</span> — avoids "go down to about"</li>
+            <li><span class="vocab-highlight">converge</span> — sophisticated word for "meet"</li>
+            <li><span class="vocab-highlight">inverse trajectory / opposing trajectory</span> — precise academic language</li>
+            <li>No repetition: uses "peak," "apex," "warmest period" — synonym variety</li>
+          </ul>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Grammatical Range & Accuracy</h4>
+          <ul>
+            <li><strong>Complex sentences:</strong> "While London and New York follow a broadly similar seasonal pattern, Sydney experiences the inverse trend."</li>
+            <li><strong>Participial clauses:</strong> "Located in the southern hemisphere..."</li>
+            <li><strong>Passive voice:</strong> "temperatures are recorded" (implied in style)</li>
+            <li><strong>Comparative structures:</strong> "more modest," "more sharply," "relatively stable"</li>
+            <li><strong>Noun phrases:</strong> "the greatest temperature variation," "transitional months"</li>
+            <li>Zero grammatical errors; punctuation is flawless</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TASK 1 GT -->
+      <div class="section" id="task1gt">
+        <h2>Task 1 General Training — Formal Letter (Band 9)</h2>
+
+        <div class="prompt-box">
+          <h4>The Prompt</h4>
+          <p><strong>You recently stayed at a hotel for a business trip. Upon returning home, you discovered you had left an important document in the hotel room.</strong></p>
+          <p><strong>Write a letter to the hotel manager. In your letter:</strong></p>
+          <ul>
+            <li>describe the document and where you left it</li>
+            <li>explain why it is important</li>
+            <li>say what you want the manager to do</li>
+          </ul>
+          <p style="color:#6b7280; font-size:0.85rem; margin-top:8px;">Write at least 150 words. You do not need to write any addresses.</p>
+        </div>
+
+        <div class="step-box">
+          <h4>Step 1: Identify the Tone & Purpose</h4>
+          <ol>
+            <li><strong>Recipient:</strong> Hotel manager — formal but not overly stiff</li>
+            <li><strong>Purpose:</strong> Request assistance + urgency without aggression</li>
+            <li><strong>Register:</strong> Formal (Dear Mr/Ms [Surname], Yours sincerely)</li>
+            <li><strong>Bullet points:</strong> Must cover all three explicitly</li>
+          </ol>
+        </div>
+
+        <div class="model-answer">
+          <h4>Band 9 Model Answer (178 words)</h4>
+          <p>Dear Mr Henderson,</p>
+
+          <p>I am writing to request your assistance with a matter concerning a document I inadvertently left behind during my recent stay at your hotel from 14 to 16 July.</p>
+
+          <p>The item in question is a blue leather portfolio containing confidential business contracts and my passport, which I believe I placed in the top drawer of the desk in Room 412. I distinctly remember reviewing the documents on the evening of my departure but failed to return them to my luggage due to the early morning rush.</p>
+
+          <p>This portfolio is of considerable importance, as the contracts are time-sensitive and must be presented to my board of directors by the end of this week. Furthermore, my passport is essential for an international conference I am scheduled to attend next month, making its prompt recovery imperative.</p>
+
+          <p>I would be most grateful if you could arrange for the portfolio to be located and sent to my office address via a secure courier service. I am more than willing to cover all associated costs. Alternatively, if you prefer, I could collect it in person at your earliest convenience.</p>
+
+          <p>Thank you in advance for your prompt attention to this matter.</p>
+          <p>Yours sincerely,<br>James Chen</p>
+        </div>
+
+        <div class="annotation">
+          <h4>Band 9 Breakdown</h4>
+          <ul>
+            <li><strong>Tone:</strong> Polite urgency throughout — "I would be most grateful," "Thank you in advance"</li>
+            <li><strong>Bullet 1:</strong> Detailed description (blue leather portfolio, top drawer, Room 412) — specific</li>
+            <li><strong>Bullet 2:</strong> Two reasons given with time pressure — "time-sensitive," "imperative"</li>
+            <li><strong>Bullet 3:</strong> Two options offered — shows consideration, not just demand</li>
+            <li><strong>Opening:</strong> States purpose immediately — efficient and clear</li>
+            <li><strong>Vocabulary:</strong> "inadvertently," "confidential," "imperative," "associated costs" — formal register</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TASK 2 -->
+      <div class="section" id="task2">
+        <h2>Task 2 — Opinion Essay (Band 9)</h2>
+
+        <div class="prompt-box">
+          <h4>The Prompt</h4>
+          <p><strong>In many countries, traditional foods are being replaced by international fast food. This is having a negative effect on families and societies.</strong></p>
+          <p><strong>To what extent do you agree or disagree?</strong></p>
+          <p style="color:#6b7280; font-size:0.85rem; margin-top:8px;">Write at least 250 words. You should spend about 40 minutes on this task.</p>
+        </div>
+
+        <div class="step-box">
+          <h4>Step 1: Analyse the Question (3 minutes)</h4>
+          <ol>
+            <li><strong>Topic:</strong> Fast food replacing traditional food</li>
+            <li><strong>Claim:</strong> Negative effect on families and societies</li>
+            <li><strong>Task:</strong> Agree or disagree — must take a clear position</li>
+            <li><strong>Position chosen:</strong> Strongly agree (easier to argue with evidence)</li>
+          </ol>
+        </div>
+
+        <div class="step-box">
+          <h4>Step 2: Plan Your Essay (5 minutes)</h4>
+          <ol>
+            <li><span class="structure-tag">Introduction</span> Paraphrase topic + state position clearly</li>
+            <li><span class="structure-tag">Body 1</span> Family impact: loss of shared meals, health consequences, generational disconnect</li>
+            <li><span class="structure-tag">Body 2</span> Societal impact: healthcare burden, cultural erosion, economic inequality</li>
+            <li><span class="structure-tag">Body 3</span> Counter-argument (concession): convenience benefit, then refute</li>
+            <li><span class="structure-tag">Conclusion</span> Restate position + synthesise main points</li>
+          </ol>
+        </div>
+
+        <div class="model-answer">
+          <h4>Band 9 Model Answer (328 words)</h4>
+          <p><span class="structure-tag">Introduction</span></p>
+          <p>It is undeniable that global fast-food chains have proliferated at an unprecedented rate, increasingly displacing traditional cuisine in numerous nations worldwide. I strongly agree that this trend exerts a profoundly detrimental influence on both family structures and broader society, and this essay will examine the principal reasons why.</p>
+
+          <p><span class="structure-tag">Body 1 — Family Impact</span></p>
+          <p>Perhaps the most immediate consequence for families is the erosion of communal mealtimes, which have historically served as a cornerstone of familial bonding. Traditional food preparation is typically a collaborative endeavour, involving multiple generations in cooking, sharing recipes, and gathering around the table. When families opt for convenience-driven fast food, this shared ritual is supplanted by individual consumption, often in front of screens rather than in conversation. Moreover, the nutritional deficiency inherent in most fast-food options contributes to rising childhood obesity rates, placing additional strain on parents who must subsequently manage their children's health complications.</p>
+
+          <p><span class="structure-tag">Body 2 — Societal Impact</span></p>
+          <p>On a societal level, the ramifications are equally concerning. The dominance of international fast-food corporations inevitably leads to the marginalisation of local food producers and traditional markets, thereby undermining culinary heritage that has been preserved for centuries. This cultural homogenisation not only diminishes a nation's unique identity but also creates economic vulnerability, as profits are funnelled to multinational headquarters rather than circulating within local communities. Furthermore, the public health burden escalates dramatically; governments must allocate substantial resources to treat diet-related illnesses such as diabetes and cardiovascular disease, diverting funds that could otherwise support education or infrastructure.</p>
+
+          <p><span class="structure-tag">Body 3 — Concession & Refutation</span></p>
+          <p>Admittedly, proponents of fast food often cite convenience and affordability as legitimate advantages, particularly for time-constrained working parents. However, this argument overlooks the long-term costs—both economic and medical—that far outweigh any short-term savings. A balanced approach, wherein traditional cooking is adapted for modern lifestyles rather than abandoned entirely, would preserve cultural integrity without sacrificing practicality.</p>
+
+          <p><span class="structure-tag">Conclusion</span></p>
+          <p>In conclusion, the displacement of traditional foods by international fast food represents a significant threat to family cohesion and societal wellbeing. While convenience is an understandable motivator, the cumulative damage to health, culture, and community economics renders this trend overwhelmingly negative. Governments and individuals alike must prioritise the preservation of culinary heritage before its irrevocable loss.</p>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Task Response</h4>
+          <ul>
+            <li><strong>Clear position:</strong> "I strongly agree" — stated in intro, reinforced throughout, restated in conclusion</li>
+            <li><strong>Fully developed ideas:</strong> Each paragraph has a main idea + explanation + example + consequence</li>
+            <li><strong>Addresses both parts:</strong> Families (Body 1) AND societies (Body 2) — not just one</li>
+            <li><strong>Concession paragraph:</strong> Acknowledges opposing view, then refutes — demonstrates critical thinking</li>
+            <li><strong>Conclusion synthesises:</strong> Doesn't just repeat; adds urgency ("before its irrevocable loss")</li>
+            <li><strong>Word count:</strong> 328 words — well-developed without padding</li>
+          </ul>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Coherence & Cohesion</h4>
+          <ul>
+            <li><strong>Logical progression:</strong> Family → Society → Counter-argument → Conclusion</li>
+            <li><strong>Topic sentences:</strong> Each body paragraph opens with a clear claim</li>
+            <li><strong>Advanced cohesive devices:</strong> "Perhaps the most immediate," "On a societal level," "Moreover," "Furthermore," "Admittedly," "However," "In conclusion"</li>
+            <li><strong>Referencing:</strong> "this trend," "this shared ritual," "its irrevocable loss" — smooth connections</li>
+            <li><strong>Paragraph length:</strong> Balanced; none too short or excessively long</li>
+          </ul>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Lexical Resource</h4>
+          <ul>
+            <li><span class="vocab-highlight">proliferated at an unprecedented rate</span> — strong, academic opening</li>
+            <li><span class="vocab-highlight">displacing traditional cuisine</span> — precise verb choice</li>
+            <li><span class="vocab-highlight">detrimental influence</span> — formal synonym for "bad effect"</li>
+            <li><span class="vocab-highlight">erosion of communal mealtimes</span> — sophisticated noun phrase</li>
+            <li><span class="vocab-highlight">cornerstone of familial bonding</span> — metaphorical, natural</li>
+            <li><span class="vocab-highlight">supplanted by individual consumption</span> — formal register</li>
+            <li><span class="vocab-highlight">nutritional deficiency</span> — precise academic term</li>
+            <li><span class="vocab-highlight">marginalisation of local food producers</span> — advanced vocabulary</li>
+            <li><span class="vocab-highlight">cultural homogenisation</span> — conceptually dense term</li>
+            <li><span class="vocab-highlight">irrevocable loss</span> — powerful concluding phrase</li>
+            <li>Collocations are natural: "allocate substantial resources," "diverting funds," "public health burden"</li>
+          </ul>
+        </div>
+
+        <div class="annotation">
+          <h4>Why This Scores Band 9 — Grammatical Range & Accuracy</h4>
+          <ul>
+            <li><strong>Complex conditional:</strong> "If families opt for... this shared ritual is supplanted"</li>
+            <li><strong>Passive constructions:</strong> "is supplanted by," "must be allocated," "have been preserved"</li>
+            <li><strong>Relative clauses:</strong> "which have historically served as," "that could otherwise support"</li>
+            <li><strong>Participle clauses:</strong> "involving multiple generations," "thereby undermining"</li>
+            <li><strong>Cleft sentence structure:</strong> "it is undeniable that..."</li>
+            <li><strong>Modal variety:</strong> must, could, would, should — used accurately</li>
+            <li><strong>Subordinate clauses:</strong> Multiple embedded clauses without loss of clarity</li>
+            <li>Zero errors in subject-verb agreement, articles, or tense consistency</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CRITERIA -->
+      <div class="section" id="criteria">
+        <h2>IELTS Writing Marking Criteria (Bands 8-9)</h2>
+        <div class="criteria-grid">
+          <div class="criteria-card">
+            <h4>Task Achievement (Task 1)</h4>
+            <p><strong>Band 9:</strong> All requirements met; clear overview; all key features covered; accurate data; no irrelevant detail; 150+ words.</p>
+          </div>
+          <div class="criteria-card">
+            <h4>Task Response (Task 2)</h4>
+            <p><strong>Band 9:</strong> Fully addresses all parts; clear position throughout; ideas fully extended with evidence; 250+ words.</p>
+          </div>
+          <div class="criteria-card">
+            <h4>Coherence & Cohesion</h4>
+            <p><strong>Band 9:</strong> Effortless to follow; skillful paragraphing; cohesive devices invisible; reference and substitution natural.</p>
+          </div>
+          <div class="criteria-card">
+            <h4>Lexical Resource</h4>
+            <p><strong>Band 9:</strong> Wide range used with precision; sophisticated collocations; rare minor errors; style flexible.</p>
+          </div>
+          <div class="criteria-card">
+            <h4>Grammatical Range & Accuracy</h4>
+            <p><strong>Band 9:</strong> Full range of structures used naturally; flexible and accurate; rare minor errors only.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="ielts-speaking-band9.html" class="practice-btn" style="background: linear-gradient(135deg, #ec4899, #f472b6);">Next: Speaking Band 9 Guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/theme.js?v=7"></script>
+<script src="js/auth.js?v=7"></script>
+</body>
+</html>

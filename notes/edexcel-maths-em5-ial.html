@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vectors & Mechanics — 📐 Maths Notes | LearnAI</title>
+<meta name="description" content="Vectors & Mechanics notes for Edexcel WMA13/14 (IAL). Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-ial { background: #ede9fe; color: #5b21b6; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-ial">IAL</span>
+</div>
+<h1>Vectors & Mechanics</h1>
+<p style="color:var(--gray)">WMA13/14 (IAL)</p>
+</div>
+
+<div class="notes-section">
+<h2>Detailed Notes</h2>
+<h3>1. Vectors in Component Form</h3>
+<ul>
+<li>A vector has magnitude and direction, written as ai + bj or as a column vector (a, b).</li>
+<li>Magnitude |v| = √(a² + b²). Direction given by angle θ = tan⁻¹(b/a).</li>
+</ul>
+<div class="formula-box">
+|v| = √(a² + b²) &nbsp;&nbsp; θ = tan⁻¹(b/a)
+</div>
+<h3>2. Vector Operations</h3>
+<ul>
+<li>Add/subtract component-wise.</li>
+<li>Scalar multiplication: k(a, b) = (ka, kb).</li>
+<li>Position vector of point A is OA→.</li>
+</ul>
+<h3>3. Equation of a Line in Vector Form</h3>
+<ul>
+<li>r = a + λb, where a is a point on the line, b is the direction vector, λ is a scalar.</li>
+</ul>
+<div class="formula-box">
+r = a + λb
+</div>
+<h3>4. Kinematics — Constant Acceleration</h3>
+<ul>
+<li>The SUVAT equations link displacement (s), initial velocity (u), final velocity (v), acceleration (a), and time (t).</li>
+</ul>
+<div class="formula-box">
+v = u + at<br>
+s = ut + ½at²<br>
+s = ½(u+v)t<br>
+v² = u² + 2as<br>
+s = vt − ½at²
+</div>
+<h3>5. Forces & Newton’s Laws</h3>
+<ul>
+<li>First law: balanced forces → constant velocity (or rest).</li>
+<li>Second law: F = ma. Net force causes acceleration.</li>
+<li>Third law: every action has an equal and opposite reaction.</li>
+</ul>
+<h3>6. Projectiles</h3>
+<ul>
+<li>Resolve initial velocity into horizontal (u cos θ) and vertical (u sin θ) components.</li>
+<li>Horizontal motion: constant velocity (a = 0).</li>
+<li>Vertical motion: constant acceleration due to gravity (g ≈ 9.8 m/s² downwards).</li>
+</ul>
+</div>
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>Vectors: magnitude = √(a²+b²), direction from tan⁻¹(b/a).</li>
+<li>Line equation: r = a + λb.</li>
+<li>SUVAT: choose the equation that omits the unknown you don’t have.</li>
+<li>F = ma. Draw force diagrams and resolve parallel/perpendicular to motion.</li>
+<li>Projectiles: horizontal constant velocity, vertical constant acceleration g.</li>
+</ul>
+</div>
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Always draw a force diagram — it organises your thinking.</li>
+<li>Label directions clearly (especially for vectors and forces).</li>
+<li>Choose the SUVAT equation that does not contain the quantity you are not given and do not need.</li>
+<li>For projectile problems, keep horizontal and vertical motions separate.</li>
+<li>Check units: metres, seconds, m/s, m/s², newtons.</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>

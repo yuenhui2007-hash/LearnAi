@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books of Prime Entry — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span></div>
+<h1>Books of Prime Entry</h1>
+<p style="color:var(--gray)">0452 / 9706 — Day Books, Cash Books, and Journals</p>
+</div>
+
+<div class="notes-section">
+<h2>IGCSE Content</h2>
+<h3>The Six Books of Prime Entry</h3>
+<ul>
+<li><strong>Sales Day Book (SDB):</strong> Records credit sales only. Total posted: Dr Sales Ledger Control, Cr Sales.</li>
+<li><strong>Purchases Day Book (PDB):</strong> Records credit purchases only. Total posted: Dr Purchases, Cr Purchases Ledger Control.</li>
+<li><strong>Sales Returns Day Book (SRDB):</strong> Records returns IN from credit customers. Total posted: Dr Sales Returns, Cr Sales Ledger Control.</li>
+<li><strong>Purchases Returns Day Book (PRDB):</strong> Records returns OUT to credit suppliers. Total posted: Dr Purchases Ledger Control, Cr Purchases Returns.</li>
+<li><strong>Cash Book:</strong> Records ALL cash and bank transactions. Acts as both a book of prime entry AND a ledger account for cash/bank.</li>
+<li><strong>General Journal (Journal):</strong> Records transactions not in other books — opening entries, adjustments, corrections, depreciation, purchases/sales of non-current assets on credit.</li>
+</ul>
+
+<h3>Cash Book Format</h3>
+<div class="formula-box">
+Two-column Cash Book:<br>
+Dr side: Date | Details | Disc. | Cash | Bank<br>
+Cr side: Date | Details | Disc. | Cash | Bank<br>
+<br>
+Discount columns are NOT part of double entry — totals posted to Discount Allowed/Received accounts.
+</div>
+</div>
+
+<div class="notes-section">
+<h2>AS Level Content</h2>
+<h3>Three-Column Cash Book</h3>
+<p>Includes discount columns on both sides to track cash discounts:</p>
+<ul>
+<li><strong>Discount Allowed column (Dr side):</strong> Discount given to customers for early payment → posted to Discount Allowed (expense)</li>
+<li><strong>Discount Received column (Cr side):</strong> Discount received from suppliers → posted to Discount Received (income)</li>
+</ul>
+
+<h3>Petty Cash Book (Imprest System)</h3>
+<p>A petty cash book records small cash payments:</p>
+<ul>
+<li><strong>Imprest amount:</strong> Fixed float (e.g., $200)</li>
+<li>Payments recorded with vouchers; receipts kept</li>
+<li>At period end, total paid out is reimbursed to restore imprest</li>
+</ul>
+<div class="formula-box">
+Petty Cash Reimbursement:<br>
+Cash in hand + Total vouchers = Imprest amount<br>
+Dr Expense accounts, Cr Cash/Bank (for reimbursement amount)
+</div>
+
+<h3>The Journal — Complex Entries</h3>
+<ul>
+<li><strong>Purchase of non-current asset on credit:</strong> Dr Asset, Cr Supplier</li>
+<li><strong>Depreciation:</strong> Dr Depreciation Expense, Cr Accumulated Depreciation</li>
+<li><strong>Irrecoverable debts:</strong> Dr Irrecoverable Debts, Cr Trade Receivables</li>
+<li><strong>Opening entries:</strong> Transfer balances from previous period</li>
+<li><strong>Correction of errors:</strong> Reversing wrong entry + correct entry</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>A2 Level Content</h2>
+<h3>Trade vs Cash Discounts in Books</h3>
+<ul>
+<li><strong>Trade discount:</strong> Deducted before recording — invoice shows net amount only. Never appears in books.</li>
+<li><strong>Cash discount:</strong> Recorded in cash book discount columns. Discount Allowed is an expense; Discount Received is income.</li>
+</ul>
+
+<h3>Bank Reconciliation Entries in Cash Book</h3>
+<p>When preparing bank reconciliation, items found in the bank statement but not in cash book must be recorded:</p>
+<ul>
+<li><strong>Bank charges/interest:</strong> Dr Bank Charges/Interest, Cr Bank</li>
+<li><strong>Direct debits/standing orders:</strong> Dr Expense, Cr Bank</li>
+<li><strong>Dishonoured cheques:</strong> Dr Trade Receivables, Cr Bank (reverse original receipt)</li>
+<li><strong>Direct credits:</strong> Dr Bank, Cr Relevant income account</li>
+</ul>
+</div>
+
+<div class="notes-section">
+
+<div class="worked-example">
+<h4>📐 Worked Example</h4>
+<p><strong>Question:</strong> See the detailed notes above for practice questions on this topic.</p>
+<div class="solution">
+<strong>Solution:</strong> Work through the examples in the detailed notes. Practice is essential for exam success.
+</div>
+</div>
+<div class="common-mistake">Always read the question carefully and identify the command words before answering.</div>
+<div class="key-point">Focus on understanding concepts, not just memorising facts. This is key to exam success.</div>
+<div class="quick-recall">
+<h4>⚡ Quick Recall</h4>
+<ul>
+<li>Read the question carefully</li>
+<li>Plan your answer before writing</li>
+<li>Use specific evidence and examples</li>
+<li>Check your work before submitting</li>
+</ul>
+</div>
+<h2>Last-Minute Summary</h2>
+<ul>
+<li><strong>6 Books of Prime Entry:</strong> Sales DB, Purchases DB, Sales Returns DB, Purchases Returns DB, Cash Book, Journal</li>
+<li>Books of prime entry = summarisation tools; ledger = double-entry system</li>
+<li><strong>SDB total:</strong> Dr Sales Ledger Control, Cr Sales</li>
+<li><strong>PDB total:</strong> Dr Purchases, Cr Purchases Ledger Control</li>
+<li><strong>SRDB total:</strong> Dr Sales Returns, Cr Sales Ledger Control</li>
+<li><strong>PRDB total:</strong> Dr Purchases Ledger Control, Cr Purchases Returns</li>
+<li><strong>Cash Book</strong> = book of prime entry AND ledger account</li>
+<li><strong>Trade discount</strong> not recorded; <strong>Cash discount</strong> in cash book columns</li>
+<li><strong>Petty cash imprest:</strong> fixed float, reimburse to restore</li>
+<li><strong>Journal</strong> for: opening entries, depreciation, NCA purchases on credit, corrections</li>
+<li>Bank reconciliation items → update cash book first, then reconcile</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

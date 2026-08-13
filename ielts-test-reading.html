@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading Test — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/ielts-test.css?v=8">
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=8"></script>
+
+<section class="ielts-test-page">
+  <div class="ielts-test-container">
+
+    <div class="test-header-bar">
+      <div class="test-title">IELTS Reading Test</div>
+      <div class="test-progress-wrap">
+        <div class="test-progress-bar">
+          <div class="test-progress-fill" id="testProgress" style="width:0%">0/30</div>
+        </div>
+      </div>
+      <div class="test-timer" id="testTimer">60:00</div>
+    </div>
+
+    <div id="testIntro">
+      <div class="test-intro-card">
+        <div class="intro-icon" style="background:linear-gradient(135deg,#10b981,#34d399)">📖</div>
+        <h2 id="introTitle">IELTS Reading Test</h2>
+        <div class="test-selector" style="margin:16px 0;text-align:left;">
+          <label style="display:block;font-size:0.85rem;color:#64748b;margin-bottom:6px;font-weight:500;">Choose a test:</label>
+          <select id="testSelector" onchange="switchTest(this.value)" style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;font-size:0.95rem;color:#1e293b;cursor:pointer;">
+            <option value="reading-1">Test 1: Coral Reefs, Urban Farming & Sleep (Medium)</option>
+            <option value="reading-2">Test 2: Roman Engineering, Memory & Fashion (Medium)</option>
+            <option value="reading-3">Test 3: Ocean Plastic, Writing & Transport (Hard)</option>
+          </select>
+        </div>
+        <div class="intro-meta">
+          <div class="meta-item"><strong>Duration</strong><span id="introDuration">60 minutes</span></div>
+          <div class="meta-item"><strong>Passages</strong><span id="introSections">3 passages</span></div>
+          <div class="meta-item"><strong>Questions</strong><span>30 questions</span></div>
+        </div>
+        <div class="intro-instructions" id="introInstructions">
+          Read the passages and answer the questions. You have 60 minutes. Each correct answer receives 1 mark.
+        </div>
+        <button class="btn-start-test" onclick="engine.start()">Start Test</button>
+        <a href="ielts-practice.html" style="display:block;margin-top:16px;color:#64748b;font-size:0.9rem;">Back to Practice Hub</a>
+      </div>
+    </div>
+
+    <div id="testArea">
+      <div id="testContainer"></div>
+    </div>
+
+    <div id="testResults"></div>
+
+  </div>
+</section>
+
+<script src="js/theme.js?v=8"></script>
+<script src="js/auth.js?v=8"></script>
+<script src="js/ielts-data.js?v=8"></script>
+<script src="js/ielts-marker.js?v=8"></script>
+<script src="js/ielts-feedback.js?v=8"></script>
+<script src="js/ielts-engine.js?v=8"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initIELTSTest('reading', 'reading-1');
+});
+
+function switchTest(testId) {
+  initIELTSTest('reading', testId);
+}
+</script>
+</body>
+</html>

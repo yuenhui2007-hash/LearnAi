@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — LearnAI</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  body { background: var(--bg, #0f172a); color: var(--text, #e2e8f0); font-family: system-ui, -apple-system, sans-serif; }
+  .search-hero { padding: 80px 20px 40px; text-align: center; }
+  .search-hero h1 { font-size: 2rem; margin-bottom: 8px; }
+  .search-hero p { color: var(--text-dim, #94a3b8); }
+  .search-box-wrap { max-width: 600px; margin: 24px auto; position: relative; }
+  .search-box-wrap input { width: 100%; padding: 14px 20px; border-radius: 12px; border: 1px solid var(--border, #334155); background: var(--surface, #1e293b); color: var(--text, #e2e8f0); font-size: 1rem; outline: none; }
+  .search-box-wrap input:focus { border-color: #6366f1; }
+  .results { max-width: 800px; margin: 0 auto 60px; padding: 0 20px; }
+  .result-card { background: var(--surface, #1e293b); border: 1px solid var(--border, #334155); border-radius: 12px; padding: 20px; margin-bottom: 12px; display: block; text-decoration: none; color: inherit; transition: .2s; }
+  .result-card:hover { border-color: #6366f1; transform: translateY(-2px); }
+  .result-card h3 { margin: 0 0 6px; font-size: 1.1rem; color: #fff; }
+  .result-card p { margin: 0; font-size: 0.9rem; color: var(--text-dim, #94a3b8); }
+  .result-tag { display: inline-block; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; background: rgba(99,102,241,0.15); color: #a5b4fc; margin-top: 8px; }
+  .empty { text-align: center; color: var(--text-dim, #94a3b8); padding: 40px; }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=5"></script>
+
+<div class="search-hero">
+  <h1>🔍 Search LearnAI</h1>
+  <p>Find subjects, academy levels, and department training</p>
+  <div class="search-box-wrap">
+    <input type="text" id="searchInput" placeholder="Type to search..." autofocus>
+  </div>
+</div>
+
+<div class="results" id="results"></div>
+
+<script>
+(function(){
+  const index = [
+    {title:'Physics',desc:'A-Level & IGCSE physics notes, past papers, and AI tutor.',url:'subject.html?id=physics',tag:'Subject'},
+    {title:'Chemistry',desc:'A-Level & IGCSE chemistry notes, past papers, and AI tutor.',url:'subject.html?id=chemistry',tag:'Subject'},
+    {title:'Biology',desc:'A-Level & IGCSE biology notes, past papers, and AI tutor.',url:'subject.html?id=biology',tag:'Subject'},
+    {title:'Mathematics',desc:'A-Level & IGCSE maths notes, past papers, and AI tutor.',url:'subject.html?id=mathematics',tag:'Subject'},
+    {title:'Additional Mathematics',desc:'IGCSE additional mathematics notes, past papers, and AI tutor.',url:'subject.html?id=additional-maths',tag:'Subject'},
+    {title:'Economics',desc:'A-Level & IGCSE economics notes, past papers, and AI tutor.',url:'subject.html?id=economics',tag:'Subject'},
+    {title:'Business',desc:'A-Level & IGCSE business notes, past papers, and AI tutor.',url:'subject.html?id=business',tag:'Subject'},
+    {title:'Accounting',desc:'A-Level & IGCSE accounting notes, past papers, and AI tutor.',url:'subject.html?id=accounting',tag:'Subject'},
+    {title:'English',desc:'A-Level & IGCSE english notes, past papers, and AI tutor.',url:'subject.html?id=english',tag:'Subject'},
+    {title:'Chinese',desc:'A-Level & IGCSE chinese notes, past papers, and AI tutor.',url:'subject.html?id=chinese',tag:'Subject'},
+    {title:'Psychology',desc:'A-Level psychology notes, past papers, and AI tutor.',url:'subject.html?id=psychology',tag:'Subject'},
+    {title:'History',desc:'A-Level & IGCSE history notes, past papers, and AI tutor.',url:'subject.html?id=history',tag:'Subject'},
+    {title:'Geography',desc:'A-Level & IGCSE geography notes, past papers, and AI tutor.',url:'subject.html?id=geography',tag:'Subject'},
+    {title:'Information & Communication Technology',desc:'A-Level & IGCSE ICT notes, past papers, and AI tutor.',url:'subject.html?id=ict',tag:'Subject'},
+    {title:'IB Physics',desc:'IB physics notes, past papers, and AI tutor.',url:'subject.html?id=ib-physics',tag:'Subject'},
+    {title:'IB Chemistry',desc:'IB chemistry notes, past papers, and AI tutor.',url:'subject.html?id=ib-chemistry',tag:'Subject'},
+    {title:'IB Biology',desc:'IB biology notes, past papers, and AI tutor.',url:'subject.html?id=ib-biology',tag:'Subject'},
+    {title:'IB Mathematics: Analysis & Approaches',desc:'IB maths AA notes, past papers, and AI tutor.',url:'subject.html?id=ib-maths-aa',tag:'Subject'},
+    {title:'IB Mathematics: Applications & Interpretation',desc:'IB maths AI notes, past papers, and AI tutor.',url:'subject.html?id=ib-maths-ai',tag:'Subject'},
+    {title:'IB Economics',desc:'IB economics notes, past papers, and AI tutor.',url:'subject.html?id=ib-economics',tag:'Subject'},
+    {title:'IB English A',desc:'IB English A notes, past papers, and AI tutor.',url:'subject.html?id=ib-english',tag:'Subject'},
+    {title:'IB History',desc:'IB history notes, past papers, and AI tutor.',url:'subject.html?id=ib-history',tag:'Subject'},
+    {title:'IB Geography',desc:'IB geography notes, past papers, and AI tutor.',url:'subject.html?id=ib-geography',tag:'Subject'},
+    {title:'IB Psychology',desc:'IB psychology notes, past papers, and AI tutor.',url:'subject.html?id=ib-psychology',tag:'Subject'},
+    {title:'AI Academy',desc:'6-level AI training program for employees.',url:'academy.html',tag:'Academy'},
+    {title:'Level 1 — AI Fundamentals',desc:'Introduction to AI and everyday productivity.',url:'academy-level1.html',tag:'Academy'},
+    {title:'Level 2 — Prompt Engineering',desc:'Write better prompts for any AI tool.',url:'academy-level2.html',tag:'Academy'},
+    {title:'Level 3 — AI for Documents',desc:'Use AI to draft, edit, and review documents.',url:'academy-level3.html',tag:'Academy'},
+    {title:'Level 4 — AI for Data',desc:'Spreadsheets, analysis, and visualization with AI.',url:'academy-level4.html',tag:'Academy'},
+    {title:'Level 5 — AI for Departments',desc:'Department-specific AI training and quizzes.',url:'academy-level5.html',tag:'Academy'},
+    {title:'Level 6 — AI Strategy',desc:'Create an AI strategy and lead adoption.',url:'academy-level6.html',tag:'Academy'},
+    {title:'HR Training',desc:'AI training for Human Resources.',url:'dept-training.html?dept=hr',tag:'Department'},
+    {title:'Finance Training',desc:'AI training for Finance department.',url:'dept-training.html?dept=finance',tag:'Department'},
+    {title:'Marketing Training',desc:'AI training for Marketing department.',url:'dept-training.html?dept=marketing',tag:'Department'},
+    {title:'Sales Training',desc:'AI training for Sales department.',url:'dept-training.html?dept=sales',tag:'Department'},
+    {title:'Support Training',desc:'AI training for Customer Support.',url:'dept-training.html?dept=support',tag:'Department'},
+    {title:'Operations Training',desc:'AI training for Operations.',url:'dept-training.html?dept=operations',tag:'Department'},
+    {title:'Legal Training',desc:'AI training for Legal department.',url:'dept-training.html?dept=legal',tag:'Department'},
+    {title:'IT Training',desc:'AI training for IT department.',url:'dept-training.html?dept=it',tag:'Department'},
+    {title:'Executive Training',desc:'AI training for Executives.',url:'dept-training.html?dept=executive',tag:'Department'},
+    {title:'AI Tutor',desc:'Ask our AI tutor anything.',url:'tutor.html',tag:'Tool'},
+    {title:'My Progress',desc:'Track your learning progress.',url:'dashboard.html',tag:'Tool'},
+    {title:'Admin Panel',desc:'Manage users, academy, and assignments.',url:'admin.html',tag:'Admin'},
+  ];
+
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('results');
+
+  function doSearch(term) {
+    term = term.trim().toLowerCase();
+    if (!term) { results.innerHTML = ''; return; }
+    const filtered = index.filter(item =>
+      item.title.toLowerCase().includes(term) ||
+      item.desc.toLowerCase().includes(term) ||
+      item.tag.toLowerCase().includes(term)
+    );
+    if (filtered.length === 0) {
+      results.innerHTML = '<div class="empty">No results found.</div>';
+      return;
+    }
+    results.innerHTML = filtered.map(item =>
+      `<a class="result-card" href="${item.url}">
+        <h3>${item.title}</h3>
+        <p>${item.desc}</p>
+        <span class="result-tag">${item.tag}</span>
+      </a>`
+    ).join('');
+  }
+
+  input.addEventListener('keyup', e => doSearch(e.target.value));
+  // Search from URL param
+  const qp = new URLSearchParams(location.search).get('q');
+  if (qp) { input.value = qp; doSearch(qp); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measurements & Uncertainties — IB Physics Notes | LearnAI</title>
+<meta name="description" content="Measurements & Uncertainties notes for IB Physics (IB DP Physics HL/SL). Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-ib { background: #ede9fe; color: #5b21b6; }
+.badge-hl { background: #dcfce7; color: #166534; }
+.badge-sl { background: #dbeafe; color: #1e40af; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.external-resources { margin: 16px 0; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.ext-toggle { background: #f8fafc; padding: 10px 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #475569; border: none; width: 100%; text-align: left; }
+.ext-toggle:hover { background: #f1f5f9; }
+.ext-toggle::after { content: "▶"; font-size: 0.75rem; transition: transform 0.2s; }
+.ext-toggle.active::after { transform: rotate(90deg); }
+.ext-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #f8fafc; }
+.ext-content.open { max-height: 500px; }
+.ext-content ul { margin: 0; padding: 12px 20px; list-style: none; }
+.ext-content li { margin-bottom: 6px; font-size: 0.85rem; }
+.ext-content a { color: #2563eb; text-decoration: none; }
+.ext-content a:hover { text-decoration: underline; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-ib">IB DP</span>
+<span class="level-badge badge-hl">HL</span>
+<span class="level-badge badge-sl">SL</span>
+</div>
+<h1>Measurements & Uncertainties</h1>
+<p style="color:var(--gray)">IB DP Physics HL/SL — Topic 1</p>
+</div>
+
+<div class="notes-section">
+<h2>Overview</h2>
+<p>Measurements and Uncertainties (Topic 1) is the foundation of IB Physics and appears in every examination paper. It introduces the SI system, error analysis, and the mathematical tools needed throughout the course. This topic is assessed across <strong>Paper 1</strong> (MCQ), <strong>Paper 2</strong> (structured), and <strong>Paper 3</strong> (data analysis), and is essential for the <strong>Internal Assessment (IA)</strong>. Mastery of uncertainty propagation is particularly valued in IA criterion D (analysis).</p>
+</div>
+
+<div class="notes-section">
+<h2>1.1 Fundamental SI Units</h2>
+<p>All measurements in physics are expressed in terms of the seven SI base units. You must know these for Paper 1 and Paper 2.</p>
+<ul>
+<li><strong>Length</strong> — metre (m)</li>
+<li><strong>Mass</strong> — kilogram (kg)</li>
+<li><strong>Time</strong> — second (s)</li>
+<li><strong>Electric current</strong> — ampere (A)</li>
+<li><strong>Temperature</strong> — kelvin (K)</li>
+<li><strong>Amount of substance</strong> — mole (mol)</li>
+<li><strong>Luminous intensity</strong> — candela (cd)</li>
+</ul>
+<div class="highlight-box">
+<h4>Command Terms</h4>
+<p><strong>State</strong> — give a specific name, value or other brief answer without explanation or calculation.<br><strong>Outline</strong> — give a brief account or summary.</p>
+</div>
+
+<h3>Derived Units</h3>
+<p>Derived units are combinations of base units. Common derived units you must recall:</p>
+<div class="formula-box">
+Force (N) = kg m s⁻²<br>
+Energy (J) = kg m² s⁻²<br>
+Power (W) = kg m² s⁻³<br>
+Pressure (Pa) = kg m⁻¹ s⁻²<br>
+Frequency (Hz) = s⁻¹<br>
+Electric charge (C) = A s
+</div>
+
+<h3>Metric Prefixes</h3>
+<p>You must convert between prefixes quickly. Common prefixes tested:</p>
+<div class="formula-box">
+nano (n) = 10⁻⁹ &nbsp;&nbsp; micro (μ) = 10⁻⁶ &nbsp;&nbsp; milli (m) = 10⁻³<br>
+centi (c) = 10⁻² &nbsp;&nbsp; kilo (k) = 10³ &nbsp;&nbsp; mega (M) = 10⁶ &nbsp;&nbsp; giga (G) = 10⁹
+</div>
+
+<h3>Worked Example 1: Prefix Conversion</h3>
+<p><strong>Question:</strong> Convert 250 nm to metres.</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">
+250 nm = 250 × 10⁻⁹ m = 2.50 × 10⁻⁷ m
+</div>
+<p>The answer must be given to 3 significant figures to match the precision of the original value.</p>
+</div>
+
+<div class="notes-section">
+<h2>1.2 Uncertainties & Errors</h2>
+<p>Understanding the difference between <strong>random errors</strong> and <strong>systematic errors</strong> is critical for the IA and all papers.</p>
+<ul>
+<li><strong>Random errors</strong> — scatter readings about the true value; reduced by repeating measurements and averaging. These affect precision.</li>
+<li><strong>Systematic errors</strong> — shift all readings by the same amount in one direction; caused by faulty equipment or poor technique. These affect accuracy.</li>
+</ul>
+
+<h3>Absolute and Relative Uncertainty</h3>
+<div class="formula-box">
+Absolute uncertainty (Δx) — uncertainty in the same units as the measurement<br>
+Fractional uncertainty = Δx / x<br>
+Percentage uncertainty = (Δx / x) × 100%
+</div>
+
+<h3>Worked Example 2: Uncertainty Calculation</h3>
+<p><strong>Question:</strong> A length is measured as (25.0 ± 0.5) cm. Calculate the percentage uncertainty.</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">
+Percentage uncertainty = (0.5 / 25.0) × 100% = 2%
+</div>
+
+<h3>Uncertainty in Readings vs. Measurements</h3>
+<p>A <strong>reading</strong> uncertainty is typically ± half the smallest division on an analogue scale, or ±1 in the last significant digit on a digital display. A <strong>measurement</strong> uncertainty includes both the reading uncertainty and any calibration uncertainty of the instrument.</p>
+</div>
+
+<div class="notes-section">
+<h2>1.3 Significant Figures</h2>
+<p>Significant figures reflect the precision of a measurement. IB examiners penalise answers given to the wrong number of significant figures.</p>
+<ul>
+<li>Non-zero digits are always significant.</li>
+<li>Zeros between non-zero digits are significant (e.g., 2005 has 4 sf).</li>
+<li>Leading zeros are not significant (e.g., 0.0045 has 2 sf).</li>
+<li>Trailing zeros after a decimal point are significant (e.g., 4.500 has 4 sf).</li>
+</ul>
+<div class="highlight-box">
+<h4>Rule for Calculations</h4>
+<p>For multiplication/division: the result has the same number of significant figures as the least precise value.<br>
+For addition/subtraction: the result has the same number of decimal places as the value with the fewest decimal places.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>1.4 Error Propagation</h2>
+<p>When combining measurements, uncertainties propagate according to strict rules. This is tested in Paper 2 and essential for IA analysis.</p>
+
+<h3>Addition and Subtraction</h3>
+<div class="formula-box">
+If z = x + y or z = x − y, then:<br>
+Δz = Δx + Δy (absolute uncertainties add)
+</div>
+
+<h3>Multiplication and Division</h3>
+<div class="formula-box">
+If z = xy or z = x/y, then:<br>
+Δz/z = Δx/x + Δy/y (fractional/percentage uncertainties add)
+</div>
+
+<h3>Powers</h3>
+<div class="formula-box">
+If z = xⁿ, then:<br>
+Δz/z = |n| × (Δx/x)
+</div>
+
+<h3>Worked Example 3: Propagation in Density</h3>
+<p><strong>Question:</strong> A block has mass m = (50.0 ± 0.5) g and volume V = (20.0 ± 0.4) cm³. Calculate the density and its absolute uncertainty.</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">
+Density ρ = m/V = 50.0/20.0 = 2.50 g cm⁻³<br><br>
+Percentage uncertainty in m = (0.5/50.0) × 100% = 1.0%<br>
+Percentage uncertainty in V = (0.4/20.0) × 100% = 2.0%<br><br>
+Total percentage uncertainty in ρ = 1.0% + 2.0% = 3.0%<br>
+Absolute uncertainty in ρ = 3.0% of 2.50 = 0.075 g cm⁻³<br><br>
+Final answer: ρ = (2.50 ± 0.08) g cm⁻³ (to 2 sf for uncertainty, 3 sf for value)
+</div>
+</div>
+
+<div class="notes-section">
+<h2>1.5 Graphical Analysis</h2>
+<p>IB Physics requires you to plot graphs with <strong>error bars</strong> and determine <strong>uncertainties in gradients and intercepts</strong>. This appears in Paper 3 (data analysis) and is central to the IA.</p>
+<ul>
+<li>Draw a line of best fit that passes through as many error bars as possible.</li>
+<li>Draw lines of worst fit (steepest and shallowest reasonable lines) to find gradient uncertainty.</li>
+<li>Gradient uncertainty = ½ × (gradient of steepest line − gradient of shallowest line).</li>
+</ul>
+<div class="highlight-box">
+<h4>IA Connection</h4>
+<p>In your IA, you must include uncertainty bars on your graphs and discuss how uncertainties affect your conclusion. Criterion D (Analysis) assesses your ability to process uncertainties correctly.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Common Misconceptions</h2>
+<ul>
+<li><strong>Random vs. systematic:</strong> Students often confuse them. Remember: random = scatter (precision), systematic = offset (accuracy).</li>
+<li><strong>Percentage uncertainty:</strong> Do not forget to multiply by 100%. A fractional uncertainty of 0.05 is 5%, not 0.05%.</li>
+<li><strong>Significant figures in intermediate steps:</strong> Never round intermediate values — only round the final answer.</li>
+<li><strong>Error bars:</strong> Error bars represent uncertainties, not ranges of data points.</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Exam-Specific Information</h2>
+<ul>
+<li><strong>Paper 1:</strong> Typically 2–4 MCQs on unit conversions, prefix recognition, and significant figures.</li>
+<li><strong>Paper 2:</strong> Structured questions on uncertainty propagation (especially with density, speed, or acceleration calculations).</li>
+<li><strong>Paper 3:</strong> Data analysis question requiring graph plotting with error bars and gradient uncertainty.</li>
+<li><strong>IA:</strong> Uncertainty analysis is assessed in Criterion D.</li>
+</ul>
+<div class="highlight-box">
+<h4>Past Paper Trends (2019–2024)</h4>
+<p>November 2023: Propagation of uncertainties in kinematics calculations.<br>
+May 2023: Graphical analysis with error bars and gradient calculation.<br>
+November 2022: Significant figures in multi-step calculations.<br>
+May 2022: Distinguishing random and systematic errors from experimental data.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>External Resources</h2>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.revisionvillage.com/" target="_blank" rel="noopener">Revision Village</a> — IB-specific video tutorials & question bank</li>
+<li><a href="https://ibdocuments.com/" target="_blank" rel="noopener">IB Documents</a> — Past papers, mark schemes & syllabi</li>
+<li><a href="https://ib.academy/" target="_blank" rel="noopener">IB Academy</a> — Study guides and free resources</li>
+<li><a href="https://www.physicsandmathstutor.com/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — Topic questions and mark schemes</li>
+<li><a href="https://www.khanacademy.org/science/physics" target="_blank" rel="noopener">Khan Academy</a> — Uncertainty and measurement tutorials</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Practice Questions</h2>
+<ul>
+<li>Calculate the percentage uncertainty in g = 9.81 m s⁻² if measured as (9.81 ± 0.05) m s⁻².</li>
+<li>A rectangle has sides (5.0 ± 0.1) cm and (3.0 ± 0.1) cm. Find the area and its absolute uncertainty.</li>
+<li>Explain whether zero error on a micrometer screw gauge is random or systematic.</li>
+<li>Convert 450 MW to W, giving your answer in standard form to 2 significant figures.</li>
+</ul>
+</div>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>Know all 7 SI base units and common derived units by heart.</li>
+<li>Random error → precision; systematic error → accuracy.</li>
+<li>For multiplication/division: add percentage uncertainties.</li>
+<li>For addition/subtraction: add absolute uncertainties.</li>
+<li>Always give uncertainties to 1 or 2 significant figures, and match the value's precision.</li>
+<li>Include error bars and gradient uncertainty analysis in IA graphs.</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Read each question carefully and identify the command term before answering.</li>
+<li>Show all working for calculation questions — method marks are generous in IB Physics.</li>
+<li>When asked to "calculate," always include units and correct significant figures.</li>
+<li>In "explain" questions, link your answer back to the physics principle (e.g., explain why percentage uncertainty decreases with larger measurements).</li>
+<li>Use a ruler for graph questions — examiners check for properly drawn best-fit lines.</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>

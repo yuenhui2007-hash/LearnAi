@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Listening Test — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/ielts-test.css?v=8">
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=8"></script>
+
+<section class="ielts-test-page">
+  <div class="ielts-test-container">
+
+    <!-- Test Header -->
+    <div class="test-header-bar">
+      <div class="test-title">IELTS Listening Test</div>
+      <div class="test-progress-wrap">
+        <div class="test-progress-bar">
+          <div class="test-progress-fill" id="testProgress" style="width:0%">0/40</div>
+        </div>
+      </div>
+      <div class="test-timer" id="testTimer">30:00</div>
+    </div>
+
+    <!-- Intro Screen -->
+    <div id="testIntro">
+      <div class="test-intro-card">
+        <div class="intro-icon" style="background:linear-gradient(135deg,#6366f1,#818cf8)">🎧</div>
+        <h2 id="introTitle">IELTS Listening Test</h2>
+        <div class="test-selector" style="margin:16px 0;text-align:left;">
+          <label style="display:block;font-size:0.85rem;color:#64748b;margin-bottom:6px;font-weight:500;">Choose a test:</label>
+          <select id="testSelector" onchange="switchTest(this.value)" style="width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;font-size:0.95rem;color:#1e293b;cursor:pointer;">
+            <option value="listening-1">Test 1: Hotel Booking & Campus Tour (Easy)</option>
+            <option value="listening-2">Test 2: Job Interview & Museum Tour (Medium)</option>
+            <option value="listening-3">Test 3: Library & Festival Events (Medium)</option>
+            <option value="listening-4">Test 4: Travel & Community Events (Medium)</option>
+          </select>
+        </div>
+        <div class="intro-meta">
+          <div class="meta-item"><strong>Duration</strong><span id="introDuration">30 minutes</span></div>
+          <div class="meta-item"><strong>Sections</strong><span id="introSections">4 sections</span></div>
+          <div class="meta-item"><strong>Questions</strong><span>40 questions</span></div>
+        </div>
+        <div class="intro-instructions" id="introInstructions">
+          You will hear 4 recordings. Answer the questions as you listen. There is no pause between sections.
+        </div>
+        <button class="btn-start-test" onclick="engine.start()">Start Test</button>
+        <a href="ielts-practice.html" style="display:block;margin-top:16px;color:#64748b;font-size:0.9rem;">Back to Practice Hub</a>
+      </div>
+    </div>
+
+    <!-- Test Area -->
+    <div id="testArea">
+      <div id="testContainer"></div>
+    </div>
+
+    <!-- Results Area -->
+    <div id="testResults"></div>
+
+  </div>
+</section>
+
+<script src="js/theme.js?v=8"></script>
+<script src="js/auth.js?v=8"></script>
+<script src="js/ielts-data.js?v=8"></script>
+<script src="js/ielts-marker.js?v=8"></script>
+<script src="js/ielts-feedback.js?v=8"></script>
+<script src="js/ielts-engine.js?v=8"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initIELTSTest('listening', 'listening-1');
+});
+
+function switchTest(testId) {
+  initIELTSTest('listening', testId);
+}
+</script>
+</body>
+</html>

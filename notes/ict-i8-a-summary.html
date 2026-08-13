@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programming Concepts &amp; Algorithms — Summary — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-igcse { background: #dbeafe; color: #1e40af; }
+.badge-as { background: #dcfce7; color: #166534; }
+.badge-a2 { background: #fef3c7; color: #92400e; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
+.summary-box h3 { color: #92400e; margin-bottom: 12px; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+    <span class="level-badge badge-as">AS Level</span>
+  </div>
+<h1>Programming Concepts &amp; Algorithms</h1>
+<p style="color:var(--gray)">Topic i8 — Revision Summary</p>
+</div>
+<div class="summary-box"><h3>📝 Last-Minute Summary</h3>
+<ul>
+<li><strong>Computational thinking:</strong> Decomposition, Abstraction, Pattern Recognition, Algorithmic thinking.</li>
+<li><strong>Constructs:</strong> Sequence, Selection (IF/CASE), Iteration (FOR/WHILE/REPEAT).</li>
+<li><strong>Data types:</strong> Integer, Real, String, Boolean, Char. Arrays = collections accessed by index.</li>
+<li><strong>Modular programming:</strong> Functions (return value) vs Procedures (actions). Parameters by value or reference.</li>
+<li><strong>Searching:</strong> Linear O(n) — unsorted; Binary O(log n) — sorted.</li>
+<li><strong>Sorting:</strong> Bubble O(n²), Insertion O(n²), Merge O(n log n), Quick O(n log n) average.</li>
+<li><strong>Errors:</strong> Syntax (compile-time), Runtime (crash), Logic (wrong output).</li>
+<li><strong>ADTs:</strong> Stack (LIFO), Queue (FIFO), Linked List, Tree (BST).</li>
+<li><strong>Graphs:</strong> BFS (shortest unweighted), DFS (deep exploration), Dijkstra (shortest weighted).</li>
+<li><strong>OOP:</strong> Class, Object, Encapsulation, Inheritance, Polymorphism, Abstraction.</li>
+<li><strong>Recursion:</strong> Base case + recursive case. Elegant but watch stack overflow.</li>
+<li>Exam tip: For algorithm questions, always write pseudocode with clear indentation. State assumptions (e.g., "array is sorted for binary search").</li>
+</ul>
+<h3>🔑 Key Terms</h3>
+<ul>
+<li>Algorithm, Pseudocode, Flowchart, Decomposition, Abstraction</li>
+<li>Variable, Constant, Array, 1D, 2D, Index, Function, Procedure, Parameter</li>
+<li>Linear search, Binary search, Bubble sort, Insertion sort, Merge sort, Quick sort</li>
+<li>Syntax error, Runtime error, Logic error, Debugging, Trace table</li>
+<li>Stack, Queue, Linked List, Tree, BST, Graph, BFS, DFS, Dijkstra</li>
+<li>OOP, Class, Object, Encapsulation, Inheritance, Polymorphism, Recursion</li>
+<li>Time complexity, Big O, Hashing, Collision, Adjacency matrix, Adjacency list</li>
+</ul>
+<h3>🎯 Exam Tips</h3>
+<ul>
+<li>Always show trace tables for iterative algorithms — examiners award method marks.</li>
+<li>For sorting: state number of passes, comparisons, and swaps clearly.</li>
+<li>Binary search ONLY works on sorted data — mention this explicitly.</li>
+<li>Draw trees with root at top, left child smaller, right child larger for BSTs.</li>
+<li>In OOP questions, explain "is-a" (inheritance) and "has-a" (composition) relationships.</li>
+</ul>
+</div>
+</div>
+</div></section>
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atomic Structure — IB Chemistry Notes | LearnAI</title>
+<meta name="description" content="Atomic Structure notes for IB Chemistry (IB DP Chemistry HL/SL). Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-ib { background: #ede9fe; color: #5b21b6; }
+.badge-hl { background: #dcfce7; color: #166534; }
+.badge-sl { background: #dbeafe; color: #1e40af; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.external-resources { margin: 16px 0; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.ext-toggle { background: #f8fafc; padding: 10px 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #475569; border: none; width: 100%; text-align: left; }
+.ext-toggle:hover { background: #f1f5f9; }
+.ext-toggle::after { content: "▶"; font-size: 0.75rem; transition: transform 0.2s; }
+.ext-toggle.active::after { transform: rotate(90deg); }
+.ext-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #f8fafc; }
+.ext-content.open { max-height: 500px; }
+.ext-content ul { margin: 0; padding: 12px 20px; list-style: none; }
+.ext-content li { margin-bottom: 6px; font-size: 0.85rem; }
+.ext-content a { color: #2563eb; text-decoration: none; }
+.ext-content a:hover { text-decoration: underline; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-ib">IB DP</span>
+<span class="level-badge badge-hl">HL</span>
+<span class="level-badge badge-sl">SL</span>
+</div>
+<h1>Atomic Structure</h1>
+<p style="color:var(--gray)">IB DP Chemistry HL/SL — Topic 2</p>
+</div>
+<div class="notes-section">
+<h2>Overview</h2>
+<p>Atomic Structure (Topic 2) explores the composition of atoms, isotopes, and the arrangement of electrons. It provides the foundation for understanding periodicity, bonding, and chemical reactivity. This topic is heavily tested in Paper 1 and Paper 2, and connects directly to the IA through spectroscopy experiments.</p>
+</div>
+
+<div class="notes-section">
+<h2>2.1 Subatomic Particles</h2>
+<ul>
+<li><strong>Proton:</strong> charge +1, mass ≈ 1 u, found in nucleus.</li>
+<li><strong>Neutron:</strong> charge 0, mass ≈ 1 u, found in nucleus.</li>
+<li><strong>Electron:</strong> charge −1, mass ≈ 1/1836 u, found in orbitals.</li>
+</ul>
+<div class="formula-box">
+Atomic number (Z) = number of protons<br>
+Mass number (A) = protons + neutrons<br>
+Number of electrons = number of protons (in a neutral atom)<br>
+Isotopes: same Z, different A (different neutron number)
+</div>
+</div>
+
+<div class="notes-section">
+<h2>2.2 Mass Spectrometry</h2>
+<p>Mass spectrometry determines relative atomic mass and isotopic abundance.</p>
+<ul>
+<li><strong>Ionisation:</strong> sample is bombarded with high-energy electrons.</li>
+<li><strong>Acceleration:</strong> ions are accelerated by an electric field.</li>
+<li><strong>Deflection:</strong> ions are deflected by a magnetic field — lighter ions deflect more.</li>
+<li><strong>Detection:</strong> ions strike a detector and produce a mass spectrum.</li>
+</ul>
+<div class="formula-box">
+Relative atomic mass (A_r) = Σ(isotope mass × fractional abundance)
+</div>
+
+<h3>Worked Example 1: Relative Atomic Mass</h3>
+<p><strong>Question:</strong> Chlorine has two isotopes: ³⁵Cl (75.8%) and ³⁷Cl (24.2%). Calculate A_r.</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">
+A_r = (35 × 0.758) + (37 × 0.242) = 26.53 + 8.95 = 35.48
+</div>
+</div>
+
+<div class="notes-section">
+<h2>2.3 Electron Configuration</h2>
+<p>Electrons occupy energy levels (shells), sublevels (s, p, d, f), and orbitals.</p>
+<div class="formula-box">
+s: 1 orbital, 2 electrons<br>
+p: 3 orbitals, 6 electrons<br>
+d: 5 orbitals, 10 electrons<br>
+f: 7 orbitals, 14 electrons<br><br>
+Maximum electrons per shell n: 2n²
+</div>
+
+<h3>Aufbau Principle</h3>
+<p>Electrons fill orbitals from lowest to highest energy: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p...</p>
+
+<h3>Special Cases</h3>
+<ul>
+<li>Chromium (Cr): [Ar] 3d⁵ 4s¹ (not 3d⁴ 4s²) — half-filled d subshell is more stable.</li>
+<li>Copper (Cu): [Ar] 3d¹⁰ 4s¹ (not 3d⁹ 4s²) — full d subshell is more stable.</li>
+</ul>
+
+<div class="highlight-box">
+<h4>HL only</h4>
+<p>HL students write electron configurations using the full s, p, d, f notation and explain anomalies using stability arguments.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>2.4 Ionisation Energy</h2>
+<p><strong>First ionisation energy (IE₁):</strong> energy required to remove one mole of electrons from one mole of gaseous atoms.</p>
+<div class="formula-box">
+X(g) → X⁺(g) + e⁻
+</div>
+
+<h3>Factors Affecting Ionisation Energy</h3>
+<ul>
+<li><strong>Nuclear charge:</strong> higher Z → stronger attraction → higher IE.</li>
+<li><strong>Atomic radius:</strong> larger radius → weaker attraction → lower IE.</li>
+<li><strong>Electron shielding:</strong> more inner electrons → more shielding → lower IE.</li>
+</ul>
+
+<h3>Trends in Successive Ionisation Energies</h3>
+<p>Large jumps in successive IE values indicate a change in electron shell. For example, Na shows a large jump after the 1st IE (removing a core electron).</p>
+</div>
+
+<div class="notes-section">
+<h2>2.5 Emission Spectra</h2>
+<ul>
+<li>Electrons emit photons when falling from higher to lower energy levels.</li>
+<li>Each element has a unique emission spectrum (fingerprint).</li>
+</ul>
+<div class="formula-box">
+ΔE = hf = hc/λ<br>
+where h = 6.63 × 10⁻³⁴ J s, c = 3.0 × 10⁸ m s⁻¹
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Common Misconceptions</h2>
+<ul>
+<li><strong>Mass number:</strong> It is not the exact mass of an atom — it is the total number of nucleons.</li>
+<li><strong>Isotopes:</strong> Isotopes have the same chemical properties (same electron configuration) but different physical properties (different mass).</li>
+<li><strong>Electron shells:</strong> Electrons do not orbit like planets — they exist in probability clouds (orbitals).</li>
+<li><strong>Ionisation energy:</strong> Always refers to gaseous atoms. Removing an electron from a solid or liquid requires different energy.</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Exam-Specific Information</h2>
+<ul>
+<li><strong>Paper 1:</strong> 3–4 MCQs on subatomic particles, electron configuration, and ionisation energy trends.</li>
+<li><strong>Paper 2:</strong> Structured questions on mass spectra, electron configuration of ions, and ionisation energy data.</li>
+<li><strong>Paper 3:</strong> Spectroscopy experiments and data analysis.</li>
+<li><strong>IA:</strong> Flame tests, spectroscopy, and atomic emission experiments are common.</li>
+</ul>
+<div class="highlight-box">
+<h4>Past Paper Trends (2019–2024)</h4>
+<p>November 2023: Successive ionisation energies used to identify an unknown element.<br>
+May 2023: Mass spectrum analysis and calculation of relative atomic mass.<br>
+November 2022: Electron configuration of transition metal ions.<br>
+May 2022: Emission spectrum calculation using ΔE = hc/λ.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>External Resources</h2>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.revisionvillage.com/" target="_blank" rel="noopener">Revision Village</a> — IB-specific video tutorials & question bank</li>
+<li><a href="https://ibdocuments.com/" target="_blank" rel="noopener">IB Documents</a> — Past papers, mark schemes & syllabi</li>
+<li><a href="https://ib.academy/" target="_blank" rel="noopener">IB Academy</a> — Study guides and free resources</li>
+<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed topic explanations</li>
+<li><a href="https://phet.colorado.edu/" target="_blank" rel="noopener">PhET Simulations</a> — Build an Atom simulation</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Practice Questions</h2>
+<ul>
+<li>Calculate the number of protons, neutrons, and electrons in ⁵⁶Fe³⁺.</li>
+<li>Boron has isotopes of mass 10 and 11. If A_r = 10.8, calculate the percentage abundance of each isotope.</li>
+<li>Write the electron configuration of V²⁺.</li>
+<li>Explain why the first ionisation energy of aluminium is lower than that of magnesium.</li>
+</ul>
+</div>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>Protons determine the element; neutrons determine the isotope.</li>
+<li>A_r = Σ(isotope mass × abundance).</li>
+<li>Electron configuration follows Aufbau principle: 1s, 2s, 2p, 3s, 3p, 4s, 3d...</li>
+<li>Cr and Cu have anomalous configurations due to stability of half-filled/full d subshells.</li>
+<li>IE increases across a period, decreases down a group.</li>
+<li>Large jumps in successive IE indicate change in shell.</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Read each question carefully and identify the command term before answering.</li>
+<li>Show all working with units — method marks are generous in IB Chemistry.</li>
+<li>Give final answers to 2–3 significant figures unless specified otherwise.</li>
+<li>In "explain" questions, always mention nuclear charge, atomic radius, and shielding.</li>
+<li>When writing electron configurations, use superscripts correctly (e.g., 3d⁵ not 3d5).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>

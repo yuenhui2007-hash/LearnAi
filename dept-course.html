@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department Course v2 — LearnAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=7">
+<link rel="stylesheet" href="css/znotes-style.css?v=7">
+<style>
+.dept-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #3730a3 100%);
+  color: white;
+  padding: 100px 0 60px;
+  text-align: center;
+}
+.dept-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.dept-hero p {
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #a5b4fc;
+  text-decoration: none;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+.back-link:hover { color: #fff; }
+
+.quiz-section, .assignment-section {
+  padding: 60px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.quiz-section { background: #f8fafc; }
+.assignment-section { background: #fff; }
+
+.section-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6366f1;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.section-heading {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+.quiz-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+}
+.quiz-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  color: #1e293b;
+  font-weight: 600;
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quiz-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  background: #f8fafc;
+}
+.quiz-opt:hover {
+  background: #e0e7ff;
+  border-color: #c7d2fe;
+}
+.quiz-opt.selected {
+  background: #e0e7ff;
+  border-color: #6366f1;
+}
+.quiz-opt.correct {
+  background: #dcfce7;
+  border-color: #10b981;
+}
+.quiz-opt.wrong {
+  background: #fee2e2;
+  border-color: #dc2626;
+}
+.quiz-opt input { accent-color: #6366f1; }
+.quiz-opt label {
+  flex: 1;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: #334155;
+}
+.quiz-feedback {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  display: none;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct { background: #dcfce7; color: #065f46; }
+.quiz-feedback.wrong { background: #fee2e2; color: #7f1d1d; }
+
+.assignment-block {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+}
+.assignment-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+.assignment-block p {
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.assignment-textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 240px;
+  resize: vertical;
+}
+.assignment-textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+.assignment-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.ai-result {
+  margin-top: 24px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 14px;
+  border-left: 4px solid #6366f1;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+.ai-result h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+.score-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+.score-pill.excellent { background: #dcfce7; color: #065f46; }
+.score-pill.good { background: #dbeafe; color: #1e3a8a; }
+.score-pill.average { background: #fef3c7; color: #78350f; }
+.score-pill.poor { background: #fee2e2; color: #7f1d1d; }
+.rubric-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.88rem;
+  color: #475569;
+}
+.rubric-row:last-child { border-bottom: none; }
+.rubric-row strong { color: #1e293b; }
+
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .quiz-section, .assignment-section { padding: 40px 0; }
+  .container-narrow { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=7"></script>
+
+<section class="dept-hero">
+  <div class="container-narrow">
+    <a href="academy.html#departments" class="back-link">← Back to Departments</a>
+    <h1 id="deptTitle">Department Course</h1>
+    <p id="deptDesc">Loading...</p>
+  </div>
+</section>
+
+<section class="quiz-section">
+  <div class="container-narrow">
+    <div class="section-label">Quiz</div>
+    <h2 class="section-heading" id="quizHeading">5 Questions</h2>
+    <div id="quizContent"></div>
+    <div id="quizResult"></div>
+  </div>
+</section>
+
+<section class="assignment-section">
+  <div class="container-narrow">
+    <div class="section-label">Assignment</div>
+    <h2 class="section-heading">Submit Your Work</h2>
+    <div class="assignment-block">
+      <p id="assignmentText">Loading assignment...</p>
+      <textarea class="assignment-textarea" id="assignmentInput" placeholder="Type your response here (300–500 words recommended)..."></textarea>
+      <div class="assignment-actions">
+        <button class="btn btn-primary" style="background:#f59e0b;border-color:#f59e0b;color:#0f172a;" onclick="submitAssignment()">Submit for AI Marking</button>
+        <button class="btn btn-secondary" onclick="document.getElementById('assignmentInput').value=''" style="border-color:#cbd5e1;color:#475569;">Clear</button>
+      </div>
+      <div id="assignmentResult"></div>
+    </div>
+  </div>
+</section>
+
+<script src="js/theme.js?v=7"></script>
+<script src="js/auth.js?v=7"></script>
+
+<script>
+const corpDepts = [
+  { id:'hr', name:'Human Resources', icon:'👥', desc:'Recruitment, employee relations, performance management, and organizational development.',
+    quiz:[
+      {q:'Which law primarily governs workplace discrimination in the US?', options:['OSHA','Civil Rights Act','FLSA','ADA'], a:1},
+      {q:'What does KPI stand for in HR?', options:['Key Performance Indicator','Knowledge Process Improvement','Key Process Integration','Known Performance Index'], a:0},
+      {q:'360-degree feedback includes input from:', options:['Manager only','Self only','Manager, peers, subordinates, self','HR only'], a:2},
+      {q:'Which is NOT a common stage in the recruitment process?', options:['Screening','Onboarding','Negotiation','Resignation'], a:3},
+      {q:'The primary goal of succession planning is to:', options:['Reduce headcount','Identify future leaders','Cut training costs','Increase turnover'], a:1}
+    ],
+    assignment:'You are an HR Manager at a mid-sized tech company. Write a 300-500 word memo proposing a remote-work policy that balances employee flexibility with productivity. Include: (1) eligibility criteria, (2) communication expectations, (3) performance tracking, (4) data security measures, and (5) how to handle exceptions.'
+  },
+  { id:'finance', name:'Finance & Accounting', icon:'💰', desc:'Financial planning, budgeting, auditing, taxation, and investment analysis.',
+    quiz:[
+      {q:'Which financial statement shows assets, liabilities, and equity?', options:['Income Statement','Cash Flow Statement','Balance Sheet','Statement of Retained Earnings'], a:2},
+      {q:'GAAP stands for:', options:['Generally Accepted Accounting Principles','Global Accounting and Auditing Protocol','General Annual Accounting Process','Government Approved Accounting Procedures'], a:0},
+      {q:'What is the formula for gross profit?', options:['Revenue - Expenses','Revenue - COGS','Net Income + Taxes','Assets - Liabilities'], a:1},
+      {q:'Depreciation is an example of:', options:['Variable cost','Fixed cost','Sunk cost','Opportunity cost'], a:1},
+      {q:'Which ratio measures a company\'s ability to pay short-term obligations?', options:['Debt-to-Equity','Current Ratio','Return on Equity','Gross Margin'], a:1}
+    ],
+    assignment:'Prepare a 300-500 word budget proposal for Q1 2025 for a department of 20 employees. Include: (1) personnel costs (salaries, benefits), (2) operational expenses (rent, utilities, supplies), (3) training and development budget, (4) contingency fund (10% of total), and (5) a brief justification for each category.'
+  },
+  { id:'admin', name:'Administration', icon:'📋', desc:'Office management, record keeping, scheduling, and supporting organizational operations.',
+    quiz:[
+      {q:'Which tool is most commonly used for meeting scheduling?', options:['Photoshop','Outlook Calendar','AutoCAD','Final Cut Pro'], a:1},
+      {q:'A memorandum is typically used for:', options:['External marketing','Internal communication','Legal contracts','Financial reports'], a:1},
+      {q:'The primary purpose of filing systems is to:', options:['Decorate the office','Ensure information retrieval','Increase paper usage','Complicate workflows'], a:1},
+      {q:'Which is a key quality of an administrative professional?', options:['Disorganization','Poor communication','Attention to detail','Resistance to technology'], a:2},
+      {q:'Office ergonomics primarily aims to:', options:['Reduce costs','Improve employee comfort and reduce injury','Increase paperwork speed','Limit breaks'], a:1}
+    ],
+    assignment:'Write a 300-500 word Standard Operating Procedure (SOP) for onboarding a new employee. Include: (1) pre-arrival preparation (IT setup, workspace), (2) first-day schedule, (3) documentation and compliance checklists, (4) mentor assignment process, and (5) 30-day review checkpoint.'
+  },
+  { id:'sales', name:'Sales', icon:'🤝', desc:'Lead generation, client acquisition, negotiation, CRM, and revenue growth strategies.',
+    quiz:[
+      {q:'CRM stands for:', options:['Customer Revenue Management','Customer Relationship Management','Client Retention Method','Corporate Resource Management'], a:1},
+      {q:'The sales funnel typically includes:', options:['Awareness, Interest, Decision, Action','Only closing','Only prospecting','Marketing only'], a:0},
+      {q:'Which is a common sales closing technique?', options:['Avoiding questions','The Assumptive Close','Ignoring objections','Reducing price immediately'], a:1},
+      {q:'A qualified lead is one that:', options:['Has no budget','Has authority, need, budget, and timeline','Is not interested','Has no decision power'], a:1},
+      {q:'Cross-selling means:', options:['Selling to competitors','Selling complementary products','Reducing prices','Closing the deal quickly'], a:1}
+    ],
+    assignment:'You are a Sales Representative for a B2B SaaS company. Write a 300-500 word email follow-up sequence (3 emails) for a prospect who attended a product demo but has not responded. Include: (1) value recap, (2) case study/social proof, (3) objection handling, (4) clear call-to-action, and (5) timeline for each email.'
+  },
+  { id:'marketing', name:'Marketing', icon:'📢', desc:'Brand strategy, digital marketing, content creation, market research, and campaign management.',
+    quiz:[
+      {q:'SEO stands for:', options:['Sales Efficiency Optimization','Search Engine Optimization','Social Engagement Outreach','Strategic Economic Outlook'], a:1},
+      {q:'Which metric measures the cost to acquire a customer?', options:['CLV','CAC','CTR','ROAS'], a:1},
+      {q:'A/B testing is used to:', options:['Compare two versions of a campaign element','Test server speed','Audit finances','Interview candidates'], a:0},
+      {q:'The 4 Ps of marketing are:', options:['Product, Price, Place, Promotion','People, Process, Product, Profit','Plan, Produce, Promote, Profit','Price, Product, Policy, Planning'], a:0},
+      {q:'Buyer personas are used to:', options:['Replace sales teams','Understand target audience segments','Design office layouts','Calculate taxes'], a:1}
+    ],
+    assignment:'Create a 300-500 word digital marketing campaign brief for launching a new fitness app. Include: (1) target audience and buyer personas, (2) campaign objectives and KPIs, (3) channel strategy (social, email, paid ads), (4) content themes and messaging, and (5) budget allocation across channels.'
+  },
+  { id:'ops', name:'Operations', icon:'⚙️', desc:'Process optimization, supply chain, logistics, production planning, and quality control.',
+    quiz:[
+      {q:'Lean manufacturing focuses on:', options:['Increasing inventory','Eliminating waste','Hiring more staff','Expanding facilities'], a:1},
+      {q:'Six Sigma aims for how many defects per million?', options:['100','3.4','1000','0'], a:1},
+      {q:'Just-In-Time (JIT) inventory means:', options:['Stocking excess inventory','Ordering materials only when needed','Never ordering supplies','Buying in bulk always'], a:1},
+      {q:'Supply chain management involves:', options:['Only manufacturing','Flow of goods, info, and finances from supplier to customer','Only marketing','Only HR'], a:1},
+      {q:'KPIs in operations often include:', options:['Employee birthdays','Throughput, cycle time, defect rate','Social media likes','Office decorations'], a:1}
+    ],
+    assignment:'Write a 300-500 word operations improvement proposal for a manufacturing plant experiencing 15% defect rates. Include: (1) root cause analysis (at least 3 potential causes), (2) recommended process changes, (3) quality control checkpoints, (4) implementation timeline, and (5) expected ROI.'
+  },
+  { id:'it', name:'Information Technology', icon:'💻', desc:'Infrastructure, cybersecurity, software development, technical support, and digital transformation.',
+    quiz:[
+      {q:'What does VPN stand for?', options:['Virtual Private Network','Very Public Network','Video Processing Node','Virtual Protocol Node'], a:0},
+      {q:'Which protocol is used for secure web browsing?', options:['HTTP','FTP','HTTPS','SMTP'], a:2},
+      {q:'A firewall is used to:', options:['Speed up internet','Block unauthorized access','Store files','Create websites'], a:1},
+      {q:'Cloud computing service models include IaaS, PaaS, and:', options:['SaaS','DaaS','MaaS','TaaS'], a:0},
+      {q:'Phishing is a type of:', options:['Hardware failure','Social engineering attack','Network protocol','Programming language'], a:1}
+    ],
+    assignment:'You are an IT Manager. Write a 300-500 word cybersecurity policy for a 50-person company. Include: (1) password requirements and MFA, (2) acceptable use policy, (3) data classification and handling, (4) incident response steps, and (5) employee training requirements.'
+  },
+  { id:'cs', name:'Customer Service', icon:'🎧', desc:'Customer support, complaint resolution, satisfaction metrics, and service excellence.',
+    quiz:[
+      {q:'CSAT stands for:', options:['Customer Satisfaction Score','Client Service Audit Tool','Customer Support Average Time','Call System Analysis Tool'], a:0},
+      {q:'First Contact Resolution (FCR) measures:', options:['Number of calls','Issues resolved in one interaction','Average hold time','Customer churn rate'], a:1},
+      {q:'The HEARD technique for complaint handling stands for:', options:['Hear, Empathize, Apologize, Resolve, Diagnose','Hear, Empathize, Apologize, Resolve, Document','Help, Evaluate, Answer, Review, Deliver','Handle, Escalate, Assign, Resolve, Document'], a:1},
+      {q:'NPS measures:', options:['Net Profit Score','Net Promoter Score','New Product Sales','Network Performance Speed'], a:1},
+      {q:'Which is NOT a good customer service practice?', options:['Active listening','Empathy','Blaming the customer','Following up'], a:2}
+    ],
+    assignment:'Write a 300-500 word customer service training module on handling angry customers. Include: (1) de-escalation techniques (at least 3), (2) active listening scripts/examples, (3) when and how to escalate to a manager, (4) follow-up best practices, and (5) a role-play scenario with model response.'
+  },
+  { id:'procurement', name:'Procurement / Purchasing', icon:'🛒', desc:'Vendor management, sourcing, contract negotiation, purchasing strategy, and cost control.',
+    quiz:[
+      {q:'RFQ stands for:', options:['Request for Quality','Request for Quotation','Required Financial Question','Return for Quality'], a:1},
+      {q:'Which is a key factor in vendor selection?', options:['Only lowest price','Total cost of ownership, quality, reliability','Only delivery speed','Only location'], a:1},
+      {q:'A purchase order is:', options:['An invoice','A request to buy goods/services','A receipt','A warranty'], a:1},
+      {q:'Strategic sourcing focuses on:', options:['One-time purchases','Long-term supplier relationships','Cash purchases only','No contracts'], a:1},
+      {q:'Which document legally binds a buyer and seller?', options:['Purchase requisition','Contract','Invoice','Receipt'], a:1}
+    ],
+    assignment:'Write a 300-500 word vendor evaluation report comparing two suppliers for office furniture. Include: (1) evaluation criteria (price, quality, delivery, warranty, sustainability), (2) scoring matrix, (3) risk assessment for each vendor, (4) recommendation with justification, and (5) negotiation points for the chosen vendor.'
+  },
+  { id:'legal', name:'Legal & Compliance', icon:'⚖️', desc:'Contract law, regulatory compliance, risk management, corporate governance, and dispute resolution.',
+    quiz:[
+      {q:'NDA stands for:', options:['Non-Disclosure Agreement','National Development Act','No Debt Allowed','New Document Approval'], a:0},
+      {q:'GDPR applies to:', options:['Only US companies','Companies handling EU residents\' data','Only tech companies','Only banks'], a:1},
+      {q:'A contract requires:', options:['Only a signature','Offer, acceptance, consideration, and legal purpose','Only verbal agreement','Only payment'], a:1},
+      {q:'Compliance audits are conducted to:', options:['Punish employees','Ensure adherence to laws and regulations','Increase sales','Replace legal teams'], a:1},
+      {q:'Intellectual property includes:', options:['Only buildings','Patents, trademarks, copyrights, trade secrets','Only software','Only books'], a:1}
+    ],
+    assignment:'Write a 300-500 word data privacy compliance checklist for a company collecting customer data online. Include: (1) lawful basis for data collection, (2) consent management requirements, (3) data subject rights (access, deletion, portability), (4) breach notification procedures, and (5) record-keeping obligations.'
+  },
+  { id:'rnd', name:'Research & Development', icon:'🔬', desc:'Innovation, product development, prototyping, testing, and technology advancement.',
+    quiz:[
+      {q:'The R&D stage before full production is called:', options:['Discovery','Scale-up','Commercialization','Termination'], a:0},
+      {q:'A patent typically lasts for:', options:['10 years','20 years','50 years','Forever'], a:1},
+      {q:'Agile methodology is characterized by:', options:['Long planning cycles','Iterative development','No customer feedback','Fixed requirements'], a:1},
+      {q:'A prototype is used to:', options:['Replace the final product','Test and validate concepts','Sell immediately','Avoid testing'], a:1},
+      {q:'TRL (Technology Readiness Level) 9 means:', options:['Basic principles observed','System proven in operational environment','Proof of concept','Laboratory testing'], a:1}
+    ],
+    assignment:'Write a 300-500 word R&D project proposal for developing a smart home energy management device. Include: (1) problem statement and market need, (2) proposed solution and key features, (3) development phases and milestones (6-month timeline), (4) required resources and budget estimate, and (5) success metrics and go-to-market strategy.'
+  },
+  { id:'qa', name:'Quality Assurance', icon:'✅', desc:'Testing protocols, standards compliance, defect tracking, continuous improvement, and audit processes.',
+    quiz:[
+      {q:'QA focuses on:', options:['Only finding bugs','Preventing defects through process','Writing code','Deploying software'], a:1},
+      {q:'A test case includes:', options:['Only expected result','Preconditions, steps, expected result','Only test data','Only bug reports'], a:1},
+      {q:'Regression testing ensures:', options:['New features work','Existing features still work after changes','UI looks good','Performance is fast'], a:1},
+      {q:'ISO 9001 is related to:', options:['Environmental management','Quality management systems','Information security','Occupational health'], a:1},
+      {q:'A bug severity of "Critical" means:', options:['Minor UI issue','System crash or data loss','Spelling mistake','Slow loading'], a:1}
+    ],
+    assignment:'Write a 300-500 word QA test plan for a new e-commerce checkout feature. Include: (1) test scope and objectives, (2) test types to be performed (functional, usability, security, performance), (3) entry and exit criteria, (4) defect severity classification, and (5) testing schedule and resource requirements.'
+  }
+];
+
+const params = new URLSearchParams(window.location.search);
+const deptId = params.get('dept');
+const dept = corpDepts.find(d => d.id === deptId);
+
+function getProgressKey(key) { return `learnai_dept_${deptId}_${key}`; }
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem(getProgressKey('progress')) || '{}'); }
+  catch(e) { return {}; }
+}
+function saveProgress(data) {
+  localStorage.setItem(getProgressKey('progress'), JSON.stringify(data));
+}
+
+const progress = loadProgress();
+
+if (!dept) {
+  document.getElementById('deptTitle').textContent = 'Department Not Found';
+  document.getElementById('deptDesc').textContent = 'Please select a valid department from the Academy page.';
+} else {
+  document.getElementById('deptTitle').textContent = `${dept.icon} ${dept.name}`;
+  document.getElementById('deptDesc').textContent = dept.desc;
+  document.getElementById('quizHeading').textContent = `${dept.quiz.length} Questions`;
+  document.getElementById('assignmentText').textContent = dept.assignment;
+  renderQuiz();
+  if (progress.assignmentScore !== undefined) {
+    document.getElementById('assignmentInput').value = progress.assignmentText || '';
+    showStoredAssignmentResult();
+  }
+}
+
+let quizAnswers = {};
+
+function renderQuiz() {
+  const area = document.getElementById('quizContent');
+  let html = '';
+  dept.quiz.forEach((q, i) => {
+    html += `<div class="quiz-card" id="qq-${i}">
+      <h4>${i + 1}. ${q.q}</h4>
+      <div class="quiz-options">`;
+    q.options.forEach((opt, j) => {
+      html += `<div class="quiz-opt" id="qqo-${i}-${j}" onclick="selectAnswer(${i}, ${j})">
+        <input type="radio" name="qq-${i}" id="qqr-${i}-${j}">
+        <label for="qqr-${i}-${j}">${opt}</label>
+      </div>`;
+    });
+    html += `</div><div class="quiz-feedback" id="qqf-${i}"></div></div>`;
+  });
+  html += `<button class="btn btn-primary" style="margin-top:8px;width:100%;padding:14px;" onclick="submitQuiz()">Submit Quiz</button>`;
+  area.innerHTML = html;
+}
+
+function selectAnswer(qIdx, optIdx) {
+  quizAnswers[qIdx] = optIdx;
+  const qEl = document.getElementById(`qq-${qIdx}`);
+  qEl.querySelectorAll('.quiz-opt').forEach((el, j) => {
+    el.classList.toggle('selected', j === optIdx);
+  });
+}
+
+function submitQuiz() {
+  let correct = 0;
+  const answers = [];
+  dept.quiz.forEach((q, i) => {
+    answers.push(quizAnswers[i]);
+    const userAns = quizAnswers[i];
+    const isCorrect = userAns === q.a;
+    if (isCorrect) correct++;
+    const qEl = document.getElementById(`qq-${i}`);
+    qEl.querySelectorAll('.quiz-opt').forEach((el, j) => {
+      el.classList.remove('selected');
+      if (j === q.a) el.classList.add('correct');
+      else if (j === userAns && !isCorrect) el.classList.add('wrong');
+      el.style.pointerEvents = 'none';
+    });
+    const fb = document.getElementById(`qqf-${i}`);
+    fb.classList.add('show');
+    fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'wrong');
+    fb.innerHTML = isCorrect ? '✓ Correct!' : `✗ Incorrect. Correct answer: <strong>${q.options[q.a]}</strong>`;
+  });
+  const pct = Math.round((correct / dept.quiz.length) * 100);
+  const res = document.getElementById('quizResult');
+  res.innerHTML = `<div style="padding:20px;background:#f8fafc;border-radius:12px;text-align:center;margin-top:16px;">
+    <div style="font-size:2rem;font-weight:700;color:${pct >= 80 ? '#059669' : pct >= 60 ? '#d97706' : '#dc2626'};">${correct} / ${dept.quiz.length}</div>
+    <div style="color:#64748b;margin-top:6px;">${pct}% — ${pct >= 80 ? 'Excellent!' : pct >= 60 ? 'Good job.' : 'Review and try again.'}</div>
+    <div style="color:#059669;font-size:0.85rem;margin-top:8px;font-weight:600;">✓ Progress saved</div>
+  </div>`;
+  progress.quizCorrect = correct;
+  progress.quizTotal = dept.quiz.length;
+  progress.quizPct = pct;
+  progress.quizAnswers = answers;
+  progress.quizCompletedAt = new Date().toISOString();
+  saveProgress(progress);
+}
+
+function submitAssignment() {
+  const input = document.getElementById('assignmentInput').value.trim();
+  const resultArea = document.getElementById('assignmentResult');
+  if (!input || input.length < 50) {
+    resultArea.innerHTML = `<div style="color:#dc2626;margin-top:12px;font-size:0.9rem;">Please write at least 50 words before submitting.</div>`;
+    return;
+  }
+  const wordCount = input.split(/\s+/).filter(w => w.length > 0).length;
+
+  progress.assignmentText = input;
+  progress.assignmentWordCount = wordCount;
+
+  let score = 0;
+  let rubric = [];
+
+  if (wordCount >= 400) { score += 20; rubric.push('<strong>Length (20/20):</strong> Comprehensive and well-developed.'); }
+  else if (wordCount >= 300) { score += 15; rubric.push('<strong>Length (15/20):</strong> Adequate, meets minimum.'); }
+  else if (wordCount >= 200) { score += 10; rubric.push('<strong>Length (10/20):</strong> Brief, could expand.'); }
+  else { score += 5; rubric.push('<strong>Length (5/20):</strong> Too short, lacks depth.'); }
+
+  const hasNumbers = /\(\s*\d+\s*\)/.test(input) || /\d+\./.test(input) || /\d+\)/.test(input);
+  const hasSections = input.split(/\n/).filter(l => l.trim().length > 0).length >= 4;
+  if (hasNumbers && hasSections) { score += 20; rubric.push('<strong>Structure (20/20):</strong> Well-organized with clear numbered sections.'); }
+  else if (hasSections) { score += 12; rubric.push('<strong>Structure (12/20):</strong> Some organization but missing clear numbering.'); }
+  else { score += 5; rubric.push('<strong>Structure (5/20):</strong> Poorly organized, hard to follow.'); }
+
+  const contentChecks = {
+    hr: ['remote','flexibility','productivity','communication','performance','security'],
+    finance: ['salary','benefit','expense','budget','training','contingency','personnel'],
+    admin: ['onboarding','documentation','workspace','mentor','compliance','schedule'],
+    sales: ['value','case study','social proof','objection','call-to-action','demo'],
+    marketing: ['audience','KPI','channel','content','budget','social','email'],
+    ops: ['defect','root cause','process','quality','timeline','ROI','control'],
+    it: ['password','MFA','policy','incident','training','security','data'],
+    cs: ['de-escalation','listening','empathy','follow-up','escalate','angry'],
+    procurement: ['vendor','evaluation','criteria','risk','negotiation','score'],
+    legal: ['consent','privacy','breach','notification','rights','compliance'],
+    rnd: ['prototype','milestone','timeline','budget','market','features','metrics'],
+    qa: ['test','functional','defect','criteria','schedule','security','performance']
+  };
+  const checks = contentChecks[dept.id] || [];
+  const matched = checks.filter(kw => input.toLowerCase().includes(kw.toLowerCase())).length;
+  const coveragePct = Math.round((matched / checks.length) * 100);
+  if (coveragePct >= 80) { score += 30; rubric.push(`<strong>Content (30/30):</strong> Excellent — ${matched}/${checks.length} key topics.`); }
+  else if (coveragePct >= 50) { score += 20; rubric.push(`<strong>Content (20/30):</strong> Good — ${matched}/${checks.length} key topics.`); }
+  else if (coveragePct >= 25) { score += 10; rubric.push(`<strong>Content (10/30):</strong> Fair — ${matched}/${checks.length} key topics.`); }
+  else { score += 5; rubric.push(`<strong>Content (5/30):</strong> Weak — ${matched}/${checks.length} key topics.`); }
+
+  const sentences = input.split(/[.!?]+/).filter(s => s.trim().length > 0);
+  const avgLen = sentences.length ? sentences.map(s => s.trim().split(/\s+/).length).reduce((a,b) => a+b, 0) / sentences.length : 0;
+  const hasProf = /\b(therefore|however|furthermore|additionally|consequently|moreover|in conclusion|specifically|recommended|implementation|strategy|objective)\b/i.test(input);
+  if (avgLen >= 12 && avgLen <= 25 && hasProf) { score += 20; rubric.push('<strong>Clarity & Tone (20/20):</strong> Professional, clear, well-articulated.'); }
+  else if (hasProf || (avgLen >= 8 && avgLen <= 30)) { score += 14; rubric.push('<strong>Clarity & Tone (14/20):</strong> Generally clear with acceptable tone.'); }
+  else { score += 7; rubric.push('<strong>Clarity & Tone (7/20):</strong> Informal or unclear in places.'); }
+
+  const commonErrors = ['teh','recieve','seperate','occured','definately','goverment','accomodate','suprise','untill','wich'];
+  const errFound = commonErrors.filter(e => input.toLowerCase().includes(e)).length;
+  if (errFound === 0) { score += 10; rubric.push('<strong>Grammar (10/10):</strong> Clean, no obvious errors.'); }
+  else if (errFound <= 2) { score += 7; rubric.push(`<strong>Grammar (7/10):</strong> Minor issues (${errFound}).`); }
+  else { score += 4; rubric.push(`<strong>Grammar (4/10):</strong> Several issues (${errFound}).`); }
+
+  const grade = score >= 90 ? 'A' : score >= 80 ? 'B+' : score >= 70 ? 'B' : score >= 60 ? 'C+' : score >= 50 ? 'C' : 'D';
+  const badgeClass = score >= 80 ? 'excellent' : score >= 60 ? 'good' : score >= 50 ? 'average' : 'poor';
+
+  let feedback = [];
+  if (score >= 85) feedback.push('Outstanding work. Strong understanding and professional communication.');
+  else if (score >= 70) feedback.push('Good effort. Covers main requirements but could deepen analysis.');
+  else if (score >= 55) feedback.push('Adequate. Expand points, use clearer structure, and add more relevant terminology.');
+  else feedback.push('Needs significant improvement. Review requirements and resubmit with more detailed, structured content.');
+
+  if (wordCount < 250) feedback.push('Response is shorter than recommended. Aim for 300-500 words.');
+  if (!hasNumbers) feedback.push('Consider using numbered points for better readability.');
+  if (coveragePct < 50) feedback.push('Response misses several key topics. Review the prompt carefully.');
+
+  resultArea.innerHTML = `
+    <div class="ai-result">
+      <h4>🤖 AI Marking Result — ${dept.name}</h4>
+      <div class="score-pill ${badgeClass}">${score}/100 — Grade ${grade}</div>
+      <div style="margin-bottom:12px;color:#334155;font-size:0.95rem;">${feedback.join(' ')}</div>
+      <h4 style="color:#64748b;font-size:0.85rem;margin:12px 0 8px;">Rubric Breakdown</h4>
+      ${rubric.map(r => `<div class="rubric-row">${r}</div>`).join('')}
+      <div style="color:#94a3b8;font-size:0.78rem;margin-top:10px;">Word count: ${wordCount} | Submitted: ${new Date().toLocaleString()}</div>
+      <div style="color:#059669;font-size:0.85rem;margin-top:8px;font-weight:600;">✓ Progress saved locally</div>
+    </div>
+  `;
+  progress.assignmentScore = score;
+  progress.assignmentGrade = grade;
+  progress.assignmentRubric = rubric;
+  progress.assignmentFeedback = feedback;
+  progress.assignmentSubmittedAt = new Date().toISOString();
+  saveProgress(progress);
+}
+
+function showStoredAssignmentResult() {
+  const resultArea = document.getElementById('assignmentResult');
+  if (!progress.assignmentScore !== undefined && progress.assignmentRubric) {
+    const badgeClass = progress.assignmentScore >= 80 ? 'excellent' : progress.assignmentScore >= 60 ? 'good' : progress.assignmentScore >= 50 ? 'average' : 'poor';
+    resultArea.innerHTML = `
+      <div class="ai-result">
+        <h4>🤖 Previous AI Marking Result — ${dept.name}</h4>
+        <div class="score-pill ${badgeClass}">${progress.assignmentScore}/100 — Grade ${progress.assignmentGrade || 'N/A'}</div>
+        <div style="margin-bottom:12px;color:#334155;font-size:0.95rem;">${(progress.assignmentFeedback || []).join(' ')}</div>
+        <h4 style="color:#64748b;font-size:0.85rem;margin:12px 0 8px;">Rubric Breakdown</h4>
+        ${(progress.assignmentRubric || []).map(r => `<div class="rubric-row">${r}</div>`).join('')}
+        <div style="color:#94a3b8;font-size:0.78rem;margin-top:10px;">Word count: ${progress.assignmentWordCount || 0} | Submitted: ${progress.assignmentSubmittedAt ? new Date(progress.assignmentSubmittedAt).toLocaleString() : 'N/A'}</div>
+      </div>
+    `;
+  }
+}
+</script>
+</body>
+</html>

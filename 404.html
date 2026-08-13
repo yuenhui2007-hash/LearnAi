@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — LearnAI</title>
+<meta name="description" content="The page you are looking for does not exist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<style>
+.error-section { padding: 160px 0 100px; background: var(--light); min-height: 100vh; text-align: center; }
+.error-code { font-size: 6rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 16px; }
+.error-title { font-size: 2rem; font-weight: 700; color: var(--body-text); margin-bottom: 12px; }
+.error-message { color: var(--gray); font-size: 1.1rem; max-width: 500px; margin: 0 auto 32px; }
+.error-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.mascot-wrap { margin-bottom: 32px; }
+.mascot-wrap img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow-lg); }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"></nav>
+<script src="js/nav.js?v=5"></script>
+
+<section class="error-section">
+  <div class="container">
+    <div class="mascot-wrap">
+      <img src="images/mascot-new.jpg" alt="LearnAI Mascot">
+    </div>
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">Oops! Looks like this page wandered off to study. Our mascot is on the case, but in the meantime…</p>
+    <div class="error-actions">
+      <a href="subjects.html" class="btn btn-primary">Browse Subjects</a>
+      <a href="index.html" class="btn btn-outline">Go Home</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+        <p>AI-powered education platform for Cambridge A-Level, IGCSE &amp; IELTS.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="tutor.html">AI Tutor</a></li>
+          <li><a href="academy.html">AI Academy</a></li>
+          <li><a href="dashboard.html">My Progress</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LearnAI. Not affiliated with Cambridge Assessment International Education.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/theme.js?v=4"></script>
+<script src="js/auth.js?v=4"></script>
+<script src="js/mascot.js?v=4"></script>
+<script src="js/pwa.js?v=4"></script>
+</body>
+</html>

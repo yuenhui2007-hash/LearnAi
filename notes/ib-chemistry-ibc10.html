@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry — IB Chemistry Notes | LearnAI</title>
+<meta name="description" content="Organic Chemistry notes for IB Chemistry (IB DP Chemistry HL/SL). Detailed study notes and last-minute summary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<style>
+.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
+.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
+.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge-ib { background: #ede9fe; color: #5b21b6; }
+.badge-hl { background: #dcfce7; color: #166534; }
+.badge-sl { background: #dbeafe; color: #1e40af; }
+.notes-section { margin-bottom: 40px; }
+.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
+.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
+.notes-section ul { margin: 12px 0; padding-left: 24px; }
+.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
+.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
+.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
+.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
+.summary-box ul li { color: #78350f; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
+.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
+.exam-tips ul li { color: #1e3a5f; }
+.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.external-resources { margin: 16px 0; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.ext-toggle { background: #f8fafc; padding: 10px 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #475569; border: none; width: 100%; text-align: left; }
+.ext-toggle:hover { background: #f1f5f9; }
+.ext-toggle::after { content: "▶"; font-size: 0.75rem; transition: transform 0.2s; }
+.ext-toggle.active::after { transform: rotate(90deg); }
+.ext-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #f8fafc; }
+.ext-content.open { max-height: 500px; }
+.ext-content ul { margin: 0; padding: 12px 20px; list-style: none; }
+.ext-content li { margin-bottom: 6px; font-size: 0.85rem; }
+.ext-content a { color: #2563eb; text-decoration: none; }
+.ext-content a:hover { text-decoration: underline; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+<ul class="nav-menu" id="navMenu">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
+<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
+<li><a href="../planner.html" class="nav-link">Planner</a></li>
+<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="notes-page">
+<div class="container">
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+<div class="notes-container">
+<div class="notes-header">
+<div class="level-badges">
+<span class="level-badge badge-ib">IB DP</span>
+<span class="level-badge badge-hl">HL</span>
+<span class="level-badge badge-sl">SL</span>
+</div>
+<h1>Organic Chemistry</h1>
+<p style="color:var(--gray)">IB DP Chemistry HL/SL — Topic 10</p>
+</div>
+<div class="notes-section">
+<h2>Overview</h2>
+<p>Organic Chemistry (Topic 10) is the largest topic in IB Chemistry, covering functional groups, nomenclature, reaction mechanisms, and synthetic pathways. It is tested across all papers and is particularly important for Paper 2. Mechanism drawing and retrosynthetic analysis are key HL skills.</p>
+</div>
+
+<div class="notes-section">
+<h2>10.1 Functional Groups & Nomenclature</h2>
+<table style="margin:12px 0;border-collapse:collapse;width:100%">
+<tr><th style="border:1px solid #ccc;padding:6px">Homologous Series</th><th style="border:1px solid #ccc;padding:6px">General Formula</th><th style="border:1px solid #ccc;padding:6px">Suffix</th></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Alkanes</td><td style="border:1px solid #ccc;padding:6px">CₙH₂ₙ₊₂</td><td style="border:1px solid #ccc;padding:6px">-ane</td></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Alkenes</td><td style="border:1px solid #ccc;padding:6px">CₙH₂ₙ</td><td style="border:1px solid #ccc;padding:6px">-ene</td></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Alcohols</td><td style="border:1px solid #ccc;padding:6px">CₙH₂ₙ₊₁OH</td><td style="border:1px solid #ccc;padding:6px">-anol</td></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Aldehydes</td><td style="border:1px solid #ccc;padding:6px">RCHO</td><td style="border:1px solid #ccc;padding:6px">-anal</td></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Ketones</td><td style="border:1px solid #ccc;padding:6px">RCOR'</td><td style="border:1px solid #ccc;padding:6px">-anone</td></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Carboxylic acids</td><td style="border:1px solid #ccc;padding:6px">RCOOH</td><td style="border:1px solid #ccc;padding:6px">-anoic acid</td></tr>
+<tr><td style="border:1px solid #ccc;padding:6px">Esters</td><td style="border:1px solid #ccc;padding:6px">RCOOR'</td><td style="border:1px solid #ccc;padding:6px">-yl -anoate</td></tr>
+</table>
+</div>
+
+<div class="notes-section">
+<h2>10.2 Isomerism</h2>
+<ul>
+<li><strong>Structural isomers:</strong> same molecular formula, different structural arrangement (chain, positional, functional group).</li>
+<li><strong>Stereoisomers:</strong> same structural formula, different spatial arrangement.
+  <ul>
+    <li><strong>Cis–trans (geometric):</strong> restricted rotation around C=C; different groups on each carbon.</li>
+    <li><strong>Optical:</strong> chiral centre (carbon with 4 different groups) → non-superimposable mirror images (enantiomers).</li>
+  </ul>
+</li>
+</ul>
+<div class="highlight-box">
+<h4>HL only</h4>
+<p>HL students use Cahn-Ingold-Prelog (CIP) rules to assign R/S configuration to chiral centres and E/Z notation to alkenes.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>10.3 Reaction Mechanisms [HL only]</h2>
+
+<h3>SN1 and SN2 Nucleophilic Substitution</h3>
+<ul>
+<li><strong>SN1:</strong> two-step, carbocation intermediate, rate = k[substrate], favoured by tertiary substrates and polar protic solvents.</li>
+<li><strong>SN2:</strong> one-step, backside attack, rate = k[substrate][nucleophile], favoured by primary substrates and polar aprotic solvents.</li>
+</ul>
+
+<h3>Electrophilic Addition to Alkenes</h3>
+<ul>
+<li>Alkene π electrons attack electrophile (e.g., Br₂, HBr).</li>
+<li>Carbocation intermediate formed; nucleophile attacks.</li>
+<li>Markovnikov's rule: H adds to carbon with more H atoms already.</li>
+</ul>
+
+<h3>Electrophilic Substitution (Benzene)</h3>
+<ul>
+<li>Benzene's stable π system undergoes substitution rather than addition.</li>
+<li>Catalyst required: FeBr₃ for bromination, H₂SO₄ for nitration.</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>10.4 Key Reactions Summary</h2>
+<ul>
+<li><strong>Alkanes:</strong> free radical substitution (Cl₂/UV).</li>
+<li><strong>Alkenes:</strong> addition (H₂/Ni, Br₂, HBr, H₂O/H⁺).</li>
+<li><strong>Alcohols:</strong> oxidation (primary → aldehyde → carboxylic acid; secondary → ketone); dehydration (conc. H₂SO₄/heat); substitution (PCl₅, NaBr/H₂SO₄).</li>
+<li><strong>Aldehydes/ketones:</strong> oxidation (aldehyde only, Tollens'/Fehling's); reduction (NaBH₄).</li>
+<li><strong>Carboxylic acids:</strong> neutralisation; esterification (alcohol + conc. H₂SO₄).</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>10.5 Spectroscopy [HL only]</h2>
+<ul>
+<li><strong>¹H NMR:</strong> number of peaks = number of proton environments; integration = relative number of protons; splitting (n+1 rule) = number of adjacent protons.</li>
+<li><strong>IR:</strong> identify functional groups by characteristic absorption frequencies (e.g., C=O at ~1700 cm⁻¹, O–H broad at 3200–3600 cm⁻¹).</li>
+<li><strong>Mass spectrometry:</strong> molecular ion peak gives molar mass; fragmentation patterns help identify structure.</li>
+</ul>
+<div class="highlight-box">
+<h4>HL Exam Focus</h4>
+<p>May 2024 HL Paper 2: Combined IR and ¹H NMR data used to deduce an unknown organic structure.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Common Misconceptions</h2>
+<ul>
+<li><strong>Aldehyde vs. ketone oxidation:</strong> Only aldehydes are oxidised by Tollens' reagent and Fehling's solution. Ketones resist oxidation under mild conditions.</li>
+<li><strong>Optical activity:</strong> A racemic mixture contains equal amounts of both enantiomers and is optically inactive.</li>
+<li><strong>SN1/SN2:</strong> Tertiary halogenoalkanes favour SN1; primary favour SN2.</li>
+<li><strong>Benzene:</strong> Undergoes substitution, not addition, due to aromatic stability.</li>
+</ul>
+</div>
+
+<div class="notes-section">
+<h2>Exam-Specific Information</h2>
+<ul>
+<li><strong>Paper 1:</strong> 4–5 MCQs on functional group identification, nomenclature, and reaction products.</li>
+<li><strong>Paper 2:</strong> Structured questions on reaction mechanisms, synthesis pathways, and HL spectroscopy.</li>
+<li><strong>Paper 3:</strong> Data analysis of organic synthesis experiments (yield, purity).</li>
+<li><strong>IA:</strong> Organic synthesis, esterification, and identification of unknown compounds are popular.</li>
+</ul>
+<div class="highlight-box">
+<h4>Past Paper Trends (2019–2024)</h4>
+<p>November 2023: Retrosynthetic analysis of a target molecule (HL).<br>
+May 2023: NMR spectrum interpretation to identify an ester.<br>
+November 2022: Reaction mechanism for electrophilic addition of HBr to propene.<br>
+May 2022: Organic synthesis pathway from ethene to ethanoic acid.</p>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>External Resources</h2>
+<div class="external-resources">
+<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
+<div class="ext-content">
+<ul>
+<li><a href="https://www.revisionvillage.com/" target="_blank" rel="noopener">Revision Village</a> — IB-specific video tutorials & question bank</li>
+<li><a href="https://ibdocuments.com/" target="_blank" rel="noopener">IB Documents</a> — Past papers, mark schemes & syllabi</li>
+<li><a href="https://ib.academy/" target="_blank" rel="noopener">IB Academy</a> — Study guides and free resources</li>
+<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed topic explanations</li>
+<li><a href="https://www.organic-chemistry.org/" target="_blank" rel="noopener">Organic Chemistry Portal</a> — Named reactions database</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="notes-section">
+<h2>Practice Questions</h2>
+<ul>
+<li>Name the following compound and identify its functional groups: CH₃CH(OH)CH₂CHO.</li>
+<li>Draw the mechanism for the electrophilic addition of Br₂ to ethene.</li>
+<li>Explain how you would distinguish between propanal and propanone using chemical tests.</li>
+<li>HL: A compound has molecular ion m/z = 60. Its IR shows a broad peak at 3300 cm⁻¹ and a peak at 1700 cm⁻¹. Its ¹H NMR shows 3 peaks with integration 3:1:2. Suggest a structure.</li>
+</ul>
+</div>
+
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>Know all functional groups, general formulae, and suffixes.</li>
+<li>Isomerism: structural (chain, positional, functional group) and stereoisomerism (geometric, optical).</li>
+<li>HL: SN1 (carbocation, tertiary) vs. SN2 (backside attack, primary).</li>
+<li>Alcohol oxidation: primary → aldehyde → acid; secondary → ketone.</li>
+<li>HL NMR: n+1 rule for splitting; integration for proton ratios.</li>
+<li>HL IR: C=O ~1700 cm⁻¹; O–H broad 3200–3600 cm⁻¹.</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Read each question carefully and identify the command term before answering.</li>
+<li>Show all working with units — method marks are generous in IB Chemistry.</li>
+<li>Give final answers to 2–3 significant figures unless specified otherwise.</li>
+<li>In mechanism questions, show curly arrows clearly starting from bonds or lone pairs.</li>
+<li>For nomenclature, always find the longest carbon chain first.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<script src="../js/theme.js?v=4"></script>
+<script src="../js/auth.js?v=4"></script>
+<script src="../js/app.js?v=4"></script>
+<script src="../js/mascot.js?v=4"></script>
+<script src="../js/notes.js?v=4"></script>
+<script src="../js/pwa.js?v=4"></script>
+</body>
+</html>
