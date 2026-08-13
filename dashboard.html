@@ -233,6 +233,9 @@ function saveSettings(){
   document.getElementById('settingsPanel').style.display = 'none';
 }
 function applySettings(s){
+  if (!s.showSubjects && !s.showDepartments && !s.showStudyTools && !s.showPlanner) {
+    s = { showSubjects:true, showDepartments:true, showStudyTools:true, showPlanner:true };
+  }
   document.getElementById('subjectProgress').style.display = s.showSubjects ? 'grid' : 'none';
   document.getElementById('deptSection').style.display = s.showDepartments ? 'block' : 'none';
   document.getElementById('studySection').style.display = s.showStudyTools ? 'block' : 'none';
