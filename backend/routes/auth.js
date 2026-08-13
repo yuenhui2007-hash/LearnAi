@@ -5,10 +5,10 @@ const { users, activityLogs, isMongo, User, ActivityLog } = require('../config/d
 const { generateToken } = require('../middleware/auth');
 const router = express.Router();
 
-// Cookie options (httpOnly, secure in production)
+// Cookie options — always secure since Render serves HTTPS
 const COOKIE_OPTIONS = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: true,
     sameSite: 'none',
     maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 };
@@ -35,7 +35,7 @@ router.post('/register', async (req, res) => {
 
             const token = generateToken({ id: user._id.toString(), email: user.email, role: user.role });
             res.cookie('token', token, COOKIE_OPTIONS);
-            return res.status(201).json({ user: { id: user._id.toString(), email: user.email, name: user.name, role: user.role } });
+            return res.status(201).json({ token, user: { id: user._id.toString(), email: user.email, name: user.name, role: user.role } });
         }
 
         // In-memory fallback
@@ -55,7 +55,7 @@ router.post('/register', async (req, res) => {
 
         const token = generateToken(user);
         res.cookie('token', token, COOKIE_OPTIONS);
-        res.status(201).json({ user: { id, email, name, role } });
+        res.status(201).json({ token, user: { id, email, name, role } });
     } catch (err) {
         console.error('Register error:', err);
         res.status(500).json({ error: 'Registration failed' });
@@ -81,7 +81,7 @@ router.post('/login', async (req, res) => {
         const userId = user._id ? user._id.toString() : user.id;
         const token = generateToken({ id: userId, email: user.email, role: user.role });
         res.cookie('token', token, COOKIE_OPTIONS);
-        res.json({ user: { id: userId, email: user.email, name: user.name, role: user.role } });
+        res.json({ token, user: { id: userId, email: user.email, name: user.name, role: user.role } });
     } catch (err) {
         console.error('Login error:', err);
         res.status(500).json({ error: 'Login failed' });
