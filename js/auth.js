@@ -11,6 +11,12 @@ function getAuthHeaders() {
 }
 
 window.Auth = {
+  loginWithGoogle: async function() {
+    // Redirect to backend OAuth endpoint
+    window.location.href = API_BASE + '/oauth/google';
+    return { success: true }; // Will redirect, never actually returns
+  },
+
   register: async function(email, password, name) {
     try {
       const res = await fetch(API_BASE + '/auth/register', {

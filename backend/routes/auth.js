@@ -35,7 +35,7 @@ router.post('/register', async (req, res) => {
 
             const token = generateToken({ id: user._id.toString(), email: user.email, role: user.role });
             res.cookie('token', token, COOKIE_OPTIONS);
-            return res.status(201).json({ user: { id: user._id.toString(), email: user.email, name: user.name, role: user.role } });
+            return res.status(201).json({ token, user: { id: user._id.toString(), email: user.email, name: user.name, role: user.role } });
         }
 
         // In-memory fallback
@@ -55,7 +55,7 @@ router.post('/register', async (req, res) => {
 
         const token = generateToken(user);
         res.cookie('token', token, COOKIE_OPTIONS);
-        res.status(201).json({ user: { id, email, name, role } });
+        res.status(201).json({ token, user: { id, email, name, role } });
     } catch (err) {
         console.error('Register error:', err);
         res.status(500).json({ error: 'Registration failed' });
@@ -81,10 +81,37 @@ router.post('/login', async (req, res) => {
         const userId = user._id ? user._id.toString() : user.id;
         const token = generateToken({ id: userId, email: user.email, role: user.role });
         res.cookie('token', token, COOKIE_OPTIONS);
-        res.json({ user: { id: userId, email: user.email, name: user.name, role: user.role } });
+        res.json({ token, user: { id: userId, email: user.email, name: user.name, role: user.role } });
     } catch (err) {
         console.error('Login error:', err);
         res.status(500).json({ error: 'Login failed' });
+    }
+});
+
+// Get current user
+router.get('/me', async (req, res) => {
+    const token = req.headers.authorization?.replace('Bearer ', '') || req.cookies?.token;
+    if (!token) return res.status(401).json({ error: 'Not authenticated' });
+    
+    try {
+        const jwt = require('jsonwebtoken');
+        const { JWT_SECRET } = require('../middleware/auth');
+        const decoded = jwt.verify(token, JWT_SECRET);
+        
+        let user;
+        if (isMongo && User) {
+            user = await User.findById(decoded.id).select('-password');
+            if (user) user = { id: user._id.toString(), email: user.email, name: user.name, role: user.role };
+        }
+        if (!user) {
+            user = users.get(decoded.id);
+            if (user) user = { id: user.id, email: user.email, name: user.name, role: user.role };
+        }
+        
+        if (!user) return res.status(401).json({ error: 'User not found' });
+        res.json({ user });
+    } catch (err) {
+        res.status(401).json({ error: 'Invalid token' });
     }
 });
 

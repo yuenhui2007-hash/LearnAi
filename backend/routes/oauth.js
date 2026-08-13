@@ -8,8 +8,18 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');
 const { users, activityLogs, isMongo, User, ActivityLog } = require('../config/database');
-const { generateToken } = require('./auth');
-const { getCookieOptions } = require('./auth');
+const { generateToken } = require('../middleware/auth');
+
+// Cookie options helper
+function getCookieOptions(req) {
+    const isSecure = req.secure || req.headers['x-forwarded-proto'] === 'https';
+    return {
+        httpOnly: true,
+        secure: isSecure,
+        sameSite: isSecure ? 'none' : 'lax',
+        maxAge: 7 * 24 * 60 * 60 * 1000
+    };
+}
 const router = express.Router();
 
 // In-memory store for OAuth state (use Redis in production)
