@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/znotes-style.css?v=4">
 <style>
   /* Perf fix: disable expensive backdrop-filter on dashboard */
-  .navbar, .nav-dropdown-menu { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(15,23,42,0.95) !important; }
+  .navbar, .nav-dropdown-menu { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
@@ -94,6 +94,8 @@
 <script src="js/app.js?v=4" defer></script>
 <script>
 (function() {
+// Subject progress (Cambridge)
+try {
 const overall = Progress.getOverallProgress();
 document.getElementById('overallProgress').textContent =
 overall.total > 0 ? overall.completed + '/' + overall.total + ' topics completed (' + overall.percent + '%)' : 'Start studying to track your progress';
@@ -110,6 +112,10 @@ card.innerHTML = '<div style="display:flex;align-items:center;gap:16px;margin-bo
 fragment.appendChild(card);
 });
 container.appendChild(fragment);
+} catch(e) {
+  document.getElementById('overallProgress').textContent = 'Start studying to track your progress';
+  document.getElementById('subjectProgress').innerHTML = '<p style="color:var(--gray)">No subject progress yet. Browse subjects to begin.</p>';
+}
 
 // Department progress
 var deptContainer = document.getElementById('deptProgress');
