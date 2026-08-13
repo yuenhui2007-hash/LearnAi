@@ -16,6 +16,7 @@ window.Auth = {
       const res = await fetch(API_BASE + '/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({ email, password, name })
       });
       const data = await res.json();
@@ -33,6 +34,7 @@ window.Auth = {
       const res = await fetch(API_BASE + '/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({ email, password })
       });
       const data = await res.json();
@@ -49,7 +51,8 @@ window.Auth = {
     try {
       await fetch(API_BASE + '/auth/logout', {
         method: 'POST',
-        headers: getAuthHeaders()
+        headers: getAuthHeaders(),
+        credentials: 'include'
       });
     } catch (err) {}
     localStorage.removeItem('learnai_auth');
@@ -61,7 +64,8 @@ window.Auth = {
     try {
       const res = await fetch(API_BASE + '/auth/me', {
         method: 'GET',
-        headers: getAuthHeaders()
+        headers: getAuthHeaders(),
+        credentials: 'include'
       });
       if (!res.ok) return null;
       const data = await res.json();
