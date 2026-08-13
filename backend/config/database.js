@@ -25,6 +25,7 @@ memStores.users.set('demo-user-1', {
     email: 'demo@learnai.app',
     name: 'Demo Student',
     role: 'student',
+    authProvider: 'local',
     grade: 'Secondary 4',
     subjects: ['Mathematics', 'Economics', 'Physics'],
     interests: ['Dinosaurs', 'Space'],
@@ -43,7 +44,9 @@ function initMongo() {
     const userSchema = new mongoose.Schema({
         email: { type: String, required: true, unique: true },
         name: { type: String, required: true },
-        password: { type: String, required: true },
+        password: { type: String },
+        authProvider: { type: String, enum: ['local', 'google', 'apple'], default: 'local' },
+        authProviderId: { type: String },
         role: { type: String, default: 'student', enum: ['student', 'admin'] },
         grade: String,
         subjects: [String],
