@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-Level Accounting Complete Guide & IAS Formats</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.7; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  h1 { color: #60a5fa; font-size: 2.2rem; margin-bottom: 10px; border-bottom: 3px solid #3b82f6; padding-bottom: 15px; }
+  h2 { color: #34d399; font-size: 1.6rem; margin: 30px 0 15px; padding-left: 15px; border-left: 4px solid #34d399; }
+  h3 { color: #fbbf24; font-size: 1.3rem; margin: 25px 0 12px; }
+  h4 { color: #a78bfa; font-size: 1.1rem; margin: 20px 0 10px; }
+  .exam-board { background: #1e293b; padding: 15px 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #3b82f6; }
+  .ias-box { background: #1e293b; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #334155; }
+  .ias-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+  .ias-number { background: #3b82f6; color: white; padding: 5px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; }
+  .ias-title { color: #60a5fa; font-weight: 600; }
+  .format-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  .format-table th { background: #334155; color: #fbbf24; padding: 12px; text-align: left; font-weight: 600; }
+  .format-table td { padding: 10px 12px; border-bottom: 1px solid #334155; }
+  .format-table tr:hover { background: #1e293b; }
+  .dr-cr { display: inline-block; width: 40px; font-weight: 600; }
+  .dr { color: #34d399; }
+  .cr { color: #f87171; }
+  .highlight { background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .memo-box { background: #064e3b; border: 1px solid #34d399; padding: 15px; border-radius: 8px; margin: 15px 0; }
+  .memo-box h4 { color: #34d399; margin-top: 0; }
+  .warning { background: #451a03; border: 1px solid #f59e0b; padding: 12px; border-radius: 8px; margin: 10px 0; color: #fbbf24; }
+  .tip { background: #1e3a5f; border-left: 4px solid #60a5fa; padding: 12px 15px; margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 25px; }
+  li { margin: 6px 0; }
+  .financial-stmt { background: #111827; padding: 20px; border-radius: 10px; margin: 15px 0; font-family: 'Courier New', monospace; font-size: 0.9rem; }
+  .stmt-title { text-align: center; font-weight: 700; color: #fbbf24; margin-bottom: 15px; font-size: 1.1rem; }
+  .stmt-line { display: flex; justify-content: space-between; padding: 4px 0; }
+  .stmt-indent { padding-left: 30px; }
+  .stmt-total { border-top: 2px solid #4b5563; margin-top: 8px; padding-top: 8px; font-weight: 600; color: #34d399; }
+  .calculation { background: #1e293b; padding: 15px; border-radius: 8px; margin: 10px 0; font-family: monospace; }
+  .nav { position: sticky; top: 0; background: #0f172a; padding: 15px 0; border-bottom: 1px solid #334155; z-index: 100; }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; }
+  .nav-links a:hover { color: #60a5fa; }
+  .formula { background: #1e1b4b; border: 1px solid #6366f1; padding: 12px; border-radius: 8px; margin: 10px 0; text-align: center; font-family: monospace; font-size: 1.05rem; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="container">
+    <div class="nav-links">
+      <a href="#exam-guidance">Exam Guidance</a>
+      <a href="#ias1">IAS 1</a>
+      <a href="#ias2">IAS 2</a>
+      <a href="#ias7">IAS 7</a>
+      <a href="#ias16">IAS 16</a>
+      <a href="#ias37">IAS 37</a>
+      <a href="#ifrs15">IFRS 15</a>
+      <a href="#formats">Financial Formats</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<h1>A-Level Accounting Complete Guide & IAS Standards</h1>
+<p style="color: #94a3b8; margin-bottom: 30px;">Cambridge International A-Level (9706) · Complete memorization guide for examination from 2023</p>
+
+<!-- EXAM GUIDANCE -->
+<h2 id="exam-guidance">📋 Cambridge Exam Guidance (9706)</h2>
+
+<div class="exam-board">
+<h3>Paper Structure</h3>
+<ul>
+  <li><strong>Paper 1 (Multiple Choice):</strong> 1 hour, 30 marks — 30% of AS, 15% of A-Level</li>
+  <li><strong>Paper 2 (Structured Questions):</strong> 1 hour 45 min, 90 marks — 70% of AS, 35% of A-Level</li>
+  <li><strong>Paper 3 (Structured Questions - A2):</strong> 3 hours, 150 marks — 50% of A-Level</li>
+</ul>
+</div>
+
+<div class="exam-board">
+<h3>Key Assessment Objectives</h3>
+<ul>
+  <li><strong>AO1: Knowledge & Understanding</strong> (30%) — Define, identify, state accounting concepts</li>
+  <li><strong>AO2: Application</strong> (40%) — Prepare financial statements, process accounting data</li>
+  <li><strong>AO3: Analysis & Evaluation</strong> (30%) — Interpret, compare, advise, justify decisions</li>
+</ul>
+</div>
+
+<div class="warning">
+<strong>Critical Exam Rules:</strong>
+<ul>
+  <li>Always show all workings — method marks are awarded even if final answer is wrong</li>
+  <li>Use correct formats for financial statements — incorrect format loses presentation marks</li>
+  <li>Read the question requirement carefully — "prepare" vs "show" vs "calculate"</li>
+  <li>Time management: 1 mark ≈ 1.2 minutes in Paper 3</li>
+</ul>
+</div>
+
+<!-- IAS 1 -->
+<h2 id="ias1">IAS 1 — Presentation of Financial Statements</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 1</span>
+    <span class="ias-title">Presentation of Financial Statements</span>
+  </div>
+  
+  <h4>Complete Set of Financial Statements:</h4>
+  <ol>
+    <li>Statement of Financial Position (SOFP) at end of period</li>
+    <li>Statement of Profit or Loss (SOPL) and Other Comprehensive Income</li>
+    <li>Statement of Changes in Equity (SOCIE)</li>
+    <li>Statement of Cash Flows (IAS 7)</li>
+    <li>Notes to the accounts</li>
+  </ol>
+
+  <h4>Fundamental Concepts (MUST MEMORIZE):</h4>
+  <table class="format-table">
+    <tr><th>Concept</th><th>Definition</th><th>Application</th></tr>
+    <tr><td><strong>Going Concern</strong></td><td>Entity will continue operating for foreseeable future</td><td>Assets valued at going concern values, not liquidation</td></tr>
+    <tr><td><strong>Accruals (Matching)</strong></td><td>Transactions recorded when incurred, not when cash moved</td><td>Match expenses to period they relate to</td></tr>
+    <tr><td><strong>Consistency</strong></td><td>Same accounting methods period to period</td><td>Enables meaningful comparison</td></tr>
+    <tr><td><strong>Prudence</strong></td><td>Do not overstate assets/income, understate liabilities/expenses</td><td>Provide for losses, don't anticipate profits</td></tr>
+    <tr><td><strong>Materiality</strong></td><td>Information that could influence decisions</td><td>Only material items need separate disclosure</td></tr>
+    <tr><td><strong>Business Entity</strong></td><td>Business separate from owner</td><td>Owner drawings = reduction in equity, not expense</td></tr>
+    <tr><td><strong>Money Measurement</strong></td><td>Only transactions measurable in money recorded</td><td>Staff skill not recorded as asset</td></tr>
+    <tr><td><strong>Historical Cost</strong></td><td>Record at original transaction price</td><td>Provides objective, verifiable evidence</td></tr>
+    <tr><td><strong>Realisation</strong></td><td>Profit only recognised when realised</td><td>Don't record profit until sale complete</td></tr>
+    <tr><td><strong>Duality</strong></td><td>Every transaction has two effects</td><td>Debit = Credit in every entry</td></tr>
+  </table>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Current vs Non-Current</h4>
+    <ul>
+      <li><strong>Current Asset:</strong> Expected to be sold/used/consumed within 12 months</li>
+      <li><strong>Non-Current Asset:</strong> Held for more than 12 months for use in business</li>
+      <li><strong>Current Liability:</strong> Due to be settled within 12 months</li>
+      <li><strong>Non-Current Liability:</strong> Due after more than 12 months</li>
+    </ul>
+  </div>
+</div>
+
+<!-- IAS 2 -->
+<h2 id="ias2">IAS 2 — Inventories</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 2</span>
+    <span class="ias-title">Inventories</span>
+  </div>
+
+  <h4>Valuation Rule:</h4>
+  <div class="formula">
+    Inventory value = LOWER of Cost AND Net Realisable Value (NRV)
+  </div>
+
+  <h4>Cost Includes:</h4>
+  <ul>
+    <li>Purchase cost (after trade discounts, before settlement discounts)</li>
+    <li>Carriage/freight INWARDS</li>
+    <li>Import duties</li>
+    <li>Conversion costs (labour + production overheads)</li>
+  </ul>
+
+  <h4>Cost EXCLUDES:</h4>
+  <ul>
+    <li>Carriage OUTWARDS (selling expense)</li>
+    <li>Administrative overheads</li>
+    <li>Selling costs</li>
+    <li>Abnormal waste</li>
+    <li>Storage costs (unless necessary before next stage)</li>
+  </ul>
+
+  <h4>Net Realisable Value (NRV):</h4>
+  <div class="formula">
+    NRV = Expected selling price − Estimated costs of completion − Estimated costs to sell
+  </div>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Inventory Costing Methods</h4>
+    <table class="format-table">
+      <tr><th>Method</th><th>When to Use</th><th>Formula/Rule</th></tr>
+      <tr><td>FIFO</td><td>Perishable goods, inflation</td><td>First In, First Out — oldest inventory sold first</td></tr>
+      <tr><td>LIFO</td><td>Not permitted under IAS 2!</td><td>Last In, First Out — NOT ALLOWED</td></tr>
+      <tr><td>AVCO</td><td>Non-perishable, price fluctuations</td><td>Weighted Average Cost = Total Cost / Total Units</td></tr>
+    </table>
+    <p><strong>Important:</strong> IAS 2 does NOT permit LIFO. Only FIFO and weighted average are acceptable.</p>
+  </div>
+</div>
+
+<!-- IAS 7 -->
+<h2 id="ias7">IAS 7 — Statement of Cash Flows</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 7</span>
+    <span class="ias-title">Statement of Cash Flows</span>
+  </div>
+
+  <h4>Mandatory Format (MUST MEMORIZE):</h4>
+  <div class="financial-stmt">
+    <div class="stmt-title">STATEMENT OF CASH FLOWS for the year ended [date]</div>
+    
+    <div style="margin-bottom: 15px;">
+      <strong>Cash flows from OPERATING activities</strong><br>
+      <span class="stmt-indent">Profit from operations (PBIT)</span><br>
+      <span class="stmt-indent">Adjustments for:</span><br>
+      <span class="stmt-indent" style="padding-left: 50px;">Depreciation</span><br>
+      <span class="stmt-indent" style="padding-left: 50px;">Amortisation</span><br>
+      <span class="stmt-indent" style="padding-left: 50px;">Loss / (Profit) on disposal of NCA</span><br>
+      <span class="stmt-indent">Operating profit before working capital changes</span><br>
+      <span class="stmt-indent">(Increase) / Decrease in inventories</span><br>
+      <span class="stmt-indent">(Increase) / Decrease in trade receivables</span><br>
+      <span class="stmt-indent">Increase / (Decrease) in trade payables</span><br>
+      <span class="stmt-indent">Cash generated from operations</span><br>
+      <span class="stmt-indent">Interest paid</span><br>
+      <span class="stmt-indent">Income taxes paid</span><br>
+      <div class="stmt-total stmt-line"><span>Net cash from operating activities</span><span>$XXX</span></div>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <strong>Cash flows from INVESTING activities</strong><br>
+      <span class="stmt-indent">Purchase of property, plant & equipment</span><br>
+      <span class="stmt-indent">Proceeds from sale of PPE</span><br>
+      <span class="stmt-indent">Purchase of intangible assets</span><br>
+      <span class="stmt-indent">Interest received</span><br>
+      <span class="stmt-indent">Dividends received</span><br>
+      <div class="stmt-total stmt-line"><span>Net cash from investing activities</span><span>$XXX</span></div>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <strong>Cash flows from FINANCING activities</strong><br>
+      <span class="stmt-indent">Proceeds from issue of shares</span><br>
+      <span class="stmt-indent">Proceeds from long-term borrowings</span><br>
+      <span class="stmt-indent">Repayment of long-term borrowings</span><br>
+      <span class="stmt-indent">Dividends paid</span><br>
+      <div class="stmt-total stmt-line"><span>Net cash from financing activities</span><span>$XXX</span></div>
+    </div>
+
+    <div class="stmt-total stmt-line"><span>Net increase / (decrease) in cash & cash equivalents</span><span>$XXX</span></div>
+    <div class="stmt-line"><span>Cash & cash equivalents at beginning of year</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span>Cash & cash equivalents at end of year</span><span>$XXX</span></div>
+  </div>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Working Capital Adjustments</h4>
+    <table class="format-table">
+      <tr><th>Account</th><th>Increase</th><th>Decrease</th></tr>
+      <tr><td>Inventories</td><td>Subtract (cash used)</td><td>Add (cash released)</td></tr>
+      <tr><td>Trade Receivables</td><td>Subtract (cash tied up)</td><td>Add (cash collected)</td></tr>
+      <tr><td>Trade Payables</td><td>Add (cash retained)</td><td>Subtract (cash paid)</td></tr>
+      <tr><td>Prepayments</td><td>Subtract</td><td>Add</td></tr>
+      <tr><td>Accruals</td><td>Add</td><td>Subtract</td></tr>
+    </table>
+    <p><strong>Memory trick:</strong> CA assets = opposite. Increase in asset = subtract. Increase in liability = add.</p>
+  </div>
+
+  <div class="tip">
+    <strong>Reconciliation of Operating Profit to Net Cash:</strong><br>
+    Start with Operating Profit → Add back non-cash items (depreciation) → Adjust for working capital changes → Deduct interest & tax paid
+  </div>
+</div>
+
+<!-- IAS 16 -->
+<h2 id="ias16">IAS 16 — Property, Plant & Equipment</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 16</span>
+    <span class="ias-title">Property, Plant & Equipment</span>
+  </div>
+
+  <h4>Initial Measurement:</h4>
+  <div class="formula">
+    Cost = Purchase price + Directly attributable costs − Trade discounts − Settlement discounts
+  </div>
+  <p><strong>Directly attributable costs:</strong> Site preparation, delivery, installation, professional fees, dismantling cost (present value)</p>
+
+  <h4>Subsequent Measurement (Choose ONE policy):</h4>
+  <table class="format-table">
+    <tr><th>Cost Model</th><th>Revaluation Model</th></tr>
+    <tr><td>Carry at cost − Accumulated depreciation − Impairment losses</td><td>Carry at fair value at revaluation date − Subsequent depreciation − Impairment losses</td></tr>
+    <tr><td>Simple, no revaluation needed</td><td>Assets revalued regularly to fair value</td></tr>
+  </table>
+
+  <h4>Depreciation Methods (MUST KNOW):</h4>
+  <table class="format-table">
+    <tr><th>Method</th><th>Formula</th><th>When Used</th></tr>
+    <tr><td>Straight Line</td><td>(Cost − Residual Value) / Useful Life</td><td>Consistent benefit each period</td></tr>
+    <tr><td>Reducing Balance</td><td>Carrying Amount × Rate%</td><td>More benefit in early years (tech assets)</td></tr>
+    <tr><td>Units of Production</td><td>(Cost − RV) × (Actual Output / Total Expected Output)</td><td>Usage varies significantly</td></tr>
+  </table>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Depreciation Rules</h4>
+    <ul>
+      <li>Depreciation starts when asset is <strong>available for use</strong></li>
+      <li>Depreciation stops when asset is <strong>derecognised</strong> or <strong>classified as held for sale</strong></li>
+      <li>Residual value and useful life reviewed <strong>annually</strong></li>
+      <li>Change in estimate = <strong>prospective adjustment</strong> (not retrospective)</li>
+      <li>Land is <strong>not depreciated</strong> (unlimited life)</li>
+      <li>Buildings ARE depreciated</li>
+    </ul>
+  </div>
+
+  <h4>Revaluation Accounting (CRITICAL):</h4>
+  <div class="calculation">
+    <strong>Upward revaluation:</strong><br>
+    Dr PPE (Statement of Financial Position)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Cr Revaluation surplus (Other Comprehensive Income → Equity)<br><br>
+    <strong>Downward revaluation (first time):</strong><br>
+    Dr Revaluation surplus (to extent of previous gains)<br>
+    Dr Statement of Profit or Loss (remaining loss)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Cr PPE<br><br>
+    <strong>Depreciation after revaluation:</strong><br>
+    New depreciation = Revalued amount / Remaining useful life
+  </div>
+
+  <h4>Disposal of PPE:</h4>
+  <div class="calculation">
+    <strong>Step 1:</strong> Update depreciation to date of disposal<br>
+    <strong>Step 2:</strong> Remove cost and accumulated depreciation<br>
+    <strong>Step 3:</strong> Record proceeds<br>
+    <strong>Step 4:</strong> Calculate profit/loss on disposal<br><br>
+    Profit/Loss = Sale proceeds − Carrying amount at disposal date<br><br>
+    <strong>Journal:</strong><br>
+    Dr Bank (proceeds)<br>
+    Dr Accumulated depreciation (clear)<br>
+    Dr Loss on disposal (if CA > proceeds)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Cr PPE at cost (clear)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Cr Profit on disposal (if proceeds > CA)
+  </div>
+</div>
+
+<!-- IAS 37 -->
+<h2 id="ias37">IAS 37 — Provisions, Contingent Liabilities & Contingent Assets</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 37</span>
+    <span class="ias-title">Provisions, Contingent Liabilities and Contingent Assets</span>
+  </div>
+
+  <h4>Definition of Provision:</h4>
+  <p>A <strong>provision</strong> is a liability of uncertain timing or amount.</p>
+
+  <h4>Recognition Criteria (ALL must be met):</h4>
+  <ol>
+    <li><strong>Present obligation</strong> from past event</li>
+    <li><strong>Probable</strong> outflow of economic benefits (>50% likely)</li>
+    <li>Amount can be <strong>reliably estimated</strong></li>
+  </ol>
+
+  <h4>Measurement:</h4>
+  <div class="formula">
+    Best estimate of expenditure required to settle obligation<br>
+    If time value is material: Discount to present value using pre-tax discount rate
+  </div>
+
+  <table class="format-table">
+    <tr><th>Item</th><th>Definition</th><th>Accounting Treatment</th></tr>
+    <tr><td><strong>Provision</strong></td><td>Probable outflow, reliable estimate</td><td>Recognise as liability in SOFP, expense in SOPL</td></tr>
+    <tr><td><strong>Contingent Liability</strong></td><td>Possible obligation OR probable but cannot estimate reliably</td><td>DO NOT recognise. Disclose in notes only</td></tr>
+    <tr><td><strong>Contingent Asset</strong></td><td>Possible inflow from past event</td><td>DO NOT recognise. Disclose if probable</td></tr>
+  </table>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Probability Thresholds</h4>
+    <ul>
+      <li><strong>Remote:</strong> No disclosure needed</li>
+      <li><strong>Possible (not probable):</strong> Contingent liability — disclose</li>
+      <li><strong>Probable (>50%):</strong> Recognise provision</li>
+      <li><strong>Virtually certain:</strong> Recognise asset (no longer contingent)</li>
+    </ul>
+  </div>
+
+  <h4>Common Examples:</h4>
+  <table class="format-table">
+    <tr><th>Situation</th><th>Treatment</th></tr>
+    <tr><td>Warranty/guarantee</td><td>Recognise provision at point of sale</td></tr>
+    <tr><td>Legal claim against company (probable loss)</td><td>Recognise provision</td></tr>
+    <tr><td>Environmental cleanup (legal/constructive obligation)</td><td>Recognise provision</td></tr>
+    <tr><td>Restructuring (detailed formal plan announced)</td><td>Recognise provision</td></tr>
+    <tr><td>Future operating losses</td><td>NO provision (future, not present obligation)</td></tr>
+  </table>
+</div>
+
+<!-- IFRS 15 -->
+<h2 id="ifrs15">IFRS 15 — Revenue from Contracts with Customers</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IFRS 15</span>
+    <span class="ias-title">Revenue from Contracts with Customers</span>
+  </div>
+
+  <h4>5-Step Model (MUST MEMORIZE):</h4>
+  <ol>
+    <li><strong>Identify the contract</strong> with a customer</li>
+    <li><strong>Identify the performance obligations</strong> in the contract</li>
+    <li><strong>Determine the transaction price</strong></li>
+    <li><strong>Allocate the transaction price</strong> to the performance obligations</li>
+    <li><strong>Recognise revenue</strong> when (or as) the entity satisfies a performance obligation</li>
+  </ol>
+
+  <h4>When to Recognise:</h4>
+  <table class="format-table">
+    <tr><th>Type</th><th>When to Recognise</th><th>Example</th></tr>
+    <tr><td>Sale of goods</td><td>Control transferred to customer (usually at delivery)</td><td>Retail sale</td></tr>
+    <tr><td>Services over time</td><td>As service performed (percentage completion)</td><td>Construction, consultancy</td></tr>
+    <tr><td>Services at point in time</td><td>When service complete</td><td>Haircut, repair</td></tr>
+    <tr><td>Subscriptions</td><td>Over subscription period</td><td>Software licence</td></tr>
+  </table>
+
+  <h4>Transaction Price Adjustments:</h4>
+  <ul>
+    <li><strong>Variable consideration:</strong> Estimate and constrain (don't overstate)</li>
+    <li><strong>Significant financing component:</strong> Adjust for time value of money</li>
+    <li><strong>Non-cash consideration:</strong> Measure at fair value</li>
+    <li><strong>Consideration payable to customer:</strong> Deduct from transaction price</li>
+  </ul>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Trade vs Settlement Discounts</h4>
+    <table class="format-table">
+      <tr><th>Type</th><th>When Given</th><th>Accounting Treatment</th></tr>
+      <tr><td>Trade Discount</td><td>At point of sale (bulk, regular customer)</td><td>Deduct from revenue at start</td></tr>
+      <tr><td>Settlement (Cash) Discount</td><td>For early payment</td><td>Deduct only if payment made within discount period</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- IAS 8 -->
+<h2>IAS 8 — Accounting Policies, Changes in Estimates & Errors</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 8</span>
+    <span class="ias-title">Accounting Policies, Changes in Estimates and Errors</span>
+  </div>
+
+  <table class="format-table">
+    <tr><th>Change Type</th><th>Treatment</th><th>Example</th></tr>
+    <tr><td><strong>Accounting Policy</strong> (voluntary or new standard)</td><td><strong>Retrospective</strong> — restate comparatives, adjust opening equity</td><td>Change inventory valuation method</td></tr>
+    <tr><td><strong>Accounting Estimate</strong></td><td><strong>Prospective</strong> — from date of change, no restatement</td><td>Change depreciation method or useful life</td></tr>
+    <tr><td><strong>Prior Period Error</strong></td><td><strong>Retrospective restatement</strong> — correct all periods</td><td>Omission of transaction, fraud</td></tr>
+  </table>
+
+  <div class="warning">
+    <strong>Key Distinction:</strong><br>
+    Policy change = HOW you account for something (retrospective)<br>
+    Estimate change = new information about existing situation (prospective)<br>
+    Error = mistake in previous periods (retrospective restatement)
+  </div>
+</div>
+
+<!-- IAS 10 -->
+<h2>IAS 10 — Events After the Reporting Period</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 10</span>
+    <span class="ias-title">Events After the Reporting Period</span>
+  </div>
+
+  <table class="format-table">
+    <tr><th>Type</th><th>Definition</th><th>Accounting Treatment</th></tr>
+    <tr><td><strong>Adjusting Events</strong></td><td>Provide evidence of conditions that existed at reporting date</td><td>Adjust financial statements</td></tr>
+    <tr><td><strong>Non-Adjusting Events</strong></td><td>Indicate conditions arising after reporting date</td><td>Do NOT adjust. Disclose if material</td></tr>
+  </table>
+
+  <h4>Examples of Adjusting Events:</h4>
+  <ul>
+    <li>Bankruptcy of customer who owed money at year end</li>
+    <li>Sale of inventory after year end at below cost (shows NRV lower than cost)</li>
+    <li>Evidence of fraud or errors discovered</li>
+    <li>Settlement of court case confirming obligation at year end</li>
+  </ul>
+
+  <h4>Examples of Non-Adjusting Events:</h4>
+  <ul>
+    <li>Natural disaster destroying assets after year end</li>
+    <li>Major purchase or disposal of subsidiary after year end</li>
+    <li>Announcement of plan to discontinue operation</li>
+    <li>Decline in market value of investments after year end</li>
+  </ul>
+</div>
+
+<!-- IAS 38 -->
+<h2>IAS 38 — Intangible Assets</h2>
+<div class="ias-box">
+  <div class="ias-header">
+    <span class="ias-number">IAS 38</span>
+    <span class="ias-title">Intangible Assets</span>
+  </div>
+
+  <h4>Recognition Criteria:</h4>
+  <ol>
+    <li>Identifiable (separable or arising from contractual rights)</li>
+    <li>Control over resource</li>
+    <li>Future economic benefits probable</li>
+    <li>Cost can be measured reliably</li>
+  </ol>
+
+  <h4>Research vs Development:</h4>
+  <table class="format-table">
+    <tr><th>Phase</th><th>Definition</th><th>Accounting</th></tr>
+    <tr><td><strong>Research</strong></td><td>Original investigation to gain new knowledge</td><td>Expense as incurred (cannot capitalise)</td></tr>
+    <tr><td><strong>Development</strong></td><td>Application of research to create new/improved products</td><td>Capitalise if ALL criteria met:</td></tr>
+  </table>
+
+  <h4>Development Capitalisation Criteria (ALL must be met):</h4>
+  <ol>
+    <li>Technical feasibility of completing asset</li>
+    <li>Intention to complete and use/sell</li>
+    <li>Ability to use/sell</li>
+    <li>How asset will generate future benefits</li>
+    <li>Adequate resources available</li>
+    <li>Expenditure can be reliably measured</li>
+  </ol>
+
+  <div class="memo-box">
+    <h4>MEMORIZE: Internally Generated Intangibles</h4>
+    <p><strong>Goodwill:</strong> Never capitalised internally. Only recognised in business combination.</p>
+    <p><strong>Brands/Mastheads:</strong> Cannot capitalise internally generated.</p>
+    <p><strong>Software:</strong> Can capitalise development costs if criteria met.</p>
+  </div>
+
+  <h4>Amortisation:</h4>
+  <ul>
+    <li>Finite life intangibles: Amortise over useful life</li>
+    <li>Infinite life intangibles: No amortisation, annual impairment test</li>
+  </ul>
+</div>
+
+<!-- FINANCIAL STATEMENT FORMATS -->
+<h2 id="formats">📊 Financial Statement Formats (MUST MEMORIZE)</h2>
+
+<h3>Statement of Profit or Loss</h3>
+<div class="financial-stmt">
+  <div class="stmt-title">STATEMENT OF PROFIT OR LOSS for the year ended [date]</div>
+  <div class="stmt-line"><span>Revenue</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Less: Cost of sales</span><span>($XXX)</span></div>
+  <div class="stmt-total stmt-line"><span>Gross profit</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Less: Expenses</span></div>
+  <div class="stmt-indent stmt-line"><span>Wages and salaries</span><span>($XXX)</span></div>
+  <div class="stmt-indent stmt-line"><span>Rent and rates</span><span>($XXX)</span></div>
+  <div class="stmt-indent stmt-line"><span>Marketing expenses</span><span>($XXX)</span></div>
+  <div class="stmt-indent stmt-line"><span>Depreciation</span><span>($XXX)</span></div>
+  <div class="stmt-indent stmt-line"><span>Irrecoverable debts</span><span>($XXX)</span></div>
+  <div class="stmt-indent stmt-line"><span>Other operating expenses</span><span>($XXX)</span></div>
+  <div class="stmt-total stmt-line"><span>Profit from operations (PBIT)</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Finance costs (interest payable)</span><span>($XXX)</span></div>
+  <div class="stmt-total stmt-line"><span>Profit before tax</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Income tax expense</span><span>($XXX)</span></div>
+  <div class="stmt-total stmt-line"><span>Profit for the year</span><span>$XXX</span></div>
+</div>
+
+<h3>Statement of Financial Position</h3>
+<div class="financial-stmt">
+  <div class="stmt-title">STATEMENT OF FINANCIAL POSITION at [date]</div>
+  
+  <div style="margin-bottom: 15px;">
+    <strong>ASSETS</strong><br>
+    <strong>Non-current assets</strong><br>
+    <div class="stmt-indent stmt-line"><span>Property, plant and equipment</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Intangible assets</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Investments</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span>Total non-current assets</span><span>$XXX</span></div>
+    
+    <strong>Current assets</strong><br>
+    <div class="stmt-indent stmt-line"><span>Inventories</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Trade receivables</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Less: Allowance for irrecoverable debts</span><span>($XXX)</span></div>
+    <div class="stmt-indent stmt-line"><span>Prepayments</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Cash and cash equivalents</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span>Total current assets</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span><strong>TOTAL ASSETS</strong></span><span><strong>$XXX</strong></span></div>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <strong>EQUITY AND LIABILITIES</strong><br>
+    <strong>Equity</strong><br>
+    <div class="stmt-indent stmt-line"><span>Ordinary share capital</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Share premium</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Revaluation surplus</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Retained earnings</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span>Total equity</span><span>$XXX</span></div>
+    
+    <strong>Non-current liabilities</strong><br>
+    <div class="stmt-indent stmt-line"><span>Long-term borrowings (bank loan >1yr)</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Deferred tax</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span>Total non-current liabilities</span><span>$XXX</span></div>
+    
+    <strong>Current liabilities</strong><br>
+    <div class="stmt-indent stmt-line"><span>Trade payables</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Short-term borrowings (bank loan <1yr)</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Accruals</span><span>$XXX</span></div>
+    <div class="stmt-indent stmt-line"><span>Current tax payable</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span>Total current liabilities</span><span>$XXX</span></div>
+    <div class="stmt-total stmt-line"><span><strong>TOTAL EQUITY AND LIABILITIES</strong></span><span><strong>$XXX</strong></span></div>
+  </div>
+</div>
+
+<h3>Statement of Changes in Equity (SOCIE)</h3>
+<div class="financial-stmt">
+  <div class="stmt-title">STATEMENT OF CHANGES IN EQUITY for the year ended [date]</div>
+  <div class="stmt-line"><span></span><span>Share Capital</span><span>Share Premium</span><span>Revaluation Surplus</span><span>Retained Earnings</span><span>Total</span></div>
+  <div class="stmt-line"><span>Balance at start</span><span>$XXX</span><span>$XXX</span><span>$XXX</span><span>$XXX</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Profit for year</span><span>-</span><span>-</span><span>-</span><span>$XXX</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Other comprehensive income</span><span>-</span><span>-</span><span>$XXX</span><span>-</span><span>$XXX</span></div>
+  <div class="stmt-line"><span>Dividends paid</span><span>-</span><span>-</span><span>-</span><span>($XXX)</span><span>($XXX)</span></div>
+  <div class="stmt-line"><span>Issue of shares</span><span>$XXX</span><span>$XXX</span><span>-</span><span>-</span><span>$XXX</span></div>
+  <div class="stmt-total stmt-line"><span>Balance at end</span><span>$XXX</span><span>$XXX</span><span>$XXX</span><span>$XXX</span><span>$XXX</span></div>
+</div>
+
+<!-- KEY RATIOS -->
+<h2>📈 Key Accounting Ratios</h2>
+<div class="ias-box">
+  <h4>Profitability Ratios:</h4>
+  <table class="format-table">
+    <tr><th>Ratio</th><th>Formula</th><th>Meaning</th></tr>
+    <tr><td>Gross Profit Margin</td><td>Gross Profit / Revenue × 100</td><td>% of revenue kept after COGS</td></tr>
+    <tr><td>Operating Profit Margin</td><td>Operating Profit / Revenue × 100</td><td>% of revenue kept after all operating expenses</td></tr>
+    <tr><td>Net Profit Margin</td><td>Profit for year / Revenue × 100</td><td>Final % of revenue as profit</td></tr>
+    <tr><td>Return on Capital Employed (ROCE)</td><td>Operating Profit / Capital Employed × 100</td><td>Efficiency of using long-term funds</td></tr>
+  </table>
+  <p><em>Capital Employed = Equity + Non-current liabilities (or Total Assets − Current Liabilities)</em></p>
+
+  <h4>Liquidity Ratios:</h4>
+  <table class="format-table">
+    <tr><th>Ratio</th><th>Formula</th><th>Ideal</th></tr>
+    <tr><td>Current Ratio</td><td>Current Assets / Current Liabilities</td><td>1.5 – 2.0</td></tr>
+    <tr><td>Quick (Acid Test) Ratio</td><td>(Current Assets − Inventory) / Current Liabilities</td><td>1.0</td></tr>
+  </table>
+
+  <h4>Gearing Ratios:</h4>
+  <table class="format-table">
+    <tr><th>Ratio</th><th>Formula</th><th>Interpretation</th></tr>
+    <tr><td>Gearing Ratio</td><td>Non-current Liabilities / Capital Employed × 100</td><td>% funded by debt vs equity</td></tr>
+    <tr><td>Interest Cover</td><td>Operating Profit / Finance Costs</td><td>Ability to pay interest</td></tr>
+  </table>
+
+  <h4>Efficiency Ratios:</h4>
+  <table class="format-table">
+    <tr><th>Ratio</th><th>Formula</th><th>Meaning</th></tr>
+    <tr><td>Inventory Turnover</td><td>Cost of Sales / Average Inventory</td><td>How many times inventory sold per year</td></tr>
+    <tr><td>Inventory Days</td><td>Average Inventory / Cost of Sales × 365</td><td>Average days inventory held</td></tr>
+    <tr><td>Receivables Days</td><td>Average Receivables / Revenue × 365</td><td>Average days to collect payment</td></tr>
+    <tr><td>Payables Days</td><td>Average Payables / Cost of Sales × 365</td><td>Average days to pay suppliers</td></tr>
+  </table>
+</div>
+
+<!-- ADJUSTMENTS -->
+<h2>📝 Common Year-End Adjustments</h2>
+<div class="ias-box">
+  <table class="format-table">
+    <tr><th>Adjustment</th><th>Journal Entry</th></tr>
+    <tr>
+      <td><strong>Accruals</strong> (expense incurred but not paid)</td>
+      <td>
+        Dr Expense (SOPL)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Accruals (SOFP under current liabilities)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Prepayments</strong> (paid in advance)</td>
+      <td>
+        Dr Prepayments (SOFP under current assets)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Expense (SOPL)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Depreciation</strong></td>
+      <td>
+        Dr Depreciation expense (SOPL)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Accumulated depreciation (SOFP, deducted from NCA)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Irrecoverable debts</strong></td>
+      <td>
+        Dr Irrecoverable debts expense (SOPL)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Trade receivables (SOFP)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Allowance for receivables</strong> (new/change)</td>
+      <td>
+        Dr Irrecoverable debts expense (increase) / Cr Expense (decrease)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr / Dr Allowance for receivables (SOFP)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Closing inventory</strong></td>
+      <td>
+        Dr Inventory (SOFP)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Cost of sales (SOPL)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Income tax</strong></td>
+      <td>
+        Dr Income tax expense (SOPL)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Income tax payable (SOFP current liabilities)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Provision for doubtful debts</strong></td>
+      <td>
+        Dr Irrecoverable debts (SOPL)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cr Allowance for doubtful debts (SOFP deducted from receivables)
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="warning" style="margin-top: 40px;">
+  <strong>Study Tips for Memorization:</strong>
+  <ul>
+    <li>Write out the financial statement formats repeatedly until you can do it from memory</li>
+    <li>Create flashcards for each IAS standard — standard number on front, key rules on back</li>
+    <li>Practice past paper questions under timed conditions</li>
+    <li>Focus on the SOCF — it's the format students struggle with most</li>
+    <li>Learn the difference between capital and revenue expenditure</li>
+  </ul>
+</div>
+
+<p style="text-align: center; color: #64748b; margin-top: 40px; padding-bottom: 40px;">
+  Cambridge International A-Level Accounting (9706) · Complete IAS Memorization Guide
+</p>
+
+</div>
+</body>
+</html>
