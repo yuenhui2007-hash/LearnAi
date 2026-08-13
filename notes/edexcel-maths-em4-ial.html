@@ -37,10 +37,6 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-.coming-soon { text-align: center; padding: 80px 24px; }
-.coming-soon-icon { font-size: 4rem; margin-bottom: 24px; }
-.coming-soon h2 { font-size: 1.5rem; margin-bottom: 12px; color: var(--dark); }
-.coming-soon p { color: var(--gray); max-width: 500px; margin: 0 auto 24px; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -71,11 +67,68 @@
 <p style="color:var(--gray)">WMA13/14 (IAL)</p>
 </div>
 
-<div class="coming-soon">
-<div class="coming-soon-icon">📝</div>
-<h2>Notes Coming Soon</h2>
-<p>We're building comprehensive Calculus notes for Edexcel IAL (WMA13/14 (IAL)). Check back soon for detailed explanations, formulas, and exam tips.</p>
-<p style="margin-top:16px;font-size:0.85rem;color:#94a3b8;">In the meantime, try our <a href="../tutor.html" style="color:#6366f1;font-weight:600;">AI Tutor</a> for instant help with this topic.</p>
+<div class="notes-section">
+<h2>Detailed Notes</h2>
+<h3>1. Differentiation from First Principles</h3>
+<ul>
+<li>f'(x) = limₕ→₀ [f(x+h) − f(x)] / h.</li>
+<li>Power rule: d/dx(xⁿ) = nxⁿ⁻¹.</li>
+</ul>
+<div class="formula-box">
+d/dx(xⁿ) = nxⁿ⁻¹ &nbsp;&nbsp; d/dx(eˣ) = eˣ &nbsp;&nbsp; d/dx(ln x) = 1/x
+</div>
+<h3>2. Chain, Product & Quotient Rules</h3>
+<ul>
+<li>Chain: dy/dx = dy/du × du/dx.</li>
+<li>Product: d/dx(uv) = u dv/dx + v du/dx.</li>
+<li>Quotient: d/dx(u/v) = (v du/dx − u dv/dx) / v².</li>
+</ul>
+<div class="formula-box">
+Chain: dy/dx = dy/du · du/dx<br>
+Product: (uv)' = u'v + uv'<br>
+Quotient: (u/v)' = (u'v − uv')/v²
+</div>
+<h3>3. Stationary Points & Curve Sketching</h3>
+<ul>
+<li>Stationary points: dy/dx = 0.</li>
+<li>Second derivative test: d²y/dx² > 0 → minimum; < 0 → maximum; = 0 → point of inflection (check).</li>
+</ul>
+<h3>4. Integration Techniques</h3>
+<ul>
+<li>Reverse of differentiation: ∫ xⁿ dx = xⁿ⁺¹/(n+1) + c (n ≠ −1).</li>
+<li>Definite integrals: evaluate at limits and subtract.</li>
+<li>Integration by substitution and by parts (A2/IAL).</li>
+</ul>
+<div class="formula-box">
+∫ xⁿ dx = xⁿ⁺¹/(n+1) + c &nbsp;&nbsp; ∫ eˣ dx = eˣ + c &nbsp;&nbsp; ∫ 1/x dx = ln|x| + c
+</div>
+<h3>5. Applications</h3>
+<ul>
+<li>Area under curve = ∫ y dx.</li>
+<li>Volume of revolution = π ∫ y² dx.</li>
+<li>Connected rates of change: relate derivatives using the chain rule.</li>
+</ul>
+</div>
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>Power rule for differentiation and integration.</li>
+<li>Chain, product, quotient rules for complex functions.</li>
+<li>Stationary points: dy/dx = 0; classify with d²y/dx².</li>
+<li>Definite integral = area under curve (take modulus if below axis for total area).</li>
+<li>Volume of revolution: π∫y² dx.</li>
+<li>Connected rates: chain rule links variables.</li>
+</ul>
+</div>
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Never forget +c for indefinite integrals.</li>
+<li>When finding area below the x-axis, the definite integral gives a negative value — take the modulus for total area.</li>
+<li>For volume of revolution, ensure you square the entire y function before integrating.</li>
+<li>Show substitution clearly in definite integrals — limits can stay in terms of the original variable if you convert them.</li>
+</ul>
+</div>
 </div>
 
 </div>

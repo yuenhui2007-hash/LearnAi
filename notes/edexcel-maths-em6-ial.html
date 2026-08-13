@@ -37,10 +37,6 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-.coming-soon { text-align: center; padding: 80px 24px; }
-.coming-soon-icon { font-size: 4rem; margin-bottom: 24px; }
-.coming-soon h2 { font-size: 1.5rem; margin-bottom: 12px; color: var(--dark); }
-.coming-soon p { color: var(--gray); max-width: 500px; margin: 0 auto 24px; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -71,11 +67,71 @@
 <p style="color:var(--gray)">WMA13/14 (IAL)</p>
 </div>
 
-<div class="coming-soon">
-<div class="coming-soon-icon">📝</div>
-<h2>Notes Coming Soon</h2>
-<p>We're building comprehensive Statistics & Probability notes for Edexcel IAL (WMA13/14 (IAL)). Check back soon for detailed explanations, formulas, and exam tips.</p>
-<p style="margin-top:16px;font-size:0.85rem;color:#94a3b8;">In the meantime, try our <a href="../tutor.html" style="color:#6366f1;font-weight:600;">AI Tutor</a> for instant help with this topic.</p>
+<div class="notes-section">
+<h2>Detailed Notes</h2>
+<h3>1. Representing Data</h3>
+<ul>
+<li>Stem-and-leaf, box plots, histograms, cumulative frequency.</li>
+<li>Outliers: values beyond Q1 − 1.5×IQR or Q3 + 1.5×IQR.</li>
+</ul>
+<h3>2. Probability Distributions</h3>
+<ul>
+<li>Discrete random variable X with probability function P(X = x).</li>
+<li>Expectation E(X) = Σ x P(X = x). Variance Var(X) = E(X²) − [E(X)]².</li>
+</ul>
+<div class="formula-box">
+E(X) = Σ x P(X = x) &nbsp;&nbsp; Var(X) = E(X²) − [E(X)]²
+</div>
+<h3>3. Binomial Distribution</h3>
+<ul>
+<li>X ~ B(n, p): n independent trials, success probability p.</li>
+<li>P(X = r) = ⁿCᵣ pʳ (1−p)ⁿ⁻ʳ.</li>
+<li>E(X) = np, Var(X) = np(1−p).</li>
+</ul>
+<div class="formula-box">
+P(X = r) = C(n,r) pʳ (1−p)ⁿ⁻ʳ &nbsp;&nbsp; E(X) = np &nbsp;&nbsp; Var(X) = np(1−p)
+</div>
+<h3>4. Normal Distribution</h3>
+<ul>
+<li>X ~ N(μ, σ²): symmetric bell curve.</li>
+<li>Standardise: Z = (X − μ)/σ.</li>
+<li>Use standard normal tables or calculator to find probabilities.</li>
+</ul>
+<div class="formula-box">
+Z = (X − μ) / σ
+</div>
+<h3>5. Hypothesis Testing</h3>
+<ul>
+<li>Null hypothesis H₀, alternative H₁.</li>
+<li>Test statistic, critical value or p-value approach.</li>
+<li>Compare p-value to significance level α, or test statistic to critical region.</li>
+</ul>
+<h3>6. Correlation & Regression</h3>
+<ul>
+<li>Pearson’s r measures linear correlation (−1 ≤ r ≤ 1).</li>
+<li>Regression line y = a + bx; least squares method.</li>
+<li>Interpolation is reliable; extrapolation is not.</li>
+</ul>
+</div>
+<div class="summary-box">
+<h2>Last-Minute Summary</h2>
+<ul>
+<li>E(X) = ΣxP(x); Var(X) = E(X²) − μ².</li>
+<li>Binomial: n trials, p success, P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ.</li>
+<li>Normal: standardise with Z = (X−μ)/σ.</li>
+<li>Hypothesis testing: state H₀/H₁, calculate test stat, compare, conclude in context.</li>
+<li>Regression: y on x for prediction of y from x.</li>
+</ul>
+</div>
+<div class="exam-tips">
+<h2>Exam Tips</h2>
+<ul>
+<li>Always define your random variable clearly (e.g. “Let X be the number of …”).</li>
+<li>For normal distribution, draw a sketch and shade the region you need.</li>
+<li>In hypothesis tests, write the conclusion in context — do not just say “reject H₀”.</li>
+<li>Check whether the question asks for the regression line of y on x or x on y.</li>
+</ul>
+</div>
 </div>
 
 </div>
