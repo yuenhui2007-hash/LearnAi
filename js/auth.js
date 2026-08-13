@@ -10,6 +10,12 @@ function getAuthHeaders() {
   return token ? { 'Authorization': 'Bearer ' + token } : {};
 }
 
+function handleAuthResponse(data) {
+  if (data.token) localStorage.setItem('auth_token', data.token);
+  if (data.user) localStorage.setItem('learnai_auth', JSON.stringify(data.user));
+  return data;
+}
+
 window.Auth = {
   register: async function(email, password, name) {
     try {
@@ -21,8 +27,7 @@ window.Auth = {
       });
       const data = await res.json();
       if (!res.ok) return { success: false, error: data.error || 'Registration failed' };
-      if (data.token) localStorage.setItem('auth_token', data.token);
-      if (data.user) localStorage.setItem('learnai_auth', JSON.stringify(data.user));
+      handleAuthResponse(data);
       return { success: true, user: data.user };
     } catch (err) {
       return { success: false, error: 'Network error. Please try again.' };
@@ -39,12 +44,35 @@ window.Auth = {
       });
       const data = await res.json();
       if (!res.ok) return { success: false, error: data.error || 'Invalid email or password.' };
-      if (data.token) localStorage.setItem('auth_token', data.token);
-      if (data.user) localStorage.setItem('learnai_auth', JSON.stringify(data.user));
+      handleAuthResponse(data);
       return { success: true, user: data.user };
     } catch (err) {
       return { success: false, error: 'Network error. Please try again.' };
     }
+  },
+
+  // Google OAuth — receives JWT credential from Google Identity Services
+  loginWithGoogle: async function(credential) {
+    try {
+      const res = await fetch(API_BASE + '/oauth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ credential })
+      });
+      const data = await res.json();
+      if (!res.ok) return { success: false, error: data.error || 'Google sign-in failed.' };
+      handleAuthResponse(data);
+      return { success: true, user: data.user };
+    } catch (err) {
+      return { success: false, error: 'Network error. Please try again.' };
+    }
+  },
+
+  // Apple OAuth — redirects to Apple
+  loginWithApple: function() {
+    const redirect = new URLSearchParams(window.location.search).get('redirect') || 'dashboard.html';
+    window.location.href = API_BASE + '/oauth/apple?redirect=' + encodeURIComponent(redirect);
   },
 
   logout: async function() {

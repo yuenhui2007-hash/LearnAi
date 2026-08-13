@@ -34,24 +34,54 @@
 .social-login { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
 .btn-social { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 10px; font-weight: 600; border: 1px solid #475569; background: #334155; color: #fff; cursor: pointer; }
 .btn-social:hover { background: #475569; }
+.btn-apple { background: #fff; color: #1e293b; border-color: #fff; }
+.btn-apple:hover { background: #f1f5f9; }
 .divider { display: flex; align-items: center; gap: 16px; margin: 20px 0; color: #64748b; font-size: .85rem; }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #475569; }
 .demo-note { text-align: center; font-size: .75rem; color: #64748b; margin-bottom: 16px; }
+.google-btn-wrap { display: flex; justify-content: center; margin-bottom: 10px; }
 </style>
 </head>
 <body>
 <nav class="navbar" id="navbar"></nav>
 <script src="js/nav.js?v=5"></script>
+
+<!-- Google Identity Services -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <section class="auth-section">
 <div class="container auth-container">
 <div class="auth-card">
 <h1>Welcome Back</h1>
 <p class="auth-subtitle">Sign in to save your progress</p>
 <div class="demo-note">🔒 Secured server-side authentication.</div>
-<div class="social-login">
-<button type="button" class="btn btn-social" id="googleSignIn">🔴 Continue with Google</button>
-<button type="button" class="btn btn-social" id="appleSignIn">⚫ Continue with Apple</button>
+
+<!-- Google Sign In With Google button -->
+<div class="google-btn-wrap">
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+       data-context="signin"
+       data-ux_mode="popup"
+       data-callback="handleGoogleCredentialResponse"
+       data-auto_prompt="false">
+  </div>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-shape="rectangular"
+       data-theme="outline"
+       data-text="continue_with"
+       data-size="large"
+       data-logo_alignment="left"
+       data-width="320">
+  </div>
 </div>
+
+<!-- Apple Sign In -->
+<button type="button" class="btn btn-social btn-apple" id="appleSignIn" onclick="Auth.loginWithApple()">
+  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.3 1.2c.7-.9 1.2-2.1 1-3.2-1.1 0-2.3.7-3.1 1.6-.6.7-1.2 1.9-1 3.1 1.2.1 2.4-.6 3.1-1.5zM17.6 15.3c-.3 1.9-1.4 3.5-2.6 4.7-1.3 1.3-2.8 1.5-3.5 1.5-.7 0-2-.4-3.3-.4s-2.5.4-3.3.4c-1.4.1-2.8-.9-4.1-2.2C.3 17.4-.8 13.8.6 10.3c.7-1.7 2-3 3.5-3.7 1.5-.7 3.2-.7 4-.6.8 0 2.4.5 3.5.4 1-.1 2.6-.5 4.1.4.2.1.3.2.5.3-.7 2-1.8 3.3-1.8 5.2z" fill="#1e293b"/></svg>
+  Continue with Apple
+</button>
+
 <div class="divider">or</div>
 <form id="loginForm">
 <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="you@gmail.com" required></div>
@@ -67,7 +97,7 @@
 </div>
 </section>
 <script src="js/theme.js?v=4"></script>
-<script src="js/auth.js?v=5"></script>
+<script src="js/auth.js?v=6"></script>
 <script src="js/auth-guard.js?v=2"></script>
 <script>
 function showError(msg) {
@@ -76,6 +106,24 @@ function showError(msg) {
   el.textContent = msg;
   el.style.display = 'block';
 }
+
+// Google Identity Services callback
+function handleGoogleCredentialResponse(response) {
+  if (!response || !response.credential) {
+    showError('Google sign-in failed. Please try again.');
+    return;
+  }
+  Auth.loginWithGoogle(response.credential).then(function(result) {
+    if (result.success) {
+      var params = new URLSearchParams(window.location.search);
+      var redirect = params.get('redirect') || 'dashboard.html';
+      window.location.href = redirect;
+    } else {
+      showError(result.error);
+    }
+  });
+}
+
 // Display OAuth/form errors from URL
 (function(){
   var params = new URLSearchParams(window.location.search);
@@ -96,19 +144,6 @@ if (result.success) {
   window.location.href = redirect;
 }
 else { showError(result.error); }
-});
-
-document.getElementById('googleSignIn').addEventListener('click', function(e) {
-  e.preventDefault();
-  Auth.loginWithGoogle().then(function(result) {
-    if (result.success) {
-      var params = new URLSearchParams(window.location.search);
-      var redirect = params.get('redirect') || 'dashboard.html';
-      window.location.href = redirect;
-    } else {
-      showError(result.error);
-    }
-  });
 });
 </script>
 <script src="js/mascot.js?v=4"></script>
