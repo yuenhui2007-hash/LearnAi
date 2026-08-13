@@ -25,7 +25,7 @@
     <section class="subject-section">
         <div class="container">
             <div class="subject-header">
-                <a href="javascript:history.back()" class="back-btn">← Back</a>
+                <a href="subjects.html" id="backLink" class="back-btn">← All Subjects</a>
                 <h1 id="subjectTitle">Loading...</h1>
                 <p id="subjectCode"></p>
             </div>
@@ -42,6 +42,13 @@
         var subjectId = params.get('id');
         var levelFilter = params.get('level');
         var subject = typeof subjects !== 'undefined' ? subjects[subjectId] : null;
+
+        // Set back link based on level
+        var backLink = document.getElementById('backLink');
+        if (backLink && levelFilter) {
+            backLink.href = 'subjects.html?level=' + encodeURIComponent(levelFilter);
+            backLink.textContent = '← ' + levelFilter.toUpperCase() + ' Subjects';
+        }
 
         if (!subject) {
             document.getElementById('subjectTitle').textContent = 'Subject Not Found';
@@ -91,24 +98,41 @@
         var papersLevelPath = levelFilter === 'igcse' ? 'igcse' : 'a-level';
         var papersUrl = 'https://pastpaperly.com/' + papersLevelPath + '/' + slug + '-' + papersCode;
 
-        // Tab selector: Notes / Past Year Papers
+        // Tab selector: Notes / Past Year Papers / IAS Guide (Accounting A-Level only)
         var activeTab = 'notes';
+        var isAccountingAlevel = (subjectId === 'accounting') && (!levelFilter || levelFilter === 'alevel' || levelFilter === 'ial');
         var tabWrap = document.createElement('div');
         tabWrap.id = 'resourceTabs';
         tabWrap.style.cssText = 'display:flex;gap:12px;margin-bottom:28px;';
-        tabWrap.innerHTML =
-            '<button id="tabNotes" style="flex:1;padding:12px 20px;border-radius:12px;border:2px solid #6366f1;background:#6366f1;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;">📚 Notes</button>' +
+        var tabHTML = '<button id="tabNotes" style="flex:1;padding:12px 20px;border-radius:12px;border:2px solid #6366f1;background:#6366f1;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;">📚 Notes</button>' +
             '<button id="tabPapers" style="flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;">📄 Past Year Papers</button>';
+        if (isAccountingAlevel) {
+            tabHTML += '<button id="tabIAS" style="flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;">📋 IAS Guide</button>';
+        }
+        tabWrap.innerHTML = tabHTML;
         container.appendChild(tabWrap);
 
         var contentWrap = document.createElement('div');
         contentWrap.id = 'tabContent';
         container.appendChild(contentWrap);
 
+        function setTabStyle(activeId) {
+            var tabs = ['tabNotes', 'tabPapers'];
+            if (isAccountingAlevel) tabs.push('tabIAS');
+            tabs.forEach(function(id) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                if (id === activeId) {
+                    el.style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #6366f1;background:#6366f1;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+                } else {
+                    el.style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+                }
+            });
+        }
+
         function renderNotes() {
             activeTab = 'notes';
-            document.getElementById('tabNotes').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #6366f1;background:#6366f1;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
-            document.getElementById('tabPapers').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+            setTabStyle('tabNotes');
             contentWrap.innerHTML = '';
 
             // Comprehensive notes banner
@@ -247,8 +271,7 @@
 
         function renderPapers() {
             activeTab = 'papers';
-            document.getElementById('tabNotes').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #e0e7ff;background:#fff;color:#6366f1;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
-            document.getElementById('tabPapers').style.cssText = 'flex:1;padding:12px 20px;border-radius:12px;border:2px solid #f59e0b;background:#f59e0b;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;';
+            setTabStyle('tabPapers');
             contentWrap.innerHTML = '';
 
             var section = document.createElement('div');
@@ -264,6 +287,46 @@
 
         document.getElementById('tabNotes').onclick = renderNotes;
         document.getElementById('tabPapers').onclick = renderPapers;
+        if (isAccountingAlevel && document.getElementById('tabIAS')) {
+            document.getElementById('tabIAS').onclick = renderIASGuide;
+        }
+
+        function renderIASGuide() {
+            activeTab = 'ias';
+            setTabStyle('tabIAS');
+            contentWrap.innerHTML = '';
+            var guideSection = document.createElement('div');
+            guideSection.style.cssText = 'background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-radius:16px;padding:32px;color:#e2e8f0;';
+            guideSection.innerHTML =
+                '<div style="text-align:center;margin-bottom:24px;">' +
+                '<div style="font-size:3rem;margin-bottom:12px;">📊</div>' +
+                '<h2 style="color:#60a5fa;margin-bottom:8px;">A-Level Accounting Complete Guide</h2>' +
+                '<p style="color:#94a3b8;">Cambridge 9706 · All IAS Standards & Memorization Formats</p>' +
+                '</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px;">' +
+                '<div style="background:#1e293b;padding:16px;border-radius:12px;border:1px solid #334155;">' +
+                '<h4 style="color:#34d399;margin-bottom:8px;">📋 Exam Structure</h4>' +
+                '<p style="font-size:0.9rem;color:#cbd5e1;">Paper 1 (MCQ), Paper 2 (Structured), Paper 3 (A2 Extended)</p>' +
+                '</div>' +
+                '<div style="background:#1e293b;padding:16px;border-radius:12px;border:1px solid #334155;">' +
+                '<h4 style="color:#fbbf24;margin-bottom:8px;">📐 IAS Formats</h4>' +
+                '<p style="font-size:0.9rem;color:#cbd5e1;">IAS 1, 2, 7, 8, 10, 16, 37, 38 · IFRS 15</p>' +
+                '</div>' +
+                '<div style="background:#1e293b;padding:16px;border-radius:12px;border:1px solid #334155;">' +
+                '<h4 style="color:#a78bfa;margin-bottom:8px;">📊 Financial Statements</h4>' +
+                '<p style="font-size:0.9rem;color:#cbd5e1;">SOPL, SOFP, SOCIE, SOCF formats</p>' +
+                '</div>' +
+                '<div style="background:#1e293b;padding:16px;border-radius:12px;border:1px solid #334155;">' +
+                '<h4 style="color:#f472b6;margin-bottom:8px;">📈 Key Ratios</h4>' +
+                '<p style="font-size:0.9rem;color:#cbd5e1;">Profitability, Liquidity, Gearing, Efficiency</p>' +
+                '</div>' +
+                '</div>' +
+                '<div style="text-align:center;">' +
+                '<a href="notes/accounting-a-level-guide.html" style="display:inline-block;padding:14px 32px;border-radius:12px;background:#3b82f6;color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none;transition:all 0.2s;">Open Full IAS Guide →</a>' +
+                '<p style="color:#64748b;margin-top:12px;font-size:0.85rem;">Includes all formats, journals, and exam tips for memorization</p>' +
+                '</div>';
+            contentWrap.appendChild(guideSection);
+        }
 
         renderNotes();
     })();
