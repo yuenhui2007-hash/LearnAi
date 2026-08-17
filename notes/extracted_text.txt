@@ -1,0 +1,1934 @@
+Version 1Teacher Guidance for 9706 Accountion International Accounting StandardsCambridge International AS & A LevelAccounting 9706For examination from 20    ng       23             
+ 
+In order to help us develop the highest quality resources, we are undertaking a continuous programme 
+of review; not only to measure the success of our resources but also to highlight areas for 
+improvement and to identify new development needs. 
+ 
+We invite you to complete our survey by visiting the website below. Your comments on the quality and 
+relevance of our resources are very important to us. 
+ 
+www.surveymonkey.co.uk/r/GL6ZNJB
+ 
+ 
+Would you like to become a Cambridge International consultant and help us develop 
+supportmaterials?  
+ 
+Please follow the link below to register your interest. 
+ 
+www.cambridgeinternational.org/cambridgefor/teachers/teacherconsultants/-
+ 
+Copyright \251 UCLES 2020Cambridge Assessment International Education is part of the Cambridge Assessment Group. Cambridge Assessment is the brand name of the University of Cambridge Local Examinations Syndicate \(UCLES\, which itself is a department of the University of Cambridge.UCLES retains the copyright on all its publications. Registered Centres are permitted to copy material from this booklet for their own internal use. However, we cannot give permission to Centres to photocopy any material that is acknowledged to a third party, even for internal use within a Centre.                    
+  
+Contents 
+IntroductionIAS 1: Presentation of financial statementsIAS 2: InventoriesIAS 7: Statement of cash flowsIAS 8: Accounting policies, changes in accounting estimates and errorsIAS 10: Events after the reporting periodIAS 16: Property, plant and equipmentIAS 36: Impairment of assetsIAS 37: Provisions, contingent liabilities and contingent assetsIAS 38: Intangible assetsAppendix 1: Statement of changes in equityAppendix 2: Financial statements for other forms of business \(AS Level\Appendix 3: Financial statements for other forms of business \(A Level\Appendix 4: Resources for photocopying  ............................................................................................................................... 4  .............................................................................. 6  ................................................................................................................... 12  .............................................................................................. 16  .............................. 19  ............................................................................... 21  .................................................................................. 23  ................................................................................................. 28  ............................................. 31  ........................................................................................................ 33  .......................................................................... 36  ............................. 37  ............................... 42  ............................................................................... 45   
+International AccountingStandards   4 
+Introduction 
+Thisdocument is designed to help teachersin their delivery of InternationalAccountingStandards \(IAS\ to learners ofCambridge International ALevel Accounting. Its aims are:givenitiveindicatlearnerswillneedtoe awinlation totheIASforfutureambridge International A Level Accountingexaminationo provilustrative exmples flearnersteachersThe guidance presented in this document is primarily aimed at teachers.Only those standards identified in the Cambridge International A LevelAccounting syllabus will be considered, as listed in the following tableInternational Accounting StandardsCandidates will be required to have a basic knowledge of the followingstandards and hw these standards relate to topics in the syllabus.     S & A   to  a defi ion of areas     bare of  re     C s  tde ilaor  and .  AS &  .    o xx
+IAS
+ 
+Topic
+ 
+IAS 1
+ 
+Presentation of financial statements
+ 
+IAS 2
+ 
+Inventories
+ 
+IAS 7
+ 
+Statement of cash flows
+ 
+IAS 8
+ 
+Accounting policies, changes in accounting estimates and errors
+ 
+IAS
+ 
+10
+ 
+Events after the reporting period
+ 
+IAS 16
+ 
+Property, plant and equipment
+ 
+IAS 36
+ 
+Impairment of assets
+ 
+IAS 37
+ 
+Provisions, contingent liabilities and contingent assets
+ 
+IAS 38
+ 
+Intangible assets
+ 
+Use of this documentThe model financial statements inthis document are given to help you and your learners apply the relevant standards, at the appropriate level, to a course of study. They are provided for illustrative and informative purposes only.Every effort has been made to make sure that the documiscomplete in terms of the relevant requirements of International Financial Reporting Standards \(IFRS\and IASHowever, asthe standards are constantly changing, you should review professional documents as they become available in order to maintain currentworking knowledge of the standards.    ent   .     
+International Accounting StandardsUsers of financial statementsFinancial statements are used by a variety of groups for a variety of reasons. The framework surrounding IAS identifies the typical user groups of accounting statements. The table below identifies the user groups \(stakeholders\ and gives likely reasons for the user groups to referto financial statement 5   s. 
+Main users
+ 
+Reasons for use
+ 
+wnersO 
+x
+ 
+to assess efficiency of the stewardship of management
+ 
+x
+ 
+to assess performance in 
+relation to payment of dividend
+ 
+Managers 
+x
+ 
+to assess efficiency of their strategies by comparing with 
+previous years or with similar businesses
+ 
+Investors
+ 
+x
+ 
+to assess past performance as a basis for future investment
+ 
+Employees 
+x
+ 
+to assess 
+performance as a basis of future wage and salary 
+negotiations 
+to assess performance as a basis for continuity of  x
+employment and job security
+ 
+Lenders 
+x
+ 
+to assess performance in relation to the security of their loan 
+to the business 
+to assess the performance in relation to payment of the  x
+interest \(finance cost\ on the loan provided
+ 
+Suppliers 
+x
+ 
+to assess performance in relation to receiving payment of 
+their liability
+ 
+Customers 
+x
+ 
+to assess performance in relation to the likelihood of 
+continuity of trading
+ 
+Government 
+x
+ 
+to assess performance in relation to compliance with 
+regulations and assessment of taxation liabilities
+ 
+Public and environmental bodies
+ 
+x
+ 
+to assess performance in relation to ethical trading
+ 
+Qualitative characteristicsAs shown above, financialstatements are prepared for a variety of reasons. The Conceptual Framework for Financial Reporting developed by the International Accounting Standards Board \(IASB\ sets out the qualitative characteristics of the financial statements that makes them useful to the users:Fundamental qualitative characteristicsRelevancethe information influences the economic decisions of users.Faithful representationthe information must be complete, neutral and free from errors.Enhancing qualitative characteristicsComparability the information enables comparisons with similar information about other entities and with similar information about the same entity over time to identify and evaluate trends.Verifiability the information is faithfully represented and can be verified, providing assurance to the user that it is both credible and reliable.Timeliness the information is provided to the users within a timescale suitable for their decisionmaking purposes.Understandability the information is readily understandable by users, which is facilitated through appropriate classification, characterisation and presentation of information.       \226    \226    \226   \226   \226 -  \226  xxxxxx
+International AccountingStandards   6 
+IAS 1: Presentation of financial statements 
+IAS 1 was comprehensively revised and reissued in September 2007 and applies to accounting periods beginning on or after 1 January 2009. The objective of the standard is to prescribe the basis for presentation of general purpose financial statements, to ensure comparability both with the entity's financial statements of previous periods and with the financial statements of other entities.revision introduced some new terminologyandchangethe titles of financial statements:'balance sheebec'statement of financial position''income statement'beca'statement of profit or loss and other comprehensive income''cash flow statement'bec'statement of cash flows'However, ntities are not required to use the new titles in their financial statementsbut all existing tandards nterpretations are being amended to reflect the new terminologyPresentation of financial statementstandard covers a number of areas, including the background to the purpose of financial statements, thecomponents of statements, and illustrations of the presentation of the tatementof profit or lossand the tatement of inancial ositionThe purpof financial stateentsFinancial statementsprovide informationabout the financial position, financial performance and cash flows of an entity that is useful to a wide range of users in making economic decisionsTo meet that objective, financial statements provide information about an entity:assetsliabilitiesequityincome and expenses,including gains and lossescontributions by and distributions to owners \(in their capacity as owners\cash flowsThe financial statements must present fairlythe financial position, financial performance and cash flows of an entity.The compoents f the inancial statementsA complete set of financial statements as set out in the tandard, comprises:a statement of financial position at the end of the perioda statement of profit or loss and other comprehensive income for the perioda statement chanes inequityfor the periodtatementflows for the period \(see IAS 7\acconting olicis ad explanatry notes \(see IAS 8comparative informationAccuntingeptsThe tandardrequires compliance with a series of accounting concepts:Going concernthe presumptionis that the entity will not cease tradiinthe foreseeablefuture. \(This is generally taken to mean within the next 12 months\Accrualbasisaccountingwiththeexceptionthestatementof cash flows, the information is prepared under the accruals concept; income and expenditure arematched to the same accounting period. The   d   t' ame    me    ame . e, sand i.   The s s  sfp. ose m  , .              . \221\222  nof s      of g    a s of cash   upeno\)  . o conc s    \226  ng   .    of  \226    of     xxxxxxxxxxxxxxxxx
+International Accounting StandardsConsistency of presentationthe presentation and classification of items in the financial statements should be retained from one period to the next unless a change is justified by a change in circumstances or the requirement of a new IFRMateriality and aggregationnformation is material if omitting, misstating or obscuring it could reasonably be expected to influence decisions the primary usersof thefinancial statements. Each material class of similar items shouldbe presented separately in the financial statements. This would apply to a grouping such as current assets.Offsettingssets and liabilities, and income and expenditure may not be offset unless required or permitted by an IFRS. For exampleit is not permitted to offset a bank overdraft with anotherbank account not in overdraft.Comparative informationthere is a requirement to show the figures from the previous periofor all the amounts shown in the financial statements. This is designed to help usemake relevant comparisons.Structure and content of financial statementsIAS 1 identifies in detail how the financial statements should be presented. It also sets out some general principles that must be adopted in those statements:a clear identification of the financial statements \(tatementof profit or loss, tatement of financial position, etcthe name of the entity \(e.g. XYZ Limited\the period covered by the financial statements \(year ended, etc.Note: Statements are usually prepared on an annual basis. If this is not the casethe reason for the change \(for example to a short accounting periodmust be disclosed and statethat the figures may not be comparable with previous data.the currency used \(e.g. s, $s\the level of rounding used \(e.g. if the statements are presented inthousands, millioFor assessment purposes the figures will be presented in whole numbers for financial statements and not rounded up or down.tatementof profit or loss and other comprehensive incometandardrequires certain data to be identified and detailed on the face of the statementof profit or lossinformationincluded in the statement can be summarised, rather than detailing every single item.The following are required:revenuefinance coststhe charge for taxThe statement ends by showing the profit or loss for the periodExpenses may be analysed:by natureraw materials, staffing costs, depreciationetcORby functioncost of sales, administrative expensesdistribution costsetc.Analysing by nature may be more applicable for a manufacturing company. The methodusedwilldependwhichone providesthemorereliableandrelevant informationThe exampleon the following pageuses analysis by function. Note that:it is presumed that the entity is operating on a continuing basisthe information isin summarised formrevenue isthe sales revenue less sales returnscost of sales isthetotal of opening inventory, purchases less purchases returns, less closing inventory 7   \226 S.   \226 iby       \226 a,     \226 d rs      s s.\)    \) , \)    \243   ns\).   S  The s  . The         . .    \226 , .    \226 , ,      on       .               and . xxxxxxxxxxxxxxxxxx
+International AccountingStandards distribution costs includecosts of selling and delivering goods to customers, for example, delivery vehicle running costs, drivers\222wages, warehouse costsadministratiexpensesinclude, expenses other than the direct costs of production and distribution costs, for example,office costs, heat and lightetcxample statement of profit or lXYZ LimitedStatement of profit or loss for the year ended 31 December 2020  8  ,    ve   , .  Eoss   xx
+ 
+31 December 202031 December 2019 $000  $000 
+Revenue101 00080 000   
+Cost of Sales 
+\(60 000\ 
+\(45 000\ 
+Gross Profit41 00035 000   
+Distribution Costs\(8 000\\(7 000\   
+Administrative Expenses 
+\(11 000\ 
+\(10 000\ 
+Profit from Operations22 00018 000   
+Finance Costs 
+\(3 000\ 
+\(2 000\ 
+Profit before Tax19 00016 000   
+Tax 
+\(4 500\
+ 
+\(4 000\
+ 
+Profit for the Year 
+14 500
+ 
+12 000
+ 
+ 
+NotesNotepointthisstatement.Unlikepreviostatementhereisrequment to shw varius othr information regardingtatement of changes in equitynformation relating to dividen:   the end  of    us ts,   now a ireooe: o s o ids.   x
+International Accounting Standardsxampleextract from tatement of changes in equityRetained Earnings 9 E s  
+ 
+ 
+31 December 202031 December 2019 $000  $000 
+Balance at start of year43 00035 000   
+Profit for the year14 50012 000   
+Transfers from other reserves \226 \226 
+56 50047 000   
+Dividends paid\(5 000\\(4 000\   
+Transfers to other reserves \226 \226 
+\(3 000\\(2 000\   
+Balance at end of year 
+52 500 
+43 000 
+NotesSee Appendix 1 for a comprehensive example of a statement of changes in equity.:     
+International AccountingStandards Example dividends statementNotesOnlydividepaid during the yearinthecialstatments. They arewn uctons in the tement of s in Theosefinaldividsubectto approval by the shareholders thennual Genral eting. It is only inclded by wy of a note to the financial statemenNoliabilityisincluinthefinancstatemeninresptheproosedfinal dividend.The statement of financial positionIAS 1 specifies the minimum information which must be shown on the face of the statement of financial position. It requires entities to separate out:current assetsproperty, plant, equipment, plant and machinery, motor vehicles, intangible assets, goodwill, etc.urrent assetsinventories, trade receivables, cash and cash equivalentsurrent liabilitiestrade payables, bank overdrafts and taxationcurrent liabilitiesbank loans anlongterm provisionsequityhare capital, share premiumreserves and retained earnings.An asset is classified as currentwhenthe asset is held primarily for the purpose of tradingthe asset is expected to be realied, consumed, or sold within the entity\222s normal operating cyclewhen the assetis expected to be realised within twelve months afterthe reporting period  10   :   nds  are included   finan e shoas dedistachangeequity.   propd  end is j at  AeMeuats.     ded   ial ts  ect of  p      non- \226   c \226    c \226    non- \226  d -   \226 s,   :    s      xxxxxxxxxxx
+Notes to the financial statements31 December 2020December 2019  $000 31  $000 
+Amounts recognised as distributions to equity holders during the year:    
+Final dividend for last year of $0.075 per share3 0002 200   
+Interim dividend for this year of $0.050 per share 
+2 000 
+1 800 
+Total 
+5 500 
+4 000 
+Proposed final dividend for this year $0.095 per share3 8003 000of     
+International Accounting Standardscash and cash equivalent \(unless restricted\, for example, a shortterm investment or deposit that can easily be converted into cash.other assets would then be classified as noncurrent.A liability is classified as current when:it is expected to be settledin the entity\222s normal operating cyclethe liability is held primarily for the purpose of tradingthe liability is due to be settled within twelve months after the reporting periodthe liability for which the entity does not have the right at the end of the reporting period to defer settlement beyond twelve months.Any other liabilities would then be classified as noncurrent.The exampleon the next pageshows the way the information should be presented. Notice that the figure for etained arnings is the closing figure from the tatement of hanges in quity.Example statement of financial positionXYZ LimitedStatement of financial position at 31 December 2020 11  - Any -            -   resce     as    2020 xxxxx
+$000
+ 
+ 2019 
+$000
+ 
+ 
+ 
+ 
+ 
+Non
+-
+current assets
+ 
+ 
+ 
+ 
+Intangible assets 
+Goodwill
+ 
+7
+ 
+700
+ 
+ 
+8
+ 
+000
+ 
+Property, plant & equipment
+ 
+100
+ 
+000
+ 
+ 
+92
+ 
+100
+ 
+ 
+107
+ 
+700
+ 
+ 
+100
+ 
+100
+ 
+Current assets
+ 
+ 
+ 
+ 
+Inventories
+ 
+1
+ 
+000
+ 
+ 
+800
+ 
+Trade and other receivables
+ 
+5
+ 
+000
+ 
+ 
+4
+ 
+000
+ 
+Cash and cash equivalents
+ 
+500
+ 
+ 
+300
+ 
+ 
+6
+ 
+500
+ 
+ 
+5
+ 
+100
+ 
+ 
+ 
+ 
+ 
+Total assets
+ 
+114
+ 
+200
+ 
+ 
+105
+ 
+200
+ 
+ 
+ 
+ 
+ 
+EQUITY & LIABILITIES
+ 
+ 
+ 
+ 
+Equity
+ 
+ 
+ 
+ 
+Issued capital
+ 
+40
+ 
+000
+ 
+ 
+40
+ 
+000
+ 
+Share premium
+ 
+2
+ 
+000
+ 
+ 
+2
+ 
+000
+ 
+General reserve
+ 
+10
+ 
+000
+ 
+ 
+10
+ 
+000
+ 
+Retained earnings
+ 
+52
+ 
+500
+ 
+ 
+43
+ 
+000
+ 
+Total equity
+ 
+104
+ 
+500
+ 
+ 
+95
+ 
+000
+ 
+Non
+-
+current liabilities
+ 
+ 
+ 
+ 
+Bank loan
+ 
+5
+ 
+000
+ 
+ 
+5
+ 
+200
+ 
+ 
+ 
+ 
+ 
+Current liabilities
+ 
+ 
+ 
+ 
+Trade and other payables
+ 
+1
+ 
+200
+ 
+ 
+1
+ 
+000
+ 
+Tax liabilities
+ 
+3
+ 
+500
+ 
+ 
+4
+ 
+000
+ 
+ 
+4
+ 
+700
+ 
+ 
+5
+ 
+000
+ 
+Total liabilities
+ 
+9 700
+ 
+ 
+10 200
+ 
+Total equity and liabilities
+ 
+114
+ 
+200
+ 
+ 
+105
+ 
+200
+ 
+International Accounting Standards  12 
+IAS 2: Inventories 
+The term inventory refers to the stock of goods which businessholds in a variety of forms:aw materials for use in a subsequent manufacturing proceork in progress, partlymanufactured goodinished goods, completed goods ready for sale to customerinished goods thatthe business has bought for resale to customers.The principle of inventory valuation set out in IAS 2 is that inventories should be valued at the lower of cost and net realisable value.Note the exact wording. It is the lower of costandnet realisable value, not the lower of costnet realisable value.Costshould include all costs of purchase \(including transport and handling\costs of conversion \(includingmanufacturing overheads\ and other costs incurred in bringing the inventory to its present location and condition.et realisable valueis the estimated selling price in the normal course of business, less the estimated cost of completion and the estimated costs necessary to make the sale.Any writedown to net realisable value should be recognised as an expense in the period in which the writedown occurs.Note that inventoryis never valued at selling price or net realisable value when thvalueis greater than the cost.Example of stock valuation \(1\The ABC Stationery Company bought 20 boxes of photocopier paper at $5 per box. Following a flood in their stockroom 5 of the boxes were damaged. They were offered for sale at $3 per box. All were unsold at the end of the company\222s financial year.At what valuewill they be included in the financial statements15 boxes will be valued at their cost of $5 per box, a total of $75.5 boxes will be valued at $3 per box, a total of $15. The total inventoryvalue will be $90.a    rss  w s  fs  f      or   ,   N  --  at        ?      xxxx
+International Accounting Standards 13 
+Example of stock valuation \(2\The God Lok CothingCompany carres a variety inventory. At their yearnd they prouce the followig data:  ool iof -edn  
+Item
+ 
+PriCost ce 
+$
+ 
+Net RalisabValueele  
+$
+ 
+SellingPrice \(wen ew\ hn 
+$
+ 
+N
+e
+w dr
+es
+s
+e
+s
+ 
+1
+ 
+000
+ 
+1
+ 
+500
+ 
+2
+ 
+000
+ 
+Chil
+d
+ren
+\222
+s c
+lo
+thes
+ 
+2
+ 
+000
+ 
+3
+ 
+000
+ 
+3
+ 
+000
+ 
+Barga
+i
+n f
+as
+h
+ions
+ 
+ 
+1
+ 
+200
+ 
+900
+ 
+2
+ 
+000
+ 
+What will be the total inventoryvalue for the financial statementsNew dressesChildren\222s clothes ?  $   1 000   2 000  
+Bargain fashions  900 
+ 
+Total inventoryvalue  3 900 
+Note thatthe valuation of the Bargain Fashions is the lowest of the three choices. This means that inventory valuation follows the prudenceconcept.Inventory valuation methodsIAS 2 allows two different methods to be used for valuing inventory:First in, first out \(FIFO\.assuthatthefirstittoboughtwillthefirst toused,althouthmaynotmatchthehysicdisribution oftheThe aluation of the remaningnventorywilltherefore wathevaluethemost recentlypurchased items.Average cost \(AVCO\thmetaveragesuallytheweghted averaing the numbr of items bought\ islcated each time a new deliery of inventory is receivedIAS does not allow for inventory to be valued using the last in, first out \(LIFO\ method.nventories which are similar in nature and use to the business will use the same valuation method. Only where inventories are different in nature or usea different valuation method be used.Once a suitable method of valuation has been adopted by abusinessthen it should continue to use that method unless there are good reasons why a change should be made. This is in line with the consistencyconcept         This mes    ems  be   be   be  gh is     pal t  goods. vi i  alys be   of      Under is hod a new  value \(u  ige use caulv. 2  I,     .    xx
+International Accounting Standards Closing inventories for a manufacturing businessA manufacturer may hold three categories of inventory:raw materialswork in progressfinished goodsValuing aw aterialsRaw \(direct\materials will be valued at the lower of cost\(applying either FIFO or AVCO\and their realisable value.Valuing ork in rogress and inished IAS 2 requires that the valuation of these two items includes not only their raw or direct materialcontent,alsoincludeselementfordirectlabour,directexpensesand production overheads.The valuationof work in progress and finished goodstherefore consists of:direct materialswhich includes the purchase price, including import duties, transport and handling costs, less trade discounts and rebatesdirect labourdirect expensesfor example royaltiesor licence fees\production overheads \(costs to bring the product to its present location and conditionother overheads which may be applicable to bring the product to its present location andconditionThe inventory value of work in progress and finished goodsexcludes:abnormal waste in the production processstorage costsselling costsadministrative overheadsnot related to production. 14        . rm    wpfgoods   but   an                  \(   \)   .              xxxxxxxxxxxx
+International Accounting Standards 15 
+Example valuation of work in progress and finished goodsThe XYZ Manufacturing Company manufactures wooden doors for the building trade. For the period under review it manufactured and sold 10,000 doors. At the end of the trading period there were 1,000 completed doors ready for dspatch to customers and 200 doors which were halfcompleted as regards direct material, direct labour and production overheads.for the eriod r review wereDirct materal usDirct labProdction oerh  i-  Costs punde:  $ eied 20 000  eour 5 000  uveads 8 300  
+Noucton overn-prodiheads 10 000 
+ 
+Total csts or the priodofe 43 300 
+Caulate thevalue of work in pross nd finised Total unitsldFinised gds uni  lc greahgoods:   so 10 000  hoots 1 000  
+Halfompletedunits \(2000.5\    -c  x  100 
+ 
+Prodction fr the peruoiod 11 100 
+Attributable costsst per unit300 / 1100 = Value ofk in progre200 x 0.5 x $3= $3Value of finshed gods:1,000 x 3 = 3,000NotesNonproduction overheads of $10are excluded from the calculations.The value of finished goods \($3000\ will be compared with their net realisable value when preparing the financial statements  $33 300  Co 33  1$3    worss:  00  io $  :  - 000    .xx
+International Accounting Standards 16 
+IAS 7: Statement of cash flows 
+The standard requiresthe presentation of information about the historical changes in an entity\222s cash and cash equivalents by means ofa statement of cash flows. Information about the cash flows of an entityis useful in enabling users of financial statements toassess the ability of the entity to generate cash and cash equivalentsand the needs of the entity to use those cash flows. The statement, required to be produced as part of the entity\222s financial statements,classifies cash flows during the period according to operating, investing and financing activities.peratingactivitiesthemainrevenuegeneratingactivitiesthebusiness, together with cash flows relating tointerest and taxnvesting activitiesthe acquisition and disposal of longterm assets and otherinvestments that are not considered to be cash equivalents, together with interest and dividends receivedinancing activitiesreceipts from the issue of new shares, anges in lonterm borrowingsand payment of dividendsAt the end of the statementthe net increase in cash and cash equivalentis shown, both at the start and end of the period under review. For this purpose:Cash is defined ascash on hand and demand depositsCash equivalents are defined as shortterm, highly liquid investments that can easily be converted into cash. This is usually taken to mean money held in a term deposit account that can be withdrawn within three months from the date of deposit.Bank overdrafts usually repayable on demand are included as part of cash and cash equivalents.Format of thtatementOperting aitiesThe cash flow from operating activities is calculated as:rofit from operations \(profit before deduction of tax and interest\dd: epreciation charge for the yeardd: oss on sale of noncurrent assets \(or deduct gain on sale of noncurrent assetsless: investment income: decrease in inventories, decrease in trade and other receivablesand increase in trade payables; oreduct: increase in inventories, increase in trade and other receivables andcrease in trade payablesless: interest paidless: taxes paid on income \(usually corporation tax\Investing activitiesis is calculated by including:nflows fromsaleproceeds property, plant and equipmentbothtangibleandintangible, together with other current assetsoutflows from cashusedtopurchaseproperty, plant and equipment,bothtangibleintangible, together with other current assetsnterest receivedividends received        o  \226   -  of  out   i \226 -   f \226 chg- . , s    .  -  \226 \226   e s activ   p  ad  al--\)    add  d de    .  Th  i  of     non-         and non-  i  d.   xxxxxxxxxxxxxxxxx
+International Accounting Standards 17 
+Financing activitiesisis calculated by including:nflows from:cash received from the issue of share capital\(including share premium\raising or increasing loansutflows from:repayment of share capitalrepayment of loans and finance lease liabilitiesquity dividends paidExample calculation of cash flow from operating activitiesProfit/\(loss\from operations \(before tax and interest\Adjustments for:Depreciation charge for the yearIncrease in inventories\(3 000\Decrease in trade receivables Th   i o   o   o o  o  o e.    $     50 000    12 000      2 000  xx
+Increase in trade payables 4 000 
+Cash \(used in\/from operationsInterest paid \(during the year\000\Tax paid \(during the year\  65 000   \(5    \(8 000\) 
+Net cash \(used in\/from operating activities 52 000 
+final figure from thecalculation is used inthe ash low tatementbelowThe   cfs .   
+International Accounting Standards 18 
+xample statement of cash flowsStatemet of cash flows for he year ed 31 December 20Net c\(used in\/from peratig actiitiesCash flows from investing activities:Purchse of noncurrentassets\(20000\Procees frm the sale ofcurrentassetsInterest receivE  ntnde20   $ $ ash onv 52 000   a-     do non-  1 000  ed 2 000  
+Divideds receivedn 500 
+Net c\(used in\/from ivesting tivities\(16500\Cashfrom financig actiities:Procees from isse of sare capital \(this wouldinclude both te shre ad sharepremum amunts\Reayment longterm bwi\(30 ash nac     flows nv duh 80 000 han io  pof -orrongs  000\)  
+Dividends paid000\ \(4  
+ 
+Net ash ed in\/fromnancing avitiesc\(us ficti 46 000 
+Net inrea/\(decr\ in cash and ash equialents cseeasecv 81 500  
+Cash nd csh equialets atthe beinning of the aavn gyear 10 000 
+ 
+Cash nd csh equialets atthe endof theaavn   year 91 500 
+Allowable riationThe standardallows some flexibility in the way in which cash flow statements can be presented:Cash flows from interest and dividends received and paidcan be shown as operating or investing or financing activities. Whichever is chosen must be applied consistentlyfrom period to periodCash flows arising from taxes on income are always classified as operating activities unless they can be specifically identified with financing and/or investing activities.  vas:    ,  .    xx
+International Accounting Standards 19 
+IAS 8: Accounting policies, changes in accounting 
+estimates and errors 
+Thestandardprovides guidance for selecting and applying accounting policiesaccounting for changes in estimates and correctingprior period errors.Accounting oliciesThese are defined as:\221the specific principles, bases, conventions, rules and practices applied by an entity in preparing and presenting financialstatementsIn selecting and applying accounting policies, the standardrequires that:hen an accounting standard specifically applies to a transaction or event, then the policy contained in that standard should be applied, ORhen no specific standard applies, then management should use its judgement in developing and applying an accountingpolicythat provies information to the users of the financial statements that is relevantable, prudent and complete. In doing so, they shouldrefer to any otherstandards or interpretations or to other standardsetting bodies to assist them. However, they mustmake sure that their subsequent interpretation or recommended method of treatment for the transaction does not result in conflict with international standards or interpretations.n entity must applyaccounting policies consistently for similar transactions. Changes in accounting policies can only occur:if the chane is reuired byn accountingstandrd r interretati, orif the chane results in thefinancal sments rovidng more relible and relevant infrmationthat faithfully represents the effect of transactions on the financial statementsny changes adopted must be applied retrospectively to financial statements. This means thatthe previous figure for equity and other figures in the statementof profit or lossand statement of financial position must be altered, subject to the practicalities of calculating the relevant amounts.Changes in accounting estimatesAs a result of the uncertainties in business activities, many items in financial statements can only be estimated. The use of reasonable estimates is an essential part of the preparation of financial statements. For example, estimates may be required forllowance for irrecoverable debts,obsolete inventory, the useful lives of depreciable assets, and warranty obligations.An estimate may need to be revised if changes occur in the circumstances on which the estimate was originally basedor as a result of new information. The revision of an estimate does not relate to prior periods and is, therefore, not the correction of an error.  The effect of a change in an accounting estimate should be included in the statementof profit or lossor, where it relatesto changes in assets and liabilities, by adjusting the carrying valueof the relevant asset, liability or equity item.  ,    p   .    w  w  d, reli  -  A   gq a aopon  g itatepiao . A       a        xxxx
+The nature and amount of the change in the accounting estimatewhichhas an effect on the current is expected to affect future periodsshould be disclosed in the financial statements.,  and ,  
+ 
+International Accounting StandardsDealing with errorsThe standard recognies that errors can arise in respect of the recognition, measurement, presentation or disclosure of items within financial statements.rrors are defined as:\221omissions fromand misstatements inthe entity\222s financial statements for one or more prior periods arising from a failure to use, or misuse, reliable information that:availabwhenthfinancstaementsoseeriwereauthsedfor issu; andcouasonablyexpctedtohavebtaintakenntoaccointhe prearation nd presentation of those fcial statmentsErrorsinthiscontextcouldmathematicalmistakes,mistakesinapplyingaccountingpolicies, oversights, themisinterpretation of facts, orfraud.The general principle is that the entity must correct material errors from prior periods retrospectively in the firstset of financial statementsauthorised for issue after their discovery. us,comparative amounts from prior periods must be restated, subject to the practicalities of calculating the relevant amounts.In the notes to the financial statements, the entity should disclosethe nature of the prior period errorand the amount of the correction. 20  s E , ,   was le  ose ial t for th pods  ori e  ld re be e   been oed and  i unt  painane.      be            Th      xx
+InternationalAccounting Standards  21 
+IAS 10: Events after the reporting period 
+These are events, either favourable or unfavourable, thatoccur between the end of the reporting periodand the date on which the financial statements are authorised for issue. Theymay occur as a result of information which becomes available after the end of the periodand therefore need to be disclosed in thefinancial statementsThe key is the point intime at which changes to the financial statements can be made. Once the financial statements have been approved for issue by the board of directors they cannotbe altered. For example, the financial statementsare prepared up to 31 Decemberandare approved for issue by the board of directors on 30 April in the following year. Between these two dates, changes resulting from events after 31 December can be disclosed in the financial statementsThe standarddistinguishes between two types of events:Adjusting eventsAn adjusting event is defined as an event after the reporting period that provides further evidence of conditions that existed at the end of the reporting period. If such an event would materially affect the financial statementsthe financial statements should be changed to reflect these conditions.Examples of adjusting events include:thesettlemafter the end of the reporting period ocourtthatnfirthata prent igation existedthe year endthedeterminationafterthereporting period othepurchicee price of a norrent assetboughtd before the year inventoris where the et realisable vale falls belw the cst pricassetswha valuation shos that impairent has occurredtrade receivbleswhre astomr hs becoe inslventthescoveryfrwhicshowthefiialstatetstoncorrect.Nondjusting ventsA nonadjusting event is defined as an event after the reporting period that is indicative of a condition that arose after the end of the reporting period. No adjustment is made to the financial statements for such events. If material, they are disclosed by way of notes to the financial statements.Examples of nonadjusting events include:major urchse of assetslosss of prductin ccity cafire, floods or strke tin by employcemnt or cocemnt of a major recotructin of the s in tratesentering into signifcant commitents or contingent liabilitiescomcinglitigation bd on events g after treporting period ,  ,  .      .    ,     ent f a  case  coms  esobl at    ,   f  ase pr or saln-cu  or solend  enuooe   ere wm  a e cueamo   di of aud or errors h   nanc men  be i -ae - -  pa  eooapaused by iacoees  announemmenensobusiness  changeax   im  men asearisinhe  xxxxxxxxxxxx
+majorre io  shatransactns.  x
+International Accounting Standards 22 
+Specific casesThere are three situations in addition to the above thatrequire consideration:Divideeclredproosedafterreporting periodrecognliabilityat the end of the reporting period.Theyareeventsareown in a note to the financial statementsAn entity shall not prepare its financial statements on a going concern basis if management determines after the end of the reporting period either that it intends to liquidate the entity or to cease trading, or that it has no realistic alternative but to do so.Entitiesdisclthedatefinstatemenwereauthfor issuewhogavethatauthorisatiIfanyonethewertothefinancial statements after issue then this fact must also be disclosed.Examples of adjusting and nonadjusting eventsABC PLCprepared its financil statements for the year ended30 June 201. During August 201, before the financial statements wereapproved, the following issues arose1. The company wasinformed that a customer habeen declared bankrupt owing ABC PLC000.The debt related to sales in January 2012. The directors discoveredthat an error in preparing the financial statements resulted in revenue being understated by $50,000.3. A fire at one of the company\222s properties in July 201resulted in damage estimated at $5,000What action should the directors take in respect of these issues, all of which are material1. As the outstanding debt dated back to January 201, before the end of the reportingperiod, the insolvency was evidence of a condition that existed at the date of the financial statements. t is thus an adjusting event and the financial statements should be amended to write off the outstanding $2. The error of understating revenue relates to the period ended 30 June 201. t is thus an adjusting event and revenue should be increased by $50,000.3. The fire happened after the end of the reportingperiodand is therefore evidence of a condition that existed at that date. This is a nonadjusting event. No adjustment is to be made in the financial statements, but as the amount is material, the event should be disclosed in the notes to the financial statements    nds da or p  the  are not ised as a     non-adjusting  and  sh.     must ose   when the ancial ts  orised  and    on.   had  po  amend    -   a 99 :  d  $38, 9.  1 9 12. ? 9 I38,000. 9I1   not -. xxx
+InternationalAccounting Standards  23 
+IAS 16: Property, plant and equipment 
+The objective of thestandardis to prescribethe accounting treatment of property, plant and equipment.The principal issues covered by the standardare:the recognition of the assetsthe determination of their carrying amountstheir depreciation chargesimpairment lossesto be recognisedin relation to themThe standard containsnumberof key definitionsalong with definitions from IAS 36Impairment of assetsProperty, plant and equipmentangibssetsforintheductipplyand srvicforntalto others and fr administrative purps, which ae expectd to be usd for more thanone accountingperSuch assets are classified as noncurrent assets on the statement of financial position.Depreciationhe sstemaic allcation the deprble amont \(cost less residual value\of a tangible noncurrent asset r its useful lifeUseful lifeperiodover which a tangible noncurrent asset is expected to be available for use, or the number of production units expected to be obtained from the tangible noncurrent assetResidual valueestimatedunttheentityexpectobtainfora tangible noncurrent asset theitsefullife,after dedcting theestimatedsts of disposaFair valuehe amunt for whicset coud beexchaged etwen kable, wiling partis in an arms leh transactioThe fair value of a tangible noncurrent asset is normally its open market value.Carrying amountwhicha tangible noncurrent asset cognsedinstatement of financial positionafterctingy accumuateddeprecationor accumulatedimpant loss             any   .  a   -:   \226 tle a held  use   proon or su of goods ees,  re ooseree  iod. -   \226 tytoof eciau -ove.   \226 the  --.   \226 the  amo   ts  o  -at  end of  us  u  col.   \226 toh an asl nbenowledgele\222ngtn. -   \226 the amount at  -is rei  the ,  dedu anl i  irmees. xxxxxxxxxx
+Impairment lossis the amount by which the carrying amount of an asset exceeds its recoverable amount.Recoverable amountis the amount which is higher of an asset\222s fair value less costs to sell, and its value in use.lue in useis the present value of the future cash flows expected to be derived from an asset.Recognition of the tangible noncurrent assetin the financial statementsThe standardstatesthat an item of property, plant and equipment is to be recognised inthe financial statements when:it is probable that future economic benefits associated with the asset will flow to the entity, andthe cost of the asset can be measuredreliably  \226    \226   Va \226   -          .    xxxxx
+International Accounting StandardsInitial costs associated with the tangible noncurrent assetThe standard provides that the following can be includedas part of the initial cost of the tangible noncurrent assetin the statement of financial positionthe initial purchase priceafter deducting discounts or rebatesany import duties, taxes directly attributable to bring the asset to its present location and conditionthe costs of site preparationinitial delivery and handling costsinstallation and assembly costscost of testing the assetprofessional fees \(e.g.architects or legal feesThe standard also provides guidance on which costs must be excluded as part of the cost in the statement of financial positionany general overhead coststhe startup costs of a new business or section of the businessthe costs of introducing a new product or service\(e.g.advertisingAdditional costs associated with the tangible noncurrent assetThe standard recognises thatin addition to the initial purchase price of the asset, other amounts wil also be spent on it. The standard provides the following guidelines to assist with the treatment of such expenditure:Daytoday csts of srvicing or rpairthe asset sould beed as exiture in the statementof profit or loss.re prtse.g.the seas in an aropanerequire rplacement at relar intrvals,these sts can benised s part of the crrying aountof the assetsubect to therules of asset recgnition are the set reuires regulr insptions in ordfor the asset to contiue operatingthe sts ofsuch insptionscan abe rnisd in the carryng amount, agan subect to the ruls of rnition aValuation of the tangible noncurrent assetentity must adopt one of two models its accounting policy for its valuationof each class of tangible noncurrent assetsCost modelthe asset is carried at cost lss ccumulated recationand any accumulated impairment lossesRevaluation modelthe asset is included \(carried\ at a revalued amount. This is taken as its fair value less any subsequent depreciation and impairment losses. Revaluations are to be made regularly to make sure that the carrying amount does not differ materiallyfrom thefair value of the asset at the date of the statement of financial positionGuidance is also given the frequency of the revaluations:if changes are frequent, annual revaluations must be madewhere changes are insignificant, revaluations can be made every three to five years.If a tangible noncurrent assetis revalued,then every asset in that class must be revalued. Thus, if one parcel of land and buildings is revalued then all land and buildings must be revalued. Any surplus on revaluation is transferred to the equity section of the statement of financial position as part of the revaluation reserve. Any loss on revaluation is recognised as an expense in the statementof profit or  24 -  - :                \). :    -    \).  - ,   --oeeing h chargpend   Whea \( tel\) egue co recogaam  \226 j obove.  Wheasqaecer n, co ec lso ecogeiijeecogbove.  - An as  -:   \226 eadepi .   \226   . on      -   xxxxxxxxxxxxxxxxx
+InternationalAccounting StandardslossA decrease arising as a result of revaluation should be recognisedas an expense to the extent that it exceeds any amount previously credited to the revaluation reserve relating to the same tangible current asset.DepreciationDepreciation should be allocated on a systematic basis over the tangible noncurrent asset\222suseful life. The depreciation method should reflect the pattern in which asset\222s future economic benefits are expected to be consumed by the entity.The expected useful life and residual value of the tangible noncurrent assetshouldbe reviewed at least at each financial year. If there is a difference from previous estimates this must be recognised as a change in an estimate under IAS 8 \(Accounting policies, changes in accounting estimates and errors\.Deiationmust contine to be cheven if the fair value of a tangible noncurrent assetexcees its crrying mount.Deiationot be chared whenthe resdual alue is reatr than the carrying aDeiation s to be inced as n exense in the stateof profit and lossWhen considering the useful life of a tangible noncurrent asset the following should be considered:expectd usge of the tangible noncurrent asset, its capcity or outputexpectd phsical war ad tearrciesclegal or other limits imposed on the use of the tangible noncurrent assetLand and buildings are separable assets.has an unlimited useful life, other than in the case of a mine or quarry, and land is not depreciated. It is carried in the statement of financial positionat cost.Buildings have a limited useful life and should therefore be depreciated.Allowable methods of depreciation are:straiht linediminishing r reng barevaluation modelA depreciation method that is based on revenuethat is generated by an activity that includes the use of an asset is not appropriate. The entity must choose a method of depreciation which reflects the pattern of its usage over its useful economic life. The method should be reviewed at least at each financial yearand, if there has been a significant change in the expected pattern of future  economic benefits, the method should be changed to reflect the changed pattern.This mustrecognised as a change in an estimate under IAS 8 \(Accounting policies, changes in accounting estimates and errors\.DerecognitionThis occurs when the tangible noncurrent asset is sold or no further future economic benefits are expected from its use. Any profit or loss on disposal is shown in the statementof profit or loss  25 .  non-   -  -  -end  prec uarged - daa  prec need ng ivgemount.  preciludapment . -  ea-a  eyen  technical or commeal obsolence  -.  Land      g  oducilance  .  -end   be    - .    xxxxxxxxxx
+International Accounting StandardsDisclosure in the financial statementsFor each class of property, plant and equipment the financial statements must show:the basis for determining the carrying amountthe depreciation methodusedthe useful life or the depreciation rates usedthe gross carrying amount at the beginning and end of the accounting periodthe accumulated depreciation and impairment losses at the beginning and end of the accounting periodrevaluation increases or decreasesadditions during the perioddisposals during the perioddepreciation for the periodThese are likely to be shown current assets schedule and included as a note to the financial statements 26      s               . as a non-.    xxxxxxxxx
+InternationalAccounting StandardsExample schedule of ncurrent assetsDEF plcSchedule of noncurrent assets at 31 December 20  27 on-   -as 20  
+ 
+Land and 
+building
+ 
+Plant and 
+machinery
+ 
+Motor 
+vehicles
+ 
+Total
+ 
+ 
+$000
+ 
+$000
+ 
+$000
+ 
+$000
+ 
+Cost
+ 
+or valuation
+ 
+ 
+ 
+ 
+ 
+At 1 January 20
+20
+ 
+600
+ 
+          
+320
+ 
+          
+250
+ 
+    
+1170
+ 
+Revaluation
+ 
+3
+00
+ 
+-
+ 
+-
+ 
+      
+300
+ 
+Additions
+ 
+-
+ 
+          
+115
+ 
+          
+120
+ 
+      
+235
+ 
+Disposals
+ 
+-
+ 
+\(85\
+ 
+\(90\
+ 
+\(175\
+ 
+At 31 December 20
+20
+ 
+900
+ 
+          
+350
+ 
+          
+280
+ 
+    
+1530
+ 
+ 
+ 
+ 
+ 
+ 
+Accumulated d
+epreciation
+ 
+ 
+ 
+ 
+ 
+At 1 January 20
+20
+ 
+            
+60
+ 
+           
+145
+ 
+115
+ 
+      
+320
+ 
+Revaluation
+ 
+\(60\
+ 
+-
+ 
+-
+ 
+\(60\
+ 
+Charge for 
+the year
+ 
+-
+ 
+            
+35
+ 
+90
+ 
+      
+125
+ 
+Disposals
+ 
+-
+ 
+\(15\
+ 
+\(30\
+ 
+\(45\
+ 
+At 31 December 20
+20
+ 
+-
+ 
+          
+165
+ 
+175
+ 
+      
+340
+ 
+ 
+ 
+ 
+ 
+ 
+Carrying amount
+ 
+ 
+ 
+ 
+ 
+At 31 December 20
+20
+ 
+900
+ 
+185
+ 
+10
+5
+ 
+1190
+ 
+At 1 
+January
+ 
+20
+20
+ 
+540
+ 
+175
+ 
+135
+ 
+850
+ 
+  
+International Accounting Standards 28 
+IAS 36: Impairment of assets 
+The objective of the standard is to ensure that assets are carried at no more than their recoverable amountand to define how the recoverable amount is determined.The standard identifiesseveral classes of assets that it does not apply to. These are either outside the scope of the syllabus or are covered by other accounting standards, for example inventories \(IAS 2\. For the purposes of the syllabus, IAS 36 typically applies to:landbuildingsmachinery and equipmentintangible assetsnd goodwillassets carried at revalued amounts under IAS 16 and IAS 38The standard contains certainkey definitions:Impairment losshe amount by which the carrying amount of an assetor cash generating unit exceeds its recoverable amountCarrying amounthe amount at which the asset is recognised in the statement of financial position, after deducting accumulated depreciation and accumulated impairment lossesRecoverable amounthe higher of the asset\222s fair value less costs of disposal \(net selling priceand its value in useFair valueprice that would be received to sellasset, or paid to settle a liabilitybetween knwldgee, willing prties in an s length trnsaction.The standardprovides ce:he best evidence of fair value is a binding sale agreement less disposal costsf there is an active market as evidenced by buyers, sellers and readilyavailable prices, it is permissible to use the market price less disposal costshere there is no active marketthe entity can use an estimate based on the best information available of the selling price less the disposal costsosts of disposal are direct costs only, for example legal or removal expenseValue in usehe present value of the estimated future cash flows expected to be derived from an assetor cash generating unitThis is usually calculated using discounted cash flow techniques. he entity should consider the following:estimated future cash flows from the assexpectations of possible variationeither in amount or timing of the future cash flowcurrent interest ratesthe effect of uncertainty inherent in the asset.Identifying an asset that may be impairedAt the end of each reporting period, an entity is required to assess whether there is any indication that an asset may be impaired \(i.e.its carrying amountmay be higher than its recoverable amount\. If there is an indication that an asset may be impaired, then the asset\222s recoverable amount should be calculated. Goodwillacquiredin a businescombinationshould be tested for impairment annually.Indications of impairmentExternal sources:market value declinesnegative changes in technology, markets, economy or laws,            a  .      \226 t .   \226 t.   \226 t\) .   \226 the  an  oeablaarm\222a  guidan  T.  I-.  W, .  Cs.   \226 t . T  et  s, s           s         xxxxxxxxxxxxxxxxxxxx
+InternationalAccounting Standardsincreases in interest ratesnet assets of the company higher than market capitalisation.Internal sources:obsolescence or physical damageasset is idleor is being held for disposalworse economic performance than expectedAn indication of impairmentindicatethat the asset\222s useful life, depreciation method, or residual value may need to be reviewed and adjusted.Recognition of an impairment lossAn impairment loss is recognised whenever the recoverable amount is below the carrying amount.The impairment loss is recognised as an expense in the statementof profit or loss, unless it relates to a revalued asset. For revaluedassets,the impairment loss is treated as a revaluation decrease.Depreciation for future periods must be adjusted.DisclosureImpairment losses either recognised or reversed should be disclosed by class of asset.If an individual impairment loss is material, the following must be disclosed:the events and circumstances resulting in the impairment lossthe amount of the loss or reversaldetails of the individual asset and the class to which it relatesIf impairment losses recognised or reversed are material in total to the financial statements as a whole, disclosethe main classes of assets affectedthe main events and circumstances involvedExampleassetvaluesin statement of financial positionAn entity has three noncurrent assets in use at the date of its statement of financial position.Details of their carrying values and recoverable amounts are set out below:AssetCarrying amountFair value less costs to seValue in u  29            .  s                      . :    .      -     $ ll $ se  $ xxxxxxxxxxxxx
+1
+ 
+30
+ 
+000
+ 
+10
+ 
+000
+ 
+50
+ 
+000
+ 
+2
+ 
+15
+ 
+000
+ 
+12
+ 
+000
+ 
+14
+ 
+000
+ 
+3
+ 
+20
+ 
+000
+ 
+15
+ 
+000
+ 
+9
+ 
+000
+ 
+   
+International Accounting StandardsIn the statement of financial position,they should be shown at the following values:AssetValue in statement of financial positionReason 30     $  
+1 30 000 
+The carrying amount is less 
+than the recoverable amount, which is higher of fair value less costs to sell and its value in use and here it is value in use. 
+2 14 000 
+The carrying amount is greater than the recoverable amount, which is higher of fair value less 
+costs to sell and its value in 
+use and here it is value in use. 
+3 15 000 
+The carrying amount is greater than the recoverable amount, which is higher of fair value less 
+costs to sell and its value in 
+use and here it is fair value less costs to sell. 
+International Accounting Standards 31 
+IAS 37: Provisions, contingent liabilities and contingent 
+assets 
+The objective of the standard is to make surethat appropriate recognition criteria and measurement bases are applied to provisions, contingent liabilities and contingent assets. Sufficientinformation must be disclosed in the notes to the financial statements to enable users to understand their nature, timing and amount.The key principle established by the standard is that provisionshould be recognied only when there is a liability i.e. there is a present obligation resulting from past eventThere re a series of key definitions:Provisionliability of uncertain timing or amountLiabilitypresent obligation arising frompast events, where settlement is expected to result in anoutflow of resources \(payment\. A past event that leads to a present obligation is an obligating event. For an event to be obligating, it is necessary that there is no realistic alternative to settling the obligation created by the eventContingent liabilityeither a possible obligation that arisfrom past events but which dependon some uncertain future event occuringnot wholly within he control of the entity, ora present obligationwherepayment is not probable or the amount cannot be reliably measuredContingent asseta possible asset that arises from past events and whose existence will be confirmed only by the occurrence of one or more uncertain future events not wholly within the control of the entity.Recognition of a provisionA provision must be recognised if, and only ifa present obligatiexistsas a result of a past event\(the obligating event\payment is probableore than 50% likelihood of occurrencethe amount can be estimatedreliablyThe obligating event creates a legal or constructive obligation. legal obligation derives from a contract olegislation. A constructive obligation derives from past actionsor policies that imply that entity will accept certain responsibilities, for example, warrantiesor refundsThe amount recognied as a provision should be the best estimate of the expenditure required to settle the present obligation at the date of the statement of financial position. The provision should be reviewed at each subsequent reporting period end date and, if an outflow is no longer probable, the provision should be reversed.Contingent liabilitiespossibleobligation \(a contingent liability\ is disclosedin the notes to the financial statements, but not recognisedHowever,where the possibility of payment is remote, no recognition or disclosure is required.   a  ss. a   \226 a .   \226 a   .   \226 es s  t   .   \226    :  on      \(m\)   . A r  an  . s   A   .      xxxxxxx
+International Accounting StandardsContingent assetThese should not be recognised in the financial statements, but should be disclosed in the notes to the financial statements where an inflow of economic benefits is probableand the amount is material. Where the inflow of economic benefits is possibleor emote, there should be no recognition and no disclosure.Example of recognitionof provisionor contingent liabilityA company manufactures shampoo. A customer is suing the company claiming that the shampoo has caused burns to her head. The customer is claiming damages of $100 000. Lawyers have advised the company that it is possible that the customer may win the legal case.As the outcome of the case is uncertain \(i.e. a possiblesuccessful claim for damages\, the company is not certain to be liable, i.e. this is a contingent liability. In these circumstances, the company should not make a provision, but should disclose details of the case in its notes to the financial statements.If the lawyer was of the opinion that it was probablethat they would lose the legal case, a provision for the damages should be made in the financial statements. 32 s   r           
+International Accounting Standards 33 
+IAS 38: Intangible assets 
+This standardcoversthe accounting treatment for intangible assets.An intangible asset is defined as an identifiable nonmonetary asset without physical substance.The three critical attributes of an intangible asset are:it must be identifiable\(the asset is either separate from the entity and can be sold or transferred or arises due to contractual or other legal rights\it must be controlled by the entity\( power to obtain benefits from the asset\the entity must be able to obtain future economic benefits from the assetch as revenue or reduced costsIntangible assets can be acquired:y separate purchases part of a business combinationy the exchange of assetsy internal generation \(selfproduced\Examples of intangible assetsThe followingis not an exhaustive list, but gives some examples of intangible assets:patented technology, computer software, databasesandtrade secretstrademarksand internet domainscustomer listslicensing and royalty agreementsmarketing rightsfranchise agreementsRecognitionThe standard requires an entity to recognise an intangible asset, whether purchased or selfcreated \(at cost\if:it is probable that the future economic benefits attributable to the asset will flow to the entityandthe cost of the asset can be measuredreliablyThe probability of future economic benefitsmust be based on reasonable and supportable assumptions about conditions that will exist over the life of the asset.If an intangible asset does not meet both the definition ofandthe criteria forrecognition, IAS 38 requires the expenditure to be recognised as an expense when it is incurred.   -          su.   b  a  b  b-.                   .   -,   ;   .    ,  ,     xxxxxxxxxxxxxxx
+International Accounting StandardsClassification based on useful lifeIntangible assets are classified as having either an indefinite life or a finite lifeIndefinite lifeThis is where there is no foreseeable limit to the period over which the asset is expected to generate net cash inflows for the entity.An intangible asset with an indefinite useful life should not be amortisFinite lifeThis is where there is a limited period of benefit to the entityIn these circumstances, the cost less residual value should be amortised on a systematic basis over that life, reflecting the expected pattern of benefits.DisclosureFor each class of intangible asset, the following should be disclosed:useful life or amortisation rateamortisation methodgross carrying amountaccumulated amortisation and impairment lossreconciliation of the carrying amount at the beginning and end of the reporting periodthe basis for determining that an intangible asset has an indefinite lifedescription and carrying amount of individually material intangible assets 35  .   ed.  .            es      .  xxxxxxx
+International Accounting Standards Appendices\226  36 
+ndix 1: Statement of changes in equityAppe 
+XYZ LimitedcompanyStateent hanes in for tear ended 31 December 20Share capitalShare premiumRevaluation reserveRetained earningsTotal  mof cgequity he y20     $  $  $  $  $ 
+Balance at 1 January 200 020 000108 000283 00020 1500 5 000    
+Share issue3 000 30 000    33 000 
+Profit for the year58 00058 000      
+Revaluation30 00030 000      
+Dividends paid000\000\    \(12  \(12  
+Balance at 31 December 2020  
+000180  
+8 000 
+50 000 
+154 000 
+392 000 
+ 
+International Accounting Standards 37 
+Appendix 2: Financial statements for other forms of 
+business \(AS Level\ 
+\(a\Finncial stateents of a sole trader ading busitatementof profit or lossSole Trader \(Namtatementof profit or lossfor theear ended 31 December 20                                                                    000                000                     Revenuealeam\226 trness S   e\) S   y20  $$$000  \(ss\)   520 
+s Sals rturns  Lesee    \(3\) 
+ostsalOpening inventoryhases   517 Less C of es   46 Purc 196 
+Less Purchase returns    \(4\) 
+ 192 
+s Goods forown   Les  use \(2\) 
+ 190 
+Carriage inwards                        5195 
+  241 
+closing inventoryLess    \(56\) 185 
+Gross profitDiscountreceived    Rentreceived  Commisionreceived    * Profitcurrent assets       332   2   14 s  4  on disposal of non- - 
+** Redction in allowance for irrecoverable debts    u - 
+ExpensesWagesand salarOffice expensesRentratesInnceMotor vleexpenSellingexpensesLoan interest  * Losscurrent assets  ** Provision for doubtfuldebts  iationfixtues andfittings  Deprecation of officeequipm   352 Less   ies  84   52  and   26 sura  19 ehic ses  28    22   2  on disposal of non-  7    3 Deprec of r   9 i ent  6 
+Deprecation of motor vehicl  ies  8   \(266\) 
+Profit for the year   ***   86 
+   
+International Accounting StandardsNotes* If only one asset was sold during the year only one of these items will appearIf the allowance reduces, the decreaseis added to the gross profit: if the allowance increases, the increaseis included in the expensesIf the expenses exceed the gross profit plus other incomethe resulting figure is described as a lossfor the year 38 : . **   . *** ,  .   
+International Accounting Standards 39 
+Statement of financial positionSole Trader \(NamStatement of financial position at 31 December 20                                                                     000                   $000                 $000  e\) 20 $ 
+Motor veh    icles 85 32 53 
+                       220 97123 
+Currnt aInventory  Tradeeivables   essets   48  rec 53 
+Less allowance for irrecoverable debts       \(6\) 47 
+Other receivables          6      
+inhand    Cash    2  103 
+Total assets    226 
+   
+EQUITY 
+& LIABILITIES
+ 
+ 
+ 
+ 
+ 
+ 
+Capital
+ 
+ 
+ 
+ 
+ 
+ 
+Opening balance
+ 
+ 
+ 
+ 
+ 
+152
+ 
+Add P
+rofit for the year *
+ 
+ 
+ 
+ 
+ 
+86
+ 
+ 
+ 
+ 
+ 
+ 
+238
+ 
+Less 
+drawings
+ 
+ 
+ 
+ 
+ 
+\(
+62
+\)
+ 
+Total equity
+ 
+ 
+ 
+ 
+ 
+176
+ 
+Non
+-
+current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+Bank loan
+ 
+ 
+ 
+ 
+ 
+20
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+Trade payables
+ 
+ 
+ 
+21
+ 
+ 
+ 
+Other payables
+ 
+ 
+ 
+6
+ 
+ 
+ 
+Bank overdraft
+ 
+ 
+ 
+3
+ 
+ 
+30
+ 
+Total liabilities
+ 
+ 
+ 
+ 
+ 
+50
+ 
+Total 
+equity 
+and liabilities
+ 
+ 
+ 
+ 
+ 
+226
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note* If there is a lossfor the year, this will be deducted rather than added  :  .    
+International Accounting Standards 40 
+\ Finacial stateme\(final a\of a panership busnesstatementof profit or lossThe statementof profit or lossof a partnership is the same as the statementof profit or lossof a sole trader. The profitfor the yearis then appropriated to the partners as follows. Assume that the partners share profits in the ratio 2:1.PartneshipNaProfit and oss Apropiation Ant for thear ended 31 December 20rofitfor the yearAddInterdrawingsPartner A\(bnnts ccountsrti S          \(r me\) Lprccou ye20  $ $ $ P    45 000  est on  \226   2 200 
+Partner    B  3 800 6 000 
+Less InterpitalPartner A    51 000 est on ca \226  2 000 
+Partner  B  1 000 3 000 
+Partner\222salaryPartner                       s \226  B 18 000 21 000 
+    30 000 
+Profit sharesPartner A   20 000 
+Partner B   10 000 30 000 
+tatement of financial positionThe first section of the statement of financial position showing assets and second section showing the liabilities of a partnership is similar to that of a sole trader, the only difference is in the equity shown in the secondsection of the statement of financial position compared to a sole trader. The equity is shown as the capital and current account of each partner. Where the full details of the partners\222 current accounts are not required, this section could be presented asfollows. S    
+ 
+PartneshipNaStatement of financial position \(extract\at 31 December 20Partner APartner BTotalCapital accunts000             60\(r me\)  20      o 40 000 20  000  
+Current accunts                 * o 28 200 16 80045 000 
+Total equity           000 68 200 36 800105  
+Note* Where thebalance of a partner\222s current account is a debit balance it is shown in brackets and deducted rather than adde  :  d.   
+International Accounting Standards 41 
+Where full details of the current accounts are required the \221Financed bysection of a partnership statement of financial positioncould be presented as follows.Partneship\(Natatement of financial position\(extract\31 December 20Partner APartner B   Total\222    r me\) S at 20  $ $ $     
+Capital accunts             o 40 000 20 000 60 000 
+Currnt aountsOpeningbalance            Interepital                      tne\222s sala     ecc *  29 400 21 100  50 500 st on ca 2 000 1 000 3 000 Parrry - 18 000  18 000 
+**Profithares s 20 000 10 000  30 000 
+                                                             \(21000\             \(29500\               \(50 500\ 51 400 50 100101 500 Less Drawings   
+Less interest on drawings        \(2 200\)  \(3 800\)   \(6 000\) 
+ 28 200 16 800  45 000 
+Total equity                                                                                 68 20036 800105 000 
+Note* Where a balance is a debit balance it is shown in brackets and deducted rather than added** Where there is a loss to share out it is shown in brackets and deducted rather than added s: . .  
+International Accounting Standards 42 
+Appendix 3: Financial statements for other forms of 
+business \(A Level\ 
+\ Financial tatements \(inal ccounts\ of a manufacturing businessManufacturing accountA business thatmanufactures goods must prepare a manufacturing account to show the calculation of the cost of manufacture, whatever the ownership of the business. The manufacturing business could be a sole trader or a partnership.Name of mcturingbusineManufaturng Acountfor theear ended 31 December 20nventory of rw mterial  Purchases of raw material  \(asfa     anufa ss cic  y20   $ $ Iaa  38 000   76 000 
+Carriage on raw material      2 000 
+000  116  
+Less cinventory of rw mterial  losing aa   \(35 000\)  
+Cost of raw material consumed                                                                           Direct wages  81 000    43 000 
+Direct expenses     14 000 
+Prime cost000Add Factory overheadsIndirect wagesFactory rent and ratesFactory insuranceFactory fuel and powerFactory general expenses   138     26 000   18 000   11 000   15 000   23 000 
+Depreciation of factory machinery  000  9 000 102  
+000   240  
+Add pening inventory of work in progress  o    15 000 
+000   255  
+Less losing inventory of work in progressc     \(12 000\) 
+Production costs of goods completed000   243  
+Statement of profit or lossThe statement of financial position of a manufacturing business follows the same format as that of any other business but the trading section included the production cost of the goods completedThe expenses section will include only office, selling and financial expenses.Name of mcturingbusineStatement of profit or lossr theear ended 31 December Revenue \(sales\000ostsalOpening inventory of finished goods  Produiongoodsompleted000  .  anufa ss  fo y2020    $ $    365  Less c of es   23 000 ct cost of  c  243  
+Purcases of finisgoo  hhed ds  17 000 
+000  283  
+Less Cinventory of finished goods  000losing   22 000 261  
+Gross profit000   104  
+International Accounting Standards 43 
+Statement of financial positionThe statement of financial positionof a manufacturing business follows the same format as that of any other business; however there may be three inventoriesrather than onesuch as raw materials, work in progress and finished goods.\ Financial statements \(final accounts\ of a nontrading organisationeceipts and payments accountA summary of the cash book, known as a receipts and payments account, is prepared by the treasurer of a nontrading organisation, such as a cub or society. All money received is debited to the accountand all money paid out is credited to the account. It is balanced in the same way as a cash account. A statement of profit or lossmay be prepared if a shop or caf\351, for example,is operated by the organisation.Nontrading Organisation \(Name\Shop statement of profit or lossfor the year ended 31 December 20Revenue \(salesostsalOpening inventory      \(b- R -l     -  20    $ $ \)   22 500 Less c of es   2 300 
+hasesPurc  7 400 
+  9 700 
+Less cinventorylosing  \(1 800\) 
+Cost of goods so                           ld \(7 900\) 
+Gross profit                                                                                                        Add Shop eWagesof shop assisShoprentandrates14 600  xpenses  tant  4 200      3 600 
+Depreiationfittings   c of shop   1 100 \(8 900\) 
+Profit for the year  5 700 
+   
+International Accounting Standards 44 
+Income and expenditure accountAn income and expenditure account is also prepared the equivalent of the statementof profit or lossof a business. The expenses of the organisation are deducted from the revenue and the resulting figure is a surplus or deficit, rather than a profit or loss.Noding Organiatin \(NamIncome andExpenditAccuntfortheear ended December 20IncomeSubsriptionsProfit on sh  ompetitionfees \226     n-trasoe\)  ure o   y31 20    $ $    c   45 000 op   5 700 C \226 entrance   1 600 
+less expenses       \(400\) 1 200 
+Interereceived  st    1 400 
+* Profit on disosal of noncurrent assets          p-   - 
+ExpenditureGeneralexpenRatesinsuranceRepairs andmaintenance  interest     * Los oncurrent assets         53 300      ses  16 300  and   12 000    2 400 Loan    600 s disposal of non-  300 
+Deiationof equipm                 prec ent  1 500\(33 100\) 
+Surplusfor the year**     20 200 
+NotesIf only one asset was sold during the year only one of these items will appearIf the expenditure exceeds the income the resulting figure is described as a deficitStatement of financial positionThe first section of the statement of financial position that shows theassets and the second section that showthe liabilities of a nontrading organisation follows the same format as that of any other business, the only difference is in the accumulated fund shown in the second section of the statement of financial position compared to other business which is shown as equity. The second section of the statement of financial positionhas to be modified so that it shows the accumulated fund and the surplus or deficit.Noding Organiatin \(NamExtrat fromstatement of financial position31 December 20  Accumuld fundOpening balance  : * . ** .    s -    n-trasoe\) c  at 20     $ ate       67 500 
+Add:rplus fortheyear su     20 200 
+Total accumulated fund   87 700 
+  
+International Accounting Standards 45 
+Appendix 4: Resources for photocopying 
+\(a\tatementof profit or lossof a sole trader/partnership\(b\Statement of financial position of a sole trader\(c\Partnership appropriation account\(d\Statement of financial position of a partnership\(e\tatementof profit or lossof a limited company\(f\Statement of changes in equity of a limited company\(g\Statement of financial position of a limited company\(h\Statement of cash flows of a limited company\(i\Schedule of noncurrent assets of a limited company\(j\Manufacturing account  S              S              -      
+International Accounting Standardstatementof profit or lossof a sole trader/partnershiptatementof profit or lossfor the year ended\205\205\205\205\205\205 46 a\) S     \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205 S    
+ 
+$
+ 
+$
+ 
+Revenue
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cost of sales
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Gross profit 
+ 
+ 
+ 
+Add:
+ 
+other inco
+me
+ 
+ 
+ 
+ 
+ 
+ 
+Less: 
+e
+xpenses
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Profit
+/\(loss\
+ 
+for the year
+ 
+ 
+ 
+    
+International Accounting StandardsStatement of financial positionof a sole traderStatementof financial position as at 47 b\)    \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205   \205\205\205\205\205\205  
+Assets
+ 
+$
+ 
+$
+ 
+Non
+-
+current assets
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current assets
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total assets  $ 
+Equity and liabilities
+ 
+ 
+ 
+Equity
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total equity
+ 
+ 
+ 
+Non
+-
+current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total liabilities
+ 
+ 
+ 
+Total equityand liabilities   $ 
+International Accounting StandardsPartnership appropriationPartnership appropriation account for the year ended\205\205\205\205\205\205 48 c\)  account  \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205    
+ 
+$
+ 
+$
+ 
+Profit for the year
+ 
+ 
+ 
+Add: Interest on drawings
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Less: Interest on capital
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Less: Partners\222 salaries
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Profit before 
+appropriation
+ 
+ 
+ 
+ 
+ 
+ 
+Profit shared
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+International Accounting StandardsStatement of financial positionof a partnershipStatement of financial position as at 49 d\)    \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205  \205\205\205\205\205\205  
+Assets
+ 
+$
+ 
+$
+ 
+Non
+-
+current assets
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current assets
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total assets  $ 
+Equity and liabilities
+ 
+ 
+ 
+Equity
+ 
+ 
+ 
+Capital account
+s
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current accounts
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total equity
+ 
+ 
+ 
+Non
+-
+current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total liabilities
+ 
+ 
+ 
+Total equity and liabilities  $ 
+International Accounting Standardstatementof profit or lossof a limited companyStatement of profit or loss for the year ended\205\205\205\205\205\205 50 e\) S    \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205    
+ 
+$
+ 
+Revenue
+ 
+ 
+Cost of sales
+ 
+ 
+Gross profit
+ 
+ 
+Distribution costs
+ 
+ 
+Administrati
+ve 
+expenses
+ 
+ 
+Profit/\(loss\ from operations
+ 
+ 
+Finance costs
+ 
+ 
+Profit/\(loss\ before tax
+ 
+ 
+Tax
+ 
+ 
+Profit
+/\(loss\
+ 
+for the year
+ 
+ 
+              
+International Accounting StandardsStatement of in equity of a limited companyStatement of changes in equity for the year endedShare capitalGeneral reserveRevaluation reserveGeneral reserveRetained earningsTotal 51 f\) changes   \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205  \205\205\205\205\205\205    $  $  $  $  $   $ 
+Balance at start the yearof        
+       
+       
+       
+       
+       
+Balance at start of the year       
+   
+International Accounting StandardsStatement of financialposition of a limited companyStatement of financial position as at 52 g\)    \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205  \205\205\205\205\205\205 
+ 
+$000
+ 
+ 
+ 
+Non
+-
+current assets
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current assets
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total assets
+ 
+ 
+ 
+ 
+ 
+ 
+EQUITY & LIABILITIES
+ 
+ 
+Equity
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TOTAL EQUITY
+ 
+ 
+Non
+-
+current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+Current liabilities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TOTAL LIABILITIES
+ 
+ 
+Total equity and liabilities
+ 
+ 
+  
+International Accounting StandardsStatement of flows of a limited companyStatement of cash flow for the year ended\205\205\205\205\205\205 53 h\) cash   \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205    
+ 
+$
+ 
+$
+ 
+Net cash \(used in\/from operating activities
+ 
+ 
+ 
+Cash flows from investing activities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Net cash \(used in\/from investing activities
+ 
+ 
+ 
+Cash flows from 
+financing activities
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Net cash \(used in\/from financing activities
+ 
+ 
+ 
+ 
+ 
+ 
+Net increase/\(decrease\ in cash and cash equivalents
+ 
+ 
+ 
+Cash and cash equivalents at start of the year
+ 
+ 
+ 
+Cash and cash equivalents at end of the year
+ 
+ 
+ 
+     
+International Accounting StandardsSchedule of current assets of a limited companySchedule of noncurrent assets at\205\205\205\205\205\205Total 54 i\) non-   \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205 -        
+ 
+$
+ 
+$
+ 
+$
+ 
+$
+ 
+$
+ 
+Cost
+ 
+or valuation
+ 
+ 
+ 
+ 
+ 
+ 
+At 
+ 
+ 
+ 
+ 
+ 
+ 
+Revaluation
+ 
+ 
+ 
+ 
+ 
+ 
+Additions
+ 
+ 
+ 
+ 
+ 
+ 
+Disposals
+ 
+ 
+ 
+ 
+ 
+ 
+At 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Accumulated d
+epreciation
+ 
+ 
+ 
+ 
+ 
+ 
+At 
+ 
+ 
+ 
+ 
+ 
+ 
+Revaluation
+ 
+ 
+ 
+ 
+ 
+ 
+Charge for 
+the year
+ 
+ 
+ 
+ 
+ 
+ 
+Disposals
+ 
+ 
+ 
+ 
+ 
+ 
+At 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Carrying amount
+ 
+ 
+ 
+ 
+ 
+ 
+At 
+ 
+ 
+ 
+ 
+ 
+ 
+At 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+International Accounting StandardsManufacturingManufacturing accountfor the year ended\205\205\205\205\205\205 55 j\)  account  \205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\205\\205\205    
+ 
+$
+ 
+$
+ 
+ 
+ 
+ 
+Opening inventory of raw materials
+ 
+PurchasesCarriage inwardsLess: returns outwardsNet purchasesLess: closing inventory of raw materials     
+ 
+ 
+ 
+ 
+ 
+Cost of raw materials consumed
+ 
+ 
+ 
+Direct wages
+ 
+ 
+ 
+Direct 
+expenses
+ 
+ 
+ 
+Prime cost
+ 
+ 
+ 
+Add: F
+actory expenses
+ 
+ 
+ 
+Other factory overheads
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Add: O
+pening inventory of work in progress
+ 
+ 
+ 
+ 
+ 
+ 
+Less: C
+losing inventory of work in progress
+ 
+ 
+ 
+Production cost of goods completed
+ 
+ 
+ 
+  
+Cambridge Assessment International EducationThe Triangle Building, Shaftesbury Road, Cambridge, CB2 8EA, United Kingdomt: +44 1223 553554 info@cambridgeinternational.orgwww.cambridgeinternational.orgCopyright \251 UCLES 2020                                                                e:         

@@ -66,67 +66,36 @@
 <h1>Sequences & Series</h1>
 <p style="color:var(--gray)">WMA13/14 (IAL)</p>
 </div>
-
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Sigma Notation</h3>
+<h3>1. Series</h3>
 <ul>
-<li>Σ means “sum of”. Write series compactly using limits.</li>
+<li><strong>Arithmetic:</strong> uₙ = a + (n−1)d; Sₙ = n/2(2a + (n−1)d) = n/2(a + l)</li>
+<li><strong>Geometric:</strong> uₙ = ar^(n−1); Sₙ = a(1−rⁿ)/(1−r); S∞ = a/(1−r) for |r|<1</li>
 </ul>
-<div class="formula-box">
-Σₖ₌₁ⁿ aₖ = a₁ + a₂ + … + aₙ
-</div>
-<h3>2. Arithmetic Series</h3>
+<h3>2. Binomial Expansion</h3>
 <ul>
-<li>nth term: uₙ = a + (n − 1)d.</li>
-<li>Sum of n terms: Sₙ = n/2 [2a + (n − 1)d] = n/2 (a + l), where l is the last term.</li>
-</ul>
-<div class="formula-box">
-Sₙ = n/2 [2a + (n − 1)d] = n/2 (a + l)
-</div>
-<h3>3. Geometric Series</h3>
-<ul>
-<li>nth term: uₙ = arⁿ⁻¹.</li>
-<li>Sum of n terms: Sₙ = a(1 − rⁿ)/(1 − r) for r ≠ 1.</li>
-<li>Infinite sum: S∞ = a/(1 − r) for |r| < 1.</li>
-</ul>
-<div class="formula-box">
-Sₙ = a(1 − rⁿ)/(1 − r) &nbsp;&nbsp; S∞ = a/(1 − r)  (|r| < 1)
-</div>
-<h3>4. Binomial Expansion</h3>
-<ul>
-<li>(1 + x)ⁿ = 1 + nx + [n(n−1)/2!] x² + [n(n−1)(n−2)/3!] x³ + …</li>
-<li>Valid for |x| < 1 when n is not a positive integer.</li>
-</ul>
-<div class="formula-box">
-(1 + x)ⁿ = 1 + nx + n(n−1)x²/2! + n(n−1)(n−2)x³/3! + …
-</div>
-<h3>5. Recurrence Relations</h3>
-<ul>
-<li>A sequence defined by uₙ₊₁ = f(uₙ) with a starting value.</li>
-<li>Find terms by repeated substitution. Limit exists if sequence converges.</li>
+<li><strong>(a+b)ⁿ:</strong> Use nCr coefficients</li>
+<li><strong>(1+x)ⁿ:</strong> Valid for |x|<1 when n not positive integer</li>
 </ul>
 </div>
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Arithmetic: uₙ = a + (n−1)d; Sₙ = n/2[2a + (n−1)d].</li>
-<li>Geometric: uₙ = arⁿ⁻¹; Sₙ = a(1−rⁿ)/(1−r); S∞ = a/(1−r) if |r|<1.</li>
-<li>Binomial expansion: (1+x)ⁿ with descending factorial coefficients.</li>
-<li>Recurrence: substitute repeatedly; limit L satisfies L = f(L).</li>
+<li>Arithmetic: uₙ = a + (n−1)d</li>
+<li>Geometric: S∞ = a/(1−r) for |r|<1</li>
+<li>Binomial: use nCr coefficients</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>For geometric series, always check whether |r| < 1 before using S∞.</li>
-<li>Write binomial coefficients as fractions to avoid early rounding errors.</li>
-<li>In recurrence questions, show the first few terms clearly to demonstrate the pattern.</li>
-<li>When summing an arithmetic series, decide whether to use the first/last term formula or the first/difference formula.</li>
+<li>For geometric series, always check if |r| < 1 before using S∞</li>
+<li>Binomial expansion for negative/fractional n needs |x| < 1</li>
+<li>Sigma notation: Σ means sum of terms</li>
+<li>Arithmetic mean of first and last term = average of all terms</li>
 </ul>
 </div>
-</div>
-
 </div>
 </div>
 </section>

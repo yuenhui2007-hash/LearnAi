@@ -82,139 +82,35 @@
 <p style="color:var(--gray)">IB DP Mathematics: Applications & Interpretation HL/SL — Topic 6</p>
 </div>
 <div class="notes-section">
-<h2>Overview</h2>
-<p>Mathematical Models (Topic 6) brings together statistical and algebraic techniques to analyse relationships in data. It covers linear regression, correlation, and hypothesis testing. This topic is central to the data-driven philosophy of Maths AI.</p>
-</div>
-
-<div class="notes-section">
-<h2>6.1 Linear Regression</h2>
-<div class="formula-box">
-Regression line: y = ax + b<br>
-a = cov(X,Y) / var(X) = S_xy / S_xx<br>
-b = ȳ − a x̄<br><br>
-Use GDC to calculate regression coefficients.<br>
-Interpolation (within data range) is reliable; extrapolation is not.
-</div>
-</div>
-
-<div class="notes-section">
-<h2>6.2 Correlation</h2>
-<div class="formula-box">
-Pearson's r = cov(X,Y) / (σ_X σ_Y)<br>
-−1 ≤ r ≤ 1<br>
-|r| > 0.8 → strong correlation; |r| < 0.3 → weak correlation<br>
-r = 0 → no linear correlation (but may be non-linear)
-</div>
-<p>Correlation does not imply causation.</p>
-</div>
-
-<div class="notes-section">
-<h2>6.3 Chi-Squared Test</h2>
-<div class="formula-box">
-χ² = Σ (O − E)² / E<br>
-where O = observed frequency, E = expected frequency<br><br>
-Expected frequency = (row total × column total) / grand total<br>
-degrees of freedom = (rows − 1)(columns − 1)<br>
-If χ² > critical value (or p-value < α), reject H₀
-</div>
-
-<h3>Worked Example 1: Chi-Squared</h3>
-<p><strong>Question:</strong> Test for association between gender and preference at 5% significance.</p>
-<table style="margin:12px 0;border-collapse:collapse">
-<tr><th style="border:1px solid #ccc;padding:6px"></th><th style="border:1px solid #ccc;padding:6px">Prefer A</th><th style="border:1px solid #ccc;padding:6px">Prefer B</th></tr>
-<tr><td style="border:1px solid #ccc;padding:6px">Male</td><td style="border:1px solid #ccc;padding:6px">30</td><td style="border:1px solid #ccc;padding:6px">20</td></tr>
-<tr><td style="border:1px solid #ccc;padding:6px">Female</td><td style="border:1px solid #ccc;padding:6px">25</td><td style="border:1px solid #ccc;padding:6px">25</td></tr>
-</table>
-<p><strong>Solution:</strong></p>
-<div class="formula-box">
-Expected (Male, A) = (50×55)/100 = 27.5<br>
-χ² = (30−27.5)²/27.5 + (20−22.5)²/22.5 + (25−27.5)²/27.5 + (25−22.5)²/22.5 = 0.91<br>
-df = 1; critical value at 5% = 3.841<br>
-0.91 < 3.841 → do not reject H₀ → no significant association
-</div>
-</div>
-
-<div class="notes-section">
-<h2>6.4 t-Test</h2>
-<div class="formula-box">
-One-sample t-test: compare sample mean to hypothesised value<br>
-Two-sample t-test: compare means of two independent samples<br>
-Paired t-test: compare means of paired data (before/after)<br><br>
-t = (x̄ − μ₀) / (s/√n)<br>
-Compare |t| to critical value or use p-value
-</div>
-</div>
-
-<div class="notes-section">
-<h2>Common Misconceptions</h2>
+<h2>Detailed Notes</h2>
+<h3>1. Probability</h3>
 <ul>
-<li><strong>Correlation vs. causation:</strong> A strong correlation does not prove one variable causes the other.</li>
-<li><strong>r = 0:</strong> No linear correlation, but there could be a strong non-linear relationship.</li>
-<li><strong>Extrapolation:</strong> Predicting outside the data range is unreliable regardless of R².</li>
-<li><strong>Chi-squared:</strong> Expected frequencies should be ≥ 5 for valid results.</li>
+<li><strong>AND:</strong> Multiply (independent)</li>
+<li><strong>OR:</strong> Add (mutually exclusive)</li>
+<li><strong>Conditional:</strong> P(A|B) = P(A∩B)/P(B)</li>
+</ul>
+<h3>2. Statistics</h3>
+<ul>
+<li><strong>Mean, median, mode</strong></li>
+<li><strong>Standard deviation:</strong> σ = √(Σ(x−x̄)²/n)</li>
+<li><strong>Quartiles, interquartile range</strong></li>
 </ul>
 </div>
-
-<div class="notes-section">
-<h2>Exam-Specific Information</h2>
-<ul>
-<li><strong>Paper 1:</strong> 2–3 questions on regression and correlation calculations.</li>
-<li><strong>Paper 2:</strong> Data-based questions requiring hypothesis testing and model interpretation.</li>
-<li><strong>IA:</strong> Statistical modelling and hypothesis testing are extremely popular IA topics.</li>
-</ul>
-<div class="highlight-box">
-<h4>Past Paper Trends (2019–2024)</h4>
-<p>November 2023: Regression with residual analysis and model comparison.<br>
-May 2023: Chi-squared test with Yates' correction for 2×2 table.<br>
-November 2022: t-test for paired data in a medical trial.<br>
-May 2022: Correlation analysis with outlier identification.</p>
-</div>
-</div>
-
-<div class="notes-section">
-<h2>External Resources</h2>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.revisionvillage.com/" target="_blank" rel="noopener">Revision Village</a> — IB-specific video tutorials & question bank</li>
-<li><a href="https://ibdocuments.com/" target="_blank" rel="noopener">IB Documents</a> — Past papers, mark schemes & syllabi</li>
-<li><a href="https://ib.academy/" target="_blank" rel="noopener">IB Academy</a> — Study guides and free resources</li>
-<li><a href="https://www.geogebra.org/" target="_blank" rel="noopener">GeoGebra</a> — Regression and statistics tools</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="notes-section">
-<h2>Practice Questions</h2>
-<ul>
-<li>Given data points (1,3), (2,5), (3,7), (4,9), calculate the regression line and predict y when x = 5.</li>
-<li>Test whether there is an association between smoking and lung disease using the given contingency table at the 1% level.</li>
-<li>A sample of 25 students has mean score 72 and standard deviation 8. Test at 5% whether the population mean is 70.</li>
-</ul>
-</div>
-
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Regression: y = ax + b; use GDC for calculations.</li>
-<li>Correlation: r measures linear association; −1 ≤ r ≤ 1.</li>
-<li>Correlation ≠ causation.</li>
-<li>Chi-squared: Σ(O−E)²/E; df = (r−1)(c−1).</li>
-<li>t-test: compare means; paired for before/after data.</li>
-<li>Reject H₀ if p < α or test statistic > critical value.</li>
+<li>AND = multiply; OR = add</li>
+<li>Conditional: P(A|B) = P(A∩B)/P(B)</li>
+<li>Standard deviation: σ = √(Σ(x−x̄)²/n)</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>Read each question carefully and identify the command term before answering.</li>
-<li>Show all working — method marks are generous in IB Mathematics.</li>
-<li>Give answers to 3 significant figures unless specified otherwise.</li>
-<li>State H₀ and H₁ clearly in hypothesis tests.</li>
-<li>Interpret results in context, not just numerically.</li>
+<li>Venn diagrams help visualise probability relationships</li>
+<li>Tree diagrams for sequential/multi-stage problems</li>
+<li>Interquartile range = Q₃ − Q₁ (middle 50% of data)</li>
+<li>Outliers: values > Q₃ + 1.5×IQR or < Q₁ − 1.5×IQR</li>
 </ul>
 </div>
 </div>
