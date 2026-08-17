@@ -67,32 +67,55 @@
 </div>
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Vectors</h3>
+<h3>1. Integration as Reverse of Differentiation</h3>
+<div class="formula-box">∫xⁿ dx = xⁿ⁺¹/(n+1) + c (for n ≠ −1)</div>
 <ul>
-<li><strong>Components:</strong> ai + bj</li>
-<li><strong>Magnitude:</strong> √(a²+b²)</li>
-<li><strong>Direction:</strong> tan θ = b/a</li>
+<li><strong>Indefinite integral:</strong> Includes +c (constant of integration).</li>
+<li><strong>Definite integral:</strong> Evaluated between limits, no +c needed.</li>
 </ul>
-<h3>2. Operations</h3>
+<h3>2. Standard Integrals</h3>
+<div class="formula-box">∫axⁿ dx = axⁿ⁺¹/(n+1) + c<br>∫(ax + b)ⁿ dx = (ax + b)ⁿ⁺¹/[a(n+1)] + c</div>
+<h3>3. Definite Integration</h3>
+<div class="formula-box">∫ₐᵇ f(x) dx = [F(x)]ₐᵇ = F(b) − F(a)</div>
 <ul>
-<li><strong>Addition:</strong> Parallelogram law</li>
-<li><strong>Dot product:</strong> a·b = |a||b|cos θ</li>
+<li>Gives the area under the curve between x = a and x = b.</li>
+<li>If curve is below x-axis, integral is negative — area is positive value.</li>
+</ul>
+<h3>4. Area Under a Curve</h3>
+<ul>
+<li>Area = ∫ₐᵇ y dx (where y = f(x)).</li>
+<li>If curve crosses x-axis between a and b, split into separate integrals.</li>
+<li>Total area = sum of absolute values of each part.</li>
+</ul>
+<h3>5. Area Between Curve and Line</h3>
+<ul>
+<li>Area = ∫ₐᵇ (top function − bottom function) dx.</li>
+<li>Find intersection points first to determine limits.</li>
+</ul>
+<h3>6. Numerical Integration — Trapezium Rule</h3>
+<div class="formula-box">∫ₐᵇ y dx ≈ h/2[y₀ + 2(y₁ + y₂ + ... + yₙ₋₁) + yₙ]<br>where h = (b − a)/n</div>
+<ul>
+<li>More strips (larger n) = more accurate.</li>
+<li>Overestimates if curve is concave up; underestimates if concave down.</li>
 </ul>
 </div>
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Magnitude: √(a²+b²)</li>
-<li>Dot product: a·b = |a||b|cos θ</li>
+<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
+<li>Definite: ∫ₐᵇ f(x) dx = F(b) − F(a)</li>
+<li>Area under curve = ∫ y dx</li>
+<li>Area between curves = ∫ (top − bottom) dx</li>
+<li>Trapezium: h/2[y₀ + 2(y₁+...+yₙ₋₁) + yₙ]</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>Vectors have magnitude and direction</li>
-<li>Unit vector: divide by magnitude</li>
-<li>Parallel vectors: scalar multiple of each other</li>
-<li>Perpendicular vectors: dot product = 0</li>
+<li>Never forget +c for indefinite integrals</li>
+<li>Check if curve crosses axis — split if needed</li>
+<li>Trapezium rule: more strips = more accurate</li>
+<li>Area is always positive — take absolute value</li>
 </ul>
 </div>
 </div>

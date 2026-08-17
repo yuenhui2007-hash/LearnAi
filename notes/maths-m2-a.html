@@ -65,83 +65,60 @@
 <h1>Functions</h1>
 <p style="color:var(--gray)">9709 (A-Level)</p>
 </div>
-
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Definitions</h3><p>Domain = set of inputs. Range = set of outputs. One-to-one: each output from exactly one input.</p>
-<h3>2. Composite Functions</h3><div class="formula-box">fg(x) = f(g(x))</div>
-<h3>3. Inverse Functions</h3><p>f⁻¹(x): reflect y=f(x) in line y=x. Domain of f = range of f⁻¹.</p>
-<h3>4. Transformations</h3>
-<ul><li>y = f(x) + a: vertical shift.</li><li>y = f(x+a): horizontal shift (-a).</li><li>y = af(x): vertical stretch.</li><li>y = f(ax): horizontal stretch (1/a).</li></ul>
-</div>
-<div class="notes-section">
-<h3>Problem-Solving Strategies</h3>
+<h3>1. Function Notation</h3>
 <ul>
-<li><strong>Read twice:</strong> Once for understanding, once for details</li>
-<li><strong>Identify the topic:</strong> What technique is being tested?</li>
-<li><strong>Write down formulae:</strong> Before substituting values</li>
-<li><strong>Check answers:</strong> Does the answer make sense? Re-substitute if possible</li>
+<li><strong>f(x):</strong> The output of function f when input is x.</li>
+<li><strong>Domain:</strong> Set of all possible input values (x-values).</li>
+<li><strong>Range:</strong> Set of all possible output values (y-values).</li>
+</ul>
+<h3>2. Types of Functions</h3>
+<ul>
+<li><strong>One-one (injective):</strong> Each output corresponds to exactly one input. Passes horizontal line test.</li>
+<li><strong>Many-one:</strong> Different inputs give same output. Example: f(x) = x².</li>
+<li><strong>Onto (surjective):</strong> Range equals codomain.</li>
+</ul>
+<h3>3. Composite Functions</h3>
+<div class="formula-box">fg(x) = f(g(x)) — apply g first, then f</div>
+<ul>
+<li>Order matters: fg(x) ≠ gf(x) in general.</li>
+<li>Domain of fg: x must be in domain of g, and g(x) must be in domain of f.</li>
+</ul>
+<h3>4. Inverse Functions</h3>
+<ul>
+<li>Only one-one functions have inverses.</li>
+<li><strong>Finding inverse:</strong> Write y = f(x), rearrange to make x the subject, swap x and y.</li>
+<li><strong>Domain of f⁻¹</strong> = Range of f.</li>
+<li><strong>Range of f⁻¹</strong> = Domain of f.</li>
+<li>Graph of f⁻¹ is reflection of f in the line y = x.</li>
+</ul>
+<h3>5. Modulus Function</h3>
+<div class="formula-box">|x| = x if x ≥ 0; |x| = −x if x < 0</div>
+<ul>
+<li>|f(x)| reflects negative parts of f(x) above x-axis.</li>
+<li>f(|x|): reflect right side of graph to left side (symmetric about y-axis).</li>
+<li>Solve |x − a| = b → x − a = b or x − a = −b.</li>
+<li>Solve |x − a| < b → −b < x − a < b → a − b < x < a + b.</li>
 </ul>
 </div>
-<div class="notes-section">
-<h3>Common Algebraic Mistakes</h3>
-<ul>
-<li>(a + b)² ≠ a² + b² (it's a² + 2ab + b²)</li>
-<li>√(a + b) ≠ √a + √b</li>
-<li>1/(a + b) ≠ 1/a + 1/b</li>
-<li>When squaring both sides, check for extraneous solutions</li>
-</ul>
-<div class="common-mistake">Dividing by a variable without considering if it could be zero. Always state "assuming x ≠ 0" or check separately.</div>
-</div><div class="notes-section"><h3>5. Transformations of Functions</h3><table class="compare-table"><tr><th>Transformation</th><th>Effect on y = f(x)</th></tr><tr><td>f(x) + a</td><td>Vertical shift up by a</td></tr><tr><td>f(x + a)</td><td>Horizontal shift left by a</td></tr><tr><td>af(x)</td><td>Vertical stretch by factor a</td></tr><tr><td>f(ax)</td><td>Horizontal compression by factor a</td></tr><tr><td>−f(x)</td><td>Reflection in x-axis</td></tr><tr><td>f(−x)</td><td>Reflection in y-axis</td></tr></table></div>
-
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<ul><li>Domain = inputs; Range = outputs</li><li>fg(x) = f(g(x))</li><li>Inverse: reflect in y=x</li><li>Transformations: +a vertical, (x+a) horizontal, af(x) stretch</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> Differentiate y = 3x⁴ + 2x² − 5x + 7</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-dy/dx = 3(4x³) + 2(2x) − 5(1) + 0<br>
-dy/dx = 12x³ + 4x − 5<br>
-<strong>Answer: dy/dx = 12x³ + 4x − 5</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting the +c (constant of integration) for indefinite integrals. You'll lose a mark!</div>
-<div class="key-point">The chain rule: if y = f(g(x)), then dy/dx = f'(g(x)) × g'(x). Use for functions inside functions.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
 <ul>
-<li>d/dx(xⁿ) = nxⁿ⁻¹</li>
-<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
-<li>Chain rule: dy/dx = dy/du × du/dx</li>
-<li>Stationary points: dy/dx = 0; d²y/dx² > 0 = min</li>
+<li>f(x) is the output when input is x</li>
+<li>fg(x) = f(g(x))</li>
+<li>Inverse: swap x and y, rearrange</li>
+<li>|x| = x for x ≥ 0; |x| = −x for x < 0</li>
+<li>Reflect inverse in line y = x</li>
 </ul>
 </div>
-
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
-</ul>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.physicsandmathstutor.com/maths-revision/a-level/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — Past papers & solutions</li>
-<li><a href="https://www.savemyexams.co.uk/notes/maths/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-maths-9709/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/maths/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/maths" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Check if function is one-one before finding inverse</li>
+<li>For composite functions, work from the inside out</li>
+<li>When solving modulus equations, always consider ±</li>
+<li>Domain of f⁻¹ = Range of f; Range of f⁻¹ = Domain of f</li>
 </ul>
 </div>
 </div>

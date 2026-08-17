@@ -65,33 +65,52 @@
 </div>
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Kinematics</h3>
+<h3>1. Basic Probability</h3>
+<div class="formula-box">P(A) = n(A)/n(ℰ)</div>
 <ul>
-<li><strong>SUVAT:</strong> v = u + at; s = ut + ½at²; v² = u² + 2as</li>
-<li><strong>Graphs:</strong> v-t gradient = a, area = s</li>
+<li><strong>Range:</strong> 0 ≤ P(A) ≤ 1</li>
+<li><strong>Complement:</strong> P(A') = 1 − P(A)</li>
 </ul>
-<h3>2. Newton's Laws</h3>
+<h3>2. Combined Events</h3>
 <ul>
-<li>F = ma</li>
-<li>Weight = mg</li>
-<li>Normal reaction, friction, tension</li>
+<li><strong>OR (union):</strong> P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
+<li><strong>Mutually exclusive:</strong> P(A ∩ B) = 0, so P(A ∪ B) = P(A) + P(B)</li>
+<li><strong>AND (intersection):</strong> P(A ∩ B) = P(A) × P(B|A)</li>
+</ul>
+<h3>3. Conditional Probability</h3>
+<div class="formula-box">P(A|B) = P(A ∩ B)/P(B)</div>
+<ul>
+<li><strong>Independent events:</strong> P(A|B) = P(A), so P(A ∩ B) = P(A) × P(B)</li>
+</ul>
+<h3>4. Tree Diagrams</h3>
+<ul>
+<li>Multiply along branches for AND.</li>
+<li>Add across branches for OR (mutually exclusive paths).</li>
+</ul>
+<h3>5. Permutations and Combinations</h3>
+<div class="formula-box">ⁿPᵣ = n!/(n−r)! (order matters)<br>ⁿCᵣ = n!/[r!(n−r)!] (order doesn't matter)</div>
+<ul>
+<li><strong>Permutation:</strong> Arrangement where order is important.</li>
+<li><strong>Combination:</strong> Selection where order is not important.</li>
 </ul>
 </div>
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>SUVAT equations for constant acceleration</li>
-<li>F = ma</li>
-<li>v-t graph: gradient = a, area = displacement</li>
+<li>P(A') = 1 − P(A)</li>
+<li>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
+<li>P(A ∩ B) = P(A) × P(B|A)</li>
+<li>Independent: P(A ∩ B) = P(A) × P(B)</li>
+<li>ⁿCᵣ = n!/[r!(n−r)!]</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>For constant acceleration problems, identify which SUVAT variable is missing</li>
-<li>Newton's Second Law: resultant force = mass × acceleration</li>
-<li>Tension same throughout a light inextensible string</li>
-<li>Friction opposes motion — check direction carefully</li>
+<li>Draw tree diagrams for multi-stage problems</li>
+<li>Distinguish between permutation (order matters) and combination (order doesn't)</li>
+<li>Venn diagrams help visualise P(A ∪ B) and P(A ∩ B)</li>
+<li>For "at least one", consider using complement: 1 − P(none)</li>
 </ul>
 </div>
 </div>

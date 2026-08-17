@@ -65,34 +65,51 @@
 </div>
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Probability</h3>
+<h3>1. Discrete Random Variables</h3>
 <ul>
-<li><strong>AND:</strong> Multiply (independent)</li>
-<li><strong>OR:</strong> Add (mutually exclusive)</li>
-<li><strong>Conditional:</strong> P(A|B) = P(A∩B)/P(B)</li>
+<li><strong>Probability distribution:</strong> Table showing each value x and P(X = x).</li>
+<li><strong>ΣP(X = x) = 1</strong></li>
 </ul>
-<h3>2. Statistics</h3>
+<h3>2. Expectation and Variance</h3>
+<div class="formula-box">E(X) = ΣxP(X = x)<br>E(X²) = Σx²P(X = x)<br>Var(X) = E(X²) − [E(X)]²<br>SD(X) = √Var(X)</div>
 <ul>
-<li><strong>Mean, median, mode</strong></li>
-<li><strong>Standard deviation:</strong> σ = √(Σ(x−x̄)²/n)</li>
-<li><strong>Quartiles, interquartile range</strong></li>
+<li><strong>Linear transformation:</strong> E(aX + b) = aE(X) + b; Var(aX + b) = a²Var(X)</li>
+</ul>
+<h3>3. Binomial Distribution</h3>
+<div class="formula-box">X ~ B(n, p)<br>P(X = r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ</div>
+<ul>
+<li><strong>n</strong> = number of trials, <strong>p</strong> = probability of success.</li>
+<li><strong>Conditions:</strong> Fixed n, independent trials, constant p, two outcomes.</li>
+<li><strong>Mean:</strong> E(X) = np</li>
+<li><strong>Variance:</strong> Var(X) = np(1−p)</li>
+</ul>
+<h3>4. Normal Distribution</h3>
+<div class="formula-box">X ~ N(μ, σ²)</div>
+<ul>
+<li>Bell-shaped curve, symmetric about μ.</li>
+<li>Total area under curve = 1.</li>
+<li><strong>Standard normal:</strong> Z = (X − μ)/σ ~ N(0, 1)</li>
+<li>Use standard normal tables to find probabilities.</li>
+<li><strong>Key values:</strong> P(μ − σ < X < μ + σ) ≈ 0.68, P(μ − 2σ < X < μ + 2σ) ≈ 0.95</li>
 </ul>
 </div>
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>AND = multiply; OR = add</li>
-<li>Conditional: P(A|B) = P(A∩B)/P(B)</li>
-<li>Standard deviation: σ = √(Σ(x−x̄)²/n)</li>
+<li>E(X) = ΣxP(X=x)</li>
+<li>Var(X) = E(X²) − [E(X)]²</li>
+<li>Binomial: P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ</li>
+<li>Normal: Z = (X−μ)/σ</li>
+<li>Binomial mean = np; variance = np(1−p)</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>Venn diagrams help visualise probability relationships</li>
-<li>Tree diagrams for sequential/multi-stage problems</li>
-<li>Interquartile range = Q₃ − Q₁ (middle 50% of data)</li>
-<li>Outliers: values > Q₃ + 1.5×IQR or < Q₁ − 1.5×IQR</li>
+<li>For binomial, check conditions: fixed n, independent, constant p, two outcomes</li>
+<li>Standardise normal: Z = (X − μ)/σ</li>
+<li>Use tables for Z values — draw diagram</li>
+<li>Var(aX+b) = a²Var(X); SD(aX+b) = |a|SD(X)</li>
 </ul>
 </div>
 </div>

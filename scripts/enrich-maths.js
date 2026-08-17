@@ -1,62 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📐 CAIE A-Level Mathematics (9709) — LearnAI</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.toc { background: var(--light); padding: 24px; border-radius: var(--radius-lg); margin-bottom: 40px; }
-.toc h2 { font-size: 1.2rem; margin-bottom: 16px; }
-.toc ul { columns: 2; }
-.toc li { margin-bottom: 8px; }
-.topic-section { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px solid var(--gray-light); }
-.topic-section h2 { font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #dc2626; }
-.topic-section h3 { font-size: 1.15rem; color: var(--dark); margin: 28px 0 12px; }
-.topic-section p, .topic-section li { line-height: 1.8; color: var(--dark-light); margin-bottom: 10px; }
-.topic-section ul { margin: 12px 0; padding-left: 24px; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid #dc2626; font-family: 'Courier New', monospace; margin: 16px 0; }
-.summary-box { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 24px; border-radius: var(--radius-lg); margin-top: 32px; }
-.key-point { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; border-left: 4px solid #dc2626; }
-.exam-tip { background: linear-gradient(135deg, #fef9c3 0%, #fde047 100%); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; border-left: 4px solid #ca8a04; }
-</style>
-</head>
-<body>
-<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-<section class="notes-page"><div class="container">
-<div class="notes-container">
-<div class="notes-header">
-<h1>📐 CAIE A-Level Mathematics (9709)</h1>
-<p style="color:var(--gray)">Syllabus-specific revision — No mixed content</p>
-</div>
-<div class="toc">
-<h2>📑 Topics</h2>
-<ul>
-<li><a href="#m1">Quadratics</a></li>
-<li><a href="#m2">Functions</a></li>
-<li><a href="#m3">Coordinate Geometry</a></li>
-<li><a href="#m4">Circular Measure</a></li>
-<li><a href="#m5">Trigonometry</a></li>
-<li><a href="#m6">Series</a></li>
-<li><a href="#m7">Differentiation</a></li>
-<li><a href="#m8">Integration</a></li>
-<li><a href="#m9">Vectors</a></li>
-<li><a href="#m10">Probability</a></li>
-<li><a href="#m11">Distributions</a></li>
-<li><a href="#m12">Hypothesis Testing</a></li>
-<li><a href="#m13">Kinematics</a></li>
-</ul>
-</div>
-<div class="topic-section" id="m1">
-<h2>Quadratics</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Solving Quadratic Equations</h3>
+const fs = require('fs');
+const path = require('path');
+
+const notesDir = path.join(__dirname, '..', 'notes');
+
+const MATHS = {
+  'm1': {
+    name: 'Quadratics',
+    d: `<h3>1. Solving Quadratic Equations</h3>
 <ul>
 <li><strong>Factorising:</strong> Express ax² + bx + c as (px + q)(rx + s). Example: x² + 5x + 6 = (x + 2)(x + 3).</li>
 <li><strong>Quadratic Formula:</strong> For ax² + bx + c = 0, x = (−b ± √(b² − 4ac)) / 2a</li>
@@ -92,36 +42,13 @@
 <li>Solve ax² + bx + c > 0 by finding roots first, then testing regions.</li>
 <li>Remember: if a < 0, inequality direction flips when multiplying (but better to rearrange to a > 0 form).</li>
 <li>Sketch graph to determine solution set.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>Quadratic formula: x = (−b ± √(b² − 4ac)) / 2a</li>
-<li>Discriminant Δ = b² − 4ac</li>
-<li>Δ > 0: two roots; Δ = 0: one root; Δ < 0: no real roots</li>
-<li>Vertex at x = −b/2a</li>
-<li>Complete square: x² + bx + c = (x + b/2)² − (b/2)² + c</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Always state the formula before substituting</li>
-<li>Check if expression factorises first — it's faster</li>
-<li>For inequalities, sketch the graph to find regions</li>
-<li>If question asks for exact values, leave in surd form</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m2">
-<h2>Functions</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Function Notation</h3>
+</ul>`,
+    s: [`Quadratic formula: x = (−b ± √(b² − 4ac)) / 2a`, `Discriminant Δ = b² − 4ac`, `Δ > 0: two roots; Δ = 0: one root; Δ < 0: no real roots`, `Vertex at x = −b/2a`, `Complete square: x² + bx + c = (x + b/2)² − (b/2)² + c`],
+    t: [`Always state the formula before substituting`, `Check if expression factorises first — it's faster`, `For inequalities, sketch the graph to find regions`, `If question asks for exact values, leave in surd form`]
+  },
+  'm2': {
+    name: 'Functions',
+    d: `<h3>1. Function Notation</h3>
 <ul>
 <li><strong>f(x):</strong> The output of function f when input is x.</li>
 <li><strong>Domain:</strong> Set of all possible input values (x-values).</li>
@@ -154,36 +81,13 @@
 <li>f(|x|): reflect right side of graph to left side (symmetric about y-axis).</li>
 <li>Solve |x − a| = b → x − a = b or x − a = −b.</li>
 <li>Solve |x − a| < b → −b < x − a < b → a − b < x < a + b.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>f(x) is the output when input is x</li>
-<li>fg(x) = f(g(x))</li>
-<li>Inverse: swap x and y, rearrange</li>
-<li>|x| = x for x ≥ 0; |x| = −x for x < 0</li>
-<li>Reflect inverse in line y = x</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Check if function is one-one before finding inverse</li>
-<li>For composite functions, work from the inside out</li>
-<li>When solving modulus equations, always consider ±</li>
-<li>Domain of f⁻¹ = Range of f; Range of f⁻¹ = Domain of f</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m3">
-<h2>Coordinate Geometry</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Distance Between Two Points</h3>
+</ul>`,
+    s: [`f(x) is the output when input is x`, `fg(x) = f(g(x))`, `Inverse: swap x and y, rearrange`, `|x| = x for x ≥ 0; |x| = −x for x < 0`, `Reflect inverse in line y = x`],
+    t: [`Check if function is one-one before finding inverse`, `For composite functions, work from the inside out`, `When solving modulus equations, always consider ±`, `Domain of f⁻¹ = Range of f; Range of f⁻¹ = Domain of f`]
+  },
+  'm3': {
+    name: 'Coordinate Geometry',
+    d: `<h3>1. Distance Between Two Points</h3>
 <div class="formula-box">d = √((x₂ − x₁)² + (y₂ − y₁)²)</div>
 <ul>
 <li>Derived from Pythagoras' theorem.</li>
@@ -214,36 +118,13 @@
 <li>Solve equations simultaneously.</li>
 <li>If lines are parallel and distinct: no intersection.</li>
 <li>If lines are coincident: infinitely many intersections.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>Distance: d = √((x₂ − x₁)² + (y₂ − y₁)²)</li>
-<li>Gradient: m = (y₂ − y₁)/(x₂ − x₁)</li>
-<li>Parallel: m₁ = m₂</li>
-<li>Perpendicular: m₁ × m₂ = −1</li>
-<li>Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Always draw a sketch to check your answer makes sense</li>
-<li>For perpendicular lines, flip gradient and change sign</li>
-<li>General form ax + by + c = 0 can be rearranged to y = mx + c</li>
-<li>Show all working when finding intersection points</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m4">
-<h2>Circular Measure</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Radians and Degrees</h3>
+</ul>`,
+    s: [`Distance: d = √((x₂ − x₁)² + (y₂ − y₁)²)`, `Gradient: m = (y₂ − y₁)/(x₂ − x₁)`, `Parallel: m₁ = m₂`, `Perpendicular: m₁ × m₂ = −1`, `Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)`],
+    t: [`Always draw a sketch to check your answer makes sense`, `For perpendicular lines, flip gradient and change sign`, `General form ax + by + c = 0 can be rearranged to y = mx + c`, `Show all working when finding intersection points`]
+  },
+  'm4': {
+    name: 'Circular Measure',
+    d: `<h3>1. Radians and Degrees</h3>
 <div class="formula-box">π radians = 180°<br>1 radian = 180°/π ≈ 57.3°<br>1° = π/180 radians</div>
 <ul>
 <li><strong>Common conversions:</strong> 30° = π/6, 45° = π/4, 60° = π/3, 90° = π/2, 180° = π, 360° = 2π</li>
@@ -265,36 +146,13 @@
 <li>Always check calculator is in correct mode (radians vs degrees).</li>
 <li>When angle given in terms of π, answer is likely exact.</li>
 <li>Perimeter of sector = r + r + rθ = 2r + rθ.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>π rad = 180°</li>
-<li>Arc length: s = rθ</li>
-<li>Sector area: A = ½r²θ</li>
-<li>Segment area = ½r²(θ − sin θ)</li>
-<li>Perimeter of sector = 2r + rθ</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Check calculator mode before calculating</li>
-<li>Common angles: π/6=30°, π/4=45°, π/3=60°, π/2=90°</li>
-<li>When θ is in terms of π, leave answer exact</li>
-<li>Segment = sector − triangle</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m5">
-<h2>Trigonometry</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Sine, Cosine, and Tangent</h3>
+</ul>`,
+    s: [`π rad = 180°`, `Arc length: s = rθ`, `Sector area: A = ½r²θ`, `Segment area = ½r²(θ − sin θ)`, `Perimeter of sector = 2r + rθ`],
+    t: [`Check calculator mode before calculating`, `Common angles: π/6=30°, π/4=45°, π/3=60°, π/2=90°`, `When θ is in terms of π, leave answer exact`, `Segment = sector − triangle`]
+  },
+  'm5': {
+    name: 'Trigonometry',
+    d: `<h3>1. Sine, Cosine, and Tangent</h3>
 <div class="formula-box">sin θ = opposite/hypotenuse<br>cos θ = adjacent/hypotenuse<br>tan θ = opposite/adjacent = sin θ/cos θ</div>
 <h3>2. Exact Values</h3>
 <ul>
@@ -324,36 +182,13 @@
 <li><strong>y = cos x:</strong> Period 360° (2π), amplitude 1, passes through (0,1).</li>
 <li><strong>y = tan x:</strong> Period 180° (π), asymptotes at x = 90°, 270°, etc.</li>
 <li><strong>y = a sin(bx) + c:</strong> Amplitude = |a|, Period = 360°/b (or 2π/b), Vertical shift = c.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>sin² θ + cos² θ ≡ 1</li>
-<li>tan θ ≡ sin θ/cos θ</li>
-<li>tan² θ + 1 ≡ sec² θ</li>
-<li>Exact: sin 30°=½, cos 30°=√3/2, tan 30°=1/√3</li>
-<li>sin positive in 1st & 2nd; cos in 1st & 4th; tan in 1st & 3rd</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Learn exact values for 30°, 45°, 60°</li>
-<li>Use CAST diagram to find all solutions</li>
-<li>Always check your calculator is in correct mode</li>
-<li>When solving, find all solutions in the given range</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m6">
-<h2>Series</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Binomial Expansion</h3>
+</ul>`,
+    s: [`sin² θ + cos² θ ≡ 1`, `tan θ ≡ sin θ/cos θ`, `tan² θ + 1 ≡ sec² θ`, `Exact: sin 30°=½, cos 30°=√3/2, tan 30°=1/√3`, `sin positive in 1st & 2nd; cos in 1st & 4th; tan in 1st & 3rd`],
+    t: [`Learn exact values for 30°, 45°, 60°`, `Use CAST diagram to find all solutions`, `Always check your calculator is in correct mode`, `When solving, find all solutions in the given range`]
+  },
+  'm6': {
+    name: 'Series',
+    d: `<h3>1. Binomial Expansion</h3>
 <div class="formula-box">(a + b)ⁿ = aⁿ + naⁿ⁻¹b + [n(n−1)/2!]aⁿ⁻²b² + ... + bⁿ</div>
 <ul>
 <li><strong>General term:</strong> (n choose r) aⁿ⁻ʳ bʳ where (n choose r) = n!/(r!(n−r)!)</li>
@@ -371,36 +206,13 @@
 <li><strong>a</strong> = first term, <strong>r</strong> = common ratio.</li>
 <li><strong>Convergent:</strong> |r| < 1 (S∞ exists).</li>
 <li><strong>Divergent:</strong> |r| ≥ 1 (S∞ does not exist).</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>Binomial: (a+b)ⁿ = Σ (n choose r) aⁿ⁻ʳbʳ</li>
-<li>AP: uₙ = a + (n−1)d; Sₙ = n/2(2a + (n−1)d)</li>
-<li>GP: uₙ = arⁿ⁻¹; Sₙ = a(1−rⁿ)/(1−r)</li>
-<li>S∞ = a/(1−r) for |r| < 1</li>
-<li>(n choose r) = n!/(r!(n−r)!)</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Check if GP is convergent before using S∞</li>
-<li>For binomial with negative/fractional n, series valid for |x| < 1</li>
-<li>AP sum: n/2(first + last) is often quicker</li>
-<li>Always define a, d, r before substituting</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m7">
-<h2>Differentiation</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. The Gradient of a Curve</h3>
+</ul>`,
+    s: [`Binomial: (a+b)ⁿ = Σ (n choose r) aⁿ⁻ʳbʳ`, `AP: uₙ = a + (n−1)d; Sₙ = n/2(2a + (n−1)d)`, `GP: uₙ = arⁿ⁻¹; Sₙ = a(1−rⁿ)/(1−r)`, `S∞ = a/(1−r) for |r| < 1`, `(n choose r) = n!/(r!(n−r)!)`],
+    t: [`Check if GP is convergent before using S∞`, `For binomial with negative/fractional n, series valid for |x| < 1`, `AP sum: n/2(first + last) is often quicker`, `Always define a, d, r before substituting`]
+  },
+  'm7': {
+    name: 'Differentiation',
+    d: `<h3>1. The Gradient of a Curve</h3>
 <ul>
 <li>The derivative dy/dx gives the gradient of the tangent at any point.</li>
 <li>It measures the rate of change of y with respect to x.</li>
@@ -448,36 +260,13 @@
 <ul>
 <li>Use chain rule: dy/dt = dy/dx × dx/dt</li>
 <li>Given one rate, find another related rate.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>Power rule: d/dx(xⁿ) = nxⁿ⁻¹</li>
-<li>Chain rule: dy/dx = dy/du × du/dx</li>
-<li>Stationary point: f'(x) = 0</li>
-<li>Maximum: f''(x) < 0; Minimum: f''(x) > 0</li>
-<li>Tangent gradient = f'(a); Normal gradient = −1/f'(a)</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Always simplify before differentiating</li>
-<li>For stationary points, show f'(x) = 0 and use second derivative or sign test</li>
-<li>Don't forget the constant multiple rule</li>
-<li>Connected rates: identify what you need and what you're given</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m8">
-<h2>Integration</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Integration as Reverse of Differentiation</h3>
+</ul>`,
+    s: [`Power rule: d/dx(xⁿ) = nxⁿ⁻¹`, `Chain rule: dy/dx = dy/du × du/dx`, `Stationary point: f'(x) = 0`, `Maximum: f''(x) < 0; Minimum: f''(x) > 0`, `Tangent gradient = f'(a); Normal gradient = −1/f'(a)`],
+    t: [`Always simplify before differentiating`, `For stationary points, show f'(x) = 0 and use second derivative or sign test`, `Don't forget the constant multiple rule`, `Connected rates: identify what you need and what you're given`]
+  },
+  'm8': {
+    name: 'Integration',
+    d: `<h3>1. Integration as Reverse of Differentiation</h3>
 <div class="formula-box">∫xⁿ dx = xⁿ⁺¹/(n+1) + c (for n ≠ −1)</div>
 <ul>
 <li><strong>Indefinite integral:</strong> Includes +c (constant of integration).</li>
@@ -507,36 +296,13 @@
 <ul>
 <li>More strips (larger n) = more accurate.</li>
 <li>Overestimates if curve is concave up; underestimates if concave down.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
-<li>Definite: ∫ₐᵇ f(x) dx = F(b) − F(a)</li>
-<li>Area under curve = ∫ y dx</li>
-<li>Area between curves = ∫ (top − bottom) dx</li>
-<li>Trapezium: h/2[y₀ + 2(y₁+...+yₙ₋₁) + yₙ]</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Never forget +c for indefinite integrals</li>
-<li>Check if curve crosses axis — split if needed</li>
-<li>Trapezium rule: more strips = more accurate</li>
-<li>Area is always positive — take absolute value</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m9">
-<h2>Vectors</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Vector Notation</h3>
+</ul>`,
+    s: [`∫xⁿ dx = xⁿ⁺¹/(n+1) + c`, `Definite: ∫ₐᵇ f(x) dx = F(b) − F(a)`, `Area under curve = ∫ y dx`, `Area between curves = ∫ (top − bottom) dx`, `Trapezium: h/2[y₀ + 2(y₁+...+yₙ₋₁) + yₙ]`],
+    t: [`Never forget +c for indefinite integrals`, `Check if curve crosses axis — split if needed`, `Trapezium rule: more strips = more accurate`, `Area is always positive — take absolute value`]
+  },
+  'm9': {
+    name: 'Vectors',
+    d: `<h3>1. Vector Notation</h3>
 <ul>
 <li><strong>Column vector:</strong> (a, b) or (a, b, c) in 3D.</li>
 <li><strong>Unit vectors:</strong> i = (1, 0), j = (0, 1), k = (0, 0, 1).</li>
@@ -566,36 +332,13 @@
 <ul>
 <li><strong>Perpendicular:</strong> a · b = 0 (since cos 90° = 0).</li>
 <li><strong>Angle between vectors:</strong> cos θ = (a · b)/(|a||b|).</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>|r| = √(a² + b² + c²)</li>
-<li>a · b = a₁b₁ + a₂b₂ + a₃b₃</li>
-<li>Perpendicular: a · b = 0</li>
-<li>Angle: cos θ = (a·b)/(|a||b|)</li>
-<li>Line: r = a + tb</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>When finding angle, ensure vectors point away from or toward same point</li>
-<li>For perpendicular lines, direction vectors have dot product = 0</li>
-<li>Magnitude always positive</li>
-<li>Vector AB = b − a</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m10">
-<h2>Probability</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Basic Probability</h3>
+</ul>`,
+    s: [`|r| = √(a² + b² + c²)`, `a · b = a₁b₁ + a₂b₂ + a₃b₃`, `Perpendicular: a · b = 0`, `Angle: cos θ = (a·b)/(|a||b|)`, `Line: r = a + tb`],
+    t: [`When finding angle, ensure vectors point away from or toward same point`, `For perpendicular lines, direction vectors have dot product = 0`, `Magnitude always positive`, `Vector AB = b − a`]
+  },
+  'm10': {
+    name: 'Probability',
+    d: `<h3>1. Basic Probability</h3>
 <div class="formula-box">P(A) = n(A)/n(ℰ)</div>
 <ul>
 <li><strong>Range:</strong> 0 ≤ P(A) ≤ 1</li>
@@ -622,36 +365,13 @@
 <ul>
 <li><strong>Permutation:</strong> Arrangement where order is important.</li>
 <li><strong>Combination:</strong> Selection where order is not important.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>P(A') = 1 − P(A)</li>
-<li>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
-<li>P(A ∩ B) = P(A) × P(B|A)</li>
-<li>Independent: P(A ∩ B) = P(A) × P(B)</li>
-<li>ⁿCᵣ = n!/[r!(n−r)!]</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Draw tree diagrams for multi-stage problems</li>
-<li>Distinguish between permutation (order matters) and combination (order doesn't)</li>
-<li>Venn diagrams help visualise P(A ∪ B) and P(A ∩ B)</li>
-<li>For "at least one", consider using complement: 1 − P(none)</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m11">
-<h2>Distributions</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Discrete Random Variables</h3>
+</ul>`,
+    s: [`P(A') = 1 − P(A)`, `P(A ∪ B) = P(A) + P(B) − P(A ∩ B)`, `P(A ∩ B) = P(A) × P(B|A)`, `Independent: P(A ∩ B) = P(A) × P(B)`, `ⁿCᵣ = n!/[r!(n−r)!]`],
+    t: [`Draw tree diagrams for multi-stage problems`, `Distinguish between permutation (order matters) and combination (order doesn't)`, `Venn diagrams help visualise P(A ∪ B) and P(A ∩ B)`, `For "at least one", consider using complement: 1 − P(none)`]
+  },
+  'm11': {
+    name: 'Distributions',
+    d: `<h3>1. Discrete Random Variables</h3>
 <ul>
 <li><strong>Probability distribution:</strong> Table showing each value x and P(X = x).</li>
 <li><strong>ΣP(X = x) = 1</strong></li>
@@ -677,36 +397,13 @@
 <li><strong>Standard normal:</strong> Z = (X − μ)/σ ~ N(0, 1)</li>
 <li>Use standard normal tables to find probabilities.</li>
 <li><strong>Key values:</strong> P(μ − σ < X < μ + σ) ≈ 0.68, P(μ − 2σ < X < μ + 2σ) ≈ 0.95</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>E(X) = ΣxP(X=x)</li>
-<li>Var(X) = E(X²) − [E(X)]²</li>
-<li>Binomial: P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ</li>
-<li>Normal: Z = (X−μ)/σ</li>
-<li>Binomial mean = np; variance = np(1−p)</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>For binomial, check conditions: fixed n, independent, constant p, two outcomes</li>
-<li>Standardise normal: Z = (X − μ)/σ</li>
-<li>Use tables for Z values — draw diagram</li>
-<li>Var(aX+b) = a²Var(X); SD(aX+b) = |a|SD(X)</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m12">
-<h2>Hypothesis Testing</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Null and Alternative Hypotheses</h3>
+</ul>`,
+    s: [`E(X) = ΣxP(X=x)`, `Var(X) = E(X²) − [E(X)]²`, `Binomial: P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ`, `Normal: Z = (X−μ)/σ`, `Binomial mean = np; variance = np(1−p)`],
+    t: [`For binomial, check conditions: fixed n, independent, constant p, two outcomes`, `Standardise normal: Z = (X − μ)/σ`, `Use tables for Z values — draw diagram`, `Var(aX+b) = a²Var(X); SD(aX+b) = |a|SD(X)`]
+  },
+  'm12': {
+    name: 'Hypothesis Testing',
+    d: `<h3>1. Null and Alternative Hypotheses</h3>
 <ul>
 <li><strong>H₀ (null hypothesis):</strong> Default assumption — parameter equals a stated value. Example: H₀: μ = 50.</li>
 <li><strong>H₁ (alternative hypothesis):</strong> What we suspect might be true instead.</li>
@@ -744,36 +441,13 @@
 <li>Determine critical value or p-value.</li>
 <li>Make decision (reject or not reject H₀).</li>
 <li>Write conclusion in context.</li>
-</ol>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>H₀: default assumption</li>
-<li>H₁: alternative (one-tailed or two-tailed)</li>
-<li>Test statistic z = (x̄ − μ)/(σ/√n)</li>
-<li>Reject H₀ if test statistic in critical region</li>
-<li>Type I: reject true H₀; Type II: accept false H₀</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Always state H₀ and H₁ clearly</li>
-<li>Check if test is one-tailed or two-tailed</li>
-<li>Conclusion must be in context — not just "reject H₀"</li>
-<li>For two-tailed at 5%, use 2.5% in each tail</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-<div class="topic-section" id="m13">
-<h2>Kinematics</h2>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. SUVAT Equations (Constant Acceleration)</h3>
+</ol>`,
+    s: [`H₀: default assumption`, `H₁: alternative (one-tailed or two-tailed)`, `Test statistic z = (x̄ − μ)/(σ/√n)`, `Reject H₀ if test statistic in critical region`, `Type I: reject true H₀; Type II: accept false H₀`],
+    t: [`Always state H₀ and H₁ clearly`, `Check if test is one-tailed or two-tailed`, `Conclusion must be in context — not just "reject H₀"`, `For two-tailed at 5%, use 2.5% in each tail`]
+  },
+  'm13': {
+    name: 'Kinematics',
+    d: `<h3>1. SUVAT Equations (Constant Acceleration)</h3>
 <div class="formula-box">v = u + at<br>s = ½(u + v)t<br>s = ut + ½at²<br>s = vt − ½at²<br>v² = u² + 2as</div>
 <ul>
 <li><strong>s</strong> = displacement, <strong>u</strong> = initial velocity, <strong>v</strong> = final velocity, <strong>a</strong> = acceleration, <strong>t</strong> = time.</li>
@@ -805,34 +479,74 @@
 <li>Vertical: constant acceleration due to gravity (a = −g).</li>
 <li>Use SUVAT separately for each direction.</li>
 <li>Time is the same for both directions.</li>
-</ul>
+</ul>`,
+    s: [`SUVAT: v=u+at, s=ut+½at², v²=u²+2as`, `F = ma`, `v-t graph gradient = acceleration`, `v-t graph area = displacement`, `Projectile: horizontal constant velocity, vertical a = −g`],
+    t: [`Draw clear force diagrams`, `Choose SUVAT equation based on missing variable`, `For projectiles, resolve horizontally and vertically`, `Connected particles: same tension, same acceleration magnitude`]
+  },
+};
+
+function enrichFile(filepath, data) {
+  let html = fs.readFileSync(filepath, 'utf8');
+
+  // Force overwrite all maths files to ensure comprehensive content
+
+  const newContent = `<div class="notes-section">
+<h2>Detailed Notes</h2>
+${data.d}
 </div>
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>SUVAT: v=u+at, s=ut+½at², v²=u²+2as</li>
-<li>F = ma</li>
-<li>v-t graph gradient = acceleration</li>
-<li>v-t graph area = displacement</li>
-<li>Projectile: horizontal constant velocity, vertical a = −g</li>
+${data.s.map(s => `<li>${s}</li>`).join('\n')}
 </ul>
 </div>
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>Draw clear force diagrams</li>
-<li>Choose SUVAT equation based on missing variable</li>
-<li>For projectiles, resolve horizontally and vertically</li>
-<li>Connected particles: same tension, same acceleration magnitude</li>
+${data.t.map(t => `<li>${t}</li>`).join('\n')}
 </ul>
-</div>
-</div>
-</div>
+</div>`;
 
-</div>
-</div>
-</div>
-</section>
-<script src="../js/theme.js?v=4"></script>
-</body>
-</html>
+  // Find the notes-header div end and replace content
+  const headerIdx = html.indexOf('<div class="notes-header">');
+  if (headerIdx === -1) return false;
+
+  const headerEnd = html.indexOf('</div>', html.indexOf('</div>', headerIdx) + 6);
+  if (headerEnd === -1) return false;
+
+  const sectionMatch = html.match(/<\/div>\s*<\/div>\s*<\/section>/);
+  if (!sectionMatch) return false;
+
+  const before = html.substring(0, headerEnd + 6);
+  const after = html.substring(sectionMatch.index);
+
+  fs.writeFileSync(filepath, before + '\n' + newContent + '\n' + after);
+  return true;
+}
+
+let enriched = 0;
+let skipped = 0;
+
+for (const [key, data] of Object.entries(MATHS)) {
+  // Enrich base, a-level, and igcse variants
+  const variants = [
+    `maths-${key}.html`,
+    `maths-${key}-a.html`,
+    `maths-${key}-igcse.html`
+  ];
+
+  for (const file of variants) {
+    const filepath = path.join(notesDir, file);
+    if (!fs.existsSync(filepath)) { skipped++; continue; }
+    if (enrichFile(filepath, data)) {
+      enriched++;
+      console.log(`✅ Enriched: ${file}`);
+    } else {
+      skipped++;
+      console.log(`⏭️ Skipped: ${file}`);
+    }
+  }
+}
+
+console.log(`\nEnriched: ${enriched}`);
+console.log(`Skipped: ${skipped}`);

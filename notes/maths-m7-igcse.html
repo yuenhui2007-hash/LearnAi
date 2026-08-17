@@ -65,86 +65,75 @@
 <h1>Differentiation</h1>
 <p style="color:var(--gray)">0580 (IGCSE)</p>
 </div>
-
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Basic Rules</h3>
-<div class="formula-box">d/dx(xⁿ) = nxⁿ⁻¹<br>d/dx(sin x) = cos x<br>d/dx(cos x) = -sin x<br>d/dx(eˣ) = eˣ<br>d/dx(ln x) = 1/x</div>
-<h3>2. Chain Rule</h3>
+<h3>1. The Gradient of a Curve</h3>
+<ul>
+<li>The derivative dy/dx gives the gradient of the tangent at any point.</li>
+<li>It measures the rate of change of y with respect to x.</li>
+</ul>
+<h3>2. Differentiation from First Principles</h3>
+<div class="formula-box">f'(x) = lim(h→0) [f(x+h) − f(x)]/h</div>
+<ul>
+<li>Used to derive standard results.</li>
+</ul>
+<h3>3. Standard Results</h3>
+<div class="formula-box">If y = xⁿ, then dy/dx = nxⁿ⁻¹<br>If y = axⁿ, then dy/dx = anxⁿ⁻¹<br>If y = constant, dy/dx = 0</div>
+<ul>
+<li><strong>Sum rule:</strong> d/dx(f + g) = f' + g'</li>
+<li><strong>Constant multiple:</strong> d/dx(af) = af'</li>
+</ul>
+<h3>4. Tangents and Normals</h3>
+<ul>
+<li><strong>Tangent:</strong> Gradient = f'(a). Equation: y − f(a) = f'(a)(x − a).</li>
+<li><strong>Normal:</strong> Perpendicular to tangent. Gradient = −1/f'(a). Equation: y − f(a) = (−1/f'(a))(x − a).</li>
+</ul>
+<h3>5. Increasing and Decreasing Functions</h3>
+<ul>
+<li><strong>Increasing:</strong> f'(x) > 0</li>
+<li><strong>Decreasing:</strong> f'(x) < 0</li>
+</ul>
+<h3>6. Stationary Points</h3>
+<ul>
+<li>Occur where f'(x) = 0.</li>
+<li><strong>Maximum:</strong> f'(x) changes from + to −. f''(x) < 0.</li>
+<li><strong>Minimum:</strong> f'(x) changes from − to +. f''(x) > 0.</li>
+<li><strong>Point of inflexion:</strong> f'(x) = 0 but doesn't change sign. f''(x) = 0 (check further).</li>
+</ul>
+<h3>7. Second Derivative</h3>
+<div class="formula-box">d²y/dx² = d/dx(dy/dx)</div>
+<ul>
+<li>f''(x) > 0 → concave up → minimum</li>
+<li>f''(x) < 0 → concave down → maximum</li>
+</ul>
+<h3>8. Chain Rule</h3>
 <div class="formula-box">dy/dx = dy/du × du/dx</div>
-<h3>3. Product and Quotient</h3>
-<div class="formula-box">d(uv)/dx = u dv/dx + v du/dx<br>d(u/v)/dx = (v du/dx - u dv/dx) / v²</div>
-<h3>4. Applications</h3>
-<p>Gradient of curve, stationary points (dy/dx=0), increasing/decreasing functions.</p>
-</div>
-<div class="notes-section">
-<h3>Problem-Solving Strategies</h3>
 <ul>
-<li><strong>Read twice:</strong> Once for understanding, once for details</li>
-<li><strong>Identify the topic:</strong> What technique is being tested?</li>
-<li><strong>Write down formulae:</strong> Before substituting values</li>
-<li><strong>Check answers:</strong> Does the answer make sense? Re-substitute if possible</li>
+<li>For composite functions: if y = (ax + b)ⁿ, dy/dx = an(ax + b)ⁿ⁻¹</li>
+</ul>
+<h3>9. Connected Rates of Change</h3>
+<ul>
+<li>Use chain rule: dy/dt = dy/dx × dx/dt</li>
+<li>Given one rate, find another related rate.</li>
 </ul>
 </div>
-<div class="notes-section">
-<h3>Common Algebraic Mistakes</h3>
-<ul>
-<li>(a + b)² ≠ a² + b² (it's a² + 2ab + b²)</li>
-<li>√(a + b) ≠ √a + √b</li>
-<li>1/(a + b) ≠ 1/a + 1/b</li>
-<li>When squaring both sides, check for extraneous solutions</li>
-</ul>
-<div class="common-mistake">Dividing by a variable without considering if it could be zero. Always state "assuming x ≠ 0" or check separately.</div>
-</div>
-
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<ul><li>Power rule: d(xⁿ)/dx = nxⁿ⁻¹</li><li>Chain, product, quotient rules</li><li>Stationary points: dy/dx = 0</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> Differentiate y = 3x⁴ + 2x² − 5x + 7</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-dy/dx = 3(4x³) + 2(2x) − 5(1) + 0<br>
-dy/dx = 12x³ + 4x − 5<br>
-<strong>Answer: dy/dx = 12x³ + 4x − 5</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting the +c (constant of integration) for indefinite integrals. You'll lose a mark!</div>
-<div class="key-point">The chain rule: if y = f(g(x)), then dy/dx = f'(g(x)) × g'(x). Use for functions inside functions.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
 <ul>
-<li>d/dx(xⁿ) = nxⁿ⁻¹</li>
-<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
+<li>Power rule: d/dx(xⁿ) = nxⁿ⁻¹</li>
 <li>Chain rule: dy/dx = dy/du × du/dx</li>
-<li>Stationary points: dy/dx = 0; d²y/dx² > 0 = min</li>
+<li>Stationary point: f'(x) = 0</li>
+<li>Maximum: f''(x) < 0; Minimum: f''(x) > 0</li>
+<li>Tangent gradient = f'(a); Normal gradient = −1/f'(a)</li>
 </ul>
 </div>
-
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
-</ul>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.physicsandmathstutor.com/maths-revision/a-level/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — Past papers & solutions</li>
-<li><a href="https://www.savemyexams.co.uk/notes/maths/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-maths-9709/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/maths/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/maths" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always simplify before differentiating</li>
+<li>For stationary points, show f'(x) = 0 and use second derivative or sign test</li>
+<li>Don't forget the constant multiple rule</li>
+<li>Connected rates: identify what you need and what you're given</li>
 </ul>
 </div>
 </div>

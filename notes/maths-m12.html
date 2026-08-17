@@ -65,32 +65,63 @@
 </div>
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Distributions</h3>
+<h3>1. Null and Alternative Hypotheses</h3>
 <ul>
-<li><strong>Binomial:</strong> X ~ B(n,p); P(X=r) = nCr pʳ(1−p)^(n−r); E(X) = np; Var(X) = np(1−p)</li>
-<li><strong>Normal:</strong> X ~ N(μ,σ²); standardise: Z = (X−μ)/σ</li>
+<li><strong>H₀ (null hypothesis):</strong> Default assumption — parameter equals a stated value. Example: H₀: μ = 50.</li>
+<li><strong>H₁ (alternative hypothesis):</strong> What we suspect might be true instead.</li>
+<li><strong>One-tailed test:</strong> H₁: μ > 50 or H₁: μ < 50 (direction specified).</li>
+<li><strong>Two-tailed test:</strong> H₁: μ ≠ 50 (no direction).</li>
 </ul>
-<h3>2. Normal Approximation</h3>
+<h3>2. Test Statistic</h3>
+<div class="formula-box">For means (known variance or large sample):<br>z = (x̄ − μ)/(σ/√n)</div>
 <ul>
-<li>Binomial → Normal when np > 5 and n(1−p) > 5</li>
-<li>Continuity correction needed</li>
+<li>Compare test statistic to critical value or find p-value.</li>
 </ul>
+<h3>3. Significance Level and Critical Region</h3>
+<ul>
+<li><strong>Significance level (α):</strong> Probability of rejecting H₀ when it is true. Usually 5% (0.05) or 1% (0.01).</li>
+<li><strong>Critical region:</strong> Range of values where H₀ is rejected.</li>
+<li><strong>Critical value:</strong> Boundary of critical region from tables.</li>
+<li>For two-tailed test at 5%, each tail has 2.5%.</li>
+</ul>
+<h3>4. Decision Rule</h3>
+<ul>
+<li>If test statistic falls in critical region → Reject H₀.</li>
+<li>If test statistic does not fall in critical region → Do not reject H₀ (insufficient evidence).</li>
+<li>Or: if p-value < α → Reject H₀.</li>
+</ul>
+<h3>5. Type I and Type II Errors</h3>
+<ul>
+<li><strong>Type I error:</strong> Reject H₀ when it is true. P(Type I) = α.</li>
+<li><strong>Type II error:</strong> Do not reject H₀ when it is false.</li>
+</ul>
+<h3>6. Steps in Hypothesis Testing</h3>
+<ol>
+<li>State H₀ and H₁.</li>
+<li>Choose significance level.</li>
+<li>Calculate test statistic.</li>
+<li>Determine critical value or p-value.</li>
+<li>Make decision (reject or not reject H₀).</li>
+<li>Write conclusion in context.</li>
+</ol>
 </div>
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Binomial: E(X) = np, Var(X) = np(1−p)</li>
-<li>Normal: Z = (X−μ)/σ</li>
-<li>Continuity correction for normal approx to binomial</li>
+<li>H₀: default assumption</li>
+<li>H₁: alternative (one-tailed or two-tailed)</li>
+<li>Test statistic z = (x̄ − μ)/(σ/√n)</li>
+<li>Reject H₀ if test statistic in critical region</li>
+<li>Type I: reject true H₀; Type II: accept false H₀</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>Exam Tips</h2>
 <ul>
-<li>For binomial: conditions are fixed n, independent trials, constant p, two outcomes</li>
-<li>Normal distribution: symmetric, bell-shaped, total area = 1</li>
-<li>Continuity correction: P(X ≤ 10) → P(X < 10.5)</li>
-<li>Tables give P(Z < z); use symmetry for negative z</li>
+<li>Always state H₀ and H₁ clearly</li>
+<li>Check if test is one-tailed or two-tailed</li>
+<li>Conclusion must be in context — not just "reject H₀"</li>
+<li>For two-tailed at 5%, use 2.5% in each tail</li>
 </ul>
 </div>
 </div>

@@ -65,142 +65,63 @@
 <h1>Quadratics</h1>
 <p style="color:var(--gray)">9709 (A-Level)</p>
 </div>
-
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Solving Quadratics</h3>
-<ul><li><strong>Factorising:</strong> x² + bx + c = (x+p)(x+q) where pq=c, p+q=b.</li><li><strong>Formula:</strong> x = (-b ± √(b²-4ac)) / 2a</li><li><strong>Completing the square:</strong> ax² + bx + c = a(x+h)² + k</li></ul>
-<h3>2. Discriminant</h3>
-<div class="formula-box">Δ = b² - 4ac</div>
-<ul><li>Δ > 0: 2 distinct real roots.</li><li>Δ = 0: 1 repeated real root.</li><li>Δ < 0: No real roots.</li></ul>
+<h3>1. Solving Quadratic Equations</h3>
+<ul>
+<li><strong>Factorising:</strong> Express ax² + bx + c as (px + q)(rx + s). Example: x² + 5x + 6 = (x + 2)(x + 3).</li>
+<li><strong>Quadratic Formula:</strong> For ax² + bx + c = 0, x = (−b ± √(b² − 4ac)) / 2a</li>
+<li><strong>Completing the Square:</strong> x² + bx + c = (x + b/2)² − (b/2)² + c. Example: x² + 6x + 5 = (x + 3)² − 4.</li>
+</ul>
+<h3>2. The Discriminant</h3>
+<div class="formula-box">Δ = b² − 4ac</div>
+<ul>
+<li><strong>Δ > 0:</strong> Two distinct real roots. Graph crosses x-axis twice.</li>
+<li><strong>Δ = 0:</strong> One repeated real root. Graph touches x-axis (turning point on axis).</li>
+<li><strong>Δ < 0:</strong> No real roots. Graph does not cross x-axis.</li>
+<li><strong>Perfect square discriminant:</strong> If Δ is a perfect square, roots are rational.</li>
+</ul>
 <h3>3. Quadratic Graphs</h3>
-<p>y = ax² + bx + c. Vertex at x = -b/2a. Axis of symmetry. Maximum if a<0, minimum if a>0.</p>
-</div>
-<div class="notes-section">
-<h3>5. Completing the Square</h3>
 <ul>
-<li><strong>Method:</strong> ax² + bx + c = a(x + b/2a)² + (c − b²/4a)</li>
-<li><strong>Turning point:</strong> (−b/2a, c − b²/4a)</li>
-<li><strong>Use:</strong> Finding max/min, sketching curves, solving equations</li>
+<li><strong>y = ax² + bx + c</strong> — parabola shape.</li>
+<li><strong>Vertex:</strong> x = −b/2a. Substitute to find y-coordinate.</li>
+<li><strong>Axis of symmetry:</strong> x = −b/2a (vertical line through vertex).</li>
+<li><strong>Maximum point:</strong> If a < 0, parabola opens downward.</li>
+<li><strong>Minimum point:</strong> If a > 0, parabola opens upward.</li>
+<li><strong>y-intercept:</strong> Set x = 0 → y = c.</li>
 </ul>
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> Express 2x² − 8x + 5 in the form a(x + p)² + q</p>
-<div class="solution">
-2x² − 8x + 5 = 2(x² − 4x) + 5<br>
-= 2[(x − 2)² − 4] + 5<br>
-= 2(x − 2)² − 8 + 5<br>
-= <strong>2(x − 2)² − 3</strong><br>
-Turning point: (2, −3)
-</div>
-</div>
-</div>
-<div class="notes-section">
-<h3>6. Inequalities</h3>
+<h3>4. Sketching Quadratic Curves</h3>
 <ul>
-<li><strong>Linear:</strong> Solve like equations, but reverse inequality when ×/÷ by negative</li>
-<li><strong>Quadratic:</strong> Factorise, sketch, find regions satisfying inequality</li>
-<li><strong>Critical values:</strong> Where expression = 0 or is undefined</li>
+<li>Identify shape (a > 0 or a < 0).</li>
+<li>Find roots (if real) by factorising or formula.</li>
+<li>Find vertex coordinates.</li>
+<li>Find y-intercept.</li>
+<li>Label all key points on sketch.</li>
 </ul>
-<div class="common-mistake">Forgetting to reverse the inequality sign when multiplying or dividing by a negative number.</div>
-</div>
-<div class="notes-section">
-<h3>Problem-Solving Strategies</h3>
+<h3>5. Quadratic Inequalities</h3>
 <ul>
-<li><strong>Read twice:</strong> Once for understanding, once for details</li>
-<li><strong>Identify the topic:</strong> What technique is being tested?</li>
-<li><strong>Write down formulae:</strong> Before substituting values</li>
-<li><strong>Check answers:</strong> Does the answer make sense? Re-substitute if possible</li>
+<li>Solve ax² + bx + c > 0 by finding roots first, then testing regions.</li>
+<li>Remember: if a < 0, inequality direction flips when multiplying (but better to rearrange to a > 0 form).</li>
+<li>Sketch graph to determine solution set.</li>
 </ul>
 </div>
-<div class="notes-section">
-<h3>Common Algebraic Mistakes</h3>
-<ul>
-<li>(a + b)² ≠ a² + b² (it's a² + 2ab + b²)</li>
-<li>√(a + b) ≠ √a + √b</li>
-<li>1/(a + b) ≠ 1/a + 1/b</li>
-<li>When squaring both sides, check for extraneous solutions</li>
-</ul>
-<div class="common-mistake">Dividing by a variable without considering if it could be zero. Always state "assuming x ≠ 0" or check separately.</div>
-</div>
-<div class="notes-section">
-<h3>5. Polynomials & Factor Theorem</h3>
-<ul>
-<li><strong>Factor Theorem:</strong> If f(a) = 0, then (x − a) is a factor of f(x)</li>
-<li><strong>Remainder Theorem:</strong> f(a) gives the remainder when f(x) is divided by (x − a)</li>
-<li><strong>Cubic equations:</strong> Try factors of the constant term to find roots</li>
-</ul>
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> Show that (x − 2) is a factor of f(x) = x³ − 3x² − 4x + 12, and hence factorise fully.</p>
-<div class="solution">
-f(2) = 8 − 12 − 8 + 12 = 0 ✓<br>
-So (x − 2) is a factor.<br>
-Divide: x³ − 3x² − 4x + 12 = (x − 2)(x² − x − 6)<br>
-= (x − 2)(x − 3)(x + 2)<br>
-<strong>f(x) = (x − 2)(x − 3)(x + 2)</strong>
-</div>
-</div>
-</div>
-<div class="notes-section">
-<h3>6. Simultaneous Equations — Three Methods</h3>
-<table class="compare-table">
-<tr><th>Method</th><th>When to use</th><th>Steps</th></tr>
-<tr><td>Substitution</td><td>One variable already isolated</td><td>Substitute expression into other equation</td></tr>
-<tr><td>Elimination</td><td>Coefficients easily matched</td><td>Multiply equations, add/subtract to eliminate one variable</td></tr>
-<tr><td>Graphical</td><td>Approximate solutions acceptable</td><td>Plot both equations, find intersection</td></tr>
-</table>
-<div class="key-point">Always check your solution by substituting back into both original equations.</div>
-</div>
-
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<ul><li>Factorise, formula, or complete the square</li><li>Δ = b²-4ac; >0 (2 roots), =0 (1 root), <0 (no real)</li><li>Vertex at x = -b/2a</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> Differentiate y = 3x⁴ + 2x² − 5x + 7</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-dy/dx = 3(4x³) + 2(2x) − 5(1) + 0<br>
-dy/dx = 12x³ + 4x − 5<br>
-<strong>Answer: dy/dx = 12x³ + 4x − 5</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting the +c (constant of integration) for indefinite integrals. You'll lose a mark!</div>
-<div class="key-point">The chain rule: if y = f(g(x)), then dy/dx = f'(g(x)) × g'(x). Use for functions inside functions.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
 <ul>
-<li>d/dx(xⁿ) = nxⁿ⁻¹</li>
-<li>∫xⁿ dx = xⁿ⁺¹/(n+1) + c</li>
-<li>Chain rule: dy/dx = dy/du × du/dx</li>
-<li>Stationary points: dy/dx = 0; d²y/dx² > 0 = min</li>
+<li>Quadratic formula: x = (−b ± √(b² − 4ac)) / 2a</li>
+<li>Discriminant Δ = b² − 4ac</li>
+<li>Δ > 0: two roots; Δ = 0: one root; Δ < 0: no real roots</li>
+<li>Vertex at x = −b/2a</li>
+<li>Complete square: x² + bx + c = (x + b/2)² − (b/2)² + c</li>
 </ul>
 </div>
-
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
-</ul>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.physicsandmathstutor.com/maths-revision/a-level/" target="_blank" rel="noopener">Physics & Maths Tutor</a> — Past papers & solutions</li>
-<li><a href="https://www.savemyexams.co.uk/notes/maths/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-maths-9709/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/maths/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/maths" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always state the formula before substituting</li>
+<li>Check if expression factorises first — it's faster</li>
+<li>For inequalities, sketch the graph to find regions</li>
+<li>If question asks for exact values, leave in surd form</li>
 </ul>
 </div>
 </div>
