@@ -2,134 +2,241 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Functions — IGCSE | LearnAI</title>
-<meta name="description" content="Functions notes for Cambridge 0580 (IGCSE). Detailed study notes and last-minute summary.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
-.summary-box ul li { color: #78350f; }
-.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+
+/* Table of Contents */
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* Topic Blocks */
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+
+/* Formula Box */
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+
+/* Example Box */
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+
+/* Key Point */
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+
+/* Summary Box */
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+
+/* Exam Tips */
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+
+/* Fraction */
+.fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
+.fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
+.fraction .bottom { display: block; padding: 0 4px; }
+
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-<div class="container nav-container">
-<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
-<button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-<ul class="nav-menu" id="navMenu">
-<li><a href="../index.html" class="nav-link">Home</a></li>
-<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
-<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
-<li><a href="../planner.html" class="nav-link">Planner</a></li>
-<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
-</ul>
-</div>
-</nav>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 
-<section class="notes-page">
-<div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
+<section class="notes-page"><div class="container">
 <div class="notes-container">
 <div class="notes-header">
-<div class="level-badges">
-    <span class="level-badge badge-igcse">IGCSE</span>
-  </div>
+<span class="syllabus-tag">IGCSE</span>
 <h1>Functions</h1>
-<p style="color:var(--gray)">0580 (IGCSE)</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
 </div>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Function Notation</h3>
-<ul>
-<li><strong>f(x):</strong> The output of function f when input is x.</li>
-<li><strong>Domain:</strong> Set of all possible input values (x-values).</li>
-<li><strong>Range:</strong> Set of all possible output values (y-values).</li>
-</ul>
-<h3>2. Types of Functions</h3>
-<ul>
-<li><strong>One-one (injective):</strong> Each output corresponds to exactly one input. Passes horizontal line test.</li>
-<li><strong>Many-one:</strong> Different inputs give same output. Example: f(x) = x².</li>
-<li><strong>Onto (surjective):</strong> Range equals codomain.</li>
-</ul>
-<h3>3. Composite Functions</h3>
-<div class="formula-box">fg(x) = f(g(x)) — apply g first, then f</div>
-<ul>
-<li>Order matters: fg(x) ≠ gf(x) in general.</li>
-<li>Domain of fg: x must be in domain of g, and g(x) must be in domain of f.</li>
-</ul>
-<h3>4. Inverse Functions</h3>
-<ul>
-<li>Only one-one functions have inverses.</li>
-<li><strong>Finding inverse:</strong> Write y = f(x), rearrange to make x the subject, swap x and y.</li>
-<li><strong>Domain of f⁻¹</strong> = Range of f.</li>
-<li><strong>Range of f⁻¹</strong> = Domain of f.</li>
-<li>Graph of f⁻¹ is reflection of f in the line y = x.</li>
-</ul>
-<h3>5. Modulus Function</h3>
-<div class="formula-box">|x| = x if x ≥ 0; |x| = −x if x < 0</div>
-<ul>
-<li>|f(x)| reflects negative parts of f(x) above x-axis.</li>
-<li>f(|x|): reflect right side of graph to left side (symmetric about y-axis).</li>
-<li>Solve |x − a| = b → x − a = b or x − a = −b.</li>
-<li>Solve |x − a| < b → −b < x − a < b → a − b < x < a + b.</li>
-</ul>
-</div>
-<div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul>
-<li>f(x) is the output when input is x</li>
-<li>fg(x) = f(g(x))</li>
-<li>Inverse: swap x and y, rearrange</li>
-<li>|x| = x for x ≥ 0; |x| = −x for x < 0</li>
-<li>Reflect inverse in line y = x</li>
-</ul>
-</div>
-<div class="exam-tips">
-<h2>Exam Tips</h2>
-<ul>
-<li>Check if function is one-one before finding inverse</li>
-<li>For composite functions, work from the inside out</li>
-<li>When solving modulus equations, always consider ±</li>
-<li>Domain of f⁻¹ = Range of f; Range of f⁻¹ = Domain of f</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
 
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script>
-<script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Function Notation & Definitions</a></li>
+<li><a href="#section-2">Composite Functions</a></li>
+<li><a href="#section-3">Inverse Functions</a></li>
+<li><a href="#section-4">Modulus Function</a></li>
+</ol>
+</div>
+
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>Function Notation & Definitions</h3>
+</div>
+<div class="topic-content">
+<p>A <strong>function</strong> maps each element of the domain to exactly one element of the range.</p>
+<table class="data-table">
+<tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>Domain</td><td>All possible input values (x)</td><td>f(x) = √x, domain: x ≥ 0</td></tr>
+<tr><td>Range</td><td>All possible output values (y)</td><td>f(x) = x², range: f(x) ≥ 0</td></tr>
+<tr><td>Codomain</td><td>Set containing the range</td><td>Usually all real numbers</td></tr>
+</table>
+
+<h4>Types of Functions</h4>
+<table class="data-table">
+<tr><th>Type</th><th>Definition</th><th>Example</th></tr>
+<tr><td>One-one (injective)</td><td>Different inputs → different outputs</td><td>f(x) = 2x + 1</td></tr>
+<tr><td>Many-one</td><td>Different inputs → same output</td><td>f(x) = x²</td></tr>
+<tr><td>Onto (surjective)</td><td>Range = Codomain</td><td>f: ℝ→ℝ, f(x) = x³</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Composite Functions</h3>
+</div>
+<div class="topic-content">
+<p>A <strong>composite function</strong> applies one function after another.</p>
+<div class="formula-box">fg(x) = f(g(x))</div>
+<p><strong>Read right to left:</strong> apply g first, then f.</p>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Given f(x) = 2x + 1 and g(x) = x², find:</p>
+<p><strong>a) fg(x):</strong> f(g(x)) = f(x²) = 2(x²) + 1 = <strong>2x² + 1</strong></p>
+<p><strong>b) gf(x):</strong> g(f(x)) = g(2x + 1) = (2x + 1)² = <strong>4x² + 4x + 1</strong></p>
+<p><strong>Note:</strong> fg(x) ≠ gf(x)</p>
+</div>
+
+<div class="key-point">
+<strong>Domain of fg(x):</strong> x must be in domain of g, AND g(x) must be in domain of f.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Inverse Functions</h3>
+</div>
+<div class="topic-content">
+<p>Only <strong>one-one functions</strong> have inverses. A function must pass the <strong>horizontal line test</strong>.</p>
+
+<h4>Finding the Inverse</h4>
+<ol>
+<li>Write <strong>y = f(x)</strong></li>
+<li>Rearrange to make x the subject</li>
+<li>Swap x and y</li>
+<li>Replace y with f⁻¹(x)</li>
+</ol>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find f⁻¹(x)</strong> given f(x) = (2x + 3)/(x − 1)</p>
+<p><strong>Step 1:</strong> y = (2x + 3)/(x − 1)</p>
+<p><strong>Step 2:</strong> y(x − 1) = 2x + 3 → yx − y = 2x + 3 → yx − 2x = y + 3 → x(y − 2) = y + 3</p>
+<p><strong>Step 3:</strong> x = (y + 3)/(y − 2)</p>
+<p><strong>Step 4:</strong> f⁻¹(x) = <strong>(x + 3)/(x − 2)</strong></p>
+</div>
+
+<table class="data-table">
+<tr><th>Property</th><th>Relationship</th></tr>
+<tr><td>Domain of f⁻¹</td><td>= Range of f</td></tr>
+<tr><td>Range of f⁻¹</td><td>= Domain of f</td></tr>
+<tr><td>Graph of f⁻¹</td><td>Reflection of f in line y = x</td></tr>
+<tr><td>f(f⁻¹(x))</td><td>= x</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Modulus Function</h3>
+</div>
+<div class="topic-content">
+<div class="formula-box">|x| = x if x ≥ 0<br>|x| = −x if x < 0</div>
+
+<h4>Graphs</h4>
+<table class="data-table">
+<tr><th>Transformation</th><th>Effect on Graph</th></tr>
+<tr><td>y = |f(x)|</td><td>Reflect negative parts above x-axis</td></tr>
+<tr><td>y = f(|x|)</td><td>Reflect right side to left (symmetric about y-axis)</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Solve:</strong> |2x − 3| = 5</p>
+<p><strong>Case 1:</strong> 2x − 3 = 5 → 2x = 8 → x = 4</p>
+<p><strong>Case 2:</strong> 2x − 3 = −5 → 2x = −2 → x = −1</p>
+<p><strong>Answer:</strong> x = 4 or x = −1</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Solve:</strong> |x − 2| < 3</p>
+<p>−3 < x − 2 < 3</p>
+<p>−1 < x < 5</p>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
+<ul>
+<li>fg(x) = f(g(x)) — apply g first, then f</li>
+<li>Inverse: write y = f(x), rearrange for x, swap x and y</li>
+<li>Domain of f⁻¹ = Range of f; Range of f⁻¹ = Domain of f</li>
+<li>|x| = x for x ≥ 0; |x| = −x for x < 0</li>
+<li>Only one-one functions have inverses</li>
+</ul>
+</div>
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
+<ul>
+<li>Always check if a function is one-one before finding its inverse</li>
+<li>For composite functions, work from the inside out</li>
+<li>When solving |f(x)| = a, always consider ±a</li>
+<li>Draw the line y = x to check inverse reflections</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<script src="../js/theme.js?v=5"></script>
 </body>
 </html>
