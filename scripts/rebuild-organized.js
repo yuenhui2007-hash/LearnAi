@@ -262,6 +262,332 @@ const ORGANIZED = {
     ],
     summary: ['Distance: d = √((x₂ − x₁)² + (y₂ − y₁)²)', 'Gradient: m = (y₂ − y₁)/(x₂ − x₁)', 'Parallel: m₁ = m₂', 'Perpendicular: m₁ × m₂ = −1', 'Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)'],
     tips: ['Always draw a sketch to verify your answer', 'For perpendicular gradients, flip and change sign', 'General form ax + by + c = 0 can be rearranged to y = mx + c', 'Show all working when finding equations']
+  },
+  'maths-m4': {
+    name: 'Circular Measure',
+    sections: [
+      {
+        title: 'Radians and Degrees',
+        content: `<div class="formula-box">π radians = 180°<br>1 radian = 180°/π ≈ 57.3°<br>1° = π/180 radians</div>
+<table class="data-table">
+<tr><th>Degrees</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>360°</th></tr>
+<tr><td><strong>Radians</strong></td><td>0</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td><td>π</td><td>2π</td></tr>
+</table>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Convert 120° to radians:</strong></p>
+<p>120° × (π/180) = <strong>2π/3 radians</strong></p>
+</div>`
+      },
+      {
+        title: 'Arc Length and Sector Area',
+        content: `<div class="formula-box">Arc length: s = rθ (θ in radians)<br>Sector area: A = ½r²θ (θ in radians)<br>Segment area = ½r²(θ − sin θ)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Radius = 5 cm, θ = 1.2 radians. Find arc length and sector area.</p>
+<p><strong>Arc length:</strong> s = 5 × 1.2 = <strong>6 cm</strong></p>
+<p><strong>Sector area:</strong> A = ½ × 25 × 1.2 = <strong>15 cm²</strong></p>
+</div>`
+      },
+      {
+        title: 'Perimeter of Sector',
+        content: `<div class="formula-box">Perimeter = 2r + rθ</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Find perimeter of sector with r = 4 cm and θ = π/3.</p>
+<p>Perimeter = 2(4) + 4(π/3) = 8 + 4π/3 ≈ <strong>12.2 cm</strong></p>
+</div>`
+      }
+    ],
+    summary: ['π rad = 180°', 'Arc length: s = rθ', 'Sector area: A = ½r²θ', 'Segment area = ½r²(θ − sin θ)', 'Perimeter of sector = 2r + rθ'],
+    tips: ['Check calculator mode before calculating', 'Common angles: π/6=30°, π/4=45°, π/3=60°, π/2=90°', 'When θ is in terms of π, leave answer exact', 'Segment = sector − triangle']
+  },
+  'maths-m5': {
+    name: 'Trigonometry',
+    sections: [
+      {
+        title: 'Exact Values',
+        content: `<table class="data-table">
+<tr><th>Angle</th><th>sin</th><th>cos</th><th>tan</th></tr>
+<tr><td>30° (π/6)</td><td>½</td><td>√3/2</td><td>1/√3</td></tr>
+<tr><td>45° (π/4)</td><td>1/√2</td><td>1/√2</td><td>1</td></tr>
+<tr><td>60° (π/3)</td><td>√3/2</td><td>½</td><td>√3</td></tr>
+</table>
+<div class="formula-box">sin θ = opposite/hypotenuse<br>cos θ = adjacent/hypotenuse<br>tan θ = opposite/adjacent</div>`
+      },
+      {
+        title: 'Trigonometric Identities',
+        content: `<div class="formula-box">tan θ ≡ sin θ/cos θ<br>sin² θ + cos² θ ≡ 1<br>tan² θ + 1 ≡ sec² θ<br>1 + cot² θ ≡ cosec² θ</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Given sin θ = 3/5 and θ is acute, find cos θ.</p>
+<p>sin² θ + cos² θ = 1 → (3/5)² + cos² θ = 1</p>
+<p>cos² θ = 1 − 9/25 = 16/25 → cos θ = <strong>4/5</strong></p>
+</div>`
+      },
+      {
+        title: 'Solving Trigonometric Equations',
+        content: `<table class="data-table">
+<tr><th>Function</th><th>Positive in</th><th>Negative in</th></tr>
+<tr><td>sin</td><td>1st, 2nd quadrants</td><td>3rd, 4th quadrants</td></tr>
+<tr><td>cos</td><td>1st, 4th quadrants</td><td>2nd, 3rd quadrants</td></tr>
+<tr><td>tan</td><td>1st, 3rd quadrants</td><td>2nd, 4th quadrants</td></tr>
+</table>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Solve:</strong> sin x = 0.5 for 0° ≤ x ≤ 360°</p>
+<p>x = 30° or x = 180° − 30° = <strong>150°</strong></p>
+</div>`
+      }
+    ],
+    summary: ['sin² θ + cos² θ ≡ 1', 'tan θ ≡ sin θ/cos θ', 'sin positive in 1st & 2nd; cos in 1st & 4th; tan in 1st & 3rd', 'CAST diagram for solving equations', 'Period: sin/cos = 360°; tan = 180°'],
+    tips: ['Learn exact values for 30°, 45°, 60°', 'Use CAST diagram to find all solutions', 'Always check your calculator is in correct mode', 'When solving, find all solutions in the given range']
+  },
+  'maths-m6': {
+    name: 'Series',
+    sections: [
+      {
+        title: 'Binomial Expansion',
+        content: `<div class="formula-box">(a + b)ⁿ = Σ (ⁿCᵣ) aⁿ⁻ʳ bʳ where ⁿCᵣ = n!/(r!(n−r)!)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Expand (2 + x)⁴</p>
+<p>= ⁴C₀(2)⁴ + ⁴C₁(2)³x + ⁴C₂(2)²x² + ⁴C₃(2)x³ + ⁴C₄x⁴</p>
+<p>= 16 + 32x + 24x² + 8x³ + x⁴</p>
+</div>`
+      },
+      {
+        title: 'Arithmetic Progression (AP)',
+        content: `<div class="formula-box">nth term: uₙ = a + (n − 1)d<br>Sum: Sₙ = n/2[2a + (n − 1)d] = n/2(a + l)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>AP: 3, 7, 11, 15... Find 10th term and sum of first 10 terms.</p>
+<p>a = 3, d = 4</p>
+<p>u₁₀ = 3 + 9(4) = <strong>39</strong></p>
+<p>S₁₀ = 10/2[2(3) + 9(4)] = 5(42) = <strong>210</strong></p>
+</div>`
+      },
+      {
+        title: 'Geometric Progression (GP)',
+        content: `<div class="formula-box">nth term: uₙ = arⁿ⁻¹<br>Sum: Sₙ = a(1−rⁿ)/(1−r)<br>Sum to infinity: S∞ = a/(1−r) for |r| < 1</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>GP: 8, 4, 2, 1... Find sum to infinity.</p>
+<p>a = 8, r = ½</p>
+<p>S∞ = 8/(1 − ½) = <strong>16</strong></p>
+</div>`
+      }
+    ],
+    summary: ['Binomial: (a+b)ⁿ = Σ ⁿCᵣ aⁿ⁻ʳbʳ', 'AP: uₙ = a + (n−1)d; Sₙ = n/2(2a + (n−1)d)', 'GP: uₙ = arⁿ⁻¹; Sₙ = a(1−rⁿ)/(1−r)', 'S∞ = a/(1−r) for |r| < 1', 'ⁿCᵣ = n!/(r!(n−r)!)'],
+    tips: ['Check if GP is convergent before using S∞', 'For binomial with negative/fractional n, series valid for |x| < 1', 'AP sum: n/2(first + last) is often quicker', 'Always define a, d, r before substituting']
+  },
+  'maths-m7': {
+    name: 'Differentiation',
+    sections: [
+      {
+        title: 'Basic Rules',
+        content: `<div class="formula-box">If y = xⁿ, then dy/dx = nxⁿ⁻¹<br>If y = axⁿ, then dy/dx = anxⁿ⁻¹<br>Constant: d/dx(c) = 0</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Differentiate y = 4x³ − 2x² + 5x − 7</p>
+<p>dy/dx = 12x² − 4x + 5</p>
+</div>`
+      },
+      {
+        title: 'Tangents and Normals',
+        content: `<table class="data-table">
+<tr><th></th><th>Gradient</th><th>Equation</th></tr>
+<tr><td>Tangent</td><td>m = f'(a)</td><td>y − f(a) = f'(a)(x − a)</td></tr>
+<tr><td>Normal</td><td>m = −1/f'(a)</td><td>y − f(a) = −1/f'(a)(x − a)</td></tr>
+</table>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Find tangent to y = x² at x = 3.</p>
+<p>dy/dx = 2x → at x=3, m = 6. Point: (3, 9)</p>
+<p>y − 9 = 6(x − 3) → y = 6x − 9</p>
+</div>`
+      },
+      {
+        title: 'Stationary Points',
+        content: `<table class="data-table">
+<tr><th>Type</th><th>Condition</th></tr>
+<tr><td>Maximum</td><td>f'(x) = 0 and f''(x) < 0</td></tr>
+<tr><td>Minimum</td><td>f'(x) = 0 and f''(x) > 0</td></tr>
+<tr><td>Point of inflexion</td><td>f'(x) = 0 and f''(x) = 0 (check further)</td></tr>
+</table>
+<div class="formula-box">Chain rule: dy/dx = dy/du × du/dx</div>`
+      }
+    ],
+    summary: ['Power rule: d/dx(xⁿ) = nxⁿ⁻¹', 'Chain rule: dy/dx = dy/du × du/dx', 'Stationary point: f\'(x) = 0', 'Maximum: f\'\'(x) < 0; Minimum: f\'\'(x) > 0', 'Tangent gradient = f\'(a); Normal gradient = −1/f\'(a)'],
+    tips: ['Always simplify before differentiating', 'For stationary points, show f\'(x) = 0 and use second derivative', 'Don\'t forget the constant multiple rule', 'Connected rates: identify what you need and what you\'re given']
+  },
+  'maths-m8': {
+    name: 'Integration',
+    sections: [
+      {
+        title: 'Basic Integration',
+        content: `<div class="formula-box">∫xⁿ dx = xⁿ⁺¹/(n+1) + c (n ≠ −1)<br>∫(ax+b)ⁿ dx = (ax+b)ⁿ⁺¹/[a(n+1)] + c</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>∫(3x² + 4x − 5) dx = x³ + 2x² − 5x + c</p>
+</div>`
+      },
+      {
+        title: 'Definite Integration',
+        content: `<div class="formula-box">∫ₐᵇ f(x) dx = [F(x)]ₐᵇ = F(b) − F(a)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>∫₁³ (2x + 1) dx = [x² + x]₁³ = (9+3) − (1+1) = <strong>10</strong></p>
+</div>`
+      },
+      {
+        title: 'Area and Trapezium Rule',
+        content: `<div class="formula-box">Area between curves = ∫(top − bottom) dx<br>Trapezium rule: ∫ₐᵇ y dx ≈ h/2[y₀ + 2(y₁+...+yₙ₋₁) + yₙ]</div>
+<div class="key-point">If curve crosses x-axis, split integral and take absolute values for total area.</div>`
+      }
+    ],
+    summary: ['∫xⁿ dx = xⁿ⁺¹/(n+1) + c', 'Definite: ∫ₐᵇ f(x) dx = F(b) − F(a)', 'Area under curve = ∫ y dx', 'Area between curves = ∫ (top − bottom) dx', 'Trapezium: h/2[y₀ + 2(y₁+...+yₙ₋₁) + yₙ]'],
+    tips: ['Never forget +c for indefinite integrals', 'Check if curve crosses axis — split if needed', 'Trapezium rule: more strips = more accurate', 'Area is always positive — take absolute value']
+  },
+  'maths-m9': {
+    name: 'Vectors',
+    sections: [
+      {
+        title: 'Vector Basics',
+        content: `<div class="formula-box">|r| = √(a² + b² + c²)<br>a · b = a₁b₁ + a₂b₂ + a₃b₃ = |a||b|cos θ</div>
+<table class="data-table">
+<tr><th>Property</th><th>Condition</th></tr>
+<tr><td>Perpendicular</td><td>a · b = 0</td></tr>
+<tr><td>Parallel</td><td>a = kb for some scalar k</td></tr>
+<tr><td>Angle between vectors</td><td>cos θ = (a·b)/(|a||b|)</td></tr>
+</table>`
+      },
+      {
+        title: 'Line Equations',
+        content: `<div class="formula-box">Vector form: r = a + tb<br>Cartesian form: (x−x₁)/a = (y−y₁)/b = (z−z₁)/c</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Line through (1, 2, 3) parallel to (2, −1, 4).</p>
+<p>r = (1, 2, 3) + t(2, −1, 4)</p>
+</div>`
+      }
+    ],
+    summary: ['|r| = √(a² + b² + c²)', 'a · b = a₁b₁ + a₂b₂ + a₃b₃', 'Perpendicular: a · b = 0', 'Angle: cos θ = (a·b)/(|a||b|)', 'Line: r = a + tb'],
+    tips: ['When finding angle, ensure vectors point from/to same point', 'For perpendicular lines, direction vectors have dot product = 0', 'Magnitude always positive', 'Vector AB = b − a']
+  },
+  'maths-m10': {
+    name: 'Probability',
+    sections: [
+      {
+        title: 'Basic Probability',
+        content: `<div class="formula-box">P(A) = n(A)/n(ℰ)<br>P(A') = 1 − P(A)<br>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>P(A) = 0.4, P(B) = 0.5, P(A ∩ B) = 0.2. Find P(A ∪ B).</p>
+<p>P(A ∪ B) = 0.4 + 0.5 − 0.2 = <strong>0.7</strong></p>
+</div>`
+      },
+      {
+        title: 'Conditional Probability',
+        content: `<div class="formula-box">P(A|B) = P(A ∩ B)/P(B)<br>Independent: P(A ∩ B) = P(A) × P(B)</div>`
+      },
+      {
+        title: 'Permutations and Combinations',
+        content: `<div class="formula-box">ⁿPᵣ = n!/(n−r)! (order matters)<br>ⁿCᵣ = n!/[r!(n−r)!] (order doesn't matter)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>How many ways to choose 3 people from 10?</p>
+<p>¹⁰C₃ = 10!/(3!×7!) = <strong>120</strong></p>
+</div>`
+      }
+    ],
+    summary: ['P(A\') = 1 − P(A)', 'P(A ∪ B) = P(A) + P(B) − P(A ∩ B)', 'P(A ∩ B) = P(A) × P(B|A)', 'Independent: P(A ∩ B) = P(A) × P(B)', 'ⁿCᵣ = n!/[r!(n−r)!]'],
+    tips: ['Draw tree diagrams for multi-stage problems', 'Distinguish permutation (order matters) vs combination', 'Venn diagrams help visualise unions and intersections', 'For "at least one", use complement: 1 − P(none)']
+  },
+  'maths-m11': {
+    name: 'Distributions',
+    sections: [
+      {
+        title: 'Discrete Random Variables',
+        content: `<div class="formula-box">E(X) = ΣxP(X=x)<br>Var(X) = E(X²) − [E(X)]²<br>E(aX+b) = aE(X)+b; Var(aX+b) = a²Var(X)</div>`
+      },
+      {
+        title: 'Binomial Distribution',
+        content: `<div class="formula-box">X ~ B(n, p)<br>P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ<br>Mean = np; Variance = np(1−p)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>X ~ B(10, 0.3). Find P(X = 4).</p>
+<p>P(X=4) = ¹⁰C₄ (0.3)⁴(0.7)⁶ = 210 × 0.0081 × 0.117649 ≈ <strong>0.200</strong></p>
+</div>`
+      },
+      {
+        title: 'Normal Distribution',
+        content: `<div class="formula-box">X ~ N(μ, σ²)<br>Z = (X − μ)/σ ~ N(0, 1)</div>
+<div class="key-point">P(μ − σ < X < μ + σ) ≈ 0.68<br>P(μ − 2σ < X < μ + 2σ) ≈ 0.95</div>`
+      }
+    ],
+    summary: ['E(X) = ΣxP(X=x)', 'Var(X) = E(X²) − [E(X)]²', 'Binomial: P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ', 'Normal: Z = (X−μ)/σ', 'Binomial mean = np; variance = np(1−p)'],
+    tips: ['For binomial, check conditions: fixed n, independent, constant p', 'Standardise normal: Z = (X − μ)/σ', 'Use tables for Z values — draw diagram', 'Var(aX+b) = a²Var(X)']
+  },
+  'maths-m12': {
+    name: 'Hypothesis Testing',
+    sections: [
+      {
+        title: 'Setting Up Hypotheses',
+        content: `<table class="data-table">
+<tr><th>Test Type</th><th>H₀</th><th>H₁</th></tr>
+<tr><td>Two-tailed</td><td>μ = μ₀</td><td>μ ≠ μ₀</td></tr>
+<tr><td>One-tailed (right)</td><td>μ = μ₀</td><td>μ > μ₀</td></tr>
+<tr><td>One-tailed (left)</td><td>μ = μ₀</td><td>μ < μ₀</td></tr>
+</table>
+<div class="formula-box">Test statistic: z = (x̄ − μ)/(σ/√n)</div>`
+      },
+      {
+        title: 'Decision Making',
+        content: `<table class="data-table">
+<tr><th>Condition</th><th>Decision</th></tr>
+<tr><td>Test statistic in critical region</td><td>Reject H₀</td></tr>
+<tr><td>p-value < significance level</td><td>Reject H₀</td></tr>
+<tr><td>Otherwise</td><td>Do not reject H₀</td></tr>
+</table>
+<div class="key-point">Type I error: Reject H₀ when true (P = α)<br>Type II error: Do not reject H₀ when false</div>`
+      }
+    ],
+    summary: ['H₀: default assumption', 'H₁: alternative (one-tailed or two-tailed)', 'Test statistic z = (x̄ − μ)/(σ/√n)', 'Reject H₀ if test statistic in critical region', 'Type I: reject true H₀; Type II: accept false H₀'],
+    tips: ['Always state H₀ and H₁ clearly', 'Check if test is one-tailed or two-tailed', 'Conclusion must be in context', 'For two-tailed at 5%, use 2.5% in each tail']
+  },
+  'maths-m13': {
+    name: 'Kinematics',
+    sections: [
+      {
+        title: 'SUVAT Equations',
+        content: `<div class="formula-box">v = u + at<br>s = ½(u + v)t<br>s = ut + ½at²<br>s = vt − ½at²<br>v² = u² + 2as</div>
+<table class="data-table">
+<tr><th>Given</th><th>Missing</th><th>Use</th></tr>
+<tr><td>u, a, t</td><td>v</td><td>v = u + at</td></tr>
+<tr><td>u, v, t</td><td>s</td><td>s = ½(u+v)t</td></tr>
+<tr><td>u, a, t</td><td>s</td><td>s = ut + ½at²</td></tr>
+<tr><td>u, v, a</td><td>s</td><td>v² = u² + 2as</td></tr>
+</table>`
+      },
+      {
+        title: 'Forces and Newton\'s Laws',
+        content: `<div class="formula-box">F = ma</div>
+<div class="key-point">First Law: Object at rest stays at rest unless acted on by resultant force.<br>Second Law: F = ma<br>Third Law: Action and reaction are equal and opposite.</div>`
+      },
+      {
+        title: 'Projectiles',
+        content: `<table class="data-table">
+<tr><th>Direction</th><th>Horizontal</th><th>Vertical</th></tr>
+<tr><td>Acceleration</td><td>0</td><td>−g (−9.8 m/s²)</td></tr>
+<tr><td>Velocity</td><td>u cos θ (constant)</td><td>u sin θ − gt</td></tr>
+<tr><td>Displacement</td><td>ut cos θ</td><td>ut sin θ − ½gt²</td></tr>
+</table>
+<div class="key-point">Time is the same for both directions. Solve simultaneously.</div>`
+      }
+    ],
+    summary: ['SUVAT: v=u+at, s=ut+½at², v²=u²+2as', 'F = ma', 'v-t graph gradient = acceleration, area = displacement', 'Projectile: horizontal constant velocity, vertical a = −g', 'Connected particles: same tension, same acceleration'],
+    tips: ['Draw clear force diagrams', 'Choose SUVAT equation based on missing variable', 'For projectiles, resolve horizontally and vertically', 'Take care with signs — choose positive direction']
   }
 };
 

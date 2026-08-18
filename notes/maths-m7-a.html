@@ -2,123 +2,155 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Differentiation — A-Level | LearnAI</title>
-<meta name="description" content="Differentiation notes for Cambridge 9709 (A-Level). Detailed study notes and last-minute summary.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
-.summary-box ul li { color: #78350f; }
-.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+
+/* Table of Contents */
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* Topic Blocks */
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+
+/* Formula Box */
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+
+/* Example Box */
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+
+/* Key Point */
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+
+/* Summary Box */
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+
+/* Exam Tips */
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+
+/* Fraction */
+.fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
+.fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
+.fraction .bottom { display: block; padding: 0 4px; }
+
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-<div class="container nav-container">
-<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
-<button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-<ul class="nav-menu" id="navMenu">
-<li><a href="../index.html" class="nav-link">Home</a></li>
-<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
-<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
-<li><a href="../planner.html" class="nav-link">Planner</a></li>
-<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
-</ul>
-</div>
-</nav>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 
-<section class="notes-page">
-<div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
+<section class="notes-page"><div class="container">
 <div class="notes-container">
 <div class="notes-header">
-<div class="level-badges">
-    <span class="level-badge badge-as">AS Level</span>
-  </div>
+<span class="syllabus-tag">A-Level</span>
 <h1>Differentiation</h1>
-<p style="color:var(--gray)">9709 (A-Level)</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
 </div>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. The Gradient of a Curve</h3>
-<ul>
-<li>The derivative dy/dx gives the gradient of the tangent at any point.</li>
-<li>It measures the rate of change of y with respect to x.</li>
-</ul>
-<h3>2. Differentiation from First Principles</h3>
-<div class="formula-box">f'(x) = lim(h→0) [f(x+h) − f(x)]/h</div>
-<ul>
-<li>Used to derive standard results.</li>
-</ul>
-<h3>3. Standard Results</h3>
-<div class="formula-box">If y = xⁿ, then dy/dx = nxⁿ⁻¹<br>If y = axⁿ, then dy/dx = anxⁿ⁻¹<br>If y = constant, dy/dx = 0</div>
-<ul>
-<li><strong>Sum rule:</strong> d/dx(f + g) = f' + g'</li>
-<li><strong>Constant multiple:</strong> d/dx(af) = af'</li>
-</ul>
-<h3>4. Tangents and Normals</h3>
-<ul>
-<li><strong>Tangent:</strong> Gradient = f'(a). Equation: y − f(a) = f'(a)(x − a).</li>
-<li><strong>Normal:</strong> Perpendicular to tangent. Gradient = −1/f'(a). Equation: y − f(a) = (−1/f'(a))(x − a).</li>
-</ul>
-<h3>5. Increasing and Decreasing Functions</h3>
-<ul>
-<li><strong>Increasing:</strong> f'(x) > 0</li>
-<li><strong>Decreasing:</strong> f'(x) < 0</li>
-</ul>
-<h3>6. Stationary Points</h3>
-<ul>
-<li>Occur where f'(x) = 0.</li>
-<li><strong>Maximum:</strong> f'(x) changes from + to −. f''(x) < 0.</li>
-<li><strong>Minimum:</strong> f'(x) changes from − to +. f''(x) > 0.</li>
-<li><strong>Point of inflexion:</strong> f'(x) = 0 but doesn't change sign. f''(x) = 0 (check further).</li>
-</ul>
-<h3>7. Second Derivative</h3>
-<div class="formula-box">d²y/dx² = d/dx(dy/dx)</div>
-<ul>
-<li>f''(x) > 0 → concave up → minimum</li>
-<li>f''(x) < 0 → concave down → maximum</li>
-</ul>
-<h3>8. Chain Rule</h3>
-<div class="formula-box">dy/dx = dy/du × du/dx</div>
-<ul>
-<li>For composite functions: if y = (ax + b)ⁿ, dy/dx = an(ax + b)ⁿ⁻¹</li>
-</ul>
-<h3>9. Connected Rates of Change</h3>
-<ul>
-<li>Use chain rule: dy/dt = dy/dx × dx/dt</li>
-<li>Given one rate, find another related rate.</li>
-</ul>
+
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Basic Rules</a></li>
+<li><a href="#section-2">Tangents and Normals</a></li>
+<li><a href="#section-3">Stationary Points</a></li>
+</ol>
 </div>
+
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>Basic Rules</h3>
+</div>
+<div class="topic-content">
+<div class="formula-box">If y = xⁿ, then dy/dx = nxⁿ⁻¹<br>If y = axⁿ, then dy/dx = anxⁿ⁻¹<br>Constant: d/dx(c) = 0</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Differentiate y = 4x³ − 2x² + 5x − 7</p>
+<p>dy/dx = 12x² − 4x + 5</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Tangents and Normals</h3>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th></th><th>Gradient</th><th>Equation</th></tr>
+<tr><td>Tangent</td><td>m = f'(a)</td><td>y − f(a) = f'(a)(x − a)</td></tr>
+<tr><td>Normal</td><td>m = −1/f'(a)</td><td>y − f(a) = −1/f'(a)(x − a)</td></tr>
+</table>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>Find tangent to y = x² at x = 3.</p>
+<p>dy/dx = 2x → at x=3, m = 6. Point: (3, 9)</p>
+<p>y − 9 = 6(x − 3) → y = 6x − 9</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Stationary Points</h3>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Type</th><th>Condition</th></tr>
+<tr><td>Maximum</td><td>f'(x) = 0 and f''(x) < 0</td></tr>
+<tr><td>Minimum</td><td>f'(x) = 0 and f''(x) > 0</td></tr>
+<tr><td>Point of inflexion</td><td>f'(x) = 0 and f''(x) = 0 (check further)</td></tr>
+</table>
+<div class="formula-box">Chain rule: dy/dx = dy/du × du/dx</div>
+</div>
+</div>
+
 <div class="summary-box">
-<h2>Last-Minute Summary</h2>
+<h2>📝 Quick Summary</h2>
 <ul>
 <li>Power rule: d/dx(xⁿ) = nxⁿ⁻¹</li>
 <li>Chain rule: dy/dx = dy/du × du/dx</li>
@@ -127,24 +159,19 @@
 <li>Tangent gradient = f'(a); Normal gradient = −1/f'(a)</li>
 </ul>
 </div>
+
 <div class="exam-tips">
-<h2>Exam Tips</h2>
+<h2>💡 Exam Tips</h2>
 <ul>
 <li>Always simplify before differentiating</li>
-<li>For stationary points, show f'(x) = 0 and use second derivative or sign test</li>
+<li>For stationary points, show f'(x) = 0 and use second derivative</li>
 <li>Don't forget the constant multiple rule</li>
 <li>Connected rates: identify what you need and what you're given</li>
 </ul>
 </div>
 </div>
-</div>
-</section>
+</div></section>
 
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script>
-<script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
+<script src="../js/theme.js?v=5"></script>
 </body>
 </html>

@@ -2,101 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Probability — A-Level | LearnAI</title>
-<meta name="description" content="Probability notes for Cambridge 9709 (A-Level). Detailed study notes and last-minute summary.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distributions — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
-.summary-box ul li { color: #78350f; }
-.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+
+/* Table of Contents */
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* Topic Blocks */
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+
+/* Formula Box */
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+
+/* Example Box */
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+
+/* Key Point */
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+
+/* Summary Box */
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+
+/* Exam Tips */
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+
+/* Fraction */
+.fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
+.fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
+.fraction .bottom { display: block; padding: 0 4px; }
+
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-<div class="container nav-container">
-<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
-<button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-<ul class="nav-menu" id="navMenu">
-<li><a href="../index.html" class="nav-link">Home</a></li>
-<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
-<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
-<li><a href="../planner.html" class="nav-link">Planner</a></li>
-<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
-</ul>
-</div>
-</nav>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 
-<section class="notes-page">
-<div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
+<section class="notes-page"><div class="container">
 <div class="notes-container">
 <div class="notes-header">
-<div class="level-badges">
-    <span class="level-badge badge-as">AS Level</span>
-  </div>
-<h1>Probability</h1>
-<p style="color:var(--gray)">9709 (A-Level)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Distributions</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
 </div>
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Discrete Random Variables</h3>
-<ul>
-<li><strong>Probability distribution:</strong> Table showing each value x and P(X = x).</li>
-<li><strong>ΣP(X = x) = 1</strong></li>
-</ul>
-<h3>2. Expectation and Variance</h3>
-<div class="formula-box">E(X) = ΣxP(X = x)<br>E(X²) = Σx²P(X = x)<br>Var(X) = E(X²) − [E(X)]²<br>SD(X) = √Var(X)</div>
-<ul>
-<li><strong>Linear transformation:</strong> E(aX + b) = aE(X) + b; Var(aX + b) = a²Var(X)</li>
-</ul>
-<h3>3. Binomial Distribution</h3>
-<div class="formula-box">X ~ B(n, p)<br>P(X = r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ</div>
-<ul>
-<li><strong>n</strong> = number of trials, <strong>p</strong> = probability of success.</li>
-<li><strong>Conditions:</strong> Fixed n, independent trials, constant p, two outcomes.</li>
-<li><strong>Mean:</strong> E(X) = np</li>
-<li><strong>Variance:</strong> Var(X) = np(1−p)</li>
-</ul>
-<h3>4. Normal Distribution</h3>
-<div class="formula-box">X ~ N(μ, σ²)</div>
-<ul>
-<li>Bell-shaped curve, symmetric about μ.</li>
-<li>Total area under curve = 1.</li>
-<li><strong>Standard normal:</strong> Z = (X − μ)/σ ~ N(0, 1)</li>
-<li>Use standard normal tables to find probabilities.</li>
-<li><strong>Key values:</strong> P(μ − σ < X < μ + σ) ≈ 0.68, P(μ − 2σ < X < μ + 2σ) ≈ 0.95</li>
-</ul>
+
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Discrete Random Variables</a></li>
+<li><a href="#section-2">Binomial Distribution</a></li>
+<li><a href="#section-3">Normal Distribution</a></li>
+</ol>
 </div>
+
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>Discrete Random Variables</h3>
+</div>
+<div class="topic-content">
+<div class="formula-box">E(X) = ΣxP(X=x)<br>Var(X) = E(X²) − [E(X)]²<br>E(aX+b) = aE(X)+b; Var(aX+b) = a²Var(X)</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Binomial Distribution</h3>
+</div>
+<div class="topic-content">
+<div class="formula-box">X ~ B(n, p)<br>P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ<br>Mean = np; Variance = np(1−p)</div>
+<div class="example-box">
+<h5>Worked Example</h5>
+<p>X ~ B(10, 0.3). Find P(X = 4).</p>
+<p>P(X=4) = ¹⁰C₄ (0.3)⁴(0.7)⁶ = 210 × 0.0081 × 0.117649 ≈ <strong>0.200</strong></p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Normal Distribution</h3>
+</div>
+<div class="topic-content">
+<div class="formula-box">X ~ N(μ, σ²)<br>Z = (X − μ)/σ ~ N(0, 1)</div>
+<div class="key-point">P(μ − σ < X < μ + σ) ≈ 0.68<br>P(μ − 2σ < X < μ + 2σ) ≈ 0.95</div>
+</div>
+</div>
+
 <div class="summary-box">
-<h2>Last-Minute Summary</h2>
+<h2>📝 Quick Summary</h2>
 <ul>
 <li>E(X) = ΣxP(X=x)</li>
 <li>Var(X) = E(X²) − [E(X)]²</li>
@@ -105,24 +144,19 @@
 <li>Binomial mean = np; variance = np(1−p)</li>
 </ul>
 </div>
+
 <div class="exam-tips">
-<h2>Exam Tips</h2>
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>For binomial, check conditions: fixed n, independent, constant p, two outcomes</li>
+<li>For binomial, check conditions: fixed n, independent, constant p</li>
 <li>Standardise normal: Z = (X − μ)/σ</li>
 <li>Use tables for Z values — draw diagram</li>
-<li>Var(aX+b) = a²Var(X); SD(aX+b) = |a|SD(X)</li>
+<li>Var(aX+b) = a²Var(X)</li>
 </ul>
 </div>
 </div>
-</div>
-</section>
+</div></section>
 
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script>
-<script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
+<script src="../js/theme.js?v=5"></script>
 </body>
 </html>
