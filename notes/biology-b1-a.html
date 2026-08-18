@@ -2,223 +2,170 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cell Structure & Organisation — A-Level | LearnAI</title>
-<meta name="description" content="Cell Structure & Organisation notes for Cambridge 9700 (A-Level). Detailed study notes and last-minute summary.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cell Structure — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.summary-box h2 { color: #92400e; border-bottom-color: #f59e0b; }
-.summary-box ul li { color: #78350f; }
-.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
-.exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-<div class="container nav-container">
-<a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a>
-<button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-<ul class="nav-menu" id="navMenu">
-<li><a href="../index.html" class="nav-link">Home</a></li>
-<li><a href="../subjects.html" class="nav-link">Subjects</a></li>
-<li><a href="../dashboard.html" class="nav-link">My Progress</a></li>
-<li><a href="../planner.html" class="nav-link">Planner</a></li>
-<li id="navAuth"><a href="../login.html" class="nav-link">Sign In</a></li>
-</ul>
-</div>
-</nav>
-
-<section class="notes-page">
-<div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
+<nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
+<section class="notes-page"><div class="container">
 <div class="notes-container">
 <div class="notes-header">
-<div class="level-badges">
-    <span class="level-badge badge-as">AS Level</span>
-  </div>
-<h1>Cell Structure & Organisation</h1>
-<p style="color:var(--gray)">9700 (A-Level)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Cell Structure</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+</div>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Cell Theory</a></li>
+<li><a href="#section-2">Prokaryotic vs Eukaryotic Cells</a></li>
+<li><a href="#section-3">Key Organelles</a></li>
+<li><a href="#section-4">Cell Fractionation</a></li>
+</ol>
 </div>
 
-<div class="notes-section">
-<h2>Detailed Notes</h2>
-<h3>1. Cell Theory</h3><ul><li>All living organisms composed of cells.</li><li>Cell is the basic unit of life.</li><li>All cells arise from pre-existing cells.</li></ul>
-<h3>2. Prokaryotic vs Eukaryotic</h3>
-<table style="width:100%;margin:16px 0;border-collapse:collapse;font-size:0.9rem"><tr style="background:var(--light)"><th style="padding:10px;border:1px solid var(--gray-light)">Feature</th><th style="padding:10px;border:1px solid var(--gray-light)">Prokaryotic</th><th style="padding:10px;border:1px solid var(--gray-light)">Eukaryotic</th></tr>
-<tr><td style="padding:10px;border:1px solid var(--gray-light)">Nucleus</td><td style="padding:10px;border:1px solid var(--gray-light)">Nucleoid, no envelope</td><td style="padding:10px;border:1px solid var(--gray-light)">True nucleus</td></tr>
-<tr><td style="padding:10px;border:1px solid var(--gray-light)">DNA</td><td style="padding:10px;border:1px solid var(--gray-light)">Circular, naked</td><td style="padding:10px;border:1px solid var(--gray-light)">Linear, with histones</td></tr>
-<tr><td style="padding:10px;border:1px solid var(--gray-light)">Ribosomes</td><td style="padding:10px;border:1px solid var(--gray-light)">70S</td><td style="padding:10px;border:1px solid var(--gray-light)">80S (70S in organelles)</td></tr>
-<tr><td style="padding:10px;border:1px solid var(--gray-light)">Organelles</td><td style="padding:10px;border:1px solid var(--gray-light)">None membrane-bound</td><td style="padding:10px;border:1px solid var(--gray-light)">Many membrane-bound</td></tr></table>
-<h3>3. Key Organelles</h3>
-<ul><li><strong>Nucleus:</strong> Chromatin, nucleolus, nuclear pores.</li><li><strong>Mitochondria:</strong> Aerobic respiration, cristae, own DNA.</li><li><strong>RER:</strong> Protein synthesis with ribosomes.</li><li><strong>SER:</strong> Lipid synthesis, detoxification.</li><li><strong>Golgi:</strong> Modifies, packages proteins.</li><li><strong>Lysosomes:</strong> Hydrolytic enzymes.</li><li><strong>Chloroplasts:</strong> Photosynthesis, thylakoids, grana.</li></ul>
-<h3>4. Cell Fractionation</h3><ul><li>Homogenise in cold isotonic buffer.</li><li>Filter through gauze.</li><li>Ultracentrifuge: nuclei → mitochondria → lysosomes → ribosomes.</li></ul>
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>Cell Theory</h3>
 </div>
-<div class="notes-section">
-<h3>5. Cell Division — Mitosis</h3>
-<ul>
-<li><strong>Stages:</strong> Prophase → Metaphase → Anaphase → Telophase → Cytokinesis</li>
-<li><strong>Prophase:</strong> Chromosomes condense, nuclear envelope breaks down, spindle forms</li>
-<li><strong>Metaphase:</strong> Chromosomes line up on equator</li>
-<li><strong>Anaphase:</strong> Sister chromatids pulled to opposite poles</li>
-<li><strong>Result:</strong> 2 identical diploid daughter cells</li>
-</ul>
-<div class="key-point">Mitosis produces genetically identical cells for growth, repair, and asexual reproduction. No crossing over or independent assortment occurs.</div>
-</div>
-<div class="notes-section">
-<h3>6. Cell Division — Meiosis</h3>
-<ul>
-<li><strong>Two divisions:</strong> Meiosis I (reduction) and Meiosis II (separation)</li>
-<li><strong>Meiosis I:</strong> Homologous chromosomes pair (synapsis), crossing over occurs, then separate</li>
-<li><strong>Result:</strong> 4 genetically different haploid gametes</li>
-<li><strong>Significance:</strong> Genetic variation through crossing over and independent assortment</li>
-</ul>
-<div class="compare-table-container">
-<table class="compare-table">
-<tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr>
-<tr><td>Divisions</td><td>1</td><td>2</td></tr>
-<tr><td>Daughter cells</td><td>2</td><td>4</td></tr>
-<tr><td>Ploidy</td><td>Diploid</td><td>Haploid</td></tr>
-<tr><td>Genetic variation</td><td>None</td><td>High</td></tr>
-<tr><td>Purpose</td><td>Growth/repair</td><td>Gamete production</td></tr>
-</table>
+<div class="topic-content">
+<div class="key-point">All living organisms are composed of cells. The cell is the basic unit of life. All cells arise from pre-existing cells.</div>
 </div>
 </div>
-<div class="notes-section">
-<h3>Experimental Design</h3>
-<ul>
-<li><strong>Variables:</strong> Independent (what you change), dependent (what you measure), controlled (kept constant)</li>
-<li><strong>Validity:</strong> Does the experiment test what it claims to test?</li>
-<li><strong>Reliability:</strong> Repeatable results — repeat experiments, calculate means</li>
-<li><strong>Accuracy:</strong> Close to true value — use appropriate precision instruments</li>
-</ul>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Prokaryotic vs Eukaryotic Cells</h3>
 </div>
-<div class="notes-section">
-<h3>Microscopy Techniques</h3>
-<ul>
-<li><strong>Light microscope:</strong> Max magnification ~×1500, resolution ~200 nm</li>
-<li><strong>Electron microscope:</strong> TEM (internal structure) vs SEM (surface detail)</li>
-<li><strong>Staining:</strong> Methylene blue (nuclei), iodine (starch), eosin (cytoplasm)</li>
-<li><strong>Cell fractionation:</strong> Homogenisation → filtration → ultracentrifugation</li>
-</ul>
-<div class="key-point">Resolution is the ability to distinguish two separate points. Electron microscopes have much higher resolution than light microscopes because electrons have shorter wavelengths than visible light.</div>
-</div>
-<div class="notes-section">
-<h3>5. Cell Organelles — Functions & Structures</h3>
-<table class="compare-table">
-<tr><th>Organelle</th><th>Structure</th><th>Function</th><th>Present in...</th></tr>
-<tr><td>Nucleus</td><td>Double membrane, nucleolus, chromatin</td><td>DNA storage, transcription, ribosome assembly</td><td>Eukaryotes</td></tr>
-<tr><td>Mitochondria</td><td>Double membrane, cristae, matrix</td><td>Aerobic respiration, ATP synthesis</td><td>Eukaryotes</td></tr>
-<tr><td>Ribosomes</td><td>Small (20nm), no membrane</td><td>Protein synthesis</td><td>All cells</td></tr>
-<tr><td>RER</td><td>Membrane-bound with ribosomes</td><td>Protein synthesis and modification</td><td>Eukaryotes</td></tr>
-<tr><td>SER</td><td>Membrane-bound, no ribosomes</td><td>Lipid synthesis, detoxification</td><td>Eukaryotes</td></tr>
-<tr><td>Golgi</td><td>Flattened membrane sacs</td><td>Protein processing, packaging, secretion</td><td>Eukaryotes</td></tr>
-<tr><td>Lysosomes</td><td>Single membrane, hydrolytic enzymes</td><td>Intracellular digestion, autophagy</td><td>Animal cells</td></tr>
-<tr><td>Chloroplasts</td><td>Double membrane, thylakoids, stroma</td><td>Photosynthesis</td><td>Plant cells</td></tr>
-<tr><td>Cell wall</td><td>Cellulose (plants), chitin (fungi), peptidoglycan (bacteria)</td><td>Structural support, protection</td><td>Plants, fungi, bacteria</td></tr>
-<tr><td>Centrioles</td><td>9 triplets of microtubules</td><td>Spindle formation in cell division</td><td>Animal cells</td></tr>
-</table>
-</div>
-<div class="notes-section">
-<h3>6. Prokaryotic vs Eukaryotic Cells</h3>
-<table class="compare-table">
+<div class="topic-content">
+<table class="data-table">
 <tr><th>Feature</th><th>Prokaryotic</th><th>Eukaryotic</th></tr>
-<tr><td>Nucleus</td><td>No true nucleus (nucleoid)</td><td>True nucleus with envelope</td></tr>
+<tr><td>Nucleus</td><td>Nucleoid, no envelope</td><td>True nucleus with nuclear envelope</td></tr>
 <tr><td>DNA</td><td>Circular, naked</td><td>Linear, associated with histones</td></tr>
+<tr><td>Ribosomes</td><td>70S</td><td>80S (70S in organelles)</td></tr>
 <tr><td>Membrane-bound organelles</td><td>Absent</td><td>Present</td></tr>
-<tr><td>Ribosomes</td><td>70S (smaller)</td><td>80S (larger)</td></tr>
-<tr><td>Cell wall</td><td>Peptidoglycan (bacteria)</td><td>Cellulose (plants), chitin (fungi), absent (animals)</td></tr>
-<tr><td>Size</td><td>0.1–5.0 μm</td><td>10–100 μm</td></tr>
-<tr><td>Examples</td><td>Bacteria, Archaea</td><td>Animals, plants, fungi, protists</td></tr>
+<tr><td>Size</td><td>1-10 μm</td><td>10-100 μm</td></tr>
 </table>
 </div>
+</div>
 
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Key Organelles</h3>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
+<tr><td>Nucleus</td><td>Nuclear envelope, pores, nucleolus</td><td>Contains DNA, controls cell activities</td></tr>
+<tr><td>Mitochondria</td><td>Double membrane, cristae, matrix</td><td>Aerobic respiration, ATP production</td></tr>
+<tr><td>RER</td><td>Membranous sacs with ribosomes</td><td>Protein synthesis and modification</td></tr>
+<tr><td>SER</td><td>Membranous tubules</td><td>Lipid synthesis, detoxification</td></tr>
+<tr><td>Golgi apparatus</td><td>Stacked cisternae</td><td>Modifies, packages, and transports proteins</td></tr>
+<tr><td>Lysosomes</td><td>Membrane-bound vesicles</td><td>Contain hydrolytic enzymes for digestion</td></tr>
+<tr><td>Chloroplasts</td><td>Double membrane, thylakoids, grana</td><td>Photosynthesis</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Cell Fractionation</h3>
+</div>
+<div class="topic-content">
+<div class="process-box">
+<h5>Steps</h5>
+<ol>
+<li>Homogenise tissue in cold isotonic buffer</li>
+<li>Filter through gauze to remove debris</li>
+<li>Ultracentrifuge at increasing speeds:
+<ul>
+<li>Low speed: nuclei pellet</li>
+<li>Medium speed: mitochondria, lysosomes, peroxisomes</li>
+<li>High speed: ribosomes</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
 <div class="summary-box">
-<h2>Last-Minute Summary</h2>
-<ul><li>Cell theory: all organisms = cells; basic unit; from pre-existing cells</li><li>Prokaryotes: no nucleus, 70S ribosomes, circular DNA</li><li>Eukaryotes: nucleus, 80S ribosomes, linear DNA, membrane organelles</li><li>Mitochondria = respiration; chloroplasts = photosynthesis; RER = protein; Golgi = packaging</li><li>Fractionation: homogenise → filter → ultracentrifuge</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
-</div>
-</div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
+<h2>📝 Quick Summary</h2>
 <ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
+<li>Cell theory: all organisms composed of cells</li>
+<li>Prokaryotes: no nucleus, 70S ribosomes, no membrane-bound organelles</li>
+<li>Eukaryotes: true nucleus, 80S ribosomes, membrane-bound organelles</li>
+<li>Mitochondria = aerobic respiration; Chloroplasts = photosynthesis</li>
+<li>RER = protein synthesis; SER = lipid synthesis</li>
 </ul>
 </div>
-
 <div class="exam-tips">
-
-<h2>Exam Tips</h2>
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always compare structure with function</li>
+<li>Remember the size difference: prokaryotes 1-10μm, eukaryotes 10-100μm</li>
+<li>Know the order of ultracentrifugation</li>
 </ul>
 </div>
 </div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script>
-<script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
+</div></section>
+<script src="../js/theme.js?v=5"></script>
 </body>
 </html>
