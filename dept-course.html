@@ -38,14 +38,157 @@
 }
 .back-link:hover { color: #fff; }
 
-.quiz-section, .assignment-section {
-  padding: 60px 0;
+.container-narrow {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 24px;
 }
-.quiz-section { background: #f8fafc; }
-.assignment-section { background: #fff; }
 
+/* Overview */
+.overview-section {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+.overview-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+}
+.overview-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: #1e293b;
+}
+.objectives-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.objectives-list li {
+  padding: 8px 0;
+  padding-left: 28px;
+  position: relative;
+  color: #475569;
+  font-size: 0.95rem;
+}
+.objectives-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Lessons */
+.lessons-section {
+  padding: 60px 0;
+  background: #fff;
+}
+.lesson-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.lesson-card:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 4px 20px rgba(99,102,241,0.1);
+}
+.lesson-card.expanded {
+  border-color: #6366f1;
+}
+.lesson-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lesson-number {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.lesson-number.done {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+.lesson-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+.lesson-duration {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.lesson-content {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+.lesson-content.active {
+  display: block;
+}
+.lesson-content h4 {
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+.lesson-content p, .lesson-content ul {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.lesson-content ul {
+  padding-left: 20px;
+}
+.lesson-content li {
+  margin-bottom: 6px;
+}
+.key-term {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.case-study {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 16px;
+  border-radius: 0 12px 12px 0;
+  margin: 16px 0;
+}
+.case-study h4 {
+  color: #92400e;
+  margin-bottom: 8px;
+}
+.case-study p {
+  color: #78350f;
+  margin: 0;
+}
+
+/* Quiz */
+.quiz-section {
+  padding: 60px 0;
+  background: #f8fafc;
+}
 .section-label {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -124,6 +267,11 @@
 .quiz-feedback.correct { background: #dcfce7; color: #065f46; }
 .quiz-feedback.wrong { background: #fee2e2; color: #7f1d1d; }
 
+/* Assignment */
+.assignment-section {
+  padding: 60px 0;
+  background: #fff;
+}
 .assignment-block {
   background: #f8fafc;
   border-radius: 16px;
@@ -197,14 +345,82 @@
 .rubric-row:last-child { border-bottom: none; }
 .rubric-row strong { color: #1e293b; }
 
-.container-narrow {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* Progress bar */
+.progress-section {
+  padding: 20px 0;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.progress-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.progress-bar {
+  flex: 1;
+  min-width: 200px;
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a5b4fc, #6366f1);
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+.progress-text {
+  color: #c7d2fe;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Completion */
+.completion-section {
+  padding: 60px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+}
+.completion-section h2 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+.completion-section p {
+  color: #475569;
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+.completion-badge {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+.completion-badge .badge-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+.completion-badge .badge-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+.completion-badge .badge-dept {
+  font-size: 0.9rem;
+  color: #64748b;
 }
 
 @media (max-width: 640px) {
-  .quiz-section, .assignment-section { padding: 40px 0; }
+  .quiz-section, .assignment-section, .lessons-section, .overview-section { padding: 40px 0; }
   .container-narrow { padding: 0 16px; }
 }
 </style>
@@ -221,18 +437,49 @@
   </div>
 </section>
 
+<!-- Progress Bar -->
+<div class="progress-section" id="progressBar" style="display:none;">
+  <div class="container-narrow progress-inner">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-text" id="progressText">0% Complete</div>
+  </div>
+</div>
+
+<!-- Overview -->
+<section class="overview-section">
+  <div class="container-narrow">
+    <div class="overview-card">
+      <h2>🎯 Learning Objectives</h2>
+      <ul class="objectives-list" id="objectivesList">
+        <li>Loading objectives...</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Lessons -->
+<section class="lessons-section">
+  <div class="container-narrow">
+    <div class="section-label">Course Content</div>
+    <h2 class="section-heading">3 Learning Modules</h2>
+    <div id="lessonsContent"></div>
+  </div>
+</section>
+
+<!-- Quiz -->
 <section class="quiz-section">
   <div class="container-narrow">
-    <div class="section-label">Quiz</div>
-    <h2 class="section-heading" id="quizHeading">5 Questions</h2>
+    <div class="section-label">Knowledge Check</div>
+    <h2 class="section-heading" id="quizHeading">10 Questions</h2>
     <div id="quizContent"></div>
     <div id="quizResult"></div>
   </div>
 </section>
 
+<!-- Assignment -->
 <section class="assignment-section">
   <div class="container-narrow">
-    <div class="section-label">Assignment</div>
+    <div class="section-label">Practical Application</div>
     <h2 class="section-heading">Submit Your Work</h2>
     <div class="assignment-block">
       <p id="assignmentText">Loading assignment...</p>
@@ -246,130 +493,1075 @@
   </div>
 </section>
 
+<!-- Completion -->
+<section class="completion-section" id="completionSection" style="display:none;">
+  <div class="container-narrow">
+    <div class="completion-badge">
+      <div class="badge-icon">🏆</div>
+      <div class="badge-title">Course Completed!</div>
+      <div class="badge-dept" id="completionDept">Department</div>
+    </div>
+    <h2>Congratulations!</h2>
+    <p>You have completed all modules, passed the quiz, and submitted your assignment. Your progress has been saved.</p>
+    <a href="academy.html#departments" class="btn btn-primary" style="font-size:1.05rem;padding:14px 32px">Back to Academy</a>
+  </div>
+</section>
+
 <script src="js/theme.js?v=7"></script>
 <script src="js/auth.js?v=7"></script>
 
 <script>
 const corpDepts = [
-  { id:'hr', name:'Human Resources', icon:'👥', desc:'Recruitment, employee relations, performance management, and organizational development.',
-    quiz:[
-      {q:'Which law primarily governs workplace discrimination in the US?', options:['OSHA','Civil Rights Act','FLSA','ADA'], a:1},
-      {q:'What does KPI stand for in HR?', options:['Key Performance Indicator','Knowledge Process Improvement','Key Process Integration','Known Performance Index'], a:0},
-      {q:'360-degree feedback includes input from:', options:['Manager only','Self only','Manager, peers, subordinates, self','HR only'], a:2},
-      {q:'Which is NOT a common stage in the recruitment process?', options:['Screening','Onboarding','Negotiation','Resignation'], a:3},
-      {q:'The primary goal of succession planning is to:', options:['Reduce headcount','Identify future leaders','Cut training costs','Increase turnover'], a:1}
+  {
+    id:'hr', name:'Human Resources', icon:'👥',
+    desc:'Recruitment, employee relations, performance management, and organizational development.',
+    objectives: [
+      'Understand key employment laws and compliance requirements',
+      'Master recruitment funnel from sourcing to onboarding',
+      'Design effective performance management systems',
+      'Apply conflict resolution and employee relations strategies',
+      'Build succession planning and talent development frameworks'
     ],
-    assignment:'You are an HR Manager at a mid-sized tech company. Write a 300-500 word memo proposing a remote-work policy that balances employee flexibility with productivity. Include: (1) eligibility criteria, (2) communication expectations, (3) performance tracking, (4) data security measures, and (5) how to handle exceptions.'
+    lessons: [
+      {
+        title: 'Employment Law & Compliance',
+        duration: '15 min',
+        content: `
+          <h4>Key Legislation</h4>
+          <p>HR professionals must navigate complex legal frameworks. The <span class="key-term">Civil Rights Act</span> prohibits discrimination based on race, color, religion, sex, or national origin. The <span class="key-term">FLSA</span> governs minimum wage, overtime, and child labor. <span class="key-term">ADA</span> requires reasonable accommodations for employees with disabilities.</p>
+          <h4>Compliance Checklist</h4>
+          <ul>
+            <li>Maintain accurate I-9 documentation for all employees</li>
+            <li>Post required federal and state labor law notices</li>
+            <li>Conduct regular pay equity audits</li>
+            <li>Document all employment decisions to defend against claims</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Remote Work Policy</h4>
+            <p>A tech company with 200 employees wants to implement hybrid work. HR must create eligibility criteria (roles that can be remote), establish communication protocols (Slack response times, meeting attendance), and define performance metrics (output-based vs. time-based). The policy must also address data security (VPN requirements, device management) and exceptions (client-facing roles requiring office presence).</p>
+          </div>
+        `
+      },
+      {
+        title: 'Talent Acquisition & Onboarding',
+        duration: '20 min',
+        content: `
+          <h4>The Recruitment Funnel</h4>
+          <p>Effective hiring follows a structured process: <strong>Sourcing</strong> (job boards, LinkedIn, referrals) → <strong>Screening</strong> (resume review, phone screens) → <strong>Assessment</strong> (skills tests, structured interviews) → <strong>Selection</strong> (background checks, reference checks) → <strong>Offer</strong> (negotiation, acceptance) → <strong>Onboarding</strong> (orientation, training, integration).</p>
+          <h4>Structured Interviewing</h4>
+          <p>Use <span class="key-term">behavioral questions</span> ("Tell me about a time...") to predict future performance. The <span class="key-term">STAR method</span> evaluates Situation, Task, Action, Result. Score candidates on a rubric to reduce bias.</p>
+          <h4>Onboarding Best Practices</h4>
+          <ul>
+            <li>Pre-boarding: Send welcome packet, IT setup, first-week schedule</li>
+            <li>Day 1: Office tour, team introductions, HR paperwork</li>
+            <li>Week 1: Role-specific training, shadowing, goal setting</li>
+            <li>30-60-90 days: Check-ins, feedback, milestone reviews</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Reducing Time-to-Hire</h4>
+            <p>A company takes 45 days to fill engineering roles. Analysis shows delays in scheduling interviews (10 days) and decision-making (12 days). Solutions: Implement Calendly for scheduling, train hiring managers on structured interviews, set a 48-hour feedback deadline, and use a standardized scorecard. Result: Time-to-hire reduced to 28 days.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Performance Management',
+        duration: '15 min',
+        content: `
+          <h4>Performance Review Models</h4>
+          <p>Traditional annual reviews are being replaced by <span class="key-term">continuous feedback</span> models. <span class="key-term">OKRs</span> (Objectives and Key Results) align individual goals with company strategy. <span class="key-term">360-degree feedback</span> gathers input from managers, peers, and subordinates.</p>
+          <h4>Handling Underperformance</h4>
+          <ul>
+            <li>Identify root causes: skills gap, motivation, external factors</li>
+            <li>Create a Performance Improvement Plan (PIP) with SMART goals</li>
+            <li>Provide coaching, training, or mentoring resources</li>
+            <li>Document all conversations and follow up regularly</li>
+            <li>Know when to escalate to termination procedures</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Succession Planning</h4>
+            <p>A manufacturing firm loses its VP of Operations unexpectedly. Without a succession plan, the company spends 6 months and $150K on an external search. With succession planning: identify high-potentials early, provide stretch assignments and leadership training, maintain a talent pool ready to step up. Result: internal promotion within 2 weeks, saving costs and preserving institutional knowledge.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'Which law primarily governs workplace discrimination in the US?', options:['OSHA','Civil Rights Act','FLSA','ADA'], a:1, explain:'Title VII of the Civil Rights Act of 1964 prohibits employment discrimination based on protected classes.'},
+      {q:'What does KPI stand for in HR?', options:['Key Performance Indicator','Knowledge Process Improvement','Key Process Integration','Known Performance Index'], a:0, explain:'KPIs are measurable values that demonstrate how effectively an organization achieves key business objectives.'},
+      {q:'360-degree feedback includes input from:', options:['Manager only','Self only','Manager, peers, subordinates, self','HR only'], a:2, explain:'360-degree feedback gathers comprehensive perspectives from all directions in the organizational hierarchy.'},
+      {q:'Which is NOT a common stage in the recruitment process?', options:['Screening','Onboarding','Negotiation','Resignation'], a:3, explain:'Resignation is part of employee separation, not recruitment.'},
+      {q:'The primary goal of succession planning is to:', options:['Reduce headcount','Identify future leaders','Cut training costs','Increase turnover'], a:1, explain:'Succession planning ensures leadership continuity by developing internal talent pipelines.'},
+      {q:'What is the STAR method used for?', options:['Budgeting','Interviewing','Payroll','Termination'], a:1, explain:'STAR (Situation, Task, Action, Result) structures behavioral interview responses.'},
+      {q:'An I-9 form verifies:', options:['Education','Identity and work authorization','Criminal history','References'], a:1, explain:'Form I-9 is required by USCIS to verify employee identity and eligibility to work in the US.'},
+      {q:'A Performance Improvement Plan (PIP) should include:', options:['Vague goals','SMART goals','No timeline','Automatic termination'], a:1, explain:'PIPs use Specific, Measurable, Achievable, Relevant, Time-bound goals to guide improvement.'},
+      {q:'The FLSA governs:', options:['Workplace safety','Minimum wage and overtime','Discrimination','Family leave'], a:1, explain:'The Fair Labor Standards Act establishes minimum wage, overtime pay, and child labor standards.'},
+      {q:'Which onboarding activity happens FIRST?', options:['30-day review','Pre-boarding/IT setup','Goal setting','Peer mentoring'], a:1, explain:'Pre-boarding occurs before day 1 and includes paperwork, IT provisioning, and welcome materials.'}
+    ],
+    assignment:'You are an HR Manager at a mid-sized tech company (200 employees). Write a 400-600 word comprehensive remote-work policy proposal. Include: (1) eligibility criteria by role type, (2) communication expectations and response time standards, (3) performance tracking methodology (output vs. hours), (4) data security measures (VPN, device policy, access controls), (5) exception handling for roles requiring office presence, and (6) a phased rollout plan (pilot group, evaluation metrics, full deployment timeline).'
   },
-  { id:'finance', name:'Finance & Accounting', icon:'💰', desc:'Financial planning, budgeting, auditing, taxation, and investment analysis.',
-    quiz:[
-      {q:'Which financial statement shows assets, liabilities, and equity?', options:['Income Statement','Cash Flow Statement','Balance Sheet','Statement of Retained Earnings'], a:2},
-      {q:'GAAP stands for:', options:['Generally Accepted Accounting Principles','Global Accounting and Auditing Protocol','General Annual Accounting Process','Government Approved Accounting Procedures'], a:0},
-      {q:'What is the formula for gross profit?', options:['Revenue - Expenses','Revenue - COGS','Net Income + Taxes','Assets - Liabilities'], a:1},
-      {q:'Depreciation is an example of:', options:['Variable cost','Fixed cost','Sunk cost','Opportunity cost'], a:1},
-      {q:'Which ratio measures a company\'s ability to pay short-term obligations?', options:['Debt-to-Equity','Current Ratio','Return on Equity','Gross Margin'], a:1}
+  {
+    id:'finance', name:'Finance & Accounting', icon:'💰',
+    desc:'Financial planning, budgeting, auditing, taxation, and investment analysis.',
+    objectives: [
+      'Read and interpret the three core financial statements',
+      'Build and manage departmental and organizational budgets',
+      'Apply financial ratio analysis for decision-making',
+      'Understand auditing standards and compliance requirements',
+      'Evaluate capital investment decisions using NPV and IRR'
     ],
-    assignment:'Prepare a 300-500 word budget proposal for Q1 2025 for a department of 20 employees. Include: (1) personnel costs (salaries, benefits), (2) operational expenses (rent, utilities, supplies), (3) training and development budget, (4) contingency fund (10% of total), and (5) a brief justification for each category.'
+    lessons: [
+      {
+        title: 'Financial Statements & Analysis',
+        duration: '20 min',
+        content: `
+          <h4>The Three Statements</h4>
+          <p>The <span class="key-term">Balance Sheet</span> shows assets = liabilities + equity at a point in time. The <span class="key-term">Income Statement</span> reports revenues minus expenses over a period. The <span class="key-term">Cash Flow Statement</span> tracks operating, investing, and financing cash movements.</p>
+          <h4>Key Ratios</h4>
+          <ul>
+            <li><strong>Liquidity:</strong> Current Ratio = Current Assets / Current Liabilities (target > 1.5)</li>
+            <li><strong>Profitability:</strong> Gross Margin = (Revenue - COGS) / Revenue</li>
+            <li><strong>Leverage:</strong> Debt-to-Equity = Total Debt / Total Equity</li>
+            <li><strong>Efficiency:</strong> Asset Turnover = Revenue / Average Total Assets</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Startup Burn Rate</h4>
+            <p>A SaaS startup has $2M in funding and spends $180K/month. At this burn rate, runway = 11 months. To extend to 18 months: reduce headcount by 15% (saves $40K/month), renegotiate cloud contracts (saves $15K/month), defer non-critical hires. New burn rate: $125K/month. New runway: 16 months — enough to reach Series A milestones.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Budgeting & Forecasting',
+        duration: '20 min',
+        content: `
+          <h4>Budget Types</h4>
+          <p><span class="key-term">Zero-based budgeting</span> starts from scratch each period, justifying every expense. <span class="key-term">Incremental budgeting</span> adjusts prior period budgets by a percentage. <span class="key-term">Activity-based budgeting</span> ties costs to specific business activities.</p>
+          <h4>Forecasting Methods</h4>
+          <ul>
+            <li><strong>Top-down:</strong> Senior management sets targets, departments align</li>
+            <li><strong>Bottom-up:</strong> Departments build budgets, rolled up to company total</li>
+            <li><strong>Driver-based:</strong> Key business drivers (sales volume, headcount) drive projections</li>
+          </ul>
+          <h4>Variance Analysis</h4>
+          <p>Compare actuals vs. budget monthly. Investigate significant variances (>10% or $ threshold). Categorize as: favorable/unfavorable, controllable/uncontrollable, one-time/recurring.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Marketing Budget Variance</h4>
+            <p>Q1 marketing budget: $500K. Actual spend: $620K (+24%). Analysis: Paid social overspent by $80K due to CPA inflation. Influencer campaigns underperformed ($40K wasted). Event sponsorship delivered 3x ROI. Action: Reallocate $60K from influencers to events and paid search. Implement weekly spend monitoring.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Investment Analysis & Risk',
+        duration: '15 min',
+        content: `
+          <h4>Capital Budgeting Tools</h4>
+          <p><span class="key-term">NPV</span> (Net Present Value) discounts future cash flows to today. Positive NPV = value-creating project. <span class="key-term">IRR</span> (Internal Rate of Return) is the discount rate where NPV = 0. Projects with IRR > cost of capital are accepted. <span class="key-term">Payback Period</span> measures how quickly investment is recovered.</p>
+          <h4>Risk Management</h4>
+          <ul>
+            <li><strong>Scenario analysis:</strong> Best case, base case, worst case</li>
+            <li><strong>Sensitivity analysis:</strong> How does NPV change if one variable shifts?</li>
+            <li><strong>Real options:</strong> Flexibility to delay, expand, or abandon projects</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Equipment Purchase Decision</h4>
+            <p>A factory considers a $500K machine upgrade. NPV analysis: $120K annual savings for 8 years, 10% discount rate, $50K salvage value. NPV = $112K (positive, accept). IRR = 16.2% (>10% cost of capital). Payback = 4.2 years. Sensitivity: If savings drop 20%, NPV still positive at $28K. Decision: Proceed with phased implementation.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'Which financial statement shows assets, liabilities, and equity?', options:['Income Statement','Cash Flow Statement','Balance Sheet','Statement of Retained Earnings'], a:2, explain:'The Balance Sheet provides a snapshot of financial position at a specific date.'},
+      {q:'GAAP stands for:', options:['Generally Accepted Accounting Principles','Global Accounting and Auditing Protocol','General Annual Accounting Process','Government Approved Accounting Procedures'], a:0, explain:'GAAP is the standard framework of guidelines for financial accounting in the US.'},
+      {q:'What is the formula for gross profit?', options:['Revenue - Expenses','Revenue - COGS','Net Income + Taxes','Assets - Liabilities'], a:1, explain:'Gross profit = Revenue minus Cost of Goods Sold, before operating expenses.'},
+      {q:'Depreciation is an example of:', options:['Variable cost','Fixed cost','Sunk cost','Opportunity cost'], a:1, explain:'Depreciation allocates the cost of a fixed asset over its useful life.'},
+      {q:'Which ratio measures short-term liquidity?', options:['Debt-to-Equity','Current Ratio','Return on Equity','Gross Margin'], a:1, explain:'Current Ratio = Current Assets / Current Liabilities. Above 1.5 indicates healthy liquidity.'},
+      {q:'NPV is positive when:', options:['Cash outflows exceed inflows','Discounted inflows exceed outflows','IRR equals zero','Payback exceeds project life'], a:1, explain:'Positive NPV means the project creates value after accounting for time value of money.'},
+      {q:'Zero-based budgeting starts with:', options:['Last year\'s budget','Zero — every expense justified','Industry averages','Revenue targets'], a:1, explain:'ZBB requires justifying all expenses for each new period, not just changes.'},
+      {q:'The payback period measures:', options:['Total profitability','Time to recover initial investment','Discount rate','Risk level'], a:1, explain:'Payback period = initial investment / annual cash inflow. Shorter is less risky.'},
+      {q:'Which is a financing cash flow?', options:['Customer payments','Equipment purchase','Dividend payment','Inventory purchase'], a:2, explain:'Dividends, debt issuance, and equity transactions appear in financing cash flows.'},
+      {q:'Sensitivity analysis tests:', options:['Impact of one variable changing','Correlation between all variables','Historical trends only','Employee satisfaction'], a:0, explain:'Sensitivity analysis isolates one input variable to see how outputs change.'}
+    ],
+    assignment:'Prepare a 400-600 word annual budget proposal for a 50-person marketing department. Include: (1) personnel breakdown (salaries, benefits, bonuses by role level), (2) program expenses (events, content, paid media, tools), (3) capital expenditures (software licenses, equipment), (4) contingency reserve (justify percentage), (5) quarterly allocation with seasonality rationale, and (6) 3 KPIs to measure budget effectiveness.'
   },
-  { id:'admin', name:'Administration', icon:'📋', desc:'Office management, record keeping, scheduling, and supporting organizational operations.',
-    quiz:[
-      {q:'Which tool is most commonly used for meeting scheduling?', options:['Photoshop','Outlook Calendar','AutoCAD','Final Cut Pro'], a:1},
-      {q:'A memorandum is typically used for:', options:['External marketing','Internal communication','Legal contracts','Financial reports'], a:1},
-      {q:'The primary purpose of filing systems is to:', options:['Decorate the office','Ensure information retrieval','Increase paper usage','Complicate workflows'], a:1},
-      {q:'Which is a key quality of an administrative professional?', options:['Disorganization','Poor communication','Attention to detail','Resistance to technology'], a:2},
-      {q:'Office ergonomics primarily aims to:', options:['Reduce costs','Improve employee comfort and reduce injury','Increase paperwork speed','Limit breaks'], a:1}
+  {
+    id:'admin', name:'Administration', icon:'📋',
+    desc:'Office management, record keeping, scheduling, and supporting organizational operations.',
+    objectives: [
+      'Design efficient office workflows and procedures',
+      'Manage calendars, meetings, and executive support',
+      'Maintain organized filing and document systems',
+      'Coordinate travel, events, and vendor relationships',
+      'Ensure office compliance and safety protocols'
     ],
-    assignment:'Write a 300-500 word Standard Operating Procedure (SOP) for onboarding a new employee. Include: (1) pre-arrival preparation (IT setup, workspace), (2) first-day schedule, (3) documentation and compliance checklists, (4) mentor assignment process, and (5) 30-day review checkpoint.'
+    lessons: [
+      {
+        title: 'Office Operations & Workflow',
+        duration: '15 min',
+        content: `
+          <h4>Administrative Excellence</h4>
+          <p>Administrative professionals are the operational backbone. Key competencies: <span class="key-term">time management</span>, <span class="key-term">attention to detail</span>, <span class="key-term">communication</span>, and <span class="key-term">tech proficiency</span>.</p>
+          <h4>Workflow Optimization</h4>
+          <ul>
+            <li>Map current processes to identify bottlenecks</li>
+            <li>Implement digital tools (Slack, Asana, Notion, Monday)</li>
+            <li>Create templates for recurring documents (meeting notes, reports)</li>
+            <li>Establish clear escalation paths for issues</li>
+            <li>Automate repetitive tasks (email filters, calendar rules, forms)</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Meeting Cost Reduction</h4>
+            <p>A company spends 300K hours/year in meetings. Analysis shows 40% are unnecessary. Solutions: Implement "no-meeting Wednesdays," require agendas 24h in advance, default to 25/50min meetings, use async updates for status. Result: 30% meeting reduction, $2M annual savings in productivity.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Document & Records Management',
+        duration: '15 min',
+        content: `
+          <h4>Filing Systems</h4>
+          <p>Organized records ensure information retrieval and compliance. Use consistent <span class="key-term">naming conventions</span>: YYYY-MM-DD_Project_DocumentType_Version. Maintain both physical and digital archives with retention schedules.</p>
+          <h4>Records Retention</h4>
+          <ul>
+            <li>Tax records: 7 years</li>
+            <li>Employment records: duration + 7 years</li>
+            <li>Contracts: duration + 7 years</li>
+            <li>Email: per company policy (typically 1-3 years)</li>
+          </ul>
+          <h4>Confidentiality</h4>
+          <p>Classify documents: Public, Internal, Confidential, Restricted. Apply access controls accordingly. Shred physical documents. Use encrypted storage for sensitive digital files.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Digital Transformation</h4>
+            <p>An insurance firm has 50 filing cabinets of client records. Digitalization project: scan documents (OCR for searchability), migrate to cloud DMS with role-based access, set auto-retention rules, train staff. Result: 80% reduction in retrieval time, compliance audit pass, $30K/year storage cost savings.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Executive Support & Event Planning',
+        duration: '15 min',
+        content: `
+          <h4>Calendar Management</h4>
+          <p>Protect executive time: block focus hours, batch similar meetings, buffer between appointments, schedule prep time. Use color-coding: client meetings (blue), internal (green), personal (yellow), travel (purple).</p>
+          <h4>Event Planning Checklist</h4>
+          <ul>
+            <li>Define objectives, budget, and target audience</li>
+            <li>Select venue (capacity, AV, accessibility, catering)</li>
+            <li>Create timeline (save-the-date → invites → reminders → follow-up)</li>
+            <li>Coordinate speakers, materials, and logistics</li>
+            <li>Plan contingencies (weather, tech failure, no-shows)</li>
+            <li>Collect feedback and measure ROI</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Annual Company Retreat</h4>
+            <p>200-person offsite planning: 6-month lead time, $150K budget. Negotiated group rates at resort (saved $25K). Created app for scheduling and networking. Included team-building, strategy sessions, and awards. Post-event survey: 92% satisfaction. Key learning: over-scheduled Day 1 — build in more free time next year.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'Which tool is most commonly used for meeting scheduling?', options:['Photoshop','Outlook Calendar','AutoCAD','Final Cut Pro'], a:1, explain:'Outlook/Google Calendar are standard enterprise scheduling tools.'},
+      {q:'A memorandum is typically used for:', options:['External marketing','Internal communication','Legal contracts','Financial reports'], a:1, explain:'Memos are internal documents for announcements, policies, or updates.'},
+      {q:'The primary purpose of filing systems is to:', options:['Decorate the office','Ensure information retrieval','Increase paper usage','Complicate workflows'], a:1, explain:'Filing systems organize documents so they can be found quickly when needed.'},
+      {q:'Which is a key quality of an administrative professional?', options:['Disorganization','Poor communication','Attention to detail','Resistance to technology'], a:2, explain:'Attention to detail prevents errors in scheduling, documents, and communications.'},
+      {q:'Office ergonomics primarily aims to:', options:['Reduce costs','Improve employee comfort and reduce injury','Increase paperwork speed','Limit breaks'], a:1, explain:'Ergonomic design reduces musculoskeletal disorders and improves wellbeing.'},
+      {q:'Recommended file naming convention includes:', options:['Random words','Date prefix (YYYY-MM-DD)','Only initials','No version numbers'], a:1, explain:'Chronological prefixes ensure files sort correctly and are easy to locate.'},
+      {q:'Tax records should typically be retained for:', options:['1 year','3 years','7 years','Forever'], a:2, explain:'IRS generally recommends keeping tax records for 7 years.'},
+      {q:'A "no-meeting day" policy aims to:', options:['Punish employees','Enable deep work','Reduce salaries','Eliminate collaboration'], a:1, explain:'Meeting-free days protect focused work time for complex tasks.'},
+      {q:'Event planning should begin with:', options:['Booking venue','Defining objectives and budget','Sending invites','Ordering food'], a:1, explain:'Clear objectives and budget guide all subsequent decisions.'},
+      {q:'Executive calendar management should include:', options:['Back-to-back meetings all day','Focus time blocks','No breaks','Random scheduling'], a:1, explain:'Blocking focus time protects strategic thinking and reduces burnout.'}
+    ],
+    assignment:'You are the Office Manager for a 75-person company moving to a new building. Write a 400-600 word transition plan. Include: (1) pre-move checklist (IT infrastructure, furniture, signage), (2) staff communication timeline (announcement, floor plans, parking info), (3) moving day logistics (vendors, IT cutover, packing protocols), (4) first-week operations plan (reception, mail, kitchen, meeting rooms), and (5) post-move evaluation criteria (employee feedback, space utilization, cost vs. budget).'
   },
-  { id:'sales', name:'Sales', icon:'🤝', desc:'Lead generation, client acquisition, negotiation, CRM, and revenue growth strategies.',
-    quiz:[
-      {q:'CRM stands for:', options:['Customer Revenue Management','Customer Relationship Management','Client Retention Method','Corporate Resource Management'], a:1},
-      {q:'The sales funnel typically includes:', options:['Awareness, Interest, Decision, Action','Only closing','Only prospecting','Marketing only'], a:0},
-      {q:'Which is a common sales closing technique?', options:['Avoiding questions','The Assumptive Close','Ignoring objections','Reducing price immediately'], a:1},
-      {q:'A qualified lead is one that:', options:['Has no budget','Has authority, need, budget, and timeline','Is not interested','Has no decision power'], a:1},
-      {q:'Cross-selling means:', options:['Selling to competitors','Selling complementary products','Reducing prices','Closing the deal quickly'], a:1}
+  {
+    id:'sales', name:'Sales', icon:'🤝',
+    desc:'Lead generation, client acquisition, negotiation, CRM, and revenue growth strategies.',
+    objectives: [
+      'Build and manage a high-performing sales pipeline',
+      'Qualify leads using BANT and MEDDIC frameworks',
+      'Master consultative selling and objection handling',
+      'Negotiate win-win deals and close effectively',
+      'Use CRM data to forecast and optimize performance'
     ],
-    assignment:'You are a Sales Representative for a B2B SaaS company. Write a 300-500 word email follow-up sequence (3 emails) for a prospect who attended a product demo but has not responded. Include: (1) value recap, (2) case study/social proof, (3) objection handling, (4) clear call-to-action, and (5) timeline for each email.'
+    lessons: [
+      {
+        title: 'Sales Fundamentals & Pipeline',
+        duration: '20 min',
+        content: `
+          <h4>The Sales Funnel</h4>
+          <p>Every sale progresses through stages: <strong>Prospecting</strong> → <strong>Qualification</strong> → <strong>Demo/Presentation</strong> → <strong>Proposal</strong> → <strong>Negotiation</strong> → <strong>Close</strong> → <strong>Retention/Expansion</strong>. Track conversion rates between stages to identify bottlenecks.</p>
+          <h4>Lead Qualification: BANT</h4>
+          <ul>
+            <li><strong>Budget:</strong> Does the prospect have allocated funds?</li>
+            <li><strong>Authority:</strong> Are you talking to the decision-maker?</li>
+            <li><strong>Need:</strong> Is there a clear pain point your solution addresses?</li>
+            <li><strong>Timeline:</strong> When do they need a solution implemented?</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Pipeline Optimization</h4>
+            <p>A SaaS company has 500 leads/month but only closes 5 (1%). Analysis: 60% unqualified at entry, 20% drop after demo (poor demo scripts), 10% stuck in proposal (no urgency). Fixes: Add qualification quiz before demo, train AEs on value-based demos, implement 48-hour proposal follow-up. Result: Close rate improves to 3.5%, 75% more revenue.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Consultative Selling & Objections',
+        duration: '20 min',
+        content: `
+          <h4>SPIN Selling</h4>
+          <p><span class="key-term">SPIN</span> = Situation, Problem, Implication, Need-payoff. Ask questions to uncover pain, amplify consequences of inaction, and present your solution as the logical resolution.</p>
+          <h4>Common Objections & Responses</h4>
+          <ul>
+            <li><strong>"Too expensive":</strong> Reframe to ROI. "What is the cost of not solving this?"</li>
+            <li><strong>"Need to think about it":</strong> "What specific concerns remain? Let's address them now."</li>
+            <li><strong>"Not the right time":</strong> Explore urgency. "What happens if you delay another quarter?"</li>
+            <li><strong>"Competitor is cheaper":</strong> Differentiate on value, not price. Total cost of ownership.</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Enterprise Deal Recovery</h4>
+            <p>A $500K enterprise deal stalls after 6 months. Discovery: champion left, new decision-maker prefers competitor. Strategy: Multi-thread (build relationships with 3 contacts), conduct executive business review, offer phased pilot ($50K) to prove value. Result: Pilot succeeds, full deal closes in 90 days.</p>
+          </div>
+        `
+      },
+      {
+        title: 'CRM & Sales Analytics',
+        duration: '15 min',
+        content: `
+          <h4>CRM Best Practices</h4>
+          <p>CRM is only as good as the data entered. Require: contact roles, next steps, deal stage updates, activity logging. Use automation: email sequences, task creation, lead scoring.</p>
+          <h4>Key Metrics</h4>
+          <ul>
+            <li><strong>Pipeline coverage:</strong> 3-4x quota in pipeline</li>
+            <li><strong>Average deal size:</strong> Track trends and focus on expansion</li>
+            <li><strong>Sales cycle length:</strong> Shorter = more efficient</li>
+            <li><strong>Win rate:</strong> By rep, by segment, by product</li>
+            <li><strong>Quota attainment:</strong> % of reps hitting target</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Forecast Accuracy</h4>
+            <p>Sales forecasts are consistently 30% off. Root cause: reps inflate pipeline to look good. Fix: Implement weighted pipeline (stage probability), require VP sign-off on commits, track historical close rates by rep. Result: Forecast accuracy improves to +/- 10%, better resource planning, fewer surprises.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'CRM stands for:', options:['Customer Revenue Management','Customer Relationship Management','Client Retention Method','Corporate Resource Management'], a:1, explain:'CRM systems manage interactions with current and potential customers.'},
+      {q:'The sales funnel typically includes:', options:['Awareness, Interest, Decision, Action','Only closing','Only prospecting','Marketing only'], a:0, explain:'AIDA maps the customer journey from first contact to purchase.'},
+      {q:'BANT stands for:', options:['Buy, Ask, Negotiate, Terminate','Budget, Authority, Need, Timeline','Brand, Audience, Network, Target','Build, Acquire, Nurture, Transfer'], a:1, explain:'BANT is IBM\'s framework for qualifying sales opportunities.'},
+      {q:'A qualified lead has:', options:['No budget','Authority, need, budget, timeline','No decision power','Only price interest'], a:1, explain:'All four BANT criteria must be present for a truly qualified opportunity.'},
+      {q:'Cross-selling means:', options:['Selling to competitors','Selling complementary products','Reducing prices','Closing quickly'], a:1, explain:'Cross-selling increases customer lifetime value with related products.'},
+      {q:'SPIN selling focuses on:', options:['Product features','Customer questions','Discounts','Cold calling'], a:1, explain:'SPIN uses strategic questions to guide prospects to self-discover needs.'},
+      {q:'Pipeline coverage should be:', options:['1x quota','2x quota','3-4x quota','10x quota'], a:2, explain:'3-4x coverage accounts for typical win rates and deal slippage.'},
+      {q:'The Assumptive Close assumes:', options:['The deal is lost','The prospect will buy','No budget exists','Competitor won'], a:1, explain:'Acting as if the sale is decided reduces friction in final steps.'},
+      {q:'Sales cycle length measures:', options:['Time from first contact to close','Time to create a proposal','Time in each stage','Time since last sale'], a:0, explain:'Shorter cycles indicate efficient processes and strong qualification.'},
+      {q:'Quota attainment measures:', options:['Total revenue','% of reps hitting target','Pipeline size','Number of calls'], a:1, explain:'It shows what percentage of the sales team achieved their targets.'}
+    ],
+    assignment:'You are a Sales Director at a B2B SaaS company. Write a 400-600 word sales playbook for onboarding new Account Executives. Include: (1) ideal customer profile and buyer personas, (2) sales process stages with exit criteria for each, (3) common objections and scripted responses, (4) demo best practices (agenda, storytelling, proof points), (5) negotiation guidelines (discount authority, payment terms, contract length), and (6) CRM hygiene requirements and weekly pipeline review format.'
   },
-  { id:'marketing', name:'Marketing', icon:'📢', desc:'Brand strategy, digital marketing, content creation, market research, and campaign management.',
-    quiz:[
-      {q:'SEO stands for:', options:['Sales Efficiency Optimization','Search Engine Optimization','Social Engagement Outreach','Strategic Economic Outlook'], a:1},
-      {q:'Which metric measures the cost to acquire a customer?', options:['CLV','CAC','CTR','ROAS'], a:1},
-      {q:'A/B testing is used to:', options:['Compare two versions of a campaign element','Test server speed','Audit finances','Interview candidates'], a:0},
-      {q:'The 4 Ps of marketing are:', options:['Product, Price, Place, Promotion','People, Process, Product, Profit','Plan, Produce, Promote, Profit','Price, Product, Policy, Planning'], a:0},
-      {q:'Buyer personas are used to:', options:['Replace sales teams','Understand target audience segments','Design office layouts','Calculate taxes'], a:1}
+  {
+    id:'marketing', name:'Marketing', icon:'📢',
+    desc:'Brand strategy, digital marketing, content creation, market research, and campaign management.',
+    objectives: [
+      'Develop integrated marketing strategies across channels',
+      'Create compelling content and brand narratives',
+      'Execute data-driven digital advertising campaigns',
+      'Measure marketing ROI and optimize funnel performance',
+      'Build and nurture customer communities'
     ],
-    assignment:'Create a 300-500 word digital marketing campaign brief for launching a new fitness app. Include: (1) target audience and buyer personas, (2) campaign objectives and KPIs, (3) channel strategy (social, email, paid ads), (4) content themes and messaging, and (5) budget allocation across channels.'
+    lessons: [
+      {
+        title: 'Marketing Strategy & Positioning',
+        duration: '20 min',
+        content: `
+          <h4>The 4 Ps (Marketing Mix)</h4>
+          <p><span class="key-term">Product</span>: What you sell, features, quality, design. <span class="key-term">Price</span>: Strategy (penetration, skimming, value-based). <span class="key-term">Place</span>: Distribution channels, retail, direct, digital. <span class="key-term">Promotion</span>: Advertising, PR, content, events, partnerships.</p>
+          <h4>Positioning & Differentiation</h4>
+          <p>Your <span class="key-term">value proposition</span> answers: Who is it for? What problem does it solve? Why is it better? Use a <span class="key-term">positioning statement</span>: "For [target], [brand] is the [category] that [benefit] because [reason to believe]."</p>
+          <h4>Buyer Personas</h4>
+          <ul>
+            <li>Demographics: age, role, income, location</li>
+            <li>Psychographics: goals, challenges, values, fears</li>
+            <li>Behavior: where they research, what influences decisions</li>
+            <li>Quotes: actual language they use</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Repositioning a Stagnant Brand</h4>
+            <p>A 20-year-old B2B software company losing market share to modern competitors. Research shows buyers perceive them as "old but reliable." Repositioning: "The proven foundation for modern operations." Updated visual identity, launched thought leadership campaign, partnered with industry analysts. Result: 40% increase in inbound leads, renewed enterprise contracts.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Digital Marketing & Content',
+        duration: '20 min',
+        content: `
+          <h4>Content Marketing Funnel</h4>
+          <p><strong>Top of funnel:</strong> Educational content (blogs, videos, guides) for awareness. <strong>Middle:</strong> Consideration content (case studies, webinars, comparisons). <strong>Bottom:</strong> Decision content (demos, trials, pricing, testimonials).</p>
+          <h4>SEO Fundamentals</h4>
+          <ul>
+            <li><strong>On-page:</strong> Title tags, meta descriptions, headers, internal links</li>
+            <li><strong>Off-page:</strong> Backlinks, social signals, brand mentions</li>
+            <li><strong>Technical:</strong> Site speed, mobile optimization, schema markup</li>
+          </ul>
+          <h4>Paid Advertising</h4>
+          <p><span class="key-term">CAC</span> (Customer Acquisition Cost) = Total ad spend / New customers. <span class="key-term">ROAS</span> (Return on Ad Spend) = Revenue / Ad spend. <span class="key-term">CTR</span> (Click-Through Rate) = Clicks / Impressions. Optimize by audience, creative, landing page, and offer.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Content-Led Growth</h4>
+            <p>A fintech startup with $0 ad budget builds organic traffic. Strategy: publish 2 in-depth guides/week, optimize for long-tail keywords, guest post on industry sites, create comparison tools. After 12 months: 500K monthly organic visitors, 2,000 free-trial signups/month, CAC near zero. Content becomes primary growth engine.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Analytics & Optimization',
+        duration: '15 min',
+        content: `
+          <h4>Marketing Metrics That Matter</h4>
+          <p>Vanity metrics (followers, impressions) don't pay bills. Focus on: <span class="key-term">Marketing Qualified Leads</span> (MQLs), <span class="key-term">Sales Qualified Leads</span> (SQLs), <span class="key-term">Pipeline Contribution</span>, <span class="key-term">Customer Lifetime Value</span> (CLV), and <span class="key-term">CAC Payback Period</span>.</p>
+          <h4>A/B Testing Framework</h4>
+          <ul>
+            <li>Hypothesis: "Changing CTA from 'Submit' to 'Get My Free Guide' will increase conversions by 15%"</li>
+            <li>Test one variable at a time (headline, image, CTA, form length)</li>
+            <li>Run until statistical significance (typically 95% confidence, 2 weeks minimum)</li>
+            <li>Document learnings and iterate</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Email Optimization</h4>
+            <p>Newsletter open rate: 18% (below 21% industry average). Test subject lines: emoji vs. no emoji, personalization vs. generic, question vs. statement. Winner: personalized question with emoji (+22% open rate). Next test: send time. Tuesday 10am outperforms Thursday 3pm by 15%. Combined improvement: 40% more opens, 25% more clicks.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'SEO stands for:', options:['Sales Efficiency Optimization','Search Engine Optimization','Social Engagement Outreach','Strategic Economic Outlook'], a:1, explain:'SEO improves organic visibility in search engine results pages.'},
+      {q:'Which metric measures cost to acquire a customer?', options:['CLV','CAC','CTR','ROAS'], a:1, explain:'CAC = Total marketing and sales costs divided by new customers acquired.'},
+      {q:'A/B testing compares:', options:['Two campaign versions','Server speeds','Financial audits','Candidates'], a:0, explain:'A/B testing isolates one variable to determine which version performs better.'},
+      {q:'The 4 Ps of marketing are:', options:['Product, Price, Place, Promotion','People, Process, Product, Profit','Plan, Produce, Promote, Profit','Price, Product, Policy, Planning'], a:0, explain:'The marketing mix framework covers the controllable elements of marketing.'},
+      {q:'Buyer personas help:', options:['Replace sales teams','Understand target segments','Design offices','Calculate taxes'], a:1, explain:'Personas represent ideal customers to guide messaging and targeting.'},
+      {q:'Content at the bottom of the funnel includes:', options:['Educational blogs','Case studies and demos','Industry trends','Brand awareness ads'], a:1, explain:'Bottom-funnel content helps prospects make purchase decisions.'},
+      {q:'ROAS measures:', options:['Return on Ad Spend','Rate of Acquisition Speed','Reach Over Audience Size','Revenue Over Asset Sales'], a:0, explain:'ROAS = Revenue generated / Advertising spend. Higher is better.'},
+      {q:'A positioning statement defines:', options:['Company history','Target, category, benefit, proof','Employee roles','Office locations'], a:1, explain:'It concisely articulates who the product is for and why it\'s unique.'},
+      {q:'Marketing Qualified Leads (MQLs) are:', options:['Ready to buy immediately','Engaged prospects showing interest','Unqualified contacts','Existing customers'], a:1, explain:'MQLs have engaged with marketing but need further nurturing before sales.'},
+      {q:'Statistical significance in A/B testing is typically:', options:['50%','75%','95%','100%'], a:2, explain:'95% confidence means only a 5% chance results are due to random variation.'}
+    ],
+    assignment:'Create a 400-600 word integrated marketing campaign plan for launching a new productivity app targeting remote workers. Include: (1) target audience with 2 detailed buyer personas, (2) campaign objectives and 3 KPIs with targets, (3) channel strategy with budget allocation (social, content, paid, email, PR), (4) content calendar for launch month (weekly themes and formats), (5) launch day execution timeline, and (6) measurement framework with weekly review cadence.'
   },
-  { id:'ops', name:'Operations', icon:'⚙️', desc:'Process optimization, supply chain, logistics, production planning, and quality control.',
-    quiz:[
-      {q:'Lean manufacturing focuses on:', options:['Increasing inventory','Eliminating waste','Hiring more staff','Expanding facilities'], a:1},
-      {q:'Six Sigma aims for how many defects per million?', options:['100','3.4','1000','0'], a:1},
-      {q:'Just-In-Time (JIT) inventory means:', options:['Stocking excess inventory','Ordering materials only when needed','Never ordering supplies','Buying in bulk always'], a:1},
-      {q:'Supply chain management involves:', options:['Only manufacturing','Flow of goods, info, and finances from supplier to customer','Only marketing','Only HR'], a:1},
-      {q:'KPIs in operations often include:', options:['Employee birthdays','Throughput, cycle time, defect rate','Social media likes','Office decorations'], a:1}
+  {
+    id:'ops', name:'Operations', icon:'⚙️',
+    desc:'Process optimization, supply chain, logistics, production planning, and quality control.',
+    objectives: [
+      'Map and optimize business processes using Lean principles',
+      'Manage supply chain risk and vendor relationships',
+      'Implement quality control and continuous improvement',
+      'Plan production capacity and resource allocation',
+      'Use data to drive operational decisions'
     ],
-    assignment:'Write a 300-500 word operations improvement proposal for a manufacturing plant experiencing 15% defect rates. Include: (1) root cause analysis (at least 3 potential causes), (2) recommended process changes, (3) quality control checkpoints, (4) implementation timeline, and (5) expected ROI.'
+    lessons: [
+      {
+        title: 'Lean Operations & Process Improvement',
+        duration: '20 min',
+        content: `
+          <h4>The 8 Wastes of Lean (DOWNTIME)</h4>
+          <p><strong>D</strong>efects, <strong>O</strong>verproduction, <strong>W</strong>aiting, <strong>N</strong>on-utilized talent, <strong>T</strong>ransportation, <strong>I</strong>nventory, <strong>M</strong>otion, <strong>E</strong>xtra-processing. Eliminating waste increases value without increasing cost.</p>
+          <h4>Process Mapping</h4>
+          <ul>
+            <li><strong>Flowchart:</strong> Visual representation of steps, decisions, and handoffs</li>
+            <li><strong>Value Stream Map:</strong> Shows material and information flow with timing</li>
+            <li><strong>Swimlane:</strong> Assigns each step to a role or department</li>
+          </ul>
+          <h4>Continuous Improvement (Kaizen)</h4>
+          <p>Small, incremental changes compound over time. Kaizen events: 3-5 day focused workshops to solve specific problems. PDCA cycle: Plan, Do, Check, Act.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Lean Manufacturing Transformation</h4>
+            <p>A furniture manufacturer has 23% defect rate and 45-day lead times. Kaizen event identifies: material handling waste (5x moves), setup time (4 hours), inspection bottlenecks. Solutions: U-shaped cells, SMED (reduce setup to 30 min), in-process quality checks. Results: Defects drop to 4%, lead time to 12 days, productivity up 35%.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Supply Chain Management',
+        duration: '20 min',
+        content: `
+          <h4>Supply Chain Strategy</h4>
+          <p><span class="key-term">Efficiency</span> (cost minimization, lean) vs. <span class="key-term">Responsiveness</span> (speed, flexibility). Match strategy to product type: functional products need efficiency, innovative products need responsiveness.</p>
+          <h4>Inventory Management</h4>
+          <ul>
+            <li><strong>JIT (Just-In-Time):</strong> Minimize inventory, receive materials as needed</li>
+            <li><strong>Safety stock:</strong> Buffer against demand variability and supply uncertainty</li>
+            <li><strong>EOQ:</strong> Economic Order Quantity balances ordering and holding costs</li>
+            <li><strong>ABC analysis:</strong> Focus control on high-value items (A), automate low-value (C)</li>
+          </ul>
+          <h4>Supplier Relationship Management</h4>
+          <p>Segment suppliers: Strategic (partnership, co-development), Leverage (competitive bidding), Bottleneck (ensure supply), Non-critical (automate). Use scorecards: quality, delivery, cost, innovation, service.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Supply Chain Resilience</h4>
+            <p>A electronics company relies on a single chip supplier in Asia. When a typhoon shuts down production for 3 weeks, the company faces $5M in lost sales. Response: Dual-source critical components, build 8-week strategic inventory, nearshore 30% of production. Result: Supply disruption impact reduced by 70%, customer commitments maintained.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Quality Management',
+        duration: '15 min',
+        content: `
+          <h4>Quality Frameworks</h4>
+          <p><span class="key-term">ISO 9001</span>: Quality management system standard. <span class="key-term">Six Sigma</span>: Data-driven approach to reduce defects to 3.4 per million. <span class="key-term">Total Quality Management</span> (TQM): Organization-wide quality culture.</p>
+          <h4>Statistical Process Control</h4>
+          <ul>
+            <li>Control charts monitor process stability over time</li>
+            <li>Upper and lower control limits define acceptable variation</li>
+            <li>Trends, cycles, or points outside limits signal investigation needed</li>
+            <li>Common cause variation: inherent to process. Special cause: assignable, fixable.</li>
+          </ul>
+          <h4>Root Cause Analysis</h4>
+          <p><span class="key-term">5 Whys:</span> Ask "why" repeatedly until fundamental cause is found. <span class="key-term">Fishbone Diagram:</span> Categorize causes (People, Process, Equipment, Materials, Environment, Measurement).</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Defect Reduction</h4>
+            <p>A pharmaceutical packaging line has 8% defect rate. 5 Whys analysis: Defects → misaligned labels → conveyor speed inconsistent → sensor calibration drift → no preventive maintenance schedule → no ownership for PM program. Fix: Assign PM ownership, implement weekly calibration checks, add vision inspection. Defects drop to 0.5%, saving $2M/year in rework.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'Lean manufacturing focuses on:', options:['Increasing inventory','Eliminating waste','Hiring more staff','Expanding facilities'], a:1, explain:'Lean maximizes customer value while minimizing waste.'},
+      {q:'Six Sigma aims for how many defects per million?', options:['100','3.4','1000','0'], a:1, explain:'Six Sigma represents 99.99966% quality — 3.4 defects per million opportunities.'},
+      {q:'JIT inventory means:', options:['Stocking excess','Ordering when needed','Never ordering','Buying in bulk'], a:1, explain:'Just-In-Time reduces holding costs and waste by receiving materials as needed.'},
+      {q:'Supply chain management involves:', options:['Only manufacturing','Flow of goods, info, finances','Only marketing','Only HR'], a:1, explain:'SCM coordinates the end-to-end flow from raw materials to end customer.'},
+      {q:'PDCA stands for:', options:['Plan, Do, Check, Act','Process, Design, Create, Analyze','Purchase, Deliver, Charge, Account','Produce, Distribute, Consume, Archive'], a:0, explain:'The Deming Cycle drives continuous improvement.'},
+      {q:'ABC inventory analysis classifies by:', options:['Alphabetical order','Value/importance','Physical size','Expiration date'], a:1, explain:'A items are high-value (tight control), C items are low-value (automated).'},
+      {q:'The 5 Whys technique finds:', options:['5 different problems','Root cause','5 solutions','Team members'], a:1, explain:'Repeatedly asking "why" drills down from symptoms to fundamental causes.'},
+      {q:'A control chart monitors:', options:['Employee attendance','Process stability over time','Budget variance','Customer satisfaction'], a:1, explain:'Control charts distinguish between common cause and special cause variation.'},
+      {q:'SMED reduces:', options:['Product defects','Setup/changeover time','Shipping costs','Employee count'], a:1, explain:'Single-Minute Exchange of Die aims for sub-10-minute changeovers.'},
+      {q:'Safety stock protects against:', options:['Price increases','Demand variability and supply uncertainty','Employee turnover','Equipment failure'], a:1, explain:'Safety stock buffers the uncertainty in both demand and supply lead times.'}
+    ],
+    assignment:'Write a 400-600 word operations improvement proposal for a food processing plant experiencing 12% product waste and frequent delivery delays. Include: (1) process mapping of current state with identified waste points, (2) root cause analysis using 5 Whys for top 3 issues, (3) recommended lean improvements (specific tools: 5S, Kanban, SMED, etc.), (4) implementation timeline with quick wins (0-30 days) and long-term initiatives (3-6 months), (5) expected quantitative impact (waste reduction %, cost savings, delivery improvement), and (6) change management approach for workforce adoption.'
   },
-  { id:'it', name:'Information Technology', icon:'💻', desc:'Infrastructure, cybersecurity, software development, technical support, and digital transformation.',
-    quiz:[
-      {q:'What does VPN stand for?', options:['Virtual Private Network','Very Public Network','Video Processing Node','Virtual Protocol Node'], a:0},
-      {q:'Which protocol is used for secure web browsing?', options:['HTTP','FTP','HTTPS','SMTP'], a:2},
-      {q:'A firewall is used to:', options:['Speed up internet','Block unauthorized access','Store files','Create websites'], a:1},
-      {q:'Cloud computing service models include IaaS, PaaS, and:', options:['SaaS','DaaS','MaaS','TaaS'], a:0},
-      {q:'Phishing is a type of:', options:['Hardware failure','Social engineering attack','Network protocol','Programming language'], a:1}
+  {
+    id:'it', name:'Information Technology', icon:'💻',
+    desc:'Infrastructure, cybersecurity, software development, technical support, and digital transformation.',
+    objectives: [
+      'Design secure and scalable IT infrastructure',
+      'Implement cybersecurity best practices and incident response',
+      'Manage cloud services and vendor relationships',
+      'Support digital transformation initiatives',
+      'Troubleshoot and resolve technical issues efficiently'
     ],
-    assignment:'You are an IT Manager. Write a 300-500 word cybersecurity policy for a 50-person company. Include: (1) password requirements and MFA, (2) acceptable use policy, (3) data classification and handling, (4) incident response steps, and (5) employee training requirements.'
+    lessons: [
+      {
+        title: 'IT Infrastructure & Architecture',
+        duration: '20 min',
+        content: `
+          <h4>Infrastructure Models</h4>
+          <p><span class="key-term">On-premises:</span> Full control, high CapEx, physical maintenance. <span class="key-term">Cloud:</span> Scalable, OpEx, managed by provider. <span class="key-term">Hybrid:</span> Best of both — sensitive data on-prem, scalable workloads in cloud.</p>
+          <h4>Cloud Service Models</h4>
+          <ul>
+            <li><strong>IaaS</strong> (Infrastructure): AWS EC2, Azure VMs — you manage OS, apps</li>
+            <li><strong>PaaS</strong> (Platform): Heroku, Google App Engine — focus on code</li>
+            <li><strong>SaaS</strong> (Software): Office 365, Salesforce — use out-of-the-box</li>
+          </ul>
+          <h4>Network Fundamentals</h4>
+          <p>LAN (Local Area Network) connects devices in one location. WAN (Wide Area Network) connects geographically dispersed sites. <span class="key-term">SD-WAN</span> intelligently routes traffic across multiple connections for reliability and performance.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Cloud Migration</h4>
+            <p>A retail company runs 50 on-prem servers costing $300K/year in maintenance. Migration to AWS: lift-and-shift 30 servers (save 20% immediately), refactor 15 to serverless (save 60%), retire 5 unused. Result: $180K/year savings, 99.9% uptime (vs. 97%), elastic scaling during Black Friday (10x traffic handled automatically).</p>
+          </div>
+        `
+      },
+      {
+        title: 'Cybersecurity Essentials',
+        duration: '20 min',
+        content: `
+          <h4>Security Principles (CIA Triad)</h4>
+          <p><span class="key-term">Confidentiality:</span> Only authorized access. <span class="key-term">Integrity:</span> Data is accurate and unaltered. <span class="key-term">Availability:</span> Systems are accessible when needed.</p>
+          <h4>Common Threats</h4>
+          <ul>
+            <li><strong>Phishing:</strong> Deceptive emails to steal credentials. Defense: training, email filters, MFA.</li>
+            <li><strong>Ransomware:</strong> Encrypts data, demands payment. Defense: backups, patching, segmentation.</li>
+            <li><strong>Insider threats:</strong> Malicious or negligent employees. Defense: least privilege, monitoring, DLP.</li>
+            <li><strong>DDoS:</strong> Overwhelms systems with traffic. Defense: CDNs, rate limiting, scrubbing centers.</li>
+          </ul>
+          <h4>Incident Response Plan</h4>
+          <p>Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned. Practice with tabletop exercises. Have a communication plan for stakeholders, customers, and regulators.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Ransomware Recovery</h4>
+            <p>A hospital is hit with ransomware encrypting patient records. Response: Isolate infected systems (containment), activate incident response team, restore from offline backups (no ransom paid), notify affected patients per HIPAA, conduct forensic analysis. Result: 72-hour recovery, no data loss due to 3-2-1 backup strategy, $0 ransom paid, improved segmentation prevents recurrence.</p>
+          </div>
+        `
+      },
+      {
+        title: 'IT Service Management',
+        duration: '15 min',
+        content: `
+          <h4>ITIL Framework</h4>
+          <p><span class="key-term">Incident Management:</span> Restore service quickly. <span class="key-term">Problem Management:</span> Find and fix root causes. <span class="key-term">Change Management:</span> Control changes to minimize disruption. <span class="key-term">Service Desk:</span> Single point of contact for users.</p>
+          <h4>SLAs & Metrics</h4>
+          <ul>
+            <li><strong>First Response Time:</strong> Target < 1 hour for critical issues</li>
+            <li><strong>Resolution Time:</strong> Target < 4 hours for P1, < 24h for P2</li>
+            <li><strong>First Contact Resolution:</strong> % solved without escalation</li>
+            <li><strong>MTTR:</strong> Mean Time To Recover from incidents</li>
+            <li><strong>MTBF:</strong> Mean Time Between Failures</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Service Desk Transformation</h4>
+            <p>IT help desk receives 500 tickets/week with 5-day average resolution. Problems: no ticket categorization, no knowledge base, manual routing. Fixes: Implement ITSM tool (ServiceNow), create self-service portal, build knowledge base with top 50 issues, set up auto-routing by category. Results: 40% tickets deflected to self-service, resolution time drops to 1.5 days, CSAT improves from 3.2 to 4.5/5.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'What does VPN stand for?', options:['Virtual Private Network','Very Public Network','Video Processing Node','Virtual Protocol Node'], a:0, explain:'VPNs create encrypted tunnels over public networks for secure remote access.'},
+      {q:'Which protocol is used for secure web browsing?', options:['HTTP','FTP','HTTPS','SMTP'], a:2, explain:'HTTPS encrypts data between browser and server using TLS/SSL.'},
+      {q:'A firewall is used to:', options:['Speed up internet','Block unauthorized access','Store files','Create websites'], a:1, explain:'Firewalls monitor and control network traffic based on security rules.'},
+      {q:'Cloud service models include IaaS, PaaS, and:', options:['SaaS','DaaS','MaaS','TaaS'], a:0, explain:'SaaS delivers complete applications over the internet (e.g., Gmail, Slack).'},
+      {q:'Phishing is a type of:', options:['Hardware failure','Social engineering attack','Network protocol','Programming language'], a:1, explain:'Phishing manipulates people into revealing sensitive information.'},
+      {q:'The CIA Triad does NOT include:', options:['Confidentiality','Integrity','Availability','Accountability'], a:3, explain:'CIA = Confidentiality, Integrity, Availability — the three core security goals.'},
+      {q:'MFA stands for:', options:['Multi-Factor Authentication','Main Frame Access','Managed File Archive','Mobile First Architecture'], a:0, explain:'MFA requires two or more verification factors (password + phone, biometric, etc.).'},
+      {q:'MTTR measures:', options:['Mean Time To Recover','Maximum Time To Respond','Minimum Technical Training Required','Monthly Total Ticket Rate'], a:0, explain:'Mean Time To Recover tracks average time to restore service after failure.'},
+      {q:'A DDoS attack:', options:['Steals passwords','Overwhelms systems with traffic','Encrypts files','Modifies data'], a:1, explain:'Distributed Denial of Service floods targets to make them unavailable.'},
+      {q:'3-2-1 backup strategy means:', options:['3 copies, 2 media types, 1 offsite','3 daily backups','2 servers, 1 cloud','1 copy every 3 weeks'], a:0, explain:'3 copies of data, on 2 different media, with 1 stored offsite for resilience.'}
+    ],
+    assignment:'You are the IT Director for a 200-person financial services firm. Write a 400-600 word cybersecurity enhancement plan. Include: (1) current risk assessment (top 5 threats with likelihood/impact scores), (2) technical controls (endpoint protection, network segmentation, email security, backup strategy), (3) policy updates (password standards, BYOD, remote work, incident response), (4) employee training program (topics, frequency, delivery method, metrics), (5) vendor security requirements for third-party access, and (6) 12-month implementation roadmap with quarterly milestones.'
   },
-  { id:'cs', name:'Customer Service', icon:'🎧', desc:'Customer support, complaint resolution, satisfaction metrics, and service excellence.',
-    quiz:[
-      {q:'CSAT stands for:', options:['Customer Satisfaction Score','Client Service Audit Tool','Customer Support Average Time','Call System Analysis Tool'], a:0},
-      {q:'First Contact Resolution (FCR) measures:', options:['Number of calls','Issues resolved in one interaction','Average hold time','Customer churn rate'], a:1},
-      {q:'The HEARD technique for complaint handling stands for:', options:['Hear, Empathize, Apologize, Resolve, Diagnose','Hear, Empathize, Apologize, Resolve, Document','Help, Evaluate, Answer, Review, Deliver','Handle, Escalate, Assign, Resolve, Document'], a:1},
-      {q:'NPS measures:', options:['Net Profit Score','Net Promoter Score','New Product Sales','Network Performance Speed'], a:1},
-      {q:'Which is NOT a good customer service practice?', options:['Active listening','Empathy','Blaming the customer','Following up'], a:2}
+  {
+    id:'cs', name:'Customer Service', icon:'🎧',
+    desc:'Customer support, complaint resolution, satisfaction metrics, and service excellence.',
+    objectives: [
+      'Deliver exceptional customer experiences across channels',
+      'Resolve complaints efficiently using proven frameworks',
+      'Measure and improve customer satisfaction metrics',
+      'Build customer loyalty and reduce churn',
+      'Coach teams on empathy and de-escalation techniques'
     ],
-    assignment:'Write a 300-500 word customer service training module on handling angry customers. Include: (1) de-escalation techniques (at least 3), (2) active listening scripts/examples, (3) when and how to escalate to a manager, (4) follow-up best practices, and (5) a role-play scenario with model response.'
+    lessons: [
+      {
+        title: 'Customer Experience Foundations',
+        duration: '15 min',
+        content: `
+          <h4>The Service-Profit Chain</h4>
+          <p>Internal quality → Employee satisfaction → Retention → External service value → Customer satisfaction → Customer loyalty → Revenue growth → Profitability. Investing in employees pays dividends in customer outcomes.</p>
+          <h4>First Contact Resolution (FCR)</h4>
+          <p>FCR = Issues resolved in first interaction / Total issues. Best-in-class: 70-75%. Benefits: lower cost per contact, higher satisfaction, reduced repeat contacts. Enablers: knowledge base, agent empowerment, access to customer history.</p>
+          <h4>Omnichannel Support</h4>
+          <ul>
+            <li><strong>Phone:</strong> Complex issues, emotional situations, VIP customers</li>
+            <li><strong>Chat:</strong> Quick questions, multitasking customers, sales support</li>
+            <li><strong>Email:</strong> Detailed issues, documentation needs, non-urgent</li>
+            <li><strong>Social:</strong> Public complaints, brand monitoring, community</li>
+            <li><strong>Self-service:</strong> FAQs, knowledge base, community forums, chatbots</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: FCR Improvement</h4>
+            <p>A telecom company has 45% FCR. Analysis: agents lack access to billing history, no knowledge base, rigid scripts. Fixes: Integrated CRM with 360° customer view, searchable knowledge base with 500 articles, empowerment to offer up to $50 credits without escalation. Result: FCR rises to 72%, repeat calls down 40%, CSAT up 25 points.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Complaint Handling & De-escalation',
+        duration: '20 min',
+        content: `
+          <h4>The HEARD Technique</h4>
+          <p><strong>H</strong>ear — Let the customer speak without interruption. <strong>E</strong>mpathize — Acknowledge their feelings. <strong>A</strong>pologize — Sincerely, even if not at fault. <strong>R</strong>esolve — Take action or explain next steps. <strong>D</strong>iagnose — Find root cause to prevent recurrence.</p>
+          <h4>De-escalation Strategies</h4>
+          <ul>
+            <li>Lower your voice and speak slowly (calm is contagious)</li>
+            <li>Use the customer's name frequently</li>
+            <li>Avoid defensive language ("Actually...", "You should have...")</li>
+            <li>Offer options, not dead ends</li>
+            <li>Know when to escalate: threats, legal issues, or requests beyond authority</li>
+          </ul>
+          <h4>Difficult Customer Types</h4>
+          <p><strong>The Angry Customer:</strong> Vent first, then solve. <strong>The Demanding Customer:</strong> Set boundaries, offer alternatives. <strong>The Silent Customer:</strong> Ask open questions, confirm understanding. <strong>The Expert Customer:</strong> Acknowledge knowledge, collaborate on solution.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Turning Detractors into Promoters</h4>
+            <p>A customer tweets publicly about a 3-week delayed refund. Response: Public reply within 15 min acknowledging issue, DM to gather details, refund processed within 2 hours (with $25 credit), follow-up call from customer success manager. Result: Customer updates tweet praising response, becomes repeat buyer, refers 2 friends. NPS improves from -20 to +45.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Metrics & Continuous Improvement',
+        duration: '15 min',
+        content: `
+          <h4>Key Customer Metrics</h4>
+          <p><span class="key-term">CSAT</span> (Customer Satisfaction): Post-interaction rating (1-5 or 1-10). Target: >80% satisfied. <span class="key-term">NPS</span> (Net Promoter Score): "How likely are you to recommend?" Promoters (9-10) minus Detractors (0-6). <span class="key-term">CES</span> (Customer Effort Score): "How easy was it to resolve?" Lower effort = higher loyalty.</p>
+          <h4>Quality Assurance</h4>
+          <ul>
+            <li>Random sampling: review 5-10% of interactions</li>
+            <li>Score on: greeting, empathy, accuracy, resolution, closing</li>
+            <li>Calibrate scores across reviewers monthly</li>
+            <li>Give agents scorecards with specific improvement areas</li>
+          </ul>
+          <h4>VoC (Voice of Customer) Programs</h4>
+          <p>Collect feedback across touchpoints. Analyze themes: product issues, process friction, training gaps. Close the loop: share insights with product, operations, and training teams.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Proactive Support</h4>
+            <p>An e-commerce company analyzes return reasons and discovers 30% are due to sizing confusion. Action: Add size guide video, implement AI size recommendation tool, proactively email customers who ordered unusual sizes. Result: Returns drop 25%, support tickets for sizing down 40%, conversion up 8%.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'CSAT stands for:', options:['Customer Satisfaction Score','Client Service Audit Tool','Customer Support Average Time','Call System Analysis Tool'], a:0, explain:'CSAT measures customer satisfaction with a specific interaction or product.'},
+      {q:'First Contact Resolution (FCR) measures:', options:['Number of calls','Issues resolved in one interaction','Average hold time','Churn rate'], a:1, explain:'Higher FCR means fewer repeat contacts and lower cost per resolution.'},
+      {q:'HEARD technique stands for:', options:['Hear, Empathize, Apologize, Resolve, Document','Hear, Empathize, Apologize, Resolve, Diagnose','Help, Evaluate, Answer, Review, Deliver','Handle, Escalate, Assign, Resolve, Document'], a:0, explain:'HEARD provides a structured approach to complaint resolution.'},
+      {q:'NPS measures:', options:['Net Profit Score','Net Promoter Score','New Product Sales','Network Performance Speed'], a:1, explain:'NPS = % Promoters (9-10) minus % Detractors (0-6). Range: -100 to +100.'},
+      {q:'Which is NOT good customer service practice?', options:['Active listening','Empathy','Blaming the customer','Following up'], a:2, explain:'Blaming customers escalates situations; take ownership even when not at fault.'},
+      {q:'Customer Effort Score (CES) measures:', options:['How much money spent','How easy to resolve','How long on hold','How many contacts needed'], a:1, explain:'Lower effort correlates strongly with loyalty — easier = more loyal.'},
+      {q:'Omnichannel support includes:', options:['Phone only','Multiple integrated channels','Email only','Social only'], a:1, explain:'Omnichannel provides seamless experience across phone, chat, email, social, self-service.'},
+      {q:'QA calibration ensures:', options:['Phones work','Consistent scoring across reviewers','Fast responses','Low costs'], a:1, explain:'Calibration aligns different reviewers so scores are fair and consistent.'},
+      {q:'The Service-Profit Chain starts with:', options:['Customer satisfaction','Internal quality and employees','Revenue growth','Market share'], a:1, explain:'Happy, well-supported employees deliver better service, creating loyal customers.'},
+      {q:'When should you escalate a complaint?', options:['Immediately for all issues','Threats, legal issues, beyond authority','Never','Only after 1 hour'], a:1, explain:'Escalate when safety, legal exposure, or authority limits are involved.'}
+    ],
+    assignment:'You are a Customer Service Manager at an e-commerce company receiving 200 tickets/day with 65% CSAT. Write a 400-600 word improvement plan. Include: (1) current state analysis (ticket volume by channel, top 5 issue categories, FCR rate, average handle time), (2) root causes for low satisfaction (agent training gaps, process issues, product problems), (3) specific initiatives (knowledge base expansion, chatbot implementation, agent empowerment guidelines), (4) training program outline (modules, delivery, frequency), (5) 90-day metrics targets (CSAT, FCR, response time, CES), and (6) feedback loop to product and operations teams.'
   },
-  { id:'procurement', name:'Procurement / Purchasing', icon:'🛒', desc:'Vendor management, sourcing, contract negotiation, purchasing strategy, and cost control.',
-    quiz:[
-      {q:'RFQ stands for:', options:['Request for Quality','Request for Quotation','Required Financial Question','Return for Quality'], a:1},
-      {q:'Which is a key factor in vendor selection?', options:['Only lowest price','Total cost of ownership, quality, reliability','Only delivery speed','Only location'], a:1},
-      {q:'A purchase order is:', options:['An invoice','A request to buy goods/services','A receipt','A warranty'], a:1},
-      {q:'Strategic sourcing focuses on:', options:['One-time purchases','Long-term supplier relationships','Cash purchases only','No contracts'], a:1},
-      {q:'Which document legally binds a buyer and seller?', options:['Purchase requisition','Contract','Invoice','Receipt'], a:1}
+  {
+    id:'procurement', name:'Procurement / Purchasing', icon:'🛒',
+    desc:'Vendor management, sourcing, contract negotiation, purchasing strategy, and cost control.',
+    objectives: [
+      'Develop strategic sourcing strategies aligned with business goals',
+      'Negotiate contracts that minimize risk and maximize value',
+      'Evaluate and manage supplier performance',
+      'Optimize purchasing processes and reduce costs',
+      'Ensure ethical and sustainable procurement practices'
     ],
-    assignment:'Write a 300-500 word vendor evaluation report comparing two suppliers for office furniture. Include: (1) evaluation criteria (price, quality, delivery, warranty, sustainability), (2) scoring matrix, (3) risk assessment for each vendor, (4) recommendation with justification, and (5) negotiation points for the chosen vendor.'
+    lessons: [
+      {
+        title: 'Strategic Sourcing',
+        duration: '20 min',
+        content: `
+          <h4>The Sourcing Process</h4>
+          <p><strong>Specification:</strong> Define requirements clearly. <strong>Market analysis:</strong> Identify potential suppliers. <strong>RFx:</strong> Request for Information (RFI), Quotation (RFQ), or Proposal (RFP). <strong>Evaluation:</strong> Score against criteria. <strong>Negotiation:</strong> Finalize terms. <strong>Award:</strong> Select supplier. <strong>Manage:</strong> Monitor performance.</p>
+          <h4>Total Cost of Ownership (TCO)</h4>
+          <p>Purchase price is just the beginning. TCO includes: acquisition costs, transportation, installation, training, maintenance, operating costs, and disposal. A cheaper initial price may cost more over the lifecycle.</p>
+          <h4>Supplier Segmentation (Kraljic Matrix)</h4>
+          <ul>
+            <li><strong>Strategic:</strong> High profit impact, high supply risk — partner closely</li>
+            <li><strong>Leverage:</strong> High profit impact, low risk — use buying power</li>
+            <li><strong>Bottleneck:</strong> Low profit impact, high risk — ensure supply security</li>
+            <li><strong>Non-critical:</strong> Low impact, low risk — automate, minimize effort</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Strategic Sourcing Transformation</h4>
+            <p>A manufacturer spends $50M annually on raw materials with 200+ suppliers. Analysis shows 80% of spend with 20% of suppliers (Pareto principle). Strategy: Consolidate to 50 strategic suppliers, negotiate volume discounts, implement vendor-managed inventory for top 10. Result: 12% cost reduction ($6M savings), 50% fewer POs to process, 30% faster delivery times.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Negotiation & Contracts',
+        duration: '20 min',
+        content: `
+          <h4>Negotiation Preparation</h4>
+          <p>Know your <span class="key-term">BATNA</span> (Best Alternative to Negotiated Agreement) — your walk-away option. Research the supplier's constraints, priorities, and competition. Define your target, reservation point, and ideal outcome.</p>
+          <h4>Key Contract Terms</h4>
+          <ul>
+            <li><strong>Price:</strong> Fixed, variable, indexed, or cost-plus</li>
+            <li><strong>Volume:</strong> Minimum order quantities, annual commitments, take-or-pay</li>
+            <li><strong>Quality:</strong> Specifications, inspection rights, rejection terms</li>
+            <li><strong>Delivery:</strong> Lead times, penalties for late delivery, Incoterms</li>
+            <li><strong>Termination:</strong> Notice periods, transition assistance, IP ownership</li>
+            <li><strong>Liability:</strong> Caps, insurance requirements, indemnification</li>
+          </ul>
+          <h4>Negotiation Tactics</h4>
+          <p>Avoid positional bargaining ("I want X, you want Y"). Use interest-based negotiation: "What problem are we both trying to solve?" Create value before claiming it. Use silence as a tool. Make concessions strategically, not freely.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: SaaS Contract Negotiation</h4>
+            <p>A company negotiates a $200K/year CRM contract. Supplier offers 10% discount for 3-year commitment. Counter: 15% discount, annual payment terms (not upfront), price lock with 3% annual cap, data portability clause, 90-day termination for convenience with prorated refund. Supplier accepts: values long-term relationship over short-term revenue.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Supplier Performance & Ethics',
+        duration: '15 min',
+        content: `
+          <h4>Supplier Scorecards</h4>
+          <p>Measure monthly on: <strong>Quality</strong> (defect rate, returns), <strong>Delivery</strong> (on-time %, lead time accuracy), <strong>Cost</strong> (price competitiveness, TCO), <strong>Service</strong> (responsiveness, problem resolution), <strong>Innovation</strong> (new ideas, continuous improvement).</p>
+          <h4>Sustainable Procurement</h4>
+          <ul>
+            <li>Environmental: carbon footprint, waste reduction, recyclable packaging</li>
+            <li>Social: fair labor practices, diversity, community impact</li>
+            <li>Governance: anti-corruption, transparency, ethical sourcing</li>
+          </ul>
+          <h4>Risk Management</h4>
+          <p>Map supplier risk: financial stability, geographic concentration, single-source dependency, regulatory compliance. Mitigate with: dual sourcing, safety stock, regular audits, and business continuity plans.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Supply Chain Ethics Audit</h4>
+            <p>A clothing brand discovers a tier-2 supplier using child labor. Response: Immediate suspension, on-site audit by third party, remediation plan with timeline, alternative sourcing activation. Public transparency: publish audit results, join Fair Labor Association. Result: Reputation protected, consumer trust maintained, supplier achieves compliance within 12 months.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'RFQ stands for:', options:['Request for Quality','Request for Quotation','Required Financial Question','Return for Quality'], a:1, explain:'RFQ requests pricing for specific, well-defined products or services.'},
+      {q:'Total Cost of Ownership (TCO) includes:', options:['Only purchase price','All costs over the lifecycle','Shipping only','Maintenance only'], a:1, explain:'TCO captures acquisition, operation, maintenance, and disposal costs.'},
+      {q:'A purchase order is:', options:['An invoice','A request to buy goods/services','A receipt','A warranty'], a:1, explain:'A PO is a legally binding document authorizing a purchase at specified terms.'},
+      {q:'Strategic sourcing focuses on:', options:['One-time purchases','Long-term supplier relationships','Cash purchases only','No contracts'], a:1, explain:'Strategic sourcing aligns procurement with business goals for sustained value.'},
+      {q:'Which document legally binds buyer and seller?', options:['Purchase requisition','Contract','Invoice','Receipt'], a:1, explain:'Contracts establish enforceable terms, remedies, and obligations.'},
+      {q:'BATNA in negotiation is:', options:['Best Alternative to Negotiated Agreement','Budget Allocation Table for New Acquisitions','Business Analysis Tracking Network Application','Buyer Approved Terms and Negotiation Agreement'], a:0, explain:'Knowing your walk-away alternative gives power and prevents bad deals.'},
+      {q:'The Kraljic Matrix classifies suppliers by:', options:['Size and location','Profit impact and supply risk','Price and quality','Speed and reliability'], a:1, explain:'It guides strategy: partner, leverage, ensure supply, or automate.'},
+      {q:'Vendor-managed inventory (VMI) means:', options:['Buyer manages all stock','Supplier monitors and replenishes stock','No inventory held','Just-in-time only'], a:1, explain:'VMI shifts inventory management to the supplier, reducing stockouts and excess.'},
+      {q:'Sustainable procurement considers:', options:['Price only','Environmental, social, governance factors','Speed only','Volume only'], a:1, explain:'ESG criteria ensure responsible sourcing beyond just cost.'},
+      {q:'Dual sourcing reduces:', options:['Purchase price','Supply risk from single-source dependency','Delivery speed','Product quality'], a:1, explain:'Having two qualified suppliers protects against disruption if one fails.'}
+    ],
+    assignment:'You are the Procurement Manager for a hospital system spending $30M annually on medical supplies. Write a 400-600 word strategic sourcing plan. Include: (1) spend analysis by category (diagnostics, surgical, PPE, pharmaceuticals, equipment) with top suppliers, (2) supplier segmentation using the Kraljic matrix for top 5 categories, (3) negotiation strategy for the largest contract (tactics, BATNA, walk-away points), (4) risk mitigation plan (dual sourcing, safety stock, supplier audits), (5) sustainability requirements (packaging, ethical sourcing, carbon footprint), and (6) 12-month implementation timeline with quarterly savings targets.'
   },
-  { id:'legal', name:'Legal & Compliance', icon:'⚖️', desc:'Contract law, regulatory compliance, risk management, corporate governance, and dispute resolution.',
-    quiz:[
-      {q:'NDA stands for:', options:['Non-Disclosure Agreement','National Development Act','No Debt Allowed','New Document Approval'], a:0},
-      {q:'GDPR applies to:', options:['Only US companies','Companies handling EU residents\' data','Only tech companies','Only banks'], a:1},
-      {q:'A contract requires:', options:['Only a signature','Offer, acceptance, consideration, and legal purpose','Only verbal agreement','Only payment'], a:1},
-      {q:'Compliance audits are conducted to:', options:['Punish employees','Ensure adherence to laws and regulations','Increase sales','Replace legal teams'], a:1},
-      {q:'Intellectual property includes:', options:['Only buildings','Patents, trademarks, copyrights, trade secrets','Only software','Only books'], a:1}
+  {
+    id:'legal', name:'Legal & Compliance', icon:'⚖️',
+    desc:'Contract law, regulatory compliance, risk management, corporate governance, and dispute resolution.',
+    objectives: [
+      'Draft and interpret commercial contracts effectively',
+      'Navigate data privacy regulations (GDPR, CCPA)',
+      'Implement corporate governance and ethics programs',
+      'Manage litigation risk and dispute resolution',
+      'Ensure regulatory compliance across jurisdictions'
     ],
-    assignment:'Write a 300-500 word data privacy compliance checklist for a company collecting customer data online. Include: (1) lawful basis for data collection, (2) consent management requirements, (3) data subject rights (access, deletion, portability), (4) breach notification procedures, and (5) record-keeping obligations.'
+    lessons: [
+      {
+        title: 'Contract Law Essentials',
+        duration: '20 min',
+        content: `
+          <h4>Elements of a Valid Contract</h4>
+          <p><strong>Offer:</strong> Clear proposal with definite terms. <strong>Acceptance:</strong> Unconditional agreement to terms. <strong>Consideration:</strong> Something of value exchanged. <strong>Capacity:</strong> Parties must be legally competent. <strong>Legality:</strong> Purpose must be lawful. Missing any element = no enforceable contract.</p>
+          <h4>Key Contract Clauses</h4>
+          <ul>
+            <li><strong>Indemnification:</strong> Who pays if something goes wrong?</li>
+            <li><strong>Limitation of Liability:</strong> Caps on damages (often limited to fees paid)</li>
+            <li><strong>Termination:</strong> For cause (breach) vs. for convenience</li>
+            <li><strong>Force Majeure:</strong> Excuses performance due to unforeseeable events</li>
+            <li><strong>Governing Law:</strong> Which jurisdiction's laws apply?</li>
+            <li><strong>Dispute Resolution:</strong> Litigation vs. arbitration vs. mediation</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Contract Dispute</h4>
+            <p>A software vendor fails to deliver a project on time. Client withholds payment. Vendor claims force majeure (pandemic-related delays). Review: Contract has force majeure clause but requires 30-day notice and mitigation efforts. Vendor gave 5-day notice with no mitigation plan. Ruling: Vendor breached, client entitled to terminate and seek damages. Lesson: Detail force majeure requirements explicitly.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Data Privacy & Compliance',
+        duration: '20 min',
+        content: `
+          <h4>GDPR (General Data Protection Regulation)</h4>
+          <p>Applies to any organization processing EU residents' data. Key requirements: <span class="key-term">Lawful basis</span> for processing (consent, contract, legal obligation, etc.), <span class="key-term">data minimization</span> (collect only what's necessary), <span class="key-term">right to erasure</span> ("right to be forgotten"), <span class="key-term">data portability</span>, and <span class="key-term">breach notification</span> within 72 hours.</p>
+          <h4>CCPA (California Consumer Privacy Act)</h4>
+          <p>California residents have rights to: know what data is collected, delete personal information, opt-out of sale, non-discrimination for exercising rights. Businesses must provide clear privacy notices and honor consumer requests within 45 days.</p>
+          <h4>Compliance Program</h4>
+          <ul>
+            <li>Appoint a Data Protection Officer (DPO) if required</li>
+            <li>Conduct Privacy Impact Assessments (PIAs) for new projects</li>
+            <li>Maintain Records of Processing Activities (ROPA)</li>
+            <li>Train employees on data handling procedures</li>
+            <li>Regular audits and penetration testing</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: GDPR Fine</h4>
+            <p>A retailer collects customer emails at checkout without explicit consent (pre-checked box). Data breach exposes 500K records. Regulator investigation finds: no lawful basis for processing, inadequate security, no breach response plan. Fine: €20M (4% of global revenue). Fix: Implement double opt-in, encrypt all PII, create incident response playbook, appoint DPO. Lesson: Privacy by design prevents catastrophic penalties.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Corporate Governance & Ethics',
+        duration: '15 min',
+        content: `
+          <h4>Corporate Governance Framework</h4>
+          <p>Board of Directors oversees strategy, risk, and compliance. Audit Committee reviews financial controls. Compensation Committee sets executive pay. Nominating Committee manages board succession. Independent directors ensure objective oversight.</p>
+          <h4>Ethics & Compliance Program</h4>
+          <ul>
+            <li>Code of Conduct: clear standards for all employees</li>
+            <li>Training: annual for all, specialized for high-risk roles</li>
+            <li>Hotline: anonymous reporting for violations</li>
+            <li>Investigations: prompt, fair, confidential</li>
+            <li>Discipline: consistent enforcement regardless of seniority</li>
+          </ul>
+          <h4>Anti-Corruption (FCPA, UK Bribery Act)</h4>
+          <p>Prohibits bribing foreign officials. Requires: accurate books and records, internal controls, due diligence on third parties, gifts and hospitality policies. Penalties: corporate fines up to $25M, individual prison sentences.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Whistleblower Investigation</h4>
+            <p>An employee reports that a sales VP is inflating expense reports and accepting kickbacks from a vendor. Investigation: forensic audit confirms $80K in false expenses, emails show $15K vendor kickbacks. Actions: Terminate VP, report to authorities, recover funds, strengthen expense approval controls, retrain sales team. Board notified within 48 hours per protocol.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'NDA stands for:', options:['Non-Disclosure Agreement','National Development Act','No Debt Allowed','New Document Approval'], a:0, explain:'NDAs protect confidential information shared between parties.'},
+      {q:'GDPR applies to:', options:['Only US companies','Companies handling EU residents\' data','Only tech companies','Only banks'], a:1, explain:'GDPR has extraterritorial reach — any company processing EU data must comply.'},
+      {q:'A contract requires:', options:['Only a signature','Offer, acceptance, consideration, legal purpose','Only verbal agreement','Only payment'], a:1, explain:'All four elements must be present for an enforceable contract.'},
+      {q:'Compliance audits ensure:', options:['Punish employees','Adherence to laws and regulations','Increase sales','Replace legal teams'], a:1, explain:'Audits verify that controls and processes meet regulatory requirements.'},
+      {q:'Intellectual property includes:', options:['Only buildings','Patents, trademarks, copyrights, trade secrets','Only software','Only books'], a:1, explain:'IP encompasses creations of the mind protected by law.'},
+      {q:'GDPR breach notification deadline is:', options:['24 hours','72 hours','7 days','30 days'], a:1, explain:'Controllers must notify supervisory authorities within 72 hours of becoming aware.'},
+      {q:'The FCPA prohibits:', options:['Foreign investment','Bribing foreign officials','International trade','Global hiring'], a:1, explain:'The Foreign Corrupt Practices Act criminalizes bribery of foreign government officials.'},
+      {q:'A Data Protection Officer (DPO) is required when:', options:['Always','Public authorities or large-scale sensitive data processing','Never','Only in California'], a:1, explain:'GDPR mandates DPOs for public bodies or large-scale systematic monitoring/processing.'},
+      {q:'Force majeure clauses address:', options:['Payment terms','Unforeseeable events preventing performance','Delivery schedules','Price adjustments'], a:1, explain:'Force majeure excuses contractual obligations due to events beyond control.'},
+      {q:'Corporate governance includes oversight by:', options:['Only CEO','Board of Directors','Only shareholders','Only employees'], a:1, explain:'The Board provides strategic oversight, risk management, and compliance governance.'}
+    ],
+    assignment:'You are the Compliance Officer for a SaaS company with 500 employees serving clients in the US, EU, and Asia. Write a 400-600 word data privacy compliance program. Include: (1) regulatory landscape summary (GDPR, CCPA, applicable Asia laws), (2) data inventory and mapping (what data, where stored, who accesses, retention periods), (3) lawful basis documentation for each processing activity, (4) consumer rights procedure (access, deletion, portability requests with SLAs), (5) incident response playbook (detection, containment, notification, remediation), and (6) training and audit schedule with accountability matrix.'
   },
-  { id:'rnd', name:'Research & Development', icon:'🔬', desc:'Innovation, product development, prototyping, testing, and technology advancement.',
-    quiz:[
-      {q:'The R&D stage before full production is called:', options:['Discovery','Scale-up','Commercialization','Termination'], a:0},
-      {q:'A patent typically lasts for:', options:['10 years','20 years','50 years','Forever'], a:1},
-      {q:'Agile methodology is characterized by:', options:['Long planning cycles','Iterative development','No customer feedback','Fixed requirements'], a:1},
-      {q:'A prototype is used to:', options:['Replace the final product','Test and validate concepts','Sell immediately','Avoid testing'], a:1},
-      {q:'TRL (Technology Readiness Level) 9 means:', options:['Basic principles observed','System proven in operational environment','Proof of concept','Laboratory testing'], a:1}
+  {
+    id:'rnd', name:'Research & Development', icon:'🔬',
+    desc:'Innovation, product development, prototyping, testing, and technology advancement.',
+    objectives: [
+      'Manage the product development lifecycle from idea to launch',
+      'Apply agile and stage-gate methodologies effectively',
+      'Protect intellectual property through patents and trade secrets',
+      'Build and lead cross-functional innovation teams',
+      'Measure R&D productivity and portfolio ROI'
     ],
-    assignment:'Write a 300-500 word R&D project proposal for developing a smart home energy management device. Include: (1) problem statement and market need, (2) proposed solution and key features, (3) development phases and milestones (6-month timeline), (4) required resources and budget estimate, and (5) success metrics and go-to-market strategy.'
+    lessons: [
+      {
+        title: 'Product Development Process',
+        duration: '20 min',
+        content: `
+          <h4>Stage-Gate Model</h4>
+          <p>Structured phases with go/no-go decisions: <strong>Discovery</strong> → <strong>Scoping</strong> → <strong>Business Case</strong> → <strong>Development</strong> → <strong>Testing</strong> → <strong>Launch</strong>. Each gate requires specific deliverables and approval to proceed. Reduces risk by killing projects early before major investment.</p>
+          <h4>Agile for R&D</h4>
+          <ul>
+            <li>Sprints: 2-4 week iterations with working increments</li>
+            <li>Backlog: Prioritized list of features and experiments</li>
+            <li>Stand-ups: Daily 15-min sync on progress and blockers</li>
+            <li>Retrospectives: What worked, what didn't, action items</li>
+            <li>User stories: "As a [user], I want [feature] so that [benefit]"</li>
+          </ul>
+          <h4>TRL (Technology Readiness Level)</h4>
+          <p>1 = Basic principles observed. 3 = Proof of concept. 5 = Validation in relevant environment. 7 = System prototype demonstration. 9 = System proven in operational environment. Investors and partners want TRL 6+ for lower risk.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: MedTech Development</h4>
+            <p>A biotech startup develops a non-invasive glucose monitor. Stage-Gate milestones: Gate 1 — market validation (diabetes patients prefer non-invasive). Gate 2 — proof of concept (TRL 3, 80% accuracy). Gate 3 — clinical prototype (TRL 6, 95% accuracy, FDA pre-submission). Gate 4 — clinical trials (TRL 8, 500 patients). Launch — FDA clearance, commercialization. Total timeline: 4 years, $15M investment.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Intellectual Property Strategy',
+        duration: '15 min',
+        content: `
+          <h4>Patents</h4>
+          <p><span class="key-term">Utility patents</span> protect functional inventions (20 years). <span class="key-term">Design patents</span> protect ornamental design (15 years). Requirements: novel, non-obvious, useful. File provisional patent first (12-month window to file full). Cost: $10K-$50K+ per patent.</p>
+          <h4>Trade Secrets</h4>
+          <p>Protects formulas, processes, algorithms without public disclosure. Requirements: actual secrecy, economic value, reasonable protection efforts (NDAs, access controls, encryption). Lasts indefinitely. Examples: Coca-Cola formula, Google's search algorithm.</p>
+          <h4>Open Source Strategy</h4>
+          <ul>
+            <li><strong>Core:</strong> Keep proprietary, build moat</li>
+            <li><strong>Commodity:</strong> Open source to attract community, reduce maintenance</li>
+            <li><strong>Ecosystem:</strong> Open platform, monetize services/enterprise features</li>
+          </ul>
+          <div class="case-study">
+            <h4>📋 Case Study: Patent Portfolio Defense</h4>
+            <p>A robotics company has 12 patents but discovers a competitor infringing on 3 core ones. Options: Cease & desist letter ($5K), licensing negotiation (potential $2M/year royalty), litigation ($500K-$2M cost, 2-3 years). Decision: Start with licensing discussion — competitor agrees to $1.5M/year license + cross-license on 2 of their patents. Both avoid litigation, create partnership.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Innovation Management',
+        duration: '15 min',
+        content: `
+          <h4>Innovation Portfolio</h4>
+          <p>Balance three horizons: <strong>H1</strong> (core business improvements, 70% resources), <strong>H2</strong> (adjacent opportunities, 20%), <strong>H3</strong> (transformational bets, 10%). Diversification reduces risk while maintaining growth.</p>
+          <h4>Metrics</h4>
+          <ul>
+            <li><strong>R&D intensity:</strong> R&D spend / Revenue (varies by industry: pharma 15-20%, software 10-15%)</li>
+            <li><strong>Time to market:</strong> Idea to commercial launch</li>
+            <li><strong>Innovation success rate:</strong> % of projects reaching market</li>
+            <li><strong>New product revenue:</strong> % of revenue from products launched in last 3 years</li>
+          </ul>
+          <h4>Building Innovation Culture</h4>
+          <p>Psychological safety: employees must feel safe to experiment and fail. "Fail fast, learn faster." 20% time / hackathons for exploration. Celebrate learnings from failed experiments. Cross-functional teams break silos.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Corporate Innovation Lab</h4>
+            <p>A bank creates an internal innovation lab with $5M budget, 20-person team, and 6-month project cycles. Projects: AI fraud detection (launched, $10M savings), blockchain payments (pivoted to partnership), voice banking (killed after low adoption). Portfolio approach: 1 win, 1 pivot, 1 failure = acceptable outcome. ROI: 3x on launched projects.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'The R&D stage before full production is called:', options:['Discovery','Scale-up','Commercialization','Termination'], a:0, explain:'Discovery/ideation is the earliest phase of the R&D process.'},
+      {q:'A utility patent typically lasts:', options:['10 years','20 years','50 years','Forever'], a:1, explain:'Utility patents expire 20 years from filing date (with maintenance fees).'},
+      {q:'Agile methodology uses:', options:['Long planning cycles','Iterative development','No customer feedback','Fixed requirements'], a:1, explain:'Agile delivers value in short iterations with continuous customer feedback.'},
+      {q:'A prototype is used to:', options:['Replace final product','Test and validate concepts','Sell immediately','Avoid testing'], a:1, explain:'Prototypes reduce risk by validating assumptions before full investment.'},
+      {q:'TRL 9 means:', options:['Basic principles observed','System proven in operational environment','Proof of concept','Laboratory testing'], a:1, explain:'TRL 9 = fully mature technology deployed and validated in real operations.'},
+      {q:'Trade secrets require:', options:['Public filing','Secrecy and protection efforts','Government approval','Annual renewal fees'], a:1, explain:'Trade secrets are protected by maintaining confidentiality, not by registration.'},
+      {q:'A provisional patent provides:', options:['Full protection forever','12-month filing window','International coverage','Automatic approval'], a:1, explain:'Provisional patents secure a filing date while you prepare the full application.'},
+      {q:'Innovation portfolio balances:', options:['Only core products','Core, adjacent, transformational','Only high-risk bets','Only safe projects'], a:1, explain:'The three-horizon model diversifies risk across maturity levels.'},
+      {q:'R&D intensity measures:', options:['Revenue growth','R&D spend / Revenue','Employee count','Market share'], a:1, explain:'It shows how much a company invests in innovation relative to its size.'},
+      {q:'Psychological safety enables:', options:['Fear of failure','Experimentation and learning','Rigidity','Slow decisions'], a:1, explain:'Teams perform better when they feel safe to take risks and share ideas.'}
+    ],
+    assignment:'You are the R&D Director for a consumer electronics company. Write a 400-600 word product development proposal for a smart home security device. Include: (1) market opportunity analysis (TAM/SAM/SOM, competitive landscape, target persona), (2) technical concept and key differentiators (AI features, hardware specs, integration capabilities), (3) development roadmap with TRL milestones and gates (12-month timeline), (4) IP strategy (patents, trade secrets, open source components), (5) resource requirements (team, budget, partnerships), and (6) success metrics and go-to-market strategy.'
   },
-  { id:'qa', name:'Quality Assurance', icon:'✅', desc:'Testing protocols, standards compliance, defect tracking, continuous improvement, and audit processes.',
-    quiz:[
-      {q:'QA focuses on:', options:['Only finding bugs','Preventing defects through process','Writing code','Deploying software'], a:1},
-      {q:'A test case includes:', options:['Only expected result','Preconditions, steps, expected result','Only test data','Only bug reports'], a:1},
-      {q:'Regression testing ensures:', options:['New features work','Existing features still work after changes','UI looks good','Performance is fast'], a:1},
-      {q:'ISO 9001 is related to:', options:['Environmental management','Quality management systems','Information security','Occupational health'], a:1},
-      {q:'A bug severity of "Critical" means:', options:['Minor UI issue','System crash or data loss','Spelling mistake','Slow loading'], a:1}
+  {
+    id:'qa', name:'Quality Assurance', icon:'✅',
+    desc:'Testing protocols, standards compliance, defect tracking, continuous improvement, and audit processes.',
+    objectives: [
+      'Design comprehensive test strategies for software and products',
+      'Implement automated testing and CI/CD pipelines',
+      'Track, prioritize, and resolve defects systematically',
+      'Ensure compliance with ISO 9001 and industry standards',
+      'Drive continuous improvement through metrics and feedback'
     ],
-    assignment:'Write a 300-500 word QA test plan for a new e-commerce checkout feature. Include: (1) test scope and objectives, (2) test types to be performed (functional, usability, security, performance), (3) entry and exit criteria, (4) defect severity classification, and (5) testing schedule and resource requirements.'
+    lessons: [
+      {
+        title: 'Testing Strategy & Types',
+        duration: '20 min',
+        content: `
+          <h4>Test Pyramid</h4>
+          <p>Foundation: <strong>Unit tests</strong> (fast, isolated, many). Middle: <strong>Integration tests</strong> (component interactions). Top: <strong>E2E tests</strong> (slow, few, user flows). 70% unit, 20% integration, 10% E2E is a healthy balance.</p>
+          <h4>Testing Types</h4>
+          <ul>
+            <li><strong>Functional:</strong> Does it do what it should? (smoke, regression, sanity)</li>
+            <li><strong>Non-functional:</strong> Performance, security, usability, accessibility</li>
+            <li><strong>Exploratory:</strong> Unscripted testing by experienced testers</li>
+            <li><strong>Acceptance:</strong> Does it meet business requirements? (UAT)</li>
+          </ul>
+          <h4>Test Case Design</h4>
+          <p>Each test case needs: ID, preconditions, steps, expected result, actual result, status. Use <span class="key-term">equivalence partitioning</span> and <span class="key-term">boundary value analysis</span> to minimize redundant tests while maximizing coverage.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Test Automation ROI</h4>
+            <p>A team spends 40 hours/week on manual regression testing. Automation project: Selenium for UI, Jest for unit, Postman for API. Initial investment: 3 months, 2 engineers. Result: Regression suite runs in 2 hours (vs. 40 manual), catches 30% more bugs pre-release, team focuses on exploratory testing and new features. Break-even at 6 months.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Defect Management & CI/CD',
+        duration: '20 min',
+        content: `
+          <h4>Defect Lifecycle</h4>
+          <p>New → Assigned → In Progress → Fixed → Ready for Test → Verified → Closed. If not fixed: Reopened. If won't fix: Rejected/Deferred with justification.</p>
+          <h4>Severity vs. Priority</h4>
+          <ul>
+            <li><strong>Severity:</strong> Impact on system (Critical, Major, Minor, Cosmetic)</li>
+            <li><strong>Priority:</strong> Business urgency (P1 fix now, P2 next release, P3 backlog)</li>
+            <li>A cosmetic bug in checkout could be P1 (business impact) despite low severity</li>
+          </ul>
+          <h4>CI/CD Pipeline</h4>
+          <p>Continuous Integration: developers merge code frequently, automated build and test on every commit. Continuous Deployment: passing builds deploy automatically to production. Gates: code review, test coverage >80%, security scan, performance benchmark.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Zero-Downtime Deployment</h4>
+            <p>An e-commerce site deploys 10x/day with blue-green deployment. Blue environment serves traffic while green gets new release. Automated smoke tests validate green. Switch traffic (5% canary, then 100%). Rollback to blue if error rate >0.1%. Result: 99.99% uptime, deployment risk minimized, 50% faster feature delivery.</p>
+          </div>
+        `
+      },
+      {
+        title: 'Quality Standards & Audits',
+        duration: '15 min',
+        content: `
+          <h4>ISO 9001 Quality Management</h4>
+          <p>Principles: customer focus, leadership, engagement, process approach, improvement, evidence-based decisions, relationship management. Requires documented quality policy, objectives, processes, and continuous improvement.</p>
+          <h4>Audit Types</h4>
+          <ul>
+            <li><strong>Internal:</strong> Self-assessment, identify gaps before external audit</li>
+            <li><strong>External:</strong> Certification body verifies compliance</li>
+            <li><strong>Supplier:</strong> Verify vendor quality systems</li>
+            <li><strong>Product:</strong> Test specific products against specifications</li>
+          </ul>
+          <h4>Metrics Dashboard</h4>
+          <p>Track: defect density (defects per KLOC), test coverage %, escape rate (defects found by customers), MTTD (Mean Time To Detect), MTTR (Mean Time To Resolve), customer-reported issues.</p>
+          <div class="case-study">
+            <h4>📋 Case Study: Quality Transformation</h4>
+            <p>A healthcare software company has 200 customer-reported bugs/year and fails an FDA audit. Transformation: Implement risk-based testing, add automated regression (5,000 tests), shift-left (testers in design meetings), establish CAPA (Corrective and Preventive Action) process. Result: Customer bugs drop to 15/year, pass FDA audit, release cycle shortens from 6 months to 2 weeks.</p>
+          </div>
+        `
+      }
+    ],
+    quiz:[
+      {q:'QA focuses on:', options:['Only finding bugs','Preventing defects through process','Writing code','Deploying software'], a:1, explain:'Quality Assurance builds quality into the process; Quality Control finds defects in the product.'},
+      {q:'A test case includes:', options:['Only expected result','Preconditions, steps, expected result','Only test data','Only bug reports'], a:1, explain:'Complete test cases specify setup, actions, and verification criteria.'},
+      {q:'Regression testing ensures:', options:['New features work','Existing features still work after changes','UI looks good','Performance is fast'], a:1, explain:'Regression prevents unintended side effects from code changes.'},
+      {q:'ISO 9001 relates to:', options:['Environmental management','Quality management systems','Information security','Occupational health'], a:1, explain:'ISO 9001 is the international standard for quality management systems.'},
+      {q:'Critical bug severity means:', options:['Minor UI issue','System crash or data loss','Spelling mistake','Slow loading'], a:1, explain:'Critical severity blocks core functionality or causes data corruption.'},
+      {q:'The test pyramid base is:', options:['E2E tests','Integration tests','Unit tests','Manual tests'], a:2, explain:'Unit tests form the foundation — fast, cheap, and numerous.'},
+      {q:'CI stands for:', options:['Code Integration','Continuous Integration','Customer Issue','Critical Inspection'], a:1, explain:'CI automates build and test on every code commit.'},
+      {q:'Defect severity differs from priority because:', options:['They are the same','Severity = impact, Priority = urgency','Severity is always higher','Priority is always higher'], a:1, explain:'A low-severity cosmetic issue can be high-priority if it affects brand image.'},
+      {q:'Blue-green deployment:', options:['Deletes old version','Runs two environments for zero-downtime','Only works for databases','Requires manual testing only'], a:1, explain:'Blue-green enables instant rollback by maintaining parallel environments.'},
+      {q:'Shift-left testing means:', options:['Testing at the end','Testing earlier in the lifecycle','Only unit tests','No testing needed'], a:1, explain:'Finding defects early reduces cost and accelerates delivery.'}
+    ],
+    assignment:'You are the QA Lead for a fintech mobile app with 2M users. Write a 400-600 word comprehensive test strategy document. Include: (1) testing scope and objectives (features in scope, out of scope, risk areas), (2) test types and approach (unit, integration, API, UI, security, performance, accessibility), (3) test environment requirements (devices, OS versions, networks, data sets), (4) automation strategy (tools, coverage targets, CI/CD integration), (5) defect management process (severity/priority definitions, SLA, escalation), and (6) release criteria (must-pass tests, performance benchmarks, security scan requirements, sign-off process).'
   }
 ];
 
@@ -396,10 +1588,86 @@ if (!dept) {
   document.getElementById('deptDesc').textContent = dept.desc;
   document.getElementById('quizHeading').textContent = `${dept.quiz.length} Questions`;
   document.getElementById('assignmentText').textContent = dept.assignment;
+  renderObjectives();
+  renderLessons();
   renderQuiz();
+  updateProgressBar();
   if (progress.assignmentScore !== undefined) {
     document.getElementById('assignmentInput').value = progress.assignmentText || '';
     showStoredAssignmentResult();
+  }
+  checkCompletion();
+}
+
+function renderObjectives() {
+  const list = document.getElementById('objectivesList');
+  list.innerHTML = dept.objectives.map(obj => `<li>${obj}</li>`).join('');
+}
+
+function renderLessons() {
+  const container = document.getElementById('lessonsContent');
+  container.innerHTML = dept.lessons.map((lesson, i) => {
+    const isDone = progress.lessonsCompleted && progress.lessonsCompleted[i];
+    return `
+    <div class="lesson-card ${isDone ? 'expanded' : ''}" id="lesson-${i}">
+      <div class="lesson-header" onclick="toggleLesson(${i})">
+        <div class="lesson-number ${isDone ? 'done' : ''}">${isDone ? '✓' : i + 1}</div>
+        <div class="lesson-title">${lesson.title}</div>
+        <div class="lesson-duration">⏱️ ${lesson.duration}</div>
+      </div>
+      <div class="lesson-content ${isDone ? 'active' : ''}" id="lesson-content-${i}">
+        ${lesson.content}
+        <button class="btn btn-primary" style="margin-top:16px;" onclick="markLessonComplete(${i}); event.stopPropagation();">
+          ${isDone ? '✓ Completed' : 'Mark as Complete'}
+        </button>
+      </div>
+    </div>
+  `;
+  }).join('');
+}
+
+function toggleLesson(i) {
+  const content = document.getElementById(`lesson-content-${i}`);
+  content.classList.toggle('active');
+  const card = document.getElementById(`lesson-${i}`);
+  card.classList.toggle('expanded');
+}
+
+function markLessonComplete(i) {
+  if (!progress.lessonsCompleted) progress.lessonsCompleted = [];
+  progress.lessonsCompleted[i] = true;
+  saveProgress(progress);
+  renderLessons();
+  updateProgressBar();
+  checkCompletion();
+}
+
+function updateProgressBar() {
+  const lessonsDone = (progress.lessonsCompleted || []).filter(Boolean).length;
+  const quizDone = progress.quizCompletedAt ? 1 : 0;
+  const assignDone = progress.assignmentSubmittedAt ? 1 : 0;
+  const total = dept.lessons.length + 2;
+  const completed = lessonsDone + quizDone + assignDone;
+  const pct = Math.round((completed / total) * 100);
+
+  const bar = document.getElementById('progressBar');
+  const fill = document.getElementById('progressFill');
+  const text = document.getElementById('progressText');
+
+  bar.style.display = 'block';
+  fill.style.width = pct + '%';
+  text.textContent = `${pct}% Complete (${completed}/${total})`;
+}
+
+function checkCompletion() {
+  const lessonsDone = (progress.lessonsCompleted || []).filter(Boolean).length === dept.lessons.length;
+  const quizDone = !!progress.quizCompletedAt;
+  const assignDone = !!progress.assignmentSubmittedAt;
+
+  if (lessonsDone && quizDone && assignDone) {
+    document.getElementById('completionSection').style.display = 'block';
+    document.getElementById('completionDept').textContent = dept.name;
+    document.getElementById('completionSection').scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -450,7 +1718,7 @@ function submitQuiz() {
     const fb = document.getElementById(`qqf-${i}`);
     fb.classList.add('show');
     fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'wrong');
-    fb.innerHTML = isCorrect ? '✓ Correct!' : `✗ Incorrect. Correct answer: <strong>${q.options[q.a]}</strong>`;
+    fb.innerHTML = isCorrect ? `✓ Correct! ${q.explain || ''}` : `✗ Incorrect. ${q.explain || `Correct answer: <strong>${q.options[q.a]}</strong>`}`;
   });
   const pct = Math.round((correct / dept.quiz.length) * 100);
   const res = document.getElementById('quizResult');
@@ -465,6 +1733,8 @@ function submitQuiz() {
   progress.quizAnswers = answers;
   progress.quizCompletedAt = new Date().toISOString();
   saveProgress(progress);
+  updateProgressBar();
+  checkCompletion();
 }
 
 function submitAssignment() {
@@ -482,42 +1752,44 @@ function submitAssignment() {
   let score = 0;
   let rubric = [];
 
-  if (wordCount >= 400) { score += 20; rubric.push('<strong>Length (20/20):</strong> Comprehensive and well-developed.'); }
-  else if (wordCount >= 300) { score += 15; rubric.push('<strong>Length (15/20):</strong> Adequate, meets minimum.'); }
-  else if (wordCount >= 200) { score += 10; rubric.push('<strong>Length (10/20):</strong> Brief, could expand.'); }
-  else { score += 5; rubric.push('<strong>Length (5/20):</strong> Too short, lacks depth.'); }
+  if (wordCount >= 500) { score += 20; rubric.push('<strong>Length (20/20):</strong> Comprehensive and well-developed.'); }
+  else if (wordCount >= 400) { score += 17; rubric.push('<strong>Length (17/20):</strong> Good depth, meets requirements.'); }
+  else if (wordCount >= 300) { score += 13; rubric.push('<strong>Length (13/20):</strong> Adequate, could expand further.'); }
+  else if (wordCount >= 200) { score += 8; rubric.push('<strong>Length (8/20):</strong> Brief, lacks sufficient detail.'); }
+  else { score += 4; rubric.push('<strong>Length (4/20):</strong> Too short, significant expansion needed.'); }
 
   const hasNumbers = /\(\s*\d+\s*\)/.test(input) || /\d+\./.test(input) || /\d+\)/.test(input);
-  const hasSections = input.split(/\n/).filter(l => l.trim().length > 0).length >= 4;
+  const hasSections = input.split(/\n/).filter(l => l.trim().length > 0).length >= 5;
   if (hasNumbers && hasSections) { score += 20; rubric.push('<strong>Structure (20/20):</strong> Well-organized with clear numbered sections.'); }
-  else if (hasSections) { score += 12; rubric.push('<strong>Structure (12/20):</strong> Some organization but missing clear numbering.'); }
+  else if (hasSections) { score += 13; rubric.push('<strong>Structure (13/20):</strong> Some organization but missing clear numbering.'); }
   else { score += 5; rubric.push('<strong>Structure (5/20):</strong> Poorly organized, hard to follow.'); }
 
   const contentChecks = {
-    hr: ['remote','flexibility','productivity','communication','performance','security'],
-    finance: ['salary','benefit','expense','budget','training','contingency','personnel'],
-    admin: ['onboarding','documentation','workspace','mentor','compliance','schedule'],
-    sales: ['value','case study','social proof','objection','call-to-action','demo'],
-    marketing: ['audience','KPI','channel','content','budget','social','email'],
-    ops: ['defect','root cause','process','quality','timeline','ROI','control'],
-    it: ['password','MFA','policy','incident','training','security','data'],
-    cs: ['de-escalation','listening','empathy','follow-up','escalate','angry'],
-    procurement: ['vendor','evaluation','criteria','risk','negotiation','score'],
-    legal: ['consent','privacy','breach','notification','rights','compliance'],
-    rnd: ['prototype','milestone','timeline','budget','market','features','metrics'],
-    qa: ['test','functional','defect','criteria','schedule','security','performance']
+    hr: ['remote','flexibility','productivity','communication','performance','security','policy','eligibility'],
+    finance: ['salary','benefit','expense','budget','training','contingency','personnel','revenue'],
+    admin: ['onboarding','documentation','workspace','move','transition','logistics','schedule'],
+    sales: ['pipeline','qualification','objection','demo','negotiation','CRM','forecast','close'],
+    marketing: ['audience','KPI','channel','content','budget','social','email','launch','campaign'],
+    ops: ['defect','waste','root cause','process','quality','lean','timeline','improvement','5S'],
+    it: ['security','MFA','policy','incident','training','risk','network','backup','segmentation'],
+    cs: ['satisfaction','FCR','de-escalation','listening','empathy','follow-up','escalate','metric'],
+    procurement: ['supplier','vendor','negotiation','TCO','contract','sourcing','risk','sustainability'],
+    legal: ['compliance','privacy','contract','GDPR','audit','governance','data','breach','policy'],
+    rnd: ['prototype','milestone','patent','timeline','budget','market','TRL','innovation','IP'],
+    qa: ['test','automation','defect','coverage','regression','CI/CD','criteria','severity','security']
   };
   const checks = contentChecks[dept.id] || [];
   const matched = checks.filter(kw => input.toLowerCase().includes(kw.toLowerCase())).length;
   const coveragePct = Math.round((matched / checks.length) * 100);
-  if (coveragePct >= 80) { score += 30; rubric.push(`<strong>Content (30/30):</strong> Excellent — ${matched}/${checks.length} key topics.`); }
-  else if (coveragePct >= 50) { score += 20; rubric.push(`<strong>Content (20/30):</strong> Good — ${matched}/${checks.length} key topics.`); }
-  else if (coveragePct >= 25) { score += 10; rubric.push(`<strong>Content (10/30):</strong> Fair — ${matched}/${checks.length} key topics.`); }
-  else { score += 5; rubric.push(`<strong>Content (5/30):</strong> Weak — ${matched}/${checks.length} key topics.`); }
+  if (coveragePct >= 80) { score += 30; rubric.push(`<strong>Content (30/30):</strong> Excellent — ${matched}/${checks.length} key topics covered.`); }
+  else if (coveragePct >= 60) { score += 24; rubric.push(`<strong>Content (24/30):</strong> Very good — ${matched}/${checks.length} key topics covered.`); }
+  else if (coveragePct >= 40) { score += 18; rubric.push(`<strong>Content (18/30):</strong> Good — ${matched}/${checks.length} key topics covered.`); }
+  else if (coveragePct >= 20) { score += 10; rubric.push(`<strong>Content (10/30):</strong> Fair — ${matched}/${checks.length} key topics covered.`); }
+  else { score += 5; rubric.push(`<strong>Content (5/30):</strong> Weak — ${matched}/${checks.length} key topics covered.`); }
 
   const sentences = input.split(/[.!?]+/).filter(s => s.trim().length > 0);
   const avgLen = sentences.length ? sentences.map(s => s.trim().split(/\s+/).length).reduce((a,b) => a+b, 0) / sentences.length : 0;
-  const hasProf = /\b(therefore|however|furthermore|additionally|consequently|moreover|in conclusion|specifically|recommended|implementation|strategy|objective)\b/i.test(input);
+  const hasProf = /\b(therefore|however|furthermore|additionally|consequently|moreover|in conclusion|specifically|recommended|implementation|strategy|objective|analysis|framework|methodology)\b/i.test(input);
   if (avgLen >= 12 && avgLen <= 25 && hasProf) { score += 20; rubric.push('<strong>Clarity & Tone (20/20):</strong> Professional, clear, well-articulated.'); }
   else if (hasProf || (avgLen >= 8 && avgLen <= 30)) { score += 14; rubric.push('<strong>Clarity & Tone (14/20):</strong> Generally clear with acceptable tone.'); }
   else { score += 7; rubric.push('<strong>Clarity & Tone (7/20):</strong> Informal or unclear in places.'); }
@@ -537,7 +1809,7 @@ function submitAssignment() {
   else if (score >= 55) feedback.push('Adequate. Expand points, use clearer structure, and add more relevant terminology.');
   else feedback.push('Needs significant improvement. Review requirements and resubmit with more detailed, structured content.');
 
-  if (wordCount < 250) feedback.push('Response is shorter than recommended. Aim for 300-500 words.');
+  if (wordCount < 300) feedback.push('Response is shorter than recommended. Aim for 400-600 words.');
   if (!hasNumbers) feedback.push('Consider using numbered points for better readability.');
   if (coveragePct < 50) feedback.push('Response misses several key topics. Review the prompt carefully.');
 
@@ -558,11 +1830,13 @@ function submitAssignment() {
   progress.assignmentFeedback = feedback;
   progress.assignmentSubmittedAt = new Date().toISOString();
   saveProgress(progress);
+  updateProgressBar();
+  checkCompletion();
 }
 
 function showStoredAssignmentResult() {
   const resultArea = document.getElementById('assignmentResult');
-  if (!progress.assignmentScore !== undefined && progress.assignmentRubric) {
+  if (progress.assignmentScore !== undefined && progress.assignmentRubric) {
     const badgeClass = progress.assignmentScore >= 80 ? 'excellent' : progress.assignmentScore >= 60 ? 'good' : progress.assignmentScore >= 50 ? 'average' : 'poor';
     resultArea.innerHTML = `
       <div class="ai-result">
