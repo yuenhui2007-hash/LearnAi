@@ -30,170 +30,243 @@
           title: "From Prompts to Processes",
           content: `<h3>Turning One-Off Prompts into Repeatable Workflows</h3>
           <p>Most people use AI for single tasks. The real power comes from chaining prompts into end-to-end processes. This segment shows you how.</p>
-          <h3>The Automation Spectrum</h3>
-          <ol>
-            <li><strong>Ad-hoc Prompt:</strong> "Write a thank-you email to Sarah." One input, one output, no memory.</li>
-            <li><strong>Templated Prompt:</strong> "Write a thank-you email to [NAME] for [REASON]." Reusable but still manual.</li>
-            <li><strong>Semi-Automated Workflow:</strong> Trigger → AI action → Human review → Send. Example: draft email, you approve, then it sends.</li>
-            <li><strong>Fully Automated Process:</strong> Trigger → AI action → Send → Log → Notify. No human in the loop.</li>
-          </ol>
-          <h3>Case Study: The Agency That Scaled</h3>
-          <p>BrightWave Media, a 20-person marketing agency, used to spend 15 hours weekly on client reporting. Their transformation:</p>
+
+          <h3>Case Study: How TerraForma Saved 15 Hours/Week</h3>
+          <p>TerraForma, a 12-person sustainability consultancy, was drowning in manual reporting. Every Friday, three team members spent 5 hours each compiling client updates from spreadsheets, emails, and meeting notes into formatted PDFs. After implementing a semi-automated workflow, the process now takes 30 minutes of human review:</p>
           <ul>
-            <li><strong>Week 1:</strong> Wrote a perfect ad-hoc prompt for report summaries. Saved 1 hour.</li>
-            <li><strong>Week 2:</strong> Turned it into a templated prompt with variables. Saved 3 more hours.</li>
-            <li><strong>Week 3:</strong> Built a semi-automated workflow. The Avatar drafted reports; account managers reviewed. Saved 8 hours.</li>
-            <li><strong>Month 2:</strong> Removed the human gate after 15 flawless runs. Fully automated. Saved all 15 hours.</li>
+            <li><strong>Trigger:</strong> Friday 14:00 — calendar event fires.</li>
+            <li><strong>Step 1:</strong> Agent pulls data from Google Sheets (project hours, milestones, budgets).</li>
+            <li><strong>Step 2:</strong> Agent scans email threads for client communications from that week.</li>
+            <li><strong>Step 3:</strong> Agent drafts a personalised update for each of 8 clients using a branded template.</li>
+            <li><strong>Step 4:</strong> Drafts land in a "Review Queue" folder. The account lead checks, tweaks tone, clicks approve.</li>
+            <li><strong>Step 5:</strong> Agent converts to PDF, attaches logos, and emails each client by 17:00.</li>
           </ul>
-          <p>Those 15 hours were reinvested into client strategy. Revenue grew 22% in one quarter.</p>
-          <h3>Framework: The Ladder of Automation</h3>
-          <p>Never skip steps. Each rung builds trust and data:</p>
+          <p><strong>Result:</strong> 15 hours reclaimed weekly. Zero missed deadlines. Client satisfaction scores rose 22% because updates became consistent and predictable.</p>
+
+          <h3>The Automation Spectrum Framework</h3>
+          <p>Not every task should be fully automated. Use this framework to decide where on the spectrum your workflow belongs:</p>
           <ol>
-            <li><strong>Rung 1 – Manual:</strong> Craft the perfect prompt. Test 10+ times.</li>
-            <li><strong>Rung 2 – Template:</strong> Identify variables. Create a reusable template.</li>
-            <li><strong>Rung 3 – Semi-Auto:</strong> Add triggers and approval gates.</li>
-            <li><strong>Rung 4 – Full Auto:</strong> Remove the gate only after 10+ consecutive successes.</li>
-            <li><strong>Rung 5 – Optimise:</strong> Add error handling, logging, and analytics.</li>
+            <li><strong>Ad-hoc Prompt (Level 0):</strong> "Write a thank-you email to Sarah." One input, one output, no memory. Human does everything except the draft.</li>
+            <li><strong>Templated Prompt (Level 1):</strong> "Write a thank-you email to [NAME] for [REASON]." Reusable but still manual. Good for tasks done 1–2×/month.</li>
+            <li><strong>Semi-Automated Workflow (Level 2):</strong> Trigger → AI action → Human review → Send. Example: draft email, you approve, then it sends. Best for tasks with high stakes or external visibility.</li>
+            <li><strong>Fully Automated Process (Level 3):</strong> Trigger → AI action → Send → Log → Notify. No human in the loop. Reserved for low-risk, high-volume, proven tasks.</li>
           </ol>
-          <p><strong>Golden Rule:</strong> Start semi-automated. Only remove the human gate after 10 consecutive flawless runs.</p>
-          <h3>Step-by-Step: Building Your First Workflow</h3>
+          <p><em>Rule of thumb:</em> Start at Level 2. Only graduate to Level 3 after 10 consecutive flawless runs with no meaningful edits.</p>
+
+          <h3>The 5-Stage Prompt-to-Process Pipeline</h3>
+          <p>Before you open any workflow builder, work through these stages on paper:</p>
+          <ol>
+            <li><strong>Isolate:</strong> Pick ONE repetitive task. Criteria: &gt;3×/week, &gt;15 min each time, low creative variance.</li>
+            <li><strong>Perfect:</strong> Write the prompt manually 5–10 times. Refine until output is 90%+ correct without edits. Document what "correct" means.</li>
+            <li><strong>Template:</strong> Identify variables. Replace names, dates, amounts with placeholders like <code>{{ client.name }}</code> or <code>{{ report.period }}</code>.</li>
+            <li><strong>Connect:</strong> Where do inputs live? Calendar, CRM, spreadsheet, email? Map data sources to variables.</li>
+            <li><strong>Automate:</strong> Build the workflow. Add triggers, actions, and (initially) a human approval gate.</li>
+          </ol>
+
+          <h3>Real Examples from Zetrix Users</h3>
+          <table style="width:100%;border-collapse:collapse;margin:1em 0;">
+            <tr style="background:var(--surface);"><th style="padding:8px;border:1px solid var(--border);">Industry</th><th style="padding:8px;border:1px solid var(--border);">Task</th><th style="padding:8px;border:1px solid var(--border);">Automation Level</th><th style="padding:8px;border:1px solid var(--border);">Time Saved</th></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Legal</td><td style="padding:8px;border:1px solid var(--border);">Contract first-pass review</td><td style="padding:8px;border:1px solid var(--border);">Level 2</td><td style="padding:8px;border:1px solid var(--border);">8 hrs/week</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">E-commerce</td><td style="padding:8px;border:1px solid var(--border);">Abandoned-cart personalised emails</td><td style="padding:8px;border:1px solid var(--border);">Level 3</td><td style="padding:8px;border:1px solid var(--border);">12 hrs/week</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Consulting</td><td style="padding:8px;border:1px solid var(--border);">Weekly client status reports</td><td style="padding:8px;border:1px solid var(--border);">Level 2 → 3</td><td style="padding:8px;border:1px solid var(--border);">15 hrs/week</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Recruitment</td><td style="padding:8px;border:1px solid var(--border);">CV screening against job description</td><td style="padding:8px;border:1px solid var(--border);">Level 2</td><td style="padding:8px;border:1px solid var(--border);">10 hrs/week</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Finance</td><td style="padding:8px;border:1px solid var(--border);">Expense report categorisation</td><td style="padding:8px;border:1px solid var(--border);">Level 3</td><td style="padding:8px;border:1px solid var(--border);">6 hrs/week</td></tr>
+          </table>
+
+          <h3>Step-by-Step: Building Your First Workflow in Zetrix</h3>
           <ol>
             <li>Identify a repetitive task you do at least 3 times per week. Example: sending follow-up emails after meetings.</li>
             <li>Write the perfect prompt for this task manually. Refine it until the output is 90% correct.</li>
             <li>Go to <strong>Agent Studio &gt; Workflows</strong> and click <strong>Create Workflow</strong>.</li>
             <li>Define the <strong>trigger</strong>. Options: calendar event ends, new email arrives, form submission, scheduled time, or manual button.</li>
-            <li>Add an <strong>AI action</strong>. Paste your refined prompt. Use variables like {{ attendee.name }} and {{ meeting.topic }}.</li>
+            <li>Add an <strong>AI action</strong>. Paste your refined prompt. Use variables like <code>{{ attendee.name }}</code> and <code>{{ meeting.topic }}</code>.</li>
             <li>Add a <strong>human approval gate</strong> (recommended for early workflows). The Avatar drafts the output; you click approve or edit.</li>
             <li>Add a <strong>send action</strong>. Connect Gmail or your email provider. Set the recipient dynamically.</li>
             <li>Add a <strong>log action</strong>. Save a record to a Google Sheet or Notion database for tracking.</li>
             <li>Save and activate. Test with a real trigger.</li>
-          </ol>`,
+          </ol>
+          <p><strong>Golden Rule:</strong> Start semi-automated. Only remove the human gate after 10 consecutive flawless runs.</p>
+
+          <h3>Anti-Patterns to Avoid</h3>
+          <ul>
+            <li><strong>Automation for automation's sake:</strong> If a task takes 2 minutes and happens once a month, don't automate it. The setup cost exceeds the benefit.</li>
+            <li><strong>Skipping the manual phase:</strong> Never build a workflow for a prompt you haven't manually perfected. You'll automate garbage at scale.</li>
+            <li><strong>Removing approval too early:</strong> One embarrassing auto-sent email to a client destroys trust. Be patient.</li>
+            <li><strong>No logging:</strong> If you can't see what your automation did, you can't debug it. Always log.</li>
+          </ul>`,
           quiz: [
-            { q: "What is the recommended starting point for automation?", options: ["Fully automated", "Semi-automated with human approval", "Manual only", "AI-only with no oversight"], correct: 1 },
-            { q: "How many flawless runs are suggested before removing a human approval gate?", options: ["3", "5", "10", "20"], correct: 2 },
-            { q: "In the Automation Spectrum, what comes after Templated Prompt?", options: ["Ad-hoc Prompt", "Semi-Automated Workflow", "Fully Automated Process", "Manual Process"], correct: 1 },
-            { q: "What percentage of output correctness should you aim for before templating a prompt?", options: ["50%", "70%", "90%", "100%"], correct: 2 }
+            { q: "According to the TerraForma case study, how many hours per week did they save after automation?", options: ["5 hours", "10 hours", "15 hours", "20 hours"], correct: 2 },
+            { q: "Which level of the Automation Spectrum includes a human approval gate?", options: ["Level 0", "Level 1", "Level 2", "Level 3"], correct: 2 },
+            { q: "How many consecutive flawless runs are recommended before graduating from Level 2 to Level 3?", options: ["3", "5", "10", "20"], correct: 2 },
+            { q: "What is the first stage of the 5-Stage Prompt-to-Process Pipeline?", options: ["Perfect", "Isolate", "Template", "Connect"], correct: 1 },
+            { q: "Which of these is an anti-pattern to avoid?", options: ["Logging every action", "Starting semi-automated", "Removing approval too early", "Using templated prompts"], correct: 2 }
           ],
           passThreshold: 80
         },
         {
           title: "Email Automation Mastery",
           content: `<h3>Let Your Avatar Handle Your Inbox</h3>
-          <p>Email is where productivity dies. Reclaim your time with intelligent email automation.</p>
+          <p>Email is where productivity dies. The average knowledge worker checks email 15 times per day and spends 2.6 hours daily in their inbox. Reclaim your time with intelligent email automation.</p>
+
+          <h3>Case Study: Meridian Legal's Inbox Zero Transformation</h3>
+          <p>Meridian Legal, a 25-lawyer firm, received 3,000+ emails weekly. Junior associates spent 4 hours daily triaging, routing, and drafting routine replies. After deploying three specialised email agents:</p>
+          <ul>
+            <li><strong>Inbox Triage Agent:</strong> Categorises every incoming email within 30 seconds. Urgent matters ping the relevant lawyer on Slack. Newsletters are batch-summarised at 17:00.</li>
+            <li><strong>Client Intake Agent:</strong> Auto-replies to new enquiries with a tailored response based on practice area (family, corporate, property). Books a consultation via Calendly link.</li>
+            <li><strong>Follow-Up Agent:</strong> Every morning at 08:30, scans for emails unanswered &gt;48 hours. Drafts context-aware follow-ups and places them in a "Review & Send" folder.</li>
+          </ul>
+          <p><strong>Result:</strong> Associates reclaimed 3.5 hours daily. Client response time dropped from 26 hours to 3 hours. The firm onboarded 40% more clients without hiring additional staff.</p>
+
+          <h3>The Email Automation Framework: TRIAGE → ACT → TRACK</h3>
+          <ol>
+            <li><strong>TRIAGE:</strong> Classify every incoming email by urgency, sender importance, and action required. Think of it as an emergency room for your inbox.</li>
+            <li><strong>ACT:</strong> Draft replies, create tasks, schedule meetings, or delegate. The Avatar does the heavy lifting; you approve.</li>
+            <li><strong>TRACK:</strong> Log every action. Measure: average response time, emails triaged, accuracy of categorisation. Optimise weekly.</li>
+          </ol>
+
           <h3>Step-by-Step: Setting Up Email Agents</h3>
           <ol>
             <li>Go to <strong>Integrations &gt; Email</strong> and connect your Gmail or Outlook account. Grant read and send permissions.</li>
             <li>Create an <strong>Inbox Triage Agent</strong>:
               <ul>
-                <li>Prompt: "Analyse the sender, subject, and body. Categorise as: Urgent, To Read, Delegate, Newsletter, or Spam."</li>
+                <li>Prompt: "Analyse the sender, subject, and body. Categorise as: Urgent, To Read, Delegate, Newsletter, or Spam. For Urgent, extract the core ask and summarise in one sentence."</li>
                 <li>Trigger: New email arrives.</li>
                 <li>Action: Label the email and send a brief summary to Slack if marked Urgent.</li>
               </ul>
             </li>
             <li>Create a <strong>Follow-Up Agent</strong>:
               <ul>
-                <li>Prompt: "If an email from a client has not been replied to in 48 hours, draft a polite follow-up."</li>
+                <li>Prompt: "If an email from a client or prospect has not been replied to in 48 hours, draft a polite follow-up that references the original topic. Match the tone of previous correspondence."</li>
                 <li>Trigger: Daily at 09:00.</li>
                 <li>Action: Draft follow-ups in a "Follow-Up Drafts" label for your review.</li>
               </ul>
             </li>
             <li>Create an <strong>Auto-Responder Agent</strong>:
               <ul>
-                <li>Prompt: "If the email asks a common question, reply using the FAQ document in PKM. If unsure, flag for human review."</li>
-                <li>Trigger: New email arrives containing keywords "pricing," "demo," or "support."</li>
-                <li>Action: Send the reply immediately (no approval needed for FAQs).</li>
+                <li>Prompt: "If the email asks a common question, reply using the FAQ document in PKM. If unsure, flag for human review. Never make up pricing or policy details."</li>
+                <li>Trigger: New email arrives containing keywords "pricing," "demo," "hours," or "support."</li>
+                <li>Action: Send the reply immediately (no approval needed for FAQs after 20 flawless runs).</li>
               </ul>
             </li>
-            <li>Review the <strong>Email Analytics</strong> dashboard weekly. Track: emails triaged, auto-replied, and draft accuracy.</li>
+            <li>Review the <strong>Email Analytics</strong> dashboard weekly. Track: emails triaged, auto-replied, draft accuracy, and average response time.</li>
           </ol>
-          <h3>Case Study: The Founder Who Got Her Mornings Back</h3>
-          <p>Nina, a SaaS founder, used to spend 2 hours every morning on email. After deploying three email agents:</p>
+
+          <h3>Best Practices & Guardrails</h3>
           <ul>
-            <li><strong>Inbox Triage:</strong> 60% of emails auto-sorted before she opened her laptop.</li>
-            <li><strong>Follow-Up Agent:</strong> She never missed a client follow-up again. Response time: under 24 hours consistently.</li>
-            <li><strong>Auto-Responder:</strong> 40% of pricing and demo inquiries answered instantly. Lead response time dropped from 6 hours to 30 seconds.</li>
+            <li>Always start with a "draft only" mode. Never auto-send until accuracy is proven over 10+ runs.</li>
+            <li>Maintain an <strong>email style guide</strong> in your PKM. The Avatar references it for tone consistency. Include: greeting style, sign-off, formality level, and words to avoid.</li>
+            <li>Use <strong>exclusion rules</strong> for sensitive senders (CEO, investors, family, board members). These always go to human review.</li>
+            <li>Set a <strong>confidence threshold</strong>. If the Avatar is less than 85% confident in its categorisation or reply, escalate to human.</li>
+            <li><strong>CC/BCC awareness:</strong> Train your agent to recognise when an email has multiple recipients and adjust tone accordingly.</li>
           </ul>
-          <p>Morning email time: 15 minutes. Sales leads captured: +35%.</p>
-          <h3>Best Practices</h3>
+
+          <h3>Real Email Templates for Your PKM</h3>
+          <p>Store these in your PKM so the Avatar can reference them:</p>
           <ul>
-            <li>Always start with a "draft only" mode. Never auto-send until accuracy is proven.</li>
-            <li>Maintain an <strong>email style guide</strong> in your PKM. The Avatar references it for tone consistency.</li>
-            <li>Use <strong>exclusion rules</strong> for sensitive senders (CEO, investors, family). These always go to human review.</li>
-          </ul>
-          <h3>Framework: The Email TRIAGE System</h3>
-          <p>Teach your Avatar to sort every email into one of 5 buckets:</p>
-          <ul>
-            <li><strong>T – Time-sensitive:</strong> Needs action within 2 hours. Alert immediately.</li>
-            <li><strong>R – Read later:</strong> Important but not urgent. Schedule for review.</li>
-            <li><strong>I – Informational:</strong> Newsletters, updates. Summarise weekly.</li>
-            <li><strong>A – Action required:</strong> Needs a reply or task. Add to todo list.</li>
-            <li><strong>G – Garbage:</strong> Spam, irrelevant. Auto-archive.</li>
-            <li><strong>E – Escalate:</strong> Sensitive or complex. Flag for human review.</li>
+            <li><strong>Decline Template:</strong> Polite but firm meeting decline with alternative suggestions.</li>
+            <li><strong>Introduction Template:</strong> Warm, context-rich intro between two contacts.</li>
+            <li><strong>Follow-Up Template:</strong> Gentle reminder referencing previous commitment or deadline.</li>
+            <li><strong>Out-of-Office Template:</strong> Smart OOO that routes urgent items to a colleague.</li>
           </ul>`,
-          interaction: {
-            type: 'checkbox',
-            prompt: 'Which of the following are best practices for email automation? Select all that apply.',
-            options: ['Start in draft-only mode', 'Maintain an email style guide in PKM', 'Use exclusion rules for sensitive senders', 'Auto-send all emails immediately', 'Never review analytics', 'Skip the approval gate on day one'],
-            correct: [0, 1, 2]
-          }
+          flashcards: [
+            { q: "What are the three stages of the Email Automation Framework?", a: "TRIAGE → ACT → TRACK" },
+            { q: "How many hours daily does the average knowledge worker spend in email?", a: "2.6 hours" },
+            { q: "What is the recommended confidence threshold before auto-sending an email?", a: "85%" },
+            { q: "How many flawless runs are suggested before auto-sending FAQ replies without approval?", a: "20" },
+            { q: "What should you always maintain in your PKM for email tone consistency?", a: "An email style guide" },
+            { q: "Name one type of sender that should always be excluded from auto-response.", a: "CEO, investors, family, or board members" }
+          ]
         },
         {
           title: "Agent Studio Fundamentals",
           content: `<h3>Building Custom Agents from Scratch</h3>
-          <p>Agent Studio is where you turn your Avatar into a team of specialists. This segment is your guided tour.</p>
+          <p>Agent Studio is where you turn your Avatar into a team of specialists. This segment is your guided tour from blank canvas to production-ready agent.</p>
+
+          <h3>Case Study: How NexaHealth Built a Clinical Documentation Agent</h3>
+          <p>NexaHealth, a telehealth provider, needed to summarise patient consultations into structured clinical notes. Doctors spent 20 minutes per appointment on documentation. Using Agent Studio:</p>
+          <ul>
+            <li>They created a <strong>Clinical Scribe Agent</strong> with a detailed system prompt defining medical terminology, note structure (SOAP format), and privacy constraints (HIPAA alignment).</li>
+            <li>The agent connects to their transcription API (input: raw transcript) and outputs structured notes in their EHR format.</li>
+            <li>Doctors review and approve notes in under 2 minutes per case.</li>
+          </ul>
+          <p><strong>Result:</strong> Documentation time dropped from 20 to 2 minutes. Doctor satisfaction increased because they could see more patients or finish on time. The agent is now used by 40+ clinicians.</p>
+
+          <h3>The Agent Design Canvas Framework</h3>
+          <p>Before writing a single prompt, answer these six questions on the canvas:</p>
+          <ol>
+            <li><strong>Identity:</strong> Who is this agent? (e.g., "You are a meticulous financial analyst with 10 years of experience in SaaS metrics.")</li>
+            <li><strong>Goal:</strong> What is its single primary output? (e.g., "Produce a one-page executive summary of Q3 financials.")</li>
+            <li><strong>Inputs:</strong> What data does it need? Be specific about format and source.</li>
+            <li><strong>Process:</strong> What steps should it follow? (e.g., "1. Read data → 2. Identify anomalies → 3. Draft summary → 4. Suggest actions.")</li>
+            <li><strong>Constraints:</strong> What must it never do? (e.g., "Never disclose sensitive customer data. Never invent statistics.").</li>
+            <li><strong>Output Format:</strong> How should the result look? Provide a template or example.</li>
+          </ol>
+
           <h3>Step-by-Step: Creating a Custom Agent</h3>
           <ol>
             <li>Navigate to <strong>Agent Studio</strong> from the Dashboard.</li>
             <li>Click <strong>New Agent</strong>. Choose a starter template or start blank.</li>
-            <li>Name your agent descriptively. Example: "Q3-Report-Generator."</li>
-            <li>Write the <strong>System Prompt</strong>. This is the agent's permanent instruction set. Example:
-              <blockquote>"You are a financial analyst. You read spreadsheets and produce executive summaries. Use bullet points. Be conservative with projections. Cite specific cell references."</blockquote>
+            <li>Name your agent descriptively. Example: "Q3-Report-Generator." Bad name: "Agent 1."</li>
+            <li>Write the <strong>System Prompt</strong> using the Agent Design Canvas. Example:
+              <blockquote>"You are a financial analyst. You read spreadsheets and produce executive summaries. Use bullet points. Be conservative with projections. Cite specific cell references. Never round percentages."</blockquote>
             </li>
-            <li>Define <strong>Inputs</strong>. What data does the agent need? Example: a spreadsheet file, a date range, and a comparison flag.</li>
+            <li>Define <strong>Inputs</strong>. What data does the agent need? Example: a spreadsheet file, a date range, and a comparison flag (YoY or QoQ).</li>
             <li>Define <strong>Outputs</strong>. What does the agent produce? Example: a markdown report, a chart image, and an email draft.</li>
             <li>Add <strong>Tools</strong>. Which integrations does the agent use? Spreadsheet reader, chart generator, email sender, etc.</li>
-            <li>Set <strong>Memory Scope</strong>. Can the agent access your full PKM, or only specific folders? Limit scope for speed and privacy.</li>
-            <li>Test the agent with sample inputs. Iterate on the system prompt until outputs are consistent.</li>
+            <li>Set <strong>Memory Scope</strong>. Can the agent access your full PKM, or only specific folders? Limit scope for speed, accuracy, and privacy.</li>
+            <li>Test the agent with sample inputs. Iterate on the system prompt until outputs are consistent across 5+ test runs.</li>
             <li>Publish the agent. It now appears in your Avatar's agent library and can be triggered by voice or chat.</li>
           </ol>
-          <h3>Case Study: The Customer Support Bot That Actually Helped</h3>
-          <p>TechFlow, a B2B software company, built a support agent in Agent Studio. Their first version was terrible—it gave generic answers and frustrated customers. Their path to success:</p>
-          <ol>
-            <li><strong>Iteration 1:</strong> Generic prompt → 30% resolution rate.</li>
-            <li><strong>Iteration 2:</strong> Added PKM access to 50 support articles → 55% resolution rate.</li>
-            <li><strong>Iteration 3:</strong> Added conversation history (memory scope) → 72% resolution rate.</li>
-            <li><strong>Iteration 4:</strong> Added escalation rules for complex issues → 85% resolution rate + human escalation for the rest.</li>
-          </ol>
-          <p>Support ticket volume handled by humans: down 60%. Customer satisfaction: up 18%.</p>
+
           <h3>Agent Templates to Explore</h3>
           <ul>
-            <li><strong>Data Analyst:</strong> Reads CSVs, finds trends, generates charts.</li>
-            <li><strong>Copywriter:</strong> Writes ads, emails, and landing pages in your brand voice.</li>
-            <li><strong>Meeting Scribe:</strong> Summarises transcripts, extracts action items, assigns owners.</li>
-            <li><strong>Researcher:</strong> Searches the web, summarises findings, cites sources.</li>
+            <li><strong>Data Analyst:</strong> Reads CSVs, finds trends, generates charts. Best for: weekly metrics, sales pipelines, inventory reports.</li>
+            <li><strong>Copywriter:</strong> Writes ads, emails, and landing pages in your brand voice. Best for: marketing teams with high content volume.</li>
+            <li><strong>Meeting Scribe:</strong> Summarises transcripts, extracts action items, assigns owners. Best for: project managers and team leads.</li>
+            <li><strong>Researcher:</strong> Searches the web, summarises findings, cites sources. Best for: competitive analysis and due diligence.</li>
+            <li><strong>Customer Support:</strong> Drafts replies to common tickets, escalates complex issues. Best for: support teams with repeatable queries.</li>
           </ul>
-          <h3>Framework: The Agent Canvas</h3>
-          <p>Before building any agent, fill out this canvas:</p>
+
+          <h3>Testing & Iteration Best Practices</h3>
           <ul>
-            <li><strong>Name & Role:</strong> What is this agent called? What is its job?</li>
-            <li><strong>Success Metric:</strong> How do you know it works? (e.g., 80% email accuracy)</li>
-            <li><strong>Inputs:</strong> What data does it need?</li>
-            <li><strong>Outputs:</strong> What does it produce?</li>
-            <li><strong>Boundaries:</strong> What should it NEVER do?</li>
-            <li><strong>Fallback:</strong> What happens when it fails?</li>
+            <li>Create a <strong>test suite</strong> of 5–10 diverse inputs. Run each after every prompt change. Track pass/fail.</li>
+            <li>Use <strong>A/B prompting</strong>. Save two versions of your system prompt. Test both against the same inputs. Keep the winner.</li>
+            <li>Document <strong>failure modes</strong>. When the agent gets it wrong, save the input and expected output in a "Agent QA" PKM folder. Feed these back into prompt refinement.</li>
+            <li>Version your agents. Name them "Report-Agent-v1.2" so you can roll back if a change breaks performance.</li>
           </ul>`,
           quiz: [
-            { q: "What is the first step in creating a custom agent?", options: ["Add tools", "Write the system prompt", "Navigate to Agent Studio and click New Agent", "Publish immediately"], correct: 2 },
-            { q: "Why should you limit an agent's memory scope?", options: ["To make it slower", "For speed and privacy", "To prevent it from working", "Because it's required by law"], correct: 1 },
-            { q: "What should you do before publishing an agent?", options: ["Test with sample inputs", "Skip testing", "Delete the system prompt", "Share it publicly"], correct: 0 },
-            { q: "Which template reads CSVs and generates charts?", options: ["Copywriter", "Data Analyst", "Meeting Scribe", "Researcher"], correct: 1 }
+            { q: "According to the NexaHealth case study, how much time did clinical documentation take before automation?", options: ["5 minutes", "10 minutes", "20 minutes", "30 minutes"], correct: 2 },
+            { q: "What does the 'I' in the Agent Design Canvas stand for?", options: ["Inputs", "Identity", "Instructions", "Integration"], correct: 1 },
+            { q: "How many test runs are recommended for consistency before publishing an agent?", a: "5+ test runs" },
+            { q: "Which of these is a bad agent name?", options: ["Q3-Report-Generator", "Meeting-Scribe-v2", "Agent 1", "Client-Follow-Up"], correct: 2 },
+            { q: "What format did the Clinical Scribe Agent use for notes?", options: ["APA", "SOAP", "MLA", "JSON"], correct: 1 }
           ],
           passThreshold: 80
         },
         {
           title: "Employee Onboarding Automation",
           content: `<h3>Onboarding That Runs Itself</h3>
-          <p>A great onboarding experience sets the tone for retention. Automate it without losing the human touch.</p>
+          <p>A great onboarding experience sets the tone for retention. Companies with strong onboarding improve new hire retention by 82% and productivity by over 70%. Automate it without losing the human touch.</p>
+
+          <h3>Case Study: CloudStride's 90-Day Automated Onboarding</h3>
+          <p>CloudStride, a 200-person cloud consultancy, was losing new hires in the first 6 months. Feedback showed confusion about role expectations, slow IT access, and inconsistent manager check-ins. They built a comprehensive onboarding automation:</p>
+          <ul>
+            <li><strong>Pre-Boarding (Offer accepted → Day 1):</strong> Welcome email sequence, equipment ordering, access provisioning requests, and a "meet your buddy" intro.</li>
+            <li><strong>Week 1 Drip:</strong> Daily micro-learning emails about company culture, tools, and first project context. Each email takes 3 minutes to read.</li>
+            <li><strong>30-60-90 Milestones:</strong> Automated surveys and manager reminder nudges at each milestone.</li>
+            <li><strong>Buddy Matching:</strong> Agent matches new hires with buddies based on role similarity, timezone overlap, and past mentoring ratings.</li>
+          </ul>
+          <p><strong>Result:</strong> 6-month retention improved from 68% to 91%. Time-to-productivity (first independent client deliverable) dropped from 8 weeks to 4 weeks. HR admin time per hire fell from 12 hours to 2 hours.</p>
+
+          <h3>The Onboarding Pyramid Framework</h3>
+          <p>Structure your onboarding in four layers, from foundational to advanced:</p>
+          <ol>
+            <li><strong>Foundation (Days 1–7):</strong> Logistics. IT setup, accounts, policies, org chart, workspace. The goal is: "Can they log in and find help?"</li>
+            <li><strong>Context (Week 2–3):</strong> Culture and connections. Meet the team, understand values, learn communication norms. The goal is: "Do they feel they belong?"</li>
+            <li><strong>Competence (Week 4–8):</strong> Role-specific skills. First projects, tool deep-dives, shadowing. The goal is: "Can they do real work with guidance?"</li>
+            <li><strong>Contribution (Month 3+):</strong> Independent impact. Own a workstream, mentor the next new hire, contribute to process improvement. The goal is: "Are they a net positive to the team?"</li>
+          </ol>
+
           <h3>Step-by-Step: Building an Onboarding Workflow</h3>
           <ol>
             <li>Create an <strong>Onboarding Agent</strong> in Agent Studio.</li>
@@ -216,393 +289,485 @@
             </li>
             <li>Set up a <strong>30-60-90 Day Milestone Agent</strong>:
               <ul>
-                <li>At 30 days: "How are you settling in?" survey.</li>
-                <li>At 60 days: Goal-setting workshop reminder.</li>
-                <li>At 90 days: Performance review prep and self-assessment.</li>
+                <li>At 30 days: "How are you settling in?" survey with 5 questions.</li>
+                <li>At 60 days: Goal-setting workshop reminder and template.</li>
+                <li>At 90 days: Performance review prep, self-assessment form, and 360° feedback requests.</li>
               </ul>
             </li>
-            <li>Log every action to a <strong>shared onboarding tracker</strong> (Google Sheet or Notion).</li>
-            <li>Add an <strong>escalation rule</strong>: If the new hire does not complete a checklist item in 48 hours, notify their manager.</li>
+            <li>Log every action to a <strong>shared onboarding tracker</strong> (Google Sheet or Notion). Columns: Employee, Step, Due Date, Completed Date, Owner.</li>
+            <li>Add an <strong>escalation rule</strong>: If the new hire does not complete a checklist item in 48 hours, notify their manager and buddy.</li>
           </ol>
-          <h3>Case Study: The Startup That Scaled from 5 to 50</h3>
-          <p>GrowFast, a Series A startup, onboarded employees manually for years. When they hit 20 people, chaos ensued. New hires received inconsistent information, missed key setups, and felt lost. After automating onboarding:</p>
+
+          <h3>Buddy Matching Algorithm</h3>
+          <p>The Avatar can match buddies using weighted scoring:</p>
           <ul>
-            <li><strong>Time to productivity:</strong> Reduced from 3 weeks to 1 week.</li>
-            <li><strong>HR hours per hire:</strong> Dropped from 8 hours to 1 hour.</li>
-            <li><strong>New hire satisfaction:</strong> Increased from 6.2/10 to 8.9/10.</li>
-            <li><strong>90-day retention:</strong> Improved from 75% to 94%.</li>
+            <li><strong>Role similarity (40%):</strong> Same department or similar function.</li>
+            <li><strong>Timezone overlap (30%):</strong> At least 3 hours of shared work time.</li>
+            <li><strong>Tenure (20%):</strong> Buddies should have 12+ months at the company.</li>
+            <li><strong>Mentoring history (10%):</strong> Past positive feedback as a buddy.</li>
           </ul>
-          <p>The secret? Automation handled logistics; humans focused on relationship-building.</p>
-          <h3>Deep Dive: The Buddy System</h3>
-          <p>Include a "buddy assignment" step. The Avatar matches new hires with buddies based on:</p>
+          <p><strong>Pro Tip:</strong> Include a "buddy assignment" step. The Avatar matches new hires with buddies based on role similarity and timezone. Avoid assigning the same person as a buddy more than twice per quarter to prevent burnout.</p>
+
+          <h3>Measuring Onboarding Success</h3>
+          <p>Track these KPIs monthly:</p>
           <ul>
-            <li>Role similarity (engineer → engineer)</li>
-            <li>Timezone overlap (for remote teams)</li>
-            <li>Personality compatibility (from existing profile data)</li>
-            <li>Workload (buddies with light schedules preferred)</li>
-          </ul>
-          <p>The Avatar drafts the intro email, schedules the first coffee chat, and checks in at Day 7 and Day 30.</p>
-          <h3>Framework: The Onboarding Scorecard</h3>
-          <p>Measure onboarding success with these metrics:</p>
-          <ul>
-            <li><strong>Time to first commit/code review:</strong> For technical roles.</li>
-            <li><strong>Time to first client interaction:</strong> For sales/support roles.</li>
-            <li><strong>Checklist completion rate:</strong> % of Day 1–5 tasks done.</li>
-            <li><strong>Manager confidence score:</strong> 1–10 rating at Day 30.</li>
-            <li><strong>New hire NPS:</strong> "How likely are you to recommend us as an employer?"</li>
+            <li><strong>Time-to-productivity:</strong> Days until first independent deliverable.</li>
+            <li><strong>30-day completion rate:</strong> % of checklist items completed on time.</li>
+            <li><strong>New hire NPS:</strong> "How likely are you to recommend us as an employer?" at 90 days.</li>
+            <li><strong>6-month retention:</strong> % of hires still employed at 6 months.</li>
+            <li><strong>Manager satisfaction:</strong> "How well-prepared was your new hire?" rating.</li>
           </ul>`,
           interaction: {
-            type: 'textarea',
-            prompt: 'Design a 5-day onboarding drip sequence for YOUR company or a fictional one. List what the new hire receives each day (email, task, meeting) and which agent or automation handles it.',
-            placeholder: 'Day 1: Welcome email from CEO (Onboarding Agent drafts, HR approves). Day 2: IT setup checklist (Auto-sent with links)...'
+            type: "checkbox",
+            instruction: "You are designing onboarding for a remote-first SaaS startup with 50 employees. A new hire (senior backend engineer, timezone: UTC+9) starts Monday. Select ALL the actions you would include in their Week 1 automated sequence:",
+            options: [
+              "Send welcome email from CTO with team culture doc",
+              "Schedule 30-min 1:1 with their manager on Day 1",
+              "Invite to #engineering, #general, and #random Slack channels",
+              "Assign a buddy who is a frontend engineer in UTC-5 with no overlap",
+              "Share PKM folder: 'Engineering Onboarding' with architecture diagrams",
+              "Send daily 2-hour training videos for the first 5 days",
+              "Create calendar holds for engineering standup (09:00 UTC — 18:00 their time)",
+              "Day 3: Intro email to the DevOps lead who manages CI/CD access",
+              "Day 5: Anonymous pulse survey + manager check-in reminder",
+              "Auto-provision access to production database on Day 1"
+            ]
           }
         },
         {
           title: "Document Review Workflows",
           content: `<h3>Automating Contracts, Policies, and Reports</h3>
-          <p>Document review is tedious but critical. Let your Avatar handle the first pass so you focus on decisions.</p>
+          <p>Document review is tedious but critical. A missed clause in a contract can cost millions. Let your Avatar handle the first pass so you focus on decisions, not drudgery.</p>
+
+          <h3>Case Study: Vanguard Logistics' Contract Review Agent</h3>
+          <p>Vanguard Logistics processes 400+ freight contracts annually. Each contract (30–80 pages) took a senior legal associate 4–6 hours to review. They built a Document Review Agent:</p>
+          <ul>
+            <li><strong>Criteria Library:</strong> 50+ review criteria stored in PKM, covering liability caps, indemnity, force majeure, payment terms, and jurisdiction.</li>
+            <li><strong>First-Pass Review:</strong> Agent reads the contract, checks against all criteria, flags deviations from standard terms, and produces a 2-page risk summary.</li>
+            <li><strong>Comparison Mode:</strong> Agent compares new contracts to a "gold standard" template and highlights every difference.</li>
+            <li><strong>Escalation:</strong> If risk score &lt; 5, auto-notify General Counsel via Slack. If score 5–7, queue for senior associate. If 8–10, junior associate can approve.</li>
+          </ul>
+          <p><strong>Result:</strong> First-pass review time dropped from 5 hours to 25 minutes. Senior associates now spend time on negotiation strategy, not reading. Zero critical clauses missed in 18 months.</p>
+
+          <h3>The RISC Framework for Document Review</h3>
+          <p>Structure every review workflow around four pillars:</p>
+          <ol>
+            <li><strong>Reference:</strong> What is the source of truth? (template, checklist, policy, previous version)</li>
+            <li><strong>Inspect:</strong> What should the agent look for? (missing sections, unusual terms, numeric discrepancies, compliance gaps)</li>
+            <li><strong>Score:</strong> How serious are the findings? (1–10 scale, red/amber/green, or high/medium/low)</li>
+            <li><strong>Communicate:</strong> Who needs to know what, and how fast? (escalation rules, notification channels, review deadlines)</li>
+          </ol>
+
           <h3>Step-by-Step: Document Review Agent</h3>
           <ol>
             <li>Create a <strong>Document Review Agent</strong> in Agent Studio.</li>
-            <li>Upload your <strong>review criteria</strong> to PKM. Example: a checklist for contract review (parties, terms, liability, termination, governing law).</li>
+            <li>Upload your <strong>review criteria</strong> to PKM. Example: a checklist for contract review (parties, terms, liability, termination, governing law, IP ownership, confidentiality).</li>
             <li>Write the system prompt:
-              <blockquote>"You are a legal reviewer. Read the uploaded document against the criteria in 'Contract-Review-Checklist.md.' Flag missing sections, unusual terms, and risks. Output a score (1–10) and a summary."</blockquote>
+              <blockquote>"You are a legal reviewer. Read the uploaded document against the criteria in 'Contract-Review-Checklist.md.' Flag missing sections, unusual terms, and risks. For each risk, cite the specific clause and page number. Output a score (1–10) and a 3-bullet executive summary. Be conservative: if unsure, flag it."</blockquote>
             </li>
             <li>Define the trigger: Document uploaded to PKM folder "Pending Review."</li>
             <li>Set up the workflow:
               <ul>
                 <li>Agent reads the document and criteria.</li>
-                <li>Agent produces a review report (markdown).</li>
+                <li>Agent produces a review report (markdown) with score, findings, and recommendations.</li>
                 <li>Report is saved to "Reviews" folder and emailed to the assigned reviewer.</li>
-                <li>If score &lt; 5, escalate to senior reviewer via Slack.</li>
+                <li>If score &lt; 5, escalate to senior reviewer via Slack with urgency flag.</li>
               </ul>
             </li>
             <li>Test with 3 real documents. Refine the prompt based on false positives and missed issues.</li>
-            <li>Add <strong>version tracking</strong>. The agent compares new versions to previous reviews and highlights changes.</li>
+            <li>Add <strong>version tracking</strong>. The agent compares new versions to previous reviews and highlights changes. "Clause 7.3 was changed from 30 days to 60 days."</li>
           </ol>
-          <h3>Case Study: The Legal Team's Force Multiplier</h3>
-          <p>Barrett & Associates, a 5-person legal team, reviewed 200+ contracts monthly. After deploying a Document Review Agent:</p>
-          <ul>
-            <li><strong>First-pass review time:</strong> Cut from 2 hours to 15 minutes per contract.</li>
-            <li><strong>Missed clauses:</strong> Reduced by 80% (the Avatar never gets tired).</li>
-            <li><strong>Senior lawyer time:</strong> Freed up for negotiation strategy instead of checklist ticking.</li>
-          </ul>
-          <p>The Avatar handles 70% of contracts autonomously. Only complex or high-risk deals reach human reviewers.</p>
+
           <h3>Document Types You Can Review</h3>
+          <table style="width:100%;border-collapse:collapse;margin:1em 0;">
+            <tr style="background:var(--surface);"><th style="padding:8px;border:1px solid var(--border);">Document Type</th><th style="padding:8px;border:1px solid var(--border);">Key Criteria</th><th style="padding:8px;border:1px solid var(--border);">Typical Review Time Saved</th></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Contracts & NDAs</td><td style="padding:8px;border:1px solid var(--border);">Parties, terms, liability, termination, governing law</td><td style="padding:8px;border:1px solid var(--border);">4–6 hours → 30 min</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Policy Drafts</td><td style="padding:8px;border:1px solid var(--border);">Compliance alignment, clarity, coverage gaps</td><td style="padding:8px;border:1px solid var(--border);">2–3 hours → 15 min</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Financial Reports</td><td style="padding:8px;border:1px solid var(--border);">Formula accuracy, consistency, variance explanation</td><td style="padding:8px;border:1px solid var(--border);">3–4 hours → 20 min</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Marketing Copy</td><td style="padding:8px;border:1px solid var(--border);">Brand voice, legal claims, disclaimers, accessibility</td><td style="padding:8px;border:1px solid var(--border);">1–2 hours → 10 min</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Code Documentation</td><td style="padding:8px;border:1px solid var(--border);">Completeness, accuracy, examples, API consistency</td><td style="padding:8px;border:1px solid var(--border);">1 hour → 10 min</td></tr>
+          </table>
+
+          <h3>Common Pitfalls in Automated Document Review</h3>
           <ul>
-            <li>Contracts and NDAs</li>
-            <li>Policy drafts</li>
-            <li>Financial reports</li>
-            <li>Marketing copy for compliance</li>
-            <li>Code documentation</li>
-          </ul>
-          <h3>Framework: The Review Severity Matrix</h3>
-          <p>Classify every finding into one of 4 tiers:</p>
-          <ul>
-            <li><strong>Critical (Score 1–3):</strong> Missing signature, incorrect party name, illegal clause. Stop everything.</li>
-            <li><strong>High (Score 4–5):</strong> Unusual liability terms, vague termination language. Escalate immediately.</li>
-            <li><strong>Medium (Score 6–7):</strong> Inconsistent formatting, unclear definitions. Fix before signing.</li>
-            <li><strong>Low (Score 8–10):</strong> Typos, style issues. Fix when convenient.</li>
+            <li><strong>Over-reliance on AI:</strong> The agent flags; humans decide. Never let an agent auto-approve a contract.</li>
+            <li><strong>Stale criteria:</strong> Regulations change. Review your checklists quarterly.</li>
+            <li><strong>Ignoring context:</strong> A "standard" liability cap may be inappropriate for a strategic partnership. Teach your reviewers to question the score.</li>
+            <li><strong>Poor version control:</strong> Always compare to the previous version, not just the template.</li>
           </ul>`,
           quiz: [
-            { q: "Which folder should trigger document review?", options: ["Archive", "Pending Review", "Daily Updates", "Reports"], correct: 1 },
-            { q: "What score triggers escalation to a senior reviewer?", options: ["Below 8", "Below 7", "Below 5", "Below 3"], correct: 2 },
-            { q: "How many real documents should you test with initially?", options: ["1", "3", "10", "50"], correct: 1 },
-            { q: "Which document type is NOT listed as reviewable?", options: ["Contracts", "Marketing copy", "Code documentation", "Personal diary"], correct: 3 }
+            { q: "How much time did Vanguard Logistics save per contract review?", options: ["1 hour", "2 hours", "4–6 hours", "8 hours"], correct: 2 },
+            { q: "What does the 'R' in the RISC Framework stand for?", options: ["Review", "Reference", "Risk", "Read"], correct: 1 },
+            { q: "What risk score triggers escalation to the General Counsel at Vanguard?", options: ["Below 5", "5–7", "8–10", "Any score"], correct: 0 },
+            { q: "How often should you review your document criteria checklists?", options: ["Monthly", "Quarterly", "Annually", "Never"], correct: 1 },
+            { q: "Which of these is a common pitfall in automated document review?", options: ["Using version tracking", "Over-reliance on AI without human decision", "Testing with real documents", "Saving reports to a Reviews folder"], correct: 1 }
           ],
           passThreshold: 80
         },
         {
           title: "Meeting Automation",
           content: `<h3>From Calendar Invite to Action Items</h3>
-          <p>Meetings should produce outcomes, not just notes. Automate the entire lifecycle.</p>
+          <p>Meetings should produce outcomes, not just notes. The average executive spends 23 hours per week in meetings. Automate the entire lifecycle to reclaim time and ensure nothing falls through the cracks.</p>
+
+          <h3>Case Study: Arcadia Consulting's Meeting Revolution</h3>
+          <p>Arcadia Consulting, a 60-person strategy firm, was meeting-heavy but outcome-light. Action items were lost in notebooks, follow-ups were forgotten, and pre-meeting prep was inconsistent. They automated the full meeting lifecycle:</p>
+          <ul>
+            <li><strong>Pre-Meeting:</strong> 15 minutes before any client meeting, the Avatar pulls the client's file, last meeting notes, open proposals, and recent news. It drafts a 5-bullet agenda and sends it to all attendees.</li>
+            <li><strong>During:</strong> Transcription feeds in real time to the Avatar, which highlights decisions, flags commitments, and notes questions that need follow-up research.</li>
+            <li><strong>Post-Meeting:</strong> Within 10 minutes of meeting end, every attendee receives: a 1-paragraph summary, a decision log, and a personalised action item list with deadlines.</li>
+          </ul>
+          <p><strong>Result:</strong> Action item completion rate rose from 43% to 89%. Client satisfaction scores improved because agendas were sharper and follow-ups were instant. Consultants saved 5 hours/week on note-taking and follow-up drafting.</p>
+
+          <h3>The Meeting Lifecycle Framework: PREP → RUN → CLOSE → FOLLOW</h3>
+          <ol>
+            <li><strong>PREP (Before):</strong> Context gathering, agenda drafting, attendee briefing. Goal: everyone walks in prepared.</li>
+            <li><strong>RUN (During):</strong> Real-time capture of decisions, action items, and open questions. Goal: nothing important is missed.</li>
+            <li><strong>CLOSE (Immediately After):</strong> Summary production, decision logging, action item assignment. Goal: shared understanding before people forget.</li>
+            <li><strong>FOLLOW (Days/Weeks After):</strong> Deadline reminders, progress checks, prep for next meeting. Goal: commitments become completions.</li>
+          </ol>
+
           <h3>Step-by-Step: Meeting Automation Workflow</h3>
           <ol>
             <li><strong>Pre-Meeting Preparation:</strong>
               <ul>
                 <li>Trigger: Meeting invite accepted (15 minutes before start).</li>
                 <li>Agent reads the meeting title and attendee list.</li>
-                <li>Agent pulls relevant documents from PKM (last meeting notes, project briefs).</li>
-                <li>Agent drafts an agenda and sends it to all attendees.</li>
+                <li>Agent pulls relevant documents from PKM (last meeting notes, project briefs, client history).</li>
+                <li>Agent drafts an agenda with suggested discussion points and sends it to all attendees.</li>
               </ul>
             </li>
             <li><strong>During the Meeting:</strong>
               <ul>
                 <li>Connect your transcription tool (Otter, Fireflies, or native Zetrix transcription).</li>
                 <li>The Avatar listens in real time and highlights decisions, action items, and questions.</li>
+                <li>Integration tip: Some teams use a "decision keyword" (e.g., "DECIDED:") so the Avatar catches decisions even in noisy transcripts.</li>
               </ul>
             </li>
             <li><strong>Post-Meeting Follow-Up:</strong>
               <ul>
                 <li>Trigger: Meeting ends.</li>
                 <li>Agent receives the transcript.</li>
-                <li>Agent produces: meeting summary, decision log, and action item list with owners and deadlines.</li>
-                <li>Agent drafts follow-up emails to each owner with their specific tasks.</li>
+                <li>Agent produces: meeting summary (3–5 sentences), decision log (bulleted), and action item list with owners and deadlines.</li>
+                <li>Agent drafts follow-up emails to each owner with their specific tasks and deadlines.</li>
                 <li>Agent creates calendar reminders for each deadline.</li>
-                <li>Agent logs everything in the project's PKM folder.</li>
+                <li>Agent logs everything in the project's PKM folder under "Meetings &gt; [Date] — [Topic]."</li>
               </ul>
             </li>
-            <li><strong>Review Weekly:</strong> Check the "Meeting Outcomes" dashboard. Track: meetings processed, action items created, and completion rate.</li>
+            <li><strong>Review Weekly:</strong> Check the "Meeting Outcomes" dashboard. Track: meetings processed, action items created, completion rate, and average time from meeting-end to summary-sent.</li>
           </ol>
-          <h3>Case Study: The Manager Who Reclaimed 10 Hours Weekly</h3>
-          <p>David, an engineering manager, ran 25 meetings per week. Before automation:</p>
+
+          <h3>Advanced: Multi-Meeting Project Tracking</h3>
+          <p>For long projects with recurring meetings, create a <strong>Project Memory Agent</strong>:</p>
           <ul>
-            <li>30 min prep per meeting = 12.5 hours</li>
-            <li>45 min note-taking and follow-up per meeting = 18.75 hours</li>
-            <li>Total: 31.25 hours on meetings alone</li>
+            <li>It maintains a running "project state" document in PKM: decisions made, open questions, risks, and next milestones.</li>
+            <li>Before each recurring meeting, it prepends a "state of play" section to the agenda.</li>
+            <li>After each meeting, it updates the project state. Decisions are added. Closed questions are marked. New risks are flagged.</li>
+            <li>At project end, the entire decision log becomes a searchable archive for future reference or audit.</li>
           </ul>
-          <p>After automation:</p>
+
+          <h3>Best Practices & Guardrails</h3>
           <ul>
-            <li>Prep: Avatar drafts agendas. David edits in 5 min/meeting = 2 hours.</li>
-            <li>Notes: Transcription + AI summary = 5 min review/meeting = 2 hours.</li>
-            <li>Follow-up: Auto-drafted emails, auto-created reminders = 30 min total.</li>
-          </ul>
-          <p>Time saved: 26.75 hours. Reinvested into 1:1 coaching and system design.</p>
-          <h3>Deep Dive: The Decision Log</h3>
-          <p>A Decision Log is the single most valuable meeting output. Structure it as:</p>
-          <ul>
-            <li><strong>Decision:</strong> What was decided?</li>
-            <li><strong>Context:</strong> Why was this the right choice?</li>
-            <li><strong>Alternatives considered:</strong> What else was on the table?</li>
-            <li><strong>Owner:</strong> Who is responsible for execution?</li>
-            <li><strong>Deadline:</strong> When will it be implemented?</li>
-            <li><strong>Reversal condition:</strong> Under what circumstances should this decision be revisited?</li>
-          </ul>
-          <p><strong>Pro Tip:</strong> Add a "no-meeting Wednesday" rule. The Avatar automatically declines non-urgent meetings on that day.</p>`,
-          interaction: {
-            type: 'textarea',
-            prompt: 'Write a sample Decision Log entry for a fictional meeting where your team decided to migrate from AWS to Google Cloud. Include all 6 fields: Decision, Context, Alternatives, Owner, Deadline, and Reversal Condition.',
-            placeholder: 'Decision: Migrate primary infrastructure from AWS to Google Cloud. Context: 30% cost reduction and better ML tooling...'
-          }
+            <li>Always disclose when meetings are being transcribed. Include it in the calendar invite.</li>
+            <li>For sensitive meetings (HR, legal, board), use a private PKM folder with restricted access.</li>
+            <li>Set a <strong>service level objective</strong>: Summary sent within 15 minutes of meeting end. Monitor and optimise.</li>
+            <li>Include a "no-meeting Wednesday" rule. The Avatar automatically declines non-urgent meetings on that day and suggests alternative slots.</li>
+          </ul>`,
+          flashcards: [
+            { q: "What are the four stages of the Meeting Lifecycle Framework?", a: "PREP → RUN → CLOSE → FOLLOW" },
+            { q: "How many hours per week does the average executive spend in meetings?", a: "23 hours" },
+            { q: "What was Arcadia Consulting's action item completion rate after automation?", a: "89%" },
+            { q: "What keyword technique helps the Avatar catch decisions in transcripts?", a: "A 'decision keyword' like 'DECIDED:'" },
+            { q: "What should you always disclose when automating meeting transcription?", a: "That the meeting is being transcribed" },
+            { q: "What is the recommended SLO for sending post-meeting summaries?", a: "Within 15 minutes of meeting end" }
+          ]
         },
         {
           title: "Weekly Report Generation",
           content: `<h3>Automating Status Updates and Reports</h3>
-          <p>Weekly reports eat hours. Automate them so your team stays informed and you stay productive.</p>
+          <p>Weekly reports eat hours. A manager writing reports for 5 stakeholders might spend 4–6 hours every Friday. Automate them so your team stays informed and you stay productive.</p>
+
+          <h3>Case Study: Pulse Analytics' Friday Freedom</h3>
+          <p>Pulse Analytics, a data science agency with 35 employees, had a "Friday report panic." Every week, team leads manually compiled project statuses from Jira, Slack threads, email, and ad-hoc conversations into formatted reports for clients and internal leadership. The process was stressful and error-prone. They automated it:</p>
+          <ul>
+            <li><strong>Data Aggregation Agent:</strong> Every Friday at 15:00, pulls ticket statuses from Jira, calendar highlights, email summaries, and PKM notes from each team member.</li>
+            <li><strong>Drafting Agent:</strong> Uses a branded template with sections: Wins, Blockers, Upcoming Priorities, Metrics, Needs Help. Highlights anomalies (missed deadlines, budget variances).</li>
+            <li><strong>Review Queue:</strong> Drafts ready by 16:00. Team lead reviews for 15 minutes, edits tone, approves.</li>
+            <li><strong>Distribution:</strong> Final reports sent to clients and leadership at 09:00 Monday morning.</li>
+          </ul>
+          <p><strong>Result:</strong> Report creation time dropped from 5 hours to 30 minutes per team lead. Reports became more consistent and data-rich. Team leads started leaving the office at 17:00 on Fridays.</p>
+
+          <h3>The Report Stack Framework: DATA → INSIGHT → NARRATIVE → ACTION</h3>
+          <p>Every great report moves through four layers:</p>
+          <ol>
+            <li><strong>DATA:</strong> Raw facts from systems. Tickets closed, emails sent, meetings held, revenue booked.</li>
+            <li><strong>INSIGHT:</strong> What does the data mean? Trends, anomalies, comparisons to plan or prior period.</li>
+            <li><strong>NARRATIVE:</strong> What story does the data tell? Wins, challenges, forward-looking priorities.</li>
+            <li><strong>ACTION:</strong> What should the reader do? Decisions needed, help requested, risks to monitor.</li>
+          </ol>
+          <p>Most manual reports get stuck at DATA. The Avatar's strength is rapidly moving from DATA to NARRATIVE, freeing humans to focus on ACTION.</p>
+
           <h3>Step-by-Step: Automated Weekly Report</h3>
           <ol>
             <li>Create a <strong>Weekly Report Agent</strong> in Agent Studio.</li>
             <li>Define data sources:
               <ul>
-                <li>Project management tool (Jira, Asana, Monday)</li>
-                <li>Calendar (meetings attended, upcoming)</li>
-                <li>Email (key communications, pending replies)</li>
-                <li>PKM (documents created, notes taken)</li>
+                <li>Project management tool (Jira, Asana, Monday) — ticket statuses, sprint progress, blockers.</li>
+                <li>Calendar — meetings attended, upcoming critical meetings, no-shows.</li>
+                <li>Email — key communications, pending replies, escalations.</li>
+                <li>PKM — documents created, notes taken, decisions logged.</li>
               </ul>
             </li>
-            <li>Write the report template in your PKM. Example sections: Wins, Blockers, Upcoming Priorities, Metrics, Needs Help.</li>
+            <li>Write the report template in your PKM. Example sections: Wins, Blockers, Upcoming Priorities, Metrics, Needs Help, Shout-Outs.</li>
             <li>Configure the agent to:
               <ul>
                 <li>Pull data from all sources every Friday at 16:00.</li>
                 <li>Draft the report using the template.</li>
-                <li>Highlight anomalies (missed deadlines, unusual metrics).</li>
+                <li>Highlight anomalies (missed deadlines, unusual metrics, negative variances &gt;10%).</li>
                 <li>Send the draft to you for review by 17:00.</li>
               </ul>
             </li>
             <li>You review, edit, and approve. The agent sends the final report to stakeholders at 09:00 Monday.</li>
-            <li>Archive each report in PKM under "Reports &gt; Weekly &gt; [Date]."</li>
+            <li>Archive each report in PKM under "Reports &gt; Weekly &gt; [Date]." This builds a searchable history.</li>
           </ol>
-          <h3>Case Study: The Consulting Firm's Transparency Revolution</h3>
-          <p>StratEdge Consulting had 15 consultants, each writing weekly client reports. The process:</p>
-          <ul>
-            <li>2 hours per consultant per week = 30 hours total</li>
-            <li>Inconsistent formats and missing data</li>
-            <li>Clients complained about late or incomplete updates</li>
-          </ul>
-          <p>After deploying Weekly Report Agents:</p>
-          <ul>
-            <li>Reports auto-draft in a consistent format.</li>
-            <li>Consultants review and personalise in 15 minutes.</li>
-            <li>Total time: 3.75 hours (87% reduction).</li>
-            <li>Client satisfaction score: from 7.1 to 9.2.</li>
-          </ul>
+
           <h3>Advanced: Multi-Level Reports</h3>
           <ul>
-            <li><strong>Individual Report:</strong> Each team member's Avatar generates their own.</li>
-            <li><strong>Team Report:</strong> Aggregates all individual reports. Manager reviews.</li>
-            <li><strong>Executive Report:</strong> Aggregates team reports into a 1-page summary for leadership.</li>
+            <li><strong>Individual Report:</strong> Each team member's Avatar generates their own weekly summary. Takes 5 minutes to review.</li>
+            <li><strong>Team Report:</strong> Aggregates all individual reports. Manager reviews for 15 minutes. Includes cross-team dependencies.</li>
+            <li><strong>Executive Report:</strong> Aggregates team reports into a 1-page summary for leadership. Focuses on red flags and strategic shifts.</li>
           </ul>
-          <p>Each level uses the same data but different templates and levels of detail.</p>
-          <h3>Framework: The Report Quality Checklist</h3>
-          <p>Before sending any report, verify:</p>
+          <p>Each level uses the same data but different templates and levels of detail. The Avatar handles aggregation and summarisation.</p>
+
+          <h3>Report Template Best Practices</h3>
           <ul>
-            <li><strong>Accuracy:</strong> Are the numbers correct? Cross-check with source data.</li>
-            <li><strong>Completeness:</strong> Did the Avatar miss any major events?</li>
-            <li><strong>Clarity:</strong> Can a non-expert understand the key points?</li>
-            <li><strong>Actionability:</strong> Does it clearly state what happens next?</li>
-            <li><strong>Brevity:</strong> Is it as short as possible without losing meaning?</li>
+            <li><strong>Keep it scannable:</strong> Use bullet points, bold for key numbers, and colour-coded status indicators.</li>
+            <li><strong>Lead with wins:</strong> Even a tough week has progress. Start positive to set the right tone.</li>
+            <li><strong>Be specific about blockers:</strong> "Blocked by API delay" is useless. "API v2 migration delayed by 3 days due to OAuth scope change — need decision on fallback by Wednesday" is actionable.</li>
+            <li><strong>Include a "Needs Help" section:</strong> Reports are not just status; they're requests for support.</li>
+            <li><strong>Limit to one page</strong> for executive summaries. Detailed appendices can live in PKM.</li>
           </ul>`,
-          flashcards: [
-            { q: "What day and time should the Weekly Report Agent pull data?", a: "Every Friday at 16:00." },
-            { q: "What are the 5 sections of the report template example?", a: "Wins, Blockers, Upcoming Priorities, Metrics, Needs Help." },
-            { q: "How many levels of reports are described?", a: "Three: Individual, Team, and Executive." },
-            { q: "What does the 'B' in the quality checklist stand for?", a: "Brevity." },
-            { q: "When should the final report be sent to stakeholders?", a: "Monday at 09:00." },
-            { q: "What should you do with completed reports?", a: "Archive them in PKM under Reports > Weekly > [Date]." }
-          ]
+          interaction: {
+            type: "textarea",
+            instruction: "Write a 'Needs Help' section for a weekly report. Scenario: Your team missed a client deadline because a third-party API was down for 6 hours. The client is unhappy. Your report needs to (1) explain what happened without making excuses, (2) state the impact, and (3) request a specific decision from leadership about whether to build a fallback system. Write the section (min 40 words).",
+            minLength: 40
+          }
         },
         {
           title: "Integrations & Connectors",
           content: `<h3>Connecting Zetrix to Your Tech Stack</h3>
-          <p>Automation lives or dies by connectivity. This segment covers every major integration.</p>
+          <p>Automation lives or dies by connectivity. The average mid-size company uses 130+ SaaS tools. If your AI can't reach them, it's isolated. This segment covers how to bridge that gap.</p>
+
+          <h3>Case Study: Bloom Retail's Unified Stack</h3>
+          <p>Bloom Retail, a 150-person e-commerce company, ran on a fragmented stack: Shopify (store), Klaviyo (email), Zendesk (support), NetSuite (ERP), and Slack (comms). Data was siloed, and teams spent hours copying information between systems. Using Zetrix integrations:</p>
+          <ul>
+            <li><strong>Order → Support Bridge:</strong> When a high-value order is placed in Shopify, Zetrix creates a VIP tag in Zendesk and alerts the support team on Slack. If the customer emails within 30 days, they're fast-tracked.</li>
+            <li><strong>Inventory → Marketing Bridge:</strong> When NetSuite shows a product dropping below 20 units, Zetrix pauses the Klaviyo campaign for that product and drafts a "last chance" email instead.</li>
+            <li><strong>Support → Product Bridge:</strong> Zendesk tickets with bug reports are summarised weekly and sent to the product team's Notion backlog, prioritised by frequency.</li>
+          </ul>
+          <p><strong>Result:</strong> Manual data entry between systems dropped by 90%. Support response time for VIP customers improved from 4 hours to 15 minutes. Marketing waste (promoting out-of-stock items) was eliminated.</p>
+
+          <h3>The Integration Decision Matrix</h3>
+          <p>Use this framework to decide how to connect a new tool:</p>
+          <table style="width:100%;border-collapse:collapse;margin:1em 0;">
+            <tr style="background:var(--surface);"><th style="padding:8px;border:1px solid var(--border);">Factor</th><th style="padding:8px;border:1px solid var(--border);">Native Integration</th><th style="padding:8px;border:1px solid var(--border);">Zapier / Make</th><th style="padding:8px;border:1px solid var(--border);">Custom API</th></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Setup Time</td><td style="padding:8px;border:1px solid var(--border);">5 min</td><td style="padding:8px;border:1px solid var(--border);">30 min</td><td style="padding:8px;border:1px solid var(--border);">4+ hours</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Data Control</td><td style="padding:8px;border:1px solid var(--border);">High</td><td style="padding:8px;border:1px solid var(--border);">Medium</td><td style="padding:8px;border:1px solid var(--border);">Full</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Maintenance</td><td style="padding:8px;border:1px solid var(--border);">Low</td><td style="padding:8px;border:1px solid var(--border);">Low-Medium</td><td style="padding:8px;border:1px solid var(--border);">High</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Best For</td><td style="padding:8px;border:1px solid var(--border);">Common tools</td><td style="padding:8px;border:1px solid var(--border);">Niche tools</td><td style="padding:8px;border:1px solid var(--border);">Proprietary systems</td></tr>
+          </table>
+
           <h3>Step-by-Step: Connecting a New Integration</h3>
           <ol>
             <li>Go to <strong>Integrations &gt; Directory</strong>. Browse by category: Communication, CRM, Project Management, Finance, etc.</li>
-            <li>Click the integration you need (e.g., Salesforce). Review the permissions required.</li>
+            <li>Click the integration you need (e.g., Salesforce). Review the permissions required. Never grant more access than necessary.</li>
             <li>Click <strong>Connect</strong>. You will be redirected to the service's OAuth page. Authorise Zetrix.</li>
-            <li>Return to Zetrix. The integration status turns green.</li>
+            <li>Return to Zetrix. The integration status turns green. Run a connection test.</li>
             <li>Configure <strong>sync settings</strong>:
               <ul>
-                <li>Direction: one-way (Zetrix reads) or two-way (read + write).</li>
-                <li>Frequency: real-time, hourly, or daily.</li>
-                <li>Scope: which data fields are shared.</li>
+                <li><strong>Direction:</strong> one-way (Zetrix reads) or two-way (read + write). Start with one-way until you trust the integration.</li>
+                <li><strong>Frequency:</strong> real-time (webhook), hourly, or daily. Match frequency to business need. Real-time for urgent alerts; daily for analytics.</li>
+                <li><strong>Scope:</strong> which data fields are shared. Limit scope to reduce risk and improve performance.</li>
               </ul>
             </li>
-            <li>Test the connection. Create a simple workflow that reads from the integration and logs to a sheet.</li>
-            <li>Monitor the <strong>Integration Health</strong> dashboard. Check for auth expiry, rate limits, and errors.</li>
+            <li>Test the connection. Create a simple workflow that reads from the integration and logs to a sheet. Verify data accuracy.</li>
+            <li>Monitor the <strong>Integration Health</strong> dashboard. Check for auth expiry, rate limits, and errors weekly.</li>
           </ol>
-          <h3>Popular Integrations</h3>
+
+          <h3>Popular Integrations Deep Dive</h3>
           <ul>
-            <li><strong>Slack:</strong> Send alerts, receive commands, post summaries to channels.</li>
-            <li><strong>Notion:</strong> Sync PKM folders, create pages, update databases.</li>
-            <li><strong>Google Workspace:</strong> Read/write Docs, Sheets, Calendar, and Gmail.</li>
-            <li><strong>HubSpot / Salesforce:</strong> Update leads, log calls, draft follow-ups.</li>
-            <li><strong>GitHub:</strong> Summarise PRs, draft release notes, track issues.</li>
-            <li><strong>Zapier / Make:</strong> Bridge to 5,000+ apps not natively supported.</li>
+            <li><strong>Slack:</strong> Send alerts, receive commands, post summaries to channels. Pro tip: Use threaded replies to keep channels clean. Set up "/ask" commands so team members can query the Avatar directly.</li>
+            <li><strong>Notion:</strong> Sync PKM folders, create pages, update databases. Pro tip: Use database relations so the Avatar can link meeting notes to project pages automatically.</li>
+            <li><strong>Google Workspace:</strong> Read/write Docs, Sheets, Calendar, and Gmail. Pro tip: For Sheets, use named ranges so the Avatar knows exactly which cells to read/write.</li>
+            <li><strong>HubSpot / Salesforce:</strong> Update leads, log calls, draft follow-ups. Pro tip: Use custom fields to store Avatar-generated scores (e.g., "email_sentiment") for segmentation.</li>
+            <li><strong>GitHub:</strong> Summarise PRs, draft release notes, track issues. Pro tip: Connect PR summaries to your weekly report so engineering progress is visible to non-technical stakeholders.</li>
+            <li><strong>Zapier / Make:</strong> Bridge to 5,000+ apps not natively supported. Pro tip: Use Zaps for simple triggers; build custom workflows in Zetrix for complex logic.</li>
           </ul>
-          <h3>Case Study: The E-commerce Connector Web</h3>
-          <p>Bloom Boutique, an online retailer, connected 6 integrations:</p>
+
+          <h3>Integration Security Checklist</h3>
           <ul>
-            <li><strong>Shopify:</strong> Order data feeds into Zetrix for customer support automation.</li>
-            <li><strong>Klaviyo:</strong> Email campaign performance drives Daily Updates.</li>
-            <li><strong>Stripe:</strong> Payment anomalies trigger alerts to the finance team.</li>
-            <li><strong>Slack:</strong> Daily sales summaries posted to #revenue.</li>
-            <li><strong>Google Sheets:</strong> Weekly inventory reports auto-generated.</li>
-            <li><strong>Notion:</strong> Product ideas from customer feedback auto-logged.</li>
-          </ul>
-          <p>Result: A unified view of the business without manual data entry. Decision speed: 3x faster.</p>
-          <h3>Framework: The Integration Health Score</h3>
-          <p>Rate each integration weekly on:</p>
-          <ul>
-            <li><strong>Uptime:</strong> Is it connected? (Green/Yellow/Red)</li>
-            <li><strong>Latency:</strong> How fast does data sync?</li>
-            <li><strong>Accuracy:</strong> Any missing or corrupted data?</li>
-            <li><strong>Usage:</strong> Is this integration still valuable?</li>
-          </ul>
-          <p>Any integration scoring below 7/10 needs attention.</p>`,
-          interaction: {
-            type: 'checkbox',
-            prompt: 'Which of the following are valid sync settings when configuring an integration? Select all that apply.',
-            options: ['Direction (one-way or two-way)', 'Frequency (real-time, hourly, daily)', 'Scope (which data fields are shared)', 'Password (must be 8 characters)', 'Theme colour', 'Auto-delete after 30 days'],
-            correct: [0, 1, 2]
-          }
+            <li>Review OAuth scopes. If the integration only needs to read, don't grant write permissions.</li>
+            <li>Use service accounts (not personal accounts) for production integrations.</li>
+            <li>Set up token expiry alerts. Re-authenticate before tokens expire to avoid downtime.</li>
+            <li>Audit connected integrations quarterly. Disconnect unused ones.</li>
+            <li>Never store API keys in plain text. Use Zetrix's encrypted credential vault.</li>
+          </ul>`,
+          flashcards: [
+            { q: "How many SaaS tools does the average mid-size company use?", a: "130+" },
+            { q: "What is the setup time for a native integration?", a: "~5 minutes" },
+            { q: "Which integration direction is recommended to start with?", a: "One-way (Zetrix reads)" },
+            { q: "Name two integration settings you should configure after connecting.", a: "Direction, frequency, and scope (any two)" },
+            { q: "What should you use for production integrations instead of personal accounts?", a: "Service accounts" },
+            { q: "How often should you audit connected integrations?", a: "Quarterly" }
+          ]
         },
         {
           title: "Error Handling & Fallbacks",
           content: `<h3>Building Resilient Automation</h3>
-          <p>Automation breaks. The question is: does it break gracefully? This segment teaches defensive design.</p>
-          <h3>Common Failure Modes</h3>
+          <p>Automation breaks. The question is: does it break gracefully? A failed workflow that sends 200 duplicate emails is worse than no automation at all. This segment teaches defensive design.</p>
+
+          <h3>Case Study: The Great Duplicate Email Incident</h3>
+          <p>A fintech startup (name withheld) had a marketing automation workflow that sent personalised loan offer emails. An API timeout caused the workflow to retry aggressively without checking if the previous attempt succeeded. Result: 12,000 customers received the same email 7 times in 20 minutes. Support was overwhelmed. Trust was damaged. The root cause? No idempotency check and no backoff strategy.</p>
+          <p><strong>Lessons learned:</strong></p>
+          <ul>
+            <li>Always check if an action was already completed before retrying.</li>
+            <li>Use exponential backoff, not fixed-interval hammering.</li>
+            <li>Set a maximum retry limit (3 is standard; 5 is generous).</li>
+            <li>Alert humans immediately when retries are exhausted.</li>
+          </ul>
+
+          <h3>The DEFENCE Framework for Resilient Automation</h3>
           <ol>
-            <li><strong>API Timeout:</strong> A connected service is slow or down.</li>
-            <li><strong>Auth Expiry:</strong> OAuth tokens expire after 30–90 days.</li>
-            <li><strong>Data Mismatch:</strong> The input format changed (e.g., a new column in a CSV).</li>
-            <li><strong>Rate Limiting:</strong> Too many requests to a service in a short window.</li>
-            <li><strong>AI Hallucination:</strong> The Avatar generates incorrect or nonsensical output.</li>
+            <li><strong>Detect:</strong> Can you tell when something goes wrong? Logging, health dashboards, and anomaly alerts are essential.</li>
+            <li><strong>Evaluate:</strong> Is this a transient error (retry) or a systemic failure (stop and alert)? Distinguish 503 Service Unavailable from 401 Unauthorized.</li>
+            <li><strong>Fail Safe:</strong> What is the least harmful state? For email: don't send. For data sync: don't overwrite. For notifications: queue for later.</li>
+            <li><strong>Escalate:</strong> Who needs to know, and how fast? Define SLAs: P0 (immediate Slack + SMS), P1 (Slack within 15 min), P2 (email digest).</li>
+            <li><strong>Notify:</strong> Tell the right person with the right context. Include: workflow name, error type, input snapshot, and suggested fix.</li>
+            <li><strong>Capture:</strong> Log everything. Timestamp, inputs, outputs, stack trace, retry count. This is your forensic evidence.</li>
+            <li><strong>Evolve:</strong> After every incident, update your runbook. The same failure should never surprise you twice.</li>
           </ol>
+
+          <h3>Common Failure Modes & Mitigations</h3>
+          <table style="width:100%;border-collapse:collapse;margin:1em 0;">
+            <tr style="background:var(--surface);"><th style="padding:8px;border:1px solid var(--border);">Failure Mode</th><th style="padding:8px;border:1px solid var(--border);">Example</th><th style="padding:8px;border:1px solid var(--border);">Mitigation</th></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">API Timeout</td><td style="padding:8px;border:1px solid var(--border);">CRM responds after 30s</td><td style="padding:8px;border:1px solid var(--border);">Exponential backoff, 3 retries, then alert</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Auth Expiry</td><td style="padding:8px;border:1px solid var(--border);">OAuth token expired</td><td style="padding:8px;border:1px solid var(--border);">Auto-refresh if supported; expiry alerts 7 days ahead</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Data Mismatch</td><td style="padding:8px;border:1px solid var(--border);">CSV has new column</td><td style="padding:8px;border:1px solid var(--border);">Schema validation; reject + notify if columns change</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Rate Limiting</td><td style="padding:8px;border:1px solid var(--border);">429 Too Many Requests</td><td style="padding:8px;border:1px solid var(--border);">Respect Retry-After header; queue and throttle</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">AI Hallucination</td><td style="padding:8px;border:1px solid var(--border);">Avatar invents a policy</td><td style="padding:8px;border:1px solid var(--border);">Output validation rules; human gate for external comms</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Duplicate Execution</td><td style="padding:8px;border:1px solid var(--border);">Email sent 7 times</td><td style="padding:8px;border:1px solid var(--border);">Idempotency keys; check-before-send logic</td></tr>
+          </table>
+
           <h3>Step-by-Step: Adding Error Handling</h3>
           <ol>
             <li>In <strong>Workflow Editor</strong>, click any action and open <strong>Error Settings</strong>.</li>
-            <li>Set a <strong>retry policy</strong>: 3 retries with exponential backoff (wait 5s, then 15s, then 45s).</li>
-            <li>Add a <strong>fallback action</strong>: If retries fail, send a Slack message to the workflow owner.</li>
-            <li>For <strong>AI actions</strong>, enable <strong>output validation</strong>. Define rules: output must contain X, must be under Y words, must reference a real document.</li>
-            <li>Add a <strong>human approval gate</strong> for any action that modifies external systems (sending emails, updating CRM).</li>
+            <li>Set a <strong>retry policy</strong>: 3 retries with exponential backoff (wait 5s, then 15s, then 45s). Never use fixed intervals.</li>
+            <li>Add a <strong>fallback action</strong>: If retries fail, send a Slack message to the workflow owner with full context.</li>
+            <li>For <strong>AI actions</strong>, enable <strong>output validation</strong>. Define rules: output must contain X, must be under Y words, must reference a real document, must not contain "I don't know" or hallucination markers.</li>
+            <li>Add a <strong>human approval gate</strong> for any action that modifies external systems (sending emails, updating CRM, posting to Slack).</li>
             <li>Schedule a <strong>weekly health check</strong>. The Avatar emails you a summary of all failures, retries, and fallbacks from the past 7 days.</li>
-            <li>Maintain a <strong>runbook</strong> in your PKM: "If Workflow X fails, check Y, then do Z."</li>
+            <li>Maintain a <strong>runbook</strong> in your PKM: "If Workflow X fails, check Y, then do Z." Update after every incident.</li>
           </ol>
-          <h3>Case Study: The Black Friday That Almost Broke Everything</h3>
-          <p>RetailCo's order confirmation workflow failed on Black Friday. Why? Their email provider's API timed out under load. The workflow had no retry policy, so 1,200 customers received no confirmation. After the incident:</p>
-          <ul>
-            <li>Added 3 retries with exponential backoff.</li>
-            <li>Added a fallback: if email fails after retries, send SMS via Twilio.</li>
-            <li>Added output validation: confirmation must include order number and tracking link.</li>
-            <li>Created a runbook: "If email API times out, check provider status page, enable SMS fallback, notify engineering."</li>
-          </ul>
-          <p>Next peak season: zero failed confirmations.</p>
+
           <h3>Graceful Degradation Checklist</h3>
           <ul>
-            <li>Never let a failed auto-reply send a second, duplicate email.</li>
-            <li>If a calendar sync fails, do not delete existing events.</li>
+            <li>Never let a failed auto-reply send a second, duplicate email. Use idempotency keys.</li>
+            <li>If a calendar sync fails, do not delete existing events. Preserve data at all costs.</li>
             <li>If AI output fails validation, queue for human review rather than sending garbage.</li>
+            <li>If a downstream API is down, queue work for later. Don't drop it.</li>
             <li>Log every error with context (timestamp, inputs, stack trace) for debugging.</li>
-          </ul>
-          <h3>Framework: The DEFENCE Stack</h3>
-          <p>Build resilience in layers:</p>
-          <ul>
-            <li><strong>D – Detect:</strong> Monitoring and alerts for every workflow.</li>
-            <li><strong>E – Escalate:</strong> Clear rules for when humans must intervene.</li>
-            <li><strong>F – Fallback:</strong> Alternative paths when primary actions fail.</li>
-            <li><strong>E – Examine:</strong> Weekly review of all errors and near-misses.</li>
-            <li><strong>N – Notify:</strong> Inform stakeholders when automation is degraded.</li>
-            <li><strong>C – Capture:</strong> Log everything for post-mortem analysis.</li>
-            <li><strong>E – Evolve:</strong> Update runbooks and workflows based on learnings.</li>
+            <li>Test your failure paths. Deliberately break things in a test environment to see how the system behaves.</li>
           </ul>`,
-          quiz: [
-            { q: "How many retries are recommended in a retry policy?", options: ["1", "2", "3", "5"], correct: 2 },
-            { q: "What is exponential backoff?", options: ["Retrying at fixed intervals", "Increasing wait time between retries", "Deleting failed tasks", "Sending duplicate requests"], correct: 1 },
-            { q: "What should happen if AI output fails validation?", options: ["Send it anyway", "Queue for human review", "Delete the workflow", "Restart the server"], correct: 1 },
-            { q: "What does the 'F' in DEFENCE stand for?", options: ["Fix", "Fallback", "Forward", "Freeze"], correct: 1 },
-            { q: "How often should you run a workflow health check?", options: ["Daily", "Weekly", "Monthly", "Yearly"], correct: 1 }
-          ],
-          passThreshold: 80
+          interaction: {
+            type: "checkbox",
+            instruction: "A workflow that sends invoice reminder emails has just failed mid-run. The payment API returned a 503 error. According to the DEFENCE Framework and best practices, which of the following actions should be taken? Select ALL that apply:",
+            options: [
+              "Immediately retry the email send every 2 seconds until it succeeds",
+              "Use exponential backoff with a maximum of 3 retries",
+              "Send a Slack alert to the finance team after retries are exhausted",
+              "Delete the invoice record to prevent confusion",
+              "Queue the reminder for later processing instead of dropping it",
+              "Log the error with timestamp, inputs, and stack trace",
+              "Send the email anyway using a cached template even if the API is down",
+              "Update the runbook with this failure pattern after resolution"
+            ]
+          }
         },
         {
           title: "30-Day Automation Challenge",
           content: `<h3>Automate Your Work, Reclaim Your Life</h3>
-          <p>This challenge takes you from manual tasks to a mostly automated workflow in 30 days.</p>
-          <h3>Week 1: Identify & Map</h3>
-          <ol>
-            <li><strong>Day 1:</strong> Time-track your work for 4 hours. Note every repetitive task.</li>
-            <li><strong>Day 2:</strong> Rank tasks by frequency (how often) and pain (how much you hate them).</li>
-            <li><strong>Day 3:</strong> Pick your top 3 tasks. Write the manual process step-by-step.</li>
-            <li><strong>Day 4:</strong> For each task, write a single perfect prompt that produces the output.</li>
-            <li><strong>Day 5:</strong> Test each prompt 5 times. Refine until 90% accurate.</li>
-            <li><strong>Day 6:</strong> Connect one integration (Gmail, Slack, or Calendar).</li>
-            <li><strong>Day 7:</strong> Build your first semi-automated workflow. Run it manually 3 times.</li>
-          </ol>
-          <h3>Week 2: Expand & Connect</h3>
-          <ol>
-            <li><strong>Day 8–10:</strong> Build 2 more workflows. One for email, one for meetings.</li>
-            <li><strong>Day 11–12:</strong> Create your first custom agent in Agent Studio.</li>
-            <li><strong>Day 13–14:</strong> Connect a second integration. Test two-way sync.</li>
-          </ol>
-          <h3>Week 3: Scale & Delegate</h3>
-          <ol>
-            <li><strong>Day 15–17:</strong> Automate a team process (onboarding, reporting, or document review).</li>
-            <li><strong>Day 18–19:</strong> Remove one human approval gate that has been flawless for 10+ runs.</li>
-            <li><strong>Day 20–21:</strong> Set up error handling and fallback notifications.</li>
-          </ol>
-          <h3>Week 4: Optimise & Measure</h3>
-          <ol>
-            <li><strong>Day 22–24:</strong> Review automation analytics. Which workflows save the most time?</li>
-            <li><strong>Day 25–27:</strong> Refine the top 3 workflows. Shave 20% off their runtime.</li>
-            <li><strong>Day 28–29:</strong> Document your automation stack in PKM. Share with your team.</li>
-            <li><strong>Day 30:</strong> Calculate hours saved. Celebrate. Plan next quarter's automation roadmap.</li>
-          </ol>
-          <h3>Success Metrics</h3>
+          <p>This challenge takes you from manual tasks to a mostly automated workflow in 30 days. It is designed for busy professionals who can dedicate 30–60 minutes daily. By the end, you will have built 5+ workflows, connected 2+ integrations, and saved 10+ hours per week.</p>
+
+          <h3>Case Study: Sarah's 30-Day Transformation</h3>
+          <p>Sarah, a marketing director at a B2B SaaS company, was working 60-hour weeks. Most of her time was spent on reporting, email follow-ups, and meeting notes. She committed to the 30-day challenge:</p>
           <ul>
-            <li><strong>Hours saved per week:</strong> Target 10+ by Day 30.</li>
-            <li><strong>Workflows active:</strong> Target 5+ automated workflows.</li>
-            <li><strong>Error rate:</strong> Keep below 2%.</li>
-            <li><strong>Team adoption:</strong> 3+ colleagues using your automations.</li>
+            <li><strong>Week 1:</strong> She time-tracked her work and identified her top 3 pain points: weekly campaign reports, post-meeting follow-ups, and lead nurture emails.</li>
+            <li><strong>Week 2:</strong> Built an email triage agent, a meeting scribe agent, and connected Gmail + Slack. Saved 4 hours immediately.</li>
+            <li><strong>Week 3:</strong> Automated the weekly campaign report (pulling from Google Ads, LinkedIn, and HubSpot). Built a document review agent for ad copy compliance. Removed one approval gate after 12 flawless runs.</li>
+            <li><strong>Week 4:</strong> Refined workflows, documented everything in PKM, and trained her team. Calculated time saved: 14 hours/week.</li>
           </ul>
-          <p><strong>Remember:</strong> Automation is not about replacing humans. It is about removing drudgery so humans can think, create, and lead.</p>`,
+          <p><strong>Sarah's result:</strong> She now leaves the office at 17:30. Her team adopted her workflows. She was promoted to VP of Marketing 6 months later — partly because she had time to think strategically.</p>
+
+          <h3>Week 1: Identify & Map</h3>
+          <p>Goal: Understand where your time goes and pick your first automation targets.</p>
+          <ol>
+            <li><strong>Day 1:</strong> Time-track your work for 4 hours. Use a simple timer. Note every repetitive task — no matter how small. Capture: task name, time taken, frequency, and how much you dislike it (1–10).</li>
+            <li><strong>Day 2:</strong> Rank tasks by a simple formula: <code>Priority = Frequency × Time × Pain</code>. Pick the top 3.</li>
+            <li><strong>Day 3:</strong> For each task, write the manual process step-by-step. Be explicit. "I open Gmail, search for client name, copy last email, open Google Doc, paste, edit tone, save as PDF, attach to new email, send."</li>
+            <li><strong>Day 4:</strong> For each task, write a single perfect prompt that produces the output. Test it manually 3 times. Refine.</li>
+            <li><strong>Day 5:</strong> Test each prompt 5 more times with different inputs. Refine until 90% accurate. Document the "90% criteria."</li>
+            <li><strong>Day 6:</strong> Connect one integration (Gmail, Slack, or Calendar). Test a simple read/write action.</li>
+            <li><strong>Day 7:</strong> Build your first semi-automated workflow. Run it manually 3 times. Fix any issues. Celebrate your first win.</li>
+          </ol>
+
+          <h3>Week 2: Expand & Connect</h3>
+          <p>Goal: Build more workflows and connect additional tools.</p>
+          <ol>
+            <li><strong>Day 8–10:</strong> Build 2 more workflows. One for email (triage or follow-up), one for meetings (pre-prep or post-summary).</li>
+            <li><strong>Day 11–12:</strong> Create your first custom agent in Agent Studio. Use the Agent Design Canvas. Test with 5 diverse inputs.</li>
+            <li><strong>Day 13–14:</strong> Connect a second integration (Notion, HubSpot, or Google Sheets). Test two-way sync with a small dataset.</li>
+          </ol>
+
+          <h3>Week 3: Scale & Delegate</h3>
+          <p>Goal: Automate team-level processes and start trusting your workflows.</p>
+          <ol>
+            <li><strong>Day 15–17:</strong> Automate a team process (onboarding, reporting, or document review). Involve one colleague. Get their feedback.</li>
+            <li><strong>Day 18–19:</strong> Remove one human approval gate that has been flawless for 10+ runs. Document your rationale. Monitor closely.</li>
+            <li><strong>Day 20–21:</strong> Set up error handling and fallback notifications. Add retries, Slack alerts, and a runbook page in PKM.</li>
+          </ol>
+
+          <h3>Week 4: Optimise & Measure</h3>
+          <p>Goal: Refine, document, and prove ROI.</p>
+          <ol>
+            <li><strong>Day 22–24:</strong> Review automation analytics. Which workflows save the most time? Which have the highest error rate? Optimise the top 3.</li>
+            <li><strong>Day 25–27:</strong> Refine the top 3 workflows. Shave 20% off their runtime by removing unnecessary steps or improving prompts.</li>
+            <li><strong>Day 28–29:</strong> Document your automation stack in PKM. Include: workflow list, integrations, agents, runbooks, and team contacts. Share with your team.</li>
+            <li><strong>Day 30:</strong> Calculate hours saved. Formula: <code>(Old Time − New Time) × Frequency × 52 weeks</code>. Celebrate. Plan next quarter's automation roadmap.</li>
+          </ol>
+
+          <h3>Success Metrics to Track</h3>
+          <table style="width:100%;border-collapse:collapse;margin:1em 0;">
+            <tr style="background:var(--surface);"><th style="padding:8px;border:1px solid var(--border);">Metric</th><th style="padding:8px;border:1px solid var(--border);">Week 1 Baseline</th><th style="padding:8px;border:1px solid var(--border);">Week 4 Target</th></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Hours/week on repetitive tasks</td><td style="padding:8px;border:1px solid var(--border);">Measure</td><td style="padding:8px;border:1px solid var(--border);">−50%</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Active workflows</td><td style="padding:8px;border:1px solid var(--border);">0</td><td style="padding:8px;border:1px solid var(--border);">5+</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Connected integrations</td><td style="padding:8px;border:1px solid var(--border);">0</td><td style="padding:8px;border:1px solid var(--border);">2+</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Workflow accuracy (% flawless)</td><td style="padding:8px;border:1px solid var(--border);">N/A</td><td style="padding:8px;border:1px solid var(--border);">&gt;90%</td></tr>
+            <tr><td style="padding:8px;border:1px solid var(--border);">Team members using workflows</td><td style="padding:8px;border:1px solid var(--border);">0</td><td style="padding:8px;border:1px solid var(--border);">1+</td></tr>
+          </table>
+
+          <h3>Mindset Shifts for the Challenge</h3>
+          <ul>
+            <li><strong>Perfection is the enemy:</strong> A workflow that is 80% accurate and saves 5 hours is better than a perfect workflow that never launches.</li>
+            <li><strong>Start small, stack wins:</strong> Each workflow you build makes the next one easier. Momentum matters.</li>
+            <li><strong>Trust but verify:</strong> Automation is powerful, but you are still responsible. Review outputs until you're confident.</li>
+            <li><strong>Share your wins:</strong> When your team sees you leaving on time, they'll ask how. Teach them. Automation scales through people.</li>
+          </ul>
+          <p><strong>Remember:</strong> Automation is not about replacing humans. It is about removing drudgery so humans can think, create, and lead. Your brain is for decisions, not data entry.</p>`,
           quiz: [
-            { q: "What is the recommended starting point for automation?", options: ["Fully automated", "Semi-automated with human approval", "Manual only", "AI-only with no oversight"], correct: 1 },
-            { q: "How many flawless runs are suggested before removing a human approval gate?", options: ["3", "5", "10", "20"], correct: 2 },
-            { q: "Which tool listens to meetings in real time?", options: ["Email Agent", "Document Review Agent", "Meeting Scribe Agent", "Follow-Up Agent"], correct: 2 },
-            { q: "What should you do if an integration auth token expires?", options: ["Ignore it", "Re-authenticate and monitor health", "Delete the integration", "Contact support immediately"], correct: 1 },
-            { q: "Which folder should trigger document review?", options: ["Archive", "Pending Review", "Daily Updates", "Reports"], correct: 1 },
-            { q: "What is the target hours saved per week by Day 30?", options: ["2+", "5+", "10+", "20+"], correct: 2 }
+            { q: "How many hours per week did Sarah save after the 30-day challenge?", options: ["4 hours", "8 hours", "10 hours", "14 hours"], correct: 3 },
+            { q: "What is the formula for ranking tasks in Week 1?", options: ["Frequency + Time + Pain", "Frequency × Time × Pain", "Frequency ÷ Time × Pain", "Time × Pain only"], correct: 1 },
+            { q: "When should you remove a human approval gate?", options: ["After 3 runs", "After 5 runs", "After 10+ flawless runs", "Immediately"], correct: 2 },
+            { q: "What is the Week 4 target for workflow accuracy?", options: [">70%", ">80%", ">90%", "100%"], correct: 2 },
+            { q: "Which mindset shift is recommended for the challenge?", options: ["Automate everything perfectly before launching", "Start small and stack wins", "Never share workflows with your team", "Remove all human oversight immediately"], correct: 1 }
           ],
           passThreshold: 80
         }
