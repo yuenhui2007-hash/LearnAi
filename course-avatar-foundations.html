@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Foundations — Zetrix AI Academy</title>
+  <link rel="stylesheet" href="css/styles.css?v=10">
+  <link rel="stylesheet" href="css/course-engine.css?v=2">
+  <script src="js/nav.js?v=6" defer></script>
+  <script src="js/course-engine.js?v=2" defer></script>
+  <script src="js/theme.js?v=5" defer></script>
+</head>
+<body>
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h3>Avatar Foundations</h3>
+      <div class="progress-wrap">
+        <div class="progress-track"><div id="overall-progress" class="progress-fill" style="width:0%"></div></div>
+        <div id="overall-progress-text" class="progress-text">0/10 segments</div>
+      </div>
+      <nav id="segment-nav"></nav>
+    </aside>
+    <main class="course-main" id="segment-content"></main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CourseEngine.init('avatar-foundations', [
+        {
+          title: "Understanding AI Levels",
+          content: `<h3>Welcome to Avatar Foundations</h3>
+          <p>This course teaches you how to create, configure, and operate your Zetrix AI Avatar. We begin with the fundamentals of AI capability levels.</p>
+          <h3>AI Levels Overview</h3>
+          <ol>
+            <li><strong>Level 1 – Reactive AI:</strong> Responds to prompts with no memory. Example: basic chatbots that forget the conversation after each message.</li>
+            <li><strong>Level 2 – Contextual AI:</strong> Remembers the current conversation thread. Example: modern assistants like ChatGPT within a single session.</li>
+            <li><strong>Level 3 – Personalised AI:</strong> Retains long-term memory, preferences, and identity. This is where your Zetrix Avatar lives. It knows your goals, documents, and voice.</li>
+            <li><strong>Level 4 – Autonomous AI:</strong> Can plan multi-step tasks and act without constant prompting. Example: auto-scheduling meetings and sending follow-ups.</li>
+            <li><strong>Level 5 – Supervisory AI:</strong> Manages other AI agents, reviews outputs, and improves itself. Example: an AI team lead that delegates to sub-agents.</li>
+          </ol>
+          <p><strong>Practical Tip:</strong> Start by treating your Avatar as a Level 3 assistant. Feed it context and refine its memory. Over time, you can push toward Level 4 autonomy.</p>`
+        },
+        {
+          title: "The AI OS Concept",
+          content: `<h3>What is an AI Operating System?</h3>
+          <p>Think of your Zetrix Avatar as an operating system for intelligence. Just as Windows manages files and apps, your AI OS manages knowledge, tasks, and communication.</p>
+          <h3>Core Components</h3>
+          <ol>
+            <li><strong>Kernel (Identity Model):</strong> The core personality and values that shape every response. Define this first.</li>
+            <li><strong>File System (PKM):</strong> Your Personal Knowledge Management layer—documents, notes, and data the Avatar can retrieve.</li>
+            <li><strong>Applications (Agents):</strong> Specialised modules for email, writing, coding, or sales. Each agent has a specific skill set.</li>
+            <li><strong>Interface (Voice + Chat):</strong> How you interact. Upload your voice to make the experience feel truly personal.</li>
+            <li><strong>Updates (Daily Updates):</strong> Regular feeds of new information so the Avatar stays current.</li>
+          </ol>
+          <p><strong>Step-by-step to set up your AI OS:</strong></p>
+          <ol>
+            <li>Navigate to your Zetrix Dashboard and click "Create Avatar."</li>
+            <li>Define your Identity Model by answering the 5 value questions.</li>
+            <li>Create your first PKM folder called "Core Knowledge."</li>
+            <li>Upload 3-5 key documents that represent your world.</li>
+            <li>Enable Daily Updates and connect one data source (newsletter, RSS, or calendar).</li>
+          </ol>`
+        },
+        {
+          title: "Zetrix Platform Features",
+          content: `<h3>Key Features of the Zetrix Platform</h3>
+          <p>Before building your Avatar, familiarise yourself with the tools available. Here is a guided walkthrough.</p>
+          <h3>Step-by-Step: Exploring the Dashboard</h3>
+          <ol>
+            <li><strong>Dashboard Overview:</strong> Log in and view the central hub. You will see quick stats: memory usage, active agents, and recent activity.</li>
+            <li><strong>Avatar Studio:</strong> Click the Avatar tab. Here you create, clone, and manage multiple Avatars for different roles (work, personal, study).</li>
+            <li><strong>PKM Manager:</strong> Access the folder tree. Create folders, upload files, and set retrieval permissions per Avatar.</li>
+            <li><strong>Agent Studio:</strong> Browse pre-built agents or build custom ones using prompt templates and tool integrations.</li>
+            <li><strong>Analytics:</strong> Review how often your Avatar retrieves data, which documents are most referenced, and response quality scores.</li>
+          </ol>
+          <h3>Feature Matrix</h3>
+          <ul>
+            <li><strong>Memory Layers:</strong> Short-term (session), long-term (PKM), and episodic (Daily Updates).</li>
+            <li><strong>Voice Engine:</strong> Clone your voice with a 30-second sample. Supports 40+ languages.</li>
+            <li><strong>Integration Hub:</strong> Connect Gmail, Slack, Notion, GitHub, and 50+ other tools.</li>
+            <li><strong>Security Vault:</strong> End-to-end encryption for sensitive documents and API keys.</li>
+          </ul>`
+        },
+        {
+          title: "Creating Your First Avatar",
+          content: `<h3>Avatar Creation Walkthrough</h3>
+          <p>Let us build your first Avatar together. Follow these exact steps.</p>
+          <ol>
+            <li>From the Dashboard, click <strong>"New Avatar"</strong> in the top-right corner.</li>
+            <li>Choose a <strong>base template</strong>:
+              <ul>
+                <li>Personal Assistant – general purpose, great for beginners.</li>
+                <li>Business Operator – focused on productivity and automation.</li>
+                <li>Creative Partner – optimised for writing, design, and content.</li>
+              </ul>
+            </li>
+            <li>Enter an <strong>Avatar Name</strong>. Pick something memorable—this is how you will address it in voice commands.</li>
+            <li>Write a <strong>one-sentence mission</strong>. Example: "Help me manage my startup's daily operations and content calendar."</li>
+            <li>Select a <strong>primary language</strong> and <strong>tone</strong> (professional, friendly, witty, or calm).</li>
+            <li>Click <strong>Create</strong>. The Avatar initialises in ~10 seconds.</li>
+            <li>Once created, you will land on the Avatar Profile page. Here you can edit the Identity Model, connect PKM folders, and test the chat interface.</li>
+          </ol>
+          <p><strong>Pro Tip:</strong> Start with the Personal Assistant template even if you plan to use it for business. You can always add specialised agents later.</p>`,
+          flashcards: [
+            { q: "What is the first step in creating an Avatar?", a: "Click 'New Avatar' and choose a base template." },
+            { q: "What should your one-sentence mission describe?", a: "The primary purpose or role of your Avatar." },
+            { q: "How many base templates are available at creation?", a: "Three: Personal Assistant, Business Operator, and Creative Partner." }
+          ]
+        },
+        {
+          title: "Uploading Your Voice",
+          content: `<h3>Voice Upload and Training</h3>
+          <p>Your Avatar becomes truly personal when it speaks with your voice. Here is how to upload and verify it.</p>
+          <h3>Step-by-Step: Voice Cloning</h3>
+          <ol>
+            <li>Navigate to your Avatar's Profile and click the <strong>Voice</strong> tab.</li>
+            <li>Choose <strong>Upload Sample</strong> or <strong>Record Live</strong>.
+              <ul>
+                <li><strong>Upload Sample:</strong> Select a clear audio file (MP3, WAV, or M4A) of you speaking for 30–60 seconds. Avoid background noise.</li>
+                <li><strong>Record Live:</strong> Use your device's microphone. Read the provided script for best consistency.</li>
+              </ul>
+            </li>
+            <li>Click <strong>Process Voice</strong>. The system analyses tone, pitch, pacing, and accent. This takes 1–2 minutes.</li>
+            <li><strong>Preview the cloned voice:</strong> Click the play button next to the sample text. Listen for clarity and likeness.</li>
+            <li>If satisfied, click <strong>Save Voice Profile</strong>. If not, re-record or upload a cleaner sample.</li>
+            <li><strong>Enable Voice Mode:</strong> Toggle "Use My Voice" in the Avatar settings so all spoken responses use your clone.</li>
+          </ol>
+          <p><strong>Best Practices:</strong></p>
+          <ul>
+            <li>Use a quiet room with minimal echo.</li>
+            <li>Speak naturally—do not perform or exaggerate.</li>
+            <li>Record at least 30 seconds; 60 seconds gives better results.</li>
+            <li>Avoid music, traffic, or other speakers in the background.</li>
+          </ul>`
+        },
+        {
+          title: "Building the Identity Model",
+          content: `<h3>Defining Who Your Avatar Is</h3>
+          <p>The Identity Model is the personality kernel of your Avatar. It shapes every interaction, decision, and tone.</p>
+          <h3>Step-by-Step: Identity Model Setup</h3>
+          <ol>
+            <li>Open your Avatar Profile and click <strong>Identity Model</strong>.</li>
+            <li>Answer the <strong>Core Values</strong> questions:
+              <ul>
+                <li>What principles guide your decisions? (e.g., honesty, efficiency, creativity)</li>
+                <li>How do you prefer to receive feedback? (direct, gentle, structured)</li>
+                <li>What is your risk tolerance? (cautious, balanced, adventurous)</li>
+                <li>How do you treat time? (strictly scheduled, flexible, deep-work focused)</li>
+                <li>What motivates you? (achievement, learning, relationships, impact)</li>
+              </ul>
+            </li>
+            <li>Write a <strong>personal bio</strong> (100–200 words). Include your background, goals, and current projects. The Avatar uses this to contextualise advice.</li>
+            <li>Define <strong>communication preferences</strong>:
+              <ul>
+                <li>Default tone: professional / casual / enthusiastic</li>
+                <li>Response length: concise / balanced / detailed</li>
+                <li>Humour level: none / occasional / frequent</li>
+              </ul>
+            </li>
+            <li>Set <strong>boundaries</strong>: Topics to avoid, times when the Avatar should not interrupt, and people whose messages should be prioritised.</li>
+            <li>Click <strong>Save Identity Model</strong>. The Avatar now personalises every response based on these settings.</li>
+          </ol>
+          <p><strong>Example Bio:</strong> "I am a startup founder building a SaaS product in the education space. I value speed of execution but also deep thinking. I am based in London, work best in mornings, and prefer direct feedback. My goal is to reach £1M ARR within 18 months."</p>`
+        },
+        {
+          title: "PKM Upload and Organisation",
+          content: `<h3>Setting Up Your Personal Knowledge Management</h3>
+          <p>Your PKM is the Avatar's long-term memory. A well-organised PKM means faster retrieval and better advice.</p>
+          <h3>Step-by-Step: Uploading Documents</h3>
+          <ol>
+            <li>Go to the <strong>PKM Manager</strong> from the Dashboard sidebar.</li>
+            <li>Click <strong>Create Folder</strong>. Name it descriptively. Example: "Business Strategy 2026."</li>
+            <li>Inside the folder, click <strong>Upload Files</strong>. Supported formats: PDF, DOCX, TXT, MD, CSV, and XLSX.</li>
+            <li>Select files from your computer. You can upload up to 50 files at once (max 10 MB each).</li>
+            <li>Wait for processing. The system extracts text, indexes it, and makes it searchable. Processing time depends on file size.</li>
+            <li><strong>Verify uploads:</strong> Click a file to preview the extracted text. If formatting is broken, try converting to PDF first.</li>
+            <li>Set <strong>retrieval permissions</strong>: Choose which Avatars can access this folder. Default is "All Avatars."</li>
+          </ol>
+          <h3>Organisation Best Practices</h3>
+          <ul>
+            <li>Use consistent naming: [Topic] – [Date] – [Version]. Example: "Q3 Marketing Plan – 2026-07 – v2."</li>
+            <li>Limit folder depth to 3 levels for faster browsing.</li>
+            <li>Tag important files with colour labels (red = urgent, green = reference, blue = archived).</li>
+            <li>Review and delete outdated files every month to keep the index lean.</li>
+          </ul>`
+        },
+        {
+          title: "Folder Structure Best Practices",
+          content: `<h3>Designing a Scalable Folder Structure</h3>
+          <p>A chaotic PKM leads to poor retrieval. Here is a proven folder structure you can adopt today.</p>
+          <h3>Recommended Top-Level Folders</h3>
+          <ol>
+            <li><strong>01 – Identity &amp; Goals:</strong> Your mission statement, values, yearly goals, and quarterly OKRs.</li>
+            <li><strong>02 – Projects:</strong> One subfolder per active project. Include briefs, timelines, and deliverables.</li>
+            <li><strong>03 – Knowledge Base:</strong> Reference material—industry reports, book summaries, research papers, and how-to guides.</li>
+            <li><strong>04 – Communications:</strong> Email templates, meeting notes, call transcripts, and CRM exports.</li>
+            <li><strong>05 – Personal:</strong> Health records, travel plans, family info, and hobbies. Only share with your personal Avatar.</li>
+            <li><strong>06 – Archive:</strong> Completed projects and outdated files. Keep for reference but exclude from active retrieval.</li>
+          </ol>
+          <h3>Step-by-Step: Creating the Structure</h3>
+          <ol>
+            <li>In PKM Manager, click <strong>New Folder</strong> and name it "01 – Identity &amp; Goals."</li>
+            <li>Repeat for all six top-level folders.</li>
+            <li>Inside each folder, create 2–3 subfolders. Example: Under "03 – Knowledge Base," add "Industry Reports," "Book Summaries," and "Tutorials."</li>
+            <li>Upload 2–3 starter documents into each subfolder to test retrieval.</li>
+            <li>Ask your Avatar: "What do I know about [topic]?" and verify it pulls from the correct folder.</li>
+            <li>Adjust folder names based on retrieval accuracy.</li>
+          </ol>
+          <p><strong>Rule of Thumb:</strong> If you cannot find a document in under 10 seconds, the structure needs simplifying.</p>`
+        },
+        {
+          title: "Daily Updates & Continuous Learning",
+          content: `<h3>Keeping Your Avatar Current</h3>
+          <p>An Avatar with stale knowledge is like a newspaper from last month. Daily Updates ensure continuous relevance.</p>
+          <h3>What Are Daily Updates?</h3>
+          <p>Daily Updates are automated feeds of new information injected into your Avatar's memory. Sources include:</p>
+          <ul>
+            <li>RSS feeds from blogs and news sites</li>
+            <li>Newsletter subscriptions (forwarded via email)</li>
+            <li>Calendar events and meeting notes</li>
+            <li>GitHub commits, Jira tickets, or Slack summaries</li>
+            <li>Manual notes you dictate or type each day</li>
+          </ul>
+          <h3>Step-by-Step: Enabling Daily Updates</h3>
+          <ol>
+            <li>Open your Avatar Profile and click <strong>Daily Updates</strong>.</li>
+            <li>Click <strong>Add Source</strong>. Choose a source type:
+              <ul>
+                <li><strong>RSS Feed:</strong> Paste the feed URL. The Avatar checks every 6 hours.</li>
+                <li><strong>Email Forwarding:</strong> Copy the unique forwarding address and add it to your newsletter subscriptions.</li>
+                <li><strong>Calendar Sync:</strong> Connect Google Calendar or Outlook. The Avatar reads event titles and descriptions.</li>
+                <li><strong>Manual Entry:</strong> A quick-text box for daily reflections or notes.</li>
+              </ul>
+            </li>
+            <li>Set a <strong>summary schedule</strong>: Morning briefing at 08:00, evening recap at 18:00.</li>
+            <li>Choose <strong>delivery format</strong>: bullet list, narrative paragraph, or voice message.</li>
+            <li>Click <strong>Activate</strong>. The Avatar now receives and integrates updates automatically.</li>
+          </ol>
+          <p><strong>Pro Tip:</strong> Start with 2–3 sources. Too many sources create noise. Quality over quantity.</p>`
+        },
+        {
+          title: "30-Day Avatar Challenge",
+          content: `<h3>Your First Month with an AI Avatar</h3>
+          <p>The best way to master your Avatar is daily practice. This 30-day challenge builds habits that stick.</p>
+          <h3>Week 1: Foundation</h3>
+          <ol>
+            <li><strong>Day 1:</strong> Create your Avatar and define its mission.</li>
+            <li><strong>Day 2:</strong> Upload your voice and test 3 spoken commands.</li>
+            <li><strong>Day 3:</strong> Complete the Identity Model with values and bio.</li>
+            <li><strong>Day 4:</strong> Create your PKM folder structure and upload 5 documents.</li>
+            <li><strong>Day 5:</strong> Enable one Daily Update source (RSS or email).</li>
+            <li><strong>Day 6:</strong> Have the Avatar summarise one uploaded document.</li>
+            <li><strong>Day 7:</strong> Review the week's interactions. What worked? What confused the Avatar?</li>
+          </ol>
+          <h3>Week 2: Integration</h3>
+          <ol>
+            <li><strong>Day 8–10:</strong> Use the Avatar for email drafting and meeting prep.</li>
+            <li><strong>Day 11–12:</strong> Add 5 more documents and test retrieval accuracy.</li>
+            <li><strong>Day 13–14:</strong> Connect one integration (Gmail, Slack, or Notion).</li>
+          </ol>
+          <h3>Week 3: Automation</h3>
+          <ol>
+            <li><strong>Day 15–17:</strong> Create your first custom agent in Agent Studio.</li>
+            <li><strong>Day 18–19:</strong> Automate a repetitive task (weekly report, follow-up emails).</li>
+            <li><strong>Day 20–21:</strong> Share a task with a teammate via the Avatar.</li>
+          </ol>
+          <h3>Week 4: Optimisation</h3>
+          <ol>
+            <li><strong>Day 22–24:</strong> Review analytics. Which documents are most used? Which agents save the most time?</li>
+            <li><strong>Day 25–27:</strong> Refine the Identity Model based on real usage.</li>
+            <li><strong>Day 28–29:</strong> Teach the Avatar a new skill by uploading a tutorial.</li>
+            <li><strong>Day 30:</strong> Celebrate! Export a usage report and set next-month goals.</li>
+          </ol>
+          <p><strong>Remember:</strong> Consistency beats intensity. Ten minutes a day for 30 days transforms your Avatar from a tool into a true partner.</p>`,
+          quiz: [
+            { q: "Which AI level retains long-term memory and preferences?", options: ["Level 1", "Level 2", "Level 3", "Level 5"], correct: 2 },
+            { q: "What is the maximum file size for PKM uploads?", options: ["5 MB", "10 MB", "20 MB", "50 MB"], correct: 1 },
+            { q: "How many seconds of voice sample are recommended for cloning?", options: ["10", "30", "60", "120"], correct: 2 },
+            { q: "What should you name your first PKM folder?", options: ["Random Name", "Core Knowledge", "My Stuff", "Folder 1"], correct: 1 },
+            { q: "How many top-level folders are recommended in the PKM structure?", options: ["3", "4", "5", "6"], correct: 3 }
+          ],
+          passThreshold: 80
+        }
+      ]);
+    });
+  </script>
+</body>
+</html>

@@ -398,6 +398,21 @@
         container.appendChild(section);
     }
 
+    // Auto-open board from URL query params
+    (function initFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const board = params.get('board');
+        const level = params.get('level');
+        if (board) {
+            showBoard(board);
+            if (board === 'caie' && level) {
+                showCAIELevel(level);
+            } else if (board === 'edexcel' && level) {
+                showEdexcelLevel(level);
+            }
+        }
+    })();
+
     function renderIELTS() {
         const wrapper = document.createElement('div');
 

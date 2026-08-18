@@ -80,23 +80,24 @@
 
         var container = document.getElementById('topicSections');
 
-        // Determine PastPaperly papers URL
-        var papersCode = '';
-        if (levelFilter === 'alevel') {
-            var parts = subject.code.split('·');
-            papersCode = parts[0].trim().split(' ')[0]; // e.g. "9701"
-        } else if (levelFilter === 'igcse') {
-            var parts = subject.code.split('·');
-            papersCode = parts[1] ? parts[1].trim().split(' ')[0] : subject.code.trim().split(' ')[0];
-        } else {
-            // No level filter — default to alevel code if available, else igcse
-            var parts = subject.code.split('·');
-            papersCode = parts[0].trim().split(' ')[0];
+        // Build PapaCambridge past papers URL
+        var papaSubjectSlug = subject.name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        if (papaSubjectSlug === 'maths') papaSubjectSlug = 'mathematics';
+
+        var papaBoardSlug = 'cie-a-level';
+        if (levelFilter === 'igcse') {
+            papaBoardSlug = 'cie-igcse';
+        } else if (levelFilter === 'ial') {
+            papaBoardSlug = 'edexcel-a-level';
+        } else if (levelFilter === 'igcse_edexcel' || levelFilter === 'edexcel_igcse') {
+            papaBoardSlug = 'edexcel-igcse';
+        } else if (levelFilter === 'gcse') {
+            papaBoardSlug = 'edexcel-gcse';
+        } else if (levelFilter === 'ib') {
+            papaBoardSlug = 'ib';
         }
-        // Build PastPaperly URL slug from subject name
-        var slug = subject.name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        var papersLevelPath = levelFilter === 'igcse' ? 'igcse' : 'a-level';
-        var papersUrl = 'https://pastpaperly.com/' + papersLevelPath + '/' + slug + '-' + papersCode;
+
+        var papersUrl = 'https://www.papacambridge.com/' + papaBoardSlug + '/' + papaSubjectSlug + '/';
 
         // Tab selector: Notes / Past Year Papers / IAS Guide (Accounting A-Level only)
         var activeTab = 'notes';

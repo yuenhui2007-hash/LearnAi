@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales &amp; Marketing — Zetrix AI Academy</title>
+  <link rel="stylesheet" href="css/styles.css?v=10">
+  <link rel="stylesheet" href="css/course-engine.css?v=2">
+  <script src="js/nav.js?v=6" defer></script>
+  <script src="js/course-engine.js?v=2" defer></script>
+  <script src="js/theme.js?v=5" defer></script>
+</head>
+<body>
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h3>Sales &amp; Marketing</h3>
+      <div class="progress-wrap">
+        <div class="progress-track"><div id="overall-progress" class="progress-fill" style="width:0%"></div></div>
+        <div id="overall-progress-text" class="progress-text">0/10 segments</div>
+      </div>
+      <nav id="segment-nav"></nav>
+    </aside>
+    <main class="course-main" id="segment-content"></main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CourseEngine.init('sales-marketing', [
+        {
+          title: "The Marketing Flywheel",
+          content: `<h3>Attract, Engage, Delight—On Repeat</h3>
+          <p>The marketing flywheel is a self-reinforcing loop where satisfied customers become your best marketers. Your Avatar can accelerate every stage.</p>
+          <h3>The Three Phases</h3>
+          <ol>
+            <li><strong>Attract:</strong> Pull in strangers with valuable content, SEO, and social presence. Your Avatar drafts blog posts, optimises headlines, and researches keywords.</li>
+            <li><strong>Engage:</strong> Convert visitors into leads through personalised emails, landing pages, and chat. Your Avatar segments audiences and writes tailored copy.</li>
+            <li><strong>Delight:</strong> Turn customers into promoters with exceptional support, surprise bonuses, and community. Your Avatar monitors sentiment and triggers retention campaigns.</li>
+          </ol>
+          <h3>Step-by-Step: Mapping Your Flywheel</h3>
+          <ol>
+            <li>Open a blank document in your PKM. Title it "Marketing Flywheel – [Your Business]."</li>
+            <li>List your top 3 customer acquisition channels today. Example: LinkedIn, Google Ads, referrals.</li>
+            <li>For each channel, note: volume of leads, conversion rate, and cost per acquisition.</li>
+            <li>Identify the biggest friction point. Where do leads drop off? Example: landing page bounce, email open rate, demo no-shows.</li>
+            <li>Ask your Avatar: "Analyse my funnel data and suggest 5 improvements for [friction point]."</li>
+            <li>Implement the top suggestion. Measure change over 2 weeks.</li>
+            <li>Repeat monthly. The flywheel gets faster with each iteration.</li>
+          </ol>
+          <p><strong>Key Metric:</strong> Net Promoter Score (NPS). Ask customers: "How likely are you to recommend us?" Your Avatar can automate the survey and analyse open-text responses.</p>`
+        },
+        {
+          title: "AI-Powered Copywriting",
+          content: `<h3>Writing That Converts</h3>
+          <p>Great copy is not magic—it is method. Your Avatar can draft, test, and refine copy at scale.</p>
+          <h3>The COPY Framework</h3>
+          <ol>
+            <li><strong>C – Context:</strong> Who is the reader? What do they know? What do they feel? Feed this to your Avatar in the prompt.</li>
+            <li><strong>O – Objective:</strong> What is the one action you want them to take? Click? Buy? Reply? Be specific.</li>
+            <li><strong>P – Promise:</strong> What transformation do you offer? Frame it as a before/after.</li>
+            <li><strong>Y – You:</strong> Make the reader the hero. Use "you" twice as often as "we."</li>
+          </ol>
+          <h3>Step-by-Step: Drafting a Landing Page</h3>
+          <ol>
+            <li>Write a brief in your PKM. Include: target audience, objective, key benefits, and 3 customer testimonials.</li>
+            <li>Prompt your Avatar: "Write a landing page using the COPY framework. Target: [audience]. Objective: [action]. Promise: [transformation]. Include testimonials."</li>
+            <li>Review the draft. Highlight what works and what feels generic.</li>
+            <li>Prompt for revision: "Make the headline more urgent. Add a specific number. Replace 'amazing' with concrete language."</li>
+            <li>Generate 3 headline variants. Use an A/B testing tool or ask your Avatar to predict which will win based on sentiment analysis.</li>
+            <li>Write the CTA (Call to Action). Rule: one primary CTA per section. Never compete for attention.</li>
+            <li>Final check: Read the copy aloud. If it sounds robotic, prompt: "Make this conversational, as if explaining to a friend over coffee."</li>
+          </ol>
+          <h3>Copy Formats to Master</h3>
+          <ul>
+            <li><strong>Email subject lines:</strong> Curiosity + relevance. Example: "The £10k mistake 80% of founders make."</li>
+            <li><strong>Ad headlines:</strong> Benefit + urgency. Example: "Cut meeting time in half—today."</li>
+            <li><strong>Social hooks:</strong> Contrarian or relatable. Example: "I spent 10 years learning this. Here it is in 5 minutes."</li>
+            <li><strong>Video scripts:</strong> Hook → Problem → Solution → Proof → CTA.</li>
+          </ul>`
+        },
+        {
+          title: "Lead Scoring & Qualification",
+          content: `<h3>Focus on the Right Prospects</h3>
+          <p>Not all leads are equal. Lead scoring helps your sales team prioritise the ones most likely to convert.</p>
+          <h3>Building a Lead Scoring Model</h3>
+          <ol>
+            <li><strong>Define your ideal customer profile (ICP).</strong> List firmographic criteria: company size, industry, location, and revenue.</li>
+            <li><strong>Identify behavioural signals.</strong> Which actions indicate buying intent? Examples: visited pricing page, downloaded whitepaper, attended webinar, opened 3+ emails.</li>
+            <li><strong>Assign point values.</strong>
+              <ul>
+                <li>Demographic fit: +10 to +30 points per criterion matched.</li>
+                <li>High-intent behaviour: +20 to +50 points.</li>
+                <li>Low-intent behaviour: +1 to +5 points.</li>
+                <li>Negative signals: -10 to -30 points (unsubscribed, competitor domain, bounced email).</li>
+              </ul>
+            </li>
+            <li>Set <strong>score thresholds</strong>:
+              <ul>
+                <li>0–30: Cold lead → nurture with content.</li>
+                <li>31–60: Warm lead → sales outreach.</li>
+                <li>61–100: Hot lead → immediate call.</li>
+              </ul>
+            </li>
+          </ol>
+          <h3>Step-by-Step: Automating Lead Scoring</h3>
+          <ol>
+            <li>Create a <strong>Lead Scoring Agent</strong> in Agent Studio.</li>
+            <li>Connect your CRM (HubSpot, Salesforce, or Pipedrive).</li>
+            <li>Upload your scoring rubric to PKM as "Lead-Scoring-Rubric.md."</li>
+            <li>Configure the agent to:
+              <ul>
+                <li>Read new leads from CRM every hour.</li>
+                <li>Score each lead against the rubric.</li>
+                <li>Update the CRM score field.</li>
+                <li>Trigger alerts for hot leads (&gt;60 points).</li>
+              </ul>
+            </li>
+            <li>Test with 10 recent leads. Compare AI scores to your manual judgement. Adjust the rubric if they diverge.</li>
+            <li>Enable auto-routing: Hot leads go to senior reps; warm leads to junior reps; cold leads to nurture sequences.</li>
+          </ol>`
+        },
+        {
+          title: "Content Cascade Strategy",
+          content: `<h3>One Idea, Ten Pieces of Content</h3>
+          <p>Content marketing is a volume game. The Content Cascade turns one core idea into a week of assets.</p>
+          <h3>The Cascade Model</h3>
+          <ol>
+            <li><strong>Pillar Content:</strong> One long-form piece (blog post, whitepaper, or video) that covers a topic exhaustively.</li>
+            <li><strong>Secondary Content:</strong> 3–5 pieces derived from the pillar. Examples: LinkedIn carousel, Twitter thread, infographic, podcast episode.</li>
+            <li><strong>Micro Content:</strong> 5–10 short posts, quotes, or clips extracted from secondary content.</li>
+            <li><strong>Engagement Content:</strong> Polls, questions, and reactions that reference the core idea without repeating it.</li>
+          </ol>
+          <h3>Step-by-Step: Running a Content Cascade</h3>
+          <ol>
+            <li>Pick a topic your audience cares about. Example: "How AI reduces onboarding time by 50%."</li>
+            <li>Write the pillar content. Target 2,000+ words or a 10-minute video. Include data, examples, and a clear framework.</li>
+            <li>Upload the pillar to your PKM. Ask your Avatar: "Extract 5 key insights, 3 quotes, and 2 statistics from this document."</li>
+            <li>Prompt for secondary content:
+              <ul>
+                <li>"Turn insight 1 into a 10-slide LinkedIn carousel."</li>
+                <li>"Turn insight 2 into a 280-character Twitter thread (5 tweets)."</li>
+                <li>"Turn statistic 1 into an infographic script with visual descriptions."</li>
+              </ul>
+            </li>
+            <li>Prompt for micro content:
+              <ul>
+                <li>"Write 5 Instagram captions using the quotes."</li>
+                <li>"Create 3 short-form video scripts (30–60 seconds) from the statistics."</li>
+              </ul>
+            </li>
+            <li>Schedule everything in your content calendar. Space posts across the week to maximise reach.</li>
+            <li>Track performance per format. Double down on what works. Archive what does not.</li>
+          </ol>
+          <p><strong>Pro Tip:</strong> Repurpose content quarterly. A blog post from January can become a refreshed thread in April and a case study in July.</p>`
+        },
+        {
+          title: "Sales Funnel Optimisation",
+          content: `<h3>Converting Visitors into Customers</h3>
+          <p>A sales funnel is a journey. Your job is to remove friction at every step. Your Avatar diagnoses and fixes leaks.</p>
+          <h3>The Standard Funnel Stages</h3>
+          <ol>
+            <li><strong>Awareness:</strong> Strangers discover you. Channels: SEO, social, ads, PR.</li>
+            <li><strong>Interest:</strong> They engage with content. Metrics: time on site, pages per session, email open rate.</li>
+            <li><strong>Consideration:</strong> They evaluate your solution. Metrics: pricing page views, demo requests, comparison downloads.</li>
+            <li><strong>Intent:</strong> They show buying signals. Metrics: cart additions, proposal downloads, sales calls booked.</li>
+            <li><strong>Purchase:</strong> They convert. Metrics: conversion rate, average order value, time to close.</li>
+            <li><strong>Retention:</strong> They stay and expand. Metrics: churn rate, net revenue retention, upsell rate.</li>
+          </ol>
+          <h3>Step-by-Step: Funnel Audit</h3>
+          <ol>
+            <li>Export funnel data for the last 90 days. Include stage volumes and conversion rates between stages.</li>
+            <li>Upload the data to PKM. Ask your Avatar: "Identify the biggest drop-off stage and suggest 3 hypotheses for why."</li>
+            <li>For each hypothesis, design a test:
+              <ul>
+                <li>Hypothesis: Pricing is unclear → Test: Add a pricing calculator to the page.</li>
+                <li>Hypothesis: Demo booking is too hard → Test: Add Calendly embed and reduce form fields.</li>
+                <li>Hypothesis: Follow-up is too slow → Test: Auto-send a personalised video within 1 hour.</li>
+              </ul>
+            </li>
+            <li>Run one test for 2 weeks. Measure change in conversion rate.</li>
+            <li>Document results in PKM. Build a "Funnel Experiments" library.</li>
+            <li>Repeat monthly. Compound improvements yield exponential growth.</li>
+          </ol>`
+        },
+        {
+          title: "Email Marketing Automation",
+          content: `<h3>Sequences That Sell While You Sleep</h3>
+          <p>Email is still the highest-ROI marketing channel. Automation makes it scale without losing personality.</p>
+          <h3>Core Email Sequences</h3>
+          <ol>
+            <li><strong>Welcome Sequence:</strong> 5–7 emails over 10 days. Introduce your brand, share your best content, and make a low-friction offer.</li>
+            <li><strong>Nurture Sequence:</strong> Weekly emails for 8 weeks. Educate, entertain, and build trust. No hard selling.</li>
+            <li><strong>Conversion Sequence:</strong> 3–5 emails over 5 days. Address objections, share case studies, and present a deadline.</li>
+            <li><strong>Re-engagement Sequence:</strong> 3 emails over 7 days for inactive subscribers. "We miss you" → "Here is what you missed" → "Last chance."</li>
+            <li><strong>Post-Purchase Sequence:</strong> Onboarding tips, upsell offers, and review requests.</li>
+          </ol>
+          <h3>Step-by-Step: Building a Welcome Sequence</h3>
+          <ol>
+            <li>Map the journey: Email 1 (immediate) → Email 2 (Day 2) → Email 3 (Day 4) → Email 4 (Day 7) → Email 5 (Day 10).</li>
+            <li>For each email, define: subject line goal, key message, and single CTA.</li>
+            <li>Prompt your Avatar to draft all 5 emails. Provide your brand voice guide from PKM.</li>
+            <li>Review and edit. Ensure each email delivers value even if the reader never clicks.</li>
+            <li>Set up the sequence in your email platform (Mailchimp, ConvertKit, or HubSpot).</li>
+            <li>Add personalisation tokens: first name, company, signup source, and content preference.</li>
+            <li>Enable tracking: open rate, click rate, reply rate, and unsubscribe rate.</li>
+            <li>Launch to a test segment (10% of list). Review after 48 hours. Fix issues. Launch to the rest.</li>
+          </ol>
+          <p><strong>Benchmarks:</strong> Welcome sequence open rate should be &gt;50%. Click rate &gt;10%. If lower, test subject lines and sender name.</p>`
+        },
+        {
+          title: "Analytics & Performance Tracking",
+          content: `<h3>Measuring What Matters</h3>
+          <p>Data without insight is noise. Your Avatar helps you track the right metrics and act on them.</p>
+          <h3>The Marketing Metrics Hierarchy</h3>
+          <ol>
+            <li><strong>Lag Metrics (Outcomes):</strong> Revenue, profit, customer lifetime value (LTV). These tell you if you won.</li>
+            <li><strong>Lead Metrics (Drivers):</strong> Traffic, conversion rate, cost per lead (CPL), email open rate. These tell you why.</li>
+            <li><strong>Process Metrics (Actions):</strong> Content pieces published, emails sent, experiments run. These tell you how hard you tried.</li>
+          </ol>
+          <h3>Step-by-Step: Building a Marketing Dashboard</h3>
+          <ol>
+            <li>List your top 3 business goals. Example: "Grow revenue 30% this quarter."</li>
+            <li>For each goal, define 1 lag metric and 2 lead metrics.
+              <ul>
+                <li>Goal: Grow revenue 30% → Lag: Monthly recurring revenue (MRR). Leads: New customer count, average revenue per user (ARPU).</li>
+              </ul>
+            </li>
+            <li>Create a <strong>Dashboard Agent</strong> in Agent Studio.</li>
+            <li>Connect data sources: Google Analytics, Facebook Ads, email platform, and CRM.</li>
+            <li>Configure the agent to pull data weekly and generate a 1-page summary.</li>
+            <li>Include: current value, change vs. last week, change vs. target, and top 3 insights.</li>
+            <li>Schedule the report every Monday at 08:00. Review in 15 minutes. Decide actions in the next 15.</li>
+          </ol>
+          <h3>Attribution Models</h3>
+          <ul>
+            <li><strong>First-touch:</strong> Credits the first channel a customer encountered. Good for awareness campaigns.</li>
+            <li><strong>Last-touch:</strong> Credits the final channel before conversion. Good for conversion campaigns.</li>
+            <li><strong>Linear:</strong> Credits all channels equally. Good for long sales cycles.</li>
+            <li><strong>Data-driven:</strong> Uses AI to weight channels based on actual influence. Best if you have enough data volume.</li>
+          </ul>`
+        },
+        {
+          title: "Social Media Automation",
+          content: `<h3>Growing Your Presence Without Burning Out</h3>
+          <p>Social media rewards consistency. Automation ensures you show up daily without living on your phone.</p>
+          <h3>Step-by-Step: Social Media Workflow</h3>
+          <ol>
+            <li><strong>Content Batching:</strong> Dedicate 2 hours every Monday to create the week's content. Use the Content Cascade method.</li>
+            <li><strong>Scheduling:</strong> Use a scheduler (Buffer, Hootsuite, or native Zetrix scheduler). Load all posts for the week.</li>
+            <li><strong>Auto-Engagement:</strong> Set up an agent to:
+              <ul>
+                <li>Reply to common questions in DMs with pre-approved answers.</li>
+                <li>Thank every commenter within 30 minutes.</li>
+                <li>Flag negative or urgent comments for human review.</li>
+              </ul>
+            </li>
+            <li><strong>Listening:</strong> Create a <strong>Social Listening Agent</strong> that monitors mentions of your brand, competitors, and key topics. Summarises trends daily.</li>
+            <li><strong>Analytics:</strong> Weekly report on followers, engagement rate, top posts, and traffic driven to your site.</li>
+            <li><strong>Optimisation:</strong> Every month, review the bottom 20% of posts. Ask the Avatar why they underperformed and how to improve.</li>
+          </ol>
+          <h3>Platform-Specific Tips</h3>
+          <ul>
+            <li><strong>LinkedIn:</strong> Long-form posts (1,300 characters) and carousels perform best. Post Tuesday–Thursday, 08:00–10:00.</li>
+            <li><strong>Twitter/X:</strong> Threads &gt; single tweets. Hook in line 1. Payoff in line 10. Post 2–3 times daily.</li>
+            <li><strong>Instagram:</strong> Reels drive reach. Carousels drive saves. Stories drive engagement. Post Reels 4–7 times weekly.</li>
+            <li><strong>YouTube:</strong> Consistency beats virality. One video per week, same day, same time.</li>
+          </ul>`
+        },
+        {
+          title: "Campaign Launch Playbook",
+          content: `<h3>Launching Products with Precision</h3>
+          <p>A campaign launch is a coordinated effort across channels, teams, and timelines. Your Avatar keeps everything on track.</p>
+          <h3>The Launch Timeline</h3>
+          <ol>
+            <li><strong>T-4 Weeks: Planning</strong>
+              <ul>
+                <li>Define objectives, target audience, and key message.</li>
+                <li>Assign owners for each channel and asset.</li>
+                <li>Create a shared launch folder in PKM.</li>
+              </ul>
+            </li>
+            <li><strong>T-3 Weeks: Content Creation</strong>
+              <ul>
+                <li>Draft all copy: emails, ads, landing pages, social posts.</li>
+                <li>Produce creative assets: images, videos, infographics.</li>
+                <li>Build the landing page and set up tracking pixels.</li>
+              </ul>
+            </li>
+            <li><strong>T-2 Weeks: Review & Approval</strong>
+              <ul>
+                <li>Legal review for claims and compliance.</li>
+                <li>Stakeholder sign-off on messaging and design.</li>
+                <li>Test all links, forms, and payment flows.</li>
+              </ul>
+            </li>
+            <li><strong>T-1 Week: Pre-Launch</strong>
+              <ul>
+                <li>Schedule all emails and social posts.</li>
+                <li>Brief the sales team on talking points.</li>
+                <li>Set up support macros for expected questions.</li>
+              </ul>
+            </li>
+            <li><strong>Launch Day:</strong>
+              <ul>
+                <li>Send announcement email at optimal time.</li>
+                <li>Post across all social channels.</li>
+                <li>Monitor dashboard in real time. Respond to issues instantly.</li>
+              </ul>
+            </li>
+            <li><strong>Post-Launch (T+1 to T+14):</strong>
+              <ul>
+                <li>Send follow-up sequences to non-openers and non-clickers.</li>
+                <li>Analyse performance daily. Adjust ad spend and messaging.</li>
+                <li>Document lessons learned in PKM for the next launch.</li>
+              </ul>
+            </li>
+          </ol>
+          <h3>Launch Checklist Agent</h3>
+          <p>Create an agent that maintains the checklist, sends reminders to owners, and flags overdue tasks. On launch day, it posts hourly updates to Slack.</p>`
+        },
+        {
+          title: "30-Day Marketing Challenge",
+          content: `<h3>From Strategy to Execution</h3>
+          <p>This challenge builds a complete marketing system in 30 days. No prior experience needed.</p>
+          <h3>Week 1: Foundation</h3>
+          <ol>
+            <li><strong>Day 1:</strong> Define your ICP and value proposition. Write it in one sentence.</li>
+            <li><strong>Day 2:</strong> Set up your PKM marketing folder structure.</li>
+            <li><strong>Day 3:</strong> Create a lead scoring rubric.</li>
+            <li><strong>Day 4:</strong> Map your marketing flywheel. Identify the weakest phase.</li>
+            <li><strong>Day 5:</strong> Write your first pillar content piece (2,000 words or 10-min video).</li>
+            <li><strong>Day 6:</strong> Run your first Content Cascade. Generate 10 assets from the pillar.</li>
+            <li><strong>Day 7:</strong> Schedule the week's social posts. Set up analytics tracking.</li>
+          </ol>
+          <h3>Week 2: Build Funnels</h3>
+          <ol>
+            <li><strong>Day 8–10:</strong> Build a landing page and thank-you page.</li>
+            <li><strong>Day 11–12:</strong> Write a 5-email welcome sequence.</li>
+            <li><strong>Day 13–14:</strong> Set up retargeting ads for landing page visitors.</li>
+          </ol>
+          <h3>Week 3: Automate & Scale</h3>
+          <ol>
+            <li><strong>Day 15–17:</strong> Create agents for email drafting, social posting, and lead scoring.</li>
+            <li><strong>Day 18–19:</strong> Launch a small paid campaign (£50/day). Monitor daily.</li>
+            <li><strong>Day 20–21:</strong> Optimise the landing page based on heatmap data.</li>
+          </ol>
+          <h3>Week 4: Analyse & Refine</h3>
+          <ol>
+            <li><strong>Day 22–24:</strong> Review all metrics. Which channel drove the most leads?</li>
+            <li><strong>Day 25–27:</strong> Double down on the winning channel. Pause underperformers.</li>
+            <li><strong>Day 28–29:</strong> Document your playbook in PKM.</li>
+            <li><strong>Day 30:</strong> Present results to your team. Set next quarter's goals.</li>
+          </ol>
+          <p><strong>Final Thought:</strong> Marketing is a system, not an event. Build the machine, then feed it consistently.</p>`,
+          quiz: [
+            { q: "What are the three phases of the marketing flywheel?", options: ["Plan, Build, Launch", "Attract, Engage, Delight", "Awareness, Interest, Purchase", "Capture, Process, Create"], correct: 1 },
+            { q: "In the COPY framework, what does Y stand for?", options: ["You", "Yield", "Yesterday", "Yes"], correct: 0 },
+            { q: "What score range indicates a hot lead?", options: ["0–30", "31–60", "61–100", "100+"], correct: 2 },
+            { q: "Which email sequence is designed for inactive subscribers?", options: ["Welcome", "Nurture", "Re-engagement", "Post-Purchase"], correct: 2 },
+            { q: "How often should you review your folder structure?", options: ["Weekly", "Monthly", "Every 90 days", "Yearly"], correct: 2 }
+          ],
+          passThreshold: 80
+        }
+      ]);
+    });
+  </script>
+</body>
+</html>
