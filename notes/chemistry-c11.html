@@ -2,198 +2,333 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C11 Nitrogen Compounds — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcohols, Carbonyls & Carboxylic Acids — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C11: Nitrogen Compounds</h1>
-<p style="color:var(--gray)">9701 (A-Level) · A2 Only</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Alcohols, Carbonyls & Carboxylic Acids</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>📗 AS Level Content</h2>
-<h3>Amines</h3>
-<p>Amines are derivatives of ammonia where one or more H atoms are replaced by alkyl/aryl groups:</p>
-<ul>
-<li><strong>Primary amine:</strong> RNH₂ (e.g., methylamine CH₃NH₂)</li>
-<li><strong>Secondary amine:</strong> R₂NH (e.g., dimethylamine (CH₃)₂NH)</li>
-<li><strong>Tertiary amine:</strong> R₃N (e.g., trimethylamine (CH₃)₃N)</li>
-</ul>
-<p>Amines are weak bases (lone pair on N accepts protons):</p>
-<div class="formula-box">
-CH₃NH₂ + H₂O ⇌ CH₃NH₃⁺ + OH⁻<br>
-Basicity order: tertiary < secondary < primary < NH₃ (in gas phase) / tertiary > secondary > primary (in aqueous, due to solvation)
-<h3>Mechanisms & Pathways</h3><p>AS Chemistry requires understanding reaction mechanisms in detail:</p></div>
-
-<h3>Preparation of Amines</h3>
-<ul>
-<li>Reduction of nitriles: CH₃CN + 4[H] → CH₃CH₂NH₂ (LiAlH₄ or H₂/Ni)</li>
-<li>Reduction of nitro compounds: C₆H₅NO₂ + 6[H] → C₆H₅NH₂ (Sn/HCl or H₂/Ni)</li>
-<li>Hofmann degradation of amides: RCONH₂ + Br₂ + 4NaOH → RNH₂ + Na₂CO₃ + 2NaBr + 2H₂O</li>
-</ul>
-
-<h3>Reactions of Amines</h3>
-<ul>
-<li>With acids: form salts (e.g., CH₃NH₂ + HCl → CH₃NH₃⁺Cl⁻)</li>
-<li>With acyl chlorides: form amides</li>
-<li>With halogenoalkanes: further substitution to give 2°, 3° amines, then quaternary salts</li>
-</ul>
-
-<h3>Nitriles</h3>
-<p>Contain -C≡N group. Prepared from halogenoalkanes + KCN (in ethanol):</p>
-<div class="formula-box">
-CH₃CH₂Br + KCN → CH₃CH₂CN + KBr<br>
-CH₃CH₂CN + 2H₂O + H⁺ → CH₃CH₂COOH + NH₄⁺ (hydrolysis)
-</div>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Alcohols — Classification and Reactions</a></li>
+<li><a href="#section-2">Oxidation of Alcohols</a></li>
+<li><a href="#section-3">Aldehydes and Ketones</a></li>
+<li><a href="#section-4">Carboxylic Acids and Esters</a></li>
+<li><a href="#section-5">Nucleophilic Substitution Mechanisms</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
+</ol>
 </div>
 
-<div class="notes-section">
-<h2>📙 A2 Level Content</h2>
-<h3>Arenediazonium Salts</h3>
-<p>Prepared from primary aromatic amines at low temperature (0-5°C):</p>
-<div class="formula-box">
-C₆H₅NH₂ + NaNO₂ + 2HCl → C₆H₅N₂⁺Cl⁻ + NaCl + 2H₂O (at 0-5°C)
-<h3>Synthesis & Analysis</h3><p>A2 level focuses on multi-step synthesis and analytical techniques:</p></div>
-<p>Diazonium salts are unstable above 10°C. They undergo coupling reactions and replacement reactions.</p>
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Alcohols — Classification and Reactions</h3></div>
+<div class="topic-content">
+<p>Alcohols contain the hydroxyl (-OH) functional group. They are classified based on the carbon bearing the OH group.</p>
 
-<h3>Coupling Reactions (Azo Dye Formation)</h3>
-<div class="formula-box">
-C₆H₅N₂⁺ + C₆H₅OH → C₆H₅-N=N-C₆H₄OH (pH 8-9, alkaline)<br>
-C₆H₅N₂⁺ + C₆H₅NH₂ → C₆H₅-N=N-C₆H₄NH₂ (pH 5-6, weakly acidic)
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Primary (1°) alcohol:</strong> OH attached to a carbon bonded to one other carbon (and two H atoms).</p>
+<p><strong>Secondary (2°) alcohol:</strong> OH attached to a carbon bonded to two other carbons (and one H atom).</p>
+<p><strong>Tertiary (3°) alcohol:</strong> OH attached to a carbon bonded to three other carbons (and no H atoms).</p>
 </div>
-<p>Azo dyes are coloured due to extended conjugation. Used in textiles and food colourings.</p>
 
-<h3>Replacement Reactions of Diazonium Salts</h3>
-<table style="width:100%;border-collapse:collapse;margin:16px 0">
-<tr style="background:var(--light)"><th style="padding:10px;text-align:left">Reagent</th><th style="padding:10px;text-align:left">Product</th><th style="padding:10px;text-align:left">Notes</th></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">H₃PO₂ / H₂O</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Arene (C₆H₆)</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Removes -NH₂</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">CuCl / HCl</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Chlorobenzene</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Sandmeyer</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">CuBr / HBr</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Bromobenzene</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Sandmeyer</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">KI</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Iodobenzene</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Direct</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">HBF₄ then heat</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Fluorobenzene</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Schiemann</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">H₂O / heat</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Phenol</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">-</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">CuCN / KCN</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Benzonitrile</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Sandmeyer</td></tr>
+<table class="data-table">
+<tr><th>Alcohol</th><th>Type</th><th>Boiling Point (°C)</th><th>Solubility in Water</th></tr>
+<tr><td>Methanol (CH₃OH)</td><td>Primary</td><td>65</td><td>Miscible</td></tr>
+<tr><td>Ethanol (C₂H₅OH)</td><td>Primary</td><td>78</td><td>Miscible</td></tr>
+<tr><td>Propan-1-ol</td><td>Primary</td><td>97</td><td>Miscible</td></tr>
+<tr><td>Propan-2-ol</td><td>Secondary</td><td>82</td><td>Miscible</td></tr>
+<tr><td>2-methylpropan-2-ol</td><td>Tertiary</td><td>82</td><td>Soluble</td></tr>
 </table>
 
-<h3>Amides</h3>
-<p>RCONH₂. Key reactions:</p>
-<ul>
-<li>Hydrolysis: acid → carboxylic acid + NH₄⁺; alkali → carboxylate + NH₃</li>
-<li>Reduction: LiAlH₄ → primary amine</li>
-<li>Hofmann degradation: RCONH₂ + Br₂ + 4NaOH → RNH₂ + Na₂CO₃ + 2NaBr + 2H₂O</li>
-<li>Dehydration: P₄O₁₀ or SOCl₂ → nitrile</li>
-</ul>
+<div class="key-point">
+Boiling points of alcohols are higher than corresponding alkanes due to hydrogen bonding between OH groups. Solubility decreases as the carbon chain lengthens because the non-polar hydrocarbon part dominates.
+</div>
 
-<h3>Amino Acids</h3>
-<p>Contain both -NH₂ and -COOH. Exist as zwitterions at pH 7:</p>
+<h4>Reactions of Alcohols</h4>
+<table class="data-table">
+<tr><th>Reagent</th><th>Conditions</th><th>Product</th><th>Type</th></tr>
+<tr><td>Na / K</td><td>Room temp</td><td>Alkoxide + H₂</td><td>Acid-base</td></tr>
+<tr><td>PCl₅ / PCl₃ / SOCl₂</td><td>Room temp</td><td>Chloroalkane</td><td>Nucleophilic substitution</td></tr>
+<tr><td>Conc. H₂SO₄</td><td>170°C</td><td>Alkene</td><td>Elimination</td></tr>
+<tr><td>Conc. H₂SO₄</td><td>140°C</td><td>Ether</td><td>Substitution</td></tr>
+<tr><td>Carboxylic acid + H₂SO₄</td><td>Heat under reflux</td><td>Ester</td><td>Esterification</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Identifying Alcohol Class by Oxidation</h5>
+<p>When oxidised with acidified K₂Cr₂O₇:</p>
+<p>• Primary alcohol → aldehyde (distil) → carboxylic acid (reflux)</p>
+<p>• Secondary alcohol → ketone (reflux)</p>
+<p>• Tertiary alcohol → no reaction (no H on OH carbon to remove)</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Oxidation of Alcohols</h3></div>
+<div class="topic-content">
+<p>Oxidising agents: acidified potassium dichromate(VI) (K₂Cr₂O₇/H₂SO₄) — orange → green, or acidified potassium manganate(VII) (KMnO₄/H₂SO₄) — purple → colourless.</p>
+
 <div class="formula-box">
-⁺NH₃-CH(R)-COO⁻ (zwitterion at isoelectric point)
+<strong>Primary alcohol → Aldehyde:</strong> Distil off the aldehyde as it forms<br>
+CH₃CH₂OH + [O] → CH₃CHO + H₂O<br><br>
+<strong>Primary alcohol → Carboxylic acid:</strong> Heat under reflux<br>
+CH₃CH₂OH + 2[O] → CH₃COOH + H₂O<br><br>
+<strong>Secondary alcohol → Ketone:</strong> Heat under reflux<br>
+CH₃CH(OH)CH₃ + [O] → CH₃COCH₃ + H₂O<br><br>
+<strong>Tertiary alcohol:</strong> No oxidation under these conditions
 </div>
-<p>Form peptide bonds (amide links) in proteins:</p>
+
+<div class="process-box">
+<h5>Oxidation of Primary Alcohols — Apparatus</h5>
+<ol>
+<li><strong>To aldehyde:</strong> Distillation apparatus. The aldehyde has a lower boiling point and distils off immediately, preventing further oxidation.</li>
+<li><strong>To carboxylic acid:</strong> Reflux apparatus. The condenser returns vapours to the flask, allowing complete oxidation.</li>
+</ol>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Distinguishing Alcohols</h5>
+<p>Describe how to distinguish between butan-1-ol, butan-2-ol, and 2-methylpropan-2-ol using acidified K₂Cr₂O₇.</p>
+<p><strong>Solution:</strong></p>
+<p>• Butan-1-ol (primary): Orange → green on warming. If distilled, aldehyde (butanal) forms. If refluxed, carboxylic acid (butanoic acid) forms.</p>
+<p>• Butan-2-ol (secondary): Orange → green on warming. Ketone (butanone) forms.</p>
+<p>• 2-methylpropan-2-ol (tertiary): No colour change.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Aldehydes and Ketones</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Aldehyde:</strong> Contains the −CHO group, bonded to at least one H atom.</p>
+<p><strong>Ketone:</strong> Contains the C=O group bonded to two carbon atoms.</p>
+</div>
+
+<h4>Distinguishing Tests</h4>
+<table class="data-table">
+<tr><th>Test</th><th>Aldehyde</th><th>Ketone</th></tr>
+<tr><td>Tollens' reagent [Ag(NH₃)₂]⁺</td><td>Silver mirror forms</td><td>No reaction</td></tr>
+<tr><td>Fehling's / Benedict's solution</td><td>Red precipitate (Cu₂O)</td><td>No reaction</td></tr>
+<tr><td>Acidified K₂Cr₂O₇</td><td>Orange → green</td><td>No reaction</td></tr>
+<tr><td>2,4-DNP (Brady's reagent)</td><td>Orange/yellow precipitate</td><td>Orange/yellow precipitate</td></tr>
+</table>
+
+<div class="key-point">
+Tollens' and Fehling's tests are positive for aldehydes because aldehydes are easily oxidised to carboxylic acids. Ketones resist oxidation (without breaking C-C bonds). 2,4-DNP gives a precipitate with BOTH aldehydes and ketones — it tests for the carbonyl group, not specifically for aldehydes.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Tollens' Test Equation</h5>
+<p>CH₃CHO + 2[Ag(NH₃)₂]⁺ + 3OH⁻ → CH₃COO⁻ + 2Ag + 4NH₃ + 2H₂O</p>
+<p>Ethanal is oxidised to ethanoate; silver ions are reduced to silver metal (mirror).</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Carboxylic Acids and Esters</h3></div>
+<div class="topic-content">
+<p>Carboxylic acids contain the −COOH group. They are weak acids that partially dissociate in water.</p>
+
 <div class="formula-box">
-H₂N-CH(R)-COOH + H₂N-CH(R')-COOH → H₂N-CH(R)-CO-NH-CH(R')-COOH + H₂O
+CH₃COOH ⇌ CH₃COO⁻ + H⁺ &nbsp;&nbsp;&nbsp; Kₐ = 1.8 × 10⁻⁵ mol dm⁻³<br><br>
+Acid strength increases with:
+• Electronegative substituents (electron-withdrawing groups stabilise the anion)
+• Number of electronegative atoms
+Example: ClCH₂COOH is stronger than CH₃COOH because Cl withdraws electron density, stabilising the carboxylate anion.
+</div>
+
+<h4>Esterification</h4>
+<div class="formula-box">
+Carboxylic acid + Alcohol ⇌ Ester + Water<br>
+CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O<br>
+Conditions: Concentrated H₂SO₄ catalyst, heat under reflux.
+</div>
+
+<div class="key-point">
+Esterification is reversible. To increase yield: use excess of one reactant, or remove product (e.g., distil off ester or water).
+</div>
+
+<h4>Hydrolysis of Esters</h4>
+<div class="formula-box">
+<strong>Acid hydrolysis:</strong> Ester + H₂O ⇌ Acid + Alcohol (dilute H₂SO₄, heat, reversible)<br>
+<strong>Alkaline hydrolysis (saponification):</strong> Ester + NaOH → Carboxylate salt + Alcohol (irreversible)<br>
+CH₃COOC₂H₅ + NaOH → CH₃COONa + C₂H₅OH
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Identifying an Unknown Ester</h5>
+<p>An ester C₄H₈O₂ is hydrolysed to give a carboxylic acid that turns orange dichromate green, and an alcohol that also turns dichromate green.</p>
+<p><strong>Solution:</strong> The acid must be ethanoic (oxidisable? Actually ethanoic acid resists further oxidation). Wait — let me reconsider. If the acid is methanoic (HCOOH), it can be oxidised. If the alcohol is primary, it oxidises too. The ester is likely ethyl methanoate (HCOOCH₂CH₃) or methyl propanoate. Actually ethyl ethanoate (CH₃COOCH₂CH₃) gives ethanoic acid (no further oxidation with dichromate) and ethanol (oxidises). So the alcohol is ethanol and the acid is ethanoic acid. The ester is ethyl ethanoate.</p>
+</div>
 </div>
 </div>
 
-<div class="notes-section">
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Nucleophilic Substitution Mechanisms</h3></div>
+<div class="topic-content">
+<h4>SN1 and SN2 Mechanisms</h4>
+<table class="data-table">
+<tr><th>Feature</th><th>SN1</th><th>SN2</th></tr>
+<tr><td>Steps</td><td>Two steps</td><td>One step</td></tr>
+<tr><td>Intermediate</td><td>Carbocation</td><td>Transition state (no intermediate)</td></tr>
+<tr><td>Rate equation</td><td>Rate = k[halogenoalkane]</td><td>Rate = k[halogenoalkane][nucleophile]</td></tr>
+<tr><td>Stereochemistry</td><td>Racemisation</td><td>Inversion of configuration</td></tr>
+<tr><td>Favoured by</td><td>Tertiary halogenoalkanes</td><td>Primary halogenoalkanes</td></tr>
+</table>
 
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
+<div class="process-box">
+<h5>SN1 Mechanism — Tertiary Halogenoalkane</h5>
+<p><strong>Step 1 (slow, RDS):</strong> (CH₃)₃C-Br → (CH₃)₃C⁺ + Br⁻</p>
+<p>Formation of tertiary carbocation.</p>
+<p><strong>Step 2 (fast):</strong> (CH₃)₃C⁺ + OH⁻ → (CH₃)₃C-OH</p>
+<p>Nucleophile attacks from either side → racemic mixture if chiral.</p>
+</div>
+
+<div class="process-box">
+<h5>SN2 Mechanism — Primary Halogenoalkane</h5>
+<p>CH₃CH₂-Br + OH⁻ → CH₃CH₂-OH + Br⁻</p>
+<p>The nucleophile attacks from the opposite side to the leaving group.</p>
+<p>The transition state has a trigonal bipyramidal geometry.</p>
+<p>Inversion of configuration occurs at the chiral centre (Walden inversion).</p>
+</div>
+
+<div class="key-point">
+Primary halogenoalkanes favour SN2 because there is less steric hindrance for the nucleophile to attack. Tertiary halogenoalkanes favour SN1 because the tertiary carbocation is highly stable.
 </div>
 </div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Explain why propan-1-ol has a higher boiling point than propane. [2]</p>
+<p>(b) Draw the apparatus used to oxidise propan-1-ol to propanal. [2]</p>
+<p>(c) State the colour change observed. [1]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Propan-1-ol has hydrogen bonding between molecules (1). Propane only has van der Waals forces (1). Hydrogen bonding is stronger than van der Waals.<br>
+(b) Distillation apparatus showing flask, thermometer, condenser, collection vessel (2).<br>
+(c) Orange to green (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>Describe chemical tests to distinguish between propanal and propanone. [4]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+Add Tollens' reagent (1). Propanal gives silver mirror (1). Propanone gives no reaction (1).<br>
+Or: Add Fehling's solution and warm (1). Propanal gives red precipitate (1). Propanone gives no reaction (1). Max 4.
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
+<li>Alcohols classified as primary, secondary, tertiary based on OH-bearing carbon</li>
+<li>Primary → aldehyde (distil) → carboxylic acid (reflux)</li>
+<li>Secondary → ketone (reflux)</li>
+<li>Tertiary → resistant to oxidation</li>
+<li>Oxidising agent: acidified K₂Cr₂O₇ (orange → green)</li>
+<li>Aldehydes reduce Tollens' (silver mirror) and Fehling's (red ppt); ketones do not</li>
+<li>2,4-DNP tests for carbonyl group in both aldehydes and ketones</li>
+<li>Esterification: acid + alcohol ⇌ ester + water (conc. H₂SO₄, reversible)</li>
+<li>SN1: two steps, carbocation intermediate, racemisation, tertiary favoured</li>
+<li>SN2: one step, inversion, primary favoured</li>
 </ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Amines: weak bases; primary RNH₂, secondary R₂NH, tertiary R₃N</li>
-<li>Prepare amines by reduction of nitriles, nitro compounds, or Hofmann degradation</li>
-<li>Diazonium salts: prepared at 0-5°C from primary aromatic amine + NaNO₂ + HCl</li>
-<li>Azo dyes from coupling diazonium salts with phenol (alkaline) or aromatic amine (weak acid)</li>
-<li>Sandmeyer reactions: CuCl, CuBr, CuCN replace -N₂⁺ with -Cl, -Br, -CN</li>
-<li>Amides hydrolyse to carboxylic acids; reduce to amines; Hofmann degrades to amines</li>
-<li>Amino acids exist as zwitterions; form peptide bonds (condensation)</li>
+<li>Draw apparatus carefully — distinguish distillation from reflux</li>
+<li>Primary alcohol oxidation requires two steps to reach carboxylic acid</li>
+<li>Tollens' and Fehling's are aldehyde-specific; 2,4-DNP is carbonyl-general</li>
+<li>For ester hydrolysis: acid = reversible; alkali = irreversible</li>
+<li>SN1/SN2: steric hindrance and carbocation stability determine mechanism</li>
 </ul>
 </div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Heating diazonium salts above 10°C (they decompose!)</li>
-<li>Confusing amide hydrolysis conditions (acid vs alkali products differ)</li>
-<li>Forgetting the pH requirements for azo coupling</li>
-<li>Not recognising that amino acids are amphoteric</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

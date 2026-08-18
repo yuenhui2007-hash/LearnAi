@@ -2,223 +2,342 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C6 Reaction Kinetics — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaction Kinetics — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C6: Reaction Kinetics</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Reaction Kinetics</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Rate of Reaction</h3>
-<p>Rate of reaction is the change in concentration of reactants or products per unit time. It can be measured by:</p>
-<ul>
-<li>Mass loss (gas produced)</li>
-<li>Volume of gas evolved</li>
-<li>Change in colour intensity</li>
-<li>Change in pH</li>
-<li>Turbidity (precipitate formation)</li>
-</ul>
-<div class="formula-box">
-Rate = Δconcentration / Δtime<br>
-Units: mol dm⁻³ s⁻¹
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Collision Theory</a></li>
+<li><a href="#section-2">Factors Affecting Reaction Rate</a></li>
+<li><a href="#section-3">Rate Equations and Order of Reaction</a></li>
+<li><a href="#section-4">Determining Rate Equations Experimentally</a></li>
+<li><a href="#section-5">Reaction Mechanisms</a></li>
+<li><a href="#section-6">Catalysis</a></li>
+<li><a href="#section-7">Exam-Style Questions</a></li>
+</ol>
 </div>
 
-<h3>Collision Theory</h3>
-<p>For a reaction to occur, particles must:</p>
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Collision Theory</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Rate of reaction:</strong> The change in concentration of a reactant or product per unit time. Units: mol dm⁻³ s⁻¹.</p>
+<p><strong>Activation energy (Eₐ):</strong> The minimum energy required for a reaction to occur when reactant molecules collide.</p>
+<p><strong>Effective collision:</strong> A collision between reactant molecules that results in a reaction. Requires sufficient energy (≥ Eₐ) and correct orientation.</p>
+</div>
+
+<p>Collision theory states that for a reaction to occur, reactant particles must:</p>
 <ol>
 <li>Collide with each other</li>
-<li>Collide with sufficient energy (≥ activation energy)</li>
-<li>Collide with correct orientation</li>
+<li>Have kinetic energy equal to or greater than the activation energy (Eₐ)</li>
+<li>Collide with the correct orientation (steric factor)</li>
 </ol>
 
-<h3>Factors Affecting Rate of Reaction</h3>
-<ul>
-<li><strong>Concentration:</strong> More particles per unit volume → more frequent collisions → faster rate</li>
-<li><strong>Temperature:</strong> Higher T → particles move faster → more energetic collisions → more collisions exceed Ea</li>
-<li><strong>Surface area:</strong> More exposed surface → more collision sites → faster rate</li>
-<li><strong>Catalyst:</strong> Provides alternative pathway with lower Ea → more molecules have sufficient energy</li>
-</ul>
-
-<h3>Catalysts</h3>
-<p>A catalyst speeds up a reaction without being chemically changed. It works by lowering the activation energy. It is not used up. Enzymes are biological catalysts. Transition metals often act as catalysts.</p>
+<div class="key-point">
+Rate ∝ frequency of effective collisions<br>
+Factors that increase rate do so by increasing either the total collision frequency or the proportion of collisions that are effective.
+</div>
+</div>
 </div>
 
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Rate Equations</h3>
-<p>For a reaction: aA + bB → products, the rate equation is:</p>
-<div class="formula-box">
-Rate = k[A]ᵐ[B]ⁿ<br>
-Where m and n are orders with respect to A and B, found experimentally (not from stoichiometry)
-</div>
-
-<h3>Order of Reaction</h3>
-<ul>
-<li><strong>Zero order:</strong> Rate independent of [reactant]. Rate = k. Graph of [A] vs time is straight line.</li>
-<li><strong>First order:</strong> Rate ∝ [reactant]. Rate = k[A]. Half-life is constant.</li>
-<li><strong>Second order:</strong> Rate ∝ [reactant]². Rate = k[A]².</li>
-</ul>
-<p><strong>Overall order</strong> = m + n</p>
-
-<h3>Units of Rate Constant k</h3>
-<table style="width:100%;border-collapse:collapse;margin:16px 0">
-<tr style="background:var(--light)"><th style="padding:10px;text-align:left">Overall Order</th><th style="padding:10px;text-align:left">Units of k</th></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">0</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">mol dm⁻³ s⁻¹</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">1</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">s⁻¹</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">2</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">dm³ mol⁻¹ s⁻¹</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">3</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">dm⁶ mol⁻² s⁻¹</td></tr>
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Factors Affecting Reaction Rate</h3></div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Factor</th><th>Effect on Rate</th><th>Explanation</th></tr>
+<tr><td>Concentration (solutions)</td><td>Higher concentration → faster rate</td><td>More particles per unit volume → more frequent collisions</td></tr>
+<tr><td>Pressure (gases)</td><td>Higher pressure → faster rate</td><td>Particles closer together → more frequent collisions</td></tr>
+<tr><td>Temperature</td><td>Higher temperature → faster rate</td><td>Particles move faster; more collisions AND more molecules have E ≥ Eₐ</td></tr>
+<tr><td>Surface area (solids)</td><td>Larger surface area → faster rate</td><td>More particles exposed for collision</td></tr>
+<tr><td>Catalyst</td><td>Catalyst present → faster rate</td><td>Provides alternative pathway with lower Eₐ</td></tr>
 </table>
 
-<h3>Methods for Determining Order</h3>
-<p><strong>Initial rates method:</strong> Measure initial rate at different initial concentrations. Compare how rate changes when [reactant] is changed.</p>
-<p><strong>Graphical methods:</strong></p>
-<ul>
-<li>Plot [A] vs time: straight line = zero order; curve = first or second</li>
-<li>Plot ln[A] vs time: straight line = first order; gradient = -k</li>
-<li>Plot 1/[A] vs time: straight line = second order; gradient = k</li>
-</ul>
+<div class="diagram-box">
+<strong>Maxwell-Boltzmann and Temperature:</strong><br><br>
+At higher temperature (T₂ > T₁):<br>
+• The curve shifts right and becomes broader<br>
+• The peak is lower<br>
+• A significantly larger proportion of molecules have E ≥ Eₐ<br>
+• This is the MAIN reason rate increases with temperature (not just faster collisions)
+</div>
 
-<h3>Half-Life</h3>
-<p>For first-order reactions only:</p>
+<div class="key-point">
+A 10°C increase in temperature approximately doubles the rate of many reactions because the proportion of molecules with E ≥ Eₐ increases exponentially (Arrhenius equation).
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Rate Equations and Order of Reaction</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Rate equation:</strong> An equation linking rate of reaction to the concentrations of reactants. Rate = k[A]ᵐ[B]ⁿ</p>
+<p><strong>Order of reaction:</strong> The power to which the concentration of a reactant is raised in the rate equation. m is the order with respect to A.</p>
+<p><strong>Overall order:</strong> The sum of the individual orders (m + n).</p>
+<p><strong>Rate constant (k):</strong> A proportionality constant in the rate equation. Units depend on overall order.</p>
+<p><strong>Half-life (t½):</strong> The time taken for the concentration of a reactant to fall to half its initial value.</p>
+</div>
+
 <div class="formula-box">
-t½ = ln(2) / k = 0.693 / k<br>
-Half-life is independent of initial concentration
+<strong>General rate equation:</strong> Rate = k[A]ᵐ[B]ⁿ<br><br>
+Where:<br>
+k = rate constant<br>[A], [B] = concentrations in mol dm⁻³<br>m, n = orders with respect to A and B<br><br>
+<strong>Units of k:</strong><br>
+Zero order overall: mol dm⁻³ s⁻¹<br>
+First order overall: s⁻¹<br>
+Second order overall: dm³ mol⁻¹ s⁻¹<br>
+Third order overall: dm⁶ mol⁻² s⁻¹
 </div>
 
-<h3>Arrhenius Equation</h3>
-<div class="formula-box">
-k = A e^(-Ea/RT)<br>
-k = rate constant, A = frequency factor, Ea = activation energy, R = 8.31 J K⁻¹ mol⁻¹, T = temperature (K)
+<table class="data-table">
+<tr><th>Order</th><th>Rate vs Concentration</th><th>Half-life</th><th>Example</th></tr>
+<tr><td>Zero</td><td>Rate is constant; independent of [A]</td><td>Decreases as [A] decreases</td><td>Rate = k</td></tr>
+<tr><td>First</td><td>Rate ∝ [A]</td><td>Constant</td><td>Rate = k[A]</td></tr>
+<tr><td>Second</td><td>Rate ∝ [A]²</td><td>Increases as [A] decreases</td><td>Rate = k[A]²</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Determining Rate Equation from Data</h5>
+<p>For the reaction A + B → C, the following data was obtained:</p>
+<table class="data-table">
+<tr><th>Expt</th><th>[A] (mol dm⁻³)</th><th>[B] (mol dm⁻³)</th><th>Initial rate (mol dm⁻³ s⁻¹)</th></tr>
+<tr><td>1</td><td>0.10</td><td>0.10</td><td>0.005</td></tr>
+<tr><td>2</td><td>0.20</td><td>0.10</td><td>0.010</td></tr>
+<tr><td>3</td><td>0.10</td><td>0.20</td><td>0.020</td></tr>
+</table>
+<p><strong>Solution:</strong></p>
+<p>Compare expts 1 and 2: [A] doubles, rate doubles → first order in A</p>
+<p>Compare expts 1 and 3: [B] doubles, rate quadruples → second order in B</p>
+<p>Rate = k[A][B]²</p>
+<p>Using expt 1: 0.005 = k(0.10)(0.10)² → k = 0.005 / 0.001 = 5 dm⁶ mol⁻² s⁻¹</p>
 </div>
-<p>A plot of ln k vs 1/T gives a straight line with gradient = -Ea/R.</p>
+</div>
 </div>
 
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Rate-Determining Step</h3>
-<p>In a multi-step reaction mechanism, the slowest step determines the overall rate. The rate equation reflects only the species involved in (or before) the rate-determining step.</p>
-<div class="formula-box">
-Example:<br>
-Step 1 (slow): NO₂ + NO₂ → NO₃ + NO (rate-determining)<br>
-Step 2 (fast): NO₃ + CO → NO₂ + CO₂<br>
-Overall: NO₂ + CO → NO + CO₂<br>
-Rate = k[NO₂]² (CO does not appear in rate equation)
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Determining Rate Equations Experimentally</h3></div>
+<div class="topic-content">
+<h4>Initial Rates Method</h4>
+<p>Measure initial rate for different initial concentrations while keeping other conditions constant. Compare how rate changes when one concentration is changed.</p>
+
+<h4>Continuous Monitoring — Graphical Methods</h4>
+<table class="data-table">
+<tr><th>Order</th><th>Rate vs [A] graph</th><th>[A] vs time graph</th><th>Rate vs time graph</th></tr>
+<tr><td>Zero</td><td>Horizontal line</td><td>Straight line with negative gradient</td><td>Horizontal line</td></tr>
+<tr><td>First</td><td>Straight line through origin</td><td>Exponential decay</td><td>Exponential decay</td></tr>
+<tr><td>Second</td><td>Curve (parabolic)</td><td>Curve, steeper at start</td><td>Curve</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Half-Life Method</h5>
+<p>For a first-order reaction, the half-life is constant. If [A] falls from 1.0 to 0.5 mol dm⁻³ in 10 minutes, and from 0.5 to 0.25 in another 10 minutes, the reaction is first order.</p>
+<p><strong>First order:</strong> t½ = ln(2) / k = 0.693 / k</p>
 </div>
 
-<h3>Pre-Equilibrium</h3>
-<p>When a fast equilibrium precedes the rate-determining step, the concentration of intermediates can be expressed in terms of reactants using the equilibrium constant.</p>
-
-<h3>Activation Energy and Catalysis</h3>
-<p>Catalysts provide an alternative reaction pathway with lower activation energy. They do not change ΔH of the reaction. Homogeneous catalysts are in the same phase as reactants; heterogeneous catalysts are in a different phase (usually solid catalyst, gas/liquid reactants).</p>
-
-<h3>Enzyme Kinetics (Michaelis-Menten)</h3>
-<p>Enzymes are highly specific biological catalysts. The Michaelis constant (Km) relates to enzyme-substrate affinity. At high [substrate], the rate becomes independent of [substrate] (zero order with respect to substrate) as all active sites are occupied.</p>
-</div>
-
-<div class="notes-section">
-
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
+<div class="key-point">
+Clock reactions (e.g., iodine clock) are useful for measuring initial rates. The time taken for a visible change is inversely proportional to the rate (1/t ∝ rate for initial stages).
 </div>
 </div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
-</ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Reaction Mechanisms</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Elementary step:</strong> A single step in a reaction mechanism involving a small number of molecules.</p>
+<p><strong>Molecularity:</strong> The number of reactant molecules involved in an elementary step.</p>
+<p><strong>Rate-determining step (RDS):</strong> The slowest step in a reaction mechanism, which determines the overall rate.</p>
+<p><strong>Intermediate:</strong> A species produced in one step and consumed in a subsequent step. It does not appear in the overall equation.</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Deducing Mechanism from Rate Equation</h5>
+<p>The reaction: NO₂(g) + CO(g) → NO(g) + CO₂(g)</p>
+<p>Experimentally: Rate = k[NO₂]²</p>
+<p><strong>Proposed mechanism:</strong></p>
+<p>Step 1 (slow, RDS): 2NO₂ → NO + NO₃</p>
+<p>Step 2 (fast): NO₃ + CO → NO₂ + CO₂</p>
+<p><strong>Overall:</strong> NO₂ + CO → NO + CO₂</p>
+<p>The rate equation matches the stoichiometry of the slow step — second order in NO₂, zero order in CO.</p>
+</div>
+
+<div class="key-point">
+The rate equation can only be determined experimentally — it cannot be predicted from the stoichiometric equation. The stoichiometry only matches the rate equation if the reaction occurs in a single step.
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• The order with respect to a reactant does NOT necessarily equal its stoichiometric coefficient.</p>
+<p>• Intermediates appear in the mechanism but NOT in the overall equation or rate equation.</p>
+<p>• Catalysts may appear in the mechanism but cancel out in the overall equation.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Catalysis</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Homogeneous catalysis:</strong> The catalyst is in the same phase as the reactants.</p>
+<p><strong>Heterogeneous catalysis:</strong> The catalyst is in a different phase from the reactants (usually solid catalyst, gas/liquid reactants).</p>
+</div>
+
+<h4>Heterogeneous Catalysis — Mechanism</h4>
+<div class="process-box">
+<ol>
+<li><strong>Adsorption:</strong> Reactant molecules bind to the catalyst surface.</li>
+<li><strong>Reaction:</strong> Bonds in reactants weaken; new bonds form.</li>
+<li><strong>Desorption:</strong> Product molecules leave the catalyst surface.</li>
+</ol>
+</div>
+
+<h4>Examples of Catalysis</h4>
+<table class="data-table">
+<tr><th>Reaction</th><th>Catalyst</th><th>Type</th></tr>
+<tr><td>Haber process: N₂ + 3H₂ → 2NH₃</td><td>Iron (with promoters)</td><td>Heterogeneous</td></tr>
+<tr><td>Contact process: 2SO₂ + O₂ → 2SO₃</td><td>V₂O₅</td><td>Heterogeneous</td></tr>
+<tr><td>Hydrogenation of alkenes</td><td>Ni or Pt</td><td>Heterogeneous</td></tr>
+<tr><td>Fe³⁺/I⁻ reaction</td><td>Fe²⁺/Fe³⁺</td><td>Homogeneous</td></tr>
+<tr><td>Ozone decomposition</td><td>NOₓ, CFCs</td><td>Homogeneous</td></tr>
+</table>
+
+<div class="key-point">
+Catalysts increase rate by providing an alternative reaction pathway with lower activation energy. They are not consumed in the reaction and do not affect the position of equilibrium — they speed up both forward and reverse reactions equally.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header"><span class="topic-number">7</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>The rate equation for a reaction is: Rate = k[X][Y].</p>
+<p>(a) State the overall order of the reaction. [1]</p>
+<p>(b) When [X] = 0.20 mol dm⁻³ and [Y] = 0.30 mol dm⁻³, the rate is 0.012 mol dm⁻³ s⁻¹. Calculate k and state its units. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Second order (1).<br>
+(b) 0.012 = k(0.20)(0.30) → k = 0.012 / 0.06 = 0.20 (1). Units: dm³ mol⁻¹ s⁻¹ (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>(a) Explain why increasing temperature increases reaction rate. [3]</p>
+<p>(b) Explain how a catalyst increases reaction rate without being consumed. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Particles have more kinetic energy / move faster (1). More frequent collisions (1). Greater proportion of molecules have E ≥ Eₐ / Maxwell-Boltzmann distribution shifts right (1).<br>
+(b) Catalyst provides alternative reaction pathway with lower Eₐ (1). More molecules have E ≥ Eₐ at same temperature (1).
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
 <li>Collision theory: collide + sufficient energy + correct orientation</li>
-<li>Rate = k[A]ᵐ[B]ⁿ; orders found experimentally</li>
-<li>Zero order: rate constant; First order: t½ = 0.693/k; Second order: 1/[A] vs time is linear</li>
-<li>Units of k depend on overall order</li>
-<li>Arrhenius: ln k vs 1/T; gradient = -Ea/R</li>
-<li>Rate-determining step controls overall rate</li>
-<li>Catalysts lower Ea; do not change ΔH or equilibrium position</li>
-<li>Temperature increases rate by increasing proportion of molecules with E ≥ Ea (Boltzmann distribution)</li>
+<li>Rate increases with: concentration, pressure, temperature, surface area, catalyst</li>
+<li>Rate equation: Rate = k[A]ᵐ[B]ⁿ; order must be found experimentally</li>
+<li>Zero order: rate constant; first order: constant half-life; second order: half-life increases</li>
+<li>Rate-determining step is the slowest step in the mechanism</li>
+<li>Homogeneous catalyst: same phase; Heterogeneous: different phase</li>
+<li>Catalysts lower Eₐ but do not change ΔH or equilibrium position</li>
 </ul>
 </div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Using stoichiometric coefficients as orders in rate equations</li>
-<li>Confusing rate with rate constant</li>
-<li>Using minutes instead of seconds for time units</li>
-<li>Forgetting that catalysts don't affect equilibrium position or ΔH</li>
-<li>Not converting temperature to Kelvin in Arrhenius calculations</li>
+<li>Orders cannot be deduced from the balanced equation alone</li>
+<li>Always show your working when determining orders from data</li>
+<li>For half-life: constant = first order; increasing = second order; decreasing = zero order</li>
+<li>When proposing mechanisms, the RDS must match the experimental rate equation</li>
+<li>Remember: catalysts are regenerated, intermediates are consumed</li>
 </ul>
 </div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

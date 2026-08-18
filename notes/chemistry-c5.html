@@ -2,230 +2,420 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C5 Chemical Energetics — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemical Energetics — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C5: Chemical Energetics</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Chemical Energetics</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Exothermic and Endothermic Reactions</h3>
-<p><strong>Exothermic:</strong> Heat energy given out to surroundings. Products have less energy than reactants. ΔH is negative. Examples: combustion, neutralisation, respiration.</p>
-<p><strong>Endothermic:</strong> Heat energy taken in from surroundings. Products have more energy than reactants. ΔH is positive. Examples: thermal decomposition, photosynthesis, dissolving ammonium nitrate in water.</p>
-
-<h3>Activation Energy</h3>
-<p>The minimum energy required for a reaction to occur. Even exothermic reactions need activation energy to get started. Represented as Ea on energy profile diagrams.</p>
-
-<h3>Energy Profile Diagrams</h3>
-<ul>
-<li>Exothermic: products lower than reactants; ΔH negative</li>
-<li>Endothermic: products higher than reactants; ΔH positive</li>
-<li>Activation energy (Ea) is the energy barrier from reactants to transition state</li>
-<li>Catalyst lowers Ea by providing an alternative reaction pathway</li>
-</ul>
-
-<h3>Bond Energy Calculations</h3>
-<div class="formula-box">
-ΔH = Σ(bond energies of bonds broken) - Σ(bond energies of bonds formed)<br>
-Bonds broken = endothermic (+), Bonds formed = exothermic (-)
-</div>
-</div>
-
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Standard Enthalpy Change Definitions</h3>
-<ul>
-<li><strong>Standard enthalpy change of reaction (ΔH°r)</strong>: enthalpy change when reaction occurs in molar quantities stated in equation, under standard conditions</li>
-<li><strong>Standard enthalpy change of formation (ΔH°f)</strong>: enthalpy change when 1 mole of compound is formed from its elements in standard states</li>
-<li><strong>Standard enthalpy change of combustion (ΔH°c)</strong>: enthalpy change when 1 mole of substance is completely burned in oxygen under standard conditions</li>
-<li><strong>Standard enthalpy change of neutralisation (ΔH°neut)</strong>: enthalpy change when 1 mole of water is formed from neutralisation of acid and base</li>
-</ul>
-<p>Standard conditions: 298 K (25°C), 1 atm pressure, 1 mol/dm³ concentration.</p>
-
-<h3>Hess's Law</h3>
-<p>The enthalpy change of a reaction is independent of the route taken. Used to calculate enthalpy changes that cannot be measured directly.</p>
-<div class="formula-box">
-ΔH = ΣΔH°f(products) - ΣΔH°f(reactants)<br>
-ΔH = ΣΔH°c(reactants) - ΣΔH°c(products)
-</div>
-
-<h3>Calorimetry</h3>
-<div class="formula-box">
-q = mcΔT<br>
-q = heat energy (J), m = mass of solution (g), c = specific heat capacity (4.18 J g⁻¹ K⁻¹ for water), ΔT = temperature change (K or °C)
-</div>
-<p>ΔH = q / n (in kJ/mol, so divide by 1000 and by moles)</p>
-<p>Sources of error in calorimetry:</p>
-<ul>
-<li>Heat loss to surroundings</li>
-<li>Assuming solution has same density and SHC as water</li>
-<li>Incomplete combustion</li>
-<li>Heat capacity of calorimeter not accounted for</li>
-</ul>
-
-<h3>Bond Enthalpies</h3>
-<p>Mean bond enthalpy: average value across different molecules. Bond enthalpy calculations use gas-phase species only and give approximate values because mean bond enthalpies are averages.</p>
-
-<h3>Enthalpy Changes of Solution and Hydration</h3>
-<ul>
-<li><strong>Lattice energy (ΔH°latt)</strong>: enthalpy change when 1 mole of ionic solid is formed from gaseous ions (exothermic)</li>
-<li><strong>Enthalpy change of solution (ΔH°sol)</strong>: enthalpy change when 1 mole of solute dissolves in solvent to form infinitely dilute solution</li>
-<li><strong>Enthalpy change of hydration (ΔH°hyd)</strong>: enthalpy change when 1 mole of gaseous ions is hydrated</li>
-</ul>
-<div class="formula-box">
-ΔH°sol = ΔH°latt + ΣΔH°hyd(ions)
-</div>
-</div>
-
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Born-Haber Cycles</h3>
-<p>A thermochemical cycle used to calculate lattice energy. Steps for MX:</p>
+<div class="toc">
+<h2>📑 Contents</h2>
 <ol>
-<li>Atomisation of metal: M(s) → M(g)</li>
-<li>Atomisation of non-metal: ½X₂(g) → X(g)</li>
-<li>Ionisation of metal: M(g) → M⁺(g) + e⁻</li>
-<li>Electron affinity of non-metal: X(g) + e⁻ → X⁻(g)</li>
-<li>Formation: M(s) + ½X₂(g) → MX(s)</li>
-<li>Lattice formation: M⁺(g) + X⁻(g) → MX(s)</li>
+<li><a href="#section-1">Enthalpy Changes — Fundamentals</a></li>
+<li><a href="#section-2">Hess's Law and Enthalpy Cycles</a></li>
+<li><a href="#section-3">Bond Enthalpies</a></li>
+<li><a href="#section-4">Lattice Energy and Born-Haber Cycles</a></li>
+<li><a href="#section-5">Entropy and Gibbs Free Energy</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
 </ol>
-<div class="formula-box">
-ΔH°f = ΔH°at(M) + ΔH°at(X) + IE(M) + EA(X) + ΔH°latt
 </div>
 
-<h3>Entropy and Gibbs Free Energy</h3>
-<p><strong>Entropy (S)</strong> is a measure of disorder. Standard entropy S° is measured in J K⁻¹ mol⁻¹.</p>
-<div class="formula-box">
-ΔS° = ΣS°(products) - ΣS°(reactants)
-</div>
-<p>Factors increasing entropy:</p>
-<ul>
-<li>More moles of gas on product side</li>
-<li>Change from solid → liquid → gas</li>
-<li>Increase in complexity/molar mass</li>
-</ul>
-<p><strong>Gibbs Free Energy:</strong></p>
-<div class="formula-box">
-ΔG = ΔH - TΔS<br>
-ΔG < 0: spontaneous reaction<br>
-ΔG = 0: equilibrium<br>
-ΔG > 0: non-spontaneous
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Enthalpy Changes — Fundamentals</h3></div>
+<div class="topic-content">
+<p>Enthalpy change (ΔH) is the heat energy change measured at constant pressure. It is a state function, meaning it depends only on the initial and final states, not the path taken.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Exothermic reaction:</strong> Heat is released to the surroundings. ΔH < 0. Products have less enthalpy than reactants.</p>
+<p><strong>Endothermic reaction:</strong> Heat is absorbed from the surroundings. ΔH > 0. Products have more enthalpy than reactants.</p>
+<p><strong>Standard enthalpy change of reaction (ΔH°ᵣ):</strong> The enthalpy change when the reaction occurs with all reactants and products in their standard states at 298 K and 1 atm.</p>
+<p><strong>Standard enthalpy change of formation (ΔH°f):</strong> The enthalpy change when one mole of a compound is formed from its elements in their standard states.</p>
+<p><strong>Standard enthalpy change of combustion (ΔH°c):</strong> The enthalpy change when one mole of a substance is completely burned in oxygen under standard conditions.</p>
+<p><strong>Standard enthalpy change of neutralisation (ΔH°<sub>neut</sub>):</strong> The enthalpy change when one mole of water is formed from the neutralisation of an acid and a base under standard conditions.</p>
 </div>
 
-<h3>Temperature Dependence of Spontaneity</h3>
-<table style="width:100%;border-collapse:collapse;margin:16px 0">
-<tr style="background:var(--light)"><th style="padding:10px;text-align:left">ΔH</th><th style="padding:10px;text-align:left">ΔS</th><th style="padding:10px;text-align:left">Spontaneity</th></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">-</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">+</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Spontaneous at all T</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">+</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">-</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Non-spontaneous at all T</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">-</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">-</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Spontaneous at low T only</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">+</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">+</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Spontaneous at high T only</td></tr>
+<div class="formula-box">
+ΔH = H(products) − H(reactants)<br><br>
+For exothermic: H(products) < H(reactants), so ΔH < 0<br>
+For endothermic: H(products) > H(reactants), so ΔH > 0
+</div>
+
+<h4>Calorimetry — Experimental Methods</h4>
+<p>Calorimetry measures heat changes by observing temperature changes in a known mass of water.</p>
+
+<div class="formula-box">
+q = mcΔT<br><br>
+q = heat energy (J)<br>
+m = mass of water (g)<br>
+c = specific heat capacity of water = 4.18 J g⁻¹ K⁻¹<br>
+ΔT = temperature change (K or °C)
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Combustion Calorimetry</h5>
+<p>0.500 g of ethanol (C₂H₅OH) was burned, heating 200 g of water from 20.0°C to 45.0°C. Calculate the enthalpy of combustion per mole.</p>
+<p><strong>Solution:</strong></p>
+<p>q = mcΔT = 200 × 4.18 × 25.0 = 20900 J = 20.9 kJ</p>
+<p>n(ethanol) = 0.500 / 46.0 = 0.01087 mol</p>
+<p>ΔH°c = −20.9 / 0.01087 = −1923 kJ mol⁻¹ (negative because exothermic)</p>
+<p><em>Note: Experimental value is less than theoretical (−1367 kJ mol⁻¹) due to heat losses.</em></p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• ΔH°f for elements in their standard states is ZERO — don't try to calculate it!</p>
+<p>• Combustion is always exothermic (ΔH < 0); formation can be either.</p>
+<p>• In calorimetry, heat lost by reaction = heat gained by water/solution (assuming no heat loss).</p>
+<p>• Always divide by moles of the substance specified in the definition.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Hess's Law and Enthalpy Cycles</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Hess's Law:</strong> The total enthalpy change for a reaction is independent of the route taken, provided the initial and final conditions are the same.</p>
+</div>
+
+<p>Hess's Law allows us to calculate enthalpy changes that cannot be measured directly by constructing alternative reaction routes using known enthalpy changes.</p>
+
+<div class="formula-box">
+<strong>Method 1: Using formation enthalpies</strong><br>
+ΔH°<sub>reaction</sub> = ΣΔH°f(products) − ΣΔH°f(reactants)<br><br>
+<strong>Method 2: Using combustion enthalpies</strong><br>
+ΔH°<sub>reaction</sub> = ΣΔH°c(reactants) − ΣΔH°c(products)<br><br>
+Note the opposite subtraction for combustion data!
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Using Formation Enthalpies</h5>
+<p>Calculate ΔH° for: C₂H₄(g) + H₂(g) → C₂H₆(g)</p>
+<p>Given: ΔH°f(C₂H₄) = +52 kJ mol⁻¹; ΔH°f(C₂H₆) = −85 kJ mol⁻¹; ΔH°f(H₂) = 0</p>
+<p><strong>Solution:</strong></p>
+<p>ΔH° = ΔH°f(products) − ΔH°f(reactants)</p>
+<p>ΔH° = (−85) − (+52 + 0) = −137 kJ mol⁻¹</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Using Combustion Enthalpies</h5>
+<p>Calculate ΔH° for: C(s) + 2H₂(g) → CH₄(g)</p>
+<p>Given: ΔH°c(C) = −394 kJ mol⁻¹; ΔH°c(H₂) = −286 kJ mol⁻¹; ΔH°c(CH₄) = −890 kJ mol⁻¹</p>
+<p><strong>Solution:</strong></p>
+<p>ΔH° = ΣΔH°c(reactants) − ΣΔH°c(products)</p>
+<p>ΔH° = (−394 + 2(−286)) − (−890) = −966 + 890 = −76 kJ mol⁻¹</p>
+</div>
+
+<div class="diagram-box">
+<strong>Enthalpy Cycle Diagram for Formation Route:</strong><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reactants ────────→ Products<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│ ΔH°<sub>reaction</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓ ΣΔH°f(reactants)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑ ΣΔH°f(products)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elements ──────────────────→<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ΔH°<sub>reaction</sub> = ΣΔH°f(products) − ΣΔH°f(reactants)
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Bond Enthalpies</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Bond dissociation enthalpy:</strong> The enthalpy change when one mole of a specific bond is broken in the gas phase.</p>
+<p><strong>Average bond enthalpy:</strong> The average value of a bond dissociation enthalpy taken over a range of compounds.</p>
+</div>
+
+<div class="formula-box">
+ΔH°<sub>reaction</sub> = Σ(bond enthalpies broken) − Σ(bond enthalpies formed)<br><br>
+Bonds broken = endothermic (+)<br>
+Bonds formed = exothermic (−)
+</div>
+
+<table class="data-table">
+<tr><th>Bond</th><th>Average Bond Enthalpy (kJ mol⁻¹)</th></tr>
+<tr><td>C−C</td><td>347</td></tr>
+<tr><td>C=C</td><td>612</td></tr>
+<tr><td>C≡C</td><td>838</td></tr>
+<tr><td>C−H</td><td>413</td></tr>
+<tr><td>C−O</td><td>358</td></tr>
+<tr><td>C=O</td><td>805</td></tr>
+<tr><td>O−H</td><td>464</td></tr>
+<tr><td>H−H</td><td>436</td></tr>
+<tr><td>O=O</td><td>498</td></tr>
+<tr><td>N≡N</td><td>944</td></tr>
+<tr><td>N−H</td><td>391</td></tr>
+<tr><td>Cl−Cl</td><td>243</td></tr>
+<tr><td>H−Cl</td><td>432</td></tr>
 </table>
+
+<div class="example-box">
+<h5>Worked Example: Using Bond Enthalpies</h5>
+<p>Calculate ΔH° for: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Bonds broken:</strong></p>
+<p>4 C−H: 4 × 413 = 1652 kJ mol⁻¹</p>
+<p>2 O=O: 2 × 498 = 996 kJ mol⁻¹</p>
+<p>Total broken = 2648 kJ mol⁻¹</p>
+<p><strong>Bonds formed:</strong></p>
+<p>2 C=O: 2 × 805 = 1610 kJ mol⁻¹</p>
+<p>4 O−H: 4 × 464 = 1856 kJ mol⁻¹</p>
+<p>Total formed = 3466 kJ mol⁻¹</p>
+<p>ΔH° = 2648 − 3466 = −818 kJ mol⁻¹</p>
 </div>
 
-<div class="notes-section">
+<div class="key-point">
+Bond enthalpy calculations give approximate values because average bond enthalpies are used, not specific bond dissociation enthalpies. Also, they apply only to gas-phase reactions.
+</div>
+</div>
+</div>
 
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Lattice Energy and Born-Haber Cycles</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Lattice energy (ΔH°<sub>latt</sub>):</strong> The enthalpy change when one mole of an ionic compound is formed from its gaseous ions.</p>
+<p><strong>Enthalpy change of atomisation (ΔH°<sub>at</sub>):</strong> The enthalpy change when one mole of gaseous atoms is formed from the element in its standard state.</p>
+<p><strong>First ionisation energy (IE₁):</strong> Energy required to remove one mole of electrons from one mole of gaseous atoms.</p>
+<p><strong>First electron affinity (EA₁):</strong> The enthalpy change when one mole of gaseous atoms gains one mole of electrons to form one mole of gaseous −1 ions.</p>
+</div>
+
+<div class="process-box">
+<h5>Born-Haber Cycle for NaCl</h5>
+<ol>
+<li>Na(s) → Na(g) &nbsp;&nbsp;&nbsp; ΔH°<sub>at</sub> = +107 kJ mol⁻¹</li>
+<li>½Cl₂(g) → Cl(g) &nbsp;&nbsp;&nbsp; ΔH°<sub>at</sub> = +122 kJ mol⁻¹</li>
+<li>Na(g) → Na⁺(g) + e⁻ &nbsp;&nbsp;&nbsp; IE₁ = +496 kJ mol⁻¹</li>
+<li>Cl(g) + e⁻ → Cl⁻(g) &nbsp;&nbsp;&nbsp; EA₁ = −349 kJ mol⁻¹</li>
+<li>Na⁺(g) + Cl⁻(g) → NaCl(s) &nbsp;&nbsp;&nbsp; ΔH°<sub>latt</sub> = ?</li>
+</ol>
+<p>Using Hess's Law: ΔH°f = ΔH°<sub>at</sub>(Na) + ΔH°<sub>at</sub>(Cl) + IE₁ + EA₁ + ΔH°<sub>latt</sub></p>
+<p>−411 = +107 + 122 + 496 + (−349) + ΔH°<sub>latt</sub></p>
+<p>ΔH°<sub>latt</sub> = −787 kJ mol⁻¹</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Born-Haber Cycle for MgCl₂</h5>
+<p>Calculate the lattice energy of MgCl₂ given:</p>
+<p>ΔH°f = −642 kJ mol⁻¹; ΔH°<sub>at</sub>(Mg) = +148 kJ mol⁻¹; ΔH°<sub>at</sub>(Cl) = +122 kJ mol⁻¹</p>
+<p>IE₁(Mg) = +738 kJ mol⁻¹; IE₂(Mg) = +1451 kJ mol⁻¹; EA₁(Cl) = −349 kJ mol⁻¹</p>
+<p><strong>Solution:</strong></p>
+<p>ΔH°f = ΔH°<sub>at</sub>(Mg) + 2ΔH°<sub>at</sub>(Cl) + IE₁ + IE₂ + 2EA₁ + ΔH°<sub>latt</sub></p>
+<p>−642 = 148 + 2(122) + 738 + 1451 + 2(−349) + ΔH°<sub>latt</sub></p>
+<p>−642 = 148 + 244 + 738 + 1451 − 698 + ΔH°<sub>latt</sub></p>
+<p>−642 = 1883 + ΔH°<sub>latt</sub></p>
+<p>ΔH°<sub>latt</sub> = −2525 kJ mol⁻¹</p>
+</div>
+
+<div class="key-point">
+Lattice energy becomes more exothermic (more negative) when:
+• Ionic charge increases (MgO > NaCl)
+• Ionic radius decreases (NaCl > KCl; NaF > NaCl)
+This is explained by Coulomb's Law: F ∝ (q₁q₂)/r²
 </div>
 </div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
-</ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Entropy and Gibbs Free Energy</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Entropy (S):</strong> A measure of the disorder or randomness of a system. Units: J mol⁻¹ K⁻¹.</p>
+<p><strong>Gibbs free energy (G):</strong> The energy available to do useful work. ΔG determines spontaneity.</p>
+</div>
+
+<div class="formula-box">
+<strong>Gibbs equation:</strong> ΔG° = ΔH° − TΔS°<br><br>
+ΔG° < 0: reaction is spontaneous<br>
+ΔG° = 0: reaction is at equilibrium<br>
+ΔG° > 0: reaction is non-spontaneous<br><br>
+<strong>Entropy change of reaction:</strong> ΔS° = ΣS°(products) − ΣS°(reactants)
+</div>
+
+<h4>Factors Affecting Entropy</h4>
+<table class="data-table">
+<tr><th>Factor</th><th>Effect on Entropy</th></tr>
+<tr><td>State of matter</td><td>S(gas) >> S(liquid) > S(solid)</td></tr>
+<tr><td>Number of moles</td><td>More moles → higher entropy</td></tr>
+<tr><td>Complexity</td><td>More atoms/more complex → higher entropy</td></tr>
+<tr><td>Temperature</td><td>Higher T → higher entropy</td></tr>
+<tr><td>Mixing</td><td>Mixing substances → higher entropy</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Predicting Spontaneity</h5>
+<p>For the reaction: 2HgO(s) → 2Hg(l) + O₂(g)</p>
+<p>ΔH° = +181 kJ mol⁻¹; ΔS° = +216 J mol⁻¹ K⁻¹</p>
+<p>Calculate the temperature above which this decomposition becomes spontaneous.</p>
+<p><strong>Solution:</strong></p>
+<p>For spontaneity: ΔG° < 0</p>
+<p>ΔH° − TΔS° < 0</p>
+<p>181000 − T(216) < 0</p>
+<p>T > 181000 / 216 = 838 K</p>
+<p>The reaction becomes spontaneous above 838 K (565°C).</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Temperature and Spontaneity</h5>
+<p>Predict the sign of ΔG° for the following at 298 K:</p>
+<p>(a) Combustion of methane: ΔH° < 0, ΔS° < 0 (gas → gas, but fewer moles)</p>
+<p><strong>Answer:</strong> Spontaneous at low T; non-spontaneous at very high T (|TΔS| > |ΔH|)</p>
+<p>(b) Dissolving NH₄Cl in water: ΔH° > 0, ΔS° > 0 (solid → ions in solution)</p>
+<p><strong>Answer:</strong> Non-spontaneous at low T; spontaneous at high T</p>
+</div>
+
+<div class="key-point">
+The four combinations of ΔH and ΔS:
+• ΔH < 0, ΔS > 0: Always spontaneous (ΔG < 0 at all T)
+• ΔH > 0, ΔS < 0: Never spontaneous (ΔG > 0 at all T)
+• ΔH < 0, ΔS < 0: Spontaneous at low T
+• ΔH > 0, ΔS > 0: Spontaneous at high T
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Define standard enthalpy change of formation. [2]</p>
+<p>(b) Calculate ΔH° for: C₂H₆(g) + 3½O₂(g) → 2CO₂(g) + 3H₂O(l)</p>
+<p>Given: ΔH°f(C₂H₆) = −85 kJ mol⁻¹; ΔH°f(CO₂) = −394 kJ mol⁻¹; ΔH°f(H₂O) = −286 kJ mol⁻¹ [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Enthalpy change when one mole of compound is formed (1) from its elements in their standard states (1).<br>
+(b) ΔH° = [2(−394) + 3(−286)] − [−85 + 0] (1) = −1560 kJ mol⁻¹ (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>(a) Define lattice energy. [2]</p>
+<p>(b) Explain why MgO has a more exothermic lattice energy than NaCl. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Enthalpy change when one mole of ionic compound is formed (1) from its gaseous ions (1).<br>
+(b) Mg²⁺ and O²⁻ have higher charges than Na⁺ and Cl⁻ (1). Higher charge → stronger electrostatic attraction / more exothermic lattice energy (1). Also smaller ionic radii (1). Max 2.
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 3</h5>
+<p>For a reaction: ΔH° = +120 kJ mol⁻¹; ΔS° = +150 J mol⁻¹ K⁻¹.</p>
+<p>(a) Calculate ΔG° at 298 K and state whether the reaction is spontaneous. [2]</p>
+<p>(b) Calculate the minimum temperature for spontaneity. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) ΔG° = 120000 − 298(150) = 120000 − 44700 = +75300 J mol⁻¹ = +75.3 kJ mol⁻¹ (1). Not spontaneous (1).<br>
+(b) T = ΔH°/ΔS° = 120000/150 = 800 K (2). [1 for method, 1 for answer]
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
 <li>Exothermic: ΔH < 0; Endothermic: ΔH > 0</li>
-<li>ΔH = ΣBE(broken) - ΣBE(formed)</li>
-<li>Hess's Law: ΔH = ΣΔHf(products) - ΣΔHf(reactants)</li>
-<li>q = mcΔT; ΔH = q/n</li>
-<li>Born-Haber cycle: ΔHf = Σ(atomisation + IE + EA) + ΔHlatt</li>
-<li>ΔS = ΣS(products) - ΣS(reactants)</li>
-<li>ΔG = ΔH - TΔS; if ΔG < 0, reaction is spontaneous</li>
-<li>Units: ΔH in kJ/mol; ΔS in J K⁻¹ mol⁻¹; convert before subtracting!</li>
+<li>Calorimetry: q = mcΔT; ΔH = q / n</li>
+<li>Hess's Law: ΔH independent of route</li>
+<li>Using ΔH°f: ΔH° = ΣΔH°f(products) − ΣΔH°f(reactants)</li>
+<li>Using ΔH°c: ΔH° = ΣΔH°c(reactants) − ΣΔH°c(products)</li>
+<li>Bond enthalpies: ΔH° = Σ(bonds broken) − Σ(bonds formed)</li>
+<li>Lattice energy ∝ (charge⁺ × charge⁻) / (r⁺ + r⁻)</li>
+<li>Born-Haber cycle: ΔH°f = sum of all steps including lattice energy</li>
+<li>ΔG° = ΔH° − TΔS°; spontaneous when ΔG° < 0</li>
 </ul>
 </div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Using the wrong Hess's Law formula (products-reactants for formation, reactants-products for combustion)</li>
-<li>Forgetting to convert J to kJ (or vice versa) when combining ΔH and TΔS</li>
-<li>Not including coefficients in cycle calculations</li>
-<li>Assuming all lattice energies are exothermic (they are, but check signs)</li>
-<li>Forgetting that entropy is in J, not kJ</li>
+<li>Always check signs carefully — exothermic = negative</li>
+<li>Remember ΔH°f(elements) = 0</li>
+<li>In bond enthalpy calculations, be careful not to miss any bonds</li>
+<li>When using combustion data, the subtraction is reversed compared to formation data</li>
+<li>Convert ΔS to kJ before using in ΔG = ΔH − TΔS</li>
+<li>Spontaneity depends on both enthalpy AND entropy — a reaction can be endothermic but spontaneous if ΔS is large and positive</li>
 </ul>
 </div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

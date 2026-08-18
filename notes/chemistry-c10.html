@@ -2,211 +2,307 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C10 Alcohols, Carbonyls, Carboxylic Acids — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry: Hydrocarbons — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C10: Alcohols, Carbonyls &amp; Carboxylic Acids</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Organic Chemistry: Hydrocarbons</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Alcohols</h3>
-<p>General formula CnH₂n₊₁OH. Classified by carbon attached to -OH:</p>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Organic Chemistry Fundamentals</a></li>
+<li><a href="#section-2">Alkanes — Structure and Reactions</a></li>
+<li><a href="#section-3">Alkenes — Structure and Reactions</a></li>
+<li><a href="#section-4">Electrophilic Addition Mechanisms</a></li>
+<li><a href="#section-5">Polymerisation</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
+</ol>
+</div>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Organic Chemistry Fundamentals</h3></div>
+<div class="topic-content">
+<p>Organic chemistry is the study of carbon compounds. Carbon's unique ability to form strong covalent bonds with itself and other elements gives rise to an enormous diversity of compounds.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Homologous series:</strong> A family of compounds with the same functional group, each successive member differing by CH₂.</p>
+<p><strong>Functional group:</strong> An atom or group of atoms responsible for the characteristic reactions of a compound.</p>
+<p><strong>Structural isomerism:</strong> Compounds with the same molecular formula but different structural formulae.</p>
+<p><strong>Stereoisomerism:</strong> Compounds with the same structural formula but different spatial arrangement of atoms.</p>
+</div>
+
+<h4>Types of Structural Isomerism</h4>
+<table class="data-table">
+<tr><th>Type</th><th>Description</th><th>Example</th></tr>
+<tr><td>Chain isomerism</td><td>Different carbon skeletons (branched vs straight)</td><td>Butane vs methylpropane</td></tr>
+<tr><td>Position isomerism</td><td>Functional group in different positions</td><td>Propan-1-ol vs propan-2-ol</td></tr>
+<tr><td>Functional group isomerism</td><td>Different functional groups</td><td>Propanal (aldehyde) vs propanone (ketone)</td></tr>
+</table>
+
+<h4>Types of Stereoisomerism</h4>
+<table class="data-table">
+<tr><th>Type</th><th>Description</th><th>Example</th></tr>
+<tr><td>Cis-trans (geometric)</td><td>Different arrangement around a C=C double bond</td><td>cis-but-2-ene vs trans-but-2-ene</td></tr>
+<tr><td>Optical isomerism</td><td>Non-superimposable mirror images (enantiomers)</td><td>2-hydroxypropanoic acid (lactic acid)</td></tr>
+</table>
+
+<div class="key-point">
+Optical isomerism occurs when a carbon atom (chiral centre) is bonded to four different groups. Enantiomers rotate plane-polarised light in opposite directions: dextrorotatory (+) and laevorotatory (−). A racemic mixture contains equal amounts of both enantiomers and shows no optical activity.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Alkanes — Structure and Reactions</h3></div>
+<div class="topic-content">
+<p>Alkanes are saturated hydrocarbons with the general formula CₙH₂ₙ₊₂. They contain only C-C and C-H single bonds. They are relatively unreactive due to the strong, non-polar C-C and C-H bonds.</p>
+
+<h4>Reactions of Alkanes</h4>
+
+<div class="process-box">
+<h5>Free Radical Substitution — Mechanism</h5>
+<p><strong>Initiation:</strong> Cl₂ → 2Cl• &nbsp;&nbsp;&nbsp; (homolytic fission by UV light)</p>
+<p><strong>Propagation:</strong></p>
+<p>CH₄ + Cl• → CH₃• + HCl</p>
+<p>CH₃• + Cl₂ → CH₃Cl + Cl•</p>
+<p><strong>Termination:</strong></p>
+<p>Cl• + Cl• → Cl₂</p>
+<p>CH₃• + Cl• → CH₃Cl</p>
+<p>CH₃• + CH₃• → C₂H₆</p>
+</div>
+
+<div class="key-point">
+Free radical substitution produces a mixture of products (mono-, di-, tri-substituted). Further substitution is difficult to control. UV light is required for initiation.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Combustion of Alkanes</h5>
+<p>Complete combustion: CH₄ + 2O₂ → CO₂ + 2H₂O</p>
+<p>Incomplete combustion: 2CH₄ + 3O₂ → 2CO + 4H₂O</p>
+<p>Incomplete combustion produces toxic CO and particulates (soot, C).</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Alkenes — Structure and Reactions</h3></div>
+<div class="topic-content">
+<p>Alkenes are unsaturated hydrocarbons containing at least one C=C double bond. The general formula is CₙH₂ₙ. They are more reactive than alkanes due to the electron-rich π bond.</p>
+
+<h4>Tests for Unsaturation</h4>
+<div class="formula-box">
+• Bromine water (orange) → decolourises with alkenes (forms colourless dibromoalkane)<br>
+• Acidified KMnO₄ (purple) → decolourises with alkenes (forms diol)
+</div>
+
+<h4>Reactions of Alkenes</h4>
+<table class="data-table">
+<tr><th>Reagent</th><th>Conditions</th><th>Product</th><th>Type</th></tr>
+<tr><td>H₂</td><td>Ni catalyst, 150°C</td><td>Alkane</td><td>Hydrogenation</td></tr>
+<tr><td>Br₂</td><td>Room temperature</td><td>Dibromoalkane</td><td>Electrophilic addition</td></tr>
+<tr><td>HBr</td><td>Room temperature</td><td>Bromoalkane</td><td>Electrophilic addition</td></tr>
+<tr><td>H₂O</td><td>H₃PO₄ catalyst, 300°C, 60 atm</td><td>Alcohol</td><td>Hydration</td></tr>
+<tr><td>Cold dilute KMnO₄</td><td>Room temperature</td><td>Diol</td><td>Oxidation</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Electrophilic Addition Mechanisms</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Electrophile:</strong> An electron-deficient species that accepts an electron pair.</p>
+<p><strong>Carbocation:</strong> A positively charged carbon intermediate.</p>
+<p><strong>Markovnikov's rule:</strong> In the addition of HX to an unsymmetrical alkene, the H attaches to the carbon with more H atoms already attached.</p>
+</div>
+
+<div class="process-box">
+<h5>Electrophilic Addition of HBr to Propene — Mechanism</h5>
+<p><strong>Step 1:</strong> The π bond attacks H⁺ (electrophile)</p>
+<p>CH₃-CH=CH₂ + H⁺ → CH₃-CH⁺-CH₃ (secondary carbocation — more stable)</p>
+<p><em>Note: CH₃-CH₂-CH₂⁺ (primary) is less stable and forms in smaller amounts.</em></p>
+<p><strong>Step 2:</strong> Br⁻ attacks the carbocation</p>
+<p>CH₃-CH⁺-CH₃ + Br⁻ → CH₃-CHBr-CH₃ (major product)</p>
+<p><em>Minor product: CH₃-CH₂-CH₂Br</em></p>
+</div>
+
+<div class="diagram-box">
+<strong>Carbocation Stability:</strong><br><br>
+Tertiary (3°) > Secondary (2°) > Primary (1°) > Methyl<br><br>
+This is due to positive inductive effect (+I) of alkyl groups — they push electron density toward the positively charged carbon, stabilising it.
+</div>
+
+<div class="process-box">
+<h5>Electrophilic Addition of Br₂ to Ethene — Mechanism</h5>
+<p><strong>Step 1:</strong> The π bond attacks Br₂, polarising the Br-Br bond</p>
+<p>A cyclic bromonium ion intermediate forms.</p>
+<p><strong>Step 2:</strong> Br⁻ attacks from the opposite side (anti addition)</p>
+<p>The product is 1,2-dibromoethane.</p>
+</div>
+
+<div class="key-point">
+The bromonium ion intermediate explains why anti addition occurs — the Br⁻ must attack from the opposite side of the ring, leading to trans products in cyclic systems.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Polymerisation</h3></div>
+<div class="topic-content">
+<h4>Addition Polymerisation</h4>
+<p>Alkenes can polymerise to form long-chain polymers. The double bond opens up and monomers link together.</p>
+
+<div class="formula-box">
+n CH₂=CH₂ → −[CH₂-CH₂]ₙ− &nbsp;&nbsp;&nbsp; (polyethene)<br>
+n CH₂=CHCl → −[CH₂-CHCl]ₙ− &nbsp;&nbsp;&nbsp; (polychloroethene / PVC)<br>
+n CH₂=CH(C₆H₅) → −[CH₂-CH(C₆H₅)]ₙ− &nbsp;&nbsp;&nbsp; (polystyrene)
+</div>
+
+<div class="key-point">
+Addition polymers are non-biodegradable because their strong C-C bonds resist breakdown. This causes environmental problems with plastic waste. Recycling and biodegradable alternatives are important solutions.
+</div>
+
+<h4>Disposal of Plastics</h4>
 <ul>
-<li><strong>Primary (1°)</strong>: -OH on carbon attached to 1 other carbon</li>
-<li><strong>Secondary (2°)</strong>: -OH on carbon attached to 2 other carbons</li>
-<li><strong>Tertiary (3°)</strong>: -OH on carbon attached to 3 other carbons</li>
+<li><strong>Recycling:</strong> Melting and remoulding (thermoplastics only)</li>
+<li><strong>Incineration:</strong> Burning for energy; produces CO₂ and potentially toxic gases (HCl from PVC)</li>
+<li><strong>Landfill:</strong> Non-biodegradable plastics persist for hundreds of years</li>
+<li><strong>Biodegradable plastics:</strong> Polylactic acid (PLA) and other polymers with ester linkages</li>
 </ul>
-<p><strong>Combustion:</strong> Alcohols burn in oxygen to form CO₂ and H₂O</p>
-<p><strong>Oxidation:</strong> Primary alcohols oxidise to aldehydes, then carboxylic acids. Secondary alcohols oxidise to ketones. Tertiary alcohols resist oxidation.</p>
-
-<h3>Aldehydes and Ketones</h3>
-<p>Both contain C=O (carbonyl group). Aldehydes have C=O at end of chain; ketones have C=O in middle.</p>
-<p><strong>Fehling's/Benedict's test:</strong> Aldehydes reduce Cu²⁺ (blue) to Cu₂O (brick-red precipitate). Ketones do not react.</p>
-<p><strong>Tollens' reagent:</strong> Aldehydes reduce [Ag(NH₃)₂]⁺ to Ag (silver mirror). Ketones do not react.</p>
-
-<h3>Carboxylic Acids</h3>
-<p>General formula CnH₂n₊₁COOH. Weak acids that partially dissociate:</p>
-<div class="formula-box">
-CH₃COOH ⇌ CH₃COO⁻ + H⁺<br>
-React with carbonates: 2CH₃COOH + Na₂CO₃ → 2CH₃COONa + H₂O + CO₂
+</div>
 </div>
 
-<h3>Esters</h3>
-<p>Formed from condensation reaction between carboxylic acid and alcohol:</p>
-<div class="formula-box">
-CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O (conc H₂SO₄ catalyst, heat)
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Define homologous series. [2]</p>
+<p>(b) Draw the structural isomers of C₄H₁₀. [2]</p>
+<p>(c) Explain why but-1-ene shows cis-trans isomerism but but-2-ene does not. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Family of organic compounds with same functional group (1), successive members differ by CH₂ (1).<br>
+(b) Butane (straight chain) and methylpropane (branched) (2).<br>
+(c) But-1-ene: each C of the double bond has two different groups / CH₂=CHCH₂CH₃ has CH₂ and H on one carbon (1). But-2-ene has CH₃ and H on each carbon of the double bond, allowing cis-trans (1). Actually but-2-ene DOES show cis-trans; but-1-ene does NOT because one carbon has two H atoms.
 </div>
-<p>Esters have fruity smells and are used in flavourings and perfumes.</p>
-</div>
-
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Oxidation of Alcohols</h3>
-<p><strong>Reagents:</strong> Acidified potassium dichromate(VI) (K₂Cr₂O₇/H⁺) — orange to green. Or acidified potassium manganate(VII) (KMnO₄/H⁺) — purple to colourless.</p>
-<div class="formula-box">
-Primary alcohol → aldehyde (distill off product): CH₃CH₂OH + [O] → CH₃CHO + H₂O<br>
-Primary alcohol → carboxylic acid (reflux): CH₃CH₂OH + 2[O] → CH₃COOH + H₂O<br>
-Secondary alcohol → ketone (reflux): CH₃CH(OH)CH₃ + [O] → CH₃COCH₃ + H₂O<br>
-Tertiary alcohol: no reaction with common oxidising agents
 </div>
 
-<h3>Reduction of Carbonyls</h3>
-<div class="formula-box">
-Aldehyde → primary alcohol: CH₃CHO + 2[H] → CH₃CH₂OH<br>
-Ketone → secondary alcohol: CH₃COCH₃ + 2[H] → CH₃CH(OH)CH₃<br>
-Reagent: NaBH₄ (sodium borohydride) in aqueous/ethanolic solution
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>Propene reacts with HBr.</p>
+<p>(a) Name the major product and explain why it is the major product. [3]</p>
+<p>(b) Draw the mechanism for the formation of the major product. [4]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) 2-bromopropane (1). Markovnikov's rule / H adds to C with more H atoms (1). Forms more stable secondary carbocation (1).<br>
+(b) Curly arrow from C=C to H of HBr (1). Correct carbocation intermediate (1). Curly arrow from Br⁻ to C⁺ (1). Correct product shown (1).
+</div>
+</div>
+</div>
 </div>
 
-<h3>Nucleophilic Addition to Carbonyls</h3>
-<p>Mechanism with HCN:</p>
-<div class="formula-box">
-1. CN⁻ attacks C=O carbon (nucleophilic)<br>
-2. C=O π bond breaks, O becomes O⁻<br>
-3. O⁻ protonated to form hydroxynitrile<br>
-Catalyst: CN⁻ or OH⁻ (nucleophile generated from KCN + acid)
-</div>
-
-<h3>Iodoform Reaction</h3>
-<p>Methyl ketones (CH₃COR) and ethanol (CH₃CH₂OH) give yellow precipitate of CHI₃ with I₂/NaOH. Used as a test and in synthesis (shortens carbon chain by one).</p>
-</div>
-
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Acyl Chlorides</h3>
-<p>More reactive than carboxylic acids. React with:</p>
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
-<li>Water → carboxylic acid + HCl</li>
-<li>Alcohol → ester + HCl</li>
-<li>Ammonia → amide + HCl</li>
-<li>Primary amine → substituted amide + HCl</li>
+<li>Alkanes: CₙH₂ₙ₊₂, saturated, free radical substitution with halogens</li>
+<li>Alkenes: CₙH₂ₙ, unsaturated, electrophilic addition reactions</li>
+<li>Markovnikov's rule: H adds to C with more H atoms</li>
+<li>Test for unsaturation: Br₂ water or acidified KMnO₄ decolourises</li>
+<li>Free radical substitution: initiation, propagation, termination</li>
+• Electrophilic addition: forms carbocation intermediate; more stable carbocation favoured</li>
+<li>Addition polymerisation: opens C=C bond to form long chains</li>
+<li>Structural isomerism: chain, position, functional group</li>
+<li>Stereoisomerism: cis-trans (geometric), optical (enantiomers)</li>
 </ul>
-<div class="formula-box">
-CH₃COCl + H₂O → CH₃COOH + HCl<br>
-CH₃COCl + CH₃OH → CH₃COOCH₃ + HCl<br>
-CH₃COCl + NH₃ → CH₃CONH₂ + HCl
 </div>
-
-<h3>Carboxylic Acid Derivatives</h3>
-<p><strong>Amides:</strong> RCONH₂. Formed from acyl chlorides + ammonia/amine. Less reactive than acyl chlorides. Hydrolyse to carboxylic acid + ammonia/amine (acid or alkali conditions).</p>
-
-<h3>Grignard Reagents</h3>
-<p>RMgX (where X = halogen). React with carbonyl compounds to form alcohols with new C-C bonds:</p>
-<div class="formula-box">
-CH₃CHO + CH₃MgBr → CH₃CH(OMgBr)CH₃ → CH₃CH(OH)CH₃ (after H₃O⁺ workup)<br>
-With aldehyde → secondary alcohol<br>
-With ketone → tertiary alcohol<br>
-With CO₂ → carboxylic acid (after acid workup)
-</div>
-
-<h3>Optical Activity in Carbonyl Chemistry</h3>
-<p>Nucleophilic addition to planar carbonyl can occur from either side. If the carbonyl carbon becomes a new chiral centre, a racemic mixture is formed.</p>
-</div>
-
-<div class="notes-section">
-
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
+<li>Always draw curly arrows showing movement of electron PAIRS</li>
+<li>Show the correct partial charges on polar bonds in mechanisms</li>
+<li>Carbocation stability: tertiary > secondary > primary</li>
+<li>Free radical mechanisms use fishhook arrows (single electrons)</li>
+<li>Remember Markovnikov's rule for unsymmetrical alkenes</li>
+<li>Polymer repeating units are written with bonds extending outside brackets</li>
 </ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
-<ul>
-<li>Primary alcohol → aldehyde (distill) → carboxylic acid (reflux)</li>
-<li>Secondary alcohol → ketone (reflux); Tertiary alcohol: no oxidation</li>
-<li>Aldehydes: reduce Fehling's (brick red), Tollens' (silver mirror)</li>
-<li>Ketones: no reaction with Fehling's or Tollens'</li>
-<li>Carbonyl reduction: NaBH₄ gives alcohols</li>
-<li>Nucleophilic addition to C=O: CN⁻ attacks, then protonation</li>
-<li>Iodoform: CH₃CO- or CH₃CH(OH)- give yellow CHI₃ precipitate</li>
-<li>Acyl chlorides react vigorously with water, alcohols, ammonia, amines</li>
-<li>Grignard reagents form new C-C bonds; workup with dilute acid</li>
-</ul>
-</div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Forgetting to distinguish primary/secondary/tertiary alcohols in oxidation</li>
-<li>Confusing aldehydes and ketones in test results</li>
-<li>Not mentioning reflux vs distillation conditions for oxidation</li>
-<li>Forgetting that NaBH₄ reduces C=O but not C=C</li>
-<li>Not adding acid workup after Grignard reaction</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

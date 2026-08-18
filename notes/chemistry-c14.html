@@ -2,238 +2,329 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C14 Group 2 &amp; 17 Chemistry — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biochemistry & Environmental Chemistry — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C14: Group 2 &amp; 17 Chemistry</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Biochemistry & Environmental Chemistry</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Group 2 (Alkaline Earth Metals)</h3>
-<p>Elements: Be, Mg, Ca, Sr, Ba, Ra. Have 2 electrons in outer shell. Form 2+ ions.</p>
-<p><strong>Trend down the group:</strong></p>
-<ul>
-<li>Atomic radius increases (more electron shells)</li>
-<li>Reactivity increases (outer electrons further from nucleus, more shielding)</li>
-<li>First and second ionisation energies decrease</li>
-</ul>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Enzymes and Enzyme Kinetics</a></li>
+<li><a href="#section-2">Photosynthesis and Respiration</a></li>
+<li><a href="#section-3">Atmospheric Chemistry</a></li>
+<li><a href="#section-4">Water Treatment and Pollution</a></li>
+<li><a href="#section-5">Green Chemistry</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
+</ol>
+</div>
 
-<h3>Reactions of Group 2 Metals</h3>
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Enzymes and Enzyme Kinetics</h3></div>
+<div class="topic-content">
+<p>Enzymes are biological catalysts, typically proteins, that dramatically increase the rate of biochemical reactions without being consumed. They exhibit remarkable specificity and efficiency.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Enzyme:</strong> A biological catalyst that speeds up metabolic reactions.</p>
+<p><strong>Active site:</strong> The region of an enzyme where substrate molecules bind and undergo chemical transformation.</p>
+<p><strong>Substrate:</strong> The molecule upon which an enzyme acts.</p>
+<p><strong>Lock and key model:</strong> The substrate fits precisely into the active site like a key in a lock.</p>
+<p><strong>Induced fit model:</strong> The active site changes shape slightly to accommodate the substrate.</p>
+</div>
+
+<h4>Factors Affecting Enzyme Activity</h4>
+<table class="data-table">
+<tr><th>Factor</th><th>Effect</th><th>Explanation</th></tr>
+<tr><td>Temperature</td><td>Rate increases to optimum, then decreases sharply</td><td>More kinetic energy up to optimum; denaturation above optimum</td></tr>
+<tr><td>pH</td><td>Rate maximum at optimum pH</td><td>Affects ionisation of amino acid side chains in active site</td></tr>
+<tr><td>Substrate concentration</td><td>Rate increases then plateaus</td><td>All active sites become saturated</td></tr>
+<tr><td>Enzyme concentration</td><td>Rate proportional to enzyme concentration</td><td>More active sites available</td></tr>
+<tr><td>Inhibitors</td><td>Decrease rate</td><td>Competitive or non-competitive inhibition</td></tr>
+</table>
+
+<div class="diagram-box">
+<strong>Enzyme Kinetics — Michaelis-Menten Curve:</strong><br><br>
+Rate increases linearly with [S] at low substrate concentration, then levels off to Vmax at high [S] when all enzyme molecules are saturated.<br><br>
+<strong>Km (Michaelis constant):</strong> The substrate concentration at which the reaction rate is half of Vmax. A low Km indicates high affinity of the enzyme for its substrate.
+</div>
+
+<div class="key-point">
+Competitive inhibitors bind to the active site, competing with substrate. They can be overcome by increasing substrate concentration. Non-competitive inhibitors bind elsewhere, changing the enzyme's shape and reducing Vmax. They cannot be overcome by adding more substrate.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Enzyme Inhibition</h5>
+<p>Malonate is a competitive inhibitor of succinate dehydrogenase. Explain how malonate inhibits the enzyme and how the inhibition can be overcome.</p>
+<p><strong>Solution:</strong> Malonate has a similar shape to succinate and competes for the active site. It binds reversibly. Increasing the concentration of succinate can overcome the inhibition by outcompeting malonate for the active site.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Photosynthesis and Respiration</h3></div>
+<div class="topic-content">
+<h4>Photosynthesis</h4>
+<p>Photosynthesis converts light energy into chemical energy stored in glucose.</p>
+
 <div class="formula-box">
-With water: Ca + 2H₂O → Ca(OH)₂ + H₂ (more vigorous down group)<br>
-With oxygen: 2Mg + O₂ → 2MgO (bright white flame)<br>
-With acids: Mg + 2HCl → MgCl₂ + H₂
+6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ &nbsp;&nbsp;&nbsp; (requires light and chlorophyll)<br><br>
+<strong>Light-dependent reactions:</strong> Occur in thylakoid membranes; produce ATP and NADPH; water is split (photolysis) to release O₂.<br><br>
+<strong>Light-independent reactions (Calvin cycle):</strong> Occur in stroma; CO₂ is fixed by RuBisCO enzyme and reduced to glucose using ATP and NADPH.
 </div>
 
-<h3>Group 2 Oxides and Hydroxides</h3>
-<p>Basic oxides and hydroxides. Solubility of hydroxides increases down group. Solubility of sulfates decreases down group.</p>
+<h4>Cellular Respiration</h4>
+<p>Respiration releases energy from glucose through a series of controlled oxidation reactions.</p>
+
 <div class="formula-box">
-Mg(OH)₂: sparingly soluble (milk of magnesia, antacid)<br>
-Ca(OH)₂: slightly soluble (limewater, test for CO₂)<br>
-Ba(OH)₂: soluble (strong base)
+C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O &nbsp;&nbsp;&nbsp; ΔH = −2808 kJ mol⁻¹<br><br>
+<strong>Glycolysis:</strong> Glucose → 2 pyruvate (cytoplasm, anaerobic)<br>
+<strong>Krebs cycle:</strong> Pyruvate → CO₂ (mitochondrial matrix)<br>
+<strong>Electron transport chain:</strong> Produces ATP using proton gradient (inner mitochondrial membrane)
 </div>
 
-<h3>Group 17 (Halogens)</h3>
-<p>Elements: F, Cl, Br, I, At. Have 7 electrons in outer shell. Form 1- ions.</p>
-<p><strong>Trend down the group:</strong></p>
-<ul>
-<li>Colour darkens: F₂ (pale yellow gas), Cl₂ (greenish-yellow gas), Br₂ (red-brown liquid), I₂ (grey-black solid)</li>
-<li>Melting and boiling points increase (more electrons, stronger VdW)</li>
-<li>Reactivity decreases (harder to gain electron, atomic radius increases)</li>
-</ul>
+<div class="key-point">
+Aerobic respiration produces ~38 ATP per glucose. Anaerobic respiration produces only 2 ATP per glucose (lactate in animals, ethanol and CO₂ in yeast).
+</div>
+</div>
+</div>
 
-<h3>Reactions of Halogens</h3>
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Atmospheric Chemistry</h3></div>
+<div class="topic-content">
+<h4>The Ozone Layer</h4>
+<p>Ozone (O₃) in the stratosphere absorbs harmful UV radiation (200–315 nm), protecting life on Earth.</p>
+
 <div class="formula-box">
-Displacement: Cl₂ + 2NaBr → 2NaCl + Br₂ (more reactive displaces less reactive)<br>
-With metals: 2Fe + 3Cl₂ → 2FeCl₃<br>
-With hydrogen: H₂ + Cl₂ → 2HCl (explosive in sunlight)
+<strong>Ozone formation:</strong> O₂ + UV → 2O•; O• + O₂ → O₃<br>
+<strong>Ozone destruction (natural):</strong> O₃ + UV → O₂ + O•; O₃ + O• → 2O₂<br>
+<strong>CFC destruction:</strong> CCl₂F₂ + UV → CClF₂• + Cl•<br>
+Cl• + O₃ → ClO• + O₂<br>
+ClO• + O• → Cl• + O₂<br>
+The chlorine radical is regenerated — it acts as a catalyst, destroying many ozone molecules.
 </div>
 
-<h3>Tests for Halide Ions</h3>
-<p>Add dilute nitric acid, then silver nitrate solution:</p>
-<ul>
-<li>Cl⁻: white precipitate of AgCl (soluble in dilute NH₃)</li>
-<li>Br⁻: cream precipitate of AgBr (soluble in concentrated NH₃)</li>
-<li>I⁻: yellow precipitate of AgI (insoluble in NH₃)</li>
-</ul>
+<div class="key-point">
+One chlorine atom from CFCs can destroy up to 100,000 ozone molecules. The Montreal Protocol (1987) phased out CFC production. Replacement compounds like HFCs don't contain chlorine but are potent greenhouse gases.
 </div>
 
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Thermal Stability of Group 2 Compounds</h3>
-<p>Thermal stability of carbonates and nitrates increases down the group because the cation is larger and polarises the anion less.</p>
+<h4>The Greenhouse Effect</h4>
+<p>Greenhouse gases (CO₂, CH₄, H₂O vapour, N₂O, CFCs) absorb infrared radiation emitted by Earth's surface and re-radiate it back, warming the atmosphere.</p>
+
+<table class="data-table">
+<tr><th>Greenhouse Gas</th><th>Main Sources</th><th>Relative Warming Potential</th></tr>
+<tr><td>CO₂</td><td>Fossil fuel combustion, deforestation</td><td>1 (reference)</td></tr>
+<tr><td>CH₄</td><td>Agriculture (livestock, rice), landfills</td><td>28–36</td></tr>
+<tr><td>N₂O</td><td>Fertilisers, industrial processes</td><td>265–298</td></tr>
+<tr><td>CFCs</td><td>Refrigerants (now banned)</td><td>Thousands</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Water Treatment and Pollution</h3></div>
+<div class="topic-content">
+<h4>Water Treatment Process</h4>
+<div class="process-box">
+<ol>
+<li><strong>Screening:</strong> Remove large debris.</li>
+<li><strong>Coagulation and flocculation:</strong> Add alum (aluminium sulfate) to make suspended particles clump together.</li>
+<li><strong>Sedimentation:</strong> Heavy particles settle to the bottom.</li>
+<li><strong>Filtration:</strong> Pass through sand and gravel beds.</li>
+<li><strong>Disinfection:</strong> Add chlorine or use UV/ozone to kill microorganisms.</li>
+<li><strong>pH adjustment:</strong> Adjust to prevent pipe corrosion.</li>
+</ol>
+</div>
+
+<h4>Water Pollutants</h4>
+<table class="data-table">
+<tr><th>Pollutant</th><th>Source</th><th>Effect</th><th>Treatment</th></tr>
+<tr><td>Heavy metals (Pb, Hg, Cd)</td><td>Industrial waste, mining</td><td>Toxic, bioaccumulative</td><td>Precipitation, ion exchange</td></tr>
+<tr><td>Nitrates</td><td>Agricultural runoff</td><td>Eutrophication, blue baby syndrome</td><td>Biological denitrification</td></tr>
+<tr><td>Phosphates</td><td>Detergents, fertilisers</td><td>Eutrophication</td><td>Precipitation</td></tr>
+<tr><td>Pesticides</td><td>Agriculture</td><td>Toxic to aquatic life</td><td>Activated carbon</td></tr>
+<tr><td>Organic matter (BOD)</td><td>Sewage</td><td>Depletes oxygen</td><td>Biological treatment</td></tr>
+</table>
+
+<div class="key-point">
+Eutrophication is the excessive growth of algae due to nutrient enrichment (nitrates and phosphates). When algae die, their decomposition by bacteria depletes dissolved oxygen, killing fish and other aquatic organisms.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Green Chemistry</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Green chemistry:</strong> The design of chemical products and processes that reduce or eliminate the use and generation of hazardous substances.</p>
+</div>
+
+<h4>Principles of Green Chemistry</h4>
+<ol>
+<li>Prevention — prevent waste rather than treat it</li>
+<li>Atom economy — maximise incorporation of reactants into products</li>
+<li>Less hazardous synthesis — use non-toxic substances</li>
+<li>Design safer chemicals — preserve function while minimising toxicity</li>
+<li>Safer solvents — use water or benign solvents</li>
+<li>Energy efficiency — conduct at ambient T and P</li>
+<li>Use renewable feedstocks</li>
+<li>Reduce derivatives — minimise temporary modifications</li>
+<li>Catalysis — use selective catalysts</li>
+<li>Design for degradation — biodegradable products</li>
+<li>Real-time analysis — monitor pollution</li>
+<li>Inherently safer chemistry — minimise accident potential</li>
+</ol>
+
 <div class="formula-box">
-MgCO₃ → MgO + CO₂ (decomposes easily)<br>
-BaCO₃ → very difficult to decompose<br>
-2Ca(NO₃)₂ → 2CaO + 4NO₂ + O₂<br>
-2Mg(NO₃)₂ decomposes more easily than Ba(NO₃)₂
+<strong>Atom Economy:</strong><br>
+Atom economy = (molecular mass of desired product / sum of molecular masses of all reactants) × 100%<br><br>
+Example: Hydrogenation of ethene<br>
+C₂H₄ + H₂ → C₂H₆<br>
+Atom economy = 30 / (28 + 2) × 100% = 100%<br><br>
+Example: Substitution<br>
+CH₃CH₂OH + HBr → CH₃CH₂Br + H₂O<br>
+Atom economy = 109 / (46 + 81) × 100% = 85.8%
 </div>
 
-<h3>Flame Tests</h3>
+<div class="example-box">
+<h5>Worked Example: Comparing Atom Economies</h5>
+<p>Route 1: CH₃CH₂OH + PCl₅ → CH₃CH₂Cl + POCl₃ + HCl</p>
+<p>Route 2: CH₃CH₂OH + SOCl₂ → CH₃CH₂Cl + SO₂ + HCl</p>
+<p>Route 3: CH₃CH₂OH + HCl → CH₃CH₂Cl + H₂O</p>
+<p>Route 3 has the highest atom economy (only water as by-product).</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Explain why CFCs are effective at destroying ozone in the stratosphere. [3]</p>
+<p>(b) Write equations to show how chlorine radicals catalyse ozone destruction. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) CFCs are stable in troposphere / unreactive (1). UV light in stratosphere breaks C-Cl bond releasing Cl• (1). Cl• regenerated in catalytic cycle / one Cl• destroys many O₃ molecules (1).<br>
+(b) Cl• + O₃ → ClO• + O₂ (1). ClO• + O• → Cl• + O₂ (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>(a) Define atom economy. [1]</p>
+<p>(b) Calculate the atom economy for the production of 1-bromobutane from butan-1-ol using HBr. [2]</p>
+<p>(c) Suggest why atom economy is an important consideration in green chemistry. [1]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) (Molar mass of desired product / sum of molar masses of all reactants) × 100% (1).<br>
+(b) C₄H₉OH + HBr → C₄H₉Br + H₂O (1). Atom economy = 137 / (74 + 81) × 100% = 88.4% (1).<br>
+(c) Reduces waste / more sustainable / less environmental impact (1).
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
-<li>Li: crimson red</li>
-<li>Na: yellow/orange</li>
-<li>K: lilac</li>
-<li>Ca: brick red</li>
-<li>Sr: crimson</li>
-<li>Ba: apple green</li>
-</ul>
-
-<h3>Industrial Uses</h3>
-<ul>
-<li>CaO (quicklime): making steel, neutralising acidic soil, drying agent</li>
-<li>Ca(OH)₂ (slaked lime): neutralising acidic soil, water treatment</li>
-<li>CaCO₃ (limestone): building material, making cement, neutralising acid</li>
-</ul>
-
-<h3>Chlorine and Water Treatment</h3>
-<p>Chlorine is used to kill bacteria in drinking water. It reacts with water:</p>
-<div class="formula-box">
-Cl₂ + H₂O ⇌ HCl + HClO (hypochlorous acid, kills bacteria)<br>
-Cl₂ + 2NaOH → NaCl + NaClO + H₂O (bleach)
-</div>
-
-<h3>Reaction of Chlorine with Cold vs Hot NaOH</h3>
-<div class="formula-box">
-Cold dilute: Cl₂ + 2NaOH → NaCl + NaClO + H₂O (disproportionation)<br>
-Hot concentrated: 3Cl₂ + 6NaOH → 5NaCl + NaClO₃ + 3H₂O
-</div>
-</div>
-
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Enthalpy Changes in Group 2</h3>
-<p>Thermodynamic cycles can explain trends in thermal decomposition. The lattice energy and enthalpy changes of formation determine decomposition temperature.</p>
-
-<h3>Anomalous Properties of Beryllium and Fluorine</h3>
-<p><strong>Beryllium:</strong> Due to small size and high charge density:</p>
-<ul>
-<li>Forms covalent compounds (e.g., BeCl₂)</li>
-<li>Amphoteric oxide and hydroxide</li>
-<li>Does not react with water</li>
-</ul>
-<p><strong>Fluorine:</strong> Due to small size and weak F-F bond:</p>
-<ul>
-<li>Exceptionally high oxidising power</li>
-<li>Can oxidise water: 2F₂ + 2H₂O → 4HF + O₂</li>
-<li>HF is a weak acid (strong H-F bond)</li>
-</ul>
-
-<h3>Interhalogen Compounds</h3>
-<p>Compounds between different halogens: ClF, BrF₃, ICl. More reactive than individual halogens.</p>
-
-<h3>Industrial Production of Chlorine</h3>
-<div class="formula-box">
-Membrane cell electrolysis of brine:<br>
-Anode: 2Cl⁻ → Cl₂ + 2e⁻<br>
-Cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻<br>
-Overall: 2NaCl + 2H₂O → Cl₂ + H₂ + 2NaOH
-</div>
-</div>
-
-<div class="notes-section">
-
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
+<li>Enzymes: biological catalysts; active site binds substrate; lock-and-key / induced fit</li>
+<li>Enzyme activity affected by temperature, pH, substrate concentration, inhibitors</li>
+<li>Competitive inhibition: overcome by increasing [S]; non-competitive: cannot be overcome</li>
+<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (light-dependent + Calvin cycle)</li>
+<li>Respiration: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP</li>
+<li>Ozone: absorbs UV; destroyed by Cl• from CFCs in catalytic cycle</li>
+<li>Greenhouse gases: CO₂, CH₄, N₂O, CFCs; trap IR radiation</li>
+<li>Water treatment: screening → coagulation → sedimentation → filtration → disinfection</li>
+<li>Eutrophication: excess nutrients → algal bloom → oxygen depletion</li>
+<li>Atom economy = (mass desired product / mass all reactants) × 100%</li>
 </ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Group 2: reactivity increases down group; IE decreases; hydroxide solubility increases; sulfate solubility decreases</li>
-<li>Group 2 carbonates/nitrates: thermal stability increases down group</li>
-<li>Group 17: reactivity decreases down group; colour darkens; mp/bp increase</li>
-<li>Halide test: AgNO₃ + HNO₃; Cl⁻ white, Br⁻ cream, I⁻ yellow</li>
-<li>Chlorine disproportionates in alkali: cold → ClO⁻; hot → ClO₃⁻</li>
-<li>Be is anomalous: covalent, amphoteric, unreactive with water</li>
-<li>F is anomalous: oxidises water, HF is weak acid</li>
+<li>Distinguish clearly between competitive and non-competitive inhibition</li>
+<li>Remember that catalysts are regenerated — show this in ozone equations</li>
+<li>Greenhouse effect: absorption and re-radiation of IR, not trapping</li>
+<li>Atom economy differs from percentage yield — it's about waste reduction</li>
+<li>Eutrophication sequence: nutrients → algae → death → decomposition → O₂ depletion → death</li>
 </ul>
 </div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Confusing the trends in solubility of hydroxides vs sulfates</li>
-<li>Saying halogens become more reactive down the group (they become less reactive)</li>
-<li>Forgetting to add dilute HNO₃ before AgNO₃ in halide tests</li>
-<li>Not balancing disproportionation equations correctly</li>
-<li>Confusing thermal stability trends (increases down group, not decreases)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

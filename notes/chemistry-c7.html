@@ -2,233 +2,311 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C7 Equilibria — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemical Equilibria — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C7: Equilibria</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Chemical Equilibria</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Reversible Reactions</h3>
-<p>Some reactions can go in both directions. At equilibrium, the forward and backward reactions occur at the same rate, so concentrations remain constant. Equilibrium is dynamic, not static.</p>
-<div class="formula-box">
-N₂(g) + 3H₂(g) ⇌ 2NH₃(g)
-</div>
-
-<h3>Le Chatelier's Principle</h3>
-<p>If a dynamic equilibrium is disturbed by changing conditions, the position of equilibrium moves to counteract the change.</p>
-<p><strong>Concentration:</strong> Increasing reactant concentration shifts equilibrium to products (right).</p>
-<p><strong>Pressure (gases only):</strong> Increasing pressure shifts equilibrium to side with fewer gas molecules.</p>
-<p><strong>Temperature:</strong> Increasing temperature shifts equilibrium in endothermic direction.</p>
-<p><strong>Catalyst:</strong> Speeds up both forward and backward reactions equally. No effect on equilibrium position; reduces time to reach equilibrium.</p>
-
-<h3>Haber Process</h3>
-<div class="formula-box">
-N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;&nbsp; ΔH = -92 kJ/mol<br>
-Conditions: 450°C, 200 atm, iron catalyst<br>
-Compromise temperature: higher T would favour reactants (exothermic), but lower T is too slow
-</div>
-
-<h3>Contact Process</h3>
-<div class="formula-box">
-2SO₂(g) + O₂(g) ⇌ 2SO₃(g) &nbsp;&nbsp; ΔH = -98 kJ/mol<br>
-Conditions: 450°C, 1-2 atm, V₂O₅ catalyst
-</div>
-</div>
-
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Equilibrium Constant Kc</h3>
-<p>For a general reaction: aA + bB ⇌ cC + dD</p>
-<div class="formula-box">
-Kc = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ<br>
-Units depend on stoichiometry; pure solids and liquids are omitted
-</div>
-<p>Kc is constant at a given temperature. Only temperature changes Kc.</p>
-
-<h3>Equilibrium Constant Kp</h3>
-<p>For gaseous equilibria, partial pressures are used:</p>
-<div class="formula-box">
-Kp = (pC)ᶜ(pD)ᵈ / (pA)ᵃ(pB)ᵇ<br>
-Partial pressure = mole fraction × total pressure<br>
-Mole fraction = moles of gas / total moles of gas
-</div>
-
-<h3>Relationship Between Kp and Kc</h3>
-<div class="formula-box">
-Kp = Kc(RT)^Δn<br>
-Δn = change in moles of gas (products - reactants)<br>
-R = 8.31 J K⁻¹ mol⁻¹, T in Kelvin
-</div>
-
-<h3>Calculating Equilibrium Constants</h3>
-<p>Use ICE tables (Initial, Change, Equilibrium):</p>
+<div class="toc">
+<h2>📑 Contents</h2>
 <ol>
-<li>Write balanced equation</li>
-<li>Set up table with initial amounts</li>
-<li>Define change in terms of x</li>
-<li>Write equilibrium expressions</li>
-<li>Substitute into Kc/Kp expression and solve</li>
+<li><a href="#section-1">Dynamic Equilibrium</a></li>
+<li><a href="#section-2">The Equilibrium Constant Kc</a></li>
+<li><a href="#section-3">Kp for Gaseous Equilibria</a></li>
+<li><a href="#section-4">Le Chatelier's Principle</a></li>
+<li><a href="#section-5">The Haber Process and Contact Process</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
 </ol>
 </div>
 
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Acid-Base Equilibria</h3>
-<p><strong>Brønsted-Lowry theory:</strong> Acid = proton donor, Base = proton acceptor. Conjugate acid-base pairs differ by one proton.</p>
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Dynamic Equilibrium</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Dynamic equilibrium:</strong> In a reversible reaction, the state where the rate of the forward reaction equals the rate of the reverse reaction, so the concentrations of reactants and products remain constant (but not necessarily equal).</p>
+</div>
+
+<p>Characteristics of dynamic equilibrium:</p>
+<ul>
+<li>It occurs in a closed system</li>
+<li>The forward and reverse reactions continue to occur (dynamic)</li>
+<li>Concentrations of reactants and products remain constant</li>
+<li>It can be approached from either direction</li>
+</ul>
+
+<div class="key-point">
+The equilibrium position describes the relative amounts of reactants and products at equilibrium. It can lie to the left (reactants favoured) or to the right (products favoured).
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>The Equilibrium Constant Kc</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Equilibrium constant (Kc):</strong> The ratio of product concentrations to reactant concentrations at equilibrium, each raised to the power of their stoichiometric coefficients.</p>
+</div>
+
 <div class="formula-box">
-HA + H₂O ⇌ H₃O⁺ + A⁻<br>
-Acid 1 + Base 2 ⇌ Acid 2 + Base 1
+For: aA + bB ⇌ cC + dD<br><br>
+Kc = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ<br><br>
+• Square brackets [ ] denote equilibrium concentration in mol dm⁻³<br>
+• Kc has units that depend on the stoichiometry<br>
+• Kc is temperature-dependent only — not affected by concentration, pressure, or catalyst
 </div>
 
-<h3>Acid Dissociation Constant Ka</h3>
+<div class="example-box">
+<h5>Worked Example: Writing Kc Expressions</h5>
+<p>For: N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</p>
+<p>Kc = [NH₃]² / ([N₂][H₂]³)</p>
+<p>Units: (mol dm⁻³)² / ((mol dm⁻³)(mol dm⁻³)³) = mol⁻² dm⁶</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Calculating Kc</h5>
+<p>For: H₂(g) + I₂(g) ⇌ 2HI(g)</p>
+<p>At equilibrium: [H₂] = 0.10, [I₂] = 0.10, [HI] = 0.80 mol dm⁻³</p>
+<p>Kc = [HI]² / ([H₂][I₂]) = (0.80)² / (0.10 × 0.10) = 0.64 / 0.01 = 64</p>
+<p>No units (mol dm⁻³ cancels out).</p>
+</div>
+
+<div class="key-point">
+If Kc > 1: products favoured (equilibrium lies to the right)<br>
+If Kc < 1: reactants favoured (equilibrium lies to the left)<br>
+If Kc ≈ 1: significant amounts of both reactants and products present
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Kp for Gaseous Equilibria</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Partial pressure:</strong> The pressure a gas would exert if it alone occupied the container. p(A) = mole fraction of A × total pressure.</p>
+<p><strong>Equilibrium constant (Kp):</strong> The ratio of partial pressures of products to reactants at equilibrium, each raised to their stoichiometric coefficients.</p>
+</div>
+
 <div class="formula-box">
-Ka = [H⁺][A⁻] / [HA]<br>
-pKa = -log₁₀Ka<br>
-Stronger acid → larger Ka → smaller pKa
+For: aA(g) + bB(g) ⇌ cC(g) + dD(g)<br><br>
+Kp = (pC)ᶜ(pD)ᵈ / (pA)ᵃ(pB)ᵇ<br><br>
+Partial pressure: p(A) = n(A)/n(total) × P(total) = mole fraction × total pressure<br>
+Units of Kp depend on stoichiometry (usually atm or Pa raised to some power)
 </div>
 
-<h3>pH Calculations</h3>
-<div class="formula-box">
-pH = -log₁₀[H⁺]<br>
-[H⁺] = 10^(-pH)<br>
-Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25°C<br>
-pH + pOH = 14
+<div class="example-box">
+<h5>Worked Example: Calculating Kp</h5>
+<p>For: N₂O₄(g) ⇌ 2NO₂(g)</p>
+<p>At 1.0 atm total pressure, the equilibrium mixture contains 0.20 mol N₂O₄ and 0.80 mol NO₂.</p>
+<p><strong>Solution:</strong></p>
+<p>n(total) = 0.20 + 0.80 = 1.00 mol</p>
+<p>Mole fraction N₂O₄ = 0.20/1.00 = 0.20; p(N₂O₄) = 0.20 × 1.0 = 0.20 atm</p>
+<p>Mole fraction NO₂ = 0.80/1.00 = 0.80; p(NO₂) = 0.80 × 1.0 = 0.80 atm</p>
+<p>Kp = (pNO₂)² / p(N₂O₄) = (0.80)² / 0.20 = 3.2 atm</p>
+</div>
+</div>
 </div>
 
-<h3>Strong and Weak Acids/Bases</h3>
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Le Chatelier's Principle</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Le Chatelier's Principle:</strong> If a dynamic equilibrium is disturbed by changing the conditions (concentration, temperature, pressure), the position of equilibrium moves to counteract the disturbance.</p>
+</div>
+
+<h4>Effect of Concentration</h4>
+<p>Increasing the concentration of a reactant shifts equilibrium to the right (products) to use up the added reactant.</p>
+<p>Increasing the concentration of a product shifts equilibrium to the left (reactants).</p>
+
+<h4>Effect of Pressure (gaseous equilibria only)</h4>
+<p>Increasing pressure shifts equilibrium toward the side with FEWER moles of gas.</p>
+<p>Decreasing pressure shifts equilibrium toward the side with MORE moles of gas.</p>
+
+<h4>Effect of Temperature</h4>
+<p>Increasing temperature shifts equilibrium in the endothermic direction (absorbs the added heat).</p>
+<p>Decreasing temperature shifts equilibrium in the exothermic direction.</p>
+
+<h4>Effect of Catalyst</h4>
+<p>A catalyst speeds up both forward and reverse reactions equally. It does NOT shift the position of equilibrium or change Kc/Kp. It only helps equilibrium be reached faster.</p>
+
+<div class="example-box">
+<h5>Worked Example: Applying Le Chatelier's Principle</h5>
+<p>For: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;&nbsp;&nbsp; ΔH = −92 kJ mol⁻¹</p>
+<p>Predict the effect of:</p>
+<p>(a) Increasing pressure: Shifts right (4 moles gas → 2 moles gas)</p>
+<p>(b) Increasing temperature: Shifts left (reverse is endothermic)</p>
+<p>(c) Adding a catalyst: No effect on position; rate increases</p>
+<p>(d) Removing NH₃: Shifts right to produce more NH₃</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• Adding a catalyst does NOT change Kc or the equilibrium position — it only speeds up attainment of equilibrium.</p>
+<p>• Kc is constant at constant temperature. Changing concentration shifts the position but Kc remains the same.</p>
+<p>• Pressure changes only affect gaseous equilibria where Δn(gas) ≠ 0.</p>
+<p>• Increasing temperature always increases the rate of both forward and reverse reactions, but increases the endothermic direction more.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>The Haber Process and Contact Process</h3></div>
+<div class="topic-content">
+<h4>Haber Process — Ammonia Synthesis</h4>
+<p>N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;&nbsp;&nbsp; ΔH = −92 kJ mol⁻¹</p>
+
+<table class="data-table">
+<tr><th>Condition</th><th>Compromise Choice</th><th>Reasoning</th></tr>
+<tr><td>Temperature</td><td>450°C (moderately high)</td><td>Low T favours yield (exothermic) but is too slow; high T favours rate but reduces yield</td></tr>
+<tr><td>Pressure</td><td>200 atm (high)</td><td>High pressure favours products (4 → 2 moles gas) but very high pressure is expensive/dangerous</td></tr>
+<tr><td>Catalyst</td><td>Iron with promoters</td><td>Increases rate without affecting equilibrium position</td></tr>
+</table>
+
+<div class="key-point">
+The Haber process is a compromise. Low temperature gives high yield but is too slow. High temperature is fast but gives low yield. 450°C balances reasonable yield with acceptable rate. Unreacted N₂ and H₂ are recycled.
+</div>
+
+<h4>Contact Process — Sulfuric Acid</h4>
+<p>2SO₂(g) + O₂(g) ⇌ 2SO₃(g) &nbsp;&nbsp;&nbsp; ΔH = −196 kJ mol⁻¹</p>
+<p>Conditions: 450°C, 1-2 atm, V₂O₅ catalyst</p>
+<p>Only moderate pressure is needed because the equilibrium already favours products significantly at atmospheric pressure. Higher pressure would be expensive with diminishing returns.</p>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>For: 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) &nbsp;&nbsp;&nbsp; ΔH = −196 kJ mol⁻¹</p>
+<p>(a) Write an expression for Kc. [1]</p>
+<p>(b) State and explain the effect on the equilibrium position of increasing temperature. [2]</p>
+<p>(c) Explain why a catalyst is used industrially despite not affecting the equilibrium position. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Kc = [SO₃]² / ([SO₂]²[O₂]) (1).<br>
+(b) Equilibrium shifts left / towards reactants (1). Forward reaction is exothermic / increasing T favours endothermic direction (1).<br>
+(c) Catalyst increases rate of reaction (1). Equilibrium reached faster / greater throughput / more product per unit time (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>For: H₂(g) + CO₂(g) ⇌ H₂O(g) + CO(g)</p>
+<p>At equilibrium in a 1.0 dm³ container: [H₂] = 0.10, [CO₂] = 0.20, [H₂O] = 0.40, [CO] = 0.40 mol dm⁻³.</p>
+<p>(a) Calculate Kc and state its units. [2]</p>
+<p>(b) If the volume is doubled, state the effect on Kc and the equilibrium position. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Kc = (0.40 × 0.40) / (0.10 × 0.20) = 0.16 / 0.02 = 8.0 (1). No units (1).<br>
+(b) Kc unchanged (1) because Kc depends only on temperature (1). Position unchanged (1) because equal moles of gas on both sides (1). Max 2.
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
-<li><strong>Strong acid:</strong> Fully dissociated. [H⁺] = acid concentration for monoprotic acids.</li>
-<li><strong>Weak acid:</strong> Partially dissociated. [H⁺] = √(Ka × [HA]) for dilute solutions.</li>
+<li>Dynamic equilibrium: forward rate = reverse rate; concentrations constant</li>
+<li>Kc = [products] / [reactants] (raised to stoichiometric powers)</li>
+<li>Kp uses partial pressures for gases</li>
+<li>Kc and Kp are temperature-dependent only</li>
+<li>Le Chatelier: system counteracts disturbances</li>
+<li>Concentration: shifts to oppose change</li>
+<li>Pressure: shifts to side with fewer gas moles</li>
+<li>Temperature: shifts in endothermic direction when heated</li>
+<li>Catalyst: no effect on position or K; speeds up both directions</li>
 </ul>
-
-<h3>Buffer Solutions</h3>
-<p>A buffer resists pH change when small amounts of acid or base are added. Contains a weak acid and its conjugate base (salt).</p>
-<div class="formula-box">
-[H⁺] = Ka × [acid] / [salt]<br>
-pH = pKa + log₁₀([salt]/[acid]) (Henderson-Hasselbalch equation)
 </div>
-
-<h3>Salt Hydrolysis</h3>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Salt of strong acid + strong base: pH = 7 (neutral)</li>
-<li>Salt of weak acid + strong base: pH > 7 (basic, anion hydrolyses)</li>
-<li>Salt of strong acid + weak base: pH < 7 (acidic, cation hydrolyses)</li>
+<li>Always write Kc expressions with concentrations, not amounts</li>
+<li>Watch your units — they depend on the stoichiometry</li>
+<li>When calculating equilibrium concentrations, set up an ICE table (Initial, Change, Equilibrium)</li>
+<li>For gas equilibria: mole fraction = moles of gas / total moles</li>
+<li>Remember: Kc doesn't change with concentration or pressure (at constant T)</li>
+<li>The Haber process is the classic compromise example</li>
 </ul>
-
-<h3>Solubility Product Ksp</h3>
-<div class="formula-box">
-For AₓBᵧ(s) ⇌ xAʸ⁺(aq) + yBˣ⁻(aq):<br>
-Ksp = [A]ˣ[B]ʸ<br>
-Ionic product > Ksp → precipitation occurs
-</div>
 </div>
 
-<div class="notes-section">
-
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
-</ul>
-</div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
-<ul>
-<li>Le Chatelier: equilibrium shifts to oppose change</li>
-<li>Temperature increase favours endothermic direction; only factor changing Kc</li>
-<li>Pressure increase favours side with fewer gas moles</li>
-<li>Catalyst: no effect on equilibrium position or Kc</li>
-<li>Kc = [products]/[reactants] with coefficients as powers</li>
-<li>Kp uses partial pressures; Kp = Kc(RT)^Δn</li>
-<li>pH = -log[H⁺]; pH < 7 acidic, pH > 7 alkaline</li>
-<li>Weak acid: [H⁺] = √(Ka × [HA])</li>
-<li>Buffer: weak acid + its salt; pH = pKa + log([salt]/[acid])</li>
-</ul>
-</div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Forgetting to omit solids and pure liquids from Kc expressions</li>
-<li>Confusing Kp units with Kc units</li>
-<li>Not squaring/cubing coefficients in equilibrium expressions</li>
-<li>Using concentration instead of partial pressure in Kp</li>
-<li>Forgetting that pH calculations need [H⁺] in mol/dm³</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

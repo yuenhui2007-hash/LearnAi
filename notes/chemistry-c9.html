@@ -2,238 +2,322 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C9 Hydrocarbons — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition Metals — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C9: Hydrocarbons</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Transition Metals</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Alkanes</h3>
-<p>Saturated hydrocarbons with general formula CnH₂n₊₂. They contain only C-C single bonds and C-H bonds. Alkanes are relatively unreactive but undergo:</p>
-<ul>
-<li><strong>Combustion:</strong> Complete combustion produces CO₂ + H₂O; incomplete produces CO or C (soot)</li>
-<li><strong>Substitution with halogens:</strong> UV light required. Free radical mechanism.</li>
-<li><strong>Cracking:</strong> Breaking long-chain alkanes into shorter alkanes + alkenes</li>
-</ul>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">General Properties of Transition Metals</a></li>
+<li><a href="#section-2">Variable Oxidation States</a></li>
+<li><a href="#section-3">Complex Ions and Ligands</a></li>
+<li><a href="#section-4">Catalytic Activity</a></li>
+<li><a href="#section-5">Colour in Transition Metal Compounds</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
+</ol>
+</div>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>General Properties of Transition Metals</h3></div>
+<div class="topic-content">
+<p>Transition metals are d-block elements that form at least one stable ion with a partially filled d subshell. The first transition series is Sc to Zn (period 4). They exhibit characteristic properties due to their d electrons.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Transition element:</strong> A d-block element that forms one or more stable ions with a partially filled d subshell.</p>
+<p><strong>Scandium and zinc are NOT transition elements:</strong> Sc forms only Sc³⁺ ([Ar]), Zn forms only Zn²⁺ ([Ar] 3d¹⁰) — neither has a partially filled d subshell in their only common ion.</p>
+</div>
+
+<h4>Characteristic Properties</h4>
+<table class="data-table">
+<tr><th>Property</th><th>Explanation</th></tr>
+<tr><td>Variable oxidation states</td><td>Successive ionisation energies are similar; 4s and 3d electrons have similar energies</td></tr>
+<tr><td>Coloured compounds</td><td>d-d transitions absorb visible light; colour is complementary to absorbed wavelength</td></tr>
+<tr><td>Catalytic activity</td><td>Variable oxidation states allow formation of unstable intermediates; surface adsorption</td></tr>
+<tr><td>Formation of complex ions</td><td>Partially filled d orbitals and empty/occupied orbitals can accept lone pairs from ligands</td></tr>
+<tr><td>Paramagnetism</td><td>Unpaired d electrons create magnetic moments</td></tr>
+<tr><td>Hard, high density, high mp</td><td>Strong metallic bonding from delocalised d electrons</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Variable Oxidation States</h3></div>
+<div class="topic-content">
+<p>Transition metals can exist in multiple oxidation states because the energy difference between successive ionisation energies is relatively small. The 4s and 3d orbitals are close in energy.</p>
+
+<table class="data-table">
+<tr><th>Element</th><th>Common Oxidation States</th><th>Colour Examples</th></tr>
+<tr><td>Scandium</td><td>+3 only</td><td>Sc³⁺ colourless</td></tr>
+<tr><td>Titanium</td><td>+2, +3, +4</td><td>Ti³⁺ purple</td></tr>
+<tr><td>Vanadium</td><td>+2, +3, +4, +5</td><td>V²⁺ violet, V³⁺ green, VO²⁺ blue, VO₂⁺ yellow</td></tr>
+<tr><td>Chromium</td><td>+2, +3, +6</td><td>Cr³⁺ green, Cr₂O₇²⁻ orange, CrO₄²⁻ yellow</td></tr>
+<tr><td>Manganese</td><td>+2, +4, +6, +7</td><td>Mn²⁺ pale pink, MnO₄⁻ purple</td></tr>
+<tr><td>Iron</td><td>+2, +3</td><td>Fe²⁺ green, Fe³⁺ yellow/brown</td></tr>
+<tr><td>Cobalt</td><td>+2, +3</td><td>Co²⁺ pink</td></tr>
+<tr><td>Nickel</td><td>+2</td><td>Ni²⁺ green</td></tr>
+<tr><td>Copper</td><td>+1, +2</td><td>Cu²⁺ blue</td></tr>
+<tr><td>Zinc</td><td>+2 only</td><td>Zn²⁺ colourless</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Redox Reactions of Transition Metals</h5>
+<p>Manganate(VII) titration with iron(II):</p>
+<p>MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 4H₂O + 5Fe³⁺</p>
+<p><strong>Explanation:</strong> Purple MnO₄⁻ is reduced to colourless/pale pink Mn²⁺. Fe²⁺ is oxidised to Fe³⁺. This is used to determine the concentration of Fe²⁺ solutions.</p>
+</div>
+
+<div class="key-point">
+When balancing redox equations involving transition metals:
+1. Identify oxidation states
+2. Write half-equations for oxidation and reduction
+3. Balance atoms (add H₂O for O, H⁺ for H in acidic solution)
+4. Balance charge by adding electrons
+5. Multiply half-equations to equalise electrons
+6. Add together and simplify
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Complex Ions and Ligands</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Complex ion:</strong> A central metal ion surrounded by ligands.</p>
+<p><strong>Ligand:</strong> A molecule or ion that donates a lone pair of electrons to a metal ion to form a coordinate (dative) bond.</p>
+<p><strong>Coordination number:</strong> The number of coordinate bonds to the central metal ion.</p>
+<p><strong>Monodentate ligand:</strong> Forms one coordinate bond (e.g., H₂O, NH₃, Cl⁻).</p>
+<p><strong>Bidentate ligand:</strong> Forms two coordinate bonds (e.g., ethanedioate C₂O₄²⁻, 1,2-diaminoethane NH₂CH₂CH₂NH₂).</p>
+</div>
+
+<h4>Common Ligands and Complexes</h4>
+<table class="data-table">
+<tr><th>Ligand</th><th>Formula</th><th>Type</th><th>Example Complex</th></tr>
+<tr><td>Water</td><td>H₂O</td><td>Monodentate, neutral</td><td>[Cu(H₂O)₆]²⁺ — blue</td></tr>
+<tr><td>Ammonia</td><td>NH₃</td><td>Monodentate, neutral</td><td>[Cu(NH₃)₄(H₂O)₂]²⁺ — deep blue</td></tr>
+<tr><td>Chloride</td><td>Cl⁻</td><td>Monodentate, anionic</td><td>[CuCl₄]²⁻ — yellow</td></tr>
+<tr><td>Hydroxide</td><td>OH⁻</td><td>Monodentate, anionic</td><td>[Cu(OH)₄]²⁻ — blue</td></tr>
+<tr><td>Cyanide</td><td>CN⁻</td><td>Monodentate, anionic</td><td>[Fe(CN)₆]⁴⁻ — yellow</td></tr>
+<tr><td>Ethanedioate</td><td>C₂O₄²⁻</td><td>Bidentate</td><td>[Fe(C₂O₄)₃]³⁻ — green</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Ligand Substitution</h5>
+<p>When excess NH₃ is added to aqueous copper(II) sulfate:</p>
+<p>[Cu(H₂O)₆]²⁺(aq) + 4NH₃(aq) → [Cu(NH₃)₄(H₂O)₂]²⁺(aq) + 4H₂O(l)</p>
+<p>Colour change: pale blue → deep blue</p>
+<p>This is a ligand substitution reaction. NH₃ is a stronger ligand than H₂O.</p>
+</div>
+
+<div class="key-point">
+Ligand substitution can also cause colour changes:
+• [Cu(H₂O)₆]²⁺ (blue) + 4Cl⁻ → [CuCl₄]²⁻ (yellow) + 6H₂O
+• [Co(H₂O)₆]²⁺ (pink) + 4Cl⁻ → [CoCl₄]²⁻ (blue) + 6H₂O
+These are used as tests for the presence of different ligands.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Catalytic Activity</h3></div>
+<div class="topic-content">
+<p>Transition metals and their compounds are excellent catalysts due to their ability to show variable oxidation states and adsorb reactants onto their surfaces.</p>
+
+<h4>Homogeneous Catalysis</h4>
+<div class="example-box">
+<h5>Fe²⁺/Fe³⁺ Catalysis of S₂O₈²⁻/I⁻ Reaction</h5>
+<p>S₂O₈²⁻ + 2I⁻ → 2SO₄²⁻ + I₂ (slow uncatalysed)</p>
+<p><strong>Catalysed route:</strong></p>
+<p>Step 1: S₂O₈²⁻ + 2Fe²⁺ → 2SO₄²⁻ + 2Fe³⁺</p>
+<p>Step 2: 2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂</p>
+<p>Fe²⁺ is oxidised to Fe³⁺, then reduced back to Fe²⁺.</p>
+</div>
+
+<h4>Heterogeneous Catalysis</h4>
+<table class="data-table">
+<tr><th>Process</th><th>Catalyst</th><th>Reaction</th></tr>
+<tr><td>Haber process</td><td>Iron</td><td>N₂ + 3H₂ → 2NH₃</td></tr>
+<tr><td>Contact process</td><td>V₂O₅</td><td>2SO₂ + O₂ → 2SO₃</td></tr>
+<tr><td>Hydrogenation</td><td>Ni</td><td>C=C + H₂ → C-C</td></tr>
+<tr><td>Catalytic converter</td><td>Pt/Pd/Rh</td><td>2CO + 2NO → 2CO₂ + N₂</td></tr>
+</table>
+
+<div class="process-box">
+<h5>Heterogeneous Catalysis Mechanism</h5>
+<ol>
+<li>Reactant molecules adsorb onto the catalyst surface.</li>
+<li>Bonds in reactants weaken; new bonds begin to form.</li>
+<li>Product molecules desorb from the surface.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Colour in Transition Metal Compounds</h3></div>
+<div class="topic-content">
+<p>Colour arises when d electrons absorb visible light and are promoted to higher energy d orbitals (d-d transitions). The colour observed is the complement of the colour absorbed.</p>
+
 <div class="formula-box">
-CH₄ + 2O₂ → CO₂ + 2H₂O (complete combustion)<br>
-C₈H₁₈ → C₄H₁₀ + C₄H₈ (cracking)
+<strong>Crystal Field Theory (simplified):</strong><br>
+In an octahedral complex, the d orbitals split into two sets:<br>
+• t₂g (lower energy): dxy, dxz, dyz<br>
+• eg (higher energy): dx²-y², dz²<br>
+ΔE = energy gap between t₂g and eg<br>
+When ΔE corresponds to visible light energy, d-d transitions occur and colour is observed.<br>
+ΔE = hν = hc/λ
 </div>
 
-<h3>Alkenes</h3>
-<p>Unsaturated hydrocarbons with general formula CnH₂n. They contain a C=C double bond and are more reactive than alkanes.</p>
+<div class="key-point">
+Factors affecting colour:
+• Oxidation state of metal (affects ΔE)
+• Nature of ligand (strong field ligands increase ΔE)
+• Geometry of complex (octahedral vs tetrahedral)
+• Strong field ligands: CN⁻ > NH₃ > H₂O > OH⁻ > Cl⁻
+</div>
+
+<table class="data-table">
+<tr><th>Complex</th><th>Colour</th><th>Absorbed Colour</th></tr>
+<tr><td>[Cu(H₂O)₆]²⁺</td><td>Blue</td><td>Orange-red</td></tr>
+<tr><td>[Cu(NH₃)₄(H₂O)₂]²⁺</td><td>Deep blue</td><td>Orange-yellow</td></tr>
+<tr><td>[CuCl₄]²⁻</td><td>Yellow</td><td>Blue-violet</td></tr>
+<tr><td>[Fe(H₂O)₆]²⁺</td><td>Pale green</td><td>Red</td></tr>
+<tr><td>[Fe(H₂O)₆]³⁺</td><td>Yellow/brown</td><td>Blue-violet</td></tr>
+<tr><td>[Mn(H₂O)₆]²⁺</td><td>Pale pink</td><td>Green</td></tr>
+<tr><td>[Co(H₂O)₆]²⁺</td><td>Pink</td><td>Green</td></tr>
+<tr><td>[CoCl₄]²⁻</td><td>Blue</td><td>Orange</td></tr>
+<tr><td>[Cr(H₂O)₆]³⁺</td><td>Green/violet</td><td>Red/yellow</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Explain why zinc is not classified as a transition element. [1]</p>
+<p>(b) State two typical properties of transition elements and explain how they arise from electronic structure. [4]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Zn²⁺ has a complete d subshell / [Ar] 3d¹⁰ / no partially filled d subshell in any stable ion (1).<br>
+(b) Any two from: variable oxidation states (1) because 4s and 3d electrons have similar energies (1); coloured compounds (1) because d-d transitions absorb visible light (1); catalytic activity (1) because variable oxidation states allow formation of intermediates / adsorption on surface (1). Max 4.
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>When excess ammonia is added to aqueous copper(II) sulfate, a colour change is observed.</p>
+<p>(a) Write an equation for this reaction. [2]</p>
+<p>(b) Explain why the colour changes. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) [Cu(H₂O)₆]²⁺ + 4NH₃ → [Cu(NH₃)₄(H₂O)₂]²⁺ + 4H₂O (2). [1 for correct formulae, 1 for balancing]<br>
+(b) Ligand substitution occurs / H₂O replaced by NH₃ (1). Different ligand causes different splitting of d orbitals / different ΔE / different wavelength absorbed (1).
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
-<li><strong>Combustion:</strong> Burns with sooty flame (higher C:H ratio)</li>
-<li><strong>Addition reactions:</strong> Characteristic reaction of alkenes</li>
-</ul>
-<div class="formula-box">
-Addition of H₂ (hydrogenation): C₂H₄ + H₂ → C₂H₆ (Ni catalyst, 150°C)<br>
-Addition of Br₂ (bromination): C₂H₄ + Br₂ → C₂H₄Br₂ (red-brown → colourless)<br>
-Addition of HBr: C₂H₄ + HBr → C₂H₅Br (Markovnikov: H to C with more H)<br>
-Addition of H₂O (hydration): C₂H₄ + H₂O → C₂H₅OH (H₃PO₄ catalyst, 300°C, 60 atm)
-</div>
-
-<h3>Tests for Unsaturation</h3>
-<p>Bromine water test: red-brown bromine water decolourises with alkenes (addition reaction). Alkanes do not react (no change, or very slow under UV).</p>
-
-<h3>Fossil Fuels and Environmental Impact</h3>
-<ul>
-<li>Crude oil is separated by fractional distillation</li>
-<li>Combustion of fossil fuels produces CO₂ (greenhouse gas) and SO₂ (acid rain)</li>
-<li>Catalytic converters remove CO, NOₓ, and unburnt hydrocarbons from exhaust</li>
-</ul>
-</div>
-
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Free Radical Substitution Mechanism</h3>
-<p>Mechanism for reaction of methane with chlorine (UV light):</p>
-<div class="formula-box">
-Initiation: Cl₂ → 2Cl• (homolytic fission by UV)<br>
-Propagation: CH₄ + Cl• → CH₃• + HCl<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CH₃• + Cl₂ → CH₃Cl + Cl•<br>
-Termination: Cl• + Cl• → Cl₂<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CH₃• + Cl• → CH₃Cl<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CH₃• + CH₃• → C₂H₆
-</div>
-<p>Further substitution can occur: CH₃Cl → CH₂Cl₂ → CHCl₃ → CCl₄</p>
-
-<h3>Electrophilic Addition to Alkenes</h3>
-<p>The electron-rich C=C double bond attacks electrophiles.</p>
-<div class="formula-box">
-Mechanism (bromination):<br>
-1. Br₂ polarised by C=C; Brδ+ attacked by π electrons → cyclic bromonium ion<br>
-2. Br⁻ attacks from opposite side (anti-addition) → dibromoalkane
-</div>
-
-<h3>Markovnikov's Rule</h3>
-<p>In addition of HX to unsymmetrical alkenes, H attaches to the carbon with more H atoms already (forming more stable carbocation).</p>
-<div class="formula-box">
-CH₃CH=CH₂ + HBr → CH₃CHBrCH₃ (major product)<br>
-Not CH₃CH₂CH₂Br (minor product)
-</div>
-
-<h3>Ozonolysis of Alkenes</h3>
-<p>Alkenes react with ozone, then reductive workup (Zn/H₂O) gives carbonyl compounds. Used to locate position of double bond.</p>
-</div>
-
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Arene Chemistry - Benzene</h3>
-<p>Benzene (C₆H₆) has a planar hexagonal structure with delocalised π electrons. It undergoes <strong>electrophilic substitution</strong> (not addition) because addition would destroy the stable aromatic system.</p>
-
-<h3>Electrophilic Substitution of Benzene</h3>
-<div class="formula-box">
-General mechanism:<br>
-1. Electrophile (E⁺) generated by catalyst<br>
-2. E⁺ attacked by π electrons of benzene → carbocation intermediate (arenium ion)<br>
-3. Loss of H⁺ restores aromaticity → substituted benzene
-</div>
-
-<h3>Nitration</h3>
-<div class="formula-box">
-Reagents: concentrated HNO₃ + concentrated H₂SO₄ (catalyst), 50°C<br>
-Electrophile: NO₂⁺ (nitronium ion)<br>
-C₆H₆ + HNO₃ → C₆H₅NO₂ + H₂O
-</div>
-
-<h3>Halogenation</h3>
-<div class="formula-box">
-Reagents: Br₂ + FeBr₃ catalyst (or AlBr₃)<br>
-Electrophile: Br⁺<br>
-C₆H₆ + Br₂ → C₆H₅Br + HBr
-</div>
-<p>Chlorination uses Cl₂ + FeCl₃/AlCl₃</p>
-
-<h3>Friedel-Crafts Reactions</h3>
-<div class="formula-box">
-Alkylation: C₆H₆ + RCl → C₆H₅R + HCl (AlCl₃ catalyst)<br>
-Acylation: C₆H₆ + RCOCl → C₆H₅COR + HCl (AlCl₃ catalyst)
-</div>
-
-<h3>Directing Effects of Substituents</h3>
-<ul>
-<li><strong>2,4-directing (activating):</strong> -OH, -NH₂, -NHR, -NR₂, -R, -X — donate electrons, activate ring</li>
-<li><strong>3-directing (deactivating):</strong> -NO₂, -COOH, -CHO, -COR, -CN, -SO₃H — withdraw electrons, deactivate ring</li>
-</ul>
-
-<h3>Phenol</h3>
-<p>Phenol (C₆H₅OH) has an -OH group directly attached to benzene. The lone pairs on oxygen delocalise into the ring, making it more reactive than benzene:</p>
-<ul>
-<li>Reacts with bromine water without catalyst → white precipitate of 2,4,6-tribromophenol</li>
-<li>Weakly acidic (pKa ~10) — more acidic than alcohols, less than carboxylic acids</li>
-</ul>
-
-<h3>Methylbenzene (Toluene)</h3>
-<p>Methyl group is 2,4-directing and activating. Methylbenzene is more reactive than benzene and undergoes substitution more readily.</p>
-</div>
-
-<div class="notes-section">
-
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
+<li>Transition elements have partially filled d subshells in at least one stable ion</li>
+<li>Sc and Zn are NOT transition elements</li>
+<li>Properties: variable oxidation states, coloured compounds, catalytic activity, complex formation</li>
+<li>Common oxidation states: Fe (+2, +3), Cu (+1, +2), Mn (+2, +4, +6, +7), Cr (+3, +6)</li>
+<li>Ligands donate lone pairs; coordination number = number of coordinate bonds</li>
+<li>Colour from d-d transitions; ligand strength affects ΔE and therefore colour</li>
+<li>Homogeneous catalysis: catalyst in same phase; heterogeneous: different phase</li>
 </ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Alkanes: saturated, substitution only (free radical, UV), combustion, cracking</li>
-<li>Alkenes: addition reactions (H₂, Br₂, HX, H₂O); test with bromine water</li>
-<li>Free radical substitution: initiation, propagation, termination</li>
-<li>Markovnikov: H adds to C with more H; forms more stable carbocation</li>
-<li>Benzene: electrophilic substitution (not addition); delocalised electrons</li>
-<li>Nitration: HNO₃/H₂SO₄, 50°C; Halogenation: X₂ + FeX₃</li>
-<li>Friedel-Crafts: Alkylation/acylation with RCl/RCOCl + AlCl₃</li>
-<li>2,4-directors: -OH, -NH₂, -R, -X (activating); 3-directors: -NO₂, -COOH, -CHO (deactivating)</li>
-<li>Phenol: very reactive, decolourises bromine water, weakly acidic</li>
+<li>Always state that Sc and Zn are not transition elements — examiners love testing this!</li>
+<li>When balancing redox equations, check atoms and charges carefully</li>
+<li>Ligand substitution equations must include all ligands, especially water</li>
+• Colour changes must be explained in terms of d-d transitions and ΔE</li>
+• For catalysis, explain both homogeneous (intermediates) and heterogeneous (adsorption) mechanisms</li>
 </ul>
 </div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Saying alkanes undergo addition (they don't — only substitution/combustion)</li>
-<li>Not showing homolytic fission correctly in radical mechanisms</li>
-<li>Forgetting benzene undergoes substitution, not addition</li>
-<li>Confusing directing effects of substituents</li>
-<li>Not recognising that phenol is more acidic than alcohols due to resonance stabilisation of phenoxide ion</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

@@ -2,187 +2,305 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C12 Polymerisation — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitrogen Compounds & Polymers — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C12: Polymerisation</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Nitrogen Compounds & Polymers</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Addition Polymerisation</h3>
-<p>Monomers with C=C double bonds join together without losing any atoms. The double bond opens to form single bonds between repeating units.</p>
+<div class="toc">
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#section-1">Amines and Amides</a></li>
+<li><a href="#section-2">Amino Acids and Proteins</a></li>
+<li><a href="#section-3">Condensation Polymerisation</a></li>
+<li><a href="#section-4">Synthetic Polymers</a></li>
+<li><a href="#section-5">Natural Polymers</a></li>
+<li><a href="#section-6">Exam-Style Questions</a></li>
+</ol>
+</div>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Amines and Amides</h3></div>
+<div class="topic-content">
+<p>Amines are organic derivatives of ammonia where one or more H atoms are replaced by alkyl or aryl groups. They are weak bases due to the lone pair on nitrogen.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Primary amine:</strong> One alkyl group bonded to N (RNH₂).</p>
+<p><strong>Secondary amine:</strong> Two alkyl groups bonded to N (R₂NH).</p>
+<p><strong>Tertiary amine:</strong> Three alkyl groups bonded to N (R₃N).</p>
+<p><strong>Amide:</strong> Contains the −CONH₂ group, formed from a carboxylic acid and an amine.</p>
+</div>
+
+<h4>Basicity of Amines</h4>
+<p>Aliphatic amines are stronger bases than ammonia because alkyl groups donate electrons (+I effect), increasing electron density on nitrogen and making the lone pair more available.</p>
+<p>Aromatic amines (e.g., phenylamine) are weaker bases than ammonia because the lone pair is delocalised into the benzene ring, making it less available.</p>
+
 <div class="formula-box">
-n CH₂=CH₂ → -(CH₂-CH₂)n- (polyethene)<br>
-n CH₂=CHCl → -(CH₂-CHCl)n- (poly(chloroethene), PVC)<br>
-n CH₂=CH(C₆H₅) → -(CH₂-CH(C₆H₅))n- (polystyrene)
+CH₃CH₂NH₂ + H₂O ⇌ CH₃CH₂NH₃⁺ + OH⁻ &nbsp;&nbsp;&nbsp; Kb > Kb(NH₃)<br>
+C₆H₅NH₂ + H₂O ⇌ C₆H₅NH₃⁺ + OH⁻ &nbsp;&nbsp;&nbsp; Kb < Kb(NH₃)
 </div>
-<p><strong>Properties of addition polymers:</strong> Non-biodegradable, chemically inert, thermoplastic (can be remelted).</p>
 
-<h3>Condensation Polymerisation</h3>
-<p>Monomers join together with the loss of a small molecule (usually water). Requires two different functional groups that can react.</p>
+<h4>Preparation of Amines</h4>
+<div class="process-box">
+<ol>
+<li><strong>Reduction of nitriles:</strong> CH₃CN + 2[H] → CH₃CH₂NH₂ (LiAlH₄ or H₂/Ni)</li>
+<li><strong>Reduction of nitro compounds:</strong> C₆H₅NO₂ + 6[H] → C₆H₅NH₂ + 2H₂O (Sn/HCl or H₂/Ni)</li>
+<li><strong>Hofmann degradation:</strong> RCONH₂ + Br₂ + 4OH⁻ → RNH₂ + CO₃²⁻ + 2Br⁻ + 2H₂O</li>
+</ol>
+</div>
+
+<h4>Amide Formation and Hydrolysis</h4>
 <div class="formula-box">
-Dicarboxylic acid + diol → polyester + water<br>
-HOOC-C₆H₄-COOH + HO-CH₂-CH₂-OH → -(CO-C₆H₄-CO-O-CH₂-CH₂-O-)n- + H₂O (Terylene)
+<strong>Formation:</strong> CH₃COCl + NH₃ → CH₃CONH₂ + HCl<br>
+Or: CH₃COOH + NH₃ → CH₃CONH₂ + H₂O (heat, catalyst)<br><br>
+<strong>Acid hydrolysis:</strong> CH₃CONH₂ + H₂O + H⁺ → CH₃COOH + NH₄⁺<br>
+<strong>Alkaline hydrolysis:</strong> CH₃CONH₂ + OH⁻ → CH₃COO⁻ + NH₃
+</div>
+</div>
 </div>
 
-<h3>Natural Polymers</h3>
-<p><strong>Proteins:</strong> Polymers of amino acids joined by peptide (amide) bonds.</p>
-<p><strong>Carbohydrates:</strong> Starch and cellulose are polymers of glucose.</p>
-<p><strong>DNA:</strong> Polymer of nucleotides.</p>
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Amino Acids and Proteins</h3></div>
+<div class="topic-content">
+<p>Amino acids contain both an amino group (−NH₂) and a carboxylic acid group (−COOH). They are the building blocks of proteins.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Amphoteric:</strong> Can act as both an acid and a base.</p>
+<p><strong>Zwitterion:</strong> A dipolar ion with both positive and negative charges.</p>
+<p><strong>Isoelectric point:</strong> The pH at which an amino acid exists mainly as a zwitterion.</p>
 </div>
 
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Polyesters</h3>
-<p>Formed from dicarboxylic acids and diols. Contains ester linkages (-COO-). Examples: Terylene, PET.</p>
 <div class="formula-box">
-n HOOC-R-COOH + n HO-R'-OH → -(CO-R-CO-O-R'-O-)n- + 2n H₂O
+At low pH (acidic): H₃N⁺-CH(R)-COOH<br>
+At isoelectric point: H₃N⁺-CH(R)-COO⁻ (zwitterion)<br>
+At high pH (alkaline): H₂N-CH(R)-COO⁻
 </div>
 
-<h3>Polyamides</h3>
-<p>Formed from dicarboxylic acids and diamines (or amino acids). Contains amide linkages (-CONH-). Examples: Nylon-6,6, proteins.</p>
+<h4>Peptide Bond Formation</h4>
+<p>Amino acids link together by condensation reactions between the −NH₂ of one amino acid and the −COOH of another, forming a peptide bond (−CONH−).</p>
+
 <div class="formula-box">
-n HOOC-(CH₂)₄-COOH + n H₂N-(CH₂)₆-NH₂ → -(CO-(CH₂)₄-CO-NH-(CH₂)₆-NH-)n- + 2n H₂O (Nylon-6,6)
+H₂N-CH(R₁)-COOH + H₂N-CH(R₂)-COOH →<br>
+H₂N-CH(R₁)-CO-NH-CH(R₂)-COOH + H₂O
 </div>
 
-<h3>Differences Between Addition and Condensation Polymers</h3>
-<table style="width:100%;border-collapse:collapse;margin:16px 0">
-<tr style="background:var(--light)"><th style="padding:10px;text-align:left">Feature</th><th style="padding:10px;text-align:left">Addition</th><th style="padding:10px;text-align:left">Condensation</th></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Monomer type</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">One type with C=C</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Two types with complementary groups</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">By-product</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">None</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Small molecule (H₂O, HCl)</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Repeat unit</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Same as monomer minus double bond</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Different from monomers</td></tr>
-<tr><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Biodegradability</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Generally non-biodegradable</td><td style="padding:10px;border-bottom:1px solid var(--gray-light)">Some biodegradable (e.g., proteins)</td></tr>
+<div class="key-point">
+The peptide bond has partial double bond character due to resonance, which restricts rotation and gives the protein backbone its planar structure. This is crucial for protein folding and secondary structure.
+</div>
+
+<h4>Protein Structure</h4>
+<table class="data-table">
+<tr><th>Level</th><th>Description</th><th>Bonding/Forces</th></tr>
+<tr><td>Primary</td><td>Sequence of amino acids</td><td>Peptide (covalent) bonds</td></tr>
+<tr><td>Secondary</td><td>Local folding into α-helix or β-pleated sheet</td><td>Hydrogen bonds between C=O and N-H</td></tr>
+<tr><td>Tertiary</td><td>Overall 3D shape of polypeptide</td><td>Hydrogen bonds, disulfide bridges, ionic bonds, van der Waals</td></tr>
+<tr><td>Quaternary</td><td>Assembly of multiple polypeptides</td><td>Same as tertiary</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Condensation Polymerisation</h3></div>
+<div class="topic-content">
+<p>Condensation polymers are formed when monomers join together with the elimination of a small molecule, usually water.</p>
+
+<h4>Polyesters</h4>
+<div class="formula-box">
+Dicarboxylic acid + Diol → Polyester + Water<br><br>
+n HOOC-C₆H₄-COOH + n HO-CH₂-CH₂-OH →<br>
+−[OC-C₆H₄-COO-CH₂-CH₂-O]ₙ− + 2n H₂O<br><br>
+Terephthalic acid + Ethane-1,2-diol → PET (polyethylene terephthalate)
+</div>
+
+<h4>Polyamides</h4>
+<div class="formula-box">
+Dicarboxylic acid + Diamine → Polyamide + Water<br><br>
+n HOOC-(CH₂)₄-COOH + n H₂N-(CH₂)₆-NH₂ →<br>
+−[OC-(CH₂)₄-CONH-(CH₂)₆-NH]ₙ− + 2n H₂O<br><br>
+Adipic acid + Hexane-1,6-diamine → Nylon-6,6
+</div>
+
+<div class="key-point">
+Nylon is a polyamide; Terylene/PET is a polyester. Both are condensation polymers. The numbers in Nylon-6,6 refer to the number of carbon atoms in each monomer (6 in adipic acid, 6 in diamine).
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Synthetic Polymers</h3></div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Polymer</th><th>Monomer(s)</th><th>Type</th><th>Uses</th></tr>
+<tr><td>Polyethene (PE)</td><td>Ethene</td><td>Addition</td><td>Plastic bags, bottles</td></tr>
+<tr><td>Polypropene (PP)</td><td>Propene</td><td>Addition</td><p>Ropes, containers</td></tr>
+<tr><td>PVC</td><td>Chloroethene</td><td>Addition</td><td>Pipes, insulation</td></tr>
+<tr><td>Polystyrene</td><td>Phenylethene</td><td>Addition</td><td>Packaging, insulation</td></tr>
+<tr><td>PET</td><td>Terephthalic acid + Ethane-1,2-diol</td><td>Condensation</td><td>Drinks bottles, fibres</td></tr>
+<tr><td>Nylon-6,6</td><td>Adipic acid + Hexane-1,6-diamine</td><td>Condensation</td><td>Fibres, engineering plastics</td></tr>
+<tr><td>Kevlar</td><td>Benzene-1,4-dicarboxylic acid + Benzene-1,4-diamine</td><td>Condensation</td><td>Bulletproof vests, aerospace</td></tr>
 </table>
 
-<h3>Hydrolysis of Polymers</h3>
-<p>Polyesters and polyamides can be hydrolysed:</p>
+<div class="key-point">
+Addition polymers have only C-C backbone and are generally non-biodegradable. Condensation polymers have ester or amide linkages that can be hydrolysed. Kevlar's strength comes from extensive hydrogen bonding between polymer chains and rigid benzene rings.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Natural Polymers</h3></div>
+<div class="topic-content">
+<h4>Proteins</h4>
+<p>Polymers of amino acids joined by peptide bonds. Essential for structure (collagen, keratin), enzymes (catalysts), transport (haemoglobin), and defence (antibodies).</p>
+
+<h4>Carbohydrates</h4>
+<p>Polysaccharides like starch and cellulose are polymers of glucose.</p>
+<div class="formula-box">
+Starch: α-glucose units joined by α-1,4-glycosidic bonds. Forms helical structure. Energy storage in plants.<br><br>
+Cellulose: β-glucose units joined by β-1,4-glycosidic bonds. Forms straight chains with hydrogen bonding between chains. Structural material in plants.<br><br>
+Humans can digest starch but not cellulose because we lack the enzyme cellulase.
+</div>
+
+<h4>DNA and RNA</h4>
+<p>Nucleic acids are polymers of nucleotides. Each nucleotide contains:</p>
 <ul>
-<li>Acid hydrolysis of polyester → dicarboxylic acid + diol</li>
-<li>Alkali hydrolysis of polyester → dicarboxylate salt + diol</li>
-<li>Acid hydrolysis of polyamide → dicarboxylic acid + diamine salt</li>
-<li>Alkali hydrolysis of polyamide → dicarboxylate salt + diamine</li>
+<li>A phosphate group</li>
+<li>A pentose sugar (deoxyribose in DNA, ribose in RNA)</li>
+<li>A nitrogenous base (A, T, G, C in DNA; A, U, G, C in RNA)</li>
+</ul>
+
+<div class="key-point">
+DNA forms a double helix held together by hydrogen bonds between complementary base pairs: A-T (2 H-bonds) and G-C (3 H-bonds). The sequence of bases encodes genetic information.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Explain why phenylamine is a weaker base than ethylamine. [2]</p>
+<p>(b) Write an equation for the reaction of ethylamine with HCl. [1]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Lone pair on N is delocalised into the benzene ring (1). Less available for protonation / electron density on N is reduced (1).<br>
+(b) C₂H₅NH₂ + HCl → C₂H₅NH₃⁺Cl⁻ (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>(a) Draw the structure of the dipeptide formed from glycine and alanine. [2]</p>
+<p>(b) Name the type of reaction and the bond formed. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Correct peptide link shown between two amino acids with correct side chains (2). [Deduct 1 for missing atoms]<br>
+(b) Condensation reaction (1). Peptide / amide bond (1).
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
+<ul>
+<li>Amines: weak bases; aliphatic > NH₃ > aromatic in basicity</li>
+<li>Amides: neutral; hydrolysed by acid or alkali</li>
+<li>Amino acids: amphoteric; form zwitterions at isoelectric pH</li>
+<li>Peptide bond: −CONH− formed by condensation of two amino acids</li>
+<li>Protein structure: primary (sequence), secondary (H-bonds), tertiary (various forces), quaternary (multiple chains)</li>
+<li>Condensation polymers: polyesters (ester linkages), polyamides (amide linkages)</li>
+<li>PET: polyester; Nylon-6,6: polyamide</li>
+<li>Starch: α-glucose; Cellulose: β-glucose</li>
+<li>DNA: double helix; A-T (2 H-bonds), G-C (3 H-bonds)</li>
+</ul>
+</div>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
+<ul>
+<li>Always draw peptide bonds correctly: −CO−NH−</li>
+<li>Remember the difference between addition and condensation polymers</li>
+<li>For amine basicity, consider both inductive effects and lone pair delocalisation</li>
+<li>Starch vs cellulose: α vs β glycosidic links make all the difference</li>
+<li>Condensation polymer repeating units must show the atoms lost as water</li>
 </ul>
 </div>
 
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Environmental Impact of Polymers</h3>
-<p><strong>Non-biodegradable plastics:</strong> Persist in environment, cause pollution, harm wildlife. Solutions include recycling, incineration (energy recovery), and biodegradable alternatives.</p>
-<p><strong>Biodegradable polymers:</strong> Poly(lactic acid) (PLA) from corn starch; polyhydroxyalkanoates (PHAs) from bacteria. Break down by microbial action.</p>
-
-<h3>Conducting Polymers</h3>
-<p>Some polymers with conjugated double bonds can conduct electricity when doped (e.g., polyacetylene, polyaniline). Used in OLEDs, solar cells, and sensors.</p>
-
-<h3>Polymer Structures and Properties</h3>
-<ul>
-<li><strong>Thermoplastic:</strong> Linear chains with weak intermolecular forces. Can be remelted and reshaped.</li>
-<li><strong>Thermosetting:</strong> Cross-linked network. Rigid, cannot be remelted.</li>
-<li><strong>Elastomers:</strong> Cross-linked but with flexible chains. Can stretch and return to shape (e.g., vulcanised rubber).</li>
-</ul>
-</div>
-
-<div class="notes-section">
-
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
-</div>
-</div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
-</ul>
-</div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
-<ul>
-<li>Addition polymerisation: C=C opens, no by-product; one monomer type</li>
-<li>Condensation polymerisation: two complementary monomers, small molecule lost</li>
-<li>Polyesters: ester linkages from diacid + diol</li>
-<li>Polyamides: amide linkages from diacid + diamine (or amino acids)</li>
-<li>Addition polymers: non-biodegradable; condensation polymers: may hydrolyse</li>
-<li>Thermoplastic = remeltable; thermosetting = cross-linked, rigid</li>
-<li>Proteins and DNA are natural condensation polymers</li>
-</ul>
-</div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Drawing repeat units with double bonds still present</li>
-<li>Not showing the correct linkage in condensation polymers</li>
-<li>Confusing the monomers needed for polyesters vs polyamides</li>
-<li>Forgetting that proteins are polyamides of amino acids</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

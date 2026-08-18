@@ -2,261 +2,436 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C4 Electrochemistry — LearnAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrochemistry — A-Level | LearnAI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=4">
-<link rel="stylesheet" href="../css/znotes-style.css?v=4">
+<link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
-.notes-page { padding: 120px 0 60px; background: var(--light); min-height: 100vh; }
-.notes-container { max-width: 900px; margin: 0 auto; background: var(--white); padding: 48px; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
-.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-light); }
-.notes-header h1 { font-size: 2rem; margin-bottom: 12px; }
-.level-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.level-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-.badge-igcse { background: #dbeafe; color: #1e40af; }
-.badge-as { background: #dcfce7; color: #166534; }
-.badge-a2 { background: #fef3c7; color: #92400e; }
-.notes-section { margin-bottom: 40px; }
-.notes-section h2 { font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
-.notes-section h3 { font-size: 1.1rem; color: var(--dark); margin: 24px 0 12px; }
-.notes-section p { margin-bottom: 12px; line-height: 1.8; color: var(--dark-light); }
-.notes-section ul { margin: 12px 0; padding-left: 24px; }
-.notes-section ul li { margin-bottom: 8px; color: var(--dark-light); line-height: 1.7; }
-.formula-box { background: var(--light); padding: 16px 20px; border-radius: var(--radius); border-left: 4px solid var(--primary); font-family: 'Courier New', monospace; margin: 16px 0; font-size: 0.95rem; }
-.highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
-.highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
-.back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
+.notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
+.notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
+.syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
+.toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
+.toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; color: #475569; }
+.toc a { color: #3b82f6; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.topic-content p { line-height: 1.8; color: #475569; margin-bottom: 12px; }
+.topic-content ul { margin: 12px 0; padding-left: 24px; }
+.topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.topic-content ol { margin: 12px 0; padding-left: 24px; }
+.topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
+.formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
+.summary-box ul { margin: 0; padding-left: 20px; }
+.summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
+.exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
+.exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+.exam-tips ul { margin: 0; padding-left: 20px; }
+.exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; color: #6b21a8; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) {
+  .notes-container { padding: 24px; }
+  .topic-content { padding-left: 0; }
+  .topic-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
 <section class="notes-page"><div class="container">
-<a href="javascript:history.back()" class="back-btn">← Back</a>
 <div class="notes-container">
+<a href="../subject.html?id=chemistry&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Chemistry</a>
 <div class="notes-header">
-<div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>C4: Electrochemistry</h1>
-<p style="color:var(--gray)">9701 (A-Level) · 0620 (IGCSE)</p>
+<span class="syllabus-tag">A-Level</span>
+<h1>Electrochemistry</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
 
-<div class="notes-section">
-<h2>IGCSE Content</h2>
-<h3>Electrolysis Basics</h3>
-<p>Electrolysis is the decomposition of a compound into its elements by an electric current. It requires:</p>
-<ul>
-<li>An electrolyte (molten or aqueous ionic compound)</li>
-<li>Two electrodes (anode = positive, cathode = negative)</li>
-<li>A direct current supply</li>
-</ul>
-<p><strong>Key rule:</strong> Cations (positive) move to cathode (negative), anions (negative) move to anode (positive).</p>
-
-<h3>Molten Electrolysis</h3>
-<p>At cathode: Metal ions gain electrons (reduction) → metal deposited</p>
-<p>At anode: Non-metal ions lose electrons (oxidation) → non-metal produced</p>
-<div class="formula-box">
-Example: Molten NaCl<br>
-Cathode: Na⁺ + e⁻ → Na<br>
-Anode: 2Cl⁻ → Cl₂ + 2e⁻
-</div>
-
-<h3>Aqueous Electrolysis</h3>
-<p>Water complicates the process. At the cathode, either the metal ion or H⁺ is reduced; at the anode, either the anion or OH⁻ is oxidised.</p>
-<p><strong>At cathode:</strong></p>
-<ul>
-<li>If metal is above hydrogen in reactivity series: H₂ is produced (2H⁺ + 2e⁻ → H₂)</li>
-<li>If metal is below hydrogen: metal is deposited (e.g., Cu²⁺ + 2e⁻ → Cu)</li>
-</ul>
-<p><strong>At anode:</strong></p>
-<ul>
-<li>If halide ion present (Cl⁻, Br⁻, I⁻): halogen produced (e.g., 2Cl⁻ → Cl₂ + 2e⁻)</li>
-<li>If OH⁻ or oxyanion (SO₄²⁻, NO₃⁻): O₂ produced (4OH⁻ → O₂ + 2H₂O + 4e⁻)</li>
-</ul>
-
-<h3>Electrolysis of Dilute vs Concentrated Solutions</h3>
-<p><strong>Dilute NaCl:</strong> Cathode: H₂; Anode: O₂</p>
-<p><strong>Concentrated NaCl (brine):</strong> Cathode: H₂; Anode: Cl₂</p>
-<p>This is the basis of the chlor-alkali industry.</p>
-
-<h3>Electrolysis Reactions Summary</h3>
-<div class="formula-box">
-Electrolysis of CuSO₄(aq) with inert electrodes:<br>
-Cathode: Cu²⁺ + 2e⁻ → Cu (pink deposit)<br>
-Anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻ (bubbles)<br><br>
-Electrolysis of CuSO₄(aq) with copper electrodes:<br>
-Cathode: Cu²⁺ + 2e⁻ → Cu<br>
-Anode: Cu → Cu²⁺ + 2e⁻ (copper dissolves)
-</div>
-
-<h3>Electroplating</h3>
-<p>The object to be plated is the cathode. The plating metal is the anode. The electrolyte contains ions of the plating metal. This is used to prevent corrosion and improve appearance.</p>
-</div>
-
-<div class="notes-section">
-<h2>AS Level Content</h2>
-<h3>Standard Electrode Potentials</h3>
-<p>The standard electrode potential (E°) is the potential difference between a half-cell and a standard hydrogen electrode under standard conditions (298 K, 1 mol/dm³, 1 atm).</p>
-<div class="formula-box">
-Standard Hydrogen Electrode (SHE): 2H⁺(aq) + 2e⁻ ⇌ H₂(g) &nbsp;&nbsp; E° = 0.00 V
-</div>
-
-<h3>Calculating Cell EMF</h3>
-<div class="formula-box">
-E°cell = E°reduction (cathode) - E°reduction (anode)<br>
-or<br>
-E°cell = E°(more positive) - E°(less positive)
-</div>
-<p>A positive E°cell means the reaction is feasible (spontaneous) under standard conditions.</p>
-
-<h3>Predicting Reactions Using E° Values</h3>
-<ul>
-<li>Species with more positive E° are better oxidising agents (get reduced)</li>
-<li>Species with more negative E° are better reducing agents (get oxidised)</li>
-<li>The half-cell with more positive E° will undergo reduction</li>
-<li>The half-cell with less positive E° will undergo oxidation</li>
-</ul>
-
-<h3>Standard Electrode Potential Values to Know</h3>
-<div class="formula-box">
-K⁺/K: -2.93 V &nbsp; Na⁺/Na: -2.71 V &nbsp; Mg²⁺/Mg: -2.37 V<br>
-Zn²⁺/Zn: -0.76 V &nbsp; Fe²⁺/Fe: -0.44 V &nbsp; Pb²⁺/Pb: -0.13 V<br>
-2H⁺/H₂: 0.00 V &nbsp; Cu²⁺/Cu: +0.34 V &nbsp; Ag⁺/Ag: +0.80 V<br>
-Cl₂/Cl⁻: +1.36 V &nbsp; F₂/F⁻: +2.87 V
-</div>
-
-<h3>Factors Affecting Electrode Potential</h3>
-<p>Under non-standard conditions, use the Nernst equation (not required at AS but conceptually):</p>
-<ul>
-<li>Concentration: higher [ion] shifts equilibrium, affecting potential</li>
-<li>Temperature: affects position of equilibrium</li>
-<li>Pressure: for gas electrodes</li>
-</ul>
-
-<h3>Redox Equations</h3>
-<p>To combine half-equations:</p>
+<div class="toc">
+<h2>📑 Contents</h2>
 <ol>
-<li>Write both half-equations with equal electrons</li>
-<li>Add them together, cancelling electrons</li>
+<li><a href="#section-1">Electrolysis Fundamentals</a></li>
+<li><a href="#section-2">Electrolysis of Molten Compounds</a></li>
+<li><a href="#section-3">Electrolysis of Aqueous Solutions</a></li>
+<li><a href="#section-4">Standard Electrode Potentials</a></li>
+<li><a href="#section-5">Electrochemical Cells</a></li>
+<li><a href="#section-6">Quantitative Electrolysis & Faraday's Laws</a></li>
+<li><a href="#section-7">Fuel Cells and Batteries</a></li>
+<li><a href="#section-8">Exam-Style Questions</a></li>
 </ol>
+</div>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header"><span class="topic-number">1</span><h3>Electrolysis Fundamentals</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Electrolysis:</strong> The decomposition of a compound into its elements by an electric current.</p>
+<p><strong>Electrolyte:</strong> A compound that conducts electricity when molten or in aqueous solution, and is decomposed in the process.</p>
+<p><strong>Anode:</strong> The positive electrode where oxidation occurs (Anode = AnOx = Anode Oxidation).</p>
+<p><strong>Cathode:</strong> The negative electrode where reduction occurs (Cathode = RedCat = Reduction Cathode).</p>
+<p><strong>Cation:</strong> A positively charged ion that moves toward the cathode.</p>
+<p><strong>Anion:</strong> A negatively charged ion that moves toward the anode.</p>
+</div>
+
+<p>Electrolysis is a non-spontaneous process driven by electrical energy. It is used extensively in industry for extracting reactive metals (aluminium, sodium), producing chlorine and sodium hydroxide, and electroplating.</p>
+
+<div class="key-point">
+At the anode (+), oxidation occurs: species lose electrons.<br>
+At the cathode (−), reduction occurs: species gain electrons.<br>
+Remember: OIL RIG — Oxidation Is Loss, Reduction Is Gain (of electrons).
+</div>
+
+<h4>Selective Discharge at Electrodes</h4>
+<p>When more than one ion is present, the ion discharged depends on:</p>
+<ul>
+<li><strong>At the cathode:</strong> The cation with the more positive (less negative) E° value is reduced preferentially.</li>
+<li><strong>At the anode:</strong> The anion with the less negative (more positive) E° value is oxidised preferentially. However, concentrated halides are oxidised before OH⁻.</li>
+</ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header"><span class="topic-number">2</span><h3>Electrolysis of Molten Compounds</h3></div>
+<div class="topic-content">
+<p>In molten electrolysis, there is only one cation and one anion, so the products are predictable. This method is used to extract very reactive metals that cannot be extracted by carbon reduction.</p>
+
+<div class="example-box">
+<h5>Worked Example: Electrolysis of Molten NaCl</h5>
+<p><strong>Cathode (−):</strong> Na⁺ + e⁻ → Na(l) &nbsp;&nbsp;&nbsp; (reduction)</p>
+<p><strong>Anode (+):</strong> 2Cl⁻ → Cl₂(g) + 2e⁻ &nbsp;&nbsp;&nbsp; (oxidation)</p>
+<p><strong>Overall:</strong> 2Na⁺ + 2Cl⁻ → 2Na(l) + Cl₂(g)</p>
+<p>This is the Downs process for producing sodium metal. The cell operates at ~600°C with a steel cathode and carbon anode.</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Electrolysis of Molten Al₂O₃ (Hall-Héroult Process)</h5>
+<p><strong>Cathode (−):</strong> Al³⁺ + 3e⁻ → Al(l)</p>
+<p><strong>Anode (+):</strong> 2O²⁻ → O₂(g) + 4e⁻</p>
+<p>The carbon anodes react with oxygen: C + O₂ → CO₂, so they burn away and must be replaced regularly.</p>
+<p>Cryolite (Na₃AlF₆) is added to lower the melting point from 2072°C to ~950°C.</p>
+</div>
+
+<div class="process-box">
+<h5>Hall-Héroult Process — Industrial Details</h5>
+<ol>
+<li>Aluminium ore (bauxite) is purified to Al₂O₃.</li>
+<li>Al₂O₃ is dissolved in molten cryolite at ~950°C.</li>
+<li>Steel tank lined with carbon acts as the cathode.</li>
+<li>Carbon anodes are suspended in the electrolyte.</li>
+<li>Liquid aluminium sinks to the bottom and is tapped off.</li>
+<li>The process is energy-intensive (~15 MWh per tonne of Al).</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Electrolysis of Aqueous Solutions</h3></div>
+<div class="topic-content">
+<p>In aqueous solutions, H⁺ and OH⁻ (from water) are also present and may compete with the electrolyte ions for discharge.</p>
+
+<div class="key-point">
+<strong>Cathode rules:</strong><br>
+• If the metal is above hydrogen in the reactivity series (more reactive: K, Na, Ca, Mg, Al), H⁺ is discharged instead: 2H⁺ + 2e⁻ → H₂(g)<br>
+• If the metal is below hydrogen (less reactive: Cu, Ag, Au), the metal ion is discharged: Cu²⁺ + 2e⁻ → Cu(s)<br><br>
+<strong>Anode rules:</strong><br>
+• If halide ions (Cl⁻, Br⁻, I⁻) are present in high concentration, they are discharged: 2Cl⁻ → Cl₂ + 2e⁻<br>
+• If halide concentration is low or no halides present, OH⁻ is discharged: 4OH⁻ → O₂ + 2H₂O + 4e⁻<br>
+• With inert electrodes (platinum/graphite), these rules apply. With reactive electrodes (copper), the electrode itself may dissolve.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Electrolysis of Concentrated NaCl (Brine)</h5>
+<p><strong>Cathode:</strong> 2H⁺ + 2e⁻ → H₂(g) &nbsp;&nbsp; (Na⁺ is too reactive to be discharged)</p>
+<p><strong>Anode:</strong> 2Cl⁻ → Cl₂(g) + 2e⁻ &nbsp;&nbsp; (Cl⁻ in high concentration)</p>
+<p><strong>Solution:</strong> Na⁺ and OH⁻ remain → NaOH(aq) is the other product</p>
+<p><strong>Overall:</strong> 2NaCl + 2H₂O → H₂ + Cl₂ + 2NaOH</p>
+<p>This is the chlor-alkali process, producing three valuable products.</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Electrolysis of Dilute H₂SO₄</h5>
+<p><strong>Cathode:</strong> 2H⁺ + 2e⁻ → H₂(g)</p>
+<p><strong>Anode:</strong> 4OH⁻ → O₂(g) + 2H₂O + 4e⁻</p>
+<p><strong>Overall:</strong> 2H₂O → 2H₂ + O₂</p>
+<p>This is essentially the electrolysis of water. The volume ratio of H₂:O₂ is 2:1.</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Electrolysis of CuSO₄ with Copper Electrodes</h5>
+<p><strong>Cathode:</strong> Cu²⁺ + 2e⁻ → Cu(s) &nbsp;&nbsp; (copper deposited)</p>
+<p><strong>Anode:</strong> Cu(s) → Cu²⁺ + 2e⁻ &nbsp;&nbsp; (copper dissolves)</p>
+<p><strong>Result:</strong> The concentration of CuSO₄ remains constant. This is the principle of electroplating and copper refining.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>Standard Electrode Potentials</h3></div>
+<div class="topic-content">
+<p>Standard electrode potentials (E°) measure the tendency of a species to gain electrons (be reduced) under standard conditions (1 mol dm⁻³, 1 atm, 298 K).</p>
+
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Standard electrode potential (E°):</strong> The potential difference (voltage) measured when a half-cell is connected to a standard hydrogen electrode (SHE) under standard conditions. E° for the SHE is defined as 0.00 V.</p>
+</div>
+
 <div class="formula-box">
-MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O &nbsp;&nbsp; E° = +1.52 V<br>
-Fe²⁺ → Fe³⁺ + e⁻<br>
-Multiply second by 5, then add:<br>
-MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O
+Standard hydrogen electrode: 2H⁺(aq) + 2e⁻ ⇌ H₂(g) &nbsp;&nbsp;&nbsp; E° = 0.00 V<br>
+Conditions: [H⁺] = 1.0 mol dm⁻³, P(H₂) = 1 atm, T = 298 K, Pt electrode.
 </div>
 
-<h3>Electrolysis Quantitative Calculations</h3>
+<table class="data-table">
+<tr><th>Half-reaction</th><th>E° (V)</th></tr>
+<tr><td>Li⁺ + e⁻ ⇌ Li</td><td>−3.04</td></tr>
+<tr><td>K⁺ + e⁻ ⇌ K</td><td>−2.93</td></tr>
+<tr><td>Ca²⁺ + 2e⁻ ⇌ Ca</td><td>−2.87</td></tr>
+<tr><td>Na⁺ + e⁻ ⇌ Na</td><td>−2.71</td></tr>
+<tr><td>Mg²⁺ + 2e⁻ ⇌ Mg</td><td>−2.37</td></tr>
+<tr><td>Al³⁺ + 3e⁻ ⇌ Al</td><td>−1.66</td></tr>
+<tr><td>Zn²⁺ + 2e⁻ ⇌ Zn</td><td>−0.76</td></tr>
+<tr><td>Fe²⁺ + 2e⁻ ⇌ Fe</td><td>−0.44</td></tr>
+<tr><td>Pb²⁺ + 2e⁻ ⇌ Pb</td><td>−0.13</td></tr>
+<tr><td>2H⁺ + 2e⁻ ⇌ H₂</td><td>0.00</td></tr>
+<tr><td>Cu²⁺ + 2e⁻ ⇌ Cu</td><td>+0.34</td></tr>
+<tr><td>Ag⁺ + e⁻ ⇌ Ag</td><td>+0.80</td></tr>
+<tr><td>Cl₂ + 2e⁻ ⇌ 2Cl⁻</td><td>+1.36</td></tr>
+<tr><td>F₂ + 2e⁻ ⇌ 2F⁻</td><td>+2.87</td></tr>
+</table>
+
+<div class="key-point">
+More negative E° = stronger reducing agent (more easily oxidised).<br>
+More positive E° = stronger oxidising agent (more easily reduced).<br>
+Li is the strongest reducing agent; F₂ is the strongest oxidising agent.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Electrochemical Cells</h3></div>
+<div class="topic-content">
+<p>An electrochemical (voltaic/galvanic) cell converts chemical energy into electrical energy through a spontaneous redox reaction. It consists of two half-cells connected by a salt bridge and an external circuit.</p>
+
+<div class="process-box">
+<h5>Components of an Electrochemical Cell</h5>
+<ol>
+<li><strong>Two half-cells:</strong> Each contains an electrode in an electrolyte.</li>
+<li><strong>Electrodes:</strong> Metal electrodes or inert electrodes (Pt, graphite) for gas/ion half-cells.</li>
+<li><strong>Salt bridge:</strong> Contains inert electrolyte (e.g., KNO₃) to complete the circuit and maintain electrical neutrality.</li>
+<li><strong>External circuit:</strong> Allows electrons to flow from anode to cathode.</li>
+</ol>
+</div>
+
 <div class="formula-box">
-Q = I × t (charge = current × time in seconds)<br>
-n = Q / F (moles = charge / Faraday constant)<br>
-F = 96500 C mol⁻¹
+<strong>Cell potential:</strong> E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub><br>
+(Use reduction potentials for both; subtract the anode potential)<br><br>
+For a spontaneous reaction: E°<sub>cell</sub> > 0<br>
+The more positive E° half-cell is the cathode (reduction).<br>
+The more negative E° half-cell is the anode (oxidation).
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Calculating Cell Potential</h5>
+<p>Calculate the standard cell potential for: Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)</p>
+<p><strong>Solution:</strong></p>
+<p>Zn²⁺ + 2e⁻ ⇌ Zn &nbsp;&nbsp;&nbsp; E° = −0.76 V</p>
+<p>Cu²⁺ + 2e⁻ ⇌ Cu &nbsp;&nbsp;&nbsp; E° = +0.34 V</p>
+<p>Cathode (reduction): Cu²⁺ + 2e⁻ → Cu &nbsp;&nbsp;&nbsp; E° = +0.34 V</p>
+<p>Anode (oxidation): Zn → Zn²⁺ + 2e⁻ &nbsp;&nbsp;&nbsp; E° = −0.76 V</p>
+<p>E°<sub>cell</sub> = +0.34 − (−0.76) = +1.10 V</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Predicting Spontaneity</h5>
+<p>Will chlorine oxidise bromide ions under standard conditions?</p>
+<p>Cl₂ + 2e⁻ ⇌ 2Cl⁻ &nbsp;&nbsp;&nbsp; E° = +1.36 V</p>
+<p>Br₂ + 2e⁻ ⇌ 2Br⁻ &nbsp;&nbsp;&nbsp; E° = +1.07 V</p>
+<p>E°<sub>cell</sub> = +1.36 − (+1.07) = +0.29 V > 0</p>
+<p><strong>Yes</strong>, the reaction is spontaneous: Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂</p>
+</div>
+
+<div class="key-point">
+Cell diagrams: Anode | Anode ion || Cathode ion | Cathode<br>
+Single vertical line = phase boundary<br>
+Double vertical line = salt bridge<br>
+Always write anode on the left, cathode on the right.
+</div>
 </div>
 </div>
 
-<div class="notes-section">
-<h2>A2 Level Content</h2>
-<h3>Equilibrium Constant Kc and Electrode Potentials</h3>
-<p>There is a relationship between Gibbs free energy, equilibrium constant, and electrode potential:</p>
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Quantitative Electrolysis & Faraday's Laws</h3></div>
+<div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Faraday constant (F):</strong> The charge on one mole of electrons. F = 96485 C mol⁻¹ ≈ 96500 C mol⁻¹.</p>
+<p><strong>Faraday's First Law:</strong> The mass of substance produced at an electrode is directly proportional to the quantity of electricity passed.</p>
+<p><strong>Faraday's Second Law:</strong> The masses of different substances produced by the same quantity of electricity are proportional to their equivalent masses (M/z).</p>
+</div>
+
 <div class="formula-box">
-ΔG° = -nFE°cell = -RT ln K<br>
-At 298 K: E°cell = (0.059 / n) × log K
+Q = I × t &nbsp;&nbsp;&nbsp; (charge = current × time)<br>
+n(e⁻) = Q / F &nbsp;&nbsp;&nbsp; (moles of electrons = charge / Faraday constant)<br>
+n(substance) = Q / (z × F) &nbsp;&nbsp;&nbsp; (z = number of electrons in half-equation)<br>
+mass = n × M &nbsp;&nbsp;&nbsp; (mass = moles × molar mass)
 </div>
 
-<h3>Electrolysis of Aqueous Solutions with Concentration Effects</h3>
-<p>At A2, you need to explain which ion is preferentially discharged based on:</p>
-<ul>
-<li>Standard electrode potentials</li>
-<li>Concentration of ions</li>
-<li>Overpotential effects (e.g., high overpotential for H₂ on some electrodes)</li>
-</ul>
-
-<h3>Fuel Cells</h3>
-<p>Hydrogen-oxygen fuel cell:</p>
-<div class="formula-box">
-Anode: H₂ + 2OH⁻ → 2H₂O + 2e⁻ (alkaline)<br>
-Cathode: O₂ + 2H₂O + 4e⁻ → 4OH⁻<br>
-Overall: 2H₂ + O₂ → 2H₂O
-</div>
-<p>Advantages: only product is water, efficient energy conversion. Disadvantages: H₂ storage, expensive catalysts.</p>
-
-<h3>Storage Cells and Batteries</h3>
-<ul>
-<li><strong>Lead-acid battery:</strong> Rechargeable, used in cars</li>
-<li><strong>Lithium-ion batteries:</strong> High energy density, used in electronics</li>
-</ul>
+<div class="example-box">
+<h5>Worked Example: Calculating Mass Deposited</h5>
+<p>A current of 2.00 A is passed through molten Al₂O₃ for 30 minutes. Calculate the mass of aluminium produced.</p>
+<p><strong>Solution:</strong></p>
+<p>Q = I × t = 2.00 × (30 × 60) = 3600 C</p>
+<p>Al³⁺ + 3e⁻ → Al, so z = 3</p>
+<p>n(Al) = Q / (z × F) = 3600 / (3 × 96500) = 0.01244 mol</p>
+<p>mass = 0.01244 × 27.0 = 0.336 g</p>
 </div>
 
-<div class="notes-section">
+<div class="example-box">
+<h5>Worked Example: Finding Current or Time</h5>
+<p>How long will it take to deposit 1.00 g of copper from CuSO₄ solution using a current of 0.500 A?</p>
+<p><strong>Solution:</strong></p>
+<p>Cu²⁺ + 2e⁻ → Cu, so z = 2</p>
+<p>n(Cu) = 1.00 / 63.5 = 0.01575 mol</p>
+<p>Q = n × z × F = 0.01575 × 2 × 96500 = 3039 C</p>
+<p>t = Q / I = 3039 / 0.500 = 6078 s = 101 minutes</p>
+</div>
+</div>
+</div>
 
-<div class="worked-example">
-<h4>🧪 Worked Example</h4>
-<p><strong>Question:</strong> Calculate the mass of NaOH needed to make 500 cm³ of 0.2 mol/dm³ solution. (Mᵣ NaOH = 40)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-n = c × V = 0.2 × (500/1000) = 0.1 mol<br>
-mass = n × Mᵣ = 0.1 × 40 = 4.0 g<br>
-<strong>Answer: 4.0 g</strong>
+<div class="topic-block" id="section-7">
+<div class="topic-header"><span class="topic-number">7</span><h3>Fuel Cells and Batteries</h3></div>
+<div class="topic-content">
+<h4>Hydrogen-Oxygen Fuel Cell</h4>
+<p>Fuel cells convert chemical energy directly into electrical energy with high efficiency (~60%). They are environmentally friendly because water is the only product.</p>
+
+<div class="process-box">
+<h5>Acidic Fuel Cell</h5>
+<p><strong>Anode:</strong> H₂(g) → 2H⁺(aq) + 2e⁻</p>
+<p><strong>Cathode:</strong> ½O₂(g) + 2H⁺(aq) + 2e⁻ → H₂O(l)</p>
+<p><strong>Overall:</strong> H₂ + ½O₂ → H₂O</p>
+<p>E°<sub>cell</sub> = +1.23 V</p>
+</div>
+
+<div class="process-box">
+<h5>Alkaline Fuel Cell</h5>
+<p><strong>Anode:</strong> H₂(g) + 2OH⁻(aq) → 2H₂O(l) + 2e⁻</p>
+<p><strong>Cathode:</strong> ½O₂(g) + H₂O(l) + 2e⁻ → 2OH⁻(aq)</p>
+<p><strong>Overall:</strong> H₂ + ½O₂ → H₂O</p>
+</div>
+
+<div class="key-point">
+Advantages of fuel cells: high efficiency, no pollutants, continuous operation with fuel supply.<br>
+Disadvantages: expensive catalysts (Pt), hydrogen storage challenges, production of H₂ often involves fossil fuels.
+</div>
+
+<h4>Rechargeable Batteries — Lithium-ion</h4>
+<p>Li-ion batteries are widely used in portable electronics and electric vehicles.</p>
+<p><strong>Discharge:</strong></p>
+<p>Anode: Li → Li⁺ + e⁻</p>
+<p>Cathode: Li⁺ + CoO₂ + e⁻ → LiCoO₂</p>
+<p><strong>Advantages:</strong> High energy density, lightweight, no memory effect, low self-discharge.</p>
 </div>
 </div>
-<div class="common-mistake">Forgetting to convert cm³ to dm³ (÷1000) when using n = c × V. Always check your units!</div>
-<div class="key-point">In a balanced equation, mole ratios are the stoichiometric coefficients. Use these to convert between substances.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header"><span class="topic-number">8</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) State the products at each electrode during the electrolysis of concentrated aqueous sodium chloride. [2]</p>
+<p>(b) Write half-equations for the reactions at each electrode. [2]</p>
+<p>(c) Explain why sodium metal is NOT produced at the cathode. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Cathode: hydrogen (1). Anode: chlorine (1).<br>
+(b) Cathode: 2H⁺ + 2e⁻ → H₂ (1). Anode: 2Cl⁻ → Cl₂ + 2e⁻ (1).<br>
+(c) Na⁺ is more difficult to reduce than H⁺ / H⁺ has a more positive E° / Na⁺ requires more energy to gain an electron / water is more easily reduced (1). Na is very reactive / high in reactivity series (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>A current of 1.50 A is passed through copper(II) sulfate solution for 20.0 minutes. Calculate the mass of copper deposited at the cathode. [3]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+Q = I × t = 1.50 × 1200 = 1800 C (1)<br>
+n(Cu) = Q / (2F) = 1800 / (2 × 96500) = 0.00933 mol (1)<br>
+mass = 0.00933 × 63.5 = 0.592 g (1)
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 3</h5>
+<p>(a) Calculate E°<sub>cell</sub> for the reaction: Fe(s) + Cu²⁺(aq) → Fe²⁺(aq) + Cu(s) [2]</p>
+<p>(b) Predict whether Ag⁺ will oxidise Fe²⁺ to Fe³⁺ under standard conditions. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) E°<sub>cell</sub> = +0.34 − (−0.44) = +0.78 V (2). [1 mark for correct values, 1 for calculation]<br>
+(b) Ag⁺ + e⁻ ⇌ Ag &nbsp;&nbsp; E° = +0.80 V; Fe³⁺ + e⁻ ⇌ Fe²⁺ &nbsp;&nbsp; E° = +0.77 V (1).<br>
+E°<sub>cell</sub> = +0.80 − (+0.77) = +0.03 V > 0, so yes (1).
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary-box">
+<h2>📝 Quick Summary</h2>
 <ul>
-<li>n = mass / Mᵣ</li>
-<li>n = concentration × volume (dm³)</li>
-<li>1 dm³ = 1000 cm³</li>
-<li>% yield = (actual / theoretical) × 100</li>
+<li>Anode = oxidation (+ in electrolysis, − in cells); Cathode = reduction (− in electrolysis, + in cells)</li>
+<li>Molten electrolysis: only one cation/anion; products are predictable</li>
+<li>Aqueous electrolysis: H⁺ and OH⁻ compete; use reactivity series and concentration rules</li>
+<li>E° measures tendency to be reduced; more positive = stronger oxidising agent</li>
+<li>E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub>; must be positive for spontaneity</li>
+<li>Q = I × t; n(e⁻) = Q/F; n(substance) = Q/(zF)</li>
+<li>Fuel cells: H₂ + O₂ → H₂O; high efficiency, clean</li>
 </ul>
 </div>
-<h2>Last-Minute Summary</h2>
-<div class="highlight-box">
-<h4>🎯 Key Points to Remember</h4>
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Cations → cathode; Anions → anode</li>
-<li>At cathode: if metal above H in reactivity series → H₂; below → metal deposited</li>
-<li>At anode: halides → halogen; otherwise → O₂</li>
-<li>E°cell = E°(cathode) - E°(anode) = E°(more positive) - E°(less positive)</li>
-<li>Positive E°cell = feasible reaction</li>
-<li>More positive E° = better oxidising agent; more negative = better reducing agent</li>
-<li>Q = It; n = Q/F; F = 96500 C mol⁻¹</li>
-<li>Fuel cells: H₂ + O₂ → H₂O; alkaline or acidic conditions</li>
+<li>Remember OIL RIG and AN OX / RED CAT mnemonics</li>
+<li>In aqueous electrolysis, reactive metals (above H) produce H₂ at cathode</li>
+<li>Concentrated halides produce halogen at anode; dilute solutions produce O₂</li>
+<li>Always use reduction potentials when calculating E°<sub>cell</sub></li>
+<li>Check units: current in A, time in s, charge in C</li>
+<li>Fuel cell equations differ in acidic vs alkaline media — be careful!</li>
 </ul>
 </div>
-<div class="highlight-box">
-<h4>⚠️ Common Mistakes</h4>
-<ul>
-<li>Confusing anode and cathode (anode = oxidation, not always positive in electrolysis)</li>
-<li>Not reversing the sign when using E°(reduction) for oxidation half-cells</li>
-<li>Forgetting to balance electrons when combining half-equations</li>
-<li>Using time in minutes instead of seconds in Q = It</li>
-<li>Not considering concentration effects in aqueous electrolysis</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.chemguide.co.uk/" target="_blank" rel="noopener">Chemguide</a> — Detailed A-Level chemistry explanations</li>
-<li><a href="https://www.savemyexams.co.uk/notes/chemistry/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-chemistry-9701/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/chemistry/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/chemistry" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
-</ul>
-</div>
+
 </div>
 </div></section>
-<script src="../js/theme.js?v=4"></script>
-<script src="../js/auth.js?v=4"></script><script src="../js/app.js?v=4"></script>
-<script src="../js/mascot.js?v=4"></script>
-<script src="../js/notes.js?v=4"></script>
-<script src="../js/pwa.js?v=4"></script>
-</body></html>
+<script src="../js/theme.js?v=5"></script>
+</body>
+</html>

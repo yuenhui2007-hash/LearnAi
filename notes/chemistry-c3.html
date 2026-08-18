@@ -53,6 +53,13 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -68,63 +75,301 @@
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>States of Matter</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
+
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Kinetic Theory</a></li>
-<li><a href="#section-2">Ideal Gas Equation</a></li>
+<li><a href="#section-1">Kinetic Theory and the States of Matter</a></li>
+<li><a href="#section-2">The Ideal Gas Equation</a></li>
+<li><a href="#section-3">Real Gases and Deviations from Ideality</a></li>
+<li><a href="#section-4">The Maxwell-Boltzmann Distribution</a></li>
+<li><a href="#section-5">Phase Changes and Phase Diagrams</a></li>
+<li><a href="#section-6">Industrial Applications</a></li>
+<li><a href="#section-7">Exam-Style Questions</a></li>
 </ol>
 </div>
 
 <div class="topic-block" id="section-1">
-<div class="topic-header">
-<span class="topic-number">1</span>
-<h3>Kinetic Theory</h3>
-</div>
+<div class="topic-header"><span class="topic-number">1</span><h3>Kinetic Theory and the States of Matter</h3></div>
 <div class="topic-content">
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Kinetic Theory:</strong> A model that explains the properties of matter in terms of the motion of its constituent particles. The theory assumes that particles are in constant random motion and that the average kinetic energy is proportional to absolute temperature.</p>
+</div>
+
+<p>The kinetic theory provides a molecular-level explanation for the behaviour of solids, liquids, and gases. It is based on several key assumptions about gas particles:</p>
+
+<div class="process-box">
+<h5>Assumptions of the Kinetic Theory for Ideal Gases</h5>
+<ol>
+<li>Gas particles are in constant, random, straight-line motion.</li>
+<li>Collisions between particles are perfectly elastic (no kinetic energy is lost).</li>
+<li>The volume of the particles is negligible compared to the volume of the container.</li>
+<li>There are no intermolecular forces between particles (except during collisions).</li>
+<li>The average kinetic energy of the particles is directly proportional to the absolute temperature (in Kelvin).</li>
+</ol>
+</div>
+
 <table class="data-table">
-<tr><th>State</th><th>Shape</th><th>Volume</th><th>Particle Arrangement</th><th>Energy</th></tr>
-<tr><td>Solid</td><td>Fixed</td><td>Fixed</td><td>Regular lattice, vibrating</td><td>Lowest</td></tr>
-<tr><td>Liquid</td><td>Takes container shape</td><td>Fixed</td><td>Close, sliding past</td><td>Medium</td></tr>
-<tr><td>Gas</td><td>Takes container shape</td><td>Fills container</td><td>Far apart, random motion</td><td>Highest</td></tr>
+<tr><th>Property</th><th>Solid</th><th>Liquid</th><th>Gas</th></tr>
+<tr><td>Particle arrangement</td><td>Regular lattice; close together</td><td>Random; close together</td><td>Random; far apart</td></tr>
+<tr><td>Particle motion</td><td>Vibrate about fixed positions</td><td>Move past each other</td><td>Move freely and rapidly</td></tr>
+<tr><td>Forces between particles</td><td>Very strong</td><td>Strong</td><td>Negligible</td></tr>
+<tr><td>Shape</td><td>Fixed</td><td>Takes shape of container</td><td>Fills container</td></tr>
+<tr><td>Volume</td><td>Fixed</td><td>Fixed</td><td>Variable</td></tr>
+<tr><td>Compressibility</td><td>Very low</td><td>Low</td><td>High</td></tr>
+<tr><td>Density</td><td>High</td><td>High</td><td>Low</td></tr>
 </table>
+
+<div class="key-point">
+The state of a substance at a given temperature depends on the balance between the kinetic energy of the particles (which tends to separate them) and the intermolecular forces (which tend to hold them together).
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
-<div class="topic-header">
-<span class="topic-number">2</span>
-<h3>Ideal Gas Equation</h3>
-</div>
+<div class="topic-header"><span class="topic-number">2</span><h3>The Ideal Gas Equation</h3></div>
 <div class="topic-content">
-<div class="formula-box">PV = nRT<br>P = pressure (Pa), V = volume (m³)<br>n = moles, R = 8.314 J K⁻¹ mol⁻¹<br>T = temperature (K)</div>
+<p>The ideal gas equation combines the relationships discovered by Boyle, Charles, and Avogadro into a single equation that describes the behaviour of an ideal gas.</p>
+
+<div class="formula-box">
+<strong>Ideal Gas Equation:</strong> PV = nRT<br><br>
+Where:<br>
+P = pressure in Pa (pascals)<br>
+V = volume in m³<br>
+n = amount of substance in mol<br>
+R = molar gas constant = 8.314 J mol⁻¹ K⁻¹<br>
+T = temperature in K (Kelvin)<br><br>
+<strong>Conversions:</strong><br>
+1 atm = 101325 Pa<br>
+1 dm³ = 10⁻³ m³ = 1 L<br>
+K = °C + 273.15
+</div>
+
 <div class="example-box">
-<h5>Worked Example</h5>
-<p>Find volume of 2 moles of gas at 300 K and 100 kPa.</p>
-<p>V = nRT/P = (2 × 8.314 × 300)/100000 = <strong>0.0499 m³ = 49.9 dm³</strong></p>
+<h5>Worked Example: Using the Ideal Gas Equation</h5>
+<p>Calculate the volume occupied by 0.500 mol of an ideal gas at 25°C and 1.00 atm.</p>
+<p><strong>Solution:</strong></p>
+<p>T = 25 + 273 = 298 K</p>
+<p>P = 1.00 × 101325 = 101325 Pa</p>
+<p>V = nRT / P = (0.500 × 8.314 × 298) / 101325</p>
+<p>V = 1238.8 / 101325 = 0.01223 m³ = 12.2 dm³</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Finding Molar Mass from Gas Density</h5>
+<p>A gas has a density of 2.50 g dm⁻³ at 100 kPa and 300 K. Calculate its molar mass.</p>
+<p><strong>Solution:</strong></p>
+<p>From PV = nRT, and n = m/M, we get PM = dRT where d = m/V</p>
+<p>M = dRT / P = (2.50 g dm⁻³ × 8.314 × 300) / (100 × 10³ Pa)</p>
+<p>Convert d to kg m⁻³: 2.50 g dm⁻³ = 2.50 kg m⁻³</p>
+<p>M = (2.50 × 8.314 × 300) / 100000 = 0.06236 kg mol⁻¹ = 62.4 g mol⁻¹</p>
+</div>
+
+<div class="formula-box">
+<strong>Combined Gas Law:</strong> P₁V₁/T₁ = P₂V₂/T₂ (for a fixed amount of gas)<br><br>
+<strong>Density form:</strong> PM = dRT  (where d = density in kg m⁻³, M in kg mol⁻¹)
+</div>
+
+<div class="key-point">
+At STP (Standard Temperature and Pressure: 0°C = 273 K, 1 atm = 101325 Pa), one mole of any ideal gas occupies 22.4 dm³. At room temperature and pressure (RTP: 25°C = 298 K, 1 atm), one mole occupies approximately 24.0 dm³.
 </div>
 </div>
 </div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header"><span class="topic-number">3</span><h3>Real Gases and Deviations from Ideality</h3></div>
+<div class="topic-content">
+<p>Real gases deviate from ideal behaviour because the assumptions of the kinetic theory are not perfectly true. The extent of deviation depends on the gas and the conditions (pressure and temperature).</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Ideal gas:</strong> A hypothetical gas that perfectly follows the kinetic theory assumptions and the ideal gas equation under all conditions.</p>
+<p><strong>Real gas:</strong> A gas that does not perfectly follow the ideal gas equation, especially at high pressures and low temperatures.</p>
+</div>
+
+<h4>Reasons for Deviation from Ideal Behaviour</h4>
+<table class="data-table">
+<tr><th>Assumption</th><th>Reality</th><th>Effect</th></tr>
+<tr><td>Particles have negligible volume</td><td>Particles do have finite volume</td><td>At high pressure, the volume of particles becomes significant; measured V > ideal V</td></tr>
+<tr><td>No intermolecular forces</td><td>Intermolecular forces exist</td><td>At low temperature / high pressure, attractions reduce the force of collisions; measured P < ideal P</td></tr>
+</table>
+
+<div class="diagram-box">
+<strong>Compressibility Factor (Z = PV/nRT):</strong><br><br>
+For an ideal gas, Z = 1 under all conditions.<br>
+For real gases:<br>
+• At low pressure: Z < 1 (intermolecular attractions dominate, molecules stick together slightly, reducing pressure)<br>
+• At high pressure: Z > 1 (molecular volume dominates, molecules occupy significant space)<br>
+• All real gases approach Z = 1 as P → 0 (ideal behaviour at very low pressure)
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Comparing Ideal and Real Behaviour</h5>
+<p>Explain why CO₂ deviates more from ideal behaviour than H₂ at the same temperature and pressure.</p>
+<p><strong>Solution:</strong> CO₂ has stronger intermolecular forces (London dispersion + permanent dipole) and larger molecular size than H₂. Both factors cause greater deviation from ideal behaviour. H₂ is small and non-polar with very weak intermolecular forces, so it behaves more ideally.</p>
+</div>
+
+<div class="key-point">
+A gas behaves more ideally when:
+• Temperature is HIGH (kinetic energy overcomes intermolecular forces)
+• Pressure is LOW (particles are far apart, so molecular volume and intermolecular forces are negligible)
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header"><span class="topic-number">4</span><h3>The Maxwell-Boltzmann Distribution</h3></div>
+<div class="topic-content">
+<p>The Maxwell-Boltzmann distribution shows the distribution of molecular kinetic energies (or speeds) in a gas at a given temperature. It is crucial for understanding reaction kinetics and collision theory.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definition</h5>
+<p><strong>Maxwell-Boltzmann distribution:</strong> A graph showing the number of molecules (or fraction of molecules) with a particular kinetic energy at a given temperature.</p>
+</div>
+
+<div class="diagram-box">
+<strong>Features of the Maxwell-Boltzmann Distribution Curve:</strong><br><br>
+• The curve starts at the origin (no molecules have zero energy).<br>
+• It rises to a peak (the most probable energy).<br>
+• It tails off to the right (a few molecules have very high energy).<br>
+• The area under the curve is constant (represents total number of molecules).<br>
+• The curve is NOT symmetrical — it has a long high-energy tail.<br><br>
+<strong>Effect of increasing temperature:</strong><br>
+• The peak shifts to the right (higher average energy).<br>
+• The peak becomes lower and broader.<br>
+• A greater proportion of molecules have energy greater than the activation energy (Eₐ).<br><br>
+<strong>Effect of adding a catalyst:</strong><br>
+• The catalyst lowers Eₐ.<br>
+• A greater proportion of molecules now have energy ≥ Eₐ.<br>
+• The curve itself does NOT change — only the position of Eₐ changes.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Using the Distribution</h5>
+<p>Explain why increasing temperature increases the rate of reaction.</p>
+<p><strong>Solution:</strong> At higher temperature, the Maxwell-Boltzmann distribution shifts to the right. More molecules have kinetic energy equal to or greater than the activation energy (Eₐ). The frequency of successful collisions increases, so the reaction rate increases.</p>
+</div>
+
+<div class="key-point">
+Remember: Temperature affects the SHAPE of the distribution curve. A catalyst affects the POSITION of Eₐ on the x-axis. Concentration/pressure affects the FREQUENCY of collisions but not the energy distribution.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header"><span class="topic-number">5</span><h3>Phase Changes and Phase Diagrams</h3></div>
+<div class="topic-content">
+<p>Phase diagrams show the conditions (temperature and pressure) under which different phases of a substance are stable. They include lines representing equilibria between phases and a special point called the triple point.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Triple point:</strong> The unique set of conditions where solid, liquid, and gas phases coexist in equilibrium.</p>
+<p><strong>Critical point:</strong> The temperature and pressure above which a gas cannot be liquefied, regardless of pressure. Above this point, the substance is a supercritical fluid.</p>
+<p><strong>Normal melting point:</strong> The temperature at which solid and liquid are in equilibrium at 1 atm pressure.</p>
+</div>
+
+<div class="diagram-box">
+<strong>Key Features of a Phase Diagram (Water vs CO₂):</strong><br><br>
+<strong>Water (H₂O):</strong><br>
+• The solid-liquid equilibrium line slopes NEGATIVELY to the left.<br>
+• This is unusual — increasing pressure lowers the melting point.<br>
+• Explanation: Ice is less dense than water, so applying pressure favours the denser liquid phase.<br>
+• Triple point: 0.01°C, 0.006 atm<br><br>
+<strong>Carbon dioxide (CO₂):</strong><br>
+• The solid-liquid equilibrium line slopes positively (normal behaviour).<br>
+• Triple point is at 5.1 atm, so liquid CO₂ does not exist at 1 atm — it sublimes directly from solid to gas.<br>
+• This is why dry ice (solid CO₂) sublimes at room pressure.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Interpreting Phase Diagrams</h5>
+<p>Using a phase diagram for water, explain what happens when ice at −10°C is subjected to increasing pressure at constant temperature.</p>
+<p><strong>Solution:</strong> Starting in the solid region at −10°C, increasing pressure moves the system vertically upward. Because the solid-liquid line for water slopes to the left, the system will eventually cross into the liquid region. Ice melts under pressure at temperatures below 0°C — this is why ice skates work and why glaciers flow.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header"><span class="topic-number">6</span><h3>Industrial Applications</h3></div>
+<div class="topic-content">
+<h4>Haber Process — Application of Gas Laws</h4>
+<p>N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;&nbsp;&nbsp; ΔH = −92 kJ mol⁻¹</p>
+<p>Industrial conditions: 450°C, 200 atm, iron catalyst</p>
+<p>High pressure favours the product side (4 moles gas → 2 moles gas) and increases the rate by increasing collision frequency.</p>
+
+<h4>Contact Process</h4>
+<p>2SO₂(g) + O₂(g) ⇌ 2SO₃(g) &nbsp;&nbsp;&nbsp; ΔH = −196 kJ mol⁻¹</p>
+<p>Industrial conditions: 450°C, 1-2 atm, V₂O₅ catalyst</p>
+<p>Moderate pressure is used because the equilibrium already favours products at atmospheric pressure; higher pressure would be expensive with diminishing returns.</p>
+
+<h4>Liquefaction of Gases</h4>
+<p>Gases are liquefied by compression and cooling. The Linde process uses the Joule-Thomson effect: compressed gas is allowed to expand, causing cooling. This is used to liquefy air for fractional distillation to produce liquid nitrogen and oxygen.</p>
+
+<div class="key-point">
+Fractional distillation of liquid air: N₂ boils at −196°C, O₂ at −183°C. N₂ distils first, leaving liquid oxygen behind. This is the main industrial method for producing pure oxygen and nitrogen.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header"><span class="topic-number">7</span><h3>Exam-Style Questions</h3></div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) State the ideal gas equation and define all terms. [2]</p>
+<p>(b) Calculate the mass of oxygen gas (O₂) in a 10.0 dm³ container at 25°C and 100 kPa. [3]</p>
+<p>(c) Explain why real gases deviate from ideal behaviour at high pressure. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) PV = nRT (1). P=pressure (Pa), V=volume (m³), n=amount (mol), R=gas constant, T=temperature (K) (1).<br>
+(b) n = PV/RT = (100000 × 0.010) / (8.314 × 298) = 0.403 mol (1). M(O₂) = 32.0 g mol⁻¹ (1). mass = 0.403 × 32.0 = 12.9 g (1).<br>
+(c) At high pressure, volume of gas particles becomes significant compared to container volume (1). Also intermolecular forces become significant (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>(a) Sketch the Maxwell-Boltzmann distribution for a gas at two different temperatures, T₁ and T₂, where T₂ > T₁. [3]</p>
+<p>(b) Explain, with reference to your diagram, why increasing temperature increases reaction rate. [2]</p>
+<p>(c) Explain how a catalyst increases reaction rate without changing the temperature. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Two curves starting at origin, both tailing to right (1). T₂ curve shifted right, lower peak, broader (1). T₁ curve higher peak, further left (1).<br>
+(b) At T₂, greater proportion of molecules have E ≥ Eₐ (1) so more successful collisions per unit time (1).<br>
+(c) Catalyst provides alternative reaction pathway with lower Eₐ (1). Greater proportion of molecules have E ≥ Eₐ at same temperature (1).
+</div>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Solids: fixed shape and volume, particles vibrate</li>
-<li>Liquids: fixed volume, take shape of container</li>
-<li>Gases: fill container, particles far apart</li>
-<li>Ideal gas equation: PV = nRT</li>
-<li>Temperature in Kelvin = °C + 273</li>
+<li>Kinetic theory: particles in constant random motion; KE ∝ T</li>
+<li>Ideal gas equation: PV = nRT (P in Pa, V in m³, T in K)</li>
+<li>At STP: 1 mol gas = 22.4 dm³; at RTP: ~24.0 dm³</li>
+<li>Real gases deviate at high P and low T due to molecular volume and intermolecular forces</li>
+<li>Maxwell-Boltzmann: shows energy distribution; peak shifts right and flattens as T increases</li>
+<li>Catalyst lowers Eₐ; does NOT change the distribution curve</li>
+<li>Water's phase diagram has negative solid-liquid slope (ice less dense than water)</li>
+<li>CO₂ sublimes at 1 atm (triple point above atmospheric pressure)</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Convert units: 1 dm³ = 0.001 m³, 1 kPa = 1000 Pa</li>
-<li>Always use Kelvin for temperature</li>
-<li>At STP (273 K, 101325 Pa), 1 mole = 22.4 dm³</li>
+<li>Always convert temperature to Kelvin: K = °C + 273</li>
+<li>Convert pressure to Pa and volume to m³ before using PV = nRT</li>
+<li>Remember R = 8.314 J mol⁻¹ K⁻¹</li>
+<li>When sketching Maxwell-Boltzmann curves, label axes (energy/speed vs number of molecules)</li>
+<li>Temperature changes shift the curve; catalysts lower Eₐ mark on the axis</li>
+<li>For real gas deviations: high P → molecular volume matters; low T → intermolecular forces matter</li>
 </ul>
 </div>
+
 </div>
 </div></section>
 <script src="../js/theme.js?v=5"></script>
