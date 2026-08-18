@@ -16,7 +16,8 @@ function getAuthHeaders() {
 }
 
 // Hide pages until auth check completes (prevents flash/redirect loops)
-if (isProtected || isAuthPage) {
+// Only hide protected pages (not auth pages) to prevent blank login/register
+if (isProtected) {
   document.documentElement.style.visibility = 'hidden';
 }
 
