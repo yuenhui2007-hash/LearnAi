@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Homeostasis (A2) — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -45,6 +74,7 @@
 <h1>Homeostasis (A2)</h1>
 <p style="color:var(--gray)">9700 (A-Level) · A2 Only</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
 <p>Homeostasis is introduced at IGCSE as the maintenance of a constant internal environment. Key concepts include negative feedback and the control of blood glucose.</p>
 <ul>
@@ -53,6 +83,7 @@
 <li><strong>Skin in temperature regulation:</strong> Vasodilation (more blood to skin, more heat loss), vasoconstriction (less blood to skin, less heat loss), sweating (evaporative cooling), shivering (muscle contraction generates heat), erector pili muscles (hair stands up to trap insulating air layer).</li>
 </ul>
 </div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
 <p>At AS, homeostasis is covered in the context of excretion, osmoregulation, and the kidney:</p>
 <ul>
@@ -62,28 +93,44 @@
 <li><strong>Selective reabsorption:</strong> Glucose and amino acids reabsorbed by active transport in proximal convoluted tubule. Water follows by osmosis.</li>
 </ul>
 </div>
+
 <div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Thermoregulation</h3>
+</div>
+<div class="topic-content">
 <p>Temperature regulation involves the hypothalamus (thermoregulatory centre) with temperature receptors in the skin and hypothalamus itself.</p>
+
+<h4>Heat Gain Mechanisms (Cold Stress)</h4>
 <ul>
-<li><strong>Heat gain mechanisms (cold stress):</strong>
-<ul>
-<li>Vasoconstriction of arterioles in skin — less blood flow, less radiation.</li>
-<li>Shivering — skeletal muscle contractions generate heat.</li>
-<li>Raising hairs (piloerection) — traps insulating air (more effective in furry mammals).</li>
-<li>Behavioural: seeking shelter, putting on clothes, huddling, curling up.</li>
-<li>Increased metabolic rate — thyroxine and adrenaline increase respiration.</li>
-</ul></li>
-<li><strong>Heat loss mechanisms (heat stress):</strong>
-<ul>
-<li>Vasodilation — more blood to skin capillaries, increased radiation/convection/conduction.</li>
-<li>Sweating — evaporation from skin surface removes latent heat.</li>
-<li>Behavioural: seeking shade, removing clothes, fanning, reduced activity.</li>
-<li>Panting — evaporative cooling from respiratory surfaces.</li>
-</ul></li>
-<li><strong>Hypothalamus:</strong> Receives input from peripheral thermoreceptors (skin) and central receptors (hypothalamic blood). Activates autonomic and endocrine responses and behavioural modifications.</li>
+<li><strong>Vasoconstriction</strong> of arterioles in skin — less blood flow, less radiation.</li>
+<li><strong>Shivering</strong> — skeletal muscle contractions generate heat.</li>
+<li><strong>Raising hairs (piloerection)</strong> — traps insulating air (more effective in furry mammals).</li>
+<li><strong>Behavioural:</strong> seeking shelter, putting on clothes, huddling, curling up.</li>
+<li><strong>Increased metabolic rate</strong> — thyroxine and adrenaline increase respiration.</li>
 </ul>
+
+<h4>Heat Loss Mechanisms (Heat Stress)</h4>
+<ul>
+<li><strong>Vasodilation</strong> — more blood to skin capillaries, increased radiation/convection/conduction.</li>
+<li><strong>Sweating</strong> — evaporation from skin surface removes latent heat.</li>
+<li><strong>Behavioural:</strong> seeking shade, removing clothes, fanning, reduced activity.</li>
+<li><strong>Panting</strong> — evaporative cooling from respiratory surfaces.</li>
+</ul>
+
+<div class="key-point">The hypothalamus receives input from peripheral thermoreceptors (skin) and central receptors (hypothalamic blood). It activates autonomic and endocrine responses and behavioural modifications.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
 <h3>Blood Glucose Regulation (A2 Detail)</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>β cells in pancreatic islets detect high blood glucose → secrete insulin.</li>
 <li>Insulin binds receptors on liver and muscle cells → increases glucose uptake, increases glycogen synthesis (glycogenesis), increases glucose use in respiration, decreases gluconeogenesis.</li>
@@ -96,45 +143,66 @@
 <li>Type 2: insulin resistance (receptors reduced/sensitive); often linked to obesity and lifestyle; treated with diet, exercise, metformin (increases insulin sensitivity).</li>
 </ul></li>
 </ul>
-<h3>Excretion &amp; the Kidney in A2 Detail</h3>
+
+<div class="example-box">
+<h5>Worked Example: Blood Glucose Control</h5>
+<p><strong>Question:</strong> Explain how blood glucose concentration is lowered after a carbohydrate-rich meal. [4 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>High blood glucose is detected by β cells in the pancreatic islets (1).</li>
+<li>β cells secrete insulin into the bloodstream (1).</li>
+<li>Insulin binds to receptors on liver and muscle cells, stimulating uptake of glucose and conversion to glycogen (glycogenesis) (1).</li>
+<li>Insulin also increases glucose use in respiration and inhibits gluconeogenesis, lowering blood glucose (1).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Excretion & the Kidney in A2 Detail</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Loop of Henle:</strong> Counter-current multiplier. Descending limb permeable to water (leaves by osmosis into medulla). Ascending limb impermeable to water but actively transports NaCl out (thick ascending limb). Creates high solute concentration in medulla.</li>
 <li><strong>Collecting duct:</strong> Passes through medulla. Under ADH, aquaporins inserted into membrane → water reabsorbed → concentrated urine. Without ADH, little water reabsorbed → dilute urine.</li>
 <li><strong>Urea recycling:</strong> Urea diffuses out of collecting duct into medulla, contributing to osmotic gradient. Some re-enters loop of Henle — helps maintain gradient.</li>
 <li><strong>Control of ADH secretion:</strong> Osmoreceptors in hypothalamus detect blood osmolarity. High osmolarity → ADH released from posterior pituitary. Low osmolarity → ADH inhibited.</li>
 </ul>
+
+<div class="diagram-box">
+<h5>📝 Annotated Diagram Description: Nephron</h5>
+<p>When drawing the nephron:</p>
+<ul>
+<li>Label Bowman's capsule with glomerulus inside.</li>
+<li>Label proximal convoluted tubule (PCT), loop of Henle (descending and ascending limbs), distal convoluted tubule (DCT), and collecting duct.</li>
+<li>Show the medullary gradient increasing toward the papilla.</li>
+<li>Show the vasa recta (capillaries around loop of Henle) as a counter-current exchanger.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
 <h3>Feedback Mechanisms</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Negative feedback:</strong> Response opposes the original change. Maintains stability. Examples: temperature, blood glucose, osmoregulation.</li>
 <li><strong>Positive feedback:</strong> Response amplifies the original change. Rare in homeostasis but occurs in blood clotting and childbirth (oxytocin stimulates uterine contractions → more oxytocin).</li>
 </ul>
-</div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
+
+<div class="key-point">Negative feedback loops have three components: receptor (detects change), control centre (processes information), and effector (brings about response). The response reverses the change, restoring the set point.</div>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
 </div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
+<ul>
 <li>Homeostasis = maintenance of constant internal environment despite external changes.</li>
 <li>Negative feedback reverses changes; positive feedback amplifies (rare: blood clotting, childbirth).</li>
 <li>Thermoregulation: hypothalamus controls vasodilation/vasoconstriction, sweating, shivering, behavioural responses.</li>
@@ -142,19 +210,18 @@
 <li>Kidney: ultrafiltration (glomerulus/Bowman's), selective reabsorption (PCT), counter-current multiplier (loop of Henle), ADH-controlled water reabsorption (collecting duct).</li>
 <li>Loop of Henle creates medullary osmotic gradient via NaCl pump (ascending) and water loss (descending).</li>
 <li>ADH from posterior pituitary; released when osmoreceptors detect high blood osmolarity.</li>
-</ul></div>
-<p><strong>Exam tip:</strong> Always explain negative feedback as a loop: receptor detects change → control centre processes → effector responds → change reversed. For kidney questions, trace the pathway through nephron and explain how each part contributes to final urine concentration. In diabetes, distinguish Type 1 (β-cell destruction) from Type 2 (receptor insensitivity).</p>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always explain negative feedback as a loop: receptor detects change → control centre processes → effector responds → change reversed.</li>
+<li>For kidney questions, trace the pathway through nephron and explain how each part contributes to final urine concentration.</li>
+<li>In diabetes, distinguish Type 1 (β-cell destruction) from Type 2 (receptor insensitivity).</li>
+<li>Remember ADH acts on collecting ducts by inserting aquaporins (water channels).</li>
+<li>Loop of Henle: descending limb = water permeable; ascending limb = NaCl pump, water impermeable.</li>
+<li>Urea recycling helps maintain the medullary gradient.</li>
 </ul>
 </div>
 </div>

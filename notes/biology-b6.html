@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Genetic Control — Biology Notes | LearnAI</title>
 <meta name="description" content="Genetic Control notes for Cambridge 9700 · 0610. Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,36 @@
 .summary-box ul li { color: #78350f; }
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -66,82 +95,254 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. DNA Structure</h3><p>Double helix, antiparallel. A-T (2 H-bonds), C-G (3 H-bonds).</p>
-<h3>2. Replication</h3><p>Semi-conservative. Helicase unwinds. DNA polymerase adds nucleotides 5'→3'.</p>
-<h3>3. Transcription</h3><p>DNA → mRNA. RNA polymerase. Splicing removes introns.</p>
-<h3>4. Translation</h3><p>mRNA → protein at ribosome. tRNA anticodons match mRNA codons. Peptide bonds form.</p>
-<h3>5. Genetic Code</h3><p>Triplet, degenerate, universal, non-overlapping.</p>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>DNA Structure</h3>
 </div>
-<div class="notes-section">
-<h3>Experimental Design</h3>
+<div class="topic-content">
+<div class="definition-box">
+<strong>DNA (deoxyribonucleic acid):</strong> A double-stranded helical polymer of nucleotides that carries the genetic information of an organism.
+</div>
+
+<h4>Components of a Nucleotide</h4>
+<p>Each nucleotide consists of three components:</p>
 <ul>
-<li><strong>Variables:</strong> Independent (what you change), dependent (what you measure), controlled (kept constant)</li>
-<li><strong>Validity:</strong> Does the experiment test what it claims to test?</li>
-<li><strong>Reliability:</strong> Repeatable results — repeat experiments, calculate means</li>
-<li><strong>Accuracy:</strong> Close to true value — use appropriate precision instruments</li>
+<li><strong>Pentose sugar:</strong> Deoxyribose in DNA; ribose in RNA.</li>
+<li><strong>Phosphate group:</strong> Attached to the 5' carbon of the sugar, forming the sugar-phosphate backbone.</li>
+<li><strong>Nitrogenous base:</strong> Attached to the 1' carbon. There are four bases in DNA:
+<ul>
+<li><strong>Purines (double-ring):</strong> Adenine (A) and Guanine (G)</li>
+<li><strong>Pyrimidines (single-ring):</strong> Cytosine (C) and Thymine (T)</li>
+</ul></li>
+</ul>
+
+<h4>The Double Helix</h4>
+<ul>
+<li>Two antiparallel polynucleotide strands twisted into a double helix.</li>
+<li>Antiparallel means the strands run in opposite directions: one 5'→3', the other 3'→5'.</li>
+<li><strong>Complementary base pairing:</strong> A pairs with T via 2 hydrogen bonds; G pairs with C via 3 hydrogen bonds.</li>
+<li>The sugar-phosphate backbones are on the outside; base pairs are on the inside.</li>
+<li>The two strands are held together by hydrogen bonds between bases.</li>
+</ul>
+
+<div class="key-point">The sequence of bases along a DNA strand forms the genetic code. Because of complementary base pairing, knowing the sequence of one strand allows you to determine the sequence of the other.</div>
+
+<div class="diagram-box">
+<h5>📝 Annotated Diagram Description: DNA Double Helix</h5>
+<p>When drawing DNA in an exam:</p>
+<ul>
+<li>Show two antiparallel strands (label 5' and 3' ends).</li>
+<li>Draw sugar-phosphate backbones as alternating circles (sugars) and triangles/phosphates.</li>
+<li>Show base pairs as rungs of a ladder: A-T with 2 H-bonds, G-C with 3 H-bonds.</li>
+<li>Label deoxyribose, phosphate, and the four bases.</li>
 </ul>
 </div>
-<div class="notes-section">
-<h3>Microscopy Techniques</h3>
+
+<div class="example-box">
+<h5>Worked Example: Complementary Strand</h5>
+<p><strong>Question:</strong> Write the complementary strand for the following DNA sequence: 5'-ATGCGTACCT-3'. [2 marks]</p>
+<p><strong>Answer:</strong></p>
+<div class="formula-box">Original: 5'-ATGCGTACCT-3'<br>Complementary: 3'-TACGCATGGA-5'</div>
+<p>Or written 5' to 3': 5'-AGGTACGCAT-3'</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>DNA Replication</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Semi-conservative replication:</strong> Each new DNA molecule consists of one original (parent) strand and one newly synthesised strand.
+</div>
+
+<p>This was demonstrated by Meselson and Stahl (1958) using heavy nitrogen (¹⁵N) and light nitrogen (¹⁴N) isotopes. After one round of replication in light medium, DNA was of intermediate density, supporting the semi-conservative model.</p>
+
+<div class="process-box">
+<h5>Steps of DNA Replication</h5>
+<ol>
+<li><strong>Initiation:</strong> DNA helicase binds to the origin of replication and breaks hydrogen bonds between base pairs, unwinding the double helix to form two single strands.</li>
+<li><strong>Primer synthesis:</strong> Primase synthesises a short RNA primer (about 10 nucleotides) complementary to the template strand. DNA polymerase can only add nucleotides to an existing 3'-OH group.</li>
+<li><strong>Elongation:</strong> DNA polymerase III adds DNA nucleotides in the 5'→3' direction, using the original strand as a template. Complementary base pairing ensures accuracy.</li>
+<li><strong>Leading strand:</strong> Synthesised continuously in the 5'→3' direction, moving toward the replication fork.</li>
+<li><strong>Lagging strand:</strong> Synthesised discontinuously as short fragments called <strong>Okazaki fragments</strong> (also 5'→3', but away from the fork). DNA polymerase I replaces RNA primers with DNA. DNA ligase joins Okazaki fragments.</li>
+<li><strong>Termination:</strong> Replication proceeds until the entire molecule is copied. Proofreading by DNA polymerase removes and replaces incorrectly paired nucleotides.</li>
+</ol>
+</div>
+
+<div class="key-point">DNA replication is semi-conservative because each daughter DNA molecule contains one original (conserved) strand and one newly synthesised strand. This ensures genetic fidelity.</div>
+
+<div class="example-box">
+<h5>Worked Example: Calculating DNA Copies</h5>
+<p><strong>Question:</strong> A cell replicates its DNA three times. How many DNA molecules will be present? [2 marks]</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">After n rounds of replication, DNA molecules = 2ⁿ<br>After 3 rounds: 2³ = 8 DNA molecules<br>Of these, 2 will contain one original strand each (semi-conservative).</div>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Transcription</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Transcription:</strong> The synthesis of a single-stranded mRNA molecule from a DNA template. Occurs in the nucleus of eukaryotic cells.
+</div>
+
+<div class="process-box">
+<h5>Steps of Transcription</h5>
+<ol>
+<li><strong>Initiation:</strong> RNA polymerase binds to a promoter region on the DNA. The DNA double helix unwinds.</li>
+<li><strong>Elongation:</strong> RNA polymerase synthesises mRNA in the 5'→3' direction, using one DNA strand as a template. RNA contains uracil (U) instead of thymine (T).</li>
+<li><strong>Termination:</strong> RNA polymerase reaches a terminator sequence and detaches. The mRNA is released.</li>
+<li><strong>Post-transcriptional modification (in eukaryotes):</strong>
 <ul>
-<li><strong>Light microscope:</strong> Max magnification ~×1500, resolution ~200 nm</li>
-<li><strong>Electron microscope:</strong> TEM (internal structure) vs SEM (surface detail)</li>
-<li><strong>Staining:</strong> Methylene blue (nuclei), iodine (starch), eosin (cytoplasm)</li>
-<li><strong>Cell fractionation:</strong> Homogenisation → filtration → ultracentrifugation</li>
+<li><strong>5' cap:</strong> A modified guanine nucleotide added to the 5' end — protects mRNA from degradation and aids ribosome binding.</li>
+<li><strong>Poly-A tail:</strong> A string of adenine nucleotides added to the 3' end — increases stability and aids export from nucleus.</li>
+<li><strong>Splicing:</strong> Introns (non-coding sequences) are removed; exons (coding sequences) are joined together. Catalysed by spliceosomes (snRNPs).</li>
+</ul></li>
+</ol>
+</div>
+
+<div class="key-point">In eukaryotes, the primary transcript (pre-mRNA) contains both exons and introns. Splicing removes introns. Some genes can produce different proteins through alternative splicing (different combinations of exons).</div>
+
+<div class="misconception-box">
+<strong>Common Misconception:</strong> Many students confuse transcription and translation. Remember: <strong>Trans</strong>cription = DNA → RNA (in the <strong>nucleus</strong>). <strong>Trans</strong>lation = RNA → Protein (at the <strong>ribosome</strong>).
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Translation</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Translation:</strong> The synthesis of a polypeptide chain using the information encoded in mRNA. Occurs at ribosomes in the cytoplasm.
+</div>
+
+<div class="process-box">
+<h5>Steps of Translation</h5>
+<ol>
+<li><strong>Initiation:</strong> The small ribosomal subunit binds to mRNA at the start codon (AUG, which codes for methionine). A tRNA with the anticodon UAC and carrying methionine binds to the start codon. The large ribosomal subunit joins.</li>
+<li><strong>Elongation:</strong>
+<ul>
+<li>A second tRNA (with appropriate anticodon) binds to the next codon at the A site.</li>
+<li>A peptide bond forms between the amino acids in the P and A sites, catalysed by peptidyl transferase (ribozyme activity of rRNA).</li>
+<li>The ribosome moves one codon along the mRNA (translocation).</li>
+<li>The first tRNA moves to the E site and is released.</li>
+<li>The process repeats, adding amino acids one at a time.</li>
+</ul></li>
+<li><strong>Termination:</strong> A stop codon (UAA, UAG, or UGA) is reached. A release factor binds, causing the polypeptide to be released and the ribosomal subunits to separate.</li>
+</ol>
+</div>
+
+<h4>The Genetic Code</h4>
+<ul>
+<li><strong>Triplet code:</strong> Three bases (a codon) specify one amino acid.</li>
+<li><strong>Degenerate:</strong> Most amino acids are coded for by more than one codon. This reduces the impact of point mutations.</li>
+<li><strong>Universal:</strong> The same code is used by almost all organisms (with minor exceptions in mitochondria and some protists).</li>
+<li><strong>Non-overlapping:</strong> Each base is part of only one codon.</li>
+<li><strong>Commaless:</strong> There are no "punctuation marks" between codons.</li>
+<li><strong>Start codon:</strong> AUG (methionine).</li>
+<li><strong>Stop codons:</strong> UAA, UAG, UGA (do not code for amino acids).</li>
 </ul>
-<div class="key-point">Resolution is the ability to distinguish two separate points. Electron microscopes have much higher resolution than light microscopes because electrons have shorter wavelengths than visible light.</div>
+
+<div class="example-box">
+<h5>Worked Example: Translation</h5>
+<p><strong>Question:</strong> Given the mRNA sequence: 5'-AUG GGC UAU CAA UAA-3', determine the amino acid sequence produced. [2 marks]</p>
+<p><strong>Answer:</strong></p>
+<div class="formula-box">Codons: AUG | GGC | UAU | CAA | UAA<br>Amino acids: Met (Methionine) — Gly (Glycine) — Tyr (Tyrosine) — Gln (Glutamine) — STOP</div>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>tRNA and Ribosomes</h3>
+</div>
+<div class="topic-content">
+<h4>Transfer RNA (tRNA)</h4>
+<ul>
+<li>Small, cloverleaf-shaped RNA molecules.</li>
+<li>Each tRNA has an <strong>anticodon</strong> (three bases complementary to an mRNA codon) at one end.</li>
+<li>At the 3' end, it carries the specific amino acid corresponding to its anticodon.</li>
+<li>Aminoacyl-tRNA synthetases attach the correct amino acid to each tRNA — this is a critical proofreading step.</li>
+</ul>
+
+<h4>Ribosomes</h4>
+<ul>
+<li>Composed of ribosomal RNA (rRNA) and proteins.</li>
+<li>Prokaryotes: 70S ribosomes (50S + 30S subunits).</li>
+<li>Eukaryotes: 80S ribosomes in cytoplasm (60S + 40S subunits); 70S in mitochondria and chloroplasts.</li>
+<li>Three binding sites for tRNA: A (aminoacyl), P (peptidyl), and E (exit) sites.</li>
+</ul>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Antibiotics Targeting Ribosomes</h5>
+<p>Many antibiotics exploit differences between prokaryotic and eukaryotic ribosomes. For example, tetracyclines block the A site of prokaryotic ribosomes, preventing tRNA binding. Macrolides (e.g., erythromycin) block the exit tunnel. These drugs do not affect human 80S ribosomes, making them selectively toxic to bacteria.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
+<h3>Gene Mutation</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Gene mutation:</strong> A change in the sequence of nucleotides in a gene. The most common type is a point mutation (substitution, deletion, or insertion of a single nucleotide).
+</div>
+
+<table class="data-table">
+<tr><th>Type</th><th>Description</th><th>Effect</th></tr>
+<tr><td>Substitution</td><td>One base is replaced by another</td><td>May be silent (no change in amino acid), missense (different amino acid), or nonsense (premature stop codon)</td></tr>
+<tr><td>Deletion</td><td>One base is removed</td><td>Frameshift — alters all downstream codons; usually severe</td></tr>
+<tr><td>Insertion</td><td>One extra base is added</td><td>Frameshift — alters all downstream codons; usually severe</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Effect of Point Mutations</h5>
+<p><strong>Question:</strong> The DNA template strand reads: 3'-TAC AAA GGG CCC ATT-5'. A substitution changes the second A in the second codon to G. Predict the effect on the protein. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<div class="formula-box">Original mRNA: 5'-AUG UUU CCC GGG UAA-3'<br>Amino acids: Met — Phe — Pro — Gly — STOP<br><br>Mutated mRNA: 5'-AUG UUC CCC GGG UAA-3'<br>Amino acids: Met — Phe — Pro — Gly — STOP</div>
+<p>This is a <strong>silent mutation</strong> — both UUU and UUC code for phenylalanine, so the protein is unchanged (1). However, if the mutation had created a stop codon, it would be a nonsense mutation with a more severe effect (1).</p>
+</div>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<ul><li>DNA: double helix, A-T (2), C-G (3)</li><li>Replication: semi-conservative; helicase + DNA polymerase</li><li>Transcription: DNA→mRNA; splicing removes introns</li><li>Translation: mRNA→protein; tRNA brings amino acids</li><li>Code: triplet, degenerate, universal</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
-</div>
-</div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
 <ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
+<li><strong>DNA structure:</strong> Double helix, antiparallel strands, A-T (2 H-bonds), G-C (3 H-bonds), sugar-phosphate backbone.</li>
+<li><strong>Replication:</strong> Semi-conservative; helicase unwinds; primase makes RNA primer; DNA polymerase adds nucleotides 5'→3'; leading strand continuous; lagging strand as Okazaki fragments; ligase joins fragments.</li>
+<li><strong>Transcription:</strong> DNA → mRNA; RNA polymerase; splicing removes introns; 5' cap and poly-A tail added.</li>
+<li><strong>Translation:</strong> mRNA → protein at ribosome; tRNA anticodons match mRNA codons; peptide bonds form; stop codon terminates.</li>
+<li><strong>Genetic code:</strong> Triplet, degenerate, universal, non-overlapping.</li>
+<li><strong>Mutations:</strong> Substitution (may be silent/missense/nonsense); deletion/insertion (cause frameshifts).</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
-<h2>Exam Tips</h2>
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
-</ul>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always draw DNA with antiparallel strands (5' and 3' ends labelled).</li>
+<li>DNA replication: leading vs lagging strand — know which enzymes do what.</li>
+<li>Transcription occurs in the nucleus; translation at ribosomes in cytoplasm.</li>
+<li>Remember the start codon (AUG = methionine) and stop codons (UAA, UAG, UGA).</li>
+<li>In mutation questions, work out the amino acid sequence before and after to determine the effect.</li>
+<li>Distinguish exons (expressed) from introns (intervening sequences) — introns are spliced out.</li>
+<li>Semi-conservative means one old strand + one new strand in each daughter DNA.</li>
 </ul>
 </div>
 </div>

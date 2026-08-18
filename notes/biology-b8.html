@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transport in Animals — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -45,143 +74,285 @@
 <h1>Transport in Animals</h1>
 <p style="color:var(--gray)">9700 (A-Level) · 0610 (IGCSE)</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Blood Composition</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Plasma:</strong> Pale yellow liquid. Transports nutrients, hormones, antibodies, waste products (urea, CO<sub>2</sub>), and heat.</li>
-<li><strong>Red blood cells (erythrocytes):</strong> Biconcave discs; no nucleus; contain haemoglobin. Transport oxygen (oxyhaemoglobin in lungs, releases oxygen in tissues). Adaptations: large surface area, flexible, contain carbonic anhydrase.</li>
-<li><strong>White blood cells (leucocytes):</strong> Nucleated; larger than red cells. Phagocytes engulf pathogens. Lymphocytes produce antibodies.</li>
-<li><strong>Platelets (thrombocytes):</strong> Cell fragments; no nucleus. Involved in blood clotting.</li>
+<li><strong>Plasma:</strong> Pale yellow liquid (about 55% of blood volume). Transports nutrients (glucose, amino acids, fatty acids), hormones, antibodies, waste products (urea, CO₂), and heat. Contains plasma proteins (albumin, fibrinogen, globulins).</li>
+<li><strong>Red blood cells (erythrocytes):</strong> Biconcave discs; no nucleus; contain haemoglobin. Transport oxygen (oxyhaemoglobin in lungs, releases oxygen in tissues). Adaptations: large surface area to volume ratio, flexible (can squeeze through capillaries), contain carbonic anhydrase for CO₂ transport.</li>
+<li><strong>White blood cells (leucocytes):</strong> Nucleated; larger than red cells. <strong>Phagocytes</strong> (neutrophils, macrophages) engulf pathogens. <strong>Lymphocytes</strong> (B cells, T cells) produce antibodies and coordinate immune responses.</li>
+<li><strong>Platelets (thrombocytes):</strong> Cell fragments; no nucleus. Involved in blood clotting by releasing clotting factors and forming a plug at injury sites.</li>
 </ul>
+
+<div class="key-point">Biconcave shape increases surface area for oxygen diffusion and allows red blood cells to fold and squeeze through narrow capillaries. The absence of a nucleus provides more space for haemoglobin.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
 <h3>Heart Structure</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Four chambers: right atrium, right ventricle, left atrium, left ventricle.</li>
 <li>Right side pumps deoxygenated blood to lungs (pulmonary circuit). Left side pumps oxygenated blood to body (systemic circuit).</li>
 <li><strong>Valves:</strong> Tricuspid (right AV), bicuspid/mitral (left AV), semilunar (pulmonary and aortic). Prevent backflow.</li>
 <li>Septum separates oxygenated and deoxygenated blood.</li>
-<li>Left ventricle wall thicker than right — pumps blood further and at higher pressure.</li>
+<li>Left ventricle wall thicker than right — pumps blood further and at higher pressure (systemic circulation).</li>
 </ul>
-<h3>Double Circulation</h3>
+
+<div class="diagram-box">
+<h5>📝 Annotated Diagram Description: Heart Cross-Section</h5>
+<p>When drawing the heart:</p>
 <ul>
-<li><strong>Pulmonary circulation:</strong> Heart → pulmonary artery → lungs → pulmonary vein → heart.</li>
-<li><strong>Systemic circulation:</strong> Heart → aorta → body → vena cava → heart.</li>
-<li>Double circulation maintains higher pressure in systemic circuit and separates oxygenated/deoxygenated blood.</li>
-</ul>
-<h3>Blood Vessels</h3>
-<ul>
-<li><strong>Arteries:</strong> Thick muscular and elastic walls; narrow lumen; carry blood away from heart at high pressure. Pulmonary artery carries deoxygenated blood.</li>
-<li><strong>Veins:</strong> Thin walls with less muscle and elastic tissue; wide lumen; valves prevent backflow; carry blood to heart at low pressure. Pulmonary vein carries oxygenated blood.</li>
-<li><strong>Capillaries:</strong> Walls one cell thick (endothelium); narrow lumen; slow blood flow allows efficient exchange. Form extensive networks (capillary beds).</li>
+<li>Label all four chambers: right atrium, right ventricle, left atrium, left ventricle.</li>
+<li>Label the septum dividing left and right sides.</li>
+<li>Label all valves and the direction of blood flow.</li>
+<li>Label major blood vessels: vena cava, pulmonary artery, pulmonary vein, aorta.</li>
+<li>Show that the left ventricle wall is thicker than the right.</li>
 </ul>
 </div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Double Circulation</h3>
+</div>
+<div class="topic-content">
+<ul>
+<li><strong>Pulmonary circulation:</strong> Heart → pulmonary artery → lungs → pulmonary vein → heart. Deoxygenated blood becomes oxygenated.</li>
+<li><strong>Systemic circulation:</strong> Heart → aorta → body → vena cava → heart. Oxygenated blood delivers O₂ and nutrients; picks up CO₂ and wastes.</li>
+<li>Double circulation maintains higher pressure in systemic circuit and separates oxygenated/deoxygenated blood, maximising oxygen delivery efficiency.</li>
+</ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Blood Vessels</h3>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Feature</th><th>Arteries</th><th>Veins</th><th>Capillaries</th></tr>
+<tr><td>Wall thickness</td><td>Thick (much muscle and elastic tissue)</td><td>Thin (less muscle and elastic)</td><td>One cell thick (endothelium only)</td></tr>
+<tr><td>Lumen</td><td>Narrow</td><td>Wide</td><td>Narrow (just wide enough for RBCs)</td></tr>
+<tr><td>Valves</td><td>Absent (except at base of aorta/pulmonary artery)</td><td>Present</td><td>Absent</td></tr>
+<tr><td>Blood pressure</td><td>High</td><td>Low</td><td>Low</td></tr>
+<tr><td>Blood direction</td><td>Away from heart</td><td>Toward heart</td><td>Between arteries and veins</td></tr>
+<tr><td>Function</td><td>Transport blood at high pressure; elastic recoil maintains pressure between heartbeats</td><td>Transport blood at low pressure; valves prevent backflow</td><td>Exchange of materials between blood and tissues</td></tr>
+</table>
+
+<div class="key-point">The walls of arteries contain more elastic tissue and smooth muscle to withstand and maintain high pressure. Veins have valves to prevent backflow because blood pressure is too low to ensure one-way flow. Capillaries have walls one cell thick to minimise diffusion distance for efficient exchange.</div>
+</div>
+</div>
+</div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
 <h3>Haemoglobin</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li>Quaternary protein with 4 polypeptide chains (2α, 2β), each with a haem group containing Fe<sup>2+</sup>.</li>
-<li>Each haemoglobin can bind up to 4 O<sub>2</sub> molecules.</li>
-<li>Oxygen dissociation curve is sigmoid (S-shaped) due to <strong>cooperative binding</strong>: binding of first O<sub>2</sub> increases affinity of other subunits.</li>
-<li><strong>Bohr effect:</strong> In tissues, high CO<sub>2</sub> (low pH) shifts curve right → lower affinity, more O<sub>2</sub> released. In lungs, low CO<sub>2</sub> (high pH) shifts curve left → higher affinity, more O<sub>2</sub> picked up.</li>
-<li><strong>Fetal haemoglobin:</strong> Higher affinity for O<sub>2</sub> than adult haemoglobin, allowing transfer across placenta.</li>
+<li>Quaternary protein with 4 polypeptide chains (2α, 2β), each with a <strong>haem group</strong> containing Fe²⁺.</li>
+<li>Each haemoglobin can bind up to 4 O₂ molecules (one per haem group).</li>
+<li>Oxygen dissociation curve is <strong>sigmoid (S-shaped)</strong> due to <strong>cooperative binding</strong>: binding of first O₂ increases affinity of other subunits (positive cooperativity).</li>
+<li><strong>Bohr effect:</strong> In tissues, high CO₂ (low pH) shifts curve right → lower affinity, more O₂ released. In lungs, low CO₂ (high pH) shifts curve left → higher affinity, more O₂ picked up.</li>
+<li><strong>Fetal haemoglobin (HbF):</strong> Has a higher affinity for O₂ than adult haemoglobin (HbA), allowing transfer across placenta from mother to fetus.</li>
 </ul>
+
+<div class="diagram-box">
+<h5>📝 Annotated Diagram Description: Oxygen Dissociation Curve</h5>
+<p>When drawing the oxygen dissociation curve:</p>
+<ul>
+<li>X-axis: partial pressure of oxygen (pO₂) in kPa.</li>
+<li>Y-axis: percentage saturation of haemoglobin with oxygen.</li>
+<li>Draw a sigmoid (S-shaped) curve starting near origin and plateauing at ~100%.</li>
+<li>Label the steeper middle section where cooperative binding occurs.</li>
+<li>Show a second curve to the left for fetal haemoglobin (higher affinity).</li>
+<li>Show a curve shifted right for tissues with high CO₂ (Bohr effect).</li>
+</ul>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Bohr Effect</h5>
+<p><strong>Question:</strong> Explain why the oxygen dissociation curve shifts to the right in active muscle tissue. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Active muscle produces more CO₂ from aerobic respiration (1).</li>
+<li>CO₂ reacts with water to form carbonic acid, lowering pH (1).</li>
+<li>Lower pH reduces haemoglobin's affinity for oxygen, causing it to release more O₂ to the muscle (Bohr shift) (1).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
 <h3>Cardiac Cycle</h3>
-<ul>
-<li><strong>Diastole:</strong> All chambers relax. Blood flows into atria from veins, then through open AV valves into ventricles. Semilunar valves closed.</li>
-<li><strong>Atrial systole:</strong> Atria contract, pushing remaining blood into ventricles.</li>
-<li><strong>Ventricular systole:</strong> Ventricles contract; pressure rises, closing AV valves (lub sound). Blood forced through semilunar valves into arteries. Semilunar valves open.</li>
-<li><strong>Relaxation:</strong> Ventricles relax; pressure falls below arteries, semilunar valves close (dub sound). Cycle repeats ~70 times/min at rest.</li>
-</ul>
+</div>
+<div class="topic-content">
+<div class="process-box">
+<h5>Stages of the Cardiac Cycle</h5>
+<ol>
+<li><strong>Diastole:</strong> All chambers relax. Blood flows into atria from veins, then through open AV valves into ventricles. Semilunar valves closed. Ventricles fill to about 70% of capacity passively.</li>
+<li><strong>Atrial systole:</strong> Atria contract, pushing remaining blood into ventricles (the final 30%). AV valves open.</li>
+<li><strong>Ventricular systole:</strong> Ventricles contract; pressure rises, closing AV valves (<strong>"lub"</strong> sound). Blood forced through semilunar valves into arteries. Semilunar valves open.</li>
+<li><strong>Relaxation:</strong> Ventricles relax; pressure falls below arteries, semilunar valves close (<strong>"dub"</strong> sound). Cycle repeats ~70 times/min at rest.</li>
+</ol>
+</div>
+
+<div class="key-point">The "lub" sound (first heart sound) is caused by closure of the AV valves at the start of ventricular systole. The "dub" sound (second heart sound) is caused by closure of the semilunar valves at the start of ventricular diastole.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header">
+<span class="topic-number">7</span>
 <h3>Control of Heart Rate</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Sinoatrial node (SAN):</strong> In right atrium wall. Natural pacemaker; initiates wave of electrical excitation.</li>
 <li>Excitation spreads across atria → atrial contraction.</li>
-<li>Atrioventricular node (AVN) delays impulse (~0.1s) to allow complete atrial emptying.</li>
-<li>Impulse travels down Bundle of His, through Purkyne tissue, up ventricle walls from apex → coordinated ventricular contraction.</li>
+<li><strong>Atrioventricular node (AVN)</strong> delays impulse (~0.1s) to allow complete atrial emptying.</li>
+<li>Impulse travels down <strong>Bundle of His</strong>, through <strong>Purkyne tissue</strong>, up ventricle walls from apex → coordinated ventricular contraction.</li>
 <li><strong>Medulla oblongata:</strong> Cardiovascular centre. Sympathetic nerves (accelerator) increase rate via SAN. Parasympathetic (vagus) decrease rate.</li>
-<li>Baroreceptors (aorta, carotid sinus) detect blood pressure. Chemoreceptors detect CO<sub>2</sub>/pH changes during exercise.</li>
+<li><strong>Baroreceptors</strong> (aorta, carotid sinus) detect blood pressure. <strong>Chemoreceptors</strong> detect CO₂/pH changes during exercise.</li>
 </ul>
-<h3>Tissue Fluid &amp; Lymph</h3>
+
+<div class="example-box">
+<h5>Worked Example: Response to Exercise</h5>
+<p><strong>Question:</strong> Explain how heart rate is increased during exercise. [4 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Exercise increases CO₂ production and decreases blood pH (1).</li>
+<li>Chemoreceptors in aorta and carotid arteries detect these changes and send signals to the medulla oblongata (1).</li>
+<li>The cardiovascular centre in the medulla sends impulses via sympathetic nerves to the SAN (1).</li>
+<li>The SAN increases the rate of electrical impulses, increasing heart rate and cardiac output (1).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header">
+<span class="topic-number">8</span>
+<h3>Tissue Fluid & Lymph</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>At arteriole end of capillary: hydrostatic pressure > osmotic pressure → fluid forced out, forming tissue fluid.</li>
 <li>Tissue fluid bathes cells, allowing exchange of nutrients, gases, and wastes.</li>
-<li>At venule end: hydrostatic pressure < osmotic pressure (due to plasma proteins) → fluid returns to capillary.</li>
+<li>At venule end: hydrostatic pressure < osmotic pressure (due to plasma proteins, mainly albumin) → fluid returns to capillary.</li>
 <li>Excess tissue fluid drains into lymphatic vessels → lymph → returned to blood via subclavian veins.</li>
 <li>Lymph nodes filter lymph and contain lymphocytes for immune defence.</li>
 </ul>
+
+<div class="formula-box">Tissue fluid formation: Hydrostatic pressure forces fluid OUT at arteriole end.<br>Tissue fluid return: Osmotic pressure draws fluid BACK IN at venule end.<br>Lymph = excess tissue fluid that does not return to capillaries.</div>
 </div>
+</div>
+</div>
+
 <div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-9">
+<div class="topic-header">
+<span class="topic-number">9</span>
 <h3>Transport of Carbon Dioxide</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>~5% dissolved in plasma.</li>
 <li>~10% bound to haemoglobin (carbaminohaemoglobin).</li>
-<li>~85% as hydrogencarbonate ions (HCO<sub>3</sub><sup>-</sup>): CO<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>CO<sub>3</sub> → H<sup>+</sup> + HCO<sub>3</sub><sup>-</sup>, catalysed by carbonic anhydrase in red blood cells. H<sup>+</sup> binds haemoglobin (HbH<sup>+</sup>); HCO<sub>3</sub><sup>-</sup> diffuses out via chloride shift (Cl<sup>-</sup> enters to maintain charge balance).</li>
+<li>~85% as hydrogencarbonate ions (HCO₃⁻): CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻, catalysed by <strong>carbonic anhydrase</strong> in red blood cells. H⁺ binds haemoglobin (HbH⁺); HCO₃⁻ diffuses out via <strong>chloride shift</strong> (Cl⁻ enters to maintain charge balance).</li>
 </ul>
+
+<div class="key-point">The chloride shift maintains electrical neutrality as HCO₃⁻ leaves the red blood cell. Chloride ions (Cl⁻) move into the cell, which is why venous blood has a higher chloride concentration than arterial blood (chloride shift/Hamburger effect).</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-10">
+<div class="topic-header">
+<span class="topic-number">10</span>
 <h3>Atherosclerosis</h3>
-<ul>
-<li>Endothelium damaged by high blood pressure, smoking, or high LDL cholesterol.</li>
-<li>Inflammatory response; LDLs accumulate, phagocytes engulf them forming foam cells.</li>
-<li>Fibrous cap forms over fatty deposit (atheroma/plaque).</li>
-<li>Plaque narrows lumen, reducing blood flow and causing thrombosis (blood clot).</li>
-<li>Coronary thrombosis → myocardial infarction (heart attack). Cerebral thrombosis → stroke.</li>
-<li>Risk factors: smoking, high blood pressure, high blood cholesterol, diabetes, obesity, lack of exercise, genetic predisposition, age, gender.</li>
-</ul>
+</div>
+<div class="topic-content">
+<div class="process-box">
+<h5>Development of Atherosclerosis</h5>
+<ol>
+<li><strong>Endothelial damage:</strong> High blood pressure, smoking, or high LDL cholesterol damages the endothelium.</li>
+<li><strong>Inflammatory response:</strong> LDLs accumulate in the artery wall; phagocytes (macrophages) engulf them, forming <strong>foam cells</strong>.</li>
+<li><strong>Fibrous cap formation:</strong> Smooth muscle cells produce collagen, forming a fibrous cap over the fatty deposit (atheroma/plaque).</li>
+<li><strong>Plaque growth:</strong> The plaque narrows the lumen, reducing blood flow.</li>
+<li><strong>Thrombosis:</strong> Plaque rupture exposes underlying tissue, triggering blood clot formation. A clot blocking a coronary artery causes myocardial infarction (heart attack). A clot in a cerebral artery causes stroke.</li>
+</ol>
+</div>
+
+<div class="key-point">Risk factors for atherosclerosis: smoking, high blood pressure, high blood cholesterol (especially LDL), diabetes, obesity, lack of exercise, genetic predisposition, age, and male gender.</div>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Treating Cardiovascular Disease</h5>
+<p>Statins reduce LDL cholesterol synthesis in the liver. Aspirin reduces platelet aggregation, lowering thrombosis risk. Angioplasty uses a balloon to widen narrowed arteries, often with stent insertion. Coronary bypass surgery grafts vessels to bypass blocked coronary arteries. Lifestyle changes (diet, exercise, smoking cessation) are fundamental.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-11">
+<div class="topic-header">
+<span class="topic-number">11</span>
 <h3>Transport at the Placenta</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Fetal and maternal blood do not mix.</li>
 <li>Villi provide large surface area; thin barrier (endothelium, connective tissue, epithelium) allows diffusion.</li>
 <li>Oxygen, glucose, amino acids, antibodies (IgG) diffuse from mother to fetus.</li>
-<li>CO<sub>2</sub>, urea, other wastes diffuse from fetus to mother.</li>
-<li>Fetal haemoglobin has higher affinity for O<sub>2</sub> than maternal haemoglobin, ensuring efficient transfer.</li>
+<li>CO₂, urea, other wastes diffuse from fetus to mother.</li>
+<li>Fetal haemoglobin has higher affinity for O₂ than maternal haemoglobin, ensuring efficient transfer.</li>
 </ul>
 </div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
-</div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
-<li>Blood: plasma (transport), RBCs (O<sub>2</sub> via haemoglobin), WBCs (phagocytes, lymphocytes), platelets (clotting).</li>
+<ul>
+<li>Blood: plasma (transport), RBCs (O₂ via haemoglobin), WBCs (phagocytes, lymphocytes), platelets (clotting).</li>
 <li>Heart: 4 chambers; left ventricle thickest; valves prevent backflow; septum separates circuits.</li>
 <li>Double circulation: pulmonary (to lungs) and systemic (to body).</li>
 <li>Arteries (thick, muscular, high pressure) → arterioles → capillaries (exchange) → venules → veins (thin, valves, low pressure).</li>
-<li>Haemoglobin: 4 subunits, 4 O<sub>2</sub>; sigmoid curve; cooperative binding; Bohr effect (right shift in tissues).</li>
+<li>Haemoglobin: 4 subunits, 4 O₂; sigmoid curve; cooperative binding; Bohr effect (right shift in tissues).</li>
 <li>Cardiac cycle: diastole → atrial systole → ventricular systole → relaxation. Lub = AV valves close; Dub = semilunar valves close.</li>
 <li>Heart conduction: SAN → AVN → Bundle of His → Purkyne fibres. Medulla controls via sympathetic/parasympathetic nerves.</li>
 <li>Tissue fluid: filtered out at arteriole end, returns at venule end; excess = lymph.</li>
-<li>CO<sub>2</sub> transport: mostly as HCO<sub>3</sub><sup>-</sup>; carbonic anhydrase; chloride shift.</li>
+<li>CO₂ transport: mostly as HCO₃⁻; carbonic anhydrase; chloride shift.</li>
 <li>Atherosclerosis: damage → LDL accumulation → plaque → thrombosis → MI/stroke.</li>
-</ul></div>
-<p><strong>Exam tip:</strong> Draw the oxygen dissociation curve with correct axes (partial pressure of O<sub>2</sub> on x-axis, % saturation on y-axis). Label fetal haemoglobin curve to the left of adult. In cardiac cycle questions, always mention pressure changes causing valve opening/closing. For atherosclerosis, describe events in sequence.</p>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Draw the oxygen dissociation curve with correct axes (pO₂ on x-axis, % saturation on y-axis).</li>
+<li>Label fetal haemoglobin curve to the left of adult. Label Bohr shift (right) for tissues.</li>
+<li>In cardiac cycle questions, always mention pressure changes causing valve opening/closing.</li>
+<li>For atherosclerosis, describe events in sequence: endothelial damage → LDL accumulation → foam cells → fibrous cap → plaque → thrombosis.</li>
+<li>Remember the chloride shift: HCO₃⁻ out, Cl⁻ in, maintaining charge balance.</li>
+<li>Tissue fluid: high hydrostatic pressure at arteriole end pushes fluid out; high osmotic pressure at venule end draws it back.</li>
 </ul>
 </div>
 </div>

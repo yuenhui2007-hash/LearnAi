@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Immunity (A2) — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -45,6 +74,7 @@
 <h1>Immunity (A2)</h1>
 <p style="color:var(--gray)">9700 (A-Level) · A2 Only</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
 <p>At IGCSE, immunity is introduced as the body's defence against pathogens:</p>
 <ul>
@@ -57,6 +87,7 @@
 <li><strong>Passive immunity:</strong> Receive ready-made antibodies (maternal antibodies across placenta, in breast milk, or antivenom).</li>
 </ul>
 </div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
 <p>At AS, immunity is covered in the context of disease and health:</p>
 <ul>
@@ -67,47 +98,112 @@
 <li><strong>Vaccination:</strong> Stimulates primary response without disease. Uses attenuated pathogens, killed pathogens, toxoids, or subunit vaccines. Herd immunity protects unvaccinated individuals.</li>
 </ul>
 </div>
+
 <div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Innate Immunity</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Innate immunity:</strong> Non-specific defence mechanisms present from birth that provide immediate protection against pathogens. No immunological memory.
+</div>
+
+<h4>Physical and Chemical Barriers</h4>
 <ul>
-<li>Non-specific; present from birth; no memory.</li>
-<li><strong>Physical barriers:</strong> Skin (keratin, antimicrobial peptides), mucous membranes, ciliated epithelium (mucociliary escalator).</li>
-<li><strong>Chemical barriers:</strong> Lysozyme in tears/saliva, stomach acid, sebum, interferons (proteins that inhibit viral replication in neighbouring cells).</li>
-<li><strong>Cellular defences:</strong> Phagocytosis by neutrophils and macrophages; natural killer (NK) cells destroy virus-infected and tumour cells.</li>
-<li><strong>Inflammation:</strong> Damaged cells release histamine → vasodilation and increased capillary permeability → redness, heat, swelling. Complement proteins attract phagocytes and form membrane attack complexes (MAC) to lyse pathogens.</li>
+<li><strong>Skin:</strong> Keratinised outer layer; antimicrobial peptides (defensins).</li>
+<li><strong>Mucous membranes:</strong> Trap pathogens; mucus contains lysozyme.</li>
+<li><strong>Ciliated epithelium:</strong> Mucociliary escalator moves trapped particles out of respiratory tract.</li>
+<li><strong>Stomach acid:</strong> pH 1-2 kills most ingested pathogens.</li>
+<li><strong>Lysozyme:</strong> In tears, saliva, and sweat — breaks down bacterial cell walls.</li>
 </ul>
+
+<h4>Cellular Defences</h4>
+<ul>
+<li><strong>Phagocytosis:</strong> Neutrophils and macrophages engulf pathogens into phagosomes, which fuse with lysosomes for digestion.</li>
+<li><strong>Natural killer (NK) cells:</strong> Destroy virus-infected and tumour cells by inducing apoptosis.</li>
+</ul>
+
+<h4>Inflammation</h4>
+<ul>
+<li>Damaged cells release histamine → vasodilation and increased capillary permeability.</li>
+<li>Redness, heat, swelling, pain.</li>
+<li>Complement proteins attract phagocytes and form membrane attack complexes (MAC) to lyse pathogens.</li>
+</ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
 <h3>Adaptive (Acquired) Immunity</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Adaptive immunity:</strong> Specific defence mechanisms involving recognition of antigens and immunological memory. Slower to develop but highly specific and long-lasting.
+</div>
+
+<h4>Cell-Mediated Immunity (T Cells)</h4>
 <ul>
-<li>Specific; involves recognition of antigens; has memory.</li>
-<li><strong>Cell-mediated immunity (T cells):</strong>
-<ul>
-<li>T helper cells (CD4<sup>+</sup>): Activated by antigen-presenting cells (APCs) displaying antigen on MHC II. Release cytokines to activate B cells, cytotoxic T cells, and macrophages.</li>
-<li>Cytotoxic T cells (CD8<sup>+</sup>): Recognise antigen presented on MHC I of infected body cells. Release perforin (forms pores) and granzymes (induce apoptosis).</li>
-<li>Memory T cells: Long-lived; rapid response on re-exposure.</li>
-</ul></li>
-<li><strong>Humoral immunity (B cells):</strong>
+<li><strong>T helper cells (CD4⁺):</strong> Activated by antigen-presenting cells (APCs) displaying antigen on MHC II. Release cytokines to activate B cells, cytotoxic T cells, and macrophages.</li>
+<li><strong>Cytotoxic T cells (CD8⁺):</strong> Recognise antigen presented on MHC I of infected body cells. Release perforin (forms pores) and granzymes (induce apoptosis).</li>
+<li><strong>Memory T cells:</strong> Long-lived; rapid response on re-exposure.</li>
+</ul>
+
+<h4>Humoral Immunity (B Cells)</h4>
 <ul>
 <li>B cells have surface antibodies (B cell receptors) that bind specific antigen.</li>
 <li>Activated by antigen binding + T helper cell cytokines (T-dependent) or directly by repeating antigens (T-independent).</li>
-<li>Clonal expansion: rapid division producing plasma cells and memory B cells.</li>
-<li>Plasma cells secrete large amounts of antibody.</li>
-<li>Memory B cells: long-lived; faster, stronger secondary response.</li>
-</ul></li>
+<li><strong>Clonal expansion:</strong> Rapid division producing plasma cells and memory B cells.</li>
+<li><strong>Plasma cells</strong> secrete large amounts of antibody.</li>
+<li><strong>Memory B cells</strong> provide faster, stronger secondary response.</li>
 </ul>
-<h3>Antibody Structure &amp; Function</h3>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Antibody Structure & Function</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Four polypeptide chains: 2 heavy, 2 light. Disulfide bonds hold together.</li>
-<li>Variable region at tips of Y: antigen-binding site. Unique for each B cell clone.</li>
-<li>Constant region: determines class and effector function.</li>
-<li><strong>Functions:</strong> Neutralisation (block pathogen binding), opsonisation (mark for phagocytosis), agglutination (clump pathogens), complement activation (lysis).</li>
+<li><strong>Variable region</strong> at tips of Y: antigen-binding site. Unique for each B cell clone.</li>
+<li><strong>Constant region:</strong> determines class and effector function.</li>
+<li><strong>Functions:</strong>
+<ul>
+<li><strong>Neutralisation:</strong> Block pathogen binding to host cells.</li>
+<li><strong>Opsonisation:</strong> Mark pathogens for phagocytosis.</li>
+<li><strong>Agglutination:</strong> Clump pathogens together.</li>
+<li><strong>Complement activation:</strong> Trigger lysis of pathogens.</li>
+</ul></li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
 <h3>Antigen Presentation</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Macrophages and dendritic cells (APCs) engulf pathogens, process antigens, and display them on MHC molecules.</li>
 <li><strong>MHC I:</strong> On all nucleated cells; displays endogenous antigens (from inside cell, e.g., viral proteins) to cytotoxic T cells.</li>
 <li><strong>MHC II:</strong> On APCs; displays exogenous antigens (from outside cell) to helper T cells.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
 <h3>Autoimmune Diseases</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Immune system attacks body's own cells.</li>
 <li><strong>Type 1 diabetes:</strong> T cells destroy pancreatic β cells.</li>
@@ -115,74 +211,85 @@
 <li><strong>Multiple sclerosis:</strong> Immune attack on myelin sheath.</li>
 <li><strong>Systemic lupus erythematosus (SLE):</strong> Antibodies against nuclear antigens.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
 <h3>Allergy (Hypersensitivity)</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li>Type I hypersensitivity: IgE antibodies bind mast cells and basophils. On re-exposure to allergen, cross-linking triggers histamine release → inflammation, vasodilation, bronchoconstriction, mucus secretion.</li>
+<li>Type I hypersensitivity: IgE antibodies bind mast cells and basophils.</li>
+<li>On re-exposure to allergen, cross-linking triggers histamine release → inflammation, vasodilation, bronchoconstriction, mucus secretion.</li>
 <li>Can lead to anaphylaxis — systemic, life-threatening reaction treated with adrenaline (epinephrine).</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header">
+<span class="topic-number">7</span>
 <h3>Monoclonal Antibodies</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Produced by hybridoma cells: B cells fused with myeloma (cancer) cells → immortal antibody-producing cell line.</li>
-<li>Uses: diagnostic tests (pregnancy tests, pathogen detection), cancer treatment (targeted delivery of drugs/radiation to tumour cells), transplant rejection prevention, autoimmune disease treatment.</li>
-<li>Advantages: highly specific, can be produced in large quantities, consistent quality.</li>
+<li><strong>Uses:</strong> Diagnostic tests (pregnancy tests, pathogen detection), cancer treatment (targeted delivery of drugs/radiation to tumour cells), transplant rejection prevention, autoimmune disease treatment.</li>
+<li><strong>Advantages:</strong> highly specific, can be produced in large quantities, consistent quality.</li>
 </ul>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Monoclonal Antibodies in Cancer Therapy</h5>
+<p>Monoclonal antibodies such as trastuzumab (Herceptin) target HER2 receptors on breast cancer cells. Rituximab targets CD20 on B-cell lymphomas. These "magic bullets" deliver chemotherapy directly to cancer cells, sparing healthy tissue. CAR-T cell therapy (genetically modified T cells with chimeric antigen receptors) represents the next frontier in targeted immunotherapy.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header">
+<span class="topic-number">8</span>
 <h3>Vaccines</h3>
-<ul>
-<li><strong>Live attenuated:</strong> Weakened pathogen. Strong immune response; risk to immunocompromised. Examples: MMR, BCG.</li>
-<li><strong>Killed/inactivated:</strong> Dead pathogen. Safer; may need boosters. Examples: polio (Salk), hepatitis A.</li>
-<li><strong>Subunit/recombinant:</strong> Purified antigen or genetically engineered protein. Very safe. Examples: hepatitis B, HPV, acellular pertussis.</li>
-<li><strong>mRNA vaccines:</strong> mRNA codes for viral antigen; host cells produce antigen, stimulating immune response. Examples: COVID-19 vaccines (Pfizer, Moderna).</li>
-<li><strong>Herd immunity:</strong> When sufficient proportion of population is immune, disease cannot spread effectively, protecting vulnerable unvaccinated individuals.</li>
-</ul>
 </div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+<tr><td>Live attenuated</td><td>Weakened pathogen; strong immune response</td><td>MMR, BCG, yellow fever</td></tr>
+<tr><td>Killed/inactivated</td><td>Dead pathogen; safer but may need boosters</td><td>Polio (Salk), hepatitis A, rabies</td></tr>
+<tr><td>Subunit/recombinant</td><td>Purified antigen or genetically engineered protein</td><td>Hepatitis B, HPV, acellular pertussis</td></tr>
+<tr><td>mRNA</td><td>mRNA codes for viral antigen; host cells produce antigen</td><td>COVID-19 (Pfizer, Moderna)</td></tr>
+</table>
+
+<div class="key-point">Herd immunity occurs when a sufficient proportion of the population is immune, preventing disease spread and protecting vulnerable unvaccinated individuals. The herd immunity threshold depends on R₀ (basic reproduction number).</div>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
 </div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
+<ul>
 <li>Innate immunity: non-specific, no memory. Barriers, phagocytosis, inflammation, complement, NK cells.</li>
 <li>Adaptive immunity: specific, has memory. Cell-mediated (T cells) and humoral (B cells/antibodies).</li>
-<li>T helper cells (CD4<sup>+</sup>): activated by MHC II; release cytokines. Cytotoxic T cells (CD8<sup>+</sup>): kill infected cells via MHC I.</li>
+<li>T helper cells (CD4⁺): activated by MHC II; release cytokines. Cytotoxic T cells (CD8⁺): kill infected cells via MHC I.</li>
 <li>B cells: antigen binding → clonal expansion → plasma cells (antibody secretion) + memory B cells.</li>
 <li>Antibodies: Y-shaped; variable region binds antigen; functions = neutralisation, opsonisation, agglutination, complement activation.</li>
 <li>Primary response slower; secondary response faster, larger, longer due to memory cells.</li>
 <li>Autoimmune: immune system attacks self. Allergy: IgE-mediated histamine release.</li>
 <li>Monoclonal antibodies: hybridoma technology; diagnostic and therapeutic uses.</li>
 <li>Vaccines: live attenuated, killed, subunit, mRNA. Herd immunity protects unvaccinated.</li>
-</ul></div>
-<p><strong>Exam tip:</strong> Distinguish clearly between innate and adaptive immunity. In cell-mediated response, always mention MHC molecules and cytokines. For monoclonal antibodies, explain hybridoma formation. Draw antibody structure labelling variable and constant regions. In vaccine questions, compare live vs killed vs subunit in terms of safety and efficacy.</p>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Distinguish clearly between innate and adaptive immunity.</li>
+<li>In cell-mediated response, always mention MHC molecules and cytokines.</li>
+<li>For monoclonal antibodies, explain hybridoma formation.</li>
+<li>Draw antibody structure labelling variable and constant regions.</li>
+<li>In vaccine questions, compare live vs killed vs subunit in terms of safety and efficacy.</li>
+<li>Primary response: slow, IgM first. Secondary response: fast, IgG dominant, memory cells involved.</li>
 </ul>
 </div>
 </div>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Selection &amp; Evolution — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -45,40 +74,89 @@
 <h1>Selection &amp; Evolution</h1>
 <p style="color:var(--gray)">9700 (A-Level) · 0610 (IGCSE)</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Variation</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Genetic variation:</strong> Differences in alleles due to mutation, meiosis (crossing over, independent assortment), and random fertilisation.</li>
 <li><strong>Environmental variation:</strong> Differences caused by environment (diet, climate, lifestyle).</li>
 <li>Most characteristics are influenced by both genes and environment.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
 <h3>Natural Selection</h3>
+</div>
+<div class="topic-content">
 <p>Mechanism proposed by Charles Darwin and Alfred Russel Wallace:</p>
+<div class="process-box">
+<h5>Steps of Natural Selection</h5>
+<ol>
+<li>Within a population there is <strong>variation</strong> (due to mutation, meiosis, etc.).</li>
+<li>There is <strong>competition</strong> for limited resources (struggle for existence).</li>
+<li>Individuals with advantageous characteristics are more likely to <strong>survive and reproduce</strong> (differential survival).</li>
+<li>These <strong>advantageous alleles</strong> are passed to offspring and become more common in the population over generations.</li>
+</ol>
+</div>
+
+<div class="key-point">Natural selection acts on phenotypes, but evolution occurs at the genetic level — allele frequencies change over generations.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Evolution & Artificial Selection</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li>Within a population there is variation.</li>
-<li>There is competition for limited resources (struggle for existence).</li>
-<li>Individuals with advantageous characteristics are more likely to survive and reproduce.</li>
-<li>These advantageous alleles become more common in the population over generations.</li>
-</ul>
-<h3>Evolution</h3>
-<p>Evolution is the change in allele frequencies in a population over time. Natural selection is the main mechanism driving adaptive evolution.</p>
-<h3>Artificial Selection</h3>
+<li><strong>Evolution:</strong> Change in allele frequencies in a population over time. Natural selection is the main mechanism driving adaptive evolution.</li>
+<li><strong>Artificial selection:</strong> Humans select individuals with desired characteristics to breed. Over many generations, breeds/cultivars with exaggerated traits are produced. Reduces genetic diversity compared to natural populations.
 <ul>
-<li>Humans select individuals with desired characteristics to breed.</li>
-<li>Over many generations, breeds/cultivars with exaggerated traits are produced.</li>
 <li>Examples: dairy cows (high milk yield), wheat (disease resistance, high yield), dogs (various breeds).</li>
-<li>Reduces genetic diversity compared to natural populations.</li>
-</ul>
-<h3>Antibiotic Resistance</h3>
-<ul>
-<li>Bacteria show natural variation in resistance to antibiotics.</li>
-<li>Antibiotic use creates selection pressure.</li>
-<li>Resistant bacteria survive and reproduce, passing resistance genes (often on plasmids).</li>
-<li>Overuse and misuse of antibiotics accelerate resistance.</li>
+</ul></li>
 </ul>
 </div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Antibiotic Resistance</h3>
+</div>
+<div class="topic-content">
+<ul>
+<li>Bacteria show natural variation in resistance to antibiotics (due to random mutations).</li>
+<li>Antibiotic use creates a <strong>selection pressure</strong>.</li>
+<li>Resistant bacteria survive and reproduce, passing resistance genes (often on plasmids) to offspring and other bacteria via horizontal gene transfer.</li>
+<li>Overuse and misuse of antibiotics accelerate resistance.</li>
+</ul>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Antibiotic Stewardship</h5>
+<p>The WHO identifies antibiotic resistance as one of the greatest threats to global health. Strategies include: restricting antibiotic use in agriculture, ensuring patients complete full courses, developing new antibiotics, and using combination therapies. Bacteriophage therapy is an emerging alternative to antibiotics.</p>
+</div>
+</div>
+</div>
+</div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
 <h3>Speciation</h3>
+</div>
+<div class="topic-content">
 <p>Formation of new species from existing ones:</p>
 <ul>
 <li><strong>Species definition:</strong> Group of organisms that can interbreed to produce fertile offspring.</li>
@@ -90,77 +168,111 @@
 <li><strong>Allopatric speciation:</strong> Speciation due to geographic isolation. Different selection pressures and genetic drift cause divergence.</li>
 <li><strong>Sympatric speciation:</strong> Speciation without geographic separation (e.g., polyploidy in plants).</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
 <h3>Evidence for Evolution</h3>
-<ul>
-<li><strong>Fossil record:</strong> Shows gradual changes and transitional forms (e.g., Archaeopteryx, Tiktaalik).</li>
-<li><strong>Anatomy:</strong> Homologous structures (same origin, different function — vertebrate limbs) show common ancestry. Analogous structures (different origin, same function — wings of birds and insects) show convergent evolution.</li>
-<li><strong>Embryology:</strong> Early embryos of vertebrates show similar structures (pharyngeal pouches, tail).</li>
-<li><strong>Biochemistry:</strong> Similar proteins and DNA sequences indicate relatedness. Cytochrome c and haemoglobin compared across species.</li>
-<li><strong>Biogeography:</strong> Distribution of species reflects continental drift and isolation.</li>
-</ul>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Type</th><th>Evidence</th><th>What it Shows</th></tr>
+<tr><td>Fossil record</td><td>Transitional forms (Archaeopteryx, Tiktaalik)</td><td>Gradual changes over geological time</td></tr>
+<tr><td>Anatomy</td><td>Homologous structures (vertebrate limbs)</td><td>Common ancestry (divergent evolution)</td></tr>
+<tr><td>Anatomy</td><td>Analogous structures (wings of birds and insects)</td><td>Convergent evolution</td></tr>
+<tr><td>Embryology</td><td>Similar early embryos (pharyngeal pouches, tail)</td><td>Shared developmental pathways</td></tr>
+<tr><td>Biochemistry</td><td>Similar proteins and DNA sequences</td><td>Relatedness (cytochrome c, haemoglobin)</td></tr>
+<tr><td>Biogeography</td><td>Distribution of species</td><td>Continental drift and isolation</td></tr>
+</table>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header">
+<span class="topic-number">7</span>
 <h3>Industrial Melanism</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li>Peppered moth (Biston betularia): light form camouflaged on lichen-covered trees; dark form (melanic) rare.</li>
+<li>Peppered moth (<em>Biston betularia</em>): light form camouflaged on lichen-covered trees; dark form (melanic) rare.</li>
 <li>Industrial pollution killed lichen and darkened tree bark. Birds preyed more on light moths.</li>
 <li>Melanic form increased in frequency due to natural selection.</li>
 <li>After clean air laws, lichen returned, light form increased again.</li>
-<li>Direct evidence of selection (though some controversy about exact predation experiments).</li>
+<li>Classic example of directional selection.</li>
 </ul>
 </div>
+</div>
+</div>
+
 <div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header">
+<span class="topic-number">8</span>
 <h3>Sources of Variation</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Mutation:</strong> Ultimate source of new alleles. Point mutations, chromosomal mutations (deletion, duplication, inversion, translocation), polyploidy.</li>
 <li><strong>Meiosis:</strong> Crossing over (prophase I) and independent assortment (metaphase I) reshuffle alleles.</li>
 <li><strong>Random fertilisation:</strong> Any gamete can fuse with any other, creating unique combinations.</li>
 <li><strong>Genetic drift:</strong> Random changes in allele frequencies, especially in small populations. Founder effect and bottleneck effect.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-9">
+<div class="topic-header">
+<span class="topic-number">9</span>
 <h3>Types of Selection</h3>
-<ul>
-<li><strong>Stabilising selection:</strong> Favours intermediate phenotypes. Reduces variation. Example: human birth weight (very small and very large babies have higher mortality).</li>
-<li><strong>Directional selection:</strong> Favours one extreme. Shifts mean phenotype. Example: antibiotic resistance, industrial melanism, Darwin's finch beak size during drought.</li>
-<li><strong>Disruptive (diversifying) selection:</strong> Favours both extremes. Can lead to speciation. Example: different beak sizes in finches when both large and small seeds are abundant.</li>
-<li><strong>Balancing selection:</strong> Maintains multiple alleles in population. Example: heterozygote advantage — sickle cell trait (HbA/HbS) confers malaria resistance.</li>
-</ul>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Type</th><th>Effect</th><th>Example</th></tr>
+<tr><td>Stabilising</td><td>Favours intermediate phenotypes; reduces variation</td><td>Human birth weight</td></tr>
+<tr><td>Directional</td><td>Favours one extreme; shifts mean phenotype</td><td>Antibiotic resistance, industrial melanism</td></tr>
+<tr><td>Disruptive (diversifying)</td><td>Favours both extremes; can lead to speciation</td><td>Different beak sizes when both seed types abundant</td></tr>
+<tr><td>Balancing</td><td>Maintains multiple alleles</td><td>Sickle cell trait (heterozygote advantage)</td></tr>
+</table>
+
+<div class="key-point">Heterozygote advantage (balancing selection): HbA/HbS individuals are resistant to malaria while avoiding severe sickle cell anaemia. This maintains the sickle cell allele in malaria-endemic regions.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-10">
+<div class="topic-header">
+<span class="topic-number">10</span>
 <h3>Molecular Evidence for Evolution</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>DNA hybridisation:</strong> Measure how much DNA from different species binds together. More binding = more similar = more closely related.</li>
+<li><strong>DNA hybridisation:</strong> More binding = more similar DNA = more closely related.</li>
 <li><strong>DNA sequencing:</strong> Compare base sequences directly. Fewer differences = more recent common ancestor.</li>
-<li><strong>Protein sequencing:</strong> Compare amino acid sequences of proteins like cytochrome c or haemoglobin.</li>
-<li><strong>Molecular clocks:</strong> Assume mutation rate is constant; calculate time since divergence from number of differences.</li>
+<li><strong>Protein sequencing:</strong> Compare amino acid sequences (cytochrome c, haemoglobin).</li>
+<li><strong>Molecular clocks:</strong> Assume mutation rate is constant; calculate time since divergence.</li>
 </ul>
-<h3>Social &amp; Ethical Issues</h3>
+</div>
+</div>
+
+<div class="topic-block" id="section-11">
+<div class="topic-header">
+<span class="topic-number">11</span>
+<h3>Social & Ethical Issues</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Genetic modification:</strong> Inserting genes from one organism into another. Benefits (increased yield, pest resistance, medicines like insulin) vs risks (gene flow to wild relatives, reduction in biodiversity, unknown long-term effects).</li>
-<li><strong>Conservation:</strong> Maintaining genetic diversity is crucial for species' ability to adapt to changing environments.</li>
+<li><strong>Genetic modification:</strong> Benefits (increased yield, pest resistance, medicines like insulin) vs risks (gene flow to wild relatives, reduction in biodiversity).</li>
+<li><strong>Conservation:</strong> Maintaining genetic diversity is crucial for species' ability to adapt.</li>
 </ul>
 </div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
-</div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
+<ul>
 <li>Natural selection: variation → competition → differential survival → advantageous alleles increase in frequency.</li>
 <li>Speciation requires isolation (geographic or reproductive) + divergence.</li>
 <li>Evidence: fossils, homologous/analogous structures, embryos, DNA/protein sequences, biogeography.</li>
@@ -169,19 +281,17 @@
 <li>Artificial selection: humans choose parents; reduces genetic diversity.</li>
 <li>Antibiotic resistance: selection pressure from antibiotic use favours resistant bacteria.</li>
 <li>Industrial melanism: classic example of directional selection.</li>
-</ul></div>
-<p><strong>Exam tip:</strong> When explaining natural selection, always include all stages: variation exists → selection pressure → differential survival/reproduction → inheritance of advantageous alleles → change in allele frequency over generations. Distinguish homologous (common ancestry, divergent evolution) from analogous (convergent evolution) structures clearly.</p>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>When explaining natural selection, always include all stages: variation exists → selection pressure → differential survival/reproduction → inheritance of advantageous alleles → change in allele frequency over generations.</li>
+<li>Distinguish homologous (common ancestry, divergent evolution) from analogous (convergent evolution) structures clearly.</li>
+<li>Speciation: define species first, then explain isolation mechanisms.</li>
+<li>For selection types, describe the effect on the phenotype distribution curve.</li>
+<li>Antibiotic resistance is a key example — explain the role of selection pressure clearly.</li>
 </ul>
 </div>
 </div>

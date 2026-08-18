@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transport in Plants — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -45,75 +74,216 @@
 <h1>Transport in Plants</h1>
 <p style="color:var(--gray)">9700 (A-Level) · 0610 (IGCSE)</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Water Uptake</h3>
-<p>Water is absorbed from soil by root hair cells. Root hairs increase surface area for absorption. Water moves by osmosis from soil (higher water potential) into root hair cells (lower water potential due to dissolved minerals and sugars).</p>
+</div>
+<div class="topic-content">
+<p>Water is absorbed from soil by <strong>root hair cells</strong>. Root hairs are extensions of epidermal cells that massively increase the surface area for absorption. Water moves by osmosis from soil (higher water potential) into root hair cells (lower water potential due to dissolved minerals and sugars).</p>
+
+<h4>Pathways Through the Root</h4>
 <ul>
-<li><strong>Pathways through root:</strong> Symplast (through cytoplasm via plasmodesmata) and apoplast (through cell walls). At Casparian strip (suberin in endodermis), water is forced into symplast for selective uptake.</li>
-<li>Water enters xylem vessels, creating a continuous water column.</li>
+<li><strong>Symplast pathway:</strong> Water moves through the cytoplasm of cells, passing from cell to cell via <strong>plasmodesmata</strong> (cytoplasmic channels through cell walls).</li>
+<li><strong>Apoplast pathway:</strong> Water moves through the cell walls and intercellular spaces. At the <strong>Casparian strip</strong> in the endodermis (a waxy band of suberin), the apoplast pathway is blocked, forcing water into the symplast. This ensures selective uptake of minerals.</li>
 </ul>
+
+<div class="definition-box">
+<strong>Casparian strip:</strong> A band of suberin (waxy, waterproof material) in the cell walls of endodermal cells in roots. It blocks the apoplast pathway, forcing water and dissolved minerals to pass through the selectively permeable plasma membrane of endodermal cells, allowing regulation of mineral uptake.
+</div>
+
+<div class="key-point">The Casparian strip is critical for selective mineral uptake. Without it, minerals could bypass the cell membranes and enter the xylem unregulated.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
 <h3>Transpiration</h3>
-<p>Transpiration is the loss of water vapour from leaves, mainly through stomata. It creates a transpiration stream (transpiration pull) that draws water up the xylem.</p>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Transpiration:</strong> The loss of water vapour from the aerial parts of a plant, mainly through stomata in leaves. It creates the transpiration stream that draws water up the xylem.
+</div>
+
+<h4>Factors Affecting Transpiration Rate</h4>
+<table class="data-table">
+<tr><th>Factor</th><th>Effect</th><th>Mechanism</th></tr>
+<tr><td>Light</td><td>Increases transpiration</td><td>Stomata open in light; more open stomata = more water loss</td></tr>
+<tr><td>Temperature</td><td>Increases transpiration</td><td>Increases kinetic energy and evaporation rate; reduces humidity around leaf</td></tr>
+<tr><td>Humidity</td><td>Decreases transpiration</td><td>High humidity reduces the water potential gradient between leaf and air</td></tr>
+<tr><td>Wind</td><td>Increases transpiration</td><td>Removes water vapour from leaf surface, maintaining steep diffusion gradient</td></tr>
+<tr><td>Soil water</td><td>Decreases transpiration when low</td><td>Reduced water uptake leads to wilting and stomatal closure</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Explaining Transpiration Rate Changes</h5>
+<p><strong>Question:</strong> Explain why transpiration rate increases on a hot, windy day. [3 marks]</p>
+<p><strong>Answer:</strong></p>
 <ul>
-<li><strong>Factors affecting transpiration rate:</strong>
-<ul>
-<li><strong>Light:</strong> Stomata open in light; more transpiration.</li>
-<li><strong>Temperature:</strong> Increases kinetic energy and evaporation rate.</li>
-<li><strong>Humidity:</strong> High humidity reduces diffusion gradient; less transpiration.</li>
-<li><strong>Wind:</strong> Removes water vapour from leaf surface, maintaining steep gradient.</li>
-<li><strong>Soil water:</strong> Limited water reduces transpiration (wilting).</li>
-</ul></li>
+<li>High temperature increases the kinetic energy of water molecules, increasing the rate of evaporation from mesophyll cell surfaces (1).</li>
+<li>Wind removes water vapour from around the leaf, maintaining a steep water potential gradient between the leaf interior and the outside air (1).</li>
+<li>Both factors increase the rate of diffusion of water vapour out of the stomata, increasing transpiration (1).</li>
 </ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
 <h3>Xylem Structure</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li>Lignified walls for strength and support.</li>
-<li>End walls break down to form continuous hollow tubes.</li>
-<li>No cytoplasm or organelles — dead at maturity.</li>
-<li>Pits allow lateral water movement.</li>
+<li><strong>Lignified walls</strong> provide strength and support, preventing collapse under tension.</li>
+<li><strong>End walls break down</strong> to form continuous hollow tubes with no end walls.</li>
+<li><strong>No cytoplasm or organelles</strong> — cells are dead at maturity, forming a hollow pipe.</li>
+<li><strong>Pits</strong> in the lignified walls allow lateral water movement between vessels.</li>
+<li><strong>Narrow diameter</strong> helps maintain the water column by cohesion.</li>
 </ul>
+
+<div class="key-point">Xylem vessels are dead at maturity — they are essentially hollow pipes. This makes them extremely efficient for water transport but means they cannot actively control what passes through them.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
 <h3>Phloem Structure</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Sieve tube elements:</strong> Living but lack nucleus and most organelles. End walls form sieve plates with pores.</li>
-<li><strong>Companion cells:</strong> Have nucleus, dense cytoplasm, many mitochondria. Provide ATP and proteins via plasmodesmata to sieve tube elements.</li>
+<li><strong>Sieve tube elements:</strong> Living cells that lack a nucleus and most organelles at maturity. End walls form <strong>sieve plates</strong> with pores that allow sap flow. Companion cells are connected via plasmodesmata.</li>
+<li><strong>Companion cells:</strong> Have a nucleus, dense cytoplasm, many mitochondria. They provide ATP and proteins to sieve tube elements via plasmodesmata. They actively load sucrose into phloem.</li>
 </ul>
-<h3>Translocation</h3>
-<p>Translocation is the transport of assimilates (mainly sucrose) in phloem from sources (where produced, e.g., leaves) to sinks (where used or stored, e.g., roots, fruits, growing points).</p>
+
+<div class="definition-box">
+<strong>Translocation:</strong> The transport of assimilates (mainly sucrose) in phloem from sources (where produced, e.g., leaves) to sinks (where used or stored, e.g., roots, fruits, growing points).
+</div>
+
 <ul>
-<li>Requires energy (ATP).</li>
-<li>Translocation can occur in both directions at different times.</li>
+<li>Requires energy (ATP) for loading at sources.</li>
+<li>Translocation can occur in both directions at different times in different sieve tubes.</li>
 </ul>
 </div>
+</div>
+</div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
 <h3>Cohesion-Tension Theory</h3>
-<p>The mechanism by which water is pulled up the xylem:</p>
+</div>
+<div class="topic-content">
+<p>The mechanism by which water is pulled up the xylem against gravity:</p>
+
+<div class="process-box">
+<h5>The Three Key Mechanisms</h5>
+<ol>
+<li><strong>Transpiration pull (tension):</strong> Evaporation of water from leaf mesophyll cells creates a negative pressure (tension) in the xylem water column. This tension pulls water up from the roots.</li>
+<li><strong>Cohesion:</strong> Water molecules are attracted to each other by hydrogen bonds, forming a continuous unbroken column in the xylem vessels. This allows the pull from above to be transmitted all the way down to the roots.</li>
+<li><strong>Adhesion:</strong> Water molecules are attracted to the hydrophilic walls of xylem vessels (adhesion). This helps counteract gravity and keeps the water column against the walls, preventing it from breaking.</li>
+</ol>
+</div>
+
+<div class="key-point">Root pressure (active pumping of mineral ions into xylem, lowering water potential and drawing water in by osmosis) can contribute to water movement, especially at night or in small herbaceous plants, but it is not sufficient to explain water movement in tall trees. The cohesion-tension theory is the primary mechanism.</div>
+
+<div class="example-box">
+<h5>Worked Example: Explaining Cohesion-Tension</h5>
+<p><strong>Question:</strong> Explain how the cohesion-tension theory accounts for the movement of water to the tops of tall trees. [4 marks]</p>
+<p><strong>Answer:</strong></p>
 <ul>
-<li><strong>Transpiration pull:</strong> Evaporation from leaf mesophyll cells creates tension (negative pressure) in the xylem water column.</li>
-<li><strong>Cohesion:</strong> Water molecules are attracted to each other by hydrogen bonds, forming a continuous unbroken column.</li>
-<li><strong>Adhesion:</strong> Water molecules are attracted to hydrophilic walls of xylem vessels, counteracting gravity.</li>
-<li><strong>Root pressure:</strong> Active pumping of mineral ions into xylem lowers water potential, drawing water in by osmosis. Causes guttation (water droplets on leaf edges at night).</li>
-</ul>
-<h3>Structure of Leaf in Relation to Transport</h3>
-<ul>
-<li><strong>Xerophytes:</strong> Plants adapted to dry conditions. Features: sunken stomata, reduced leaf area, thick waxy cuticle, hairs, rolled leaves, CAM photosynthesis (stomata open at night).</li>
-<li><strong>Hydrophytes:</strong> Aquatic plants. Reduced xylem, large air spaces (aerenchyma), stomata on upper surface or absent.</li>
-</ul>
-<h3>Phloem Loading &amp; Mass Flow</h3>
-<ul>
-<li><strong>Active loading:</strong> Sucrose is actively transported into companion cells, then moves into sieve tube elements via plasmodesmata.</li>
-<li>This raises solute concentration in phloem, lowering water potential. Water enters by osmosis from xylem.</li>
-<li>High hydrostatic pressure at source drives sap to sinks.</li>
-<li>At sinks, sucrose is removed (used or converted to starch), water potential rises, water leaves into xylem. Lower pressure at sink maintains pressure gradient.</li>
-<li><strong>Evidence for mass flow:</strong> Aphid stylets exude sap under pressure; ringing experiments show phloem transport blocked; radioactive tracers show movement from source to sink.</li>
+<li>Transpiration from leaves creates a negative pressure (tension) in the xylem, pulling water upward (1).</li>
+<li>Water molecules are cohesive — hydrogen bonds hold them together, forming an unbroken column that can be pulled up (1).</li>
+<li>Water molecules adhere to the hydrophilic walls of xylem vessels, preventing the column from breaking and helping counteract gravity (1).</li>
+<li>Root pressure and osmotic uptake into root hairs replenish water at the base of the column (1).</li>
 </ul>
 </div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
+<h3>Structure of Leaf in Relation to Transport</h3>
+</div>
+<div class="topic-content">
+<h4>Xerophytes</h4>
+<p>Plants adapted to dry conditions:</p>
+<ul>
+<li><strong>Sunken stomata:</strong> In pits or grooves, sheltered from wind, reducing transpiration.</li>
+<li><strong>Reduced leaf area:</strong> Needles or spines (e.g., pine, cactus) minimise surface area for water loss.</li>
+<li><strong>Thick waxy cuticle:</strong> Waterproof layer reduces evaporation from epidermis.</li>
+<li><strong>Hairs:</strong> Trap a layer of humid air next to the leaf surface, reducing diffusion gradient.</li>
+<li><strong>Rolled leaves:</strong> Upper surface with stomata is enclosed, trapping humid air.</li>
+<li><strong>CAM photosynthesis:</strong> Stomata open at night (cooler, more humid) to take in CO₂, which is stored as malate and used during the day when stomata are closed.</li>
+</ul>
+
+<h4>Hydrophytes</h4>
+<p>Aquatic plants:</p>
+<ul>
+<li>Reduced xylem (not needed for support in water).</li>
+<li>Large air spaces (<strong>aerenchyma</strong>) for buoyancy and gas exchange.</li>
+<li>Stomata on upper surface or absent (if floating).</li>
+</ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header">
+<span class="topic-number">7</span>
+<h3>Phloem Loading & Mass Flow</h3>
+</div>
+<div class="topic-content">
+<div class="process-box">
+<h5>Mechanism of Translocation (Mass Flow Hypothesis)</h5>
+<ol>
+<li><strong>Loading at source:</strong> Sucrose is actively transported into companion cells, then moves into sieve tube elements. This raises solute concentration in phloem, lowering water potential.</li>
+<li><strong>Water entry:</strong> Water enters by osmosis from xylem, creating high hydrostatic pressure in sieve tubes at the source.</li>
+<li><strong>Mass flow:</strong> High hydrostatic pressure at source drives sap along sieve tubes to sinks.</li>
+<li><strong>Unloading at sink:</strong> Sucrose is removed (used in respiration, converted to starch, or incorporated into cell walls). Water potential rises, water leaves into xylem.</li>
+<li><strong>Pressure gradient:</strong> Lower pressure at sink maintains the pressure gradient that drives mass flow.</li>
+</ol>
+</div>
+
+<h4>Evidence for Mass Flow</h4>
+<ul>
+<li><strong>Aphid stylets:</strong> When aphids pierce sieve tubes, sap exudes under positive pressure, showing phloem is under pressure.</li>
+<li><strong>Ringing experiments:</strong> Removing a ring of bark (phloem) causes swelling above the ring due to accumulation of sugars, showing downward transport is blocked.</li>
+<li><strong>Radioactive tracers:</strong> ¹⁴C-labelled CO₂ supplied to leaves appears in phloem and is transported to roots or fruits.</li>
+</ul>
+</div>
+</div>
+</div>
+
 <div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header">
+<span class="topic-number">8</span>
 <h3>Detailed Mechanisms of Phloem Loading</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Symplastic loading:</strong> Sucrose diffuses through plasmodesmata from mesophyll cells into companion cells and sieve elements. Occurs in some plants (e.g., cucurbits).</li>
-<li><strong>Apoplastic loading:</strong> Sucrose diffuses into cell walls (apoplast), then is actively transported across companion cell membrane via sucrose-H<sup>+</sup> co-transport (proton pump creates H<sup>+</sup> gradient). Most common in temperate plants.</li>
-<li>Some plants use polymer trapping: sucrose is converted to raffinose family oligosaccharides in intermediary cells, which are too large to diffuse back, maintaining a diffusion gradient.</li>
+<li><strong>Apoplastic loading:</strong> Sucrose diffuses into cell walls (apoplast), then is actively transported across companion cell membrane via <strong>sucrose-H⁺ co-transport</strong> (proton pump creates H⁺ gradient). Most common in temperate plants.</li>
+<li><strong>Polymer trapping:</strong> In some plants, sucrose is converted to raffinose family oligosaccharides in intermediary cells. These are too large to diffuse back through plasmodesmata, maintaining a diffusion gradient.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-9">
+<div class="topic-header">
+<span class="topic-number">9</span>
 <h3>Source-Sink Relationships</h3>
+</div>
+<div class="topic-content">
 <p>Sources and sinks change with developmental stage:</p>
 <ul>
 <li>Young leaves are sinks; mature leaves are sources.</li>
@@ -121,60 +291,52 @@
 <li>During fruit development, leaves are sources; fruits are sinks.</li>
 <li>Seasonal changes: in deciduous trees before leaf fall, nutrients are translocated from leaves to stems and roots (storage sinks).</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-10">
+<div class="topic-header">
+<span class="topic-number">10</span>
 <h3>Stomatal Regulation</h3>
+</div>
+<div class="topic-content">
+<p>Guard cells control stomatal aperture:</p>
 <ul>
-<li>Guard cells control stomatal aperture.</li>
 <li>When turgid, guard cells bow apart, opening stomata. When flaccid, they close.</li>
-<li><strong>Mechanism:</strong> Light activates proton pumps (H<sup>+</sup>-ATPases) in guard cell membrane. K<sup>+</sup> enters through voltage-gated channels, followed by Cl<sup>-</sup> and malate<sup>2-</sup>. Water enters by osmosis; guard cells become turgid.</li>
-<li>ABA (abscisic acid) triggers closure: inhibits proton pumps, K<sup>+</sup> leaves, water follows, cells become flaccid.</li>
+<li><strong>Opening mechanism:</strong> Light activates proton pumps (H⁺-ATPases) in guard cell membrane. K⁺ enters through voltage-gated channels, followed by Cl⁻ and malate²⁻. Water enters by osmosis; guard cells become turgid.</li>
+<li><strong>Closure mechanism:</strong> ABA (abscisic acid) triggers closure by inhibiting proton pumps. K⁺ leaves, water follows, cells become flaccid.</li>
 </ul>
-</div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Drought-Resistant Crops</h5>
+<p>Understanding stomatal regulation helps plant breeders develop drought-resistant crop varieties. By selecting for plants that can maintain partial stomatal closure during water stress (regulated by ABA sensitivity), yields can be maintained in arid conditions. Genetic modification of ABA signalling pathways is an active area of agricultural biotechnology research.</p>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
 </div>
+</div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
-<li>Water uptake: osmosis into root hairs; symplast/apoplast pathways; Casparian strip forces selective uptake.</li>
-<li>Cohesion-tension: transpiration pull + cohesion (H-bonds) + adhesion (to xylem walls) draws water up xylem.</li>
+<ul>
+<li>Water uptake: osmosis into root hairs; symplast (cytoplasm) and apoplast (cell walls) pathways; Casparian strip forces selective uptake at endodermis.</li>
+<li>Cohesion-tension: transpiration pull + cohesion (H-bonds between water molecules) + adhesion (to xylem walls) draws water up xylem.</li>
 <li>Xylem: lignified, dead, hollow, continuous tubes. Phloem: sieve tube elements + companion cells; living.</li>
 <li>Translocation: mass flow of sucrose from source to sink driven by pressure gradient. Active loading raises solute concentration at source.</li>
 <li>Factors affecting transpiration: light, temperature, humidity, wind, soil water.</li>
-<li>Xerophytes: sunken stomata, reduced surface area, thick cuticle, hairs, rolled leaves.</li>
-<li>Guard cells: K<sup>+</sup> uptake → water entry → turgid → open. ABA triggers closure.</li>
-</ul></div>
-<p><strong>Exam tip:</strong> Always explain the cohesion-tension theory in three stages: transpiration pull (tension) at leaf, cohesion of water molecules in xylem, adhesion to xylem walls. For phloem, mention the pressure gradient created by loading at source and unloading at sink. Use correct terms: "transpiration" for water loss, "translocation" for sugar transport.</p>
+<li>Xerophytes: sunken stomata, reduced surface area, thick cuticle, hairs, rolled leaves, CAM photosynthesis.</li>
+<li>Guard cells: K⁺ uptake → water entry → turgid → open. ABA triggers closure.</li>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always explain the cohesion-tension theory in three stages: transpiration pull (tension) at leaf, cohesion of water molecules in xylem, adhesion to xylem walls.</li>
+<li>For phloem, mention the pressure gradient created by loading at source and unloading at sink.</li>
+<li>Use correct terms: "transpiration" for water loss, "translocation" for sugar transport.</li>
+<li>The Casparian strip is made of suberin and blocks the apoplast pathway — forcing selective membrane uptake.</li>
+<li>Xylem vessels are dead; phloem sieve tubes are living (but lacking nucleus and organelles).</li>
+<li>When asked about xerophyte adaptations, always link each feature to reduced transpiration.</li>
 </ul>
 </div>
 </div>

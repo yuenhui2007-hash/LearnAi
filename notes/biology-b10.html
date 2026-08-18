@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coordination &amp; Response — LearnAI</title>
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coordination & Response — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=4">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -42,70 +71,179 @@
 <div class="notes-container">
 <div class="notes-header">
 <div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>Coordination &amp; Response</h1>
+<h1>Coordination & Response</h1>
 <p style="color:var(--gray)">9700 (A-Level) · 0610 (IGCSE)</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Nervous System</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Central nervous system (CNS):</strong> Brain and spinal cord. Processes information.</li>
-<li><strong>Peripheral nervous system (PNS):</strong> Nerves connecting CNS to body. Sensory (afferent) and motor (efferent) neurones.</li>
-<li><strong>Neurone structure:</strong> Cell body, dendrites (receive impulses), axon (transmits impulses), myelin sheath (insulation, speeds conduction), Schwann cells (produce myelin), nodes of Ranvier.</li>
+<li><strong>Central nervous system (CNS):</strong> Brain and spinal cord. Processes information and coordinates responses.</li>
+<li><strong>Peripheral nervous system (PNS):</strong> Nerves connecting CNS to body. <strong>Sensory (afferent)</strong> neurones carry impulses to CNS. <strong>Motor (efferent)</strong> neurones carry impulses from CNS to effectors.</li>
+<li><strong>Neurone structure:</strong> Cell body (contains nucleus and organelles), dendrites (receive impulses), axon (transmits impulses), myelin sheath (insulation, speeds conduction), Schwann cells (produce myelin), nodes of Ranvier (gaps between Schwann cells).</li>
 </ul>
+
+<div class="key-point">Sensory neurones have cell bodies in dorsal root ganglia. Motor neurones have cell bodies in CNS. Relay neurones (interneurones) are entirely within CNS.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
 <h3>Reflex Arc</h3>
-<ul>
-<li>A rapid, automatic response to a stimulus without conscious thought.</li>
-<li><strong>Pathway:</strong> receptor → sensory neurone → relay neurone (in CNS) → motor neurone → effector (muscle or gland).</li>
-<li>Synapses ensure one-way transmission and allow integration.</li>
-</ul>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Reflex arc:</strong> A rapid, automatic response to a stimulus without conscious thought. It provides rapid protection from harmful stimuli.
+</div>
+
+<div class="process-box">
+<h5>Pathway of a Reflex Arc</h5>
+<ol>
+<li><strong>Receptor</strong> detects stimulus (e.g., pain, heat).</li>
+<li><strong>Sensory neurone</strong> transmits impulse to CNS.</li>
+<li><strong>Relay neurone (interneurone)</strong> in CNS processes and passes impulse to motor neurone.</li>
+<li><strong>Motor neurone</strong> transmits impulse to effector.</li>
+<li><strong>Effector</strong> (muscle or gland) responds (e.g., muscle contracts).</li>
+</ol>
+</div>
+
+<div class="key-point">Synapses in the reflex arc ensure one-way transmission and allow integration. The reflex arc bypasses the brain for speed, though the brain is informed simultaneously.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
 <h3>Synapse</h3>
-<ul>
-<li>Junction between two neurones.</li>
-<li>Electrical impulse arrives → Ca<sup>2+</sup> channels open → vesicles fuse with presynaptic membrane → neurotransmitter (e.g., acetylcholine) released by exocytosis.</li>
-<li>Neurotransmitter diffuses across synaptic cleft → binds to receptors on postsynaptic membrane → depolarisation → new impulse.</li>
-<li>Neurotransmitter is then broken down (by acetylcholinesterase) or reabsorbed.</li>
-</ul>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Synapse:</strong> A junction between two neurones (or between a neurone and an effector) where impulses are transmitted chemically across a gap (synaptic cleft).
+</div>
+
+<div class="process-box">
+<h5>Events at a Cholinergic Synapse</h5>
+<ol>
+<li>Electrical impulse (action potential) arrives at presynaptic membrane.</li>
+<li>Depolarisation opens voltage-gated Ca²⁺ channels; Ca²⁺ enters presynaptic knob.</li>
+<li>Ca²⁺ causes synaptic vesicles containing acetylcholine (ACh) to fuse with presynaptic membrane.</li>
+<li>ACh is released by exocytosis into synaptic cleft.</li>
+<li>ACh diffuses across cleft and binds to receptors on postsynaptic membrane.</li>
+<li>Binding opens Na⁺ channels; Na⁺ enters, causing depolarisation → new action potential.</li>
+<li>ACh is broken down by acetylcholinesterase into acetate and choline (recycled into presynaptic knob).</li>
+</ol>
+</div>
+
+<div class="key-point">Synaptic transmission is one-way because vesicles and neurotransmitter are only on the presynaptic side, and receptors are only on the postsynaptic side.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
 <h3>Hormones</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Chemical messengers transported in blood from endocrine glands to target organs.</li>
 <li>Slower but longer-lasting than nerve impulses.</li>
-<li><strong>Insulin:</strong> Lowers blood glucose (increases uptake by cells, increases glycogen storage in liver).</li>
-<li><strong>Glucagon:</strong> Raises blood glucose (breaks down glycogen to glucose in liver).</li>
-<li><strong>ADH:</strong> Increases water reabsorption in kidney collecting ducts.</li>
+<li><strong>Insulin:</strong> Secreted by pancreatic β cells. Lowers blood glucose (increases uptake by cells, increases glycogen storage in liver).</li>
+<li><strong>Glucagon:</strong> Secreted by pancreatic α cells. Raises blood glucose (breaks down glycogen to glucose in liver).</li>
+<li><strong>ADH:</strong> Secreted by posterior pituitary. Increases water reabsorption in kidney collecting ducts.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
 <h3>Plant Responses</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Phototropism:</strong> Growth towards light. Auxin accumulates on shaded side → cell elongation → bending towards light.</li>
 <li><strong>Geotropism (gravitropism):</strong> Roots grow downwards (positive), shoots upwards (negative).</li>
 </ul>
 </div>
+</div>
+</div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
-<h3>Resting Potential &amp; Action Potential</h3>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
+<h3>Resting Potential & Action Potential</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Resting potential:</strong> -70 mV. Maintained by Na<sup>+</sup>/K<sup>+</sup> pump (3 Na<sup>+</sup> out, 2 K<sup>+</sup> in) and K<sup>+</sup> leak channels.</li>
+<li><strong>Resting potential:</strong> -70 mV. Maintained by Na⁺/K⁺ pump (3 Na⁺ out, 2 K⁺ in) and K⁺ leak channels (K⁺ diffuses out, making inside negative).</li>
 <li><strong>Action potential:</strong>
 <ul>
-<li><strong>Depolarisation:</strong> Stimulus opens voltage-gated Na<sup>+</sup> channels; Na<sup>+</sup> rushes in; potential rises to +40 mV.</li>
-<li><strong>Repolarisation:</strong> Na<sup>+</sup> channels close; K<sup>+</sup> channels open; K<sup>+</sup> leaves; potential falls.</li>
-<li><strong>Hyperpolarisation:</strong> K<sup>+</sup> channels slow to close; potential overshoots resting level.</li>
-<li><strong>Return to resting:</strong> Na<sup>+</sup>/K<sup>+</sup> pump restores ion distribution.</li>
+<li><strong>Depolarisation:</strong> Stimulus opens voltage-gated Na⁺ channels; Na⁺ rushes in; potential rises to +40 mV.</li>
+<li><strong>Repolarisation:</strong> Na⁺ channels close; K⁺ channels open; K⁺ leaves; potential falls.</li>
+<li><strong>Hyperpolarisation:</strong> K⁺ channels slow to close; potential overshoots resting level.</li>
+<li><strong>Return to resting:</strong> Na⁺/K⁺ pump restores ion distribution.</li>
 </ul></li>
-<li><strong>All-or-nothing principle:</strong> Action potential either fires fully or not at all.</li>
+<li><strong>All-or-nothing principle:</strong> Action potential either fires fully or not at all. Threshold stimulus required.</li>
 <li><strong>Refractory period:</strong> Brief period after action potential when neurone cannot fire again, ensuring one-way transmission and limiting frequency.</li>
 </ul>
-<h3>Saltatory Conduction</h3>
+
+<div class="example-box">
+<h5>Worked Example: Explaining Resting Potential</h5>
+<p><strong>Question:</strong> Explain how the resting potential of -70 mV is maintained in a neurone. [3 marks]</p>
+<p><strong>Answer:</strong></p>
 <ul>
-<li>Myelin sheath is an electrical insulator.</li>
+<li>The sodium-potassium pump actively transports 3 Na⁺ out and 2 K⁺ in, creating an electrochemical gradient (1).</li>
+<li>Potassium leak channels allow K⁺ to diffuse out of the axon down its concentration gradient (1).</li>
+<li>More positive ions leave than enter, making the inside of the axon negative relative to the outside (-70 mV) (1).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header">
+<span class="topic-number">7</span>
+<h3>Saltatory Conduction</h3>
+</div>
+<div class="topic-content">
+<ul>
+<li>Myelin sheath is an electrical insulator (made of Schwann cell membranes).</li>
 <li>Action potential "jumps" between nodes of Ranvier (where voltage-gated channels are concentrated).</li>
 <li>Faster and more energy-efficient than continuous conduction.</li>
+<li>In demyelinating diseases (e.g., multiple sclerosis), saltatory conduction is impaired, slowing nerve impulses.</li>
 </ul>
-<h3>Neurotransmitters &amp; Synapses</h3>
+</div>
+</div>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header">
+<span class="topic-number">8</span>
+<h3>Neurotransmitters & Synapses</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Excitatory synapses:</strong> Neurotransmitter (e.g., acetylcholine, glutamate) opens Na<sup>+</sup> channels → depolarisation.</li>
-<li><strong>Inhibitory synapses:</strong> Neurotransmitter (e.g., GABA, glycine) opens Cl<sup>-</sup> channels or K<sup>+</sup> channels → hyperpolarisation, making action potential less likely.</li>
+<li><strong>Excitatory synapses:</strong> Neurotransmitter (e.g., acetylcholine, glutamate) opens Na⁺ channels → depolarisation (EPSP).</li>
+<li><strong>Inhibitory synapses:</strong> Neurotransmitter (e.g., GABA, glycine) opens Cl⁻ channels or K⁺ channels → hyperpolarisation (IPSP), making action potential less likely.</li>
 <li><strong>Summation:</strong> Spatial (multiple inputs simultaneously) and temporal (rapid repeated inputs from one source) summation can trigger action potential.</li>
 </ul>
-<h3>The Eye &amp; Photoreception</h3>
+</div>
+</div>
+
+<div class="topic-block" id="section-9">
+<div class="topic-header">
+<span class="topic-number">9</span>
+<h3>The Eye & Photoreception</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Retina:</strong> Contains rods (dim light, black/white, high sensitivity, low acuity) and cones (bright light, colour, low sensitivity, high acuity).</li>
 <li><strong>Fovea:</strong> Only cones; highest visual acuity.</li>
@@ -114,21 +252,38 @@
 <li><strong>Accommodation:</strong> Ciliary muscles contract → suspensory ligaments slacken → lens thickens (near vision). Ciliary muscles relax → ligaments taut → lens flattens (distant vision).</li>
 </ul>
 </div>
+</div>
+</div>
+
 <div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-10">
+<div class="topic-header">
+<span class="topic-number">10</span>
 <h3>Muscle Contraction</h3>
-<ul>
-<li><strong>Sarcomere structure:</strong> Z lines, I band (thin actin only), A band (thick myosin), H zone (myosin only), M line.</li>
-<li><strong>Sliding filament theory:</strong>
-<ul>
-<li>Action potential arrives at T-tubule → sarcoplasmic reticulum releases Ca<sup>2+</sup>.</li>
-<li>Ca<sup>2+</sup> binds troponin → tropomyosin moves → reveals myosin-binding sites on actin.</li>
+</div>
+<div class="topic-content">
+<div class="process-box">
+<h5>Sliding Filament Theory</h5>
+<ol>
+<li>Action potential arrives at T-tubule → sarcoplasmic reticulum releases Ca²⁺.</li>
+<li>Ca²⁺ binds troponin → tropomyosin moves → reveals myosin-binding sites on actin.</li>
 <li>Myosin heads bind actin (cross-bridges), swivel using ATP, pull actin filaments toward M line.</li>
-<li>ATP detaches myosin; re-energised by ATP hydrolysis; cycle repeats if Ca<sup>2+</sup> present.</li>
+<li>ATP detaches myosin; re-energised by ATP hydrolysis; cycle repeats if Ca²⁺ present.</li>
 <li>Sarcomere shortens; I band and H zone narrow; A band stays same width.</li>
-</ul></li>
-<li>Muscle fatigue: accumulation of lactate, depletion of glycogen/ATP.</li>
-</ul>
+</ol>
+</div>
+
+<div class="key-point">Muscle fatigue: accumulation of lactate, depletion of glycogen/ATP. During contraction, creatine phosphate provides rapid regeneration of ATP.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-11">
+<div class="topic-header">
+<span class="topic-number">11</span>
 <h3>The Brain</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li><strong>Cerebral hemispheres:</strong> Conscious thought, language, memory, personality. Motor and sensory areas (contralateral control).</li>
 <li><strong>Cerebellum:</strong> Coordination, balance, posture.</li>
@@ -136,62 +291,54 @@
 <li><strong>Hypothalamus:</strong> Thermoregulation, osmoregulation, endocrine control (posterior pituitary), biological rhythms.</li>
 <li><strong>Pituitary gland:</strong> Master endocrine gland; anterior produces hormones (e.g., FSH, LH, growth hormone); posterior stores/releases ADH and oxytocin.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-12">
+<div class="topic-header">
+<span class="topic-number">12</span>
 <h3>Plant Hormones in Detail</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Auxins (IAA):</strong> Synthesised in shoot tip. Cell elongation by loosening cell walls (acid growth hypothesis: H<sup>+</sup>-ATPases acidify cell wall, activating expansins). Transported by polar transport (PIN proteins).</li>
+<li><strong>Auxins (IAA):</strong> Synthesised in shoot tip. Cell elongation by loosening cell walls (acid growth hypothesis: H⁺-ATPases acidify cell wall, activating expansins). Transported by polar transport (PIN proteins).</li>
 <li><strong>Gibberellins:</strong> Stem elongation, seed germination (breaks dormancy by stimulating amylase production in barley), fruit development.</li>
 <li><strong>Abscisic acid (ABA):</strong> Stress hormone. Stomatal closure, seed dormancy, inhibits growth.</li>
 <li><strong>Ethene (ethylene):</strong> Fruit ripening, leaf abscission.</li>
 <li><strong>Cytokinins:</strong> Cell division, delay leaf senescence, antagonise auxin in apical dominance.</li>
 </ul>
-</div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Neuropathies and Synaptic Drugs</h5>
+<p>Many drugs target synapses. Botulinum toxin (Botox) blocks ACh release, preventing muscle contraction. Organophosphates inhibit acetylcholinesterase, causing prolonged muscle contraction (used as insecticides but toxic to humans). Understanding synaptic transmission is essential for treating myasthenia gravis, Parkinson's disease, and depression.</p>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
 </div>
+</div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
+<ul>
 <li>Nervous system: CNS (brain, spinal cord) + PNS. Sensory → relay → motor neurones.</li>
 <li>Reflex arc: receptor → sensory → relay → motor → effector. Synapses ensure one-way transmission.</li>
-<li>Resting potential: -70 mV (Na<sup>+</sup>/K<sup>+</sup> pump + K<sup>+</sup> leak). Action potential: depolarisation (Na<sup>+</sup> in) → repolarisation (K<sup>+</sup> out) → hyperpolarisation → recovery.</li>
+<li>Resting potential: -70 mV (Na⁺/K⁺ pump + K⁺ leak). Action potential: depolarisation (Na⁺ in) → repolarisation (K⁺ out) → hyperpolarisation → recovery.</li>
 <li>Saltatory conduction: action potentials jump between nodes of Ranvier on myelinated axons.</li>
-<li>Synapse: Ca<sup>2+</sup> influx → vesicle fusion → neurotransmitter release → receptor binding → postsynaptic potential. Excitatory (Na<sup>+</sup> in) or inhibitory (Cl<sup>-</sup>/K<sup>+</sup> out).</li>
-<li>Muscle: sliding filament theory; Ca<sup>2+</sup> binds troponin → myosin-actin cross-bridges → ATP-powered contraction.</li>
+<li>Synapse: Ca²⁺ influx → vesicle fusion → neurotransmitter release → receptor binding → postsynaptic potential. Excitatory (Na⁺ in) or inhibitory (Cl⁻/K⁺ out).</li>
+<li>Muscle: sliding filament theory; Ca²⁺ binds troponin → myosin-actin cross-bridges → ATP-powered contraction.</li>
 <li>Hormones: insulin/glucagon (blood glucose), ADH (water reabsorption), plant auxins (phototropism/geotropism).</li>
 <li>Brain areas: cerebrum (conscious), cerebellum (coordination), medulla (vital centres), hypothalamus (homeostasis), pituitary (master gland).</li>
-</ul></div>
-<p><strong>Exam tip:</strong> Draw action potential graph with correct phases and refractory period. For muscle contraction, always mention Ca<sup>2+</sup> release from sarcoplasmic reticulum and the role of troponin/tropomyosin. In synapse questions, explain why transmission is one-way (vesicles only on presynaptic side, receptors only on postsynaptic).</p>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Draw action potential graph with correct phases and refractory period.</li>
+<li>For muscle contraction, always mention Ca²⁺ release from sarcoplasmic reticulum and the role of troponin/tropomyosin.</li>
+<li>In synapse questions, explain why transmission is one-way (vesicles only on presynaptic side, receptors only on postsynaptic).</li>
+<li>Acetylcholine is the neurotransmitter at neuromuscular junctions.</li>
+<li>Saltatory conduction is faster and more energy-efficient.</li>
+<li>For accommodation: ciliary muscles contract for near vision (lens thicker); relax for distant vision (lens flatter).</li>
 </ul>
 </div>
 </div>

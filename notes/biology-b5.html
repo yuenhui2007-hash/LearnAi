@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cell Division — Biology Notes | LearnAI</title>
 <meta name="description" content="Cell Division notes for Cambridge 9700 · 0610. Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,36 @@
 .summary-box ul li { color: #78350f; }
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -66,80 +95,263 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Mitosis</h3><p>Prophase → Metaphase → Anaphase → Telophase → Cytokinesis. Produces 2 identical diploid cells.</p>
-<h3>2. Meiosis</h3><p>Two divisions. Produces 4 genetically different haploid cells. Crossing over in prophase I. Independent assortment in metaphase I.</p>
-<h3>3. Binary Fission</h3><p>Prokaryotic division. DNA replicates, cell divides.</p>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>The Cell Cycle</h3>
 </div>
-<div class="notes-section">
-<h3>Experimental Design</h3>
+<div class="topic-content">
+<p>The <strong>cell cycle</strong> is the series of events that take place in a cell leading to its division and duplication. It consists of interphase (G₁, S, G₂) and the mitotic phase (mitosis and cytokinesis).</p>
+
+<div class="definition-box">
+<strong>Interphase:</strong> The period between cell divisions when the cell grows, carries out normal metabolic activities, and replicates its DNA. It accounts for about 90% of the cell cycle.
+</div>
+
+<h4>Stages of Interphase</h4>
 <ul>
-<li><strong>Variables:</strong> Independent (what you change), dependent (what you measure), controlled (kept constant)</li>
-<li><strong>Validity:</strong> Does the experiment test what it claims to test?</li>
-<li><strong>Reliability:</strong> Repeatable results — repeat experiments, calculate means</li>
-<li><strong>Accuracy:</strong> Close to true value — use appropriate precision instruments</li>
+<li><strong>G₁ phase (Gap 1):</strong> Cell grows, synthesises proteins and organelles, carries out normal functions. This is the primary growth phase. At the end of G₁, there is a checkpoint (restriction point) where the cell decides whether to divide.</li>
+<li><strong>S phase (Synthesis):</strong> DNA replication occurs. Each chromosome is duplicated to form two identical sister chromatids joined at the centromere. Histone proteins are also synthesised.</li>
+<li><strong>G₂ phase (Gap 2):</strong> Cell continues to grow, synthesises proteins needed for division (e.g., tubulin for spindle fibres). Another checkpoint ensures DNA replication is complete and damage is repaired.</li>
+</ul>
+
+<div class="key-point">A cell in G₀ phase has exited the cell cycle and no longer divides. Most neurons and muscle cells are in G₀ permanently. Some cells (e.g., liver cells) can re-enter the cycle if needed.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Mitosis</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Mitosis:</strong> Nuclear division that produces two genetically identical daughter nuclei, each with the same number of chromosomes as the parent nucleus. It is followed by cytokinesis (division of the cytoplasm).
+</div>
+
+<p>Mitosis produces two identical diploid cells from one diploid cell. It is used for growth, repair, and asexual reproduction.</p>
+
+<h4>The Stages of Mitosis (PMAT)</h4>
+
+<div class="process-box">
+<h5>Prophase</h5>
+<ol>
+<li>Chromatin condenses and coils to become visible as chromosomes (each composed of two sister chromatids joined at centromere).</li>
+<li>Nuclear envelope breaks down and disappears.</li>
+<li>Nucleolus disappears.</li>
+<li>Centrioles (in animal cells) move to opposite poles of the cell.</li>
+<li>Spindle fibres (microtubules) begin to form between the centrioles.</li>
+</ol>
+</div>
+
+<div class="process-box">
+<h5>Metaphase</h5>
+<ol>
+<li>Chromosomes line up along the equator (metaphase plate) of the cell.</li>
+<li>Spindle fibres from each pole attach to the centromeres of the chromosomes.</li>
+<li>Each chromosome is attached to both poles (one chromatid to each pole).</li>
+</ol>
+</div>
+
+<div class="process-box">
+<h5>Anaphase</h5>
+<ol>
+<li>Centromeres divide, separating sister chromatids.</li>
+<li>Chromatids are now individual chromosomes.</li>
+<li>Spindle fibres shorten, pulling chromosomes toward opposite poles.</li>
+<li>The cell elongates as polar microtubules push poles apart.</li>
+</ol>
+</div>
+
+<div class="process-box">
+<h5>Telophase</h5>
+<ol>
+<li>Chromosomes reach opposite poles and begin to uncoil (decondense) back into chromatin.</li>
+<li>Nuclear envelope re-forms around each set of chromosomes.</li>
+<li>Nucleolus reappears.</li>
+<li>Spindle fibres break down.</li>
+<li>Cytokinesis begins — division of the cytoplasm.</li>
+</ol>
+</div>
+
+<h4>Cytokinesis</h4>
+<ul>
+<li><strong>Animal cells:</strong> A cleavage furrow forms as a ring of actin filaments contracts, pinching the cell in two.</li>
+<li><strong>Plant cells:</strong> A cell plate forms across the equator, developing into a new cell wall with plasmodesmata connecting adjacent cells.</li>
+</ul>
+
+<div class="key-point">At the end of mitosis and cytokinesis, two genetically identical diploid daughter cells are produced. Each has the same number and type of chromosomes as the parent cell.</div>
+
+<div class="example-box">
+<h5>Worked Example: Identifying Mitosis Stages</h5>
+<p><strong>Question:</strong> A cell is observed with chromosomes aligned at the equator and spindle fibres attached to centromeres. Name the stage and describe what happens next. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>This is <strong>metaphase</strong> (1).</li>
+<li>In the next stage (anaphase), the centromeres divide and sister chromatids separate (1).</li>
+<li>Spindle fibres shorten, pulling the chromatids (now chromosomes) to opposite poles (1).</li>
 </ul>
 </div>
-<div class="notes-section">
-<h3>Microscopy Techniques</h3>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Meiosis</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Meiosis:</strong> Nuclear division that reduces the chromosome number by half, producing four genetically different haploid cells from one diploid cell. It involves two divisions: meiosis I and meiosis II.
+</div>
+
+<p>Meiosis is essential for sexual reproduction because it produces gametes (sperm and egg cells) with half the chromosome number. When gametes fuse during fertilisation, the diploid number is restored.</p>
+
+<h4>Meiosis I (Reduction Division)</h4>
+<p>The chromosome number is halved from diploid (2n) to haploid (n).</p>
+
+<div class="process-box">
+<h5>Prophase I</h5>
+<ol>
+<li>Chromatin condenses into chromosomes (each with two sister chromatids).</li>
+<li><strong>Homologous chromosomes pair up</strong> (synapsis) to form bivalents.</li>
+<li><strong>Crossing over</strong> occurs: non-sister chromatids exchange segments of DNA at chiasmata. This creates new combinations of alleles (genetic recombination).</li>
+<li>Nuclear envelope breaks down; spindle forms.</li>
+</ol>
+</div>
+
+<div class="process-box">
+<h5>Metaphase I</h5>
+<ol>
+<li>Bivalents line up at the equator.</li>
+<li>Spindle fibres attach to centromeres.</li>
+<li><strong>Independent assortment:</strong> The orientation of each bivalent is random — maternal or paternal chromosome can face either pole. This creates genetic variation.</li>
+</ol>
+</div>
+
+<div class="process-box">
+<h5>Anaphase I</h5>
+<ol>
+<li>Homologous chromosomes separate and move to opposite poles.</li>
+<li>Sister chromatids remain attached at centromeres.</li>
+</ol>
+</div>
+
+<div class="process-box">
+<h5>Telophase I</h5>
+<ol>
+<li>Chromosomes reach poles; nuclear envelope may reform.</li>
+<li>Cytokinesis divides the cell into two haploid cells (each chromosome still has two chromatids).</li>
+</ol>
+</div>
+
+<h4>Meiosis II (Equational Division)</h4>
+<p>Similar to mitosis. Separates sister chromatids.</p>
+
+<div class="process-box">
+<h5>Prophase II → Metaphase II → Anaphase II → Telophase II</h5>
+<ol>
+<li>Chromosomes condense again (if they decondensed).</li>
+<li>Chromosomes line up at equator (metaphase II).</li>
+<li>Sister chromatids separate (anaphase II).</li>
+<li>Four haploid cells form after cytokinesis.</li>
+</ol>
+</div>
+
+<div class="key-point">Meiosis produces 4 genetically different haploid cells. The genetic variation comes from: (1) crossing over in prophase I, and (2) independent assortment in metaphase I.</div>
+
+<div class="example-box">
+<h5>Worked Example: Comparing Mitosis and Meiosis</h5>
+<p><strong>Question:</strong> Compare mitosis and meiosis in terms of the number and genetic composition of daughter cells produced. [4 marks]</p>
+<p><strong>Answer:</strong></p>
 <ul>
-<li><strong>Light microscope:</strong> Max magnification ~×1500, resolution ~200 nm</li>
-<li><strong>Electron microscope:</strong> TEM (internal structure) vs SEM (surface detail)</li>
-<li><strong>Staining:</strong> Methylene blue (nuclei), iodine (starch), eosin (cytoplasm)</li>
-<li><strong>Cell fractionation:</strong> Homogenisation → filtration → ultracentrifugation</li>
+<li>Mitosis produces <strong>two</strong> daughter cells; meiosis produces <strong>four</strong> daughter cells (1).</li>
+<li>Mitosis produces <strong>diploid</strong> cells (2n); meiosis produces <strong>haploid</strong> cells (n) (1).</li>
+<li>Mitosis produces <strong>genetically identical</strong> daughter cells; meiosis produces <strong>genetically different</strong> daughter cells (1).</li>
+<li>Meiosis involves crossing over and independent assortment, which creates genetic variation; mitosis does not (1).</li>
 </ul>
-<div class="key-point">Resolution is the ability to distinguish two separate points. Electron microscopes have much higher resolution than light microscopes because electrons have shorter wavelengths than visible light.</div>
+</div>
+
+<div class="misconception-box">
+<strong>Common Misconception:</strong> Many students think crossing over occurs in mitosis. Crossing over ONLY occurs during prophase I of meiosis. Also, remember that in meiosis I, homologous chromosomes separate; in meiosis II, sister chromatids separate (like mitosis).
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Binary Fission</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Binary fission:</strong> A form of asexual reproduction in prokaryotes where a cell divides into two genetically identical daughter cells.
+</div>
+
+<div class="process-box">
+<h5>Steps of Binary Fission</h5>
+<ol>
+<li>The circular DNA replicates — each daughter cell will receive one copy.</li>
+<li>The cell elongates and the two DNA molecules move to opposite poles.</li>
+<li>The cell wall and membrane begin to grow inward at the centre.</li>
+<li>A new cell wall forms, dividing the cell into two identical daughter cells.</li>
+</ol>
+</div>
+
+<div class="key-point">Binary fission is rapid — some bacteria can divide every 20 minutes under optimal conditions. This exponential growth can lead to very large populations quickly.</div>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Cancer and Uncontrolled Cell Division</h5>
+<p>Cancer arises when the normal control mechanisms of the cell cycle fail. Mutations in genes that regulate the cell cycle (oncogenes and tumour suppressor genes) can cause cells to divide uncontrollably. Understanding mitosis and its regulation is essential for developing cancer treatments such as chemotherapy (which targets rapidly dividing cells) and radiation therapy.</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>Significance of Mitosis and Meiosis</h3>
+</div>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr>
+<tr><td>Number of divisions</td><td>One</td><td>Two</td></tr>
+<tr><td>Number of daughter cells</td><td>2</td><td>4</td></tr>
+<tr><td>Chromosome number</td><td>Diploid (2n) → Diploid (2n)</td><td>Diploid (2n) → Haploid (n)</td></tr>
+<tr><td>Genetic variation</td><td>None (identical)</td><td>High (crossing over, independent assortment)</td></tr>
+<tr><td>Where it occurs</td><td>Somatic (body) cells</td><td>Gonads (testes and ovaries)</td></tr>
+<tr><td>Purpose</td><td>Growth, repair, asexual reproduction</td><td>Production of gametes for sexual reproduction</td></tr>
+<tr><td>Crossing over</td><td>No</td><td>Yes (prophase I)</td></tr>
+<tr><td>Independent assortment</td><td>No</td><td>Yes (metaphase I)</td></tr>
+</table>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<ul><li>Mitosis: PMAT, 2 identical diploid cells</li><li>Meiosis: 2 divisions, 4 haploid cells, crossing over + independent assortment</li><li>Binary fission: prokaryotic</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
-</div>
-</div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
 <ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
+<li><strong>Cell cycle:</strong> Interphase (G₁, S, G₂) + mitotic phase (mitosis + cytokinesis)</li>
+<li><strong>Mitosis:</strong> PMAT — Prophase, Metaphase, Anaphase, Telophase. Produces 2 identical diploid cells.</li>
+<li><strong>Meiosis:</strong> Two divisions. Produces 4 genetically different haploid cells.</li>
+<li><strong>Crossing over:</strong> Occurs in prophase I of meiosis — exchanges DNA between non-sister chromatids, creating recombinant chromosomes.</li>
+<li><strong>Independent assortment:</strong> Random orientation of bivalents at metaphase I creates genetic variation.</li>
+<li><strong>Binary fission:</strong> Prokaryotic cell division — DNA replicates, cell divides into two identical cells.</li>
+<li><strong>Cytokinesis:</strong> Animal cells form cleavage furrow; plant cells form cell plate.</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
-<h2>Exam Tips</h2>
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
-</ul>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>In mitosis, chromosome number stays the same; in meiosis, it halves</li>
+<li>Crossing over occurs during prophase I of meiosis, NOT mitosis</li>
+<li>Independent assortment in metaphase I increases genetic variation</li>
+<li>Always describe what happens at each stage in the correct order</li>
+<li>Distinguish clearly: mitosis = growth/repair; meiosis = gamete formation</li>
+<li>Remember that after meiosis I, cells are haploid (n) but chromosomes still have two chromatids</li>
+<li>After meiosis II, each gamete has one chromatid (one copy of each chromosome)</li>
+<li>Plant cytokinesis = cell plate; animal cytokinesis = cleavage furrow</li>
 </ul>
 </div>
 </div>

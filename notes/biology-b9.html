@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gas Exchange &amp; Respiration — LearnAI</title>
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gas Exchange & Respiration — LearnAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=4">
@@ -32,7 +32,36 @@
 .highlight-box { background: rgba(99,102,241,0.08); padding: 16px 20px; border-radius: var(--radius); margin: 16px 0; }
 .highlight-box h4 { color: var(--primary); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -42,145 +71,267 @@
 <div class="notes-container">
 <div class="notes-header">
 <div class="level-badges"><span class="level-badge badge-igcse">IGCSE</span><span class="level-badge badge-as">AS</span><span class="level-badge badge-a2">A2</span></div>
-<h1>Gas Exchange &amp; Respiration</h1>
+<h1>Gas Exchange & Respiration</h1>
 <p style="color:var(--gray)">9700 (A-Level) · 0610 (IGCSE)</p>
 </div>
+
 <div class="notes-section"><h2>IGCSE Content</h2>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
 <h3>Gas Exchange Surfaces</h3>
-<p>All gas exchange surfaces share features: large surface area, thin barrier (one cell thick), good blood supply, moist surface.</p>
-<ul>
-<li><strong>Humans:</strong> Alveoli in lungs. Millions of alveoli provide huge surface area (~70 m<sup>2</sup>). Walls one cell thick; surrounded by capillaries.</li>
-<li><strong>Fish:</strong> Gills. Water flows over filaments; countercurrent flow maintains steep concentration gradient along entire length.</li>
-<li><strong>Insects:</strong> Tracheal system. Spiracles open into tracheae → tracheoles. Air moves directly to cells. No blood transport needed for gases.</li>
-<li><strong>Plants:</strong> Stomata on leaves. Guard cells control opening. Gases diffuse through air spaces in spongy mesophyll.</li>
-</ul>
-<h3>Human Breathing Mechanism</h3>
-<ul>
-<li><strong>Inspiration:</strong> External intercostal muscles contract, ribs move up and out. Diaphragm contracts and flattens. Thoracic volume increases, pressure decreases below atmospheric. Air rushes in.</li>
-<li><strong>Expiration:</strong> External intercostals relax, ribs move down and in. Diaphragm relaxes and domes up. Thoracic volume decreases, pressure increases above atmospheric. Air forced out.</li>
-</ul>
-<h3>Respiration</h3>
-<p>Respiration is the release of energy from glucose (or other organic molecules). It occurs in all living cells.</p>
-<ul>
-<li><strong>Aerobic respiration:</strong> Requires oxygen. Glucose + oxygen → carbon dioxide + water + energy.
-<div class="formula-box">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O + ATP</div></li>
-<li><strong>Anaerobic respiration in yeast:</strong> Glucose → ethanol + carbon dioxide + little energy (fermentation).</li>
-<li><strong>Anaerobic respiration in muscles:</strong> Glucose → lactic acid + little energy. Lactic acid causes fatigue and oxygen debt.</li>
-</ul>
 </div>
+<div class="topic-content">
+<p>All gas exchange surfaces share common features that maximise diffusion efficiency:</p>
+<ul>
+<li><strong>Large surface area</strong> — maximises area for diffusion.</li>
+<li><strong>Thin barrier (one cell thick)</strong> — short diffusion distance.</li>
+<li><strong>Good blood supply</strong> — maintains concentration gradient by removing absorbed gases.</li>
+<li><strong>Moist surface</strong> — gases must dissolve before diffusing.</li>
+</ul>
+
+<h4>Examples of Gas Exchange Surfaces</h4>
+<table class="data-table">
+<tr><th>Organism</th><th>Gas Exchange Surface</th><th>Key Adaptations</th></tr>
+<tr><td>Humans</td><td>Alveoli in lungs</td><td>Millions of alveoli (~70 m² surface area); walls one cell thick; surrounded by capillaries</td></tr>
+<tr><td>Fish</td><td>Gills</td><td>Filaments with lamellae; countercurrent flow maintains steep gradient along entire length</td></tr>
+<tr><td>Insects</td><td>Tracheal system</td><td>Spiracles → tracheae → tracheoles; air moves directly to cells; no blood transport needed for gases</td></tr>
+<tr><td>Plants</td><td>Stomata on leaves</td><td>Guard cells control opening; gases diffuse through air spaces in spongy mesophyll</td></tr>
+</table>
+
+<div class="key-point">Countercurrent flow in fish gills is highly efficient because blood flows in the opposite direction to water, maintaining a steep concentration gradient along the entire length of the gill filament. This allows fish to extract up to 80% of dissolved oxygen from water.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Human Breathing Mechanism</h3>
+</div>
+<div class="topic-content">
+<h4>Inspiration (Inhalation)</h4>
+<ul>
+<li>External intercostal muscles contract, ribs move up and out.</li>
+<li>Diaphragm contracts and flattens.</li>
+<li>Thoracic volume increases, pressure decreases below atmospheric.</li>
+<li>Air rushes in down the pressure gradient.</li>
+</ul>
+
+<h4>Expiration (Exhalation)</h4>
+<ul>
+<li>External intercostals relax, ribs move down and in.</li>
+<li>Diaphragm relaxes and domes up.</li>
+<li>Thoracic volume decreases, pressure increases above atmospheric.</li>
+<li>Air forced out down the pressure gradient.</li>
+</ul>
+
+<div class="key-point">Breathing is an active process during inspiration (muscles contract) but largely passive during expiration at rest (muscles relax, elastic recoil of lungs). During forced expiration, internal intercostal muscles and abdominal muscles contract.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Respiration Overview</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Respiration:</strong> The release of energy from glucose (or other organic molecules) in living cells. It occurs in all living cells and is NOT the same as breathing (ventilation).
+</div>
+
+<ul>
+<li><strong>Aerobic respiration:</strong> Requires oxygen. Complete oxidation of glucose.
+<div class="formula-box">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP (≈ 30-32 ATP per glucose)</div></li>
+<li><strong>Anaerobic respiration in yeast:</strong> Fermentation. Glucose → ethanol + carbon dioxide + little energy (2 ATP).
+<div class="formula-box">C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + 2 ATP</div></li>
+<li><strong>Anaerobic respiration in muscles:</strong> Glucose → lactic acid + little energy (2 ATP).
+<div class="formula-box">C₆H₁₂O₆ → 2C₃H₆O₃ + 2 ATP</div></li>
+</ul>
+
+<div class="misconception-box">
+<strong>Common Misconception:</strong> Breathing is NOT respiration. Breathing (ventilation) is the mechanical process of moving air in and out of lungs. Respiration is the biochemical process of releasing energy from glucose inside cells.
+</div>
+</div>
+</div>
+</div>
+
 <div class="notes-section"><h2>AS Level Content</h2>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
 <h3>Aerobic Respiration — Glycolysis</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>Occurs in cytoplasm. Does not require oxygen.</li>
-<li>Glucose (6C) phosphorylated using 2 ATP → glucose-6-phosphate → fructose-1,6-bisphosphate.</li>
+<li>Glucose (6C) is phosphorylated using 2 ATP → glucose-6-phosphate → fructose-1,6-bisphosphate.</li>
 <li>Split into two 3-carbon molecules (triose phosphate / GALP).</li>
-<li>Each triose phosphate oxidised, producing 2 ATP (substrate-level phosphorylation) and 2 NADH.</li>
+<li>Each triose phosphate is oxidised, producing 2 ATP (substrate-level phosphorylation) and 2 NADH.</li>
 <li>Net gain: 2 ATP, 2 NADH, 2 pyruvate per glucose.</li>
 </ul>
+
+<div class="key-point">Glycolysis is the first stage of both aerobic and anaerobic respiration. It occurs in the cytoplasm and does not require oxygen. The net gain is 2 ATP per glucose.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
 <h3>Link Reaction</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>In mitochondrial matrix.</li>
-<li>Pyruvate (3C) is decarboxylated (CO<sub>2</sub> removed) and dehydrogenated (NAD accepts H), forming acetyl group.</li>
+<li>Pyruvate (3C) is decarboxylated (CO₂ removed) and dehydrogenated (NAD accepts H), forming acetyl group.</li>
 <li>Acetyl group combines with coenzyme A → acetyl CoA (2C).</li>
-<li>2 pyruvate → 2 acetyl CoA + 2 CO<sub>2</sub> + 2 NADH.</li>
+<li>2 pyruvate → 2 acetyl CoA + 2 CO₂ + 2 NADH.</li>
 </ul>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
 <h3>Krebs Cycle (Citric Acid Cycle)</h3>
+</div>
+<div class="topic-content">
 <ul>
 <li>In mitochondrial matrix.</li>
 <li>Acetyl CoA (2C) combines with oxaloacetate (4C) → citrate (6C).</li>
-<li>Series of reactions: decarboxylation (2 CO<sub>2</sub> released), dehydrogenation (3 NADH and 1 FADH<sub>2</sub>), substrate-level phosphorylation (1 ATP or GTP).</li>
-<li>Per glucose: 2 turns → 4 CO<sub>2</sub>, 6 NADH, 2 FADH<sub>2</sub>, 2 ATP.</li>
+<li>Series of reactions: decarboxylation (2 CO₂ released), dehydrogenation (3 NADH and 1 FADH₂), substrate-level phosphorylation (1 ATP or GTP).</li>
+<li>Per glucose: 2 turns → 4 CO₂, 6 NADH, 2 FADH₂, 2 ATP.</li>
 </ul>
-<h3>Oxidative Phosphorylation</h3>
-<ul>
-<li>On inner mitochondrial membrane (cristae).</li>
-<li>NADH and FADH<sub>2</sub> donate electrons to electron transport chain (ETC).</li>
-<li>Electrons pass through carriers (NADH dehydrogenase, cytochrome complexes) releasing energy.</li>
-<li>Energy pumps protons (H<sup>+</sup>) from matrix into intermembrane space, creating electrochemical gradient.</li>
-<li>Protons flow back through ATP synthase (chemiosmosis), driving ATP synthesis.</li>
-<li>Oxygen is final electron acceptor, combining with electrons and H<sup>+</sup> to form water.</li>
-<li>Per glucose: ~28-34 ATP from oxidative phosphorylation.</li>
-</ul>
-<h3>Anaerobic Respiration</h3>
-<ul>
-<li><strong>In mammals:</strong> Pyruvate reduced by NADH → lactate, catalysed by lactate dehydrogenase. NAD<sup>+</sup> regenerated so glycolysis can continue. Lactate transported to liver for Cori cycle (converted back to glucose).</li>
-<li><strong>In yeast:</strong> Pyruvate decarboxylated → ethanal; ethanal reduced by NADH → ethanol. CO<sub>2</sub> released. Used in brewing and baking.</li>
-</ul>
+
+<div class="key-point">The Krebs cycle completes the oxidation of glucose. All carbon from glucose is released as CO₂. The energy is captured in NADH and FADH₂, which feed into the electron transport chain.</div>
 </div>
-<div class="notes-section"><h2>A2 Level Content</h2>
-<h3>Respiratory Substrates</h3>
+</div>
+
+<div class="topic-block" id="section-7">
+<div class="topic-header">
+<span class="topic-number">7</span>
+<h3>Oxidative Phosphorylation</h3>
+</div>
+<div class="topic-content">
+<div class="process-box">
+<h5>The Electron Transport Chain and Chemiosmosis</h5>
+<ol>
+<li>NADH and FADH₂ donate electrons to the electron transport chain (ETC) on the inner mitochondrial membrane (cristae).</li>
+<li>Electrons pass through carriers (NADH dehydrogenase, cytochrome complexes, cytochrome oxidase) releasing energy.</li>
+<li>Energy pumps protons (H⁺) from the matrix into the intermembrane space, creating an electrochemical gradient (proton-motive force).</li>
+<li>Protons flow back into the matrix through ATP synthase (chemiosmosis), driving ATP synthesis from ADP + Pi.</li>
+<li>Oxygen is the final electron acceptor, combining with electrons and H⁺ to form water.</li>
+<li>Per glucose: ~28-34 ATP from oxidative phosphorylation.</li>
+</ol>
+</div>
+
+<div class="key-point">Oxygen is essential as the final electron acceptor. Without oxygen, the ETC backs up, NADH cannot be reoxidised, and oxidative phosphorylation stops. This is why aerobic respiration yields far more ATP than anaerobic.</div>
+
+<div class="example-box">
+<h5>Worked Example: ATP Yield from Respiration</h5>
+<p><strong>Question:</strong> Calculate the total ATP yield from one molecule of glucose in aerobic respiration. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<div class="formula-box">Glycolysis: 2 ATP (net) + 2 NADH → ~5 ATP<br>Link reaction: 2 NADH → ~5 ATP<br>Krebs cycle: 2 ATP + 6 NADH + 2 FADH₂ → ~2 + 15 + 3 = ~20 ATP<br>Total: approximately 30-32 ATP per glucose</div>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-8">
+<div class="topic-header">
+<span class="topic-number">8</span>
+<h3>Anaerobic Respiration</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Carbohydrates:</strong> Respiratory quotient (RQ) = CO<sub>2</sub> produced / O<sub>2</sub> consumed = 1.0 for glucose.</li>
-<li><strong>Lipids:</strong> More reduced; more H per C. RQ ≈ 0.7. Yield more ATP per gram but require more O<sub>2</sub>.</li>
+<li><strong>In mammals:</strong> Pyruvate is reduced by NADH → lactate, catalysed by lactate dehydrogenase. NAD⁺ is regenerated so glycolysis can continue. Lactate is transported to the liver for the Cori cycle (converted back to glucose).
+<div class="formula-box">Pyruvate + NADH + H⁺ → Lactate + NAD⁺</div></li>
+<li><strong>In yeast:</strong> Pyruvate is decarboxylated → ethanal; ethanal is reduced by NADH → ethanol. CO₂ is released. Used in brewing and baking.
+<div class="formula-box">Pyruvate → Ethanal + CO₂<br>Ethanal + NADH + H⁺ → Ethanol + NAD⁺</div></li>
+</ul>
+
+<div class="key-point">The purpose of anaerobic respiration is to regenerate NAD⁺ so glycolysis can continue producing ATP. Without NAD⁺ regeneration, glycolysis would stop and no ATP would be produced.</div>
+</div>
+</div>
+</div>
+
+<div class="notes-section"><h2>A2 Level Content</h2>
+
+<div class="topic-block" id="section-9">
+<div class="topic-header">
+<span class="topic-number">9</span>
+<h3>Respiratory Substrates</h3>
+</div>
+<div class="topic-content">
+<ul>
+<li><strong>Carbohydrates:</strong> Respiratory quotient (RQ) = CO₂ produced / O₂ consumed = 1.0 for glucose.</li>
+<li><strong>Lipids:</strong> More reduced; more H per C. RQ ≈ 0.7. Yield more ATP per gram but require more O₂.</li>
 <li><strong>Proteins:</strong> Deaminated first (amino group removed as urea). RQ ≈ 0.9. Used when carbohydrate and lipid stores depleted.</li>
 </ul>
-<h3>Control of Respiration</h3>
+
+<div class="formula-box">RQ = CO₂ produced / O₂ consumed<br>Carbohydrate (glucose): RQ = 6/6 = 1.0<br>Lipid (tripalmitin): RQ ≈ 0.7<br>Protein: RQ ≈ 0.9</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-10">
+<div class="topic-header">
+<span class="topic-number">10</span>
+<h3>Mitochondrial Structure & Function</h3>
+</div>
+<div class="topic-content">
 <ul>
-<li><strong>Substrate-level phosphorylation:</strong> Direct transfer of phosphate from substrate to ADP (glycolysis, Krebs).</li>
-<li><strong>Oxidative phosphorylation:</strong> ATP synthesis driven by proton gradient (ETC and chemiosmosis).</li>
-<li><strong>Rate of respiration:</strong> Controlled by availability of ADP and substrate; allosteric regulation of phosphofructokinase (inhibited by ATP and citrate, activated by AMP).</li>
+<li><strong>Outer membrane:</strong> Permeable to small molecules (contains porins).</li>
+<li><strong>Inner membrane:</strong> Impermeable; contains ETC complexes and ATP synthase. Folded into cristae to increase surface area for oxidative phosphorylation.</li>
+<li><strong>Matrix:</strong> Contains enzymes for link reaction and Krebs cycle, mitochondrial DNA, 70S ribosomes.</li>
+<li><strong>Intermembrane space:</strong> Site of proton accumulation during ETC.</li>
 </ul>
-<h3>Mitochondrial Structure &amp; Function</h3>
-<ul>
-<li>Outer membrane: permeable to small molecules.</li>
-<li>Inner membrane: impermeable; contains ETC and ATP synthase. Folded into cristae to increase surface area.</li>
-<li>Matrix: contains enzymes for link reaction and Krebs cycle, mitochondrial DNA, 70S ribosomes.</li>
-<li>Intermembrane space: site of proton accumulation.</li>
-</ul>
+
+<div class="key-point">Mitochondria have their own DNA (circular, like prokaryotes) and 70S ribosomes, supporting the endosymbiotic theory that mitochondria evolved from ancient prokaryotes.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-11">
+<div class="topic-header">
+<span class="topic-number">11</span>
 <h3>Photosynthesis vs Respiration</h3>
-<ul>
-<li>Photosynthesis: energy capture (endergonic); occurs in chloroplasts; produces glucose and O<sub>2</sub>.</li>
-<li>Respiration: energy release (exergonic); occurs in cytoplasm and mitochondria; uses glucose and O<sub>2</sub>, produces CO<sub>2</sub> and H<sub>2</sub>O.</li>
-<li>They are not exact opposites: different pathways, enzymes, and cellular locations.</li>
-</ul>
 </div>
-<div class="notes-section">
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
+<div class="topic-content">
+<table class="data-table">
+<tr><th>Feature</th><th>Photosynthesis</th><th>Respiration</th></tr>
+<tr><td>Energy change</td><td>Energy capture (endergonic)</td><td>Energy release (exergonic)</td></tr>
+<tr><td>Location</td><td>Chloroplasts</td><td>Cytoplasm and mitochondria</td></tr>
+<tr><td>Reactants</td><td>CO₂ + H₂O</td><td>Glucose + O₂</td></tr>
+<tr><td>Products</td><td>Glucose + O₂</td><td>CO₂ + H₂O</td></tr>
+<tr><td>ATP</td><td>Produced (light reactions)</td><td>Consumed and produced</td></tr>
+<tr><td>Relationship</td><td colspan="2">Not exact opposites — different pathways, enzymes, and cellular locations</td></tr>
+</table>
 </div>
 </div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
-</ul>
 </div>
+
+<div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<div class="highlight-box"><h4>Key Points</h4><ul>
+<ul>
 <li>Gas exchange: large SA, thin barrier, moist, good blood supply. Alveoli, gills (countercurrent), tracheae, stomata.</li>
 <li>Breathing: inspiration (diaphragm contracts, intercostals contract, volume up, pressure down); expiration (reverse).</li>
 <li>Glycolysis: cytoplasm; glucose → 2 pyruvate + 2 ATP + 2 NADH.</li>
-<li>Link reaction: mitochondrial matrix; pyruvate → acetyl CoA + CO<sub>2</sub> + NADH.</li>
-<li>Krebs cycle: matrix; acetyl CoA → CO<sub>2</sub> + NADH + FADH<sub>2</sub> + ATP.</li>
-<li>Oxidative phosphorylation: cristae; ETC pumps H<sup>+</sup>; chemiosmosis through ATP synthase; O<sub>2</sub> final electron acceptor.</li>
-<li>Anaerobic: mammals → lactate; yeast → ethanol + CO<sub>2</sub>. Purpose: regenerate NAD<sup>+</sup> for glycolysis.</li>
+<li>Link reaction: mitochondrial matrix; pyruvate → acetyl CoA + CO₂ + NADH.</li>
+<li>Krebs cycle: matrix; acetyl CoA → CO₂ + NADH + FADH₂ + ATP.</li>
+<li>Oxidative phosphorylation: cristae; ETC pumps H⁺; chemiosmosis through ATP synthase; O₂ final electron acceptor.</li>
+<li>Anaerobic: mammals → lactate; yeast → ethanol + CO₂. Purpose: regenerate NAD⁺ for glycolysis.</li>
 <li>RQ values: carbohydrate = 1.0; lipid = 0.7; protein = 0.9.</li>
-</ul></div>
-<p><strong>Exam tip:</strong> Always state where each stage occurs: glycolysis = cytoplasm; link + Krebs = mitochondrial matrix; oxidative phosphorylation = inner membrane (cristae). In ETC questions, explain chemiosmosis: proton gradient → proton motive force → ATP synthase. For anaerobic, emphasise NAD<sup>+</sup> regeneration is essential.</p>
+</ul>
 </div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
+
+<div class="exam-tips">
+<h2>💡 Exam Tips</h2>
 <ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always state where each stage occurs: glycolysis = cytoplasm; link + Krebs = mitochondrial matrix; oxidative phosphorylation = inner membrane (cristae).</li>
+<li>In ETC questions, explain chemiosmosis: proton gradient → proton motive force → ATP synthase.</li>
+<li>For anaerobic, emphasise NAD⁺ regeneration is essential.</li>
+<li>Countercurrent flow in fish: explain why it's efficient (maintains gradient along entire length).</li>
+<li>Remember RQ values: carbohydrate = 1.0, lipid = 0.7. A respirometer experiment with RQ < 1 indicates lipid is being respired.</li>
+<li>Mitochondria: cristae increase surface area for ETC and ATP synthase.</li>
 </ul>
 </div>
 </div>
