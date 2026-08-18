@@ -71,6 +71,91 @@
     <li style="margin-bottom: 8px;">Be able to convert between binary, denary, and hexadecimal number systems.</li><li style="margin-bottom: 8px;">Understand the difference between verification methods (double entry, visual check) and validation checks (range check, type check, etc.).</li><li style="margin-bottom: 8px;">Be able to create and modify spreadsheets, databases, and presentations in the practical examination.</li><li style="margin-bottom: 8px;">Know the hardware components of a computer system and their functions.</li><li style="margin-bottom: 8px;">Know the advantages and disadvantages of different input and output devices for specific situations.</li>
   </ul>
 </div>
+
+<h4>ICT Systems: i2</h4>
+<p>IGCSE ICT tests both theoretical understanding and practical skills. The practical examination requires proficiency in word processing, spreadsheets, databases, and presentations.</p>
+<h5>Number System Conversions</h5>
+<p>Converting between binary, denary, and hexadecimal is a core skill:</p>
+<div class="example-box">
+<h5>Binary to Denary</h5>
+<p>Each binary digit represents a power of 2, from right to left:</p>
+<p>128 64 32 16 8 4 2 1</p>
+<p><strong>Example:</strong> 10110100 = 128 + 32 + 16 + 4 = <strong>180</strong></p>
+</div>
+<div class="example-box">
+<h5>Binary to Hexadecimal</h5>
+<p>Group binary digits into sets of 4 (from the right) and convert each group:</p>
+<p><strong>Example:</strong> 10110100 → 1011 0100 → B 4 → <strong>B4</strong></p>
+</div>
+<div class="example-box">
+<h5>Denary to Binary</h5>
+<p>Repeatedly divide by 2 and record remainders:</p>
+<p><strong>Example:</strong> Convert 157 to binary</p>
+<p>157 ÷ 2 = 78 r 1</p>
+<p>78 ÷ 2 = 39 r 0</p>
+<p>39 ÷ 2 = 19 r 1</p>
+<p>19 ÷ 2 = 9 r 1</p>
+<p>9 ÷ 2 = 4 r 1</p>
+<p>4 ÷ 2 = 2 r 0</p>
+<p>2 ÷ 2 = 1 r 0</p>
+<p>1 ÷ 2 = 0 r 1</p>
+<p>Reading remainders from bottom to top: <strong>10011101</strong></p>
+</div>
+<div class="key-point">In the practical examination, always save your work regularly and in the correct file format. Follow the instructions precisely — missing a small formatting requirement can cost marks.</div>
+<div class="worked-examples-section">
+
+<h4>Worked Example 1: Binary to Hexadecimal Conversion</h4>
+<div class="example-box">
+<h5>Problem</h5>
+<p>Convert the 16-bit binary number 1101011010101100 to hexadecimal.</p>
+<h5>Solution</h5>
+<p>Group into 4 bits from the right: 1101 0110 1010 1100</p>
+<p>1101 = 13 = <strong>D</strong></p>
+<p>0110 = 6 = <strong>6</strong></p>
+<p>1010 = 10 = <strong>A</strong></p>
+<p>1100 = 12 = <strong>C</strong></p>
+<p>Answer: <strong>D6AC</strong></p>
+</div>
+
+<h4>Worked Example 2: Spreadsheet Formula</h4>
+<div class="example-box">
+<h5>Problem</h5>
+<p>A spreadsheet has sales data in cells B2:B10. Write formulas to calculate: (a) total sales, (b) average sales, (c) commission at 5% on sales over $1000.</p>
+<h5>Solution</h5>
+<p>(a) =SUM(B2:B10)</p>
+<p>(b) =AVERAGE(B2:B10)</p>
+<p>(c) =IF(B2>1000, B2*0.05, 0) — copied down for each row</p>
+</div>
+
+<h4>Worked Example 3: Database Query</h4>
+<div class="example-box">
+<h5>Problem</h5>
+<p>A student database has fields: StudentID, Name, Class, Age, Grade. Write a query to find all students in Class 10A who are 16 years old or older and have a grade of A or B.</p>
+<h5>Solution</h5>
+<p>SELECT * FROM Students</p>
+<p>WHERE Class = "10A" AND Age >= 16 AND Grade IN ("A", "B")</p>
+<p>ORDER BY Name;</p>
+</div>
+</div>
+<div class="practice-section">
+
+<h4>Practice Questions</h4>
+<div class="example-box">
+<h5>Question 1</h5>
+<p>Convert the denary number 237 to 8-bit binary and then to hexadecimal.</p>
+<p><em>Answer: Binary: 11101101; Hexadecimal: ED</em></p>
+</div>
+<div class="example-box">
+<h5>Question 2</h5>
+<p>Explain the difference between RAM and ROM, giving two examples of what each is used for in a computer system.</p>
+<p><em>Answer: RAM (volatile, temporary storage): stores currently running programs and data. ROM (non-volatile, permanent): stores BIOS/boot instructions. RAM examples: open applications, clipboard. ROM examples: firmware, startup instructions.</em></p>
+</div>
+<div class="example-box">
+<h5>Question 3</h5>
+<p>A business wants to create a mail merge to send personalised letters to 500 customers. Describe the steps involved and the files needed.</p>
+<p><em>Answer: (1) Create letter template in word processor with merge fields. (2) Create data source (database/spreadsheet) with customer details. (3) Link data source to letter. (4) Insert merge fields for name, address, etc. (5) Preview and complete merge to generate individual letters.</em></p>
+</div>
+</div>
 <div class="exam-tips-detailed" style="background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%); padding: 24px 28px; border-radius: 12px; border-left: 5px solid #eab308; margin: 24px 0;">
   <h4 style="color: #854d0e; margin: 0 0 14px 0; font-size: 1.05rem;">🎯 Examination Tips</h4>
   <ul style="color: #713f12; line-height: 1.8; margin: 0; padding-left: 20px;">
