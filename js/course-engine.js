@@ -244,10 +244,17 @@
           resultDiv.innerHTML = `<span style="color:#92400e">Please write at least ${seg.interaction.minLength || 10} characters.</span>`;
         }
       } else if (seg.interaction.type === 'checkbox') {
-        const checked = document.querySelectorAll('.interaction-section input[type="checkbox"]:checked');
+        const checked = Array.from(document.querySelectorAll('.interaction-section input[type="checkbox"]:checked')).map(cb => parseInt(cb.value));
         if (checked.length === 0) {
           valid = false;
           resultDiv.innerHTML = '<span style="color:#92400e">Please select at least one option.</span>';
+        } else if (seg.interaction.correctIndices) {
+          const correct = seg.interaction.correctIndices;
+          const allCorrect = correct.every(idx => checked.includes(idx)) && checked.every(idx => correct.includes(idx));
+          if (!allCorrect) {
+            valid = false;
+            resultDiv.innerHTML = '<span style="color:#991b1b">❌ Not quite. Review the scenario and try again.</span>';
+          }
         }
       }
 
