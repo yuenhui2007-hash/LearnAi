@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Astrophysics — Physics Notes | LearnAI</title>
 <meta name="description" content="Astrophysics notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,24 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -63,8 +81,6 @@
 <div class="notes-container">
 <div class="notes-header">
 <div class="level-badges">
-
-
 <span class="level-badge badge-a2">A2 Level</span>
 </div>
 <h1>Astrophysics</h1>
@@ -73,106 +89,140 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Astronomical Distances</h3>
+<p>Astronomical distances are so vast that special units are needed:</p>
 <ul>
-<li><strong>Astronomical Unit (AU):</strong> mean Earth-Sun distance ≈ 1.50 × 10¹¹ m.</li>
-<li><strong>Light-year (ly):</strong> distance light travels in one year ≈ 9.46 × 10¹⁵ m.</li>
-<li><strong>Parsec (pc):</strong> distance at which 1 AU subtends 1 arcsecond ≈ 3.26 ly.</li>
+<li><strong>Astronomical Unit (AU):</strong> Mean Earth-Sun distance ≈ 1.50 × 10¹¹ m. Used for distances within the solar system.</li>
+<li><strong>Light-year (ly):</strong> Distance light travels in one year ≈ 9.46 × 10¹⁵ m. Used for stellar distances.</li>
+<li><strong>Parsec (pc):</strong> Distance at which 1 AU subtends an angle of 1 arcsecond ≈ 3.26 ly ≈ 3.09 × 10¹⁶ m. Used in professional astronomy.</li>
 </ul>
-<h3>2. Stellar Luminosity</h3>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Parsec (pc):</strong> The distance at which a star would have a parallax angle of 1 arcsecond. 1 pc = 3.086 × 10¹⁶ m = 3.26 ly.</p>
+</div>
+
+<h3>2. Stellar Luminosity and the Stefan-Boltzmann Law</h3>
+<p>A star's luminosity L is the total power it radiates. For a star approximated as a black body:</p>
 <div class="formula-box">L = 4πr²σT⁴</div>
-<p>Where σ = Stefan-Boltzmann constant = 5.67 × 10⁻⁸ W/(m²·K⁴).</p>
+<p>where r = stellar radius, T = surface temperature (in Kelvin), and σ = Stefan-Boltzmann constant = 5.67 × 10⁻⁸ W/(m²·K⁴).</p>
+
+<div class="key-point">Luminosity depends strongly on temperature (T⁴) and on radius squared. A small, hot star can be more luminous than a large, cool star.</div>
+
 <h3>3. Wien's Displacement Law</h3>
+<p>The peak wavelength of a black body's spectrum is inversely proportional to its temperature:</p>
 <div class="formula-box">λ_max T = 2.898 × 10⁻³ m·K</div>
-<p>Peak wavelength is inversely proportional to temperature.</p>
+<p>Hotter stars emit more strongly at shorter (bluer) wavelengths. Cooler stars peak at longer (redder) wavelengths.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Wien's Law</h4>
+<p><strong>Question:</strong> The Sun has a surface temperature of 5800 K. Calculate the peak wavelength of its emission.</p>
+<p><strong>Solution:</strong></p>
+<p>λ_max = 2.898 × 10⁻³ / 5800 = <strong>5.0 × 10⁻⁷ m</strong> (500 nm, in the green-yellow visible region)</p>
+</div>
+
 <h3>4. Doppler Effect for Light</h3>
+<p>When a light source moves relative to an observer, the observed wavelength changes:</p>
 <div class="formula-box">Δλ/λ ≈ v/c (for v << c)</div>
 <ul>
-<li>Redshift: source moving away (λ increases).</li>
-<li>Blueshift: source moving toward (λ decreases).</li>
+<li><strong>Redshift:</strong> Source moving away → observed λ increases (spectral lines shift toward red).</li>
+<li><strong>Blueshift:</strong> Source moving toward observer → observed λ decreases.</li>
 </ul>
+
+<div class="key-point">Redshift of distant galaxies provided the first observational evidence for the expansion of the universe. Edwin Hubble discovered that more distant galaxies have greater redshift.</div>
+
 <h3>5. Hubble's Law</h3>
+<p>The recession velocity of a galaxy is proportional to its distance from us:</p>
 <div class="formula-box">v = H₀d</div>
-<p>Recession velocity proportional to distance. H₀ ≈ 70 km/(s·Mpc).</p>
-<h3>6. The Big Bang</h3>
+<p>where H₀ ≈ 70 km/(s·Mpc) is the Hubble constant. This law implies that the universe is expanding uniformly — space itself is stretching.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Hubble's Law</h4>
+<p><strong>Question:</strong> A galaxy is observed to have a redshift corresponding to a recession velocity of 2.1 × 10⁴ km/s. Calculate its distance from Earth. (H₀ = 70 km/(s·Mpc))</p>
+<p><strong>Solution:</strong></p>
+<p>d = v/H₀ = 2.1 × 10⁴ / 70 = <strong>300 Mpc</strong></p>
+</div>
+
+<h3>6. The Big Bang Theory</h3>
+<p>The Big Bang theory states that the universe began from an extremely hot, dense state approximately 13.8 billion years ago and has been expanding ever since. Key evidence includes:</p>
 <ul>
-<li>Universe began from a singularity ~13.8 billion years ago.</li>
-<li>Evidence: cosmic microwave background radiation, redshift of galaxies, abundance of light elements.</li>
+<li><strong>Cosmic Microwave Background (CMB):</strong> Relic radiation from ~380,000 years after the Big Bang, now cooled to ~2.7 K. Discovered by Penzias and Wilson in 1965.</li>
+<li><strong>Redshift of galaxies:</strong> Hubble's observation that distant galaxies are receding.</li>
+<li><strong>Abundance of light elements:</strong> The observed ratios of hydrogen, helium, and lithium match Big Bang nucleosynthesis predictions.</li>
 </ul>
+
+<div class="key-point">The age of the universe can be estimated from the Hubble constant: t ≈ 1/H₀ ≈ 14 billion years. This is consistent with other independent measurements.</div>
+
 <h3>7. Stellar Evolution</h3>
+<p>Stars follow a lifecycle determined by their mass:</p>
 <ul>
-<li><strong>Main sequence:</strong> hydrogen fusion in core.</li>
-<li><strong>Red giant:</strong> core hydrogen exhausted, shell burning.</li>
-<li><strong>White dwarf:</strong> electron degeneracy pressure supports star.</li>
-<li><strong>Supernova:</strong> massive star explodes, may leave neutron star or black hole.</li>
+<li><strong>Main sequence:</strong> Star fuses hydrogen to helium in its core. The Sun has been on the main sequence for ~4.6 billion years and will remain for another ~5 billion years.</li>
+<li><strong>Red giant:</strong> Core hydrogen exhausted. Core contracts and heats; outer layers expand and cool. Helium fusion begins (triple-alpha process).</li>
+<li><strong>White dwarf (low-mass stars, M < 8M☉):</strong> Electron degeneracy pressure supports the star. No fusion. Gradually cools over billions of years.</li>
+<li><strong>Supernova (high-mass stars, M > 8M☉):</strong> Star explodes catastrophically. May leave a neutron star (supported by neutron degeneracy pressure) or a black hole (gravitational collapse).</li>
 </ul>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often think that a red giant is hotter than the Sun because it is "giant." In fact, red giants are cooler (hence red) but much larger, making them more luminous overall. Temperature and luminosity are distinct properties.</p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="example-box">
+<h4>📝 Worked Example — Luminosity Comparison</h4>
+<p><strong>Question:</strong> Star A has radius 2R☉ and temperature 6000 K. Star B has radius 0.5R☉ and temperature 12000 K. Compare their luminosities.</p>
+<p><strong>Solution:</strong></p>
+<p>L ∝ r²T⁴</p>
+<p>L_A/L_B = (2/0.5)² × (6000/12000)⁴ = 16 × (0.5)⁴ = 16 × 0.0625 = 1</p>
+<p><strong>The stars have equal luminosity!</strong> Star B is hotter but much smaller.</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State Hubble's law. (b) A galaxy at a distance of 150 Mpc has a recession velocity of 1.05 × 10⁴ km/s. Calculate a value for the Hubble constant. (c) Use your answer to estimate the age of the universe in years. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Recession velocity is proportional to distance / v = H₀d (1 mark)</p>
+<p>• (b) H₀ = v/d = 1.05 × 10⁴/150 = <strong>70 km/(s·Mpc)</strong> (1 mark)</p>
+<p>• (c) t ≈ 1/H₀ = 1/(70 × 10³/(3.086 × 10²²)) = 4.41 × 10¹⁷ s (1 mark)</p>
+<p>• t = 4.41 × 10¹⁷ / (365 × 24 × 3600) = <strong>1.4 × 10¹⁰ years</strong> (accept 1.3–1.5 × 10¹⁰) (2 marks — 1 method, 1 answer)</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A star has a radius of 7.0 × 10⁸ m and a surface temperature of 5500 K. Calculate its luminosity. (σ = 5.67 × 10⁻⁸ W/(m²·K⁴)) [2 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• L = 4πr²σT⁴ = 4π × (7.0 × 10⁸)² × 5.67 × 10⁻⁸ × (5500)⁴ (1 mark)</p>
+<p>• L = <strong>3.2 × 10²⁶ W</strong> (accept 3.1–3.3 × 10²⁶ W) (1 mark)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>1 AU = 1.50×10¹¹ m; 1 ly = 9.46×10¹⁵ m; 1 pc = 3.26 ly</li>
-<li>L = 4πr²σT⁴</li>
-<li>Wien: λ_max T = 2.898×10⁻³ m·K</li>
+<li>1 AU = 1.50 × 10¹¹ m; 1 ly = 9.46 × 10¹⁵ m; 1 pc = 3.26 ly = 3.09 × 10¹⁶ m</li>
+<li>L = 4πr²σT⁴ (Stefan-Boltzmann law)</li>
+<li>Wien: λ_max T = 2.898 × 10⁻³ m·K</li>
 <li>Doppler: Δλ/λ ≈ v/c; Redshift = moving away</li>
 <li>Hubble: v = H₀d; H₀ ≈ 70 km/(s·Mpc)</li>
-<li>Big Bang evidence: CMB, redshift, light element abundance</li>
+<li>Big Bang evidence: CMB (~2.7 K), redshift, light element abundance</li>
+<li>Age of universe ≈ 1/H₀ ≈ 14 billion years</li>
 <li>Star life: main sequence → red giant → white dwarf (low mass) or supernova → neutron star/black hole (high mass)</li>
 </ul>
 </div>
 
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
-</ul>
-</div>
-
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always convert temperatures to Kelvin before using Stefan-Boltzmann or Wien's law.</li>
+<li>Remember that luminosity depends on r² AND T⁴ — temperature has a much stronger effect.</li>
+<li>For Doppler shift, use Δλ/λ = v/c. Redshift means v is positive (receding).</li>
+<li>Hubble's law applies to galaxies, not individual stars within a galaxy.</li>
+<li>The CMB is evidence for the Big Bang because it is the cooled remnant of the early hot universe.</li>
+<li>When comparing stars, set up ratios to cancel common constants.</li>
 </ul>
 </div>
 </div>

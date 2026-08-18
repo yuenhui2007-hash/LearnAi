@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deformation of Solids — Physics Notes | LearnAI</title>
 <meta name="description" content="Deformation of Solids notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,24 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -63,8 +81,7 @@
 <div class="notes-container">
 <div class="notes-header">
 <div class="level-badges">
-
-
+<span class="level-badge badge-igcse">IGCSE</span>
 <span class="level-badge badge-a2">A2 Level</span>
 </div>
 <h1>Deformation of Solids</h1>
@@ -73,95 +90,171 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Stress and Strain</h3>
+<p>When a force is applied to a solid material, it causes deformation. To compare the behaviour of different materials fairly, we use <strong>stress</strong> and <strong>strain</strong> rather than simply force and extension. Stress normalises for cross-sectional area, and strain normalises for original length.</p>
+
 <div class="formula-box">
 Stress: σ = F/A (unit: Pa or N/m²)<br>
 Strain: ε = ΔL/L (no units)<br>
-Young Modulus: E = σ/ε = (F/A)/(ΔL/L)
+Young Modulus: E = σ/ε = (F/A)/(ΔL/L) = FL/(AΔL)
 </div>
-<h3>2. Force-Extension Graph</h3>
+
+<div class="definition-box">
+<h4>📖 Key Definitions</h4>
+<p><strong>Stress (σ):</strong> Force per unit cross-sectional area. Unit: pascal (Pa).</p>
+<p><strong>Strain (ε):</strong> Extension per unit original length. No units (dimensionless).</p>
+<p><strong>Young Modulus (E):</strong> The ratio of stress to strain in the elastic region. Unit: pascal (Pa). It is a measure of the stiffness of a material.</p>
+</div>
+
+<p>The Young modulus is a material property — it does not depend on the dimensions of the sample. Steel has a high Young modulus (~200 GPa), meaning it is very stiff and requires a large stress to produce a small strain. Rubber has a low Young modulus, making it easy to stretch.</p>
+
+<div class="key-point">Strain has no units because it is a ratio of two lengths (ΔL/L). Stress has units of Pa (N/m²). The Young modulus has the same units as stress because strain is dimensionless.</div>
+
+<h3>2. Force-Extension and Stress-Strain Graphs</h3>
+<p>A typical stress-strain graph for a ductile metal (like copper or mild steel) shows several important regions:</p>
 <ul>
-<li><strong>Limit of proportionality</strong> — beyond this, Hooke's law no longer applies.</li>
-<li><strong>Elastic limit</strong> — beyond this, the material will not return to its original length.</li>
-<li><strong>Yield point</strong> — the point at which plastic deformation begins.</li>
-<li><strong>Breaking stress</strong> — the stress at which the material fractures.</li>
+<li><strong>Linear (elastic) region:</strong> Stress is proportional to strain. The material returns to its original length when the force is removed. Hooke's Law applies.</li>
+<li><strong>Limit of proportionality:</strong> The point beyond which stress is no longer proportional to strain. The graph stops being a straight line.</li>
+<li><strong>Elastic limit:</strong> The maximum stress beyond which the material will not return to its original length when the force is removed. Permanent deformation occurs.</li>
+<li><strong>Yield point:</strong> The stress at which plastic deformation begins rapidly. The material "gives" and extends with little increase in force.</li>
+<li><strong>Plastic region:</strong> The material undergoes permanent deformation. If the force is removed, the material does not return to its original length.</li>
+<li><strong>Ultimate tensile stress (UTS):</strong> The maximum stress the material can withstand before necking begins.</li>
+<li><strong>Breaking stress:</strong> The stress at which the material fractures.</li>
 </ul>
+
+<div class="key-point">For brittle materials (like glass or cast iron), there is little or no plastic deformation — the material fractures soon after the elastic limit is reached. For polymeric materials (like rubber), the stress-strain graph is highly non-linear and shows large elastic extensions.</div>
+
 <h3>3. Hooke's Law</h3>
-<div class="formula-box">F = kx (valid up to the limit of proportionality)</div>
-<p>Force is proportional to extension.</p>
+<p>Hooke's Law states that the extension of a spring or wire is directly proportional to the applied force, provided the limit of proportionality is not exceeded.</p>
+<div class="formula-box">F = kx</div>
+<p>where k is the spring constant (unit: N/m) and x is the extension from the natural length. The spring constant depends on the material and dimensions of the spring — a thicker or shorter spring has a larger k.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Spring Constant</h4>
+<p><strong>Question:</strong> A spring extends by 4.0 cm when a load of 2.0 N is hung from it. Calculate: (a) the spring constant, (b) the extension when a 5.0 N load is applied.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) k = F/x = 2.0 / 0.040 = <strong>50 N/m</strong></p>
+<p>(b) x = F/k = 5.0 / 50 = 0.10 m = <strong>10 cm</strong></p>
+</div>
+
 <h3>4. Elastic and Plastic Deformation</h3>
 <ul>
-<li><strong>Elastic deformation:</strong> material returns to original shape when force is removed.</li>
-<li><strong>Plastic deformation:</strong> material does not return to original shape; permanent deformation occurs.</li>
+<li><strong>Elastic deformation:</strong> The material returns to its original shape and size when the deforming force is removed. Energy stored is fully recoverable. Atomic bonds are stretched but not broken.</li>
+<li><strong>Plastic deformation:</strong> The material does not return to its original shape; permanent deformation occurs. Layers of atoms slide over each other (dislocation movement in metals). Energy is dissipated as heat.</li>
 </ul>
+
+<div class="key-point">The area under a force-extension graph represents the work done in stretching the material. In the elastic region, this work is stored as elastic potential energy and is fully recoverable. In the plastic region, some of this energy is dissipated as internal energy (heat).</div>
+
 <h3>5. Strain Energy</h3>
-<div class="formula-box">Strain energy = ½Fx = ½kx² = area under force-extension graph</div>
+<p>The energy stored in a deformed material is equal to the area under the force-extension graph. For a material obeying Hooke's Law:</p>
+<div class="formula-box">
+Strain energy = ½Fx = ½kx² = area under force-extension graph
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+<p>For a wire stretched within the elastic limit, the strain energy per unit volume is:</p>
+<div class="formula-box">
+Energy per unit volume = ½ × stress × strain = ½σε = ½Eε² = σ²/(2E)
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
+
+<div class="example-box">
+<h4>📝 Worked Example — Strain Energy</h4>
+<p><strong>Question:</strong> A steel wire of length 2.0 m and cross-sectional area 0.50 mm² is stretched by a force of 100 N. The Young modulus of steel is 2.0 × 10¹¹ Pa. Calculate: (a) the extension, (b) the strain energy stored.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) E = FL/(AΔL) → ΔL = FL/(AE)</p>
+<p>ΔL = (100 × 2.0) / (0.50 × 10⁻⁶ × 2.0 × 10¹¹) = 200 / (1.0 × 10⁵) = <strong>2.0 × 10⁻³ m</strong> (2.0 mm)</p>
+<p>(b) Strain energy = ½FΔL = ½ × 100 × 2.0 × 10⁻³ = <strong>0.10 J</strong></p>
+</div>
+
+<h3>6. Young Modulus Experiment</h3>
+<p>The Young modulus of a wire can be determined experimentally by measuring the extension produced by known loads:</p>
 <ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
+<li>Measure the original length L of the wire using a metre rule.</li>
+<li>Measure the diameter d using a micrometer screw gauge (at several points, average).</li>
+<li>Calculate cross-sectional area A = πd²/4.</li>
+<li>Add known masses and measure the extension ΔL using a travelling microscope or Vernier scale.</li>
+<li>Plot a graph of force F against extension ΔL.</li>
+<li>The gradient = F/ΔL = EA/L → E = gradient × L/A</li>
 </ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+
+<div class="key-point">A control wire (identical but unloaded) is often used to compensate for thermal expansion and sag of the support. Measurements should be taken while loading and unloading to check for elastic behaviour.</div>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often confuse the limit of proportionality with the elastic limit. The limit of proportionality is where the graph stops being a straight line (Hooke's Law no longer applies). The elastic limit is where permanent deformation begins. For many materials, these two points are very close together, but they are conceptually different.</p>
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Young Modulus from Graph</h4>
+<p><strong>Question:</strong> A stress-strain graph for a metal wire has a linear region with gradient 2.0 × 10¹¹ Pa. The wire has length 1.5 m and diameter 0.40 mm. Calculate the force needed to produce an extension of 0.30 mm.</p>
+<p><strong>Solution:</strong></p>
+<p>Gradient = Young modulus E = 2.0 × 10¹¹ Pa</p>
+<p>Strain ε = ΔL/L = 0.30 × 10⁻³ / 1.5 = 2.0 × 10⁻⁴</p>
+<p>Stress σ = Eε = 2.0 × 10¹¹ × 2.0 × 10⁻⁴ = 4.0 × 10⁷ Pa</p>
+<p>Area A = πd²/4 = π × (0.40 × 10⁻³)² / 4 = 1.26 × 10⁻⁷ m²</p>
+<p>F = σA = 4.0 × 10⁷ × 1.26 × 10⁻⁷ = <strong>5.0 N</strong></p>
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Composite Wire</h4>
+<p><strong>Question:</strong> A composite wire consists of a steel wire (length 1.0 m, diameter 0.50 mm, E = 2.0 × 10¹¹ Pa) and a copper wire (length 1.0 m, diameter 0.50 mm, E = 1.1 × 10¹¹ Pa) joined end-to-end. A tensile force of 80 N is applied. Calculate: (a) the total extension, (b) the strain energy stored.</p>
+<p><strong>Solution:</strong></p>
+<p>Area A = π × (0.50 × 10⁻³)² / 4 = 1.96 × 10⁻⁷ m²</p>
+<p>For steel: ΔL_s = FL/(AE) = (80 × 1.0)/(1.96 × 10⁻⁷ × 2.0 × 10¹¹) = 2.04 × 10⁻³ m</p>
+<p>For copper: ΔL_c = (80 × 1.0)/(1.96 × 10⁻⁷ × 1.1 × 10¹¹) = 3.71 × 10⁻³ m</p>
+<p>(a) Total extension = 2.04 + 3.71 = <strong>5.75 × 10⁻³ m</strong> (5.75 mm)</p>
+<p>(b) Total strain energy = ½F(ΔL_s + ΔL_c) = ½ × 80 × 5.75 × 10⁻³ = <strong>0.23 J</strong></p>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) Define Young modulus. (b) A wire of original length 2.5 m and cross-sectional area 0.80 mm² extends by 3.2 mm when a tensile force of 50 N is applied. Calculate the Young modulus of the material. (c) The wire is loaded beyond its elastic limit. Explain what is meant by the elastic limit. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Ratio of stress to strain / E = σ/ε / force per unit area divided by extension per unit length (1 mark)</p>
+<p>• (b) σ = F/A = 50/(0.80 × 10⁻⁶) = 6.25 × 10⁷ Pa (1 mark)</p>
+<p>• ε = ΔL/L = 3.2 × 10⁻³/2.5 = 1.28 × 10⁻³ (1 mark)</p>
+<p>• E = σ/ε = 6.25 × 10⁷/1.28 × 10⁻³ = <strong>4.9 × 10¹⁰ Pa</strong> (accept 4.88 × 10¹⁰ Pa) (1 mark)</p>
+<p>• (c) The maximum stress beyond which the material does not return to its original length / permanent deformation occurs (1 mark)</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A metal wire of length 1.8 m is stretched elastically. The force-extension graph is a straight line passing through the origin. When the force is 40 N, the extension is 2.0 mm. Calculate: (a) the spring constant of the wire, (b) the strain energy stored at this extension, (c) the energy stored if the wire is stretched to twice this extension (assuming Hooke's Law still applies). [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) k = F/x = 40/(2.0 × 10⁻³) = <strong>2.0 × 10⁴ N/m</strong> (1 mark)</p>
+<p>• (b) E = ½Fx = ½ × 40 × 2.0 × 10⁻³ = <strong>0.040 J</strong> (1 mark)</p>
+<p>• (c) At 2x extension, E = ½k(2x)² = 4 × (½kx²) = 4 × 0.040 = <strong>0.16 J</strong> (2 marks — 1 for method, 1 for answer)</p>
+<p>Accept: strain energy is proportional to x², so doubling x quadruples energy.</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Stress σ = F/A; Strain ε = ΔL/L; Young Modulus E = σ/ε</li>
+<li>Stress σ = F/A (Pa); Strain ε = ΔL/L (no units); Young Modulus E = σ/ε (Pa)</li>
 <li>Hooke's Law: F = kx (up to limit of proportionality)</li>
-<li>Limit of proportionality → Hooke's law stops</li>
+<li>Limit of proportionality → Hooke's law stops (graph becomes non-linear)</li>
 <li>Elastic limit → permanent deformation begins</li>
 <li>Elastic: returns to shape; Plastic: permanent deformation</li>
-<li>Strain energy = ½Fx = ½kx² = area under graph</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>Strain energy = ½Fx = ½kx² = area under force-extension graph</li>
+<li>Energy per unit volume = ½σε = σ²/(2E)</li>
+<li>Young modulus experiment: measure L, d, F, ΔL; plot F vs ΔL; E = gradient × L/A</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always convert mm² to m² when calculating area: 1 mm² = 10⁻⁶ m².</li>
+<li>When using a micrometer, remember to check for zero error and apply correction.</li>
+<li>Strain is dimensionless — never give it units.</li>
+<li>On a stress-strain graph, the gradient in the linear region equals the Young modulus.</li>
+<li>Distinguish carefully between limit of proportionality and elastic limit.</li>
+<li>For strain energy calculations, use extension (not total length).</li>
+<li>When a wire is stretched beyond the elastic limit, some energy is dissipated as heat — the unloading curve lies below the loading curve.</li>
 </ul>
 </div>
 </div>

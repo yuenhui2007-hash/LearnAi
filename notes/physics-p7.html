@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Electric Fields — Physics Notes | LearnAI</title>
 <meta name="description" content="Electric Fields notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,20 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -63,8 +77,6 @@
 <div class="notes-container">
 <div class="notes-header">
 <div class="level-badges">
-
-
 <span class="level-badge badge-a2">A2 Level</span>
 </div>
 <h1>Electric Fields</h1>
@@ -73,98 +85,125 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Electric Field Strength</h3>
+<p>An electric field is a region of space where a charged particle experiences a force. The electric field strength E at a point is defined as the force per unit positive charge:</p>
 <div class="formula-box">
-E = F/Q (force per unit positive charge)<br>
+E = F/Q (unit: N/C or V/m)<br>
 For a point charge: E = Q/(4πε₀r²)
 </div>
-<p>Unit: N/C or V/m.</p>
+<p>where ε₀ = 8.85 × 10⁻¹² F/m is the permittivity of free space. The field due to a point charge is radial — it points outward for a positive charge and inward for a negative charge.</p>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Electric Field Strength (E):</strong> The force per unit positive charge acting at a point in the field. Unit: N/C or V/m.</p>
+</div>
+
+<div class="key-point">Electric field strength is a vector quantity. The direction is defined as the direction of the force on a positive test charge.</div>
+
 <h3>2. Electric Potential</h3>
+<p>Electric potential at a point is the work done per unit charge in bringing a positive test charge from infinity to that point. Potential is a scalar quantity.</p>
 <div class="formula-box">
-V = W/Q (work done per unit charge)<br>
+V = W/Q (unit: volt, V)<br>
 For a point charge: V = Q/(4πε₀r)
 </div>
-<p>Unit: volt (V).</p>
+
+<div class="key-point">Potential is always zero at infinity. For a positive point charge, V is positive everywhere and decreases as r increases. For a negative point charge, V is negative everywhere and increases (becomes less negative) as r increases.</div>
+
 <h3>3. Relationship between E and V</h3>
+<p>The electric field strength is related to the potential gradient:</p>
 <div class="formula-box">E = -dV/dr</div>
-<p>The electric field strength is the negative gradient of potential.</p>
+<p>The negative sign indicates that E points in the direction of decreasing potential. In a uniform field (between parallel plates), this simplifies to E = V/d.</p>
+
 <h3>4. Uniform Electric Field</h3>
-<div class="formula-box">E = V/d (between parallel plates)</div>
+<p>Between two parallel conducting plates separated by distance d and maintained at a potential difference V, the electric field is uniform (constant in magnitude and direction):</p>
+<div class="formula-box">E = V/d</div>
+<p>The field lines are parallel, equally spaced, and perpendicular to the plates. A positive charge in this field experiences a constant force F = QE in the direction from positive to negative plate.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Electron in Uniform Field</h4>
+<p><strong>Question:</strong> An electron is projected horizontally into a uniform electric field of 2.5 × 10⁴ N/C directed vertically upwards. The electron enters with speed 3.0 × 10⁶ m/s. Calculate: (a) the acceleration of the electron, (b) the vertical deflection after travelling 5.0 cm horizontally. (e = 1.6 × 10⁻¹⁹ C, m = 9.11 × 10⁻³¹ kg)</p>
+<p><strong>Solution:</strong></p>
+<p>(a) F = eE = 1.6 × 10⁻¹⁹ × 2.5 × 10⁴ = 4.0 × 10⁻¹⁵ N (downwards, since electron is negative)</p>
+<p>a = F/m = 4.0 × 10⁻¹⁵ / 9.11 × 10⁻³¹ = <strong>4.39 × 10¹⁵ m/s²</strong> downwards</p>
+<p>(b) Time in field: t = x/v = 0.050 / 3.0 × 10⁶ = 1.67 × 10⁻⁸ s</p>
+<p>Vertical deflection: y = ½at² = ½ × 4.39 × 10¹⁵ × (1.67 × 10⁻⁸)² = <strong>6.1 × 10⁻⁴ m</strong> (0.61 mm)</p>
+</div>
+
 <h3>5. Coulomb's Law</h3>
+<p>The force between two point charges is directly proportional to the product of their charges and inversely proportional to the square of their separation:</p>
 <div class="formula-box">F = Q₁Q₂/(4πε₀r²)</div>
-<p>Force between two point charges is proportional to the product of charges and inversely proportional to the square of their separation.</p>
+<p>This is an inverse-square law, analogous to Newton's law of gravitation. Like charges repel; opposite charges attract.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Coulomb Force</h4>
+<p><strong>Question:</strong> Two point charges, +3.0 μC and -5.0 μC, are placed 20 cm apart in vacuum. Calculate the magnitude of the force between them.</p>
+<p><strong>Solution:</strong></p>
+<p>F = (3.0 × 10⁻⁶)(5.0 × 10⁻⁶) / (4π × 8.85 × 10⁻¹² × 0.20²)</p>
+<p>F = 1.5 × 10⁻¹¹ / (4.44 × 10⁻¹²) = <strong>3.38 N</strong> (attractive)</p>
+</div>
+
 <h3>6. Electric Field Patterns</h3>
 <ul>
-<li><strong>Point charge:</strong> radial field, lines radiate outward (+) or inward (-).</li>
-<li><strong>Parallel plates:</strong> uniform field, straight parallel lines.</li>
-<li><strong>Dipole:</strong> field lines from + to -.</li>
+<li><strong>Point positive charge:</strong> Radial field, lines radiate outward. E decreases as 1/r².</li>
+<li><strong>Point negative charge:</strong> Radial field, lines radiate inward.</li>
+<li><strong>Parallel plates:</strong> Uniform field, straight parallel lines from + to − plate.</li>
+<li><strong>Dipole:</strong> Field lines originate from + charge and terminate on − charge.</li>
 </ul>
+
+<div class="key-point">Electric field lines never cross. The density of field lines indicates the strength of the field — closer lines mean stronger field.</div>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often confuse electric field strength E with electric potential V. Remember: E is force per unit charge (vector, N/C), while V is energy per unit charge (scalar, V). In a uniform field, E = V/d, but for a point charge, E ∝ 1/r² while V ∝ 1/r.</p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) Define electric field strength. (b) Two parallel plates are separated by 4.0 cm and have a potential difference of 1200 V. Calculate the electric field strength between the plates. (c) An α-particle (charge +2e, mass 6.6 × 10⁻²⁷ kg) is placed midway between the plates. Calculate the force on the α-particle and its initial acceleration. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Force per unit positive charge (1 mark)</p>
+<p>• (b) E = V/d = 1200/0.040 = <strong>3.0 × 10⁴ V/m</strong> (or N/C) (1 mark)</p>
+<p>• (c) F = QE = 2 × 1.6 × 10⁻¹⁹ × 3.0 × 10⁴ = <strong>9.6 × 10⁻¹⁵ N</strong> (1 mark)</p>
+<p>• a = F/m = 9.6 × 10⁻¹⁵ / 6.6 × 10⁻²⁷ = <strong>1.45 × 10¹² m/s²</strong> (accept 1.5 × 10¹²) (2 marks — 1 method, 1 answer)</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A proton moves from a point where the potential is +200 V to a point where the potential is +800 V. Calculate the change in potential energy and state whether work is done by or on the field. (e = 1.6 × 10⁻¹⁹ C) [3 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• ΔV = 800 − 200 = 600 V (1 mark)</p>
+<p>• ΔPE = QΔV = 1.6 × 10⁻¹⁹ × 600 = <strong>9.6 × 10⁻¹⁷ J</strong> (1 mark)</p>
+<p>• Work is done <strong>on the field</strong> / by an external agent (proton moves to higher potential, against the field) (1 mark)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>E = F/Q; Point charge: E = Q/(4πε₀r²)</li>
+<li>E = F/Q; Point charge: E = Q/(4πε₀r²) (radial field)</li>
 <li>V = W/Q; Point charge: V = Q/(4πε₀r)</li>
-<li>E = -dV/dr</li>
-<li>Uniform field: E = V/d</li>
-<li>Coulomb: F = Q₁Q₂/(4πε₀r²)</li>
+<li>E = -dV/dr; Uniform field: E = V/d</li>
+<li>Coulomb: F = Q₁Q₂/(4πε₀r²) (inverse square law)</li>
 <li>Point charge: radial field; Parallel plates: uniform field</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>ε₀ = 8.85 × 10⁻¹² F/m</li>
+<li>Field lines: never cross, denser = stronger field</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always state the direction of electric fields and forces — they are vectors.</li>
+<li>Remember that a negative charge experiences a force opposite to the direction of E.</li>
+<li>For potential calculations, V = 0 at infinity by convention.</li>
+<li>In a uniform field, equipotential lines are parallel to the plates.</li>
+<li>When adding fields from multiple charges, use vector addition (not scalar).</li>
+<li>Check whether the question asks for magnitude only or magnitude and direction.</li>
 </ul>
 </div>
 </div>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thermal Physics — Physics Notes | LearnAI</title>
 <meta name="description" content="Thermal Physics notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,20 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -65,7 +79,6 @@
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
 <span class="level-badge badge-as">AS Level</span>
-
 </div>
 <h1>Thermal Physics</h1>
 <p style="color:var(--gray)">9702 (A-Level) · 0625 (IGCSE)</p>
@@ -73,103 +86,137 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Temperature Scales</h3>
+<p>Temperature is a measure of the average kinetic energy of the particles in a substance. Two common scales are used in physics:</p>
 <ul>
-<li><strong>Celsius (°C):</strong> based on freezing (0°C) and boiling (100°C) of water.</li>
-<li><strong>Kelvin (K):</strong> absolute scale. T(K) = T(°C) + 273.15.</li>
-<li>Absolute zero = 0 K = -273.15°C.</li>
+<li><strong>Celsius (°C):</strong> Based on the freezing point (0°C) and boiling point (100°C) of water at standard pressure.</li>
+<li><strong>Kelvin (K):</strong> The absolute thermodynamic scale. T(K) = T(°C) + 273.15.</li>
 </ul>
+<div class="key-point">Absolute zero (0 K = -273.15°C) is the theoretical temperature at which all molecular motion ceases. It is the lowest possible temperature. In calculations, use T(K) = T(°C) + 273 (approximation).</div>
+
 <h3>2. Thermal Expansion</h3>
+<p>Most materials expand when heated due to increased molecular vibrations:</p>
 <ul>
-<li>Solids: ΔL = αL₀ΔT (linear expansion).</li>
-<li>Liquids: ΔV = βV₀ΔT (volume expansion).</li>
-<li>Gases: obey ideal gas law.</li>
+<li><strong>Solids:</strong> ΔL = αL₀ΔT (linear expansion), where α is the coefficient of linear expansion.</li>
+<li><strong>Liquids:</strong> ΔV = βV₀ΔT (volume expansion), where β is the coefficient of volume expansion.</li>
+<li><strong>Gases:</strong> Expand much more than solids or liquids; obey the ideal gas law.</li>
 </ul>
+
 <h3>3. Ideal Gas Law</h3>
+<p>An ideal gas is a theoretical gas consisting of point particles that do not interact except during elastic collisions. Real gases approximate ideal behaviour at low pressure and high temperature.</p>
 <div class="formula-box">
 pV = nRT = NkT<br>
-Where n = moles, N = number of molecules, R = 8.31 J/(mol·K), k = 1.38 × 10⁻²³ J/K
+where n = number of moles, N = number of molecules, R = 8.31 J/(mol·K), k = 1.38 × 10⁻²³ J/K
 </div>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Boltzmann constant (k):</strong> k = R/N_A = 1.38 × 10⁻²³ J/K. It relates temperature to energy at the molecular level.</p>
+</div>
+
 <h3>4. Kinetic Theory of Gases</h3>
+<p>The kinetic theory models a gas as a large number of small particles in random motion. From this model, we derive:</p>
 <div class="formula-box">
 pV = ⅓Nmc²<br>
-Average kinetic energy of a molecule: Eₖ = ½mc² = (3/2)kT
+Average kinetic energy of one molecule: Eₖ = ½mc² = (3/2)kT<br>
+Root-mean-square speed: c_rms = √(3kT/m) = √(3RT/M)
 </div>
+<p>where m = mass of one molecule, M = molar mass, and c² is the mean square speed.</p>
+
+<div class="key-point">The average kinetic energy of an ideal gas molecule depends only on temperature, not on the type of gas. At the same temperature, hydrogen molecules and oxygen molecules have the same average kinetic energy, but hydrogen molecules move faster because they are lighter.</div>
+
 <h3>5. Specific Heat Capacity</h3>
+<p>The specific heat capacity c of a substance is the energy required to raise the temperature of 1 kg of the substance by 1 K:</p>
 <div class="formula-box">Q = mcΔT</div>
-<p>Energy required to raise temperature of mass m by ΔT.</p>
+<p>Unit: J/(kg·K). Water has a very high specific heat capacity (4200 J/(kg·K)), which is why it is used in heating systems and why coastal areas have milder climates.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Specific Heat Capacity</h4>
+<p><strong>Question:</strong> An electric heater of power 2.0 kW is used to heat 0.50 kg of water from 20°C to 80°C. The specific heat capacity of water is 4200 J/(kg·K). Calculate the time required, assuming no heat losses.</p>
+<p><strong>Solution:</strong></p>
+<p>Q = mcΔT = 0.50 × 4200 × (80 − 20) = 126,000 J</p>
+<p>t = Q/P = 126,000/2000 = <strong>63 s</strong></p>
+</div>
+
 <h3>6. Specific Latent Heat</h3>
+<p>Latent heat is the energy required for a substance to change phase at constant temperature. The specific latent heat L is the energy per unit mass:</p>
 <div class="formula-box">Q = mL</div>
-<p>Energy required for phase change at constant temperature.</p>
+<ul>
+<li><strong>Specific latent heat of fusion (L_f):</strong> Energy to melt 1 kg of solid at its melting point.</li>
+<li><strong>Specific latent heat of vaporisation (L_v):</strong> Energy to vaporise 1 kg of liquid at its boiling point.</li>
+</ul>
+
+<div class="key-point">During phase change, the temperature remains constant even though energy is being supplied. The energy breaks intermolecular bonds (fusion) or does work against atmospheric pressure while breaking bonds (vaporisation).</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Phase Change</h4>
+<p><strong>Question:</strong> Ice at 0°C is added to 0.40 kg of water at 25°C. The final temperature is 5°C. Calculate the mass of ice added. (c_water = 4200 J/(kg·K), L_fusion = 3.34 × 10⁵ J/kg)</p>
+<p><strong>Solution:</strong></p>
+<p>Heat lost by water = 0.40 × 4200 × (25 − 5) = 33,600 J</p>
+<p>Heat gained by ice = m × 3.34 × 10⁵ + m × 4200 × (5 − 0) = m(334,000 + 21,000) = 355,000m</p>
+<p>355,000m = 33,600 → m = <strong>0.095 kg</strong> (95 g)</p>
+</div>
+
 <h3>7. First Law of Thermodynamics</h3>
-<div class="formula-box">ΔU = Q - W</div>
-<p>Change in internal energy = heat supplied - work done by system.</p>
+<p>The first law is a statement of conservation of energy for thermal systems:</p>
+<div class="formula-box">ΔU = Q − W</div>
+<p>where ΔU = increase in internal energy, Q = heat supplied to the system, W = work done by the system. Note: some textbooks use ΔU = Q + W where W is work done <em>on</em> the system — be careful with sign conventions!</p>
+
+<div class="key-point">For an ideal gas, internal energy U consists entirely of the kinetic energy of the molecules. U depends only on temperature: ΔU ∝ ΔT. For real gases and other substances, U also includes potential energy from intermolecular forces.</div>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often think that temperature always increases when heat is added. This is not true during phase changes — when ice melts at 0°C, heat is absorbed but the temperature stays constant. The energy goes into breaking intermolecular bonds, not increasing kinetic energy.</p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State what is meant by absolute zero. (b) A gas cylinder contains 2.0 mol of ideal gas at 27°C and 5.0 × 10⁵ Pa. Calculate the volume of the gas. (c) The temperature is raised to 77°C at constant volume. Calculate the new pressure. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Theoretical temperature at which molecules have minimum/zero kinetic energy / lowest possible temperature / -273°C (1 mark)</p>
+<p>• (b) T = 27 + 273 = 300 K. V = nRT/p = (2.0 × 8.31 × 300)/(5.0 × 10⁵) (1 mark)</p>
+<p>• V = <strong>9.97 × 10⁻³ m³</strong> (accept 0.010 m³ or 10 L) (1 mark)</p>
+<p>• (c) p/T = constant → p₂ = p₁T₂/T₁ = 5.0 × 10⁵ × 350/300 (1 mark)</p>
+<p>• p₂ = <strong>5.83 × 10⁵ Pa</strong> (accept 5.8 × 10⁵ Pa) (1 mark)</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A metal block of mass 0.80 kg is heated by an electric heater of power 40 W for 5.0 minutes. The temperature rises from 18°C to 42°C. Calculate the specific heat capacity of the metal. [3 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• Q = Pt = 40 × 300 = 12,000 J (1 mark)</p>
+<p>• c = Q/(mΔT) = 12,000/(0.80 × 24) (1 mark)</p>
+<p>• c = <strong>625 J/(kg·K)</strong> (accept 620–630) (1 mark)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>T(K) = T(°C) + 273; Absolute zero = 0 K</li>
+<li>T(K) = T(°C) + 273; Absolute zero = 0 K = -273°C</li>
 <li>Ideal gas: pV = nRT = NkT</li>
-<li>Kinetic theory: pV = ⅓Nmc²; Eₖ = (3/2)kT</li>
+<li>Kinetic theory: pV = ⅓Nmc²; Average Eₖ = (3/2)kT</li>
 <li>Specific heat: Q = mcΔT</li>
 <li>Latent heat: Q = mL</li>
-<li>1st Law: ΔU = Q - W</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>1st Law: ΔU = Q − W (increase in internal energy = heat in − work out)</li>
+<li>Internal energy of ideal gas depends only on temperature</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always convert Celsius to Kelvin before using the ideal gas equation.</li>
+<li>For gas law calculations, remember: pV/T = constant (for fixed amount of gas).</li>
+<li>When solving calorimetry problems, assume heat lost by hot body = heat gained by cold body (unless stated otherwise).</li>
+<li>During phase change, temperature is constant — don't include ΔT for the phase-changing substance.</li>
+<li>Check whether the question asks for specific heat capacity or specific latent heat.</li>
+<li>In first law problems, be clear about your sign convention for work done.</li>
 </ul>
 </div>
 </div>

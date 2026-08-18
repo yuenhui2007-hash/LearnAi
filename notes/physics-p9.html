@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D.C. Circuits — Physics Notes | LearnAI</title>
 <meta name="description" content="D.C. Circuits notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,20 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -65,7 +79,6 @@
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
 <span class="level-badge badge-as">AS Level</span>
-
 </div>
 <h1>D.C. Circuits</h1>
 <p style="color:var(--gray)">9702 (A-Level) · 0625 (IGCSE)</p>
@@ -73,53 +86,113 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Circuit Symbols</h3>
-<p>Know standard circuit symbols: cell, battery, resistor, variable resistor, lamp, switch, ammeter, voltmeter, fuse, diode, LED, thermistor, LDR.</p>
+<p>You must be able to recognise and draw standard circuit symbols: cell, battery, resistor, variable resistor, lamp, switch, ammeter, voltmeter, fuse, diode, LED, thermistor, LDR, and op-amp. A circuit diagram should be drawn with straight lines, right-angle corners, and correct symbols.</p>
+
 <h3>2. Series Circuits</h3>
+<p>In a series circuit, components are connected end-to-end, so there is only one path for current.</p>
 <ul>
-<li>Current same through all components.</li>
-<li>Total p.d. = sum of individual p.d.s.</li>
+<li>Current is the same through all components.</li>
+<li>Total p.d. = sum of individual p.d.s: V_total = V₁ + V₂ + V₃ + ...</li>
 <li>Total resistance: R_total = R₁ + R₂ + R₃ + ...</li>
 </ul>
+<div class="formula-box">R_total = R₁ + R₂ + R₃ + ...</div>
+
+<div class="key-point">Adding resistors in series always increases the total resistance. The total resistance is greater than the largest individual resistor.</div>
+
 <h3>3. Parallel Circuits</h3>
+<p>In a parallel circuit, components are connected across the same two points, providing multiple paths for current.</p>
 <ul>
-<li>P.d. same across all branches.</li>
-<li>Total current = sum of branch currents.</li>
+<li>P.d. is the same across all branches.</li>
+<li>Total current = sum of branch currents: I_total = I₁ + I₂ + I₃ + ...</li>
 <li>Total resistance: 1/R_total = 1/R₁ + 1/R₂ + 1/R₃ + ...</li>
 </ul>
+<div class="formula-box">1/R_total = 1/R₁ + 1/R₂ + 1/R₃ + ...</div>
+
+<div class="key-point">Adding resistors in parallel always decreases the total resistance. The total resistance is less than the smallest individual resistor. For two resistors: R_total = R₁R₂/(R₁ + R₂).</div>
+
 <h3>4. Potential Divider</h3>
+<p>A potential divider (voltage divider) uses two resistors in series to obtain a fraction of the supply voltage:</p>
 <div class="formula-box">V_out = V_in × R₂/(R₁ + R₂)</div>
+<p>This principle is used in sensor circuits where one resistor is a sensor (thermistor or LDR) whose resistance changes with the physical quantity being measured.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Potential Divider</h4>
+<p><strong>Question:</strong> A potential divider consists of a 4.0 kΩ resistor and a 6.0 kΩ resistor connected across a 12 V supply. Calculate the output voltage across the 6.0 kΩ resistor.</p>
+<p><strong>Solution:</strong></p>
+<p>V_out = 12 × 6000/(4000 + 6000) = 12 × 6000/10000 = <strong>7.2 V</strong></p>
+</div>
+
 <h3>5. Kirchhoff's Laws</h3>
+<p>Kirchhoff's laws are fundamental principles that apply to all circuits:</p>
 <ul>
-<li><strong>First Law (Current):</strong> Total current entering a junction = total current leaving.</li>
-<li><strong>Second Law (Voltage):</strong> Sum of e.m.f.s = sum of p.d.s around any closed loop.</li>
+<li><strong>First Law (Current Law):</strong> At any junction, the total current entering equals the total current leaving. ΣI_in = ΣI_out. This is a statement of conservation of charge.</li>
+<li><strong>Second Law (Voltage Law):</strong> Around any closed loop, the sum of e.m.f.s equals the sum of p.d.s. ΣE = ΣIR. This is a statement of conservation of energy.</li>
 </ul>
+
+<div class="example-box">
+<h4>📝 Worked Example — Kirchhoff's Laws</h4>
+<p><strong>Question:</strong> In the circuit shown, a 6.0 V cell (negligible internal resistance) is connected to resistors of 2.0 Ω and 4.0 Ω in parallel, with a 3.0 Ω resistor in series with the combination. Calculate the current through each resistor.</p>
+<p><strong>Solution:</strong></p>
+<p>Parallel combination: 1/R_p = 1/2.0 + 1/4.0 = 3/4.0 → R_p = 4.0/3 = 1.33 Ω</p>
+<p>Total resistance = 3.0 + 1.33 = 4.33 Ω</p>
+<p>Total current I = 6.0/4.33 = 1.385 A (through 3.0 Ω resistor)</p>
+<p>P.d. across parallel combination = 1.385 × 1.33 = 1.84 V</p>
+<p>Current through 2.0 Ω = 1.84/2.0 = <strong>0.92 A</strong></p>
+<p>Current through 4.0 Ω = 1.84/4.0 = <strong>0.46 A</strong></p>
+<p>Check: 0.92 + 0.46 = 1.38 A ✓</p>
+</div>
+
 <h3>6. Internal Resistance</h3>
+<p>Real cells and batteries have internal resistance r. When current flows, some voltage is "lost" across this internal resistance.</p>
 <div class="formula-box">E = V + Ir = I(R + r)</div>
-<p>Where E = e.m.f., V = terminal p.d., I = current, R = external resistance, r = internal resistance.</p>
+<p>where E = e.m.f. (total energy per coulomb), V = terminal p.d. (useful energy per coulomb), I = current, R = external resistance, r = internal resistance.</p>
+
+<div class="key-point">The terminal p.d. decreases as current increases (V = E − Ir). When a cell is on open circuit (I = 0), the terminal p.d. equals the e.m.f.</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Internal Resistance</h4>
+<p><strong>Question:</strong> A cell of e.m.f. 1.5 V and internal resistance 0.50 Ω is connected to a 2.5 Ω resistor. Calculate: (a) the current, (b) the terminal p.d.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) I = E/(R + r) = 1.5/(2.5 + 0.50) = 1.5/3.0 = <strong>0.50 A</strong></p>
+<p>(b) V = IR = 0.50 × 2.5 = <strong>1.25 V</strong> (or V = E − Ir = 1.5 − 0.50 × 0.50 = 1.25 V)</p>
+</div>
+
 <h3>7. Sensors</h3>
 <ul>
-<li><strong>Thermistor:</strong> resistance decreases as temperature increases.</li>
-<li><strong>LDR (Light Dependent Resistor):</strong> resistance decreases as light intensity increases.</li>
+<li><strong>Thermistor:</strong> A temperature-dependent resistor. For an NTC thermistor, resistance decreases as temperature increases. Used in temperature sensors and fire alarms.</li>
+<li><strong>LDR (Light Dependent Resistor):</strong> Resistance decreases as light intensity increases. Used in light-sensitive switches (e.g., street lighting).</li>
 </ul>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often confuse the behaviour of NTC thermistors and LDRs. Remember: for both NTC thermistors and LDRs, resistance <strong>decreases</strong> when the stimulus (temperature or light) <strong>increases</strong>. This is why they are often used as the lower resistor in a potential divider — increasing the stimulus increases V_out.</p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A battery of e.m.f. 9.0 V and internal resistance 1.0 Ω is connected to a resistor of 8.0 Ω. Calculate: (a) the current in the circuit, (b) the power dissipated in the 8.0 Ω resistor, (c) the efficiency of the circuit. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) I = E/(R + r) = 9.0/(8.0 + 1.0) = <strong>1.0 A</strong> (1 mark)</p>
+<p>• (b) P = I²R = 1.0² × 8.0 = <strong>8.0 W</strong> (1 mark)</p>
+<p>• (c) Total power = EI = 9.0 × 1.0 = 9.0 W (1 mark)</p>
+<p>• Efficiency = (8.0/9.0) × 100 = <strong>89%</strong> (accept 88.9%) (2 marks — 1 method, 1 answer)</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> In the potential divider circuit shown, R₁ = 2.0 kΩ and R₂ is an NTC thermistor. At 20°C, R₂ = 4.0 kΩ. The supply voltage is 12 V. Calculate: (a) the output voltage at 20°C, (b) explain what happens to the output voltage as the temperature increases. [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) V_out = 12 × 4000/(2000 + 4000) = 12 × 4000/6000 = <strong>8.0 V</strong> (1 mark)</p>
+<p>• (b) As temperature increases, R₂ decreases (1 mark)</p>
+<p>• R₂/(R₁ + R₂) decreases (1 mark)</p>
+<p>• Therefore V_out <strong>decreases</strong> (1 mark)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
@@ -128,47 +201,22 @@
 <li>Series: I same, V adds, R_total = R₁+R₂+R₃...</li>
 <li>Parallel: V same, I adds, 1/R_total = 1/R₁+1/R₂+1/R₃...</li>
 <li>Potential divider: V_out = V_in × R₂/(R₁+R₂)</li>
-<li>Kirchhoff 1st: ΣI_in = ΣI_out at junction</li>
-<li>Kirchhoff 2nd: Σe.m.f. = Σp.d. around loop</li>
+<li>Kirchhoff 1st: ΣI_in = ΣI_out at junction (conservation of charge)</li>
+<li>Kirchhoff 2nd: Σe.m.f. = Σp.d. around loop (conservation of energy)</li>
 <li>E = V + Ir = I(R+r)</li>
-<li>Thermistor: R↓ as T↑; LDR: R↓ as light↑</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>Thermistor (NTC): R↓ as T↑; LDR: R↓ as light↑</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always redraw complex circuits to identify series and parallel sections clearly.</li>
+<li>For parallel resistors, the product-over-sum formula (R₁R₂/(R₁+R₂)) only works for two resistors.</li>
+<li>When using Kirchhoff's laws, define current directions before writing equations. If your answer is negative, the actual direction is opposite.</li>
+<li>Remember that ammeters have very low resistance and are connected in series; voltmeters have very high resistance and are connected in parallel.</li>
+<li>For internal resistance: open circuit → V = E; short circuit → I = E/r.</li>
+<li>In potential divider sensor circuits, state clearly whether R increases or decreases with the stimulus.</li>
 </ul>
 </div>
 </div>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Current Electricity — Physics Notes | LearnAI</title>
 <meta name="description" content="Current Electricity notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,20 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -65,7 +79,6 @@
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
 <span class="level-badge badge-as">AS Level</span>
-
 </div>
 <h1>Current Electricity</h1>
 <p style="color:var(--gray)">9702 (A-Level) · 0625 (IGCSE)</p>
@@ -73,96 +86,119 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Electric Current</h3>
+<p>Electric current is the rate of flow of electric charge. In metals, current is carried by free electrons; in electrolytes, by positive and negative ions; in semiconductors, by electrons and holes.</p>
 <div class="formula-box">I = Q/t (rate of flow of charge)</div>
-<p>Unit: ampere (A). Conventional current flows from positive to negative.</p>
+<p>Unit: ampere (A) = coulomb per second. Conventional current flows from positive to negative, even though electrons actually flow from negative to positive.</p>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Electric Current (I):</strong> The rate of flow of charge. I = ΔQ/Δt. Unit: ampere (A).</p>
+</div>
+
 <h3>2. Charge Carriers</h3>
 <ul>
-<li>In metals: free electrons.</li>
-<li>In electrolytes: positive and negative ions.</li>
-<li>In semiconductors: electrons and holes.</li>
+<li><strong>Metals:</strong> Free electrons are the charge carriers. The number density of free electrons is very high (~10²⁹ m⁻³), which is why metals are good conductors.</li>
+<li><strong>Electrolytes:</strong> Positive and negative ions carry charge. Conduction involves chemical changes at the electrodes.</li>
+<li><strong>Semiconductors:</strong> At low temperatures, few charge carriers. As temperature rises, more electron-hole pairs are created, increasing conductivity.</li>
 </ul>
+
+<div class="key-point">The drift velocity v of electrons in a conductor is given by I = nAve, where n = number density of charge carriers, A = cross-sectional area, e = electron charge. Typical drift velocities are very small (~10⁻⁴ m/s) because n is enormous.</div>
+
 <h3>3. Potential Difference (Voltage)</h3>
+<p>Potential difference between two points is the energy transferred per unit charge when charge moves from one point to the other.</p>
 <div class="formula-box">V = W/Q (energy transferred per unit charge)</div>
-<p>Unit: volt (V).</p>
+<p>Unit: volt (V) = joule per coulomb. A potential difference of 1 V means 1 J of energy is transferred per coulomb of charge.</p>
+
 <h3>4. Resistance</h3>
+<p>Resistance is a measure of how much a component opposes the flow of current. It is defined as the ratio of potential difference across the component to the current through it.</p>
 <div class="formula-box">R = V/I</div>
-<p>Unit: ohm (Ω).</p>
+<p>Unit: ohm (Ω). For an ohmic conductor at constant temperature, R is constant and V ∝ I.</p>
+
 <h3>5. Ohm's Law</h3>
-<p>For a metallic conductor at constant temperature: V ∝ I. The V-I graph is a straight line through the origin.</p>
+<p>For a metallic conductor at constant temperature, the current is directly proportional to the potential difference. The V-I graph is a straight line through the origin.</p>
+<div class="formula-box">V = IR (for ohmic conductors)</div>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Ohm's Law does not apply to all conductors! It only applies to metallic conductors at constant temperature. Filament lamps, diodes, and thermistors do not obey Ohm's Law because their resistance changes with temperature or current.</p>
+</div>
+
 <h3>6. Resistivity</h3>
+<p>Resistivity is a material property that does not depend on the dimensions of the sample. It relates resistance to the geometry of the conductor:</p>
 <div class="formula-box">R = ρL/A</div>
-<p>Where ρ = resistivity, L = length, A = cross-sectional area.</p>
+<p>where ρ = resistivity (unit: Ω·m), L = length, A = cross-sectional area. Good conductors (copper, silver) have low resistivity; insulators have very high resistivity.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Resistivity</h4>
+<p><strong>Question:</strong> A wire of length 2.0 m has a resistance of 4.5 Ω. The resistivity of the material is 1.8 × 10⁻⁸ Ω·m. Calculate the diameter of the wire.</p>
+<p><strong>Solution:</strong></p>
+<p>R = ρL/A → A = ρL/R = (1.8 × 10⁻⁸ × 2.0)/4.5 = 8.0 × 10⁻⁹ m²</p>
+<p>A = πd²/4 → d = √(4A/π) = √(4 × 8.0 × 10⁻⁹/π) = <strong>1.01 × 10⁻⁴ m</strong> (0.10 mm)</p>
+</div>
+
 <h3>7. Power in Electrical Circuits</h3>
+<p>Power is the rate at which electrical energy is transferred. There are three equivalent expressions:</p>
 <div class="formula-box">
 P = VI = I²R = V²/R
 </div>
+<p>Unit: watt (W). The energy dissipated in a resistor is converted to internal energy (heat) — this is called Joule heating.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Power and Cost</h4>
+<p><strong>Question:</strong> A 2.0 kW electric heater is used for 3.5 hours. The cost of electricity is 25p per kWh. Calculate: (a) the energy used in kWh, (b) the cost.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) Energy = power × time = 2.0 × 3.5 = <strong>7.0 kWh</strong></p>
+<p>(b) Cost = 7.0 × 25 = <strong>175p</strong> (£1.75)</p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A copper wire of diameter 0.25 mm carries a current of 2.0 A. The number density of free electrons in copper is 8.0 × 10²⁸ m⁻³. Calculate the drift velocity of the electrons. (e = 1.6 × 10⁻¹⁹ C) [3 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• A = πd²/4 = π × (0.25 × 10⁻³)²/4 = 4.91 × 10⁻⁸ m² (1 mark)</p>
+<p>• I = nAve → v = I/(nAe) (1 mark)</p>
+<p>• v = 2.0/(8.0 × 10²⁸ × 4.91 × 10⁻⁸ × 1.6 × 10⁻¹⁹) = <strong>3.18 × 10⁻⁴ m/s</strong> (accept 3.2 × 10⁻⁴) (1 mark)</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State Ohm's law. (b) A resistor has a potential difference of 12 V across it and a current of 0.25 A. Calculate its resistance. (c) The resistor is a wire of length 1.5 m and cross-sectional area 0.20 mm². Calculate the resistivity of the material. [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) For a metallic conductor at constant temperature, current is directly proportional to potential difference / V = IR (1 mark)</p>
+<p>• (b) R = V/I = 12/0.25 = <strong>48 Ω</strong> (1 mark)</p>
+<p>• (c) ρ = RA/L = (48 × 0.20 × 10⁻⁶)/1.5 (1 mark)</p>
+<p>• ρ = <strong>6.4 × 10⁻⁶ Ω·m</strong> (1 mark)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>I = Q/t (A)</li>
-<li>V = W/Q (V)</li>
-<li>R = V/I (Ω)</li>
-<li>Ohm's Law: V ∝ I at constant temperature</li>
+<li>I = Q/t (A) — rate of flow of charge</li>
+<li>V = W/Q (V) — energy per unit charge</li>
+<li>R = V/I (Ω) — opposition to current</li>
+<li>Ohm's Law: V ∝ I at constant temperature (metallic conductors only)</li>
 <li>Resistivity: R = ρL/A</li>
-<li>Power: P = VI = I²R = V²/R</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>Power: P = VI = I²R = V²/R (W)</li>
+<li>Drift velocity: I = nAve</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always check whether a component is ohmic before applying V = IR.</li>
+<li>Convert all lengths to metres and areas to m² before calculating resistivity.</li>
+<li>Drift velocity is typically very small — if your answer is m/s, check your calculation!</li>
+<li>For power calculations, choose the formula that uses the quantities you know.</li>
+<li>Remember: conventional current flows + to −; electron flow is − to +.</li>
+<li>In resistivity experiments, measure diameter at several points and average.</li>
 </ul>
 </div>
 </div>

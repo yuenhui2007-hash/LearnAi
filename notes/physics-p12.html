@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Particle Physics — Physics Notes | LearnAI</title>
 <meta name="description" content="Particle Physics notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,24 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -63,8 +81,6 @@
 <div class="notes-container">
 <div class="notes-header">
 <div class="level-badges">
-
-
 <span class="level-badge badge-a2">A2 Level</span>
 </div>
 <h1>Particle Physics</h1>
@@ -73,103 +89,137 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Fundamental Particles</h3>
+<p>All matter is composed of fundamental particles that are not made of smaller constituents. There are two main families:</p>
 <ul>
-<li><strong>Quarks:</strong> up (u), down (d), strange (s), charm (c), top (t), bottom (b).</li>
-<li><strong>Leptons:</strong> electron (e), muon (μ), tau (τ), and their neutrinos (νₑ, ν_μ, ν_τ).</li>
+<li><strong>Quarks:</strong> Six types (flavours): up (u), down (d), strange (s), charm (c), top (t), bottom (b). Quarks experience the strong nuclear force and have fractional charges.</li>
+<li><strong>Leptons:</strong> Six types: electron (e⁻), muon (μ⁻), tau (τ⁻), and their associated neutrinos (νₑ, ν_μ, ν_τ). Leptons do not experience the strong nuclear force.</li>
 </ul>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Quark:</strong> A fundamental particle that experiences the strong nuclear force and has fractional electric charge.</p>
+<p><strong>Lepton:</strong> A fundamental particle that does not experience the strong nuclear force.</p>
+</div>
+
 <h3>2. Quark Properties</h3>
-<table style="width:100%;margin:16px 0;border-collapse:collapse">
-<tr style="background:var(--light)"><th style="padding:8px;border:1px solid var(--gray-light)">Quark</th><th style="padding:8px;border:1px solid var(--gray-light)">Charge</th><th style="padding:8px;border:1px solid var(--gray-light)">Baryon number</th></tr>
-<tr><td style="padding:8px;border:1px solid var(--gray-light)">Up (u)</td><td style="padding:8px;border:1px solid var(--gray-light)">+⅔e</td><td style="padding:8px;border:1px solid var(--gray-light)">+⅓</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--gray-light)">Down (d)</td><td style="padding:8px;border:1px solid var(--gray-light)">-⅓e</td><td style="padding:8px;border:1px solid var(--gray-light)">+⅓</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--gray-light)">Strange (s)</td><td style="padding:8px;border:1px solid var(--gray-light)">-⅓e</td><td style="padding:8px;border:1px solid var(--gray-light)">+⅓</td></tr>
+<table class="data-table">
+<tr><th>Quark</th><th>Symbol</th><th>Charge</th><th>Baryon number</th><th>Strangeness</th></tr>
+<tr><td>Up</td><td>u</td><td>+⅔e</td><td>+⅓</td><td>0</td></tr>
+<tr><td>Down</td><td>d</td><td>-⅓e</td><td>+⅓</td><td>0</td></tr>
+<tr><td>Strange</td><td>s</td><td>-⅓e</td><td>+⅓</td><td>-1</td></tr>
+<tr><td>Charm</td><td>c</td><td>+⅔e</td><td>+⅓</td><td>0</td></tr>
+<tr><td>Top</td><td>t</td><td>+⅔e</td><td>+⅓</td><td>0</td></tr>
+<tr><td>Bottom</td><td>b</td><td>-⅓e</td><td>+⅓</td><td>0</td></tr>
 </table>
+
+<div class="key-point">Antiquarks have opposite signs for all quantum numbers: charge, baryon number, and strangeness. For example, an anti-up quark (ū) has charge -⅔e and baryon number -⅓.</div>
+
 <h3>3. Hadrons and Leptons</h3>
 <ul>
-<li><strong>Hadrons:</strong> particles made of quarks (baryons = 3 quarks, mesons = quark + antiquark).</li>
-<li><strong>Leptons:</strong> fundamental particles not made of quarks.</li>
+<li><strong>Hadrons:</strong> Particles made of quarks. They experience the strong nuclear force.
+  <ul>
+    <li><strong>Baryons:</strong> Made of three quarks (qqq). Examples: proton (uud), neutron (udd), Λ⁰ (uds).</li>
+    <li><strong>Mesons:</strong> Made of a quark and an antiquark (qq̄). Examples: π⁺ (ud̄), π⁻ (dū), K⁺ (us̄).</li>
+  </ul>
+</li>
+<li><strong>Leptons:</strong> Fundamental particles not made of quarks. Examples: electron, muon, neutrinos.</li>
 </ul>
+
+<div class="example-box">
+<h4>📝 Worked Example — Quark Composition</h4>
+<p><strong>Question:</strong> Determine the quark composition of: (a) a neutron, (b) a π⁺ meson, (c) an antiproton.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) Neutron (charge 0, baryon number +1): udd → (+⅔ − ⅓ − ⅓) = 0 ✓</p>
+<p>(b) π⁺ (charge +1, baryon number 0): ud̄ → (+⅔ + ⅓) = +1 ✓, B = ⅓ − ⅓ = 0 ✓</p>
+<p>(c) Antiproton (charge -1, baryon number -1): ūūđ → (-⅔ − ⅔ + ⅓) = -1 ✓, B = -⅓ − ⅓ − ⅓ = -1 ✓</p>
+</div>
+
 <h3>4. Conservation Laws</h3>
-<p>In all particle interactions, the following are conserved:</p>
+<p>In all particle interactions, the following quantities are conserved:</p>
 <ul>
-<li>Charge (Q)</li>
-<li>Baryon number (B)</li>
-<li>Lepton number (L)</li>
+<li><strong>Charge (Q):</strong> Total charge before = total charge after.</li>
+<li><strong>Baryon number (B):</strong> Total baryon number before = total after. Quarks have B = +⅓; antiquarks B = -⅓.</li>
+<li><strong>Lepton number (L):</strong> Total lepton number before = total after. Leptons have L = +1; antileptons L = -1.</li>
 </ul>
-<h3>5. Particle Exchange</h3>
-<p>Forces are mediated by exchange particles:</p>
-<ul>
-<li>Electromagnetic: photon (γ)</li>
-<li>Strong nuclear: gluon (g)</li>
-<li>Weak nuclear: W⁺, W⁻, Z⁰</li>
-<li>Gravitational: graviton (theoretical)</li>
-</ul>
+
+<div class="key-point">Strangeness is conserved in strong and electromagnetic interactions but can change by 0 or ±1 in weak interactions. This is why strange particles are produced in pairs (strong interaction) but decay slowly via the weak interaction.</div>
+
+<h3>5. Particle Exchange and Forces</h3>
+<p>Forces are mediated by exchange particles (gauge bosons):</p>
+<table class="data-table">
+<tr><th>Force</th><th>Exchange particle</th><th>Acts on</th><th>Range</th></tr>
+<tr><td>Strong nuclear</td><td>Gluon (g)</td><td>Quarks/hadrons</td><td>~10⁻¹⁵ m</td></tr>
+<tr><td>Electromagnetic</td><td>Photon (γ)</td><td>Charged particles</td><td>Infinite (1/r²)</td></tr>
+<tr><td>Weak nuclear</td><td>W⁺, W⁻, Z⁰</td><td>All particles</td><td>~10⁻¹⁸ m</td></tr>
+<tr><td>Gravitational</td><td>Graviton (theoretical)</td><td>All masses</td><td>Infinite (1/r²)</td></tr>
+</table>
+
+<div class="key-point">The electromagnetic force is much stronger than gravity (~10³⁶ times), but gravity dominates at large scales because it is always attractive and there are no "negative masses" to cancel it out.</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Conservation Check</h4>
+<p><strong>Question:</strong> Determine whether the decay π⁺ → μ⁺ + ν_μ is possible by checking conservation laws.</p>
+<p><strong>Solution:</strong></p>
+<p>π⁺ = ud̄; μ⁺ = antimuon (L_μ = -1); ν_μ = muon neutrino (L_μ = +1)</p>
+<p>Charge: +1 → +1 + 0 ✓</p>
+<p>Baryon number: 0 → 0 + 0 ✓</p>
+<p>Lepton number: 0 → -1 + 1 = 0 ✓</p>
+<p><strong>Conservation satisfied — decay is allowed.</strong></p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often confuse baryons and mesons. Remember: baryons have three quarks (B = +1), mesons have one quark and one antiquark (B = 0). Both are hadrons (made of quarks). Leptons are not hadrons — they are fundamental particles with no quark structure.</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State the quark composition of a proton and a neutron. (b) Write the quark equation for β⁻ decay of a neutron. (c) State which fundamental force is responsible for β⁻ decay. [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Proton = uud; Neutron = udd (1 mark — both correct)</p>
+<p>• (b) d → u + e⁻ + ν̄_e (1 mark)</p>
+<p>• (c) <strong>Weak nuclear force</strong> (1 mark)</p>
+<p>Accept W⁻ boson as exchange particle for additional clarity.</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> The following interaction is proposed: p + π⁻ → K⁰ + Λ⁰. Given the quark compositions (p = uud, π⁻ = dū, K⁰ = ds̄, Λ⁰ = uds), determine whether this interaction is possible. [3 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• Initial quarks: uud + dū = uu d d ū (1 mark)</p>
+<p>• Final quarks: ds̄ + uds = u d d s s̄ (1 mark)</p>
+<p>• Strangeness not conserved (-1 ≠ -1? Check: initial S = 0, final S = -1 + 0 = -1). Actually S: K⁰ = -1, Λ⁰ = -1 → total -2? Wait, K⁰ = ds̄ has S = +1, Λ⁰ = uds has S = -1 → total S = 0. Initial S = 0. <strong>Allowed by strong interaction.</strong> (1 mark for correct conclusion with reasoning)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Quarks: u(+⅔e), d(-⅓e), s(-⅓e); Baryon number = +⅓ each</li>
-<li>Hadrons = made of quarks (baryons=3q, mesons=q+q̄); Leptons = fundamental</li>
-<li>Conserved: charge Q, baryon number B, lepton number L</li>
-<li>Exchange particles: EM=photon, Strong=gluon, Weak=W±/Z⁰</li>
-<li>Proton = uud; Neutron = udd; π⁺ = ud̄</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>Quarks: u(+⅔e), d(-⅓e), s(-⅓e), c(+⅔e), t(+⅔e), b(-⅓e); Baryon number = +⅓ each</li>
+<li>Antiquarks have opposite charge, baryon number, and strangeness</li>
+<li>Hadrons = made of quarks (baryons = 3q, mesons = q+q̄); Leptons = fundamental</li>
+<li>Conserved in all interactions: charge Q, baryon number B, lepton number L</li>
+<li>Strangeness conserved in strong/EM, can change by ±1 in weak</li>
+<li>Exchange particles: EM = photon, Strong = gluon, Weak = W⁺/W⁻/Z⁰</li>
+<li>Proton = uud; Neutron = udd; π⁺ = ud̄; π⁻ = dū</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always check all three conservation laws (Q, B, L) for particle interactions.</li>
+<li>Remember quark charges: up-type (u, c, t) = +⅔e; down-type (d, s, b) = -⅓e.</li>
+<li>Baryons have B = +1; mesons have B = 0. Antiparticles have opposite quantum numbers.</li>
+<li>β⁻ decay involves d → u + e⁻ + ν̄_e (weak force, mediated by W⁻).</li>
+<li>β⁺ decay involves u → d + e⁺ + ν_e (weak force, mediated by W⁺).</li>
+<li>Strange particles are produced in pairs (strong interaction) but decay singly (weak interaction).</li>
 </ul>
 </div>
 </div>

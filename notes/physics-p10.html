@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Electromagnetism — Physics Notes | LearnAI</title>
 <meta name="description" content="Electromagnetism notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,20 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -64,7 +78,6 @@
 <div class="notes-header">
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
-
 <span class="level-badge badge-a2">A2 Level</span>
 </div>
 <h1>Electromagnetism</h1>
@@ -73,104 +86,135 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Magnetic Fields</h3>
+<p>A magnetic field is a region of space where a moving charge or magnetic material experiences a force. Magnetic field lines show the direction a free north pole would move.</p>
 <ul>
-<li>Magnetic field lines show the direction a north pole would move.</li>
-<li>Field around a straight wire: concentric circles (right-hand grip rule).</li>
-<li>Field around a solenoid: similar to a bar magnet.</li>
+<li><strong>Field around a straight wire:</strong> Concentric circles. Direction given by the right-hand grip rule (thumb in direction of current, fingers curl in direction of field).</li>
+<li><strong>Field around a solenoid:</strong> Similar to a bar magnet — uniform inside, diverging outside. North pole is the end where field lines emerge.</li>
+<li><strong>Field around a flat coil:</strong> Like a short solenoid; strongest at the centre.</li>
 </ul>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Magnetic Flux Density (B):</strong> A measure of the strength of a magnetic field. Defined as the force per unit current per unit length on a current-carrying conductor placed perpendicular to the field. Unit: tesla (T).</p>
+</div>
+
 <h3>2. Force on a Current-Carrying Conductor</h3>
+<p>A current-carrying conductor in a magnetic field experiences a force due to the interaction between the magnetic field of the current and the external field.</p>
 <div class="formula-box">F = BIL sin θ</div>
-<p>Where B = magnetic flux density, I = current, L = length, θ = angle between current and field.</p>
+<p>where B = magnetic flux density, I = current, L = length of conductor in the field, θ = angle between current direction and field direction. Maximum force occurs when θ = 90° (conductor perpendicular to field).</p>
+
+<div class="key-point">The direction of the force is given by Fleming's left-hand rule: First finger = Field, seCond finger = Current, thuMb = Motion (force).</div>
+
 <h3>3. Force on a Moving Charge</h3>
+<p>A charged particle moving in a magnetic field experiences a force. This is the basis of particle accelerators, mass spectrometers, and cathode ray tubes.</p>
 <div class="formula-box">F = BQv sin θ</div>
-<p>For a charge Q moving with velocity v in a magnetic field.</p>
-<h3>4. Magnetic Flux Density</h3>
-<div class="formula-box">B = F/IL (when θ = 90°)</div>
-<p>Unit: tesla (T).</p>
-<h3>5. Electromagnetic Induction</h3>
-<p>An e.m.f. is induced in a conductor when:</p>
-<ul>
-<li>There is relative motion between conductor and magnetic field.</li>
-<li>There is a change in magnetic flux linkage.</li>
-</ul>
+<p>For a charged particle moving perpendicular to a uniform magnetic field (θ = 90°), the force is always perpendicular to the velocity, causing circular motion:</p>
 <div class="formula-box">
-Faraday's Law: ε = -N(dΦ/dt)<br>
+r = mv/(BQ) (radius of circular path)<br>
+T = 2πm/(BQ) (period, independent of velocity!)
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Circular Motion in B-field</h4>
+<p><strong>Question:</strong> An electron (mass 9.11 × 10⁻³¹ kg, charge 1.6 × 10⁻¹⁹ C) moves at 2.0 × 10⁷ m/s perpendicular to a uniform magnetic field of 0.010 T. Calculate the radius of its path.</p>
+<p><strong>Solution:</strong></p>
+<p>r = mv/(Be) = (9.11 × 10⁻³¹ × 2.0 × 10⁷)/(0.010 × 1.6 × 10⁻¹⁹)</p>
+<p>r = 1.822 × 10⁻²³ / 1.6 × 10⁻²¹ = <strong>1.14 × 10⁻² m</strong> (1.14 cm)</p>
+</div>
+
+<h3>4. Magnetic Flux and Flux Linkage</h3>
+<p>Magnetic flux Φ through an area A perpendicular to a uniform field B:</p>
+<div class="formula-box">Φ = BA (unit: weber, Wb)</div>
+<p>For a coil of N turns, the flux linkage is:</p>
+<div class="formula-box">Flux linkage = NΦ = BAN (unit: Wb turns)</div>
+
+<h3>5. Electromagnetic Induction</h3>
+<p>An e.m.f. is induced in a conductor when there is a change in magnetic flux linkage. This can occur by:</p>
+<ul>
+<li>Moving a conductor through a magnetic field (motional e.m.f.)</li>
+<li>Changing the magnetic field through a stationary coil</li>
+<li>Changing the area or orientation of a coil in a magnetic field</li>
+</ul>
+
+<div class="formula-box">
+Faraday's Law: ε = -N(dΦ/dt) = -d(NΦ)/dt<br>
 Lenz's Law: The induced current flows in a direction to oppose the change causing it.
 </div>
+
+<div class="key-point">The negative sign in Faraday's Law represents Lenz's Law. If the magnetic flux through a coil is increasing, the induced e.m.f. drives a current that creates a field opposing the increase. Lenz's Law is a manifestation of conservation of energy.</div>
+
 <h3>6. Transformer</h3>
+<p>A transformer changes alternating voltage levels using electromagnetic induction. It consists of two coils (primary and secondary) wound on a soft iron core.</p>
 <div class="formula-box">
-Vₛ/Vₚ = Nₛ/Nₚ<br>
-For ideal transformer: VₚIₚ = VₛIₛ
+V_s/V_p = N_s/N_p<br>
+For an ideal transformer: V_p I_p = V_s I_s
 </div>
-<p>Step-up: Nₛ > Nₚ; Step-down: Nₛ < Nₚ.</p>
+<p>Step-up transformer: N_s > N_p → V_s > V_p (increases voltage, decreases current). Step-down: N_s < N_p → V_s < V_p.</p>
+
+<div class="key-point">Transformers only work with alternating current (a.c.) because they require a changing magnetic flux. In a real transformer, energy losses occur due to: resistance of windings (I²R heating), eddy currents in the core, and hysteresis losses. Laminating the core reduces eddy currents.</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Transformer</h4>
+<p><strong>Question:</strong> A step-down transformer has 1200 turns on the primary coil and 60 turns on the secondary. The primary is connected to 240 V a.c. and the secondary delivers 2.0 A to a load. Assuming 100% efficiency, calculate: (a) the secondary voltage, (b) the primary current.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) V_s = V_p × N_s/N_p = 240 × 60/1200 = <strong>12 V</strong></p>
+<p>(b) I_p = I_s × V_s/V_p = 2.0 × 12/240 = <strong>0.10 A</strong></p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often think that transformers can work with d.c. They cannot! A constant current in the primary produces a constant magnetic field, so there is no changing flux and no induced e.m.f. in the secondary. Transformers require a.c. or pulsed d.c. to function.</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A straight wire of length 25 cm carries a current of 4.0 A. It is placed perpendicular to a uniform magnetic field and experiences a force of 0.15 N. Calculate the magnetic flux density. [2 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• F = BIL → B = F/(IL) (1 mark)</p>
+<p>• B = 0.15/(4.0 × 0.25) = <strong>0.15 T</strong> (1 mark)</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State Lenz's law. (b) A coil of 80 turns and cross-sectional area 5.0 cm² is placed perpendicular to a uniform magnetic field. The field changes from 0.20 T to 0.80 T in 0.40 s. Calculate the magnitude of the induced e.m.f. [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) The direction of the induced e.m.f. (or current) is such as to oppose the change producing it (1 mark)</p>
+<p>• (b) ΔΦ = ΔB × A = (0.80 − 0.20) × 5.0 × 10⁻⁴ = 3.0 × 10⁻⁴ Wb (1 mark)</p>
+<p>• ε = N × ΔΦ/Δt = 80 × 3.0 × 10⁻⁴/0.40 (1 mark)</p>
+<p>• ε = <strong>0.060 V</strong> (accept 60 mV) (1 mark)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
-<li>Force on wire: F = BIL sin θ</li>
+<li>Force on wire: F = BIL sin θ (Fleming's left-hand rule)</li>
 <li>Force on charge: F = BQv sin θ</li>
-<li>B = F/IL (T)</li>
-<li>Faraday: ε = -N(dΦ/dt)</li>
-<li>Lenz: induced current opposes the change</li>
-<li>Transformer: Vₛ/Vₚ = Nₛ/Nₚ; ideal: VₚIₚ = VₛIₛ</li>
-<li>Step-up: Nₛ>Nₚ; Step-down: Nₛ<Nₚ</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>B = F/IL (T) — defined from force on current-carrying conductor</li>
+<li>Circular motion in B-field: r = mv/(BQ), T = 2πm/(BQ)</li>
+<li>Magnetic flux: Φ = BA (Wb); Flux linkage = NΦ</li>
+<li>Faraday's Law: ε = -N(dΦ/dt)</li>
+<li>Lenz's Law: induced effect opposes the change</li>
+<li>Transformer: V_s/V_p = N_s/N_p; ideal: V_p I_p = V_s I_s</li>
+<li>Step-up: N_s>N_p; Step-down: N_s<N_p</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always use Fleming's left-hand rule for force/motor effect, and Fleming's right-hand rule for induction/generator effect.</li>
+<li>For circular motion in a magnetic field, the magnetic force provides the centripetal force: BQv = mv²/r.</li>
+<li>Remember that the period T of circular motion in a B-field is independent of velocity — this is crucial in cyclotrons.</li>
+<li>In transformer calculations, use the turns ratio for voltage and the inverse ratio for current (for ideal transformers).</li>
+<li>When calculating induced e.m.f., use the magnitude of change and add the direction based on Lenz's Law separately.</li>
+<li>Transformers require a.c. — never say they work with d.c.</li>
 </ul>
 </div>
 </div>

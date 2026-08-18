@@ -86,6 +86,7 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Work Done</h3>
 <p><strong>Work done</strong> by a force is the product of the force and the displacement in the direction of the force. Work is a scalar quantity measured in joules (J). One joule is defined as the work done when a force of one newton moves its point of application by one metre in the direction of the force.</p>
 <div class="formula-box">W = Fs cos θ</div>
@@ -154,6 +155,66 @@ Also: P = Fv (when force and velocity are in the same direction)
 <div class="misconception-box">
 <h4>⚠️ Common Misconception</h4>
 <p>Many students confuse power and energy. Energy is the total capacity to do work (measured in joules), while power is the <em>rate</em> at which work is done (measured in watts). A powerful machine is not necessarily one that does a lot of work — it is one that does work quickly.</p>
+</div>
+
+<h3>6. Derivation of Kinetic Energy</h3>
+<p>The kinetic energy formula Eₖ = ½mv² can be derived from the equations of motion and Newton's Second Law. Consider an object of mass m accelerated from rest (u = 0) to velocity v by a constant resultant force F over a displacement s.</p>
+<p>From F = ma and v² = u² + 2as (with u = 0): v² = 2as → s = v²/(2a)</p>
+<p>Work done W = Fs = ma × v²/(2a) = ½mv²</p>
+<p>Since the work done by the resultant force equals the change in kinetic energy, we have Eₖ = ½mv².</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Braking Distance</h4>
+<p><strong>Question:</strong> A car of mass 1500 kg travelling at 30 m·s⁻¹ brakes to a stop. Calculate the work done by the brakes and the average braking force if the braking distance is 75 m.</p>
+<p><strong>Solution:</strong></p>
+<p>Initial KE = ½ × 1500 × 30² = 675,000 J</p>
+<p>Final KE = 0 (car stops)</p>
+<p>Work done by brakes = change in KE = 0 − 675,000 = <strong>−675,000 J</strong> (negative = work done against motion)</p>
+<p>Magnitude of work = 675,000 J</p>
+<p>Average braking force = W/s = 675,000/75 = <strong>9000 N</strong></p>
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Spring Energy</h4>
+<p><strong>Question:</strong> A spring with spring constant k = 80 N/m is compressed by 0.15 m. A 0.20 kg ball is placed against it and released. Calculate the maximum speed of the ball. (Assume no energy losses.)</p>
+<p><strong>Solution:</strong></p>
+<p>Elastic PE stored = ½kx² = ½ × 80 × (0.15)² = 0.90 J</p>
+<p>This converts entirely to kinetic energy: ½mv² = 0.90</p>
+<p>v² = 2 × 0.90 / 0.20 = 9.0</p>
+<p>v = <strong>3.0 m·s⁻¹</strong></p>
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Variable Force</h4>
+<p><strong>Question:</strong> A force F = (3x² + 2) N acts on a particle, where x is in metres. Calculate the work done as the particle moves from x = 0 to x = 4 m.</p>
+<p><strong>Solution:</strong></p>
+<p>For a variable force, work done = ∫F dx</p>
+<p>W = ∫₀⁴ (3x² + 2) dx = [x³ + 2x]₀⁴ = (64 + 8) − (0 + 0) = <strong>72 J</strong></p>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A cyclist and bicycle have a total mass of 85 kg. The cyclist freewheels down a slope, descending 12 m vertically. At the bottom, the speed is 14 m·s⁻¹. Calculate the average resistive force if the slope is 80 m long. (g = 9.81 m·s⁻²) [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• Loss in GPE = mgh = 85 × 9.81 × 12 = 10,006 J (1 mark)</p>
+<p>• Gain in KE = ½mv² = ½ × 85 × 14² = 8,330 J (1 mark)</p>
+<p>• Work done against resistive force = 10,006 − 8,330 = 1,676 J (1 mark)</p>
+<p>• F = W/s = 1,676/80 = <strong>21.0 N</strong> (accept 20.9–21.0 N) (1 mark)</p>
+<p>• State assumption: no other energy losses / cyclist starts from rest (1 mark)</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State the principle of conservation of energy. (b) A pump raises 250 kg of water through a vertical height of 8.0 m every minute. Calculate the minimum power output of the pump. (c) The pump is 65% efficient. Calculate the electrical power input. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Total energy of an isolated system is constant / energy cannot be created or destroyed, only transferred from one form to another (1 mark)</p>
+<p>• (b) Work per minute = mgh = 250 × 9.81 × 8.0 = 19,620 J (1 mark)</p>
+<p>• Power = 19,620/60 = <strong>327 W</strong> (accept 330 W) (1 mark)</p>
+<p>• (c) Efficiency = P_out/P_in → P_in = 327/0.65 = <strong>503 W</strong> (accept 500 W) (2 marks — 1 method, 1 answer)</p>
+</div>
 </div>
 </div>
 

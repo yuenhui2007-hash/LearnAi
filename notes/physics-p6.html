@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Waves & Superposition — Physics Notes | LearnAI</title>
 <meta name="description" content="Waves & Superposition notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,24 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -65,7 +83,6 @@
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
 <span class="level-badge badge-as">AS Level</span>
-
 </div>
 <h1>Waves & Superposition</h1>
 <p style="color:var(--gray)">9702 (A-Level) · 0625 (IGCSE)</p>
@@ -73,51 +90,141 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Progressive Waves</h3>
+<p>A progressive (travelling) wave transfers energy from one place to another without transferring matter. All waves can be described by the same fundamental quantities:</p>
 <ul>
-<li><strong>Amplitude (A):</strong> maximum displacement from equilibrium.</li>
-<li><strong>Wavelength (λ):</strong> distance between two consecutive points in phase.</li>
-<li><strong>Frequency (f):</strong> number of oscillations per second (Hz).</li>
-<li><strong>Period (T):</strong> time for one complete oscillation (T = 1/f).</li>
-<li><strong>Wave speed:</strong> v = fλ.</li>
+<li><strong>Amplitude (A):</strong> Maximum displacement from equilibrium position. Unit: metres.</li>
+<li><strong>Wavelength (λ):</strong> Distance between two consecutive points in phase (e.g., crest to crest). Unit: metres.</li>
+<li><strong>Frequency (f):</strong> Number of complete oscillations per second. Unit: hertz (Hz).</li>
+<li><strong>Period (T):</strong> Time for one complete oscillation. T = 1/f. Unit: seconds.</li>
+<li><strong>Wave speed (v):</strong> Distance travelled by the wave per unit time. v = fλ.</li>
 </ul>
 <div class="formula-box">v = fλ</div>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Displacement:</strong> The distance of a point on the wave from its equilibrium position at a given time.</p>
+<p><strong>Phase:</strong> A measure of the stage of oscillation of a point on the wave, expressed as an angle (0° to 360° or 0 to 2π radians). Points one wavelength apart are in phase (phase difference = 0° or 360°).</p>
+</div>
+
+<p>The equation of a progressive wave travelling in the +x direction can be written as:</p>
+<div class="formula-box">y = A sin(ωt − kx)</div>
+<p>where ω = 2πf (angular frequency) and k = 2π/λ (wave number).</p>
+
 <h3>2. Transverse and Longitudinal Waves</h3>
 <ul>
-<li><strong>Transverse:</strong> oscillations perpendicular to direction of energy transfer (e.g., light, waves on a string).</li>
-<li><strong>Longitudinal:</strong> oscillations parallel to direction of energy transfer (e.g., sound).</li>
+<li><strong>Transverse waves:</strong> Oscillations are perpendicular to the direction of energy transfer. Examples: waves on a string, electromagnetic waves (light, radio, X-rays), water waves.</li>
+<li><strong>Longitudinal waves:</strong> Oscillations are parallel to the direction of energy transfer. Examples: sound waves in air, compression waves in a spring.</li>
 </ul>
+
+<div class="key-point">In transverse waves, we refer to crests (maximum positive displacement) and troughs (maximum negative displacement). In longitudinal waves, we refer to compressions (regions of high pressure/density) and rarefactions (regions of low pressure/density).</div>
+
 <h3>3. Electromagnetic Spectrum</h3>
-<p>From longest to shortest wavelength: radio waves → microwaves → infrared → visible light → ultraviolet → X-rays → gamma rays.</p>
-<p>All EM waves travel at c ≈ 3.0 × 10⁸ m/s in vacuum.</p>
-<h3>4. Superposition</h3>
-<p>When two or more waves meet, the resultant displacement is the vector sum of individual displacements.</p>
+<p>All electromagnetic waves are transverse, travel at c ≈ 3.0 × 10⁸ m/s in vacuum, and require no medium. They are arranged by wavelength/frequency:</p>
+<table class="data-table">
+<tr><th>Type</th><th>Wavelength range (approx)</th><th>Source/Use</th></tr>
+<tr><td>Radio waves</td><td>&gt; 1 m</td><td>Radio/TV broadcasting</td></tr>
+<tr><td>Microwaves</td><td>1 mm – 1 m</td><td>Mobile phones, cooking, radar</td></tr>
+<tr><td>Infrared</td><td>700 nm – 1 mm</td><td>Heat radiation, remote controls</td></tr>
+<tr><td>Visible light</td><td>400 – 700 nm</td><td>Human vision</td></tr>
+<tr><td>Ultraviolet</td><td>10 – 400 nm</td><td>Sun tanning, sterilisation</td></tr>
+<tr><td>X-rays</td><td>0.01 – 10 nm</td><td>Medical imaging</td></tr>
+<tr><td>Gamma rays</td><td>&lt; 0.01 nm</td><td>Nuclear decay, cancer therapy</td></tr>
+</table>
+
+<div class="key-point">The energy of an electromagnetic photon is E = hf, where h is Planck's constant. Gamma rays have the highest frequency and therefore the highest photon energy.</div>
+
+<h3>4. Superposition Principle</h3>
+<p>When two or more waves meet at a point, the resultant displacement is the vector sum of the individual displacements. This principle explains interference, diffraction, and standing waves.</p>
 <ul>
-<li><strong>Constructive interference:</strong> crest meets crest → amplitude increases.</li>
-<li><strong>Destructive interference:</strong> crest meets trough → amplitude decreases.</li>
+<li><strong>Constructive interference:</strong> Crest meets crest (or trough meets trough) → amplitudes add, resulting in a larger displacement.</li>
+<li><strong>Destructive interference:</strong> Crest meets trough → amplitudes subtract. If the amplitudes are equal, the resultant displacement is zero.</li>
 </ul>
-<h3>5. Stationary Waves</h3>
-<p>Formed when two waves of same frequency and amplitude travel in opposite directions. Nodes (zero amplitude) and antinodes (maximum amplitude) are formed.</p>
+
+<div class="key-point">For constructive interference, the path difference between the two waves must be an integer multiple of the wavelength: path difference = nλ (where n = 0, 1, 2, ...). For destructive interference: path difference = (n + ½)λ.</div>
+
+<h3>5. Stationary (Standing) Waves</h3>
+<p>A stationary wave is formed when two progressive waves of the same frequency and amplitude travel in opposite directions and superpose. No net energy is transferred.</p>
+<ul>
+<li><strong>Nodes (N):</strong> Points of zero amplitude (permanent destructive interference). Distance between adjacent nodes = λ/2.</li>
+<li><strong>Antinodes (A):</strong> Points of maximum amplitude (permanent constructive interference). Distance between adjacent antinodes = λ/2. Distance from node to nearest antinode = λ/4.</li>
+</ul>
+
+<p>On a string fixed at both ends, the allowed wavelengths are:</p>
+<div class="formula-box">
+λₙ = 2L/n (where n = 1, 2, 3, ...)<br>
+Fundamental (n=1): λ = 2L, f = v/(2L)<br>
+First overtone (n=2): λ = L, f = v/L<br>
+Second overtone (n=3): λ = 2L/3, f = 3v/(2L)
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Stationary Waves on a String</h4>
+<p><strong>Question:</strong> A string of length 0.80 m is fixed at both ends. The speed of transverse waves on the string is 40 m/s. Calculate the frequencies of the fundamental and first two overtones.</p>
+<p><strong>Solution:</strong></p>
+<p>Fundamental: f₁ = v/(2L) = 40/(2 × 0.80) = <strong>25 Hz</strong></p>
+<p>First overtone: f₂ = 2f₁ = <strong>50 Hz</strong></p>
+<p>Second overtone: f₃ = 3f₁ = <strong>75 Hz</strong></p>
+</div>
+
 <h3>6. Diffraction</h3>
-<p>The spreading of waves as they pass through an aperture or around an obstacle. Significant when aperture size ≈ wavelength.</p>
-</div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
+<p>Diffraction is the spreading of waves as they pass through an aperture or around an obstacle. Diffraction effects are most significant when the gap width or obstacle size is comparable to the wavelength (≈ λ).</p>
 <ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
+<li>Narrow gap (≈ λ): significant spreading, semicircular wavefronts.</li>
+<li>Wide gap (&gt;&gt; λ): minimal spreading, waves pass through almost straight.</li>
 </ul>
+
+<div class="key-point">Diffraction explains why you can hear sounds around corners (sound has wavelengths comparable to doorways, ~1 m) but cannot see around corners (light has very short wavelengths, ~500 nm).</div>
+
+<h3>7. Double-Slit Interference</h3>
+<p>When coherent light (constant phase relationship) passes through two narrow slits, an interference pattern of bright and dark fringes is produced on a screen.</p>
+<div class="formula-box">
+Fringe spacing: w = λD/a<br>
+where D = slit-to-screen distance, a = slit separation
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Double-Slit</h4>
+<p><strong>Question:</strong> In a double-slit experiment, light of wavelength 600 nm produces fringes spaced 2.4 mm apart on a screen 1.5 m from the slits. Calculate the slit separation.</p>
+<p><strong>Solution:</strong></p>
+<p>w = λD/a → a = λD/w</p>
+<p>a = (600 × 10⁻⁹ × 1.5) / (2.4 × 10⁻³) = <strong>3.75 × 10⁻⁴ m</strong> (0.375 mm)</p>
+</div>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often confuse diffraction and interference. Diffraction is the spreading of waves around obstacles or through gaps. Interference is the superposition of waves from coherent sources. In the double-slit experiment, diffraction occurs at each slit, and interference occurs between the waves from the two slits.</p>
+</div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Path Difference</h4>
+<p><strong>Question:</strong> Two coherent sources S₁ and S₂ emit waves of wavelength 4.0 cm. A detector is placed 60 cm from S₁ and 64 cm from S₂. Determine whether constructive or destructive interference occurs at the detector.</p>
+<p><strong>Solution:</strong></p>
+<p>Path difference = 64 − 60 = 4.0 cm = λ</p>
+<p>Since path difference = nλ (n = 1), <strong>constructive interference</strong> occurs.</p>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> (a) State two conditions necessary for observable interference between two light sources. (b) In a double-slit experiment using light of wavelength 550 nm, the slit separation is 0.40 mm and the screen is 2.0 m from the slits. Calculate the separation of adjacent bright fringes. [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Any two from: same frequency/wavelength; constant phase difference / coherent; similar amplitudes (2 marks — 1 each)</p>
+<p>• (b) w = λD/a = (550 × 10⁻⁹ × 2.0) / (0.40 × 10⁻³) (1 mark)</p>
+<p>• w = <strong>2.75 × 10⁻³ m</strong> (accept 2.8 mm) (1 mark)</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A stationary wave is set up on a string of length 1.2 m fixed at both ends. There are three antinodes along the string. The wave speed is 72 m/s. Calculate: (a) the wavelength, (b) the frequency of the wave. [3 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) Three antinodes means n = 3 (second overtone). λ = 2L/3 = (2 × 1.2)/3 = <strong>0.80 m</strong> (1 mark)</p>
+<p>• (b) f = v/λ = 72/0.80 = <strong>90 Hz</strong> (2 marks — 1 for method, 1 for answer)</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
@@ -125,48 +232,25 @@
 <ul>
 <li>Wave equation: v = fλ</li>
 <li>Transverse: oscillations ⊥ to energy transfer; Longitudinal: oscillations ∥ to energy transfer</li>
-<li>EM spectrum: radio → microwave → IR → visible → UV → X-ray → gamma (all at c = 3×10⁸ m/s)</li>
+<li>EM spectrum: radio → microwave → IR → visible → UV → X-ray → gamma (all at c = 3×10⁸ m/s in vacuum)</li>
 <li>Superposition: vector sum of displacements</li>
-<li>Constructive: crest+crest; Destructive: crest+trough</li>
+<li>Constructive: path difference = nλ; Destructive: path difference = (n + ½)λ</li>
 <li>Stationary waves: same f, same A, opposite directions → nodes and antinodes</li>
+<li>Node-to-node distance = λ/2; node to antinode = λ/4</li>
 <li>Diffraction significant when gap ≈ λ</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>Double-slit: w = λD/a</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always draw wavefront diagrams for interference and diffraction problems.</li>
+<li>Remember that for coherent sources, the waves must have the same frequency and a constant phase difference.</li>
+<li>When calculating fringe spacing, ensure all lengths are in consistent units (usually metres).</li>
+<li>For stationary waves on a string fixed at both ends, the fundamental has one antinode; each overtone adds one more antinode.</li>
+<li>In the double-slit formula, w is the fringe spacing (centre to centre of adjacent bright fringes).</li>
+<li>Diffraction explains spreading; interference explains the pattern of bright and dark fringes.</li>
 </ul>
 </div>
 </div>

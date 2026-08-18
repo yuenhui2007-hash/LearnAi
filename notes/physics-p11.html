@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nuclear Physics — Physics Notes | LearnAI</title>
 <meta name="description" content="Nuclear Physics notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,24 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -64,7 +82,6 @@
 <div class="notes-header">
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
-
 <span class="level-badge badge-a2">A2 Level</span>
 </div>
 <h1>Nuclear Physics</h1>
@@ -73,101 +90,128 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
+
 <h3>1. Atomic Structure</h3>
+<p>The atom consists of a small, dense nucleus containing protons and neutrons, surrounded by electrons in orbitals. The nucleus contains over 99.9% of the atom's mass but occupies only a tiny fraction of its volume.</p>
 <ul>
-<li>Atom consists of protons, neutrons, and electrons.</li>
-<li>Proton number (Z) = number of protons.</li>
-<li>Nucleon number (A) = number of protons + neutrons.</li>
-<li>Isotopes: same Z, different number of neutrons.</li>
+<li><strong>Proton number (Z):</strong> Number of protons in the nucleus. Determines the element.</li>
+<li><strong>Nucleon number (A):</strong> Total number of protons + neutrons.</li>
+<li><strong>Neutron number (N):</strong> N = A − Z.</li>
+<li><strong>Isotopes:</strong> Atoms of the same element (same Z) with different numbers of neutrons (different A).</li>
 </ul>
-<h3>2. Radioactive Decay</h3>
-<ul>
-<li><strong>Alpha (α):</strong> helium nucleus (₂⁴He). Stopped by paper. High ionisation.</li>
-<li><strong>Beta (β):</strong> fast electron (₋₁⁰e). Stopped by aluminium. Moderate ionisation.</li>
-<li><strong>Gamma (γ):</strong> electromagnetic radiation. Stopped by thick lead. Low ionisation.</li>
-</ul>
-<h3>3. Decay Equations</h3>
-<div class="formula-box">
-Alpha: ᴬ_Z X → ᴬ⁻⁴_Z₋₂ Y + ₂⁴He<br>
-Beta: ᴬ_Z X → ᴬ_Z₊₁ Y + ₋₁⁰e + ν̄
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Isotope:</strong> Nuclei of the same element (same proton number Z) with different nucleon numbers A / different numbers of neutrons.</p>
 </div>
+
+<h3>2. Radioactive Decay</h3>
+<p>Unstable nuclei undergo radioactive decay, emitting radiation to become more stable. There are three main types:</p>
+<table class="data-table">
+<tr><th>Type</th><th>Symbol</th><th>Nature</th><th>Charge</th><th>Penetration</th><th>Ionisation</th></tr>
+<tr><td>Alpha (α)</td><td>₂⁴He</td><td>Helium nucleus (2p + 2n)</td><td>+2e</td><td>Stopped by paper</td><td>Very high</td></tr>
+<tr><td>Beta (β)</td><td>₋₁⁰e</td><td>Fast electron</td><td>-1e</td><td>Stopped by Al foil</td><td>Moderate</td></tr>
+<tr><td>Gamma (γ)</td><td>γ</td><td>High-energy EM photon</td><td>0</td><td>Stopped by thick lead</td><td>Low</td></tr>
+</table>
+
+<div class="key-point">Alpha particles have the highest ionising power because of their large mass and double positive charge, but the lowest penetration because they interact strongly with matter. Gamma rays have the lowest ionisation but highest penetration.</div>
+
+<h3>3. Decay Equations</h3>
+<p>In radioactive decay, both nucleon number and proton number are conserved.</p>
+<div class="formula-box">
+Alpha decay: ᴬ_Z X → ᴬ⁻⁴_Z₋₂ Y + ₂⁴He<br>
+Beta decay: ᴬ_Z X → ᴬ_Z₊₁ Y + ₋₁⁰e + ν̄_e (antineutrino)<br>
+Gamma decay: ᴬ_Z X* → ᴬ_Z X + γ (nucleus loses energy only)
+</div>
+
+<div class="key-point">In beta decay, a neutron in the nucleus converts to a proton, emitting an electron (beta particle) and an antineutrino. This explains why the proton number increases by 1 while the nucleon number stays the same.</div>
+
 <h3>4. Half-Life</h3>
-<p>The time taken for half the radioactive nuclei in a sample to decay.</p>
-<div class="formula-box">N = N₀(½)^(t/t½)</div>
+<p>The half-life t½ of a radioactive isotope is the mean time taken for half of the active nuclei in a sample to decay. It is also the time for the activity to halve.</p>
+<div class="formula-box">
+N = N₀(½)^(t/t½)<br>
+A = A₀(½)^(t/t½)
+</div>
+<p>where N = number of nuclei remaining, A = activity (decays per second), and subscript 0 indicates initial values.</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Half-Life</h4>
+<p><strong>Question:</strong> A radioactive sample has an initial activity of 800 Bq. The half-life is 6.0 hours. Calculate the activity after: (a) 12 hours, (b) 30 hours.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) 12 hours = 2 half-lives. A = 800 × (½)² = 800/4 = <strong>200 Bq</strong></p>
+<p>(b) 30 hours = 5 half-lives. A = 800 × (½)⁵ = 800/32 = <strong>25 Bq</strong></p>
+</div>
+
 <h3>5. Mass-Energy Equivalence</h3>
+<p>Einstein's famous equation relates mass and energy:</p>
 <div class="formula-box">E = mc²</div>
-<p>Mass defect = difference between mass of nucleus and sum of masses of constituent nucleons.</p>
+<p>In nuclear reactions, the total mass of the products may differ from the total mass of the reactants. This mass difference (mass defect Δm) is converted to energy:</p>
+<div class="formula-box">ΔE = Δm c²</div>
+<p>1 atomic mass unit (u) = 1.661 × 10⁻²⁷ kg ≡ 931.5 MeV</p>
+
+<div class="key-point">In both fission and fusion, the products have less mass than the reactants. The "missing" mass is released as kinetic energy of the products and gamma radiation. This is because the binding energy per nucleon is higher for the products.</div>
+
 <h3>6. Nuclear Fission and Fusion</h3>
 <ul>
-<li><strong>Fission:</strong> heavy nucleus splits into two smaller nuclei + neutrons + energy.</li>
-<li><strong>Fusion:</strong> two light nuclei combine to form a heavier nucleus + energy.</li>
+<li><strong>Nuclear fission:</strong> A heavy nucleus (e.g., uranium-235) splits into two smaller nuclei plus neutrons, releasing energy. Triggered by neutron absorption. Used in nuclear power reactors and atomic bombs.</li>
+<li><strong>Nuclear fusion:</strong> Two light nuclei (e.g., hydrogen isotopes) combine to form a heavier nucleus, releasing energy. Requires extremely high temperatures (~10⁷ K) to overcome electrostatic repulsion. Powers the Sun and stars; experimental in tokamaks.</li>
 </ul>
+
+<div class="example-box">
+<h4>📝 Worked Example — Mass-Energy</h4>
+<p><strong>Question:</strong> In a fission reaction, a uranium-235 nucleus absorbs a neutron and splits. The total mass of the products is 0.200 u less than the total mass of the reactants. Calculate the energy released.</p>
+<p><strong>Solution:</strong></p>
+<p>ΔE = Δm c² = 0.200 × 931.5 = <strong>186 MeV</strong></p>
 </div>
-<div class="notes-section">
-<h3>Additional Applications</h3>
-<ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
-</ul>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Students often think that energy is released in nuclear reactions because mass is "converted into energy." It is more accurate to say that the total rest mass of the system decreases and the total energy (including kinetic energy) is conserved. Mass and energy are equivalent — the decrease in rest mass appears as kinetic energy of the products.</p>
 </div>
-<div class="notes-section">
-<h3>Common Exam Question Types</h3>
-<ul>
-<li>Definition questions — state precisely, use correct terminology</li>
-<li>Calculation questions — show working, include units, check significant figures</li>
-<li>Explanation questions — use "because" to link cause and effect</li>
-<li>Graph questions — read axes carefully, describe trends using data</li>
-</ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A radioactive isotope has a half-life of 8.0 days. A sample initially contains 4.0 × 10¹⁵ atoms. Calculate: (a) the number of atoms remaining after 24 days, (b) the activity of the sample initially if the decay constant is 1.0 × 10⁻⁶ s⁻¹. [4 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) 24 days = 3 half-lives. N = 4.0 × 10¹⁵ × (½)³ = 4.0 × 10¹⁵/8 = <strong>5.0 × 10¹⁴</strong> (2 marks — 1 for method, 1 for answer)</p>
+<p>• (b) A = λN = 1.0 × 10⁻⁶ × 4.0 × 10¹⁵ = <strong>4.0 × 10⁹ Bq</strong> (2 marks — 1 for method, 1 for answer)</p>
+</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> Complete the nuclear equation for the beta decay of carbon-14: ¹⁴₆C → ? + ? + ? [2 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• ¹⁴₆C → ¹⁴₇N + ₋₁⁰e + ν̄_e (2 marks — 1 for correct daughter nucleus, 1 for beta and antineutrino)</p>
+<p>Accept without antineutrino for 1 mark total if daughter is correct.</p>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
 <ul>
 <li>Proton number Z = protons; Nucleon number A = protons + neutrons</li>
-<li>α = ₂⁴He (stopped by paper); β = ₋₁⁰e (stopped by Al); γ = EM (stopped by lead)</li>
+<li>α = ₂⁴He (stopped by paper, high ionisation); β = ₋₁⁰e (stopped by Al, moderate); γ = EM (stopped by lead, low ionisation)</li>
 <li>Alpha decay: Z→Z-2, A→A-4; Beta decay: Z→Z+1, A same</li>
-<li>Half-life: N = N₀(½)^(t/t½)</li>
-<li>E = mc²; Mass defect = binding energy</li>
-<li>Fission: heavy → light + energy; Fusion: light → heavy + energy</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>Half-life: N = N₀(½)^(t/t½); Activity A = λN</li>
+<li>E = mc²; 1 u = 931.5 MeV</li>
+<li>Fission: heavy → light + energy + neutrons</li>
+<li>Fusion: light → heavy + energy (requires high T)</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
+<li>Always balance both Z and A in nuclear equations.</li>
+<li>Remember that gamma emission does not change Z or A — it only reduces the nucleus's energy.</li>
+<li>In half-life calculations, check whether t/t½ is a whole number. If not, use N = N₀e^(-λt).</li>
+<li>For mass-energy calculations, convert u to MeV using 1 u = 931.5 MeV — much faster than using E = mc² directly.</li>
+<li>In fission, mention that neutrons are released which can trigger further fissions (chain reaction).</li>
+<li>Fusion requires high temperature to overcome electrostatic repulsion between positively charged nuclei.</li>
 </ul>
 </div>
 </div>
