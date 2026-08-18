@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,116 +32,129 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Circular Measure</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Radians and Degrees</a></li>
-<li><a href="#section-2">Arc Length and Sector Area</a></li>
-<li><a href="#section-3">Perimeter of Sector</a></li>
+<li><a href="#section-1">Radian Measure</a></li>
+<li><a href="#section-2">Arc Length & Sector Area</a></li>
+<li><a href="#section-3">Small Angle Approximations</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Radians and Degrees</h3>
+<h3>Radian Measure</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">π radians = 180°<br>1 radian = 180°/π ≈ 57.3°<br>1° = π/180 radians</div>
+<p>Angles can be measured in <strong>degrees</strong> or <strong>radians</strong>. Radians are essential in calculus because they simplify derivatives of trigonometric functions.</p>
+
+<div class="formula-box">π radians = 180°<br>1 radian = <span class="fraction"><span class="top">180°</span><span class="bottom">π</span></span> ≈ 57.3°</div>
+
 <table class="data-table">
-<tr><th>Degrees</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>360°</th></tr>
-<tr><td><strong>Radians</strong></td><td>0</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td><td>π</td><td>2π</td></tr>
+<tr><th>Degrees</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>270°</th><th>360°</th></tr>
+<tr><td>Radians</td><td>0</td><td><span class="fraction"><span class="top">π</span><span class="bottom">6</span></span></td><td><span class="fraction"><span class="top">π</span><span class="bottom">4</span></span></td><td><span class="fraction"><span class="top">π</span><span class="bottom">3</span></span></td><td><span class="fraction"><span class="top">π</span><span class="bottom">2</span></span></td><td>π</td><td><span class="fraction"><span class="top">3π</span><span class="bottom">2</span></span></td><td>2π</td></tr>
 </table>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p><strong>Convert 120° to radians:</strong></p>
-<p>120° × (π/180) = <strong>2π/3 radians</strong></p>
-</div>
-</div>
+<p><strong>Convert 120° to radians and <span class="fraction"><span class="top">5π</span><span class="bottom">6</span></span> to degrees.</strong></p>
+<p>120° = 120 × <span class="fraction"><span class="top">π</span><span class="bottom">180</span></span> = <strong><span class="fraction"><span class="top">2π</span><span class="bottom">3</span></span></strong></p>
+<p><span class="fraction"><span class="top">5π</span><span class="bottom">6</span></span> = <span class="fraction"><span class="top">5</span><span class="bottom">6</span></span> × 180° = <strong>150°</strong></p>
 </div>
 
+<div class="key-point">
+<strong>Key Point:</strong> Always work in radians for calculus (differentiation and integration of trig functions). Convert to degrees only when the question explicitly requires it.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Arc Length and Sector Area</h3>
+<h3>Arc Length & Sector Area</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">Arc length: s = rθ (θ in radians)<br>Sector area: A = ½r²θ (θ in radians)<br>Segment area = ½r²(θ − sin θ)</div>
+<div class="formula-box">Arc length: s = rθ (θ in radians)<br>Sector area: A = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>r²θ<br>Segment area = Sector − Triangle = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>r²(θ − sin θ)</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Radius = 5 cm, θ = 1.2 radians. Find arc length and sector area.</p>
-<p><strong>Arc length:</strong> s = 5 × 1.2 = <strong>6 cm</strong></p>
-<p><strong>Sector area:</strong> A = ½ × 25 × 1.2 = <strong>15 cm²</strong></p>
-</div>
-</div>
+<p><strong>A sector has radius 8 cm and angle 0.6 rad. Find arc length and sector area.</strong></p>
+<p>Arc = 8 × 0.6 = <strong>4.8 cm</strong></p>
+<p>Area = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> × 64 × 0.6 = <strong>19.2 cm²</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Segment</h5>
+<p><strong>Find the area of the minor segment cut off by a chord subtending angle π/3 at the centre of a circle of radius 6 cm.</strong></p>
+<p>Segment = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> × 36 × (<span class="fraction"><span class="top">π</span><span class="bottom">3</span></span> − sin <span class="fraction"><span class="top">π</span><span class="bottom">3</span></span>) = 18(<span class="fraction"><span class="top">π</span><span class="bottom">3</span></span> − <span class="fraction"><span class="top">√3</span><span class="bottom">2</span></span>) = <strong>6π − 9√3 cm²</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> A sector of a circle of radius r has perimeter 20 cm. Show that the area is A = 10r − r², and find the maximum area. [6]</p>
+<p><strong>Solution:</strong> Perimeter = 2r + rθ = 20 → θ = <span class="fraction"><span class="top">20 − 2r</span><span class="bottom">r</span></span> (M1). A = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>r²θ = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>r(20−2r) = 10r − r² (M1, A1). dA/dr = 10 − 2r = 0 → r = 5 (M1). A = 50 − 25 = <strong>25 cm²</strong> (A1, A1)</p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Perimeter of Sector</h3>
+<h3>Small Angle Approximations</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">Perimeter = 2r + rθ</div>
+<p>For small angles measured in <strong>radians</strong>:</p>
+<div class="formula-box">sin θ ≈ θ<br>tan θ ≈ θ<br>cos θ ≈ 1 − <span class="fraction"><span class="top">θ²</span><span class="bottom">2</span></span></div>
+
+<p>These approximations come from the Maclaurin series expansions and are valid when θ is small (typically |θ| < 0.1 rad for 1% accuracy).</p>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Find perimeter of sector with r = 4 cm and θ = π/3.</p>
-<p>Perimeter = 2(4) + 4(π/3) = 8 + 4π/3 ≈ <strong>12.2 cm</strong></p>
+<p><strong>Approximate sin 0.05 and cos 0.05.</strong></p>
+<p>sin 0.05 ≈ <strong>0.05</strong></p>
+<p>cos 0.05 ≈ 1 − <span class="fraction"><span class="top">0.0025</span><span class="bottom">2</span></span> = <strong>0.99875</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Small angle approximations only work when θ is in radians. Never use them with degrees.
 </div>
 </div>
 </div>
@@ -153,25 +163,24 @@
 <h2>📝 Quick Summary</h2>
 <ul>
 <li>π rad = 180°</li>
-<li>Arc length: s = rθ</li>
-<li>Sector area: A = ½r²θ</li>
+<li>Arc length s = rθ</li>
+<li>Sector area A = ½r²θ</li>
 <li>Segment area = ½r²(θ − sin θ)</li>
-<li>Perimeter of sector = 2r + rθ</li>
+<li>Small angles: sin θ ≈ θ, tan θ ≈ θ, cos θ ≈ 1 − θ²/2</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Check calculator mode before calculating</li>
-<li>Common angles: π/6=30°, π/4=45°, π/3=60°, π/2=90°</li>
-<li>When θ is in terms of π, leave answer exact</li>
-<li>Segment = sector − triangle</li>
+<li>Always check whether the question uses degrees or radians — this is a very common source of errors.</li>
+<li>Use radians for all calculus involving trigonometric functions.</li>
+<li>Arc length and sector area formulas only work with θ in radians.</li>
+<li>For segment area, remember: segment = sector − triangle.</li>
+<li>Small angle approximations are only valid in radians.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,96 +32,143 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Vectors</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Vector Basics</a></li>
-<li><a href="#section-2">Line Equations</a></li>
+<li><a href="#section-1">Vector Representation</a></li>
+<li><a href="#section-2">Vector Operations</a></li>
+<li><a href="#section-3">Equation of a Line</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Vector Basics</h3>
+<h3>Vector Representation</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">|r| = √(a² + b² + c²)<br>a · b = a₁b₁ + a₂b₂ + a₃b₃ = |a||b|cos θ</div>
-<table class="data-table">
-<tr><th>Property</th><th>Condition</th></tr>
-<tr><td>Perpendicular</td><td>a · b = 0</td></tr>
-<tr><td>Parallel</td><td>a = kb for some scalar k</td></tr>
-<tr><td>Angle between vectors</td><td>cos θ = (a·b)/(|a||b|)</td></tr>
-</table>
-</div>
-</div>
+<p>A <strong>vector</strong> has both magnitude and direction. Vectors are essential in physics, engineering, and computer graphics.</p>
 
+<h4>Notation</h4>
+<ul>
+<li><strong>Column vector:</strong> <span class="fraction"><span class="top">a</span><span class="bottom">b</span></span> or (a, b) in 2D; <span class="fraction"><span class="top">a</span><span class="bottom">b<br>c</span></span> in 3D</li>
+<li><strong>Unit vectors:</strong> i = <span class="fraction"><span class="top">1</span><span class="bottom">0</span></span>, j = <span class="fraction"><span class="top">0</span><span class="bottom">1</span></span>, k = <span class="fraction"><span class="top">0</span><span class="bottom">0<br>1</span></span></li>
+<li><strong>Position vector:</strong> vector from origin to point P</li>
+</ul>
+
+<div class="formula-box">Magnitude: |<span class="fraction"><span class="top">a</span><span class="bottom">b</span></span>| = √(a² + b²)<br>Direction: θ = tan⁻¹(<span class="fraction"><span class="top">b</span><span class="bottom">a</span></span>)</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the magnitude and direction of a = <span class="fraction"><span class="top">3</span><span class="bottom">4</span></span>.</strong></p>
+<p>|a| = √(9 + 16) = <strong>5</strong></p>
+<p>θ = tan⁻¹(<span class="fraction"><span class="top">4</span><span class="bottom">3</span></span>) ≈ <strong>53.1°</strong></p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Line Equations</h3>
+<h3>Vector Operations</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">Vector form: r = a + tb<br>Cartesian form: (x−x₁)/a = (y−y₁)/b = (z−z₁)/c</div>
+<h4>Addition and Subtraction</h4>
+<p>Add/subtract corresponding components.</p>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Line through (1, 2, 3) parallel to (2, −1, 4).</p>
-<p>r = (1, 2, 3) + t(2, −1, 4)</p>
+<p><strong>Given a = <span class="fraction"><span class="top">2</span><span class="bottom">−1</span></span> and b = <span class="fraction"><span class="top">3</span><span class="bottom">4</span></span>, find a + b and a − b.</strong></p>
+<p>a + b = <span class="fraction"><span class="top">5</span><span class="bottom">3</span></span></p>
+<p>a − b = <span class="fraction"><span class="top">−1</span><span class="bottom">−5</span></span></p>
+</div>
+
+<h4>Scalar Multiplication</h4>
+<p>Multiplies magnitude by the scalar. Negative scalars reverse direction.</p>
+
+<h4>Dot (Scalar) Product</h4>
+<div class="formula-box">a · b = |a||b| cos θ = a₁b₁ + a₂b₂ + a₃b₃</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the angle between a = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> and b = <span class="fraction"><span class="top">3</span><span class="bottom">−1</span></span>.</strong></p>
+<p>a · b = 3 − 2 = 1</p>
+<p>|a| = √5, |b| = √10</p>
+<p>cos θ = <span class="fraction"><span class="top">1</span><span class="bottom">√50</span></span> = <span class="fraction"><span class="top">1</span><span class="bottom">5√2</span></span> → θ ≈ <strong>81.9°</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Two vectors are perpendicular if and only if their dot product is zero (a · b = 0).
+</div>
+</div>
+</div>
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Equation of a Line</h3>
+</div>
+<div class="topic-content">
+<h4>Vector Equation of a Line</h4>
+<div class="formula-box">r = a + λb<br>where a = position vector of a point on the line, b = direction vector, λ = scalar parameter</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the vector equation of the line through (1, 2) with direction vector <span class="fraction"><span class="top">3</span><span class="bottom">1</span></span>.</strong></p>
+<p>r = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> + λ<span class="fraction"><span class="top">3</span><span class="bottom">1</span></span></p>
+</div>
+
+<h4>Cartesian Form</h4>
+<p>From r = <span class="fraction"><span class="top">x</span><span class="bottom">y</span></span> = <span class="fraction"><span class="top">a₁</span><span class="bottom">a₂</span></span> + λ<span class="fraction"><span class="top">b₁</span><span class="bottom">b₂</span></span>:</p>
+<div class="formula-box"><span class="fraction"><span class="top">x − a₁</span><span class="bottom">b₁</span></span> = <span class="fraction"><span class="top">y − a₂</span><span class="bottom">b₂</span></span> (= λ)</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Convert r = <span class="fraction"><span class="top">2</span><span class="bottom">−1</span></span> + λ<span class="fraction"><span class="top">4</span><span class="bottom">3</span></span> to Cartesian form.</strong></p>
+<p><span class="fraction"><span class="top">x − 2</span><span class="bottom">4</span></span> = <span class="fraction"><span class="top">y + 1</span><span class="bottom">3</span></span> → 3(x−2) = 4(y+1) → <strong>3x − 4y = 10</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> Find the point of intersection of the lines r = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> + s<span class="fraction"><span class="top">2</span><span class="bottom">1</span></span> and r = <span class="fraction"><span class="top">3</span><span class="bottom">1</span></span> + t<span class="fraction"><span class="top">1</span><span class="bottom">−1</span></span>. [5]</p>
+<p><strong>Solution:</strong> 1 + 2s = 3 + t and 2 + s = 1 − t (M1, M1). Solving: s = 1/3, t = −4/3 (A1). Point = <span class="fraction"><span class="top">5/3</span><span class="bottom">7/3</span></span> (A1, A1)</p>
 </div>
 </div>
 </div>
@@ -132,26 +176,25 @@
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>|r| = √(a² + b² + c²)</li>
-<li>a · b = a₁b₁ + a₂b₂ + a₃b₃</li>
-<li>Perpendicular: a · b = 0</li>
-<li>Angle: cos θ = (a·b)/(|a||b|)</li>
-<li>Line: r = a + tb</li>
+<li>Magnitude |a| = √(a₁² + a₂² + a₃²)</li>
+<li>Dot product: a · b = |a||b| cos θ = a₁b₁ + a₂b₂ + a₃b₃</li>
+<li>Perpendicular vectors: a · b = 0</li>
+<li>Line: r = a + λb</li>
+<li>Cartesian: (x−a₁)/b₁ = (y−a₂)/b₂ = (z−a₃)/b₃</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>When finding angle, ensure vectors point from/to same point</li>
-<li>For perpendicular lines, direction vectors have dot product = 0</li>
-<li>Magnitude always positive</li>
-<li>Vector AB = b − a</li>
+<li>Always draw a diagram for vector problems.</li>
+<li>The dot product a · b = 0 means the vectors are perpendicular.</li>
+<li>For line equations, the direction vector can be scaled by any non-zero constant.</li>
+<li>When finding intersections, equate components and solve simultaneously.</li>
+<li>Remember: vectors have magnitude and direction, but position vectors also have a specific location.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

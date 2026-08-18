@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,106 +32,140 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Probability</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Basic Probability</a></li>
-<li><a href="#section-2">Conditional Probability</a></li>
-<li><a href="#section-3">Permutations and Combinations</a></li>
+<li><a href="#section-1">Probability Basics</a></li>
+<li><a href="#section-2">Tree Diagrams & Venn Diagrams</a></li>
+<li><a href="#section-3">Combinations & Permutations</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Basic Probability</h3>
+<h3>Probability Basics</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">P(A) = n(A)/n(ℰ)<br>P(A') = 1 − P(A)<br>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</div>
+<p><strong>Probability</strong> measures the likelihood of an event occurring, ranging from 0 (impossible) to 1 (certain).</p>
+
+<div class="formula-box">P(A) = <span class="fraction"><span class="top">Number of favourable outcomes</span><span class="bottom">Total number of possible outcomes</span></span></div>
+
+<h4>Key Rules</h4>
+<ul>
+<li><strong>Complement:</strong> P(A') = 1 − P(A)</li>
+<li><strong>Addition:</strong> P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
+<li><strong>Mutually exclusive:</strong> P(A ∩ B) = 0, so P(A ∪ B) = P(A) + P(B)</li>
+<li><strong>Independent:</strong> P(A ∩ B) = P(A) × P(B)</li>
+<li><strong>Conditional:</strong> P(A|B) = <span class="fraction"><span class="top">P(A ∩ B)</span><span class="bottom">P(B)</span></span></li>
+</ul>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>P(A) = 0.4, P(B) = 0.5, P(A ∩ B) = 0.2. Find P(A ∪ B).</p>
-<p>P(A ∪ B) = 0.4 + 0.5 − 0.2 = <strong>0.7</strong></p>
-</div>
-</div>
+<p><strong>A card is drawn from a standard deck. Find P(heart or king).</strong></p>
+<p>P(heart) = 13/52, P(king) = 4/52, P(heart ∩ king) = 1/52</p>
+<p>P(heart ∪ king) = <span class="fraction"><span class="top">13</span><span class="bottom">52</span></span> + <span class="fraction"><span class="top">4</span><span class="bottom">52</span></span> − <span class="fraction"><span class="top">1</span><span class="bottom">52</span></span> = <span class="fraction"><span class="top">16</span><span class="bottom">52</span></span> = <strong><span class="fraction"><span class="top">4</span><span class="bottom">13</span></span></strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Conditional</h5>
+<p><strong>In a class, 60% play football, 40% play basketball, and 25% play both. Find P(basketball | football).</strong></p>
+<p>P(B|F) = <span class="fraction"><span class="top">0.25</span><span class="bottom">0.60</span></span> = <strong><span class="fraction"><span class="top">5</span><span class="bottom">12</span></span></strong></p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Conditional Probability</h3>
+<h3>Tree Diagrams & Venn Diagrams</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">P(A|B) = P(A ∩ B)/P(B)<br>Independent: P(A ∩ B) = P(A) × P(B)</div>
-</div>
+<p><strong>Tree diagrams</strong> and <strong>Venn diagrams</strong> help visualise probability problems involving multiple events.</p>
+
+<div class="example-box">
+<h5>Worked Example — Tree Diagram</h5>
+<p><strong>Bag A has 3 red and 2 blue balls. Bag B has 1 red and 4 blue balls. A bag is chosen at random, then a ball. Find P(red).</strong></p>
+<p>P(red) = P(choose A) × P(red|A) + P(choose B) × P(red|B)</p>
+<p>= <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> × <span class="fraction"><span class="top">3</span><span class="bottom">5</span></span> + <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span> × <span class="fraction"><span class="top">1</span><span class="bottom">5</span></span> = <span class="fraction"><span class="top">3</span><span class="bottom">10</span></span> + <span class="fraction"><span class="top">1</span><span class="bottom">10</span></span> = <strong><span class="fraction"><span class="top">2</span><span class="bottom">5</span></span></strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Venn Diagram</h5>
+<p><strong>In a survey of 100 students: 60 like tea, 45 like coffee, 25 like both. How many like neither?</strong></p>
+<p>n(T ∪ C) = 60 + 45 − 25 = 80</p>
+<p>Neither = 100 − 80 = <strong>20 students</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Tree diagrams are ideal for sequential events. Venn diagrams are best for showing overlaps between sets. Choose the tool that matches the problem structure.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Permutations and Combinations</h3>
+<h3>Combinations & Permutations</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">ⁿPᵣ = n!/(n−r)! (order matters)<br>ⁿCᵣ = n!/[r!(n−r)!] (order doesn't matter)</div>
+<h4>Permutations (order matters)</h4>
+<div class="formula-box">ⁿPᵣ = <span class="fraction"><span class="top">n!</span><span class="bottom">(n−r)!</span></span></div>
+
+<h4>Combinations (order doesn't matter)</h4>
+<div class="formula-box">ⁿCᵣ = <span class="fraction"><span class="top">n!</span><span class="bottom">r!(n−r)!</span></span></div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>How many ways to choose 3 people from 10?</p>
-<p>¹⁰C₃ = 10!/(3!×7!) = <strong>120</strong></p>
+<p><strong>How many ways can 3 people be chosen from 8?</strong></p>
+<p>⁸C₃ = <span class="fraction"><span class="top">8!</span><span class="bottom">3!5!</span></span> = <span class="fraction"><span class="top">8×7×6</span><span class="bottom">6</span></span> = <strong>56</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>How many 4-letter arrangements from 'MATHS'?</strong></p>
+<p>⁵P₄ = <span class="fraction"><span class="top">5!</span><span class="bottom">1!</span></span> = <strong>120</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Use permutations when the order of selection matters (e.g., arranging people in a line). Use combinations when order doesn't matter (e.g., choosing a team).
 </div>
 </div>
 </div>
@@ -142,26 +173,25 @@
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>P(A') = 1 − P(A)</li>
 <li>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
-<li>P(A ∩ B) = P(A) × P(B|A)</li>
 <li>Independent: P(A ∩ B) = P(A) × P(B)</li>
-<li>ⁿCᵣ = n!/[r!(n−r)!]</li>
+<li>Conditional: P(A|B) = P(A ∩ B)/P(B)</li>
+<li>ⁿPᵣ = n!/(n−r)!; ⁿCᵣ = n!/[r!(n−r)!]</li>
+<li>Complement: P(A') = 1 − P(A)</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Draw tree diagrams for multi-stage problems</li>
-<li>Distinguish permutation (order matters) vs combination</li>
-<li>Venn diagrams help visualise unions and intersections</li>
-<li>For "at least one", use complement: 1 − P(none)</li>
+<li>Always check whether events are independent or mutually exclusive.</li>
+<li>For conditional probability, use the formula P(A|B) = P(A ∩ B)/P(B).</li>
+<li>Tree diagrams help with sequential probability problems.</li>
+<li>Permutations = order matters; Combinations = order doesn't matter.</li>
+<li>When using Venn diagrams, start with the intersection and work outward.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

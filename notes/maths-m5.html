@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,118 +32,202 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Trigonometry</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Exact Values</a></li>
-<li><a href="#section-2">Trigonometric Identities</a></li>
-<li><a href="#section-3">Solving Trigonometric Equations</a></li>
+<li><a href="#section-1">Trigonometric Ratios & Identities</a></li>
+<li><a href="#section-2">Sine & Cosine Rules</a></li>
+<li><a href="#section-3">Trigonometric Equations</a></li>
+<li><a href="#section-4">Graphs of Trigonometric Functions</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Exact Values</h3>
+<h3>Trigonometric Ratios & Identities</h3>
 </div>
 <div class="topic-content">
+<p>Trigonometry relates angles to side lengths in triangles and is fundamental in physics, engineering, and navigation.</p>
+
+<h4>Basic Definitions (Right-Angled Triangle)</h4>
+<div class="formula-box">sin θ = <span class="fraction"><span class="top">opposite</span><span class="bottom">hypotenuse</span></span><br>cos θ = <span class="fraction"><span class="top">adjacent</span><span class="bottom">hypotenuse</span></span><br>tan θ = <span class="fraction"><span class="top">opposite</span><span class="bottom">adjacent</span></span> = <span class="fraction"><span class="top">sin θ</span><span class="bottom">cos θ</span></span></div>
+
+<h4>Exact Values</h4>
 <table class="data-table">
-<tr><th>Angle</th><th>sin</th><th>cos</th><th>tan</th></tr>
-<tr><td>30° (π/6)</td><td>½</td><td>√3/2</td><td>1/√3</td></tr>
-<tr><td>45° (π/4)</td><td>1/√2</td><td>1/√2</td><td>1</td></tr>
-<tr><td>60° (π/3)</td><td>√3/2</td><td>½</td><td>√3</td></tr>
+<tr><th>θ</th><th>0</th><th><span class="fraction"><span class="top">π</span><span class="bottom">6</span></span></th><th><span class="fraction"><span class="top">π</span><span class="bottom">4</span></span></th><th><span class="fraction"><span class="top">π</span><span class="bottom">3</span></span></th><th><span class="fraction"><span class="top">π</span><span class="bottom">2</span></span></th></tr>
+<tr><td>sin θ</td><td>0</td><td><span class="fraction"><span class="top">1</span><span class="bottom">2</span></span></td><td><span class="fraction"><span class="top">√2</span><span class="bottom">2</span></span></td><td><span class="fraction"><span class="top">√3</span><span class="bottom">2</span></span></td><td>1</td></tr>
+<tr><td>cos θ</td><td>1</td><td><span class="fraction"><span class="top">√3</span><span class="bottom">2</span></span></td><td><span class="fraction"><span class="top">√2</span><span class="bottom">2</span></span></td><td><span class="fraction"><span class="top">1</span><span class="bottom">2</span></span></td><td>0</td></tr>
+<tr><td>tan θ</td><td>0</td><td><span class="fraction"><span class="top">1</span><span class="bottom">√3</span></span></td><td>1</td><td>√3</td><td>undefined</td></tr>
 </table>
-<div class="formula-box">sin θ = opposite/hypotenuse<br>cos θ = adjacent/hypotenuse<br>tan θ = opposite/adjacent</div>
-</div>
+
+<h4>Pythagorean Identities</h4>
+<div class="formula-box">sin²θ + cos²θ = 1<br>1 + tan²θ = sec²θ<br>1 + cot²θ = cosec²θ</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Given sin θ = 3/5 and θ is acute, find cos θ and tan θ.</strong></p>
+<p>cos²θ = 1 − 9/25 = 16/25 → cos θ = <strong>4/5</strong></p>
+<p>tan θ = sin θ/cos θ = <strong>3/4</strong></p>
 </div>
 
+<div class="key-point">
+<strong>Key Point:</strong> Learn the exact values table by heart. Cambridge exam questions often expect you to recognise these without a calculator.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Trigonometric Identities</h3>
+<h3>Sine & Cosine Rules</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">tan θ ≡ sin θ/cos θ<br>sin² θ + cos² θ ≡ 1<br>tan² θ + 1 ≡ sec² θ<br>1 + cot² θ ≡ cosec² θ</div>
+<h4>Sine Rule</h4>
+<div class="formula-box"><span class="fraction"><span class="top">a</span><span class="bottom">sin A</span></span> = <span class="fraction"><span class="top">b</span><span class="bottom">sin B</span></span> = <span class="fraction"><span class="top">c</span><span class="bottom">sin C</span></span></div>
+<p>Use when given: two angles and one side (AAS/ASA), or two sides and a non-included angle (SSA — ambiguous case).</p>
+
+<h4>Cosine Rule</h4>
+<div class="formula-box">a² = b² + c² − 2bc cos A<br>cos A = <span class="fraction"><span class="top">b² + c² − a²</span><span class="bottom">2bc</span></span></div>
+<p>Use when given: three sides (SSS), or two sides and included angle (SAS).</p>
+
+<h4>Area of Triangle</h4>
+<div class="formula-box">Area = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>ab sin C</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Given sin θ = 3/5 and θ is acute, find cos θ.</p>
-<p>sin² θ + cos² θ = 1 → (3/5)² + cos² θ = 1</p>
-<p>cos² θ = 1 − 9/25 = 16/25 → cos θ = <strong>4/5</strong></p>
-</div>
-</div>
+<p><strong>In triangle ABC, a = 7, b = 5, C = 60°. Find c and the area.</strong></p>
+<p>c² = 49 + 25 − 2(7)(5)cos 60° = 74 − 35 = 39 → c = <strong>√39</strong></p>
+<p>Area = <span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>(7)(5)sin 60° = <span class="fraction"><span class="top">35√3</span><span class="bottom">4</span></span> ≈ <strong>15.16</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> In triangle ABC, AB = 8 cm, BC = 10 cm, angle ABC = 40°. Find angle BAC. [4]</p>
+<p><strong>Solution:</strong> Using sine rule: <span class="fraction"><span class="top">10</span><span class="bottom">sin A</span></span> = <span class="fraction"><span class="top">8</span><span class="bottom">sin 40°</span></span> (M1). sin A = <span class="fraction"><span class="top">10 sin 40°</span><span class="bottom">8</span></span> = 0.8035 (M1). A = 53.5° or 126.5° (A1). Since 126.5° + 40° < 180°, both are valid. <strong>A = 53.5° or 126.5°</strong> (A1)</p>
+</div>
+
+<div class="key-point">
+<strong>Ambiguous Case (SSA):</strong> When using sine rule with two sides and a non-included angle, there may be two possible triangles. Always check if both solutions are valid (sum of angles < 180°).
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Solving Trigonometric Equations</h3>
+<h3>Trigonometric Equations</h3>
 </div>
 <div class="topic-content">
-<table class="data-table">
-<tr><th>Function</th><th>Positive in</th><th>Negative in</th></tr>
-<tr><td>sin</td><td>1st, 2nd quadrants</td><td>3rd, 4th quadrants</td></tr>
-<tr><td>cos</td><td>1st, 4th quadrants</td><td>2nd, 3rd quadrants</td></tr>
-<tr><td>tan</td><td>1st, 3rd quadrants</td><td>2nd, 4th quadrants</td></tr>
-</table>
+<p>Solve trig equations by finding the principal value, then using the period and symmetry of trig functions.</p>
+
+<div class="process-box">
+<h5>Strategy</h5>
+<ol>
+<li>Rearrange to isolate the trig function.</li>
+<li>Find the principal value using inverse trig.</li>
+<li>Use CAST diagram or graph to find all solutions in the required interval.</li>
+<li>Add multiples of the period (2π or π) if the interval extends beyond one cycle.</li>
+</ol>
+</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
 <p><strong>Solve:</strong> sin x = 0.5 for 0° ≤ x ≤ 360°</p>
-<p>x = 30° or x = 180° − 30° = <strong>150°</strong></p>
+<p>Principal: x = 30°. Sin is positive in Q1 and Q2.</p>
+<p><strong>x = 30° or 150°</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Multiple Angles</h5>
+<p><strong>Solve:</strong> cos 2x = 0.5 for 0 ≤ x ≤ 2π</p>
+<p>2x = <span class="fraction"><span class="top">π</span><span class="bottom">3</span></span>, <span class="fraction"><span class="top">5π</span><span class="bottom">3</span></span>, <span class="fraction"><span class="top">7π</span><span class="bottom">3</span></span>, <span class="fraction"><span class="top">11π</span><span class="bottom">3</span></span></p>
+<p><strong>x = <span class="fraction"><span class="top">π</span><span class="bottom">6</span></span>, <span class="fraction"><span class="top">5π</span><span class="bottom">6</span></span>, <span class="fraction"><span class="top">7π</span><span class="bottom">6</span></span>, <span class="fraction"><span class="top">11π</span><span class="bottom">6</span></span></strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Using Identities</h5>
+<p><strong>Solve:</strong> 2sin²x + cos x − 1 = 0 for 0 ≤ x ≤ 2π</p>
+<p>Replace sin²x with 1 − cos²x: 2(1−cos²x) + cos x − 1 = 0</p>
+<p>2cos²x − cos x − 1 = 0 → (2cos x + 1)(cos x − 1) = 0</p>
+<p>cos x = −1/2 or cos x = 1</p>
+<p><strong>x = <span class="fraction"><span class="top">2π</span><span class="bottom">3</span></span>, <span class="fraction"><span class="top">4π</span><span class="bottom">3</span></span>, 0, 2π</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> When solving equations with multiple angles (e.g., sin 2x), find all values of the multiple angle first, then divide. Remember to extend the interval for the multiple angle accordingly.
+</div>
+</div>
+</div>
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Graphs of Trigonometric Functions</h3>
+</div>
+<div class="topic-content">
+<h4>Key Properties</h4>
+<table class="data-table">
+<tr><th>Function</th><th>Period</th><th>Amplitude</th><th>Range</th><th>Key Points (one cycle)</th></tr>
+<tr><td>y = sin x</td><td>2π</td><td>1</td><td>[−1, 1]</td><td>(0,0), (π/2,1), (π,0), (3π/2,−1), (2π,0)</td></tr>
+<tr><td>y = cos x</td><td>2π</td><td>1</td><td>[−1, 1]</td><td>(0,1), (π/2,0), (π,−1), (3π/2,0), (2π,1)</td></tr>
+<tr><td>y = tan x</td><td>π</td><td>None</td><td>ℝ</td><td>Asymptotes at x = ±π/2, ±3π/2, ...</td></tr>
+</table>
+
+<h4>Transformations</h4>
+<ul>
+<li><strong>y = a sin(bx + c) + d</strong>: amplitude |a|, period 2π/|b|, phase shift −c/b, vertical shift d</li>
+<li><strong>y = −sin x</strong>: reflection in x-axis</li>
+<li><strong>y = sin(−x)</strong>: reflection in y-axis</li>
+</ul>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Sketch y = 2 sin(2x + <span class="fraction"><span class="top">π</span><span class="bottom">3</span></span>) for 0 ≤ x ≤ 2π.</strong></p>
+<p>Amplitude = 2, Period = π, Phase shift = −π/6</p>
+<p>Starts at (−π/6, 0), peaks at (π/12, 2), crosses at (π/3, 0), trough at (7π/12, −2)</p>
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> The depth of water in a harbour is modelled by d = 5 + 3 sin(<span class="fraction"><span class="top">πt</span><span class="bottom">6</span></span>), where t is hours after midnight. Find the maximum depth and the first time after midnight when the depth is 4 metres. [5]</p>
+<p><strong>Solution:</strong> Max = 5 + 3 = <strong>8 metres</strong> (B1). 5 + 3 sin(πt/6) = 4 → sin(πt/6) = −1/3 (M1). πt/6 = π + 0.3398 = 3.4814 (M1). t = <strong>6.65 hours</strong> ≈ 06:39 (A1, A1)</p>
 </div>
 </div>
 </div>
@@ -154,26 +235,25 @@
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>sin² θ + cos² θ ≡ 1</li>
-<li>tan θ ≡ sin θ/cos θ</li>
-<li>sin positive in 1st & 2nd; cos in 1st & 4th; tan in 1st & 3rd</li>
-<li>CAST diagram for solving equations</li>
-<li>Period: sin/cos = 360°; tan = 180°</li>
+<li>sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ</li>
+<li>Sine rule: a/sin A = b/sin B = c/sin C</li>
+<li>Cosine rule: a² = b² + c² − 2bc cos A</li>
+<li>Area = ½ab sin C</li>
+<li>Period of sin/cos = 2π; period of tan = π</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Learn exact values for 30°, 45°, 60°</li>
-<li>Use CAST diagram to find all solutions</li>
-<li>Always check your calculator is in correct mode</li>
-<li>When solving, find all solutions in the given range</li>
+<li>Learn exact values for 0, π/6, π/4, π/3, π/2 by heart.</li>
+<li>Always check whether the question wants degrees or radians.</li>
+<li>When using the sine rule with SSA, watch for the ambiguous case.</li>
+<li>For trig equations, use the CAST diagram to find all solutions.</li>
+<li>When sketching trig graphs, label amplitude, period, and key points.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

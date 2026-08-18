@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,60 +32,46 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Quadratics</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
@@ -98,57 +81,94 @@
 <li><a href="#section-4">Quadratic Inequalities</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
 <h3>Solving Quadratic Equations</h3>
 </div>
 <div class="topic-content">
-<p>A quadratic equation has the form <strong>ax² + bx + c = 0</strong> where a ≠ 0.</p>
+<p>A <strong>quadratic equation</strong> has the form <strong>ax² + bx + c = 0</strong> where a ≠ 0. Quadratic equations model projectile motion, profit maximisation, and many engineering applications.</p>
 
 <h4>Method 1: Factorising</h4>
 <p>Express as two brackets: <strong>ax² + bx + c = (px + q)(rx + s)</strong></p>
+
+<div class="process-box">
+<h5>Factorising Strategy</h5>
+<ol>
+<li>Check for a common factor first.</li>
+<li>For x² + bx + c: find two numbers that multiply to c and add to b.</li>
+<li>For ax² + bx + c: test factor pairs of a and c.</li>
+<li>Expand mentally to verify.</li>
+</ol>
+</div>
+
 <div class="example-box">
-<h5>Worked Example</h5>
+<h5>Worked Example — Monic</h5>
 <p><strong>Solve:</strong> x² + 5x + 6 = 0</p>
-<p><strong>Step 1:</strong> Find two numbers that multiply to +6 and add to +5 → +2 and +3</p>
-<p><strong>Step 2:</strong> Write factors: (x + 2)(x + 3) = 0</p>
-<p><strong>Step 3:</strong> x + 2 = 0 or x + 3 = 0</p>
-<p><strong>Answer:</strong> x = −2 or x = −3</p>
+<p>Numbers: +2 and +3 (product 6, sum 5)</p>
+<p>(x + 2)(x + 3) = 0 → <strong>x = −2 or x = −3</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Non-Monic</h5>
+<p><strong>Solve:</strong> 6x² + 7x − 3 = 0</p>
+<p>Try (2x + 3)(3x − 1) = 6x² − 2x + 9x − 3 = 6x² + 7x − 3 ✓</p>
+<p><strong>x = −3/2 or x = 1/3</strong></p>
 </div>
 
 <h4>Method 2: Quadratic Formula</h4>
 <div class="formula-box">x = <span class="fraction"><span class="top">−b ± √(b² − 4ac)</span><span class="bottom">2a</span></span></div>
+<p><strong>Derivation:</strong> Starting with ax² + bx + c = 0, divide by a and complete the square to derive the formula.</p>
+
 <div class="example-box">
 <h5>Worked Example</h5>
 <p><strong>Solve:</strong> 2x² − 7x + 3 = 0</p>
 <p>a = 2, b = −7, c = 3</p>
-<p>x = <span class="fraction"><span class="top">−(−7) ± √((−7)² − 4(2)(3))</span><span class="bottom">2(2)</span></span> = <span class="fraction"><span class="top">7 ± √(49 − 24)</span><span class="bottom">4</span></span> = <span class="fraction"><span class="top">7 ± 5</span><span class="bottom">4</span></span></p>
-<p>x = 3 or x = ½</p>
+<p>x = <span class="fraction"><span class="top">7 ± √(49 − 24)</span><span class="bottom">4</span></span> = <span class="fraction"><span class="top">7 ± 5</span><span class="bottom">4</span></span></p>
+<p><strong>x = 3 or x = ½</strong></p>
 </div>
 
 <h4>Method 3: Completing the Square</h4>
-<p>Rewrite in the form <strong>a(x + h)² + k</strong></p>
+<p>Rewrite in the form <strong>a(x + h)² + k</strong>. Essential for finding vertices.</p>
+
 <div class="example-box">
 <h5>Worked Example</h5>
 <p><strong>Express in completed square form:</strong> x² + 6x + 5</p>
-<p><strong>Step 1:</strong> Take half the x-coefficient: 6 ÷ 2 = 3</p>
-<p><strong>Step 2:</strong> Write (x + 3)² = x² + 6x + 9</p>
-<p><strong>Step 3:</strong> x² + 6x + 5 = (x + 3)² − 9 + 5 = <strong>(x + 3)² − 4</strong></p>
-</div>
-</div>
+<p>Half of 6 is 3: (x + 3)² = x² + 6x + 9</p>
+<p>x² + 6x + 5 = (x + 3)² − 9 + 5 = <strong>(x + 3)² − 4</strong></p>
+<p>Vertex: (−3, −4)</p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — a ≠ 1</h5>
+<p><strong>Express:</strong> 2x² − 8x + 7</p>
+<p>2(x² − 4x) + 7 = 2[(x − 2)² − 4] + 7 = <strong>2(x − 2)² − 1</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> When a ≠ 1, factor a out from the x-terms before completing the square, then multiply the constant adjustment by a.
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question with Mark Scheme</h5>
+<p><strong>Question:</strong> (a) Express 2x² − 12x + 13 in the form a(x + b)² + c. [3]<br>
+(b) Hence write down the coordinates of the minimum point. [1]<br>
+(c) Find the set of values of x for which 2x² − 12x + 13 ≤ 5. [3]</p>
+<p><strong>Mark Scheme:</strong></p>
+<p>(a) 2(x² − 6x) + 13 (M1) → 2[(x − 3)² − 9] + 13 (M1) → <strong>2(x − 3)² − 5</strong> (A1)</p>
+<p>(b) Minimum point at <strong>(3, −5)</strong> (B1)</p>
+<p>(c) 2x² − 12x + 8 ≤ 0 → x² − 6x + 4 ≤ 0 (M1) → x = <span class="fraction"><span class="top">6 ± √20</span><span class="bottom">2</span></span> = 3 ± √5 (M1) → <strong>3 − √5 ≤ x ≤ 3 + √5</strong> (A1)</p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
 <h3>The Discriminant</h3>
 </div>
 <div class="topic-content">
-<p>The discriminant determines the nature of the roots.</p>
-<div class="formula-box">Δ = b² − 4ac</div>
+<p>The <strong>discriminant</strong> Δ = <strong>b² − 4ac</strong> determines the nature of roots without solving.</p>
+
 <table class="data-table">
 <tr><th>Value of Δ</th><th>Nature of Roots</th><th>Graph</th></tr>
 <tr><td>Δ > 0</td><td>Two distinct real roots</td><td>Crosses x-axis twice</td></tr>
@@ -156,63 +176,133 @@
 <tr><td>Δ < 0</td><td>No real roots</td><td>Does not cross x-axis</td></tr>
 <tr><td>Δ = perfect square</td><td>Rational roots</td><td>—</td></tr>
 </table>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p><strong>Find the discriminant and state the nature of roots:</strong> 3x² + 2x + 5 = 0</p>
-<p>Δ = (2)² − 4(3)(5) = 4 − 60 = <strong>−56</strong></p>
-<p>Since Δ < 0: <strong>No real roots</strong></p>
-</div>
-</div>
+<p><strong>Find the discriminant:</strong> 3x² + 2x + 5 = 0</p>
+<p>Δ = 4 − 60 = <strong>−56</strong> → No real roots</p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Unknown Coefficient</h5>
+<p><strong>Find k for equal roots:</strong> x² + kx + 4 = 0</p>
+<p>Δ = k² − 16 = 0 → <strong>k = ±4</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Range of Values</h5>
+<p><strong>Find p for two distinct real roots:</strong> 2x² + 3x + p = 0</p>
+<p>Δ = 9 − 8p > 0 → p < <strong>9/8</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Always calculate Δ explicitly. For "equal roots" write Δ = 0; for "distinct" write Δ > 0; for "real" write Δ ≥ 0.
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> Find the range of k for which x² + kx + (k + 3) = 0 has real roots. [4]</p>
+<p><strong>Solution:</strong> Δ = k² − 4(k + 3) = k² − 4k − 12 ≥ 0 (M1)</p>
+<p>(k − 6)(k + 2) ≥ 0 (M1) → k ≤ −2 or k ≥ 6 (A1, A1 for both intervals correct)</p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
 <h3>Quadratic Graphs</h3>
 </div>
 <div class="topic-content">
-<p>The graph of y = ax² + bx + c is a <strong>parabola</strong>.</p>
+<p>The graph of <strong>y = ax² + bx + c</strong> is a <strong>parabola</strong>.</p>
 
 <h4>Key Features</h4>
 <table class="data-table">
 <tr><th>Feature</th><th>How to Find</th></tr>
 <tr><td>Shape</td><td>a > 0: ∪ (minimum); a < 0: ∩ (maximum)</td></tr>
-<tr><td>Vertex</td><td>x = −b/2a, then substitute to find y</td></tr>
+<tr><td>Vertex</td><td>x = −b/2a, then substitute</td></tr>
 <tr><td>Axis of symmetry</td><td>x = −b/2a</td></tr>
-<tr><td>y-intercept</td><td>Set x = 0 → y = c</td></tr>
-<tr><td>x-intercepts (roots)</td><td>Solve ax² + bx + c = 0</td></tr>
+<tr><td>y-intercept</td><td>(0, c)</td></tr>
+<tr><td>x-intercepts</td><td>Solve ax² + bx + c = 0</td></tr>
 </table>
 
+<h4>Transformations</h4>
+<ul>
+<li><strong>y = (x − h)²</strong>: horizontal translation h units right</li>
+<li><strong>y = x² + k</strong>: vertical translation k units up</li>
+<li><strong>y = ax²</strong>: vertical stretch, |a| > 1 narrower, 0 < |a| < 1 wider</li>
+<li><strong>y = −x²</strong>: reflection in x-axis</li>
+<li><strong>y = a(x − h)² + k</strong>: vertex at (h, k)</li>
+</ul>
+
 <div class="example-box">
-<h5>Worked Example</h5>
+<h5>Worked Example — Sketching</h5>
 <p><strong>Sketch:</strong> y = x² − 4x + 3</p>
-<p><strong>Shape:</strong> a = 1 > 0, so minimum point (∪)</p>
-<p><strong>Vertex:</strong> x = −(−4)/(2×1) = 2, y = (2)² − 4(2) + 3 = −1 → <strong>(2, −1)</strong></p>
-<p><strong>Roots:</strong> x² − 4x + 3 = (x−1)(x−3) = 0 → x = 1 or x = 3</p>
-<p><strong>y-intercept:</strong> (0, 3)</p>
-</div>
-</div>
+<p>Shape: ∪ (a = 1 > 0)</p>
+<p>Vertex: x = 2, y = −1 → <strong>(2, −1)</strong></p>
+<p>Roots: (x−1)(x−3) = 0 → x = 1, 3</p>
+<p>y-intercept: <strong>(0, 3)</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — No Real Roots</h5>
+<p><strong>Sketch:</strong> y = x² + 2x + 3</p>
+<p>Δ = 4 − 12 = −8 < 0. No real roots.</p>
+<p>Vertex: (−1, 2). Entire parabola above x-axis.</p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> When sketching, always draw a clearly shaped parabola (∪ or ∩), label the vertex, roots (if any), and y-intercept.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-4">
 <div class="topic-header">
 <span class="topic-number">4</span>
 <h3>Quadratic Inequalities</h3>
 </div>
 <div class="topic-content">
-<p>Solve by finding critical values first, then testing intervals.</p>
+<p>Solve by finding critical values and testing intervals or sketching.</p>
+
+<div class="process-box">
+<h5>Strategy</h5>
+<ol>
+<li>Rearrange so one side is zero and x² coefficient is positive.</li>
+<li>Find roots of the corresponding equation.</li>
+<li>Sketch the parabola, marking roots.</li>
+<li>Determine where parabola is above (>0) or below (<0) x-axis.</li>
+</ol>
+</div>
 
 <div class="example-box">
 <h5>Worked Example</h5>
 <p><strong>Solve:</strong> x² − 5x + 6 > 0</p>
-<p><strong>Step 1:</strong> Find roots: x² − 5x + 6 = (x−2)(x−3) = 0 → x = 2 or x = 3</p>
-<p><strong>Step 2:</strong> Sketch parabola (∪ shape, crosses at 2 and 3)</p>
-<p><strong>Step 3:</strong> We want where y > 0 (above x-axis)</p>
+<p>Roots: x = 2, 3. ∪-shape. Want above x-axis.</p>
 <p><strong>Answer:</strong> x < 2 or x > 3</p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — ≤</h5>
+<p><strong>Solve:</strong> 2x² + x − 6 ≤ 0</p>
+<p>Roots: x = −2, 3/2. Want on or below x-axis.</p>
+<p><strong>Answer:</strong> −2 ≤ x ≤ 3/2</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Rearrangement</h5>
+<p><strong>Solve:</strong> x² < 9</p>
+<p>x² − 9 < 0 → (x−3)(x+3) < 0 → <strong>−3 < x < 3</strong></p>
+<p><strong>Common Error:</strong> x < ±3 is meaningless — always rearrange to standard form.</p>
+</div>
+
 <div class="key-point">
-<strong>Important:</strong> If you multiply or divide an inequality by a negative number, reverse the inequality sign. It's safer to rearrange so the x² coefficient is positive.
+<strong>Important:</strong> If multiplying/dividing an inequality by a negative number, reverse the sign. It is safer to rearrange so the x² coefficient is positive.
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> Find the set of values of x for which 3x² − 10x + 3 < 0. [3]</p>
+<p><strong>Solution:</strong> (3x − 1)(x − 3) = 0 → x = 1/3 or x = 3 (M1). ∪-shape. Below x-axis between roots (M1).</p>
+<p><strong>Answer:</strong> <strong>1/3 < x < 3</strong> (A1)</p>
 </div>
 </div>
 </div>
@@ -227,19 +317,19 @@
 <li>For inequalities: find roots, sketch, determine regions</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Always state the formula before substituting values</li>
-<li>Check if factorising is possible first — it saves time</li>
-<li>For sketching, always label vertex, roots, and y-intercept</li>
-<li>If Δ < 0, state "no real roots" rather than "no solutions"</li>
+<li>Always state the quadratic formula before substituting — method marks are awarded even if arithmetic is wrong.</li>
+<li>Check factorising first — it saves time.</li>
+<li>When sketching, label vertex, roots, and y-intercept clearly.</li>
+<li>If Δ < 0, state 'no real roots' rather than 'no solutions'.</li>
+<li>Use a sketch for inequalities — never rely on mental algebra alone.</li>
+<li>For 'show that' questions, write each step clearly.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

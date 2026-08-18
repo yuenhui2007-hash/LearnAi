@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,60 +32,46 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Functions</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
@@ -98,20 +81,20 @@
 <li><a href="#section-4">Modulus Function</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
 <h3>Function Notation & Definitions</h3>
 </div>
 <div class="topic-content">
-<p>A <strong>function</strong> maps each element of the domain to exactly one element of the range.</p>
+<p>A <strong>function</strong> assigns each element in the domain to exactly one element in the range.</p>
+
+<h4>Domain and Range</h4>
 <table class="data-table">
-<tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
-<tr><td>Domain</td><td>All possible input values (x)</td><td>f(x) = √x, domain: x ≥ 0</td></tr>
-<tr><td>Range</td><td>All possible output values (y)</td><td>f(x) = x², range: f(x) ≥ 0</td></tr>
-<tr><td>Codomain</td><td>Set containing the range</td><td>Usually all real numbers</td></tr>
+<tr><th>Term</th><th>Definition</th><th>Example</th></tr>
+<tr><td>Domain</td><td>All possible inputs (x-values)</td><td>f(x) = √x → x ≥ 0</td></tr>
+<tr><td>Range</td><td>All possible outputs (y-values)</td><td>f(x) = x² → f(x) ≥ 0</td></tr>
+<tr><td>Natural Domain</td><td>Largest set for which function is defined</td><td>f(x) = 1/(x−2) → x ≠ 2</td></tr>
 </table>
 
 <h4>Types of Functions</h4>
@@ -121,68 +104,107 @@
 <tr><td>Many-one</td><td>Different inputs → same output</td><td>f(x) = x²</td></tr>
 <tr><td>Onto (surjective)</td><td>Range = Codomain</td><td>f: ℝ→ℝ, f(x) = x³</td></tr>
 </table>
-</div>
+
+<div class="example-box">
+<h5>Worked Example — Domain & Range</h5>
+<p><strong>For f(x) = √(x − 3), find domain and range.</strong></p>
+<p>Domain: x − 3 ≥ 0 → <strong>x ≥ 3</strong></p>
+<p>Range: Square root ≥ 0 → <strong>f(x) ≥ 0</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Rational Function</h5>
+<p><strong>For f(x) = <span class="fraction"><span class="top">2x + 1</span><span class="bottom">x − 4</span></span>, find domain.</strong></p>
+<p>Denominator ≠ 0: x ≠ 4 → <strong>x ∈ ℝ, x ≠ 4</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> Find the range of f(x) = x² − 4x + 7 for x ∈ ℝ. [3]</p>
+<p><strong>Solution:</strong> Complete the square: (x − 2)² + 3. Since (x − 2)² ≥ 0, f(x) ≥ 3. <strong>Range: f(x) ≥ 3</strong></p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
 <h3>Composite Functions</h3>
 </div>
 <div class="topic-content">
-<p>A <strong>composite function</strong> applies one function after another.</p>
-<div class="formula-box">fg(x) = f(g(x))</div>
-<p><strong>Read right to left:</strong> apply g first, then f.</p>
+<p>A <strong>composite function</strong> applies one function after another: <strong>fg(x) = f(g(x))</strong>.</p>
+
+<div class="key-point">
+<strong>Order Matters:</strong> fg(x) means "g first, then f" (read right to left). In general, fg(x) ≠ gf(x).
+</div>
 
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Given f(x) = 2x + 1 and g(x) = x², find:</p>
-<p><strong>a) fg(x):</strong> f(g(x)) = f(x²) = 2(x²) + 1 = <strong>2x² + 1</strong></p>
-<p><strong>b) gf(x):</strong> g(f(x)) = g(2x + 1) = (2x + 1)² = <strong>4x² + 4x + 1</strong></p>
-<p><strong>Note:</strong> fg(x) ≠ gf(x)</p>
+<p><strong>Given f(x) = 2x + 1 and g(x) = x²:</strong></p>
+<p>fg(x) = f(x²) = <strong>2x² + 1</strong></p>
+<p>gf(x) = g(2x + 1) = <strong>(2x + 1)² = 4x² + 4x + 1</strong></p>
+<p>Clearly fg(x) ≠ gf(x).</p>
 </div>
 
-<div class="key-point">
-<strong>Domain of fg(x):</strong> x must be in domain of g, AND g(x) must be in domain of f.
-</div>
-</div>
+<div class="example-box">
+<h5>Worked Example — Domain of Composite</h5>
+<p><strong>f(x) = √x (x ≥ 0), g(x) = x − 4 (x ∈ ℝ). Find fg(x) and its domain.</strong></p>
+<p>fg(x) = √(x − 4)</p>
+<p>For fg defined: g(x) must be in domain of f, so x − 4 ≥ 0 → <strong>x ≥ 4</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> Given f(x) = 3x − 2 and g(x) = <span class="fraction"><span class="top">2</span><span class="bottom">x</span></span> (x ≠ 0), find fg(x) and state its domain. [4]</p>
+<p><strong>Solution:</strong> fg(x) = f(2/x) = 3(2/x) − 2 = <span class="fraction"><span class="top">6 − 2x</span><span class="bottom">x</span></span> (M1, M1). Domain: x ≠ 0 and 2/x ∈ ℝ → <strong>x ≠ 0</strong> (A1, A1)</p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
 <h3>Inverse Functions</h3>
 </div>
 <div class="topic-content">
-<p>Only <strong>one-one functions</strong> have inverses. A function must pass the <strong>horizontal line test</strong>.</p>
+<p>The <strong>inverse function</strong> f⁻¹ reverses f. A function has an inverse iff it is <strong>one-one</strong>.</p>
 
 <h4>Finding the Inverse</h4>
 <ol>
-<li>Write <strong>y = f(x)</strong></li>
+<li>Write y = f(x)</li>
 <li>Rearrange to make x the subject</li>
-<li>Swap x and y</li>
-<li>Replace y with f⁻¹(x)</li>
+<li>Swap x and y → y = f⁻¹(x)</li>
+<li>State domain of f⁻¹ (= range of f)</li>
 </ol>
 
 <div class="example-box">
 <h5>Worked Example</h5>
-<p><strong>Find f⁻¹(x)</strong> given f(x) = (2x + 3)/(x − 1)</p>
-<p><strong>Step 1:</strong> y = (2x + 3)/(x − 1)</p>
-<p><strong>Step 2:</strong> y(x − 1) = 2x + 3 → yx − y = 2x + 3 → yx − 2x = y + 3 → x(y − 2) = y + 3</p>
-<p><strong>Step 3:</strong> x = (y + 3)/(y − 2)</p>
-<p><strong>Step 4:</strong> f⁻¹(x) = <strong>(x + 3)/(x − 2)</strong></p>
+<p><strong>Find f⁻¹(x)</strong> given f(x) = 3x − 2</p>
+<p>y = 3x − 2 → x = (y + 2)/3 → <strong>f⁻¹(x) = <span class="fraction"><span class="top">x + 2</span><span class="bottom">3</span></span></strong></p>
 </div>
+
+<div class="example-box">
+<h5>Worked Example — Restricted Domain</h5>
+<p><strong>Find inverse of f(x) = x² + 1 for x ≥ 0.</strong></p>
+<p>y = x² + 1 → x = √(y − 1) [positive root since x ≥ 0]</p>
+<p><strong>f⁻¹(x) = √(x − 1)</strong>, domain x ≥ 1 (range of f)</p>
+</div>
+
+<h4>Graphical Relationship</h4>
+<p>The graph of y = f⁻¹(x) is the <strong>reflection</strong> of y = f(x) in the line <strong>y = x</strong>.</p>
 
 <table class="data-table">
 <tr><th>Property</th><th>Relationship</th></tr>
 <tr><td>Domain of f⁻¹</td><td>= Range of f</td></tr>
 <tr><td>Range of f⁻¹</td><td>= Domain of f</td></tr>
-<tr><td>Graph of f⁻¹</td><td>Reflection of f in line y = x</td></tr>
 <tr><td>f(f⁻¹(x))</td><td>= x</td></tr>
 </table>
-</div>
-</div>
 
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> The function f is defined by f(x) = <span class="fraction"><span class="top">2x + 3</span><span class="bottom">x − 1</span></span> for x > 1. Find f⁻¹(x) and state its domain. [5]</p>
+<p><strong>Solution:</strong> y = <span class="fraction"><span class="top">2x + 3</span><span class="bottom">x − 1</span></span> → y(x−1) = 2x + 3 → x(y−2) = y+3 → x = <span class="fraction"><span class="top">y+3</span><span class="bottom">y−2</span></span> (M1, M1). f⁻¹(x) = <span class="fraction"><span class="top">x+3</span><span class="bottom">x−2</span></span> (A1). Domain = range of f = <strong>x > 2</strong> (B1, B1)</p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-4">
 <div class="topic-header">
 <span class="topic-number">4</span>
@@ -201,16 +223,25 @@
 <div class="example-box">
 <h5>Worked Example</h5>
 <p><strong>Solve:</strong> |2x − 3| = 5</p>
-<p><strong>Case 1:</strong> 2x − 3 = 5 → 2x = 8 → x = 4</p>
-<p><strong>Case 2:</strong> 2x − 3 = −5 → 2x = −2 → x = −1</p>
-<p><strong>Answer:</strong> x = 4 or x = −1</p>
+<p>Case 1: 2x − 3 = 5 → x = 4</p>
+<p>Case 2: 2x − 3 = −5 → x = −1</p>
+<p><strong>x = 4 or x = −1</strong></p>
 </div>
 
 <div class="example-box">
-<h5>Worked Example</h5>
+<h5>Worked Example — Inequality</h5>
 <p><strong>Solve:</strong> |x − 2| < 3</p>
-<p>−3 < x − 2 < 3</p>
-<p>−1 < x < 5</p>
+<p>−3 < x − 2 < 3 → <strong>−1 < x < 5</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> |x − a| < b means a − b < x < a + b (distance from a is less than b). |x − a| > b means x < a − b or x > a + b.
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> Solve the inequality |2x − 1| > |x + 3|. [5]</p>
+<p><strong>Solution:</strong> Square both sides: (2x−1)² > (x+3)² → 4x²−4x+1 > x²+6x+9 → 3x²−10x−8 > 0 (M1, M1). Factorise: (3x+2)(x−4) > 0 (M1). Critical values x = −2/3 and x = 4. ∪-shape, want above x-axis: <strong>x < −2/3 or x > 4</strong> (A1, A1)</p>
 </div>
 </div>
 </div>
@@ -225,19 +256,19 @@
 <li>Only one-one functions have inverses</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Always check if a function is one-one before finding its inverse</li>
-<li>For composite functions, work from the inside out</li>
-<li>When solving |f(x)| = a, always consider ±a</li>
-<li>Draw the line y = x to check inverse reflections</li>
+<li>Always state the domain when defining a function or its inverse.</li>
+<li>For composite functions, work from the inside out (right to left).</li>
+<li>Verify inverses by checking f(f⁻¹(x)) = x.</li>
+<li>A function must be one-one to have an inverse; if not, restrict the domain.</li>
+<li>The range of f becomes the domain of f⁻¹, and vice versa.</li>
+<li>When solving |f(x)| = a, always consider ±a.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

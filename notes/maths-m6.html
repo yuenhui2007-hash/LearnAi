@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,115 +32,144 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Series</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Binomial Expansion</a></li>
-<li><a href="#section-2">Arithmetic Progression (AP)</a></li>
-<li><a href="#section-3">Geometric Progression (GP)</a></li>
+<li><a href="#section-1">Arithmetic Progressions</a></li>
+<li><a href="#section-2">Geometric Progressions</a></li>
+<li><a href="#section-3">Binomial Expansion</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Binomial Expansion</h3>
+<h3>Arithmetic Progressions</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">(a + b)ⁿ = Σ (ⁿCᵣ) aⁿ⁻ʳ bʳ where ⁿCᵣ = n!/(r!(n−r)!)</div>
+<p>An <strong>arithmetic progression (AP)</strong> is a sequence where each term increases by a constant difference.</p>
+
+<div class="formula-box">n-th term: aₙ = a + (n − 1)d<br>Sum of n terms: Sₙ = <span class="fraction"><span class="top">n</span><span class="bottom">2</span></span>[2a + (n − 1)d] = <span class="fraction"><span class="top">n</span><span class="bottom">2</span></span>(a + l)<br>where a = first term, d = common difference, l = last term</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Expand (2 + x)⁴</p>
-<p>= ⁴C₀(2)⁴ + ⁴C₁(2)³x + ⁴C₂(2)²x² + ⁴C₃(2)x³ + ⁴C₄x⁴</p>
-<p>= 16 + 32x + 24x² + 8x³ + x⁴</p>
-</div>
-</div>
+<p><strong>The 5th term of an AP is 14 and the 10th term is 29. Find a and d.</strong></p>
+<p>a + 4d = 14 and a + 9d = 29</p>
+<p>Subtract: 5d = 15 → d = 3. Then a = 14 − 12 = <strong>2</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Sum</h5>
+<p><strong>Find the sum of the first 20 terms of the AP: 3, 7, 11, 15, ...</strong></p>
+<p>a = 3, d = 4</p>
+<p>S₂₀ = <span class="fraction"><span class="top">20</span><span class="bottom">2</span></span>[6 + 19(4)] = 10 × 82 = <strong>820</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> The sum of the first n terms of an AP is given by Sₙ = 2n² + 5n. Find the first term and common difference. [4]</p>
+<p><strong>Solution:</strong> a = S₁ = 2 + 5 = <strong>7</strong> (B1). S₂ = 8 + 10 = 18, so a₂ = 18 − 7 = 11 (M1). d = 11 − 7 = <strong>4</strong> (A1, A1)</p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> If Sₙ is given as a formula, the first term is S₁ and the second term is S₂ − S₁. From these you can find a and d.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Arithmetic Progression (AP)</h3>
+<h3>Geometric Progressions</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">nth term: uₙ = a + (n − 1)d<br>Sum: Sₙ = n/2[2a + (n − 1)d] = n/2(a + l)</div>
+<p>A <strong>geometric progression (GP)</strong> is a sequence where each term is multiplied by a constant ratio.</p>
+
+<div class="formula-box">n-th term: aₙ = arⁿ⁻¹<br>Sum of n terms: Sₙ = <span class="fraction"><span class="top">a(1 − rⁿ)</span><span class="bottom">1 − r</span></span> (r ≠ 1)<br>Sum to infinity: S∞ = <span class="fraction"><span class="top">a</span><span class="bottom">1 − r</span></span> (|r| < 1)</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>AP: 3, 7, 11, 15... Find 10th term and sum of first 10 terms.</p>
-<p>a = 3, d = 4</p>
-<p>u₁₀ = 3 + 9(4) = <strong>39</strong></p>
-<p>S₁₀ = 10/2[2(3) + 9(4)] = 5(42) = <strong>210</strong></p>
-</div>
-</div>
+<p><strong>The 3rd term of a GP is 12 and the 6th term is 96. Find a and r.</strong></p>
+<p>ar² = 12 and ar⁵ = 96</p>
+<p>Divide: r³ = 8 → r = 2. Then a = 12/4 = <strong>3</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Worked Example — Sum to Infinity</h5>
+<p><strong>Find S∞ for the GP: 8, 4, 2, 1, ...</strong></p>
+<p>a = 8, r = 1/2. |r| < 1, so S∞ exists.</p>
+<p>S∞ = <span class="fraction"><span class="top">8</span><span class="bottom">1 − 1/2</span></span> = <strong>16</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> S∞ only exists when |r| < 1. If |r| ≥ 1, the series diverges (does not converge to a finite sum).
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Geometric Progression (GP)</h3>
+<h3>Binomial Expansion</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">nth term: uₙ = arⁿ⁻¹<br>Sum: Sₙ = a(1−rⁿ)/(1−r)<br>Sum to infinity: S∞ = a/(1−r) for |r| < 1</div>
+<p>The <strong>binomial theorem</strong> expands expressions of the form (a + b)ⁿ.</p>
+
+<div class="formula-box">(a + b)ⁿ = aⁿ + <span class="fraction"><span class="top">n</span><span class="bottom">1</span></span>aⁿ⁻¹b + <span class="fraction"><span class="top">n(n−1)</span><span class="bottom">2!</span></span>aⁿ⁻²b² + ... + bⁿ<br><br>(1 + x)ⁿ = 1 + nx + <span class="fraction"><span class="top">n(n−1)</span><span class="bottom">2!</span></span>x² + <span class="fraction"><span class="top">n(n−1)(n−2)</span><span class="bottom">3!</span></span>x³ + ...<br>(valid for |x| < 1 when n is not a positive integer)</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>GP: 8, 4, 2, 1... Find sum to infinity.</p>
-<p>a = 8, r = ½</p>
-<p>S∞ = 8/(1 − ½) = <strong>16</strong></p>
+<p><strong>Expand (1 + 2x)⁵ up to x³.</strong></p>
+<p>= 1 + 5(2x) + <span class="fraction"><span class="top">5×4</span><span class="bottom">2</span></span>(2x)² + <span class="fraction"><span class="top">5×4×3</span><span class="bottom">6</span></span>(2x)³</p>
+<p>= <strong>1 + 10x + 40x² + 80x³ + ...</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Negative/Fractional Index</h5>
+<p><strong>Expand (1 − x)⁻² up to x³, stating the validity.</strong></p>
+<p>= 1 + (−2)(−x) + <span class="fraction"><span class="top">(−2)(−3)</span><span class="bottom">2</span></span>(−x)² + <span class="fraction"><span class="top">(−2)(−3)(−4)</span><span class="bottom">6</span></span>(−x)³</p>
+<p>= <strong>1 + 2x + 3x² + 4x³ + ...</strong> valid for <strong>|x| < 1</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> For expansions with negative or fractional indices, always state the range of validity: |x| < 1 for (1 + x)ⁿ. For (a + bx)ⁿ, rewrite as aⁿ(1 + bx/a)ⁿ first.
 </div>
 </div>
 </div>
@@ -151,26 +177,24 @@
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Binomial: (a+b)ⁿ = Σ ⁿCᵣ aⁿ⁻ʳbʳ</li>
-<li>AP: uₙ = a + (n−1)d; Sₙ = n/2(2a + (n−1)d)</li>
-<li>GP: uₙ = arⁿ⁻¹; Sₙ = a(1−rⁿ)/(1−r)</li>
-<li>S∞ = a/(1−r) for |r| < 1</li>
-<li>ⁿCᵣ = n!/(r!(n−r)!)</li>
+<li>AP: aₙ = a + (n−1)d; Sₙ = n/2[2a + (n−1)d]</li>
+<li>GP: aₙ = arⁿ⁻¹; Sₙ = a(1−rⁿ)/(1−r); S∞ = a/(1−r) for |r|<1</li>
+<li>Binomial: (1+x)ⁿ = 1 + nx + n(n−1)x²/2! + ...</li>
+<li>Binomial validity: |x| < 1 for non-positive integer n</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Check if GP is convergent before using S∞</li>
-<li>For binomial with negative/fractional n, series valid for |x| < 1</li>
-<li>AP sum: n/2(first + last) is often quicker</li>
-<li>Always define a, d, r before substituting</li>
+<li>For AP/GP problems, write down the formula before substituting values.</li>
+<li>Always check whether a GP converges before using S∞.</li>
+<li>For binomial expansions with negative indices, be careful with signs.</li>
+<li>Remember to state the range of validity for binomial expansions with non-positive integer indices.</li>
+<li>When finding a and d (or a and r), set up simultaneous equations using the given terms.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,124 +32,169 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Hypothesis Testing</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Setting Up Hypotheses</a></li>
-<li><a href="#section-2">Decision Making</a></li>
+<li><a href="#section-1">Hypothesis Testing Basics</a></li>
+<li><a href="#section-2">Binomial Hypothesis Test</a></li>
+<li><a href="#section-3">Normal Hypothesis Test</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Setting Up Hypotheses</h3>
+<h3>Hypothesis Testing Basics</h3>
 </div>
 <div class="topic-content">
-<table class="data-table">
-<tr><th>Test Type</th><th>H₀</th><th>H₁</th></tr>
-<tr><td>Two-tailed</td><td>μ = μ₀</td><td>μ ≠ μ₀</td></tr>
-<tr><td>One-tailed (right)</td><td>μ = μ₀</td><td>μ > μ₀</td></tr>
-<tr><td>One-tailed (left)</td><td>μ = μ₀</td><td>μ < μ₀</td></tr>
-</table>
-<div class="formula-box">Test statistic: z = (x̄ − μ)/(σ/√n)</div>
-</div>
-</div>
+<p><strong>Hypothesis testing</strong> is a statistical method for making decisions about a population based on sample data.</p>
 
+<h4>Key Terms</h4>
+<table class="data-table">
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Null hypothesis (H₀)</td><td>The default assumption (e.g., p = 0.5)</td></tr>
+<tr><td>Alternative hypothesis (H₁)</td><td>The claim we test against H₀ (e.g., p ≠ 0.5, p > 0.5, p < 0.5)</td></tr>
+<tr><td>Significance level (α)</td><td>Probability of rejecting H₀ when it is true (Type I error)</td></tr>
+<tr><td>p-value</td><td>Probability of obtaining results at least as extreme as observed</td></tr>
+<tr><td>Test statistic</td><td>A value calculated from sample data</td></tr>
+<tr><td>Critical value</td><td>The threshold for rejecting H₀</td></tr>
+<tr><td>Type I error</td><td>Rejecting H₀ when it is true (false positive)</td></tr>
+<tr><td>Type II error</td><td>Not rejecting H₀ when it is false (false negative)</td></tr>
+</table>
+
+<div class="process-box">
+<h5>Hypothesis Testing Procedure</h5>
+<ol>
+<li>State H₀ and H₁ clearly.</li>
+<li>Choose significance level α (usually 5% or 1%).</li>
+<li>Calculate the test statistic from sample data.</li>
+<li>Find the critical value or p-value.</li>
+<li>Compare and make a decision: reject or do not reject H₀.</li>
+<li>Write a conclusion in context.</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Decision Making</h3>
+<h3>Binomial Hypothesis Test</h3>
 </div>
 <div class="topic-content">
-<table class="data-table">
-<tr><th>Condition</th><th>Decision</th></tr>
-<tr><td>Test statistic in critical region</td><td>Reject H₀</td></tr>
-<tr><td>p-value < significance level</td><td>Reject H₀</td></tr>
-<tr><td>Otherwise</td><td>Do not reject H₀</td></tr>
-</table>
-<div class="key-point">Type I error: Reject H₀ when true (P = α)<br>Type II error: Do not reject H₀ when false</div>
+<p>For testing a population proportion using the binomial distribution.</p>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>A coin is tossed 20 times and 15 heads are obtained. Test at 5% whether the coin is biased towards heads.</strong></p>
+<p>H₀: p = 0.5, H₁: p > 0.5 (one-tailed)</p>
+<p>X ~ B(20, 0.5) under H₀</p>
+<p>P(X ≥ 15) = 1 − P(X ≤ 14) = 1 − 0.9793 = 0.0207</p>
+<p>Since 0.0207 < 0.05, <strong>reject H₀</strong>. There is evidence the coin is biased towards heads.</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Two-Tailed</h5>
+<p><strong>Test at 5% whether a die is biased if 4 sixes are obtained in 24 throws.</strong></p>
+<p>H₀: p = 1/6, H₁: p ≠ 1/6 (two-tailed)</p>
+<p>X ~ B(24, 1/6). E(X) = 4.</p>
+<p>P(X ≤ 4) = 0.424 (from tables or calculator)</p>
+<p>Two-tailed p-value = 2 × 0.424 = 0.848 > 0.05</p>
+<p><strong>Do not reject H₀</strong>. Insufficient evidence of bias.</p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> For a two-tailed test at significance level α, compare the p-value with α (not α/2) when using the p-value method. When using critical values, split α equally between both tails.
+</div>
+</div>
+</div>
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Normal Hypothesis Test</h3>
+</div>
+<div class="topic-content">
+<p>For testing a population mean when the population is normally distributed or the sample size is large.</p>
+
+<div class="formula-box">Test statistic: Z = <span class="fraction"><span class="top">x̄ − μ</span><span class="bottom">σ/√n</span></span></div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>A sample of 50 students has mean height 172 cm. Test at 5% whether the mean has increased from the known population mean of 170 cm (σ = 8).</strong></p>
+<p>H₀: μ = 170, H₁: μ > 170</p>
+<p>Z = <span class="fraction"><span class="top">172 − 170</span><span class="bottom">8/√50</span></span> = <span class="fraction"><span class="top">2</span><span class="bottom">1.131</span></span> ≈ 1.768</p>
+<p>Critical value at 5% (one-tailed) = 1.645</p>
+<p>Since 1.768 > 1.645, <strong>reject H₀</strong>. Evidence suggests mean height has increased.</p>
+</div>
+
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> A machine fills bags with sugar. A sample of 36 bags has mean 1.02 kg. Test at 1% whether the machine is overfilling, given σ = 0.05 kg. [6]</p>
+<p><strong>Solution:</strong> H₀: μ = 1.00, H₁: μ > 1.00 (B1). Z = <span class="fraction"><span class="top">1.02−1.00</span><span class="bottom">0.05/6</span></span> = 2.4 (M1, M1). Critical value = 2.326 (B1). 2.4 > 2.326 → <strong>Reject H₀</strong> (A1). Evidence that machine is overfilling (A1).</p>
+</div>
 </div>
 </div>
 
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>H₀: default assumption</li>
-<li>H₁: alternative (one-tailed or two-tailed)</li>
-<li>Test statistic z = (x̄ − μ)/(σ/√n)</li>
-<li>Reject H₀ if test statistic in critical region</li>
-<li>Type I: reject true H₀; Type II: accept false H₀</li>
+<li>H₀ = null hypothesis; H₁ = alternative hypothesis</li>
+<li>Reject H₀ if p-value < α or test statistic > critical value</li>
+<li>Type I error = reject true H₀; Type II error = accept false H₀</li>
+<li>Binomial test: X ~ B(n, p₀) under H₀</li>
+<li>Normal test: Z = (x̄ − μ)/(σ/√n)</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Always state H₀ and H₁ clearly</li>
-<li>Check if test is one-tailed or two-tailed</li>
-<li>Conclusion must be in context</li>
-<li>For two-tailed at 5%, use 2.5% in each tail</li>
+<li>Always state H₀ and H₁ in terms of the parameter (e.g., μ or p).</li>
+<li>Check whether the test is one-tailed or two-tailed before finding critical values.</li>
+<li>Write conclusions in context, not just 'reject H₀'.</li>
+<li>For binomial tests, use cumulative probabilities to avoid rounding errors.</li>
+<li>For normal tests, ensure you use σ/√n (standard error), not just σ.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

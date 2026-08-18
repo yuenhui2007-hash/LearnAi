@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,144 +32,179 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Coordinate Geometry</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Distance and Midpoint</a></li>
-<li><a href="#section-2">Gradient</a></li>
-<li><a href="#section-3">Equations of Lines</a></li>
-<li><a href="#section-4">Parallel and Perpendicular</a></li>
+<li><a href="#section-1">Straight Line Equations</a></li>
+<li><a href="#section-2">Midpoint & Distance</a></li>
+<li><a href="#section-3">Circle Equations</a></li>
+<li><a href="#section-4">Parametric & Locus Problems</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Distance and Midpoint</h3>
+<h3>Straight Line Equations</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">Distance: d = √((x₂ − x₁)² + (y₂ − y₁)²)<br>Midpoint: M = ((x₁ + x₂)/2, (y₁ + y₂)/2)</div>
+<p>The equation of a straight line can be written in several forms. Understanding each form and when to use it is essential.</p>
+
+<h4>Forms of a Straight Line</h4>
+<table class="data-table">
+<tr><th>Form</th><th>Equation</th><th>Best Used When</th></tr>
+<tr><td>Gradient-Intercept</td><td>y = mx + c</td><td>Gradient and y-intercept known</td></tr>
+<tr><td>Point-Gradient</td><td>y − y₁ = m(x − x₁)</td><td>Gradient and one point known</td></tr>
+<tr><td>Two-Point Form</td><td><span class="fraction"><span class="top">y − y₁</span><span class="bottom">y₂ − y₁</span></span> = <span class="fraction"><span class="top">x − x₁</span><span class="bottom">x₂ − x₁</span></span></td><td>Two points known</td></tr>
+<tr><td>General Form</td><td>ax + by + c = 0</td><td>Standard representation</td></tr>
+</table>
+
+<div class="formula-box">Gradient m = <span class="fraction"><span class="top">y₂ − y₁</span><span class="bottom">x₂ − x₁</span></span></div>
 
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Find distance and midpoint of A(2, 3) and B(8, 11)</p>
-<p><strong>Distance:</strong> d = √((8−2)² + (11−3)²) = √(36 + 64) = √100 = <strong>10</strong></p>
-<p><strong>Midpoint:</strong> M = ((2+8)/2, (3+11)/2) = <strong>(5, 7)</strong></p>
-</div>
-</div>
+<p><strong>Find the equation of the line through (2, 5) and (4, 11).</strong></p>
+<p>m = <span class="fraction"><span class="top">11 − 5</span><span class="bottom">4 − 2</span></span> = 3</p>
+<p>y − 5 = 3(x − 2) → y = 3x − 1</p>
 </div>
 
+<h4>Parallel and Perpendicular Lines</h4>
+<ul>
+<li><strong>Parallel:</strong> Same gradient (m₁ = m₂)</li>
+<li><strong>Perpendicular:</strong> Product of gradients = −1 (m₁ × m₂ = −1)</li>
+</ul>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the equation of the line through (1, 2) perpendicular to y = 2x + 3.</strong></p>
+<p>m = 2, so perpendicular gradient = −1/2</p>
+<p>y − 2 = −<span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>(x − 1) → y = −<span class="fraction"><span class="top">1</span><span class="bottom">2</span></span>x + <span class="fraction"><span class="top">5</span><span class="bottom">2</span></span></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> The gradient of a line perpendicular to y = mx + c is −1/m. Always check that m ≠ 0 first.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Gradient</h3>
+<h3>Midpoint & Distance</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">m = (y₂ − y₁)/(x₂ − x₁)</div>
-<table class="data-table">
-<tr><th>Gradient</th><th>Description</th></tr>
-<tr><td>m > 0</td><td>Line slopes upward (left to right)</td></tr>
-<tr><td>m < 0</td><td>Line slopes downward (left to right)</td></tr>
-<tr><td>m = 0</td><td>Horizontal line</td></tr>
-<tr><td>Undefined</td><td>Vertical line</td></tr>
-</table>
-</div>
+<div class="formula-box">Midpoint: (<span class="fraction"><span class="top">x₁ + x₂</span><span class="bottom">2</span></span>, <span class="fraction"><span class="top">y₁ + y₂</span><span class="bottom">2</span></span>)<br>
+Distance: √[(x₂ − x₁)² + (y₂ − y₁)²]</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the midpoint and distance between A(1, 3) and B(5, 9).</strong></p>
+<p>Midpoint = (<span class="fraction"><span class="top">1+5</span><span class="bottom">2</span></span>, <span class="fraction"><span class="top">3+9</span><span class="bottom">2</span></span>) = <strong>(3, 6)</strong></p>
+<p>Distance = √[(5−1)² + (9−3)²] = √[16 + 36] = <strong>√52 = 2√13</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> The points A(−1, 2) and B(3, 8) are opposite vertices of a square. Find the coordinates of the other two vertices. [5]</p>
+<p><strong>Solution:</strong> Centre = (1, 5), diagonal length = √(16+36) = √52, side = √26. Gradient AB = 6/4 = 3/2. Perpendicular gradient = −2/3. Other vertices at distance √26 from centre along perpendicular direction: <strong>(4, 3) and (−2, 7)</strong></p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Equations of Lines</h3>
+<h3>Circle Equations</h3>
 </div>
 <div class="topic-content">
-<table class="data-table">
-<tr><th>Form</th><th>Equation</th><th>Use When</th></tr>
-<tr><td>Gradient-intercept</td><td>y = mx + c</td><td>You know gradient and y-intercept</td></tr>
-<tr><td>Point-slope</td><td>y − y₁ = m(x − x₁)</td><td>You know gradient and one point</td></tr>
-<tr><td>General</td><td>ax + by + c = 0</td><td>Standard form required</td></tr>
-</table>
+<p>A <strong>circle</strong> is the set of all points equidistant from a fixed centre.</p>
+
+<div class="formula-box">(x − a)² + (y − b)² = r²<br>Centre (a, b), radius r</div>
+
+<h4>General Form</h4>
+<p>x² + y² + 2gx + 2fy + c = 0 has centre (−g, −f) and radius √(g² + f² − c)</p>
 
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Find equation of line through (3, 4) with gradient 2</p>
-<p>y − 4 = 2(x − 3)</p>
-<p>y − 4 = 2x − 6</p>
-<p>y = 2x − 2 or <strong>2x − y − 2 = 0</strong></p>
-</div>
-</div>
+<p><strong>Find centre and radius:</strong> x² + y² − 6x + 4y − 12 = 0</p>
+<p>Centre: (3, −2). Radius: √(9 + 4 + 12) = <strong>√25 = 5</strong></p>
 </div>
 
+<h4>Tangent to a Circle</h4>
+<p>A tangent is perpendicular to the radius at the point of contact.</p>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the equation of the tangent to (x−2)² + (y−1)² = 25 at (5, 5).</strong></p>
+<p>Gradient of radius = <span class="fraction"><span class="top">5−1</span><span class="bottom">5−2</span></span> = <span class="fraction"><span class="top">4</span><span class="bottom">3</span></span>. Tangent gradient = −<span class="fraction"><span class="top">3</span><span class="bottom">4</span></span></p>
+<p>y − 5 = −<span class="fraction"><span class="top">3</span><span class="bottom">4</span></span>(x − 5) → 3x + 4y = 35</p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> To find where a line intersects a circle, substitute the line equation into the circle equation and solve the resulting quadratic. The discriminant tells you: Δ > 0 (two points), Δ = 0 (tangent), Δ < 0 (no intersection).
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-4">
 <div class="topic-header">
 <span class="topic-number">4</span>
-<h3>Parallel and Perpendicular</h3>
+<h3>Parametric & Locus Problems</h3>
 </div>
 <div class="topic-content">
-<table class="data-table">
-<tr><th>Relationship</th><th>Condition</th></tr>
-<tr><td>Parallel lines</td><td>m₁ = m₂ (same gradient)</td></tr>
-<tr><td>Perpendicular lines</td><td>m₁ × m₂ = −1 or m₂ = −1/m₁</td></tr>
-</table>
+<p>A <strong>parametric equation</strong> expresses x and y in terms of a third variable (parameter).</p>
 
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>Line L₁ has gradient 3. Find gradient of line perpendicular to L₁.</p>
-<p>m₂ = −1/3</p>
+<p><strong>Eliminate the parameter t:</strong> x = 2t, y = t² + 1</p>
+<p>t = x/2 → y = (x/2)² + 1 = <span class="fraction"><span class="top">x²</span><span class="bottom">4</span></span> + 1</p>
+</div>
+
+<h4>Locus</h4>
+<p>A <strong>locus</strong> is a set of points satisfying a given condition.</p>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>Find the locus of points equidistant from A(1, 2) and B(5, 4).</strong></p>
+<p>Using PA² = PB²: (x−1)² + (y−2)² = (x−5)² + (y−4)²</p>
+<p>Expand: x²−2x+1+y²−4y+4 = x²−10x+25+y²−8y+16</p>
+<p>Simplify: <strong>8x + 4y = 36</strong> or <strong>2x + y = 9</strong> (the perpendicular bisector of AB)</p>
 </div>
 </div>
 </div>
@@ -180,26 +212,25 @@
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Distance: d = √((x₂ − x₁)² + (y₂ − y₁)²)</li>
-<li>Gradient: m = (y₂ − y₁)/(x₂ − x₁)</li>
-<li>Parallel: m₁ = m₂</li>
-<li>Perpendicular: m₁ × m₂ = −1</li>
-<li>Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)</li>
+<li>Gradient m = (y₂ − y₁)/(x₂ − x₁)</li>
+<li>Parallel lines: m₁ = m₂; Perpendicular: m₁ × m₂ = −1</li>
+<li>Circle: (x − a)² + (y − b)² = r²</li>
+<li>Distance = √[(x₂ − x₁)² + (y₂ − y₁)²]</li>
+<li>Midpoint = ((x₁+x₂)/2, (y₁+y₂)/2)</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Always draw a sketch to verify your answer</li>
-<li>For perpendicular gradients, flip and change sign</li>
-<li>General form ax + by + c = 0 can be rearranged to y = mx + c</li>
-<li>Show all working when finding equations</li>
+<li>Always draw a diagram — it helps visualise the problem.</li>
+<li>Remember: perpendicular gradients multiply to −1.</li>
+<li>For circle problems, complete the square to find centre and radius.</li>
+<li>Check your final answer by substituting a point back in.</li>
+<li>When finding intersections, use the discriminant to determine the number of solutions.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>

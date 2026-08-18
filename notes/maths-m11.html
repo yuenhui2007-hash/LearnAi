@@ -7,21 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=5">
 <style>
+
 .notes-page { padding: 120px 0 60px; background: #f8fafc; min-height: 100vh; }
 .notes-container { max-width: 900px; margin: 0 auto; background: white; padding: 48px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 .notes-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 3px solid #e2e8f0; }
 .notes-header h1 { font-size: 2.2rem; margin-bottom: 8px; color: #1e293b; }
 .syllabus-tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-
-/* Table of Contents */
 .toc { background: #f1f5f9; padding: 24px 28px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid #3b82f6; }
 .toc h2 { font-size: 1.1rem; color: #1e40af; margin-bottom: 12px; }
 .toc ol { margin: 0; padding-left: 20px; }
 .toc li { margin-bottom: 6px; color: #475569; }
 .toc a { color: #3b82f6; text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
-
-/* Topic Blocks */
 .topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
 .topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
@@ -35,60 +32,46 @@
 .topic-content ul li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
 .topic-content ol { margin: 12px 0; padding-left: 24px; }
 .topic-content ol li { margin-bottom: 8px; color: #475569; line-height: 1.7; }
-
-/* Formula Box */
 .formula-box { background: #eff6ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #3b82f6; font-family: 'Courier New', monospace; margin: 20px 0; font-size: 1rem; line-height: 1.6; color: #1e40af; }
-
-/* Example Box */
 .example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
 .example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .example-box p { margin-bottom: 8px; color: #166534; }
-
-/* Key Point */
 .key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
-
-/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
 .data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
 .data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
 .data-table tr:nth-child(even) { background: #f8fafc; }
-
-/* Summary Box */
 .summary-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .summary-box h2 { color: #92400e; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f59e0b; }
 .summary-box ul { margin: 0; padding-left: 20px; }
 .summary-box li { color: #78350f; margin-bottom: 8px; line-height: 1.6; }
-
-/* Exam Tips */
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 28px; border-radius: 12px; margin: 40px 0; }
 .exam-tips h2 { color: #1e40af; font-size: 1.2rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
 .exam-tips ul { margin: 0; padding-left: 20px; }
 .exam-tips li { color: #1e3a8a; margin-bottom: 8px; line-height: 1.6; }
-
-/* Fraction */
+.process-box { background: #f3f4f6; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #6b7280; margin: 20px 0; }
+.process-box h5 { color: #374151; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 12px 0; padding-left: 24px; }
+.process-box ol li { margin-bottom: 8px; color: #4b5563; line-height: 1.7; }
+.diagram-box { background: #faf5ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #a855f7; margin: 20px 0; }
+.diagram-box h5 { color: #7e22ce; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .fraction { display: inline-block; text-align: center; vertical-align: middle; margin: 0 4px; }
 .fraction .top { display: block; border-bottom: 1px solid; padding: 0 4px; }
 .fraction .bottom { display: block; padding: 0 4px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } .topic-header { flex-direction: column; align-items: flex-start; } }
 
-@media (max-width: 768px) {
-  .notes-container { padding: 24px; }
-  .topic-content { padding-left: 0; }
-  .topic-header { flex-direction: column; align-items: flex-start; }
-}
 </style>
 </head>
 <body>
 <nav class="navbar"><div class="container nav-container"><a href="../index.html" class="logo"><span class="logo-icon">🎓</span><span class="logo-text">LearnAI</span></a></div></nav>
-
 <section class="notes-page"><div class="container">
 <div class="notes-container">
 <a href="../subject.html?id=maths&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Maths</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Distributions</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">9709 · Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
-
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
@@ -97,67 +80,117 @@
 <li><a href="#section-3">Normal Distribution</a></li>
 </ol>
 </div>
-
-
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
 <h3>Discrete Random Variables</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">E(X) = ΣxP(X=x)<br>Var(X) = E(X²) − [E(X)]²<br>E(aX+b) = aE(X)+b; Var(aX+b) = a²Var(X)</div>
-</div>
-</div>
+<p>A <strong>discrete random variable</strong> takes countable values, each with a specific probability.</p>
 
+<h4>Expected Value and Variance</h4>
+<div class="formula-box">E(X) = Σ x·P(X = x)<br>E(X²) = Σ x²·P(X = x)<br>Var(X) = E(X²) − [E(X)]²</div>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>The probability distribution of X is:</strong></p>
+<table class="data-table">
+<tr><th>x</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+<tr><td>P(X=x)</td><td>0.2</td><td>0.3</td><td>0.4</td><td>0.1</td></tr>
+</table>
+<p>E(X) = 1(0.2) + 2(0.3) + 3(0.4) + 4(0.1) = 0.2 + 0.6 + 1.2 + 0.4 = <strong>2.4</strong></p>
+<p>E(X²) = 1(0.2) + 4(0.3) + 9(0.4) + 16(0.1) = 0.2 + 1.2 + 3.6 + 1.6 = 6.6</p>
+<p>Var(X) = 6.6 − 5.76 = <strong>0.84</strong></p>
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
 <h3>Binomial Distribution</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">X ~ B(n, p)<br>P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ<br>Mean = np; Variance = np(1−p)</div>
+<p>The <strong>binomial distribution</strong> models the number of successes in n independent trials, each with probability p of success.</p>
+
+<div class="formula-box">X ~ B(n, p)<br>P(X = r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ<br>E(X) = np<br>Var(X) = np(1−p)</div>
+
 <div class="example-box">
 <h5>Worked Example</h5>
-<p>X ~ B(10, 0.3). Find P(X = 4).</p>
-<p>P(X=4) = ¹⁰C₄ (0.3)⁴(0.7)⁶ = 210 × 0.0081 × 0.117649 ≈ <strong>0.200</strong></p>
-</div>
-</div>
+<p><strong>A fair die is rolled 6 times. Find P(exactly 2 sixes).</strong></p>
+<p>X ~ B(6, <span class="fraction"><span class="top">1</span><span class="bottom">6</span></span>)</p>
+<p>P(X = 2) = ⁶C₂ (<span class="fraction"><span class="top">1</span><span class="bottom">6</span></span>)²(<span class="fraction"><span class="top">5</span><span class="bottom">6</span></span>)⁴ = 15 × <span class="fraction"><span class="top">1</span><span class="bottom">36</span></span> × <span class="fraction"><span class="top">625</span><span class="bottom">1296</span></span> ≈ <strong>0.201</strong></p>
 </div>
 
+<div class="example-box">
+<h5>Exam-Style Question</h5>
+<p><strong>Question:</strong> In a multiple-choice test with 10 questions (4 options each), a student guesses all answers. Find the expected number of correct answers and P(at least 6 correct). [5]</p>
+<p><strong>Solution:</strong> X ~ B(10, 0.25). E(X) = 10 × 0.25 = <strong>2.5</strong> (B1). P(X ≥ 6) = 1 − P(X ≤ 5) = 1 − 0.9803 = <strong>0.0197</strong> (M1, M1, A1, A1)</p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Conditions for binomial: fixed number of trials, two outcomes per trial, constant probability, independent trials.
+</div>
+</div>
+</div>
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
 <h3>Normal Distribution</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">X ~ N(μ, σ²)<br>Z = (X − μ)/σ ~ N(0, 1)</div>
-<div class="key-point">P(μ − σ < X < μ + σ) ≈ 0.68<br>P(μ − 2σ < X < μ + 2σ) ≈ 0.95</div>
+<p>The <strong>normal distribution</strong> is a continuous probability distribution symmetric about the mean.</p>
+
+<div class="formula-box">X ~ N(μ, σ²)<br>Z = <span class="fraction"><span class="top">X − μ</span><span class="bottom">σ</span></span> ~ N(0, 1)</div>
+
+<h4>Properties</h4>
+<ul>
+<li>Symmetrical about μ</li>
+<li>Approximately 68% within μ ± σ, 95% within μ ± 2σ, 99.7% within μ ± 3σ</li>
+<li>Total area under curve = 1</li>
+</ul>
+
+<div class="example-box">
+<h5>Worked Example</h5>
+<p><strong>X ~ N(50, 16). Find P(X > 55).</strong></p>
+<p>Z = <span class="fraction"><span class="top">55 − 50</span><span class="bottom">4</span></span> = 1.25</p>
+<p>P(X > 55) = P(Z > 1.25) = 1 − 0.8944 = <strong>0.1056</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example — Finding μ or σ</h5>
+<p><strong>X ~ N(μ, 25) and P(X < 20) = 0.15. Find μ.</strong></p>
+<p>Z = <span class="fraction"><span class="top">20 − μ</span><span class="bottom">5</span></span> = −1.036 (from tables, Φ⁻¹(0.15) ≈ −1.036)</p>
+<p>20 − μ = −5.18 → μ ≈ <strong>25.2</strong></p>
+</div>
+
+<div class="key-point">
+<strong>Key Point:</strong> Always draw a sketch of the normal curve and shade the region you want. This helps avoid errors with the symmetry of the distribution.
+</div>
 </div>
 </div>
 
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>E(X) = ΣxP(X=x)</li>
-<li>Var(X) = E(X²) − [E(X)]²</li>
-<li>Binomial: P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ</li>
-<li>Normal: Z = (X−μ)/σ</li>
-<li>Binomial mean = np; variance = np(1−p)</li>
+<li>E(X) = Σ x·P(X=x); Var(X) = E(X²) − [E(X)]²</li>
+<li>Binomial: X ~ B(n,p); P(X=r) = ⁿCᵣ pʳ(1−p)ⁿ⁻ʳ</li>
+<li>E(X) = np; Var(X) = np(1−p)</li>
+<li>Normal: X ~ N(μ, σ²); Z = (X−μ)/σ</li>
+<li>Normal: 68% within μ±σ, 95% within μ±2σ</li>
 </ul>
 </div>
-
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>For binomial, check conditions: fixed n, independent, constant p</li>
-<li>Standardise normal: Z = (X − μ)/σ</li>
-<li>Use tables for Z values — draw diagram</li>
-<li>Var(aX+b) = a²Var(X)</li>
+<li>For binomial, check all four conditions are met before applying.</li>
+<li>Always state the distribution: X ~ B(n, p) or X ~ N(μ, σ²).</li>
+<li>For normal distribution, standardise first: Z = (X − μ)/σ.</li>
+<li>Use the symmetry of the normal curve to simplify calculations.</li>
+<li>When finding μ or σ from probabilities, work backwards from the standard normal table.</li>
 </ul>
 </div>
 </div>
 </div></section>
-
 <script src="../js/theme.js?v=5"></script>
 </body>
 </html>
