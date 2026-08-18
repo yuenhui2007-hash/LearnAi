@@ -16,10 +16,39 @@
       this.segments = segments;
       this.totalSegments = segments.length;
       this.storageKey = `course_${courseId}_progress`;
+      this.timeKey = `course_${courseId}_time`;
       this.loadProgress();
+      this.startSession();
       this.renderSidebar();
       this.renderSegment(this.currentSegment);
       this.updateOverallProgress();
+      this.recordCourseView();
+    },
+
+    startSession() {
+      this.sessionStart = Date.now();
+      window.addEventListener('beforeunload', () => this.endSession());
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) this.endSession();
+        else this.sessionStart = Date.now();
+      });
+    },
+
+    endSession() {
+      if (!this.sessionStart) return;
+      const elapsed = Math.floor((Date.now() - this.sessionStart) / 1000);
+      if (elapsed < 5) return;
+      const saved = JSON.parse(localStorage.getItem(this.timeKey) || '{}');
+      saved.totalSeconds = (saved.totalSeconds || 0) + elapsed;
+      saved.lastActiveAt = Date.now();
+      localStorage.setItem(this.timeKey, JSON.stringify(saved));
+      this.sessionStart = Date.now();
+    },
+
+    recordCourseView() {
+      const saved = JSON.parse(localStorage.getItem(this.timeKey) || '{}');
+      saved.lastTouchedAt = Date.now();
+      localStorage.setItem(this.timeKey, JSON.stringify(saved));
     },
 
     loadProgress() {

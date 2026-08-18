@@ -10,19 +10,32 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Progress v2 — LearnAI</title>
-<meta name="description" content="Track your Cambridge study progress.">
+<title>My Progress v3 — LearnAI</title>
+<meta name="description" content="Track your LearnAI study progress with time tracking, streaks, and activity meters.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=4">
-<link rel="stylesheet" href="css/znotes-style.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/znotes-style.css?v=5">
 <style>
-  /* Perf fix: disable expensive backdrop-filter on dashboard */
   .navbar, .nav-dropdown-menu { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
+  .stat-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-bottom:32px; }
+  .stat-card { background:#1e293b; border-radius:16px; padding:20px; text-align:center; }
+  .stat-card .stat-value { font-size:2rem; font-weight:800; color:#fff; }
+  .stat-card .stat-label { font-size:.85rem; color:#94a3b8; margin-top:4px; }
+  .stat-card .stat-sub { font-size:.75rem; color:#64748b; margin-top:2px; }
+  .progress-meter { width:100%; height:8px; background:#334155; border-radius:4px; margin-top:12px; overflow:hidden; }
+  .progress-meter-fill { height:100%; background:linear-gradient(90deg,#6366f1,#818cf8); border-radius:4px; transition:width .6s ease; }
+  .activity-row { display:flex; align-items:center; gap:12px; padding:8px 0; border-bottom:1px solid #334155; }
+  .activity-row:last-child { border-bottom:none; }
+  .activity-name { flex:1; font-size:.9rem; color:#e2e8f0; }
+  .activity-meta { font-size:.75rem; color:#94a3b8; white-space:nowrap; }
+  .activity-bar { width:120px; }
+  .streak-flame { color:#f97316; }
+  .last-seen { font-size:.75rem; color:#64748b; }
 </style>
 </head>
 <body>
@@ -31,6 +44,8 @@
 
 <section class="dashboard-section">
 <div class="container">
+
+<!-- Header -->
 <div class="dashboard-header">
 <div>
 <h1>My Progress</h1>
@@ -39,18 +54,45 @@
 <a href="subjects.html" class="btn btn-primary">Browse Subjects</a>
 </div>
 
+<!-- Top Stats Row -->
+<div class="stat-row" id="topStats">
+  <div class="stat-card">
+    <div class="stat-value" id="statHours">0</div>
+    <div class="stat-label">Hours Studied</div>
+    <div class="stat-sub">Total time on platform</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="statStreak">0</div>
+    <div class="stat-label">Day Streak <span class="streak-flame">🔥</span></div>
+    <div class="stat-sub">Consecutive active days</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="statCompletion">0%</div>
+    <div class="stat-label">Overall Completion</div>
+    <div class="stat-sub">Across all subjects & courses</div>
+    <div class="progress-meter"><div class="progress-meter-fill" id="overallMeter" style="width:0%"></div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="statLastActive">—</div>
+    <div class="stat-label">Last Active</div>
+    <div class="stat-sub">Time since you studied</div>
+  </div>
+</div>
+
+<!-- Controls -->
 <div style="margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap;">
 <button class="btn btn-outline" id="exportBtn">Export Progress</button>
 <button class="btn btn-outline" id="importBtn">Import Progress</button>
-<button class="btn btn-outline" id="settingsBtn">⚙️ Display Settings</button>
+<button class="btn btn-outline" id="settingsBtn">Display Settings</button>
 <input type="file" id="importFile" accept="application/json" style="display:none">
 </div>
 
-<!-- Display Settings Panel -->
+<!-- Settings Panel -->
 <div id="settingsPanel" style="display:none;margin-bottom:24px;padding:20px;background:#1e293b;border-radius:12px;">
 <h3 style="margin-bottom:16px;color:#fff;">Choose what to display</h3>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
 <label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showSubjects" checked> Cambridge Subjects</label>
+<label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showAcademy" checked> Academy Courses</label>
 <label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showDepartments" checked> Department Courses</label>
 <label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showStudyTools" checked> Study & Practice</label>
 <label style="display:flex;align-items:center;gap:8px;color:#cbd5e1;cursor:pointer;"><input type="checkbox" id="showPlanner" checked> Planner Preview</label>
@@ -61,15 +103,27 @@
 </div>
 </div>
 
-<div class="dashboard-grid" id="subjectProgress"></div>
+<!-- Academy Courses Progress -->
+<div id="academySection" style="margin-top:40px;">
+<h2 style="margin-bottom:20px">Academy Courses</h2>
+<div class="dashboard-grid" id="academyProgress"></div>
+</div>
 
+<!-- Cambridge Subjects -->
+<div id="subjectSection" style="margin-top:60px;">
+<h2 style="margin-bottom:20px">Cambridge Subjects</h2>
+<div class="dashboard-grid" id="subjectProgress"></div>
+</div>
+
+<!-- Department Courses -->
 <div id="deptSection" style="margin-top:60px;">
-<h2 style="margin-bottom:24px">Department Courses</h2>
+<h2 style="margin-bottom:20px">Department Courses</h2>
 <div class="dashboard-grid" id="deptProgress"></div>
 </div>
 
+<!-- Study & Practice -->
 <div id="studySection" style="margin-top:60px;">
-<h2 style="margin-bottom:24px">Study & Practice</h2>
+<h2 style="margin-bottom:20px">Study & Practice</h2>
 <div class="dashboard-grid">
 <a href="study-tools.html" class="dashboard-card" style="text-decoration:none;color:inherit">
 <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
@@ -95,48 +149,220 @@
 </div>
 </div>
 
+<!-- Planner Preview -->
 <div id="plannerSection" style="margin-top:60px;">
-<h2 style="margin-bottom:24px">Planner Preview</h2>
+<h2 style="margin-bottom:20px">Planner Preview</h2>
 <div class="dashboard-card">
 <div id="plannerPreview"></div>
 <a href="planner.html" class="btn btn-outline" style="margin-top:16px">Open Full Planner</a>
 </div>
 </div>
+
 </div>
 </section>
 
-<script src="js/theme.js?v=4"></script>
-<script src="js/data.js?v=4"></script>
-<script src="js/app.js?v=4"></script>
+<script src="js/theme.js?v=5"></script>
+<script src="js/data.js?v=5"></script>
+<script src="js/app.js?v=5"></script>
 <script>
-(function() {
-// Subject progress (Cambridge)
-try {
-const overall = Progress.getOverallProgress();
-document.getElementById('overallProgress').textContent =
-overall.total > 0 ? overall.completed + '/' + overall.total + ' topics completed (' + overall.percent + '%)' : 'Start studying to track your progress';
+(function(){
+'use strict';
 
-const container = document.getElementById('subjectProgress');
-var fragment = document.createDocumentFragment();
-Object.keys(subjects).forEach(function(key) {
-var s = subjects[key];
-var prog = Progress.getSubjectProgress(key, s.topics.length);
-var card = document.createElement('a');
-card.href = 'subject.html?id=' + key;
-card.className = 'dashboard-card';
-card.innerHTML = '<div style="display:flex;align-items:center;gap:16px;margin-bottom:16px"><span style="font-size:2.5rem">' + s.icon + '</span><div><h3>' + s.name + '</h3><p>' + s.code + '</p></div></div><p style="font-size:0.85rem;color:var(--gray)">' + s.topics.length + ' topics</p><div style="margin-top:12px"><div class="progress-bar"><div class="progress-fill" style="width:' + prog.percent + '%"></div></div><p class="progress-text">' + prog.completed + '/' + prog.total + ' complete (' + prog.percent + '%)</p></div>';
-fragment.appendChild(card);
-});
-container.appendChild(fragment);
-} catch(e) {
-  document.getElementById('overallProgress').textContent = 'Start studying to track your progress';
-  document.getElementById('subjectProgress').innerHTML = '<p style="color:var(--gray)">No subject progress yet. Browse subjects to begin.</p>';
+// ===== Utilities =====
+function fmtTime(totalSec) {
+  var h = Math.floor(totalSec / 3600);
+  var m = Math.floor((totalSec % 3600) / 60);
+  if (h > 0) return h + 'h ' + m + 'm';
+  return m + 'm';
+}
+function fmtAgo(ts) {
+  if (!ts) return 'Never';
+  var diff = Math.floor((Date.now() - ts) / 1000);
+  if (diff < 60) return 'Just now';
+  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+  return Math.floor(diff/86400) + 'd ago';
+}
+function fmtDate(ts) {
+  if (!ts) return '—';
+  return new Date(ts).toLocaleDateString();
 }
 
-// Department progress
+// ===== Compute Overall Stats =====
+var courseIds = ['avatar-foundations','ai-brain','business-automation','sales-marketing','personal-productivity','ai-coding'];
+var courseNames = {
+  'avatar-foundations':'Avatar Foundations','ai-brain':'AI Brain Mastery',
+  'business-automation':'Business Automation','sales-marketing':'Sales & Marketing AI',
+  'personal-productivity':'Personal Productivity','ai-coding':'AI for Coding'
+};
+var courseIcons = {
+  'avatar-foundations':'🎭','ai-brain':'🧠','business-automation':'⚙️',
+  'sales-marketing':'📈','personal-productivity':'⏱️','ai-coding':'💻'
+};
+
+var totalHours = 0;
+var totalSegments = 0, completedSegments = 0;
+var lastActive = 0;
+var streakDays = new Set();
+
+// Course time + completion
+courseIds.forEach(function(cid){
+  var time = JSON.parse(localStorage.getItem('course_'+cid+'_time') || '{}');
+  totalHours += (time.totalSeconds || 0);
+  if (time.lastActiveAt) lastActive = Math.max(lastActive, time.lastActiveAt);
+  if (time.lastTouchedAt) lastActive = Math.max(lastActive, time.lastTouchedAt);
+
+  var prog = JSON.parse(localStorage.getItem('course_'+cid+'_progress') || '{}');
+  var states = prog.segmentStates || [];
+  totalSegments += states.length || 10;
+  states.forEach(function(s){ if (s && s.completed) completedSegments++; });
+
+  // Streak from daily activity
+  if (time.lastActiveAt) {
+    var d = new Date(time.lastActiveAt).toDateString();
+    streakDays.add(d);
+  }
+});
+
+// Subject time + activity
+var subjTime = JSON.parse(localStorage.getItem('learnai_subject_time') || '{}');
+Object.keys(subjTime).forEach(function(sid){
+  var st = subjTime[sid];
+  totalHours += (st.totalSeconds || 0);
+  if (st.lastTouchedAt) lastActive = Math.max(lastActive, st.lastTouchedAt);
+  if (st.lastTouchedAt) {
+    var d = new Date(st.lastTouchedAt).toDateString();
+    streakDays.add(d);
+  }
+});
+
+// Department time
+var deptIds = ['hr','finance','admin','sales','marketing','ops','it','cs','procurement','legal','rnd','qa'];
+deptIds.forEach(function(did){
+  var dprog = JSON.parse(localStorage.getItem('learnai_dept_'+did+'_progress') || '{}');
+  totalHours += (dprog.timeSeconds || 0);
+  if (dprog.quizCompletedAt) lastActive = Math.max(lastActive, dprog.quizCompletedAt);
+  if (dprog.assignmentSubmittedAt) lastActive = Math.max(lastActive, dprog.assignmentSubmittedAt);
+  if (dprog.lastTouchedAt) lastActive = Math.max(lastActive, dprog.lastTouchedAt);
+});
+
+// Cambridge subject completion
+try {
+  var camTotal = 0, camDone = 0;
+  Object.keys(subjects).forEach(function(sid){
+    var s = subjects[sid];
+    if (!s || !s.topics) return;
+    camTotal += s.topics.length;
+    var p = Progress.getSubjectProgress(sid, s.topics.length);
+    camDone += p.completed;
+  });
+  totalSegments += camTotal;
+  completedSegments += camDone;
+} catch(e){}
+
+// Department completion
+deptIds.forEach(function(did){
+  var dprog = JSON.parse(localStorage.getItem('learnai_dept_'+did+'_progress') || '{}');
+  totalSegments += 2;
+  if (dprog.quizCompletedAt) completedSegments++;
+  if (dprog.assignmentSubmittedAt) completedSegments++;
+});
+
+// Calculate streak
+totalHours = totalHours / 3600;
+var streak = 0;
+var today = new Date().toDateString();
+var yesterday = new Date(Date.now()-86400000).toDateString();
+if (streakDays.has(today) || streakDays.has(yesterday)) {
+  for (var i=0; i<365; i++) {
+    var check = new Date(Date.now() - i*86400000).toDateString();
+    if (streakDays.has(check)) streak++;
+    else break;
+  }
+}
+
+var overallPct = totalSegments ? Math.round((completedSegments/totalSegments)*100) : 0;
+
+// Render top stats
+document.getElementById('statHours').textContent = totalHours < 1 ? Math.round(totalHours*60)+'m' : Math.round(totalHours)+'h';
+document.getElementById('statStreak').textContent = streak;
+document.getElementById('statCompletion').textContent = overallPct+'%';
+document.getElementById('overallMeter').style.width = overallPct+'%';
+document.getElementById('statLastActive').textContent = fmtAgo(lastActive);
+document.getElementById('overallProgress').textContent = completedSegments+'/'+totalSegments+' items completed across all subjects & courses';
+
+// ===== Academy Courses Section =====
+var academyContainer = document.getElementById('academyProgress');
+var academyFragment = document.createDocumentFragment();
+
+courseIds.forEach(function(cid){
+  var prog = JSON.parse(localStorage.getItem('course_'+cid+'_progress') || '{}');
+  var time = JSON.parse(localStorage.getItem('course_'+cid+'_time') || '{}');
+  var states = prog.segmentStates || [];
+  var done = 0, total = states.length || 10;
+  states.forEach(function(s){ if (s && s.completed) done++; });
+  var pct = total ? Math.round((done/total)*100) : 0;
+  var card = document.createElement('a');
+  card.href = 'course-'+cid+'.html';
+  card.className = 'dashboard-card';
+  card.style.textDecoration = 'none';
+  card.style.color = 'inherit';
+  card.innerHTML =
+    '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px">'+
+      '<span style="font-size:2rem">'+courseIcons[cid]+'</span>'+
+      '<div style="flex:1;min-width:0">'+
+        '<h3 style="font-size:1rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+courseNames[cid]+'</h3>'+
+        '<p style="color:var(--gray);font-size:0.85rem">'+done+'/'+total+' segments</p>'+
+      '</div>'+
+    '</div>'+
+    '<div class="progress-meter"><div class="progress-meter-fill" style="width:'+pct+'%"></div></div>'+
+    '<p class="progress-text">'+pct+'% complete</p>'+
+    '<div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:#64748b">'+
+      '<span>'+fmtTime(time.totalSeconds||0)+' spent</span>'+
+      '<span class="last-seen">'+fmtAgo(time.lastTouchedAt)+'</span>'+
+    '</div>';
+  academyFragment.appendChild(card);
+});
+academyContainer.appendChild(academyFragment);
+
+// ===== Cambridge Subjects Section =====
+try {
+  var overall = Progress.getOverallProgress();
+  var container = document.getElementById('subjectProgress');
+  var fragment = document.createDocumentFragment();
+  var subjTimeData = JSON.parse(localStorage.getItem('learnai_subject_time') || '{}');
+  Object.keys(subjects).forEach(function(key) {
+    var s = subjects[key];
+    if (!s || !s.topics) return;
+    var prog = Progress.getSubjectProgress(key, s.topics.length);
+    var st = subjTimeData[key] || {};
+    var card = document.createElement('a');
+    card.href = 'subject.html?id=' + key;
+    card.className = 'dashboard-card';
+    card.innerHTML =
+      '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px">'+
+        '<span style="font-size:2rem">' + s.icon + '</span>'+
+        '<div style="flex:1;min-width:0">'+
+          '<h3 style="font-size:1rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + s.name + '</h3>'+
+          '<p style="color:var(--gray);font-size:0.85rem">' + s.code + '</p>'+
+        '</div>'+
+      '</div>'+
+      '<div class="progress-meter"><div class="progress-meter-fill" style="width:' + prog.percent + '%"></div></div>'+
+      '<p class="progress-text">' + prog.completed + '/' + prog.total + ' complete (' + prog.percent + '%)</p>'+
+      '<div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:#64748b">'+
+        '<span>'+fmtTime(st.totalSeconds||0)+' spent</span>'+
+        '<span class="last-seen">'+fmtAgo(st.lastTouchedAt)+'</span>'+
+      '</div>';
+    fragment.appendChild(card);
+  });
+  container.appendChild(fragment);
+} catch(e) {
+  document.getElementById('subjectProgress').innerHTML = '<p style="color:var(--gray)">No subject progress yet.</p>';
+}
+
+// ===== Department Courses Section =====
 var deptContainer = document.getElementById('deptProgress');
 var deptFragment = document.createDocumentFragment();
-var deptIds = ['hr','finance','admin','sales','marketing','ops','it','cs','procurement','legal','rnd','qa'];
 var deptNames = {hr:'Human Resources',finance:'Finance',admin:'Administration',sales:'Sales',marketing:'Marketing',ops:'Operations',it:'IT',cs:'Customer Service',procurement:'Procurement',legal:'Legal',rnd:'R&D',qa:'Quality Assurance'};
 var deptIcons = {hr:'👥',finance:'💰',admin:'📋',sales:'📈',marketing:'📣',ops:'⚙️',it:'💻',cs:'🎧',procurement:'🛒',legal:'⚖️',rnd:'🔬',qa:'✅'};
 var deptCompleted = 0;
@@ -144,86 +370,100 @@ deptIds.forEach(function(id) {
   var prog = JSON.parse(localStorage.getItem('learnai_dept_' + id + '_progress') || '{}');
   var quizDone = prog.quizCompletedAt;
   var assignDone = prog.assignmentSubmittedAt;
-  var score = prog.assignmentScore || 0;
   if (quizDone && assignDone) deptCompleted++;
   var card = document.createElement('a');
   card.href = 'dept-course.html?dept=' + id;
   card.className = 'dashboard-card';
   card.style.textDecoration = 'none';
   card.style.color = 'inherit';
-  var statusText = quizDone && assignDone ? '✓ Completed — Grade ' + (prog.assignmentGrade || 'N/A') : quizDone ? 'Quiz done' : assignDone ? 'Assignment done' : 'Not started';
+  var statusText = quizDone && assignDone ? 'Completed — Grade ' + (prog.assignmentGrade || 'N/A') : quizDone ? 'Quiz done' : assignDone ? 'Assignment done' : 'Not started';
   var statusColor = quizDone && assignDone ? '#059669' : quizDone || assignDone ? '#d97706' : '#94a3b8';
-  card.innerHTML = '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;overflow:hidden;"><span style="font-size:2rem;flex-shrink:0;">' + deptIcons[id] + '</span><div style="min-width:0;flex:1;"><h3 style="font-size:1rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + deptNames[id] + '</h3><p style="color:var(--gray);font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + statusText + '</p></div></div><div class="progress-bar"><div class="progress-fill" style="width:' + (quizDone && assignDone ? 100 : quizDone || assignDone ? 50 : 0) + '%;background:' + statusColor + '"></div></div><p class="progress-text">' + (quizDone && assignDone ? '2/2 complete' : quizDone || assignDone ? '1/2 complete' : '0/2 complete') + '</p>';
+  card.innerHTML =
+    '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;overflow:hidden">'+
+      '<span style="font-size:2rem;flex-shrink:0">' + deptIcons[id] + '</span>'+
+      '<div style="min-width:0;flex:1">'+
+        '<h3 style="font-size:1rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + deptNames[id] + '</h3>'+
+        '<p style="color:var(--gray);font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + statusText + '</p>'+
+      '</div>'+
+    '</div>'+
+    '<div class="progress-meter"><div class="progress-meter-fill" style="width:' + (quizDone && assignDone ? 100 : quizDone || assignDone ? 50 : 0) + '%;background:' + statusColor + '"></div></div>'+
+    '<p class="progress-text">' + (quizDone && assignDone ? '2/2 complete' : quizDone || assignDone ? '1/2 complete' : '0/2 complete') + '</p>'+
+    '<div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:#64748b">'+
+      '<span>'+fmtTime(prog.timeSeconds||0)+' spent</span>'+
+      '<span class="last-seen">'+fmtAgo(prog.lastTouchedAt)+'</span>'+
+    '</div>';
   deptFragment.appendChild(card);
 });
 deptContainer.appendChild(deptFragment);
 
+// ===== Planner Preview =====
 var plannerTasks = Planner.get().slice(0, 5);
 var preview = document.getElementById('plannerPreview');
 if (plannerTasks.length === 0) {
-preview.innerHTML = '<p style="color:var(--gray)">No tasks yet. Use the planner to schedule your revision.</p>';
+  preview.innerHTML = '<p style="color:var(--gray)">No tasks yet. Use the planner to schedule your revision.</p>';
 } else {
-var plannerHTML = '';
-for (var i = 0; i < plannerTasks.length; i++) {
-var t = plannerTasks[i];
-plannerHTML += '<div style="padding:8px 0;border-bottom:1px solid var(--gray-light);' + (t.done ? 'text-decoration:line-through;color:var(--gray)' : '') + '">' + (t.done ? '✓' : '○') + ' ' + escapeHtml(t.text) + '</div>';
-}
-preview.innerHTML = plannerHTML;
+  var plannerHTML = '';
+  for (var i = 0; i < plannerTasks.length; i++) {
+    var t = plannerTasks[i];
+    plannerHTML += '<div style="padding:8px 0;border-bottom:1px solid var(--gray-light);' + (t.done ? 'text-decoration:line-through;color:var(--gray)' : '') + '">' + (t.done ? '✓' : '○') + ' ' + escapeHtml(t.text) + '</div>';
+  }
+  preview.innerHTML = plannerHTML;
 }
 function escapeHtml(text) {
-var div = document.createElement('div');
-div.textContent = text;
-return div.innerHTML;
+  var div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
-})();
 
-// Export / Import
-(function(){
+// ===== Export / Import =====
 function exportProgress(){
-var data = {};
-['learnai_progress','learnai_planner','learnai_users'].forEach(function(k){
-var v = localStorage.getItem(k);
-if(v !== null) data[k] = v;
-});
-var blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
-var a = document.createElement('a');
-a.href = URL.createObjectURL(blob);
-a.download = 'learnai-progress-' + new Date().toISOString().slice(0,10) + '.json';
-a.click();
-URL.revokeObjectURL(a.href);
+  var data = {};
+  ['learnai_progress','learnai_planner','learnai_users','learnai_subject_time'].forEach(function(k){
+    var v = localStorage.getItem(k);
+    if(v !== null) data[k] = v;
+  });
+  // Include all course progress + time
+  for (var i=0; i<localStorage.length; i++) {
+    var k = localStorage.key(i);
+    if (k && (k.startsWith('course_') || k.startsWith('learnai_dept_'))) {
+      data[k] = localStorage.getItem(k);
+    }
+  }
+  var blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'learnai-progress-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 function importProgress(file){
-var reader = new FileReader();
-reader.onload = function(e){
-try{
-var data = JSON.parse(e.target.result);
-var keys = Object.keys(data);
-var valid = ['learnai_progress','learnai_planner','learnai_users'];
-var hasValid = keys.some(function(k){ return valid.indexOf(k) !== -1; });
-if(!hasValid){ alert('Invalid LearnAI backup file.'); return; }
-if(!confirm('This will overwrite your current progress. Continue?')) return;
-keys.forEach(function(k){ localStorage.setItem(k, data[k]); });
-alert('Progress imported! The page will now refresh.');
-location.reload();
-}catch(err){ alert('Error reading file: ' + err.message); }
-};
-reader.readAsText(file);
+  var reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      var data = JSON.parse(e.target.result);
+      var keys = Object.keys(data);
+      if(!confirm('This will overwrite your current progress. Continue?')) return;
+      keys.forEach(function(k){ localStorage.setItem(k, data[k]); });
+      alert('Progress imported! The page will now refresh.');
+      location.reload();
+    }catch(err){ alert('Error reading file: ' + err.message); }
+  };
+  reader.readAsText(file);
 }
 document.getElementById('exportBtn').addEventListener('click', exportProgress);
 document.getElementById('importBtn').addEventListener('click', function(){ document.getElementById('importFile').click(); });
 document.getElementById('importFile').addEventListener('change', function(e){ if(e.target.files[0]) importProgress(e.target.files[0]); });
-})();
 
-// Display Settings
-(function(){
+// ===== Display Settings =====
 function loadSettings(){
-  var defaults = { showSubjects:true, showDepartments:true, showStudyTools:true, showPlanner:true };
+  var defaults = { showSubjects:true, showAcademy:true, showDepartments:true, showStudyTools:true, showPlanner:true };
   try { return Object.assign(defaults, JSON.parse(localStorage.getItem('learnai_dashboard_settings') || '{}')); }
   catch(e){ return defaults; }
 }
 function saveSettings(){
   var settings = {
     showSubjects: document.getElementById('showSubjects').checked,
+    showAcademy: document.getElementById('showAcademy').checked,
     showDepartments: document.getElementById('showDepartments').checked,
     showStudyTools: document.getElementById('showStudyTools').checked,
     showPlanner: document.getElementById('showPlanner').checked
@@ -233,16 +473,18 @@ function saveSettings(){
   document.getElementById('settingsPanel').style.display = 'none';
 }
 function applySettings(s){
-  if (!s.showSubjects && !s.showDepartments && !s.showStudyTools && !s.showPlanner) {
-    s = { showSubjects:true, showDepartments:true, showStudyTools:true, showPlanner:true };
+  if (!s.showSubjects && !s.showAcademy && !s.showDepartments && !s.showStudyTools && !s.showPlanner) {
+    s = { showSubjects:true, showAcademy:true, showDepartments:true, showStudyTools:true, showPlanner:true };
   }
-  document.getElementById('subjectProgress').style.display = s.showSubjects ? 'grid' : 'none';
+  document.getElementById('subjectSection').style.display = s.showSubjects ? 'block' : 'none';
+  document.getElementById('academySection').style.display = s.showAcademy ? 'block' : 'none';
   document.getElementById('deptSection').style.display = s.showDepartments ? 'block' : 'none';
   document.getElementById('studySection').style.display = s.showStudyTools ? 'block' : 'none';
   document.getElementById('plannerSection').style.display = s.showPlanner ? 'block' : 'none';
 }
 var settings = loadSettings();
 document.getElementById('showSubjects').checked = settings.showSubjects;
+document.getElementById('showAcademy').checked = settings.showAcademy;
 document.getElementById('showDepartments').checked = settings.showDepartments;
 document.getElementById('showStudyTools').checked = settings.showStudyTools;
 document.getElementById('showPlanner').checked = settings.showPlanner;
@@ -253,8 +495,8 @@ document.getElementById('saveSettingsBtn').addEventListener('click', saveSetting
 document.getElementById('cancelSettingsBtn').addEventListener('click', function(){ document.getElementById('settingsPanel').style.display = 'none'; });
 })();
 </script>
-<script src="js/mascot.js?v=4" defer></script>
+<script src="js/mascot.js?v=5" defer></script>
 <script src="js/auth-guard.js?v=4" defer></script>
-<script src="js/pwa.js?v=4" defer></script>
+<script src="js/pwa.js?v=5" defer></script>
 </body>
 </html>

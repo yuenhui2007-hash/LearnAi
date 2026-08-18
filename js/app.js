@@ -57,6 +57,26 @@
             if (!p[subject]) p[subject] = {};
             p[subject][topic] = completed;
             localStorage.setItem('learnai_progress', JSON.stringify(p));
+            this.recordTouch(subject, topic);
+        },
+        recordTouch: function(subject, topic) {
+            var key = 'learnai_subject_time';
+            var data = JSON.parse(localStorage.getItem(key) || '{}');
+            if (!data[subject]) data[subject] = { totalSeconds: 0, lastTouchedAt: 0, topics: {} };
+            data[subject].lastTouchedAt = Date.now();
+            if (topic) {
+              if (!data[subject].topics[topic]) data[subject].topics[topic] = { totalSeconds: 0, lastTouchedAt: 0 };
+              data[subject].topics[topic].lastTouchedAt = Date.now();
+            }
+            localStorage.setItem(key, JSON.stringify(data));
+        },
+        addTime: function(subject, seconds) {
+            var key = 'learnai_subject_time';
+            var data = JSON.parse(localStorage.getItem(key) || '{}');
+            if (!data[subject]) data[subject] = { totalSeconds: 0, lastTouchedAt: 0, topics: {} };
+            data[subject].totalSeconds = (data[subject].totalSeconds || 0) + seconds;
+            data[subject].lastTouchedAt = Date.now();
+            localStorage.setItem(key, JSON.stringify(data));
         },
         isCompleted: function(subject, topic) {
             var p = this.get();
