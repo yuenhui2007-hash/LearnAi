@@ -89,6 +89,7 @@
 <h3>Equations of Motion</h3>
 </div>
 <div class="topic-content">
+
 <div class="formula-box">v = u + at<br>s = ½(u + v)t<br>s = ut + ½at²<br>s = vt − ½at²<br>v² = u² + 2as</div>
 <table class="data-table">
 <tr><th>Symbol</th><th>Meaning</th><th>Units</th></tr>
@@ -98,6 +99,59 @@
 <tr><td>a</td><td>Acceleration</td><td>m/s²</td></tr>
 <tr><td>t</td><td>Time</td><td>s</td></tr>
 </table>
+
+
+<h4>Deriving the Equations of Motion</h4>
+<p>The five SUVAT equations can all be derived from first principles using the definitions of velocity and acceleration.</p>
+
+<h5>Definition-Based Derivations</h5>
+<p><strong>1. From acceleration definition:</strong> a = (v − u) / t → <strong>v = u + at</strong></p>
+<p><strong>2. Average velocity:</strong> For constant acceleration, average velocity = (u + v) / 2. Since displacement = average velocity × time: s = ½(u + v)t</p>
+<p><strong>3. Substituting (1) into (2):</strong> s = ½(u + u + at)t = ½(2u + at)t → <strong>s = ut + ½at²</strong></p>
+<p><strong>4. Eliminating u:</strong> From (1), u = v − at. Substitute into (3): s = (v − at)t + ½at² = vt − at² + ½at² → <strong>s = vt − ½at²</strong></p>
+<p><strong>5. Eliminating t:</strong> From (1), t = (v − u) / a. Substitute into (2): s = ½(u + v)(v − u) / a = ½(v² − u²) / a → <strong>v² = u² + 2as</strong></p>
+
+<div class="key-point">Understanding these derivations means you never need to memorise the equations — you can derive them in the exam if you forget. But with practice, they will become automatic.</div>
+
+<h4>Projectile Motion</h4>
+<p>Projectile motion combines horizontal motion (constant velocity) with vertical motion (constant acceleration due to gravity). The two motions are independent.</p>
+<table class="data-table">
+<tr><th></th><th>Horizontal</th><th>Vertical</th></tr>
+<tr><td>Acceleration</td><td>a = 0</td><td>a = −g (= −9.81 m/s²)</td></tr>
+<tr><td>Velocity</td><td>vₓ = u cos θ (constant)</td><td>vᵧ = u sin θ − gt</td></tr>
+<tr><td>Displacement</td><td>x = ut cos θ</td><td>y = ut sin θ − ½gt²</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Projectile Maximum Height</h5>
+<p><strong>Question:</strong> A ball is projected at 25 m/s at 30° to the horizontal. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
+<p><strong>Solution:</strong></p>
+<p>Vertical initial velocity: uᵧ = 25 sin 30° = 12.5 m/s</p>
+<p>At max height: vᵧ = 0</p>
+<p>Using v² = u² + 2as: 0 = 12.5² − 2(9.81)h</p>
+<p>h = 156.25 / 19.62 = <strong>7.96 m</strong></p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Horizontal Range</h5>
+<p><strong>Question:</strong> For the same projectile, calculate the horizontal range.</p>
+<p><strong>Solution:</strong></p>
+<p>Time of flight: when y = 0, 0 = 25t sin 30° − ½(9.81)t²</p>
+<p>t(12.5 − 4.905t) = 0 → t = 0 or t = 12.5/4.905 = 2.55 s</p>
+<p>Range: x = 25 × 2.55 × cos 30° = 25 × 2.55 × 0.866 = <strong>55.2 m</strong></p>
+</div>
+
+<h4>Vector Resolution and Resultants</h4>
+<p>Vectors can be resolved into perpendicular components using trigonometry:</p>
+<div class="formula-box">Fₓ = F cos θ (horizontal component)<br>Fᵧ = F sin θ (vertical component)</div>
+<p>To find the resultant of two perpendicular vectors: R = √(Fₓ² + Fᵧ²), direction θ = tan⁻¹(Fᵧ/Fₓ)</p>
+
+<div class="example-box">
+<h5>Worked Example: Resultant Force</h5>
+<p><strong>Question:</strong> A 10 N force acts horizontally and a 15 N force acts vertically upward. Find the magnitude and direction of the resultant.</p>
+<p><strong>Solution:</strong></p>
+<p>R = √(10² + 15²) = √(100 + 225) = √325 = <strong>18.0 N</strong></p>
+<p>θ = tan⁻¹(15/10) = tan⁻¹(1.5) = <strong>56.3° above horizontal</strong></p>
 </div>
 </div>
 
@@ -107,13 +161,53 @@
 <h3>Graphs</h3>
 </div>
 <div class="topic-content">
+
 <table class="data-table">
 <tr><th>Graph</th><th>Gradient</th><th>Area</th></tr>
 <tr><td>Displacement-time</td><td>Velocity</td><td>—</td></tr>
 <tr><td>Velocity-time</td><td>Acceleration</td><td>Displacement</td></tr>
 <tr><td>Acceleration-time</td><td>—</td><td>Change in velocity</td></tr>
 </table>
+
+
+<h4>Detailed Graphical Analysis</h4>
+<p>Graphs in kinematics are not just visual aids — they contain quantitative information about motion. Understanding how to extract and interpret this information is essential.</p>
+
+<h5>Displacement-Time Graphs</h5>
+<ul>
+<li><strong>Gradient = velocity:</strong> A steeper gradient means higher speed.</li>
+<li><strong>Curved line = acceleration:</strong> The changing gradient indicates changing velocity.</li>
+<li><strong>Horizontal line = stationary:</strong> Zero gradient means zero velocity.</li>
+<li><strong>Negative gradient = moving backwards:</strong> The object is returning toward the starting point.</li>
+</ul>
+
+<h5>Velocity-Time Graphs</h5>
+<ul>
+<li><strong>Gradient = acceleration:</strong> Steeper gradient means greater acceleration.</li>
+<li><strong>Area under graph = displacement:</strong> Calculate using geometry (triangles, rectangles, trapeziums).</li>
+<li><strong>Horizontal line = constant velocity:</strong> Zero acceleration.</li>
+<li><strong>Negative velocity = opposite direction:</strong> The object has reversed.</li>
+</ul>
+
+<div class="example-box">
+<h5>Worked Example: Complex Motion Graph</h5>
+<p><strong>Question:</strong> A v-t graph consists of: (0–2 s) straight line from 0 to 8 m/s, (2–5 s) horizontal at 8 m/s, (5–7 s) straight line to 0 m/s, (7–9 s) straight line to −4 m/s, (9–11 s) straight line back to 0 m/s. Calculate total displacement.</p>
+<p><strong>Solution:</strong></p>
+<p>Stage 1: ½ × 2 × 8 = 8 m</p>
+<p>Stage 2: 3 × 8 = 24 m</p>
+<p>Stage 3: ½ × 2 × 8 = 8 m</p>
+<p>Stage 4: ½ × 2 × (−4) = −4 m (below axis)</p>
+<p>Stage 5: ½ × 2 × (−4) = −4 m (below axis)</p>
+<p>Total displacement = 8 + 24 + 8 − 4 − 4 = <strong>32 m</strong></p>
+<p>Total distance = 8 + 24 + 8 + 4 + 4 = <strong>48 m</strong></p>
 </div>
+
+<div class="key-point">Displacement and distance are different! Displacement is the net change in position (vector), while distance is the total path length (scalar). When a v-t graph goes below the time axis, that area represents negative displacement.</div>
+
+<h5>Acceleration-Time Graphs</h5>
+<p>The area under an acceleration-time graph gives the change in velocity:</p>
+<div class="formula-box">Δv = area under a-t graph</div>
+<p>If the initial velocity is known, the final velocity can be found by adding this change.</p>
 </div>
 <div 
 <div class="common-mistakes" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); padding: 24px 28px; border-radius: 12px; border-left: 5px solid #ef4444; margin: 24px 0;">
