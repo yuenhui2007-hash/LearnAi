@@ -153,6 +153,12 @@
         }
       }
 
+      if (!seg.quiz && !seg.interaction) {
+        if (!state.completed) {
+          html += `<div class="interaction-section" style="margin-top:24px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;"><h4>✅ Mark Complete</h4><p>Read through this segment, then click below to mark it complete and unlock the next segment.</p><button class="btn btn-primary" style="margin-top:12px;" onclick="CourseEngine.markSegmentComplete(${idx})">I've read this segment — Mark Complete</button></div>`;
+        }
+      }
+
       html += '<div class="segment-nav-buttons">';
       if (idx > 0) {
         html += `<button class="btn btn-outline" onclick="CourseEngine.goTo(${idx-1})">← Previous</button>`;
@@ -254,6 +260,15 @@
         this.saveProgress();
         setTimeout(() => this.renderSegment(segIdx), 1200);
       }
+    },
+
+    markSegmentComplete(segIdx) {
+      this.segmentStates[segIdx].completed = true;
+      if (segIdx < this.totalSegments - 1) {
+        this.segmentStates[segIdx + 1].unlocked = true;
+      }
+      this.saveProgress();
+      this.renderSegment(segIdx);
     },
 
     goTo(idx) {
