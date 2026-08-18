@@ -53,6 +53,16 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h5 { color: #b91c1c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question p { margin-bottom: 8px; color: #7c2d12; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h6 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -68,78 +78,324 @@
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Dynamics</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Newton's Laws</a></li>
-<li><a href="#section-2">Forces</a></li>
-<li><a href="#section-3">Connected Particles</a></li>
+<li><a href="#section-1">Newton's Laws of Motion</a></li>
+<li><a href="#section-2">Types of Forces</a></li>
+<li><a href="#section-3">Connected Particles &amp; Pulleys</a></li>
+<li><a href="#section-4">Motion on Inclined Planes</a></li>
+<li><a href="#section-5">Momentum &amp; Impulse</a></li>
 </ol>
 </div>
 
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Newton's Laws</h3>
+<h3>Newton's Laws of Motion</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">First Law: Object remains at rest or constant velocity unless acted on by resultant force.<br>Second Law: F = ma<br>Third Law: Action and reaction are equal and opposite.</div>
+<p>Sir Isaac Newton's three laws of motion, published in his Principia in 1687, form the cornerstone of classical mechanics. These laws describe how forces affect the motion of objects and provide the mathematical framework for solving dynamics problems. Understanding these laws deeply — not just memorising them — is essential for success in A-Level Physics.</p>
+
+<div class="definition-box">
+<h5>📖 Newton's First Law (Law of Inertia)</h5>
+<p>An object remains at rest or moves with constant velocity unless acted upon by a resultant (net) external force.</p>
+</div>
+
+<p>Newton's First Law tells us that objects naturally resist changes to their motion. This property is called <strong>inertia</strong>, and it is quantified by the object's mass. A more massive object has greater inertia, meaning it requires a larger force to produce the same acceleration. This is why it is harder to push a stationary car than a stationary bicycle.</p>
+
+<div class="key-point">When the resultant force on an object is zero, it is in <strong>equilibrium</strong>. This does not necessarily mean the object is stationary — it could be moving at constant velocity. For example, a car cruising at 60 mph on a motorway has zero resultant force (driving force equals drag).</div>
+
+<div class="definition-box">
+<h5>📖 Newton's Second Law</h5>
+<p>The resultant force acting on an object is directly proportional to the rate of change of momentum of the object, and acts in the direction of the change.</p>
+<p>F = ma (for constant mass)</p>
+</div>
+
+<p>Newton's Second Law is arguably the most important equation in mechanics. It tells us that acceleration is caused by force, and the acceleration is in the same direction as the resultant force. The proportionality constant is 1/ma when using SI units, giving the familiar F = ma. Note that this simplified form only applies when mass is constant — for situations involving changing mass (like rockets), you must use F = Δp/Δt.</p>
+
+<div class="definition-box">
+<h5>📖 Newton's Third Law</h5>
+<p>When two bodies interact, they exert equal and opposite forces on each other. These forces act on <strong>different bodies</strong>, are of the same type, and act along the same line.</p>
+</div>
+
+<p>Newton's Third Law is frequently misunderstood. The action-reaction pair does NOT act on the same object, so they do not cancel out. For example, when you push a wall, the wall pushes back on you with an equal and opposite force. These two forces act on different objects (you and the wall), which is why you don't simply cancel to zero motion.</p>
+
+<div class="example-box">
+<h5>📝 Worked Example — Newton's Second Law</h5>
+<p><strong>Question:</strong> A 1200 kg car accelerates from rest to 25 m·s⁻¹ in 10 s. Calculate the resultant force acting on the car.</p>
+<p><strong>Solution:</strong></p>
+<p>First find acceleration: a = (v − u)/t = (25 − 0)/10 = 2.5 m·s⁻²</p>
+<p>Then apply F = ma:</p>
+<p>F = 1200 × 2.5 = <strong>3000 N</strong></p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Newton's Third Law Pairs</h5>
+<p><strong>Question:</strong> A book of weight 8 N rests on a table. Identify one Newton's third law pair involving the book.</p>
+<p><strong>Solution:</strong></p>
+<p>The book exerts a force of 8 N downwards on the table (action).</p>
+<p>The table exerts a force of 8 N upwards on the book (reaction).</p>
+<p>These forces are equal in magnitude, opposite in direction, of the same type (contact/normal forces), and act on different bodies.</p>
+<p><strong>Important:</strong> The weight of the book (gravitational force from Earth) and the normal force from the table are NOT a third law pair — they act on the same object (the book) and are different types of forces!</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Students often confuse Newton's Third Law pairs with balanced forces. Balanced forces act on the <strong>same object</strong> and cancel out, producing equilibrium. Third law pairs act on <strong>different objects</strong> and never cancel because they affect different bodies. Always check which object each force acts upon.</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> (a) State Newton's second law of motion. (b) A resultant force of 450 N acts on a vehicle of mass 1500 kg. Calculate the acceleration of the vehicle. (c) Explain why the vehicle will eventually reach a constant velocity even though the driving force remains constant. [5 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• (a) Resultant force is proportional to rate of change of momentum / F = ma (for constant mass) (1 mark)</p>
+<p>• (b) a = F/m = 450/1500 = <strong>0.30 m·s⁻²</strong> (1 mark — must show working)</p>
+<p>• (c) As velocity increases, resistive forces (drag/air resistance) increase (1 mark)</p>
+<p>• Resultant force decreases / F_resultant = F_driving − F_resistive (1 mark)</p>
+<p>• When resistive force equals driving force, resultant force is zero, so acceleration is zero → constant velocity (1 mark)</p>
+</div>
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Forces</h3>
+<h3>Types of Forces</h3>
 </div>
 <div class="topic-content">
+<p>Understanding the different types of forces and how to represent them on free-body diagrams is essential for solving dynamics problems. A <strong>free-body diagram</strong> shows all the forces acting on a single object, with each force drawn as an arrow pointing in the direction the force acts.</p>
+
 <table class="data-table">
-<tr><th>Type</th><th>Description</th></tr>
-<tr><td>Weight</td><td>W = mg (acts vertically downward)</td></tr>
-<tr><td>Normal reaction</td><td>Perpendicular to surface</td></tr>
-<tr><td>Tension</td><td>In ropes/strings (pulling force)</td></tr>
-<tr><td>Friction</td><td>Opposes motion</td></tr>
-<tr><td>Drag</td><td>Resistance in fluids</td></tr>
+<tr><th>Force</th><th>Symbol</th><th>Description</th><th>Equation</th></tr>
+<tr><td>Weight</td><td>W</td><td>Gravitational force from Earth</td><td>W = mg</td></tr>
+<tr><td>Normal reaction</td><td>R or N</td><td>Perpendicular force from a surface</td><td>—</td></tr>
+<tr><td>Tension</td><td>T</td><td>Pulling force in a string/rope/cable</td><td>—</td></tr>
+<tr><td>Friction</td><td>f or F</td><td>Opposes relative motion between surfaces</td><td>f ≤ μR</td></tr>
+<tr><td>Drag</td><td>F_d</td><td>Resistance from fluid (air/water)</td><td>Increases with speed</td></tr>
+<tr><td>Upthrust</td><td>U</td><td>Upward buoyant force in a fluid</td><td>U = ρVg</td></tr>
 </table>
+
+<div class="definition-box">
+<h5>📖 Key Definitions</h5>
+<p><strong>Weight:</strong> The gravitational force acting on an object. W = mg, where g is the acceleration due to gravity (9.81 m·s⁻² near Earth's surface).</p>
+<p><strong>Normal Reaction Force:</strong> The force exerted by a surface on an object, perpendicular to the surface.</p>
+<p><strong>Tension:</strong> The pulling force transmitted through a string, rope, or cable when it is pulled tight by forces acting from opposite ends.</p>
+</div>
+
+<div class="key-point">For a light inextensible string passing over a smooth pulley, the tension is the same throughout the string. "Light" means we ignore the string's mass, and "inextensible" means all connected objects have the same acceleration.</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Forces on a Horizontal Surface</h5>
+<p><strong>Question:</strong> A 5.0 kg box is pulled along a rough horizontal surface by a horizontal force of 20 N. The box accelerates at 2.5 m·s⁻². Calculate the frictional force.</p>
+<p><strong>Solution:</strong></p>
+<p>Vertical: R = mg = 5.0 × 9.81 = 49.1 N (no vertical acceleration)</p>
+<p>Horizontal: F_resultant = ma</p>
+<p>20 − f = 5.0 × 2.5 = 12.5</p>
+<p>f = 20 − 12.5 = <strong>7.5 N</strong></p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Normal reaction is not always equal to weight! On a horizontal surface with no other vertical forces, R = mg. But on an inclined plane, R = mg cos θ. If an additional vertical force is applied (pushing down or pulling up), the normal reaction changes accordingly. Always resolve perpendicular to the surface to find R.</p>
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Connected Particles</h3>
+<h3>Connected Particles &amp; Pulleys</h3>
 </div>
 <div class="topic-content">
+<p>Connected particle problems involve two or more objects linked by a string, often passing over a pulley. These problems require you to apply Newton's Second Law to each object separately and then combine the resulting equations. The key assumptions are: the string is light (massless) and inextensible, and the pulley is smooth (frictionless).</p>
+
 <div class="process-box">
-<h5>Method</h5>
+<h5>📋 Problem-Solving Method</h5>
 <ol>
-<li>Draw separate force diagrams for each particle</li>
-<li>Apply F = ma to each particle</li>
-<li>Relate accelerations (usually same magnitude)</li>
-<li>Solve simultaneous equations</li>
+<li>Draw separate free-body diagrams for each particle</li>
+<li>Apply F = ma to each particle in the direction of motion</li>
+<li>Write the tension as the same symbol T in both equations</li>
+<li>Use the constraint that both particles have the same acceleration magnitude (if inextensible string)</li>
+<li>Solve the simultaneous equations for the unknowns (usually a and T)</li>
 </ol>
 </div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Atwood Machine</h5>
+<p><strong>Question:</strong> Two masses of 3.0 kg and 5.0 kg are connected by a light inextensible string passing over a smooth pulley. Calculate the acceleration of the system and the tension in the string.</p>
+<p><strong>Solution:</strong></p>
+<p>For the 5.0 kg mass (moving down): 5.0g − T = 5.0a</p>
+<p>For the 3.0 kg mass (moving up): T − 3.0g = 3.0a</p>
+<p>Add the equations: 5.0g − 3.0g = 8.0a</p>
+<p>2.0g = 8.0a → a = 2.0 × 9.81 / 8.0 = <strong>2.45 m·s⁻²</strong></p>
+<p>Substitute back: T = 3.0g + 3.0a = 3.0(9.81 + 2.45) = <strong>36.8 N</strong></p>
+</div>
+
+<div class="key-point">In connected particle problems, you can verify your answer by checking that the tension is between the two weights (3g < T < 5g in the example above). If your tension is larger than both weights or negative, you have made an error.</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> Two particles A (mass 4m) and B (mass m) are connected by a light inextensible string passing over a smooth fixed pulley. The system is released from rest. Find, in terms of m and g: (a) the acceleration of the particles, (b) the tension in the string. [5 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• Equation for A: 4mg − T = 4ma (1 mark)</p>
+<p>• Equation for B: T − mg = ma (1 mark)</p>
+<p>• Adding: 3mg = 5ma → a = <strong>3g/5</strong> (1 mark)</p>
+<p>• Substitute into B's equation: T = mg + m(3g/5) = mg + 3mg/5 (1 mark)</p>
+<p>• T = <strong>8mg/5</strong> (1 mark)</p>
 </div>
 </div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Motion on Inclined Planes</h3>
+</div>
+<div class="topic-content">
+<p>Inclined plane problems are a staple of A-Level dynamics. The key technique is to resolve the weight into components parallel and perpendicular to the plane surface. The component parallel to the plane causes acceleration down the slope, while the perpendicular component determines the normal reaction force (which in turn affects friction).</p>
+
+<div class="formula-box">
+For an object on a plane inclined at angle θ to the horizontal:<br><br>
+Component of weight parallel to plane = mg sin θ (down the plane)<br>
+Component of weight perpendicular to plane = mg cos θ (into the plane)<br>
+Normal reaction: R = mg cos θ (if no other perpendicular forces)<br>
+Frictional force (if sliding): f = μR = μmg cos θ
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Block Sliding Down a Slope</h5>
+<p><strong>Question:</strong> A 2.0 kg block slides down a rough plane inclined at 30° to the horizontal. The coefficient of friction is 0.25. Calculate the acceleration of the block. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>Resolve perpendicular: R = mg cos 30° = 2.0 × 9.81 × 0.866 = 17.0 N</p>
+<p>Frictional force: f = μR = 0.25 × 17.0 = 4.25 N (up the plane, opposing motion)</p>
+<p>Resolve parallel down the plane: mg sin 30° − f = ma</p>
+<p>2.0 × 9.81 × 0.5 − 4.25 = 2.0a</p>
+<p>9.81 − 4.25 = 2.0a</p>
+<p>a = 5.56/2.0 = <strong>2.78 m·s⁻²</strong> down the plane</p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Finding the Coefficient of Friction</h5>
+<p><strong>Question:</strong> A block is projected up a rough plane inclined at 20° to the horizontal. It travels 1.5 m up the plane before coming to rest. The initial speed is 3.5 m·s⁻¹. Calculate the coefficient of friction. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>First find deceleration using v² = u² + 2as:</p>
+<p>0 = 3.5² + 2a(1.5) → a = −12.25/3.0 = −4.08 m·s⁻²</p>
+<p>Resolve parallel up the plane (taking up as positive):</p>
+<p>−mg sin 20° − f = ma</p>
+<p>−2.0 × 9.81 × 0.342 − μR = 2.0 × (−4.08)</p>
+<p>−6.71 − μ(2.0 × 9.81 × cos 20°) = −8.16</p>
+<p>−6.71 − 18.4μ = −8.16</p>
+<p>μ = (8.16 − 6.71)/18.4 = <strong>0.079</strong></p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>When an object is projected <em>up</em> an inclined plane, both the component of weight (mg sin θ) AND friction act <em>down</em> the plane, opposing the motion. Students often forget to include friction or incorrectly reverse its direction. Friction always opposes the <em>direction of motion</em> (or attempted motion), not just "down the plane."</p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>Momentum &amp; Impulse</h3>
+</div>
+<div class="topic-content">
+<p>Momentum is one of the most important concepts in physics because it is conserved in isolated systems. This conservation law allows us to analyse collisions and explosions without knowing the details of the forces involved during the interaction. Combined with the concept of impulse, momentum provides a powerful toolkit for solving problems involving sudden forces.</p>
+
+<div class="definition-box">
+<h5>📖 Key Definitions</h5>
+<p><strong>Momentum (p):</strong> The product of an object's mass and velocity. p = mv. Unit: kg·m·s⁻¹ or N·s.</p>
+<p><strong>Impulse:</strong> The product of force and the time for which it acts. Impulse = FΔt = Δp. Unit: N·s or kg·m·s⁻¹.</p>
+<p><strong>Principle of Conservation of Momentum:</strong> For a system of interacting objects with no external resultant force, the total momentum remains constant.</p>
+</div>
+
+<div class="formula-box">
+Newton's Second Law (general form):<br>
+F = Δp/Δt = m(v − u)/t (for constant mass)<br><br>
+Conservation of Momentum:<br>
+Total momentum before = Total momentum after<br>
+m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂
+</div>
+
+<div class="key-point">Momentum is a vector quantity. In one-dimensional problems, use positive and negative signs to indicate direction. In two-dimensional problems, conserve momentum separately in perpendicular directions (usually horizontal and vertical).</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Conservation of Momentum</h5>
+<p><strong>Question:</strong> A 0.50 kg trolley moving at 3.0 m·s⁻¹ collides with a stationary 1.0 kg trolley. After the collision, the 0.50 kg trolley moves at 1.0 m·s⁻¹ in the same direction. Find the velocity of the 1.0 kg trolley.</p>
+<p><strong>Solution:</strong></p>
+<p>Total momentum before = 0.50 × 3.0 + 1.0 × 0 = 1.5 kg·m·s⁻¹</p>
+<p>Total momentum after = 0.50 × 1.0 + 1.0 × v</p>
+<p>By conservation of momentum: 1.5 = 0.50 + 1.0v</p>
+<p>v = (1.5 − 0.50)/1.0 = <strong>1.0 m·s⁻¹</strong> in the original direction</p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Impulse and Force</h5>
+<p><strong>Question:</strong> A ball of mass 0.20 kg travelling at 15 m·s⁻¹ is struck by a bat and returns in the opposite direction at 20 m·s⁻¹. The contact time is 12 ms. Calculate the average force exerted by the bat.</p>
+<p><strong>Solution:</strong></p>
+<p>Take initial direction as positive.</p>
+<p>Initial momentum = 0.20 × 15 = 3.0 kg·m·s⁻¹</p>
+<p>Final momentum = 0.20 × (−20) = −4.0 kg·m·s⁻¹</p>
+<p>Change in momentum = −4.0 − 3.0 = −7.0 kg·m·s⁻¹</p>
+<p>Impulse = FΔt = Δp</p>
+<p>F × 0.012 = 7.0 (magnitude)</p>
+<p>F = 7.0/0.012 = <strong>583 N</strong> (or 580 N to 2 s.f.)</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>In collision problems, students often forget that velocity is a vector and fail to account for direction changes. If an object reverses direction after a collision, its final velocity has the opposite sign to its initial velocity. Always define a positive direction at the start of your working and stick to it consistently.</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> A particle of mass 2m moving with speed u collides directly with a stationary particle of mass 4m. After the collision, the particle of mass 2m rebounds with speed u/3. Calculate the speed of the particle of mass 4m after the collision. [3 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• Initial momentum = 2m × u + 4m × 0 = 2mu (1 mark)</p>
+<p>• Final momentum = 2m × (−u/3) + 4m × v = −2mu/3 + 4mv (1 mark)</p>
+<p>• By conservation: 2mu = −2mu/3 + 4mv → 8mu/3 = 4mv → v = <strong>2u/3</strong> (1 mark)</p>
+</div>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Newton's First Law: inertia</li>
-<li>Newton's Second Law: F = ma</li>
-<li>Newton's Third Law: action-reaction pairs</li>
-<li>Weight: W = mg</li>
-<li>Free body diagrams essential</li>
+<li>Newton's First Law: object remains at rest or constant velocity unless acted on by resultant force</li>
+<li>Newton's Second Law: F = ma (or F = Δp/Δt for varying mass)</li>
+<li>Newton's Third Law: action and reaction are equal, opposite, and act on different bodies</li>
+<li>Weight W = mg; Normal reaction R is perpendicular to surface</li>
+<li>For connected particles: same tension, same acceleration magnitude</li>
+<li>On inclined planes: resolve parallel (mg sin θ) and perpendicular (mg cos θ)</li>
+<li>Momentum p = mv; conserved in isolated systems</li>
+<li>Impulse = FΔt = Δp; area under F-t graph = change in momentum</li>
+<li>Always draw free-body diagrams; define positive direction</li>
 </ul>
 </div>
+
 <div class="exam-tips">
-<h2>💡 Exam Tips</h2>
+<h2>💡 Examiner Tips</h2>
 <ul>
-<li>Always draw clear diagrams</li>
-<li>Define positive direction</li>
-<li>Tension same throughout light inextensible string</li>
-<li>For inclined planes, resolve parallel and perpendicular</li>
+<li>Always draw clear, labelled free-body diagrams — examiners award marks for correct diagrams even if calculations go wrong</li>
+<li>Define your positive direction before writing equations, and use it consistently</li>
+<li>For Newton's Third Law questions, explicitly state that the forces act on different bodies</li>
+<li>When applying F = ma, ensure you use the <strong>resultant</strong> force, not just one individual force</li>
+<li>In connected particle problems, write separate equations for each object before combining</li>
+<li>For inclined planes, resolve weight into components — never resolve R or friction (they're already parallel/perpendicular)</li>
+<li>In momentum problems, be careful with signs when objects reverse direction</li>
+<li>Always check that your answers are physically reasonable (e.g., tension should be positive, acceleration should be sensible)</li>
+<li>Show all substitution steps clearly; method marks are generous in mechanics</li>
+<li>If asked to "show that" a value is approximately something, use g = 9.81 m·s⁻² and round appropriately</li>
 </ul>
 </div>
 </div>

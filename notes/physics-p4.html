@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work, Energy & Power — Physics Notes | LearnAI</title>
-<meta name="description" content="Work, Energy & Power notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work, Energy &amp; Power — Physics Notes | LearnAI</title>
+<meta name="description" content="Work, Energy &amp; Power notes for Cambridge 9702 (A-Level) · 0625 (IGCSE). Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css?v=4">
@@ -39,6 +39,20 @@
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
 .exam-tips ul li { color: #1e3a5f; }
 .back-btn { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h4 { color: #047857; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h4 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.example-box p { color: #166534; margin-bottom: 8px; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h4 { color: #b91c1c; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h4 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; }
+.exam-question p { color: #7c2d12; margin-bottom: 8px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h5 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) { .notes-container { padding: 24px; } }
 </style>
 </head>
@@ -65,44 +79,93 @@
 <div class="level-badges">
 <span class="level-badge badge-igcse">IGCSE</span>
 <span class="level-badge badge-as">AS Level</span>
-
 </div>
-<h1>Work, Energy & Power</h1>
+<h1>Work, Energy &amp; Power</h1>
 <p style="color:var(--gray)">9702 (A-Level) · 0625 (IGCSE)</p>
 </div>
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Work</h3>
-<p><strong>Work done</strong> by a force is the product of the force and the displacement in the direction of the force.</p>
+<h3>1. Work Done</h3>
+<p><strong>Work done</strong> by a force is the product of the force and the displacement in the direction of the force. Work is a scalar quantity measured in joules (J). One joule is defined as the work done when a force of one newton moves its point of application by one metre in the direction of the force.</p>
 <div class="formula-box">W = Fs cos θ</div>
-<p>Work is a scalar. Unit: joule (J).</p>
+<p>where F is the magnitude of the force, s is the displacement, and θ is the angle between the force and displacement vectors. When the force and displacement are in the same direction (θ = 0°), this simplifies to W = Fs. When they are perpendicular (θ = 90°), no work is done.</p>
+
+<div class="definition-box">
+<h4>📖 Key Definition</h4>
+<p><strong>Work:</strong> Work done by a constant force is the product of the force and the displacement in the direction of the force. Unit: joule (J).</p>
+</div>
+
+<div class="key-point">If a force acts perpendicular to the direction of motion, it does no work on the object. For example, the tension in a string keeping a ball in circular motion does no work because it is always perpendicular to the velocity.</div>
+
 <h3>2. Energy</h3>
+<p>Energy is the capacity to do work. It is also a scalar quantity measured in joules. In mechanics, we primarily deal with kinetic energy, gravitational potential energy, and elastic potential energy.</p>
+
 <ul>
-<li><strong>Kinetic energy:</strong> Eₖ = ½mv²</li>
-<li><strong>Gravitational potential energy:</strong> Eₚ = mgh (near Earth's surface)</li>
-<li><strong>Elastic potential energy:</strong> Eₑ = ½kx²</li>
+<li><strong>Kinetic energy:</strong> The energy possessed by an object due to its motion.
+<div class="formula-box">Eₖ = ½mv²</div>
+</li>
+<li><strong>Gravitational potential energy:</strong> The energy stored in an object due to its position in a gravitational field. Near Earth's surface:
+<div class="formula-box">Eₚ = mgh</div>
+where h is the vertical height above a reference level.
+</li>
+<li><strong>Elastic potential energy:</strong> The energy stored in a stretched or compressed spring:
+<div class="formula-box">Eₑ = ½kx²</div>
+where k is the spring constant and x is the extension from the natural length.
+</li>
 </ul>
+
 <h3>3. Principle of Conservation of Energy</h3>
-<p>Energy cannot be created or destroyed, only transformed from one form to another. In a closed system, total energy is constant.</p>
+<p>Energy cannot be created or destroyed, only transformed from one form to another or transferred from one body to another. In a closed system with no external work done, the total energy remains constant. This is one of the most fundamental principles in all of physics.</p>
+<div class="key-point">In real systems, some energy is always dissipated (usually as thermal energy and sound) due to resistive forces like friction and air resistance. "Conservation of energy" in mechanics problems often means that the loss in potential energy equals the gain in kinetic energy plus work done against resistive forces.</div>
+
 <h3>4. Power</h3>
+<p>Power is the rate at which work is done or energy is transferred. It measures how quickly energy is converted from one form to another.</p>
 <div class="formula-box">
 Power: P = W/t = E/t<br>
-Also: P = Fv (when force and velocity are in same direction)
+Also: P = Fv (when force and velocity are in the same direction)
 </div>
-<p>Unit: watt (W) = J/s.</p>
+<p>Unit: watt (W) = J·s⁻¹. One watt is one joule per second.</p>
+
 <h3>5. Efficiency</h3>
+<p>No machine is 100% efficient because some energy is always lost to the surroundings, primarily as heat due to friction. Efficiency compares the useful energy output to the total energy input.</p>
 <div class="formula-box">Efficiency = (useful power output / total power input) × 100%</div>
-<p>No machine is 100% efficient due to energy losses (friction, heat, sound).</p>
+<p>Since power = energy/time, efficiency can also be expressed as useful energy output divided by total energy input. Efficiency is always less than 100% (or less than 1 if expressed as a decimal).</p>
+
+<div class="example-box">
+<h4>📝 Worked Example — Conservation of Energy with Friction</h4>
+<p><strong>Question:</strong> A 2.0 kg block slides down a rough slope from a height of 5.0 m. Its speed at the bottom is 8.0 m·s⁻¹. Calculate the energy lost to friction. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>Initial GPE = mgh = 2.0 × 9.81 × 5.0 = 98.1 J</p>
+<p>Final KE = ½mv² = ½ × 2.0 × 8.0² = 64.0 J</p>
+<p>Energy lost to friction = 98.1 − 64.0 = <strong>34.1 J</strong></p>
 </div>
+
+<div class="example-box">
+<h4>📝 Worked Example — Power and Efficiency</h4>
+<p><strong>Question:</strong> A motor lifts a 500 kg load vertically at a constant speed of 0.40 m·s⁻¹. The motor is supplied with 2.5 kW of electrical power. Calculate the efficiency of the motor. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>Useful power output = force × velocity = weight × velocity = mgv</p>
+<p>P_out = 500 × 9.81 × 0.40 = 1962 W</p>
+<p>P_in = 2500 W</p>
+<p>Efficiency = (1962/2500) × 100 = <strong>78.5%</strong></p>
+</div>
+
+<div class="misconception-box">
+<h4>⚠️ Common Misconception</h4>
+<p>Many students confuse power and energy. Energy is the total capacity to do work (measured in joules), while power is the <em>rate</em> at which work is done (measured in watts). A powerful machine is not necessarily one that does a lot of work — it is one that does work quickly.</p>
+</div>
+</div>
+
 <div class="notes-section">
 <h3>Additional Applications</h3>
 <ul>
-<li><strong>Real-world context:</strong> Engineering applications, medical physics, environmental monitoring</li>
-<li><strong>Experimental methods:</strong> Common apparatus, measurement techniques, error analysis</li>
-<li><strong>SI units in practice:</strong> Prefix usage in scientific and everyday contexts</li>
+<li><strong>Real-world context:</strong> Hydroelectric dams convert gravitational potential energy of water into electrical energy. The power output depends on the height of the dam and the flow rate of water (P = ρgh × flow rate).</li>
+<li><strong>Transport:</strong> Vehicle fuel consumption is related to the work done against resistive forces. At constant speed on a level road, all engine power goes into overcoming drag and rolling resistance.</li>
+<li><strong>Sports science:</strong> The power output of an athlete can be calculated from the rate of climbing stairs or lifting weights, giving insights into fitness and performance.</li>
 </ul>
 </div>
+
 <div class="notes-section">
 <h3>Common Exam Question Types</h3>
 <ul>
@@ -111,7 +174,18 @@ Also: P = Fv (when force and velocity are in same direction)
 <li>Explanation questions — use "because" to link cause and effect</li>
 <li>Graph questions — read axes carefully, describe trends using data</li>
 </ul>
-<div class="key-point">Always define quantities before using them in explanations. E.g., "Force is the rate of change of momentum, therefore..."</div>
+<div class="key-point">Always define quantities before using them in explanations. E.g., "Work done is the product of force and displacement in the direction of the force, therefore..."</div>
+</div>
+
+<div class="exam-question">
+<h4>🎯 Exam-Style Question</h4>
+<p><strong>Question:</strong> A car of mass 1200 kg accelerates from rest to a speed of 25 m·s⁻¹ on a level road. The total resistive force is constant at 800 N. Calculate: (a) the kinetic energy gained by the car, (b) the total work done by the car's engine, (c) the average power developed by the engine if the acceleration takes 15 s. [5 marks]</p>
+<div class="mark-scheme">
+<h5>Mark Scheme</h5>
+<p>• (a) KE = ½mv² = ½ × 1200 × 25² = <strong>3.75 × 10⁵ J</strong> (1 mark)</p>
+<p>• (b) Work done against resistance = F × s. First find s using average velocity: s = (0+25)/2 × 15 = 187.5 m. Work against resistance = 800 × 187.5 = 1.50 × 10⁵ J. Total work = 3.75 × 10⁵ + 1.50 × 10⁵ = <strong>5.25 × 10⁵ J</strong> (2 marks — 1 for method, 1 for answer)</p>
+<p>• (c) P = W/t = 5.25 × 10⁵ / 15 = <strong>3.50 × 10⁴ W</strong> (or 35.0 kW) (2 marks — 1 for method, 1 for answer)</p>
+</div>
 </div>
 
 <div class="summary-box">
@@ -119,45 +193,20 @@ Also: P = Fv (when force and velocity are in same direction)
 <ul>
 <li>Work W = Fs cos θ (J)</li>
 <li>Kinetic energy Eₖ = ½mv²; GPE Eₚ = mgh; Elastic Eₑ = ½kx²</li>
-<li>Conservation of energy: total energy constant in closed system</li>
+<li>Conservation of energy: total energy constant in a closed system; account for energy dissipated by resistive forces</li>
 <li>Power P = W/t = E/t = Fv (W)</li>
 <li>Efficiency = (useful output / total input) × 100%</li>
-</ul>
-</div>
-
-<div class="worked-example">
-<h4>📐 Worked Example</h4>
-<p><strong>Question:</strong> A ball is thrown vertically upwards at 20 m/s. Calculate the maximum height reached. (g = 9.81 m/s²)</p>
-<div class="solution">
-<strong>Solution:</strong><br>
-At max height, v = 0. Using v² = u² + 2as:<br>
-0 = 20² + 2(−9.81)s<br>
-0 = 400 − 19.62s<br>
-s = 400 / 19.62 = 20.4 m<br>
-<strong>Answer: 20.4 m</strong>
-</div>
-</div>
-<div class="common-mistake">Using g = +9.81 m/s² when the object is moving upwards — g always acts downwards, so use −9.81 m/s² for upward motion.</div>
-<div class="key-point">Always draw a diagram and define your positive direction before solving kinematics problems.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
-<ul>
-<li>v = u + at (no displacement)</li>
-<li>s = ut + ½at² (no final velocity)</li>
-<li>v² = u² + 2as (no time)</li>
-<li>s = ½(u+v)t (no acceleration)</li>
-<li>All apply only for constant acceleration</li>
+<li>For objects moving at constant velocity: power input = power output + power lost to resistive forces</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
 <h2>Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
+<li>Read the question carefully — identify exactly what is being asked (work, energy, power, or efficiency).</li>
 <li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
+<li>Check units — ensure your final answer has the correct unit (J for energy, W for power).</li>
+<li>When using conservation of energy, list all forms of energy at the start and end, including any work done against resistive forces.</li>
 <li>Manage your time — don't spend too long on any single question.</li>
 </ul>
 </div>

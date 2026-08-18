@@ -53,6 +53,16 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h5 { color: #b91c1c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question p { margin-bottom: 8px; color: #7c2d12; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h6 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -68,65 +78,308 @@
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Kinematics</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Equations of Motion</a></li>
-<li><a href="#section-2">Graphs</a></li>
+<li><a href="#section-1">Equations of Motion (SUVAT)</a></li>
+<li><a href="#section-2">Displacement-Time Graphs</a></li>
+<li><a href="#section-3">Velocity-Time Graphs</a></li>
+<li><a href="#section-4">Acceleration-Time Graphs</a></li>
+<li><a href="#section-5">Free Fall &amp; Projectile Motion</a></li>
 </ol>
 </div>
 
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Equations of Motion</h3>
+<h3>Equations of Motion (SUVAT)</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">v = u + at<br>s = ½(u + v)t<br>s = ut + ½at²<br>s = vt − ½at²<br>v² = u² + 2as</div>
+<p>The equations of motion (often called the SUVAT equations) describe the motion of an object moving with <strong>constant acceleration</strong> in a straight line. These equations are derived from the definitions of velocity and acceleration, and they form the foundation for solving virtually all kinematics problems at A-Level.</p>
+
+<p>The key assumption is that acceleration is uniform. If acceleration varies, these equations do not apply, and you would need calculus (integration/differentiation) instead. In projectile motion, we treat horizontal and vertical motions separately because only the vertical motion has acceleration (due to gravity).</p>
+
+<div class="formula-box">
+The Five SUVAT Equations:<br><br>
+v = u + at .............................. (no displacement s)<br>
+s = ½(u + v)t ......................... (no acceleration a)<br>
+s = ut + ½at² ......................... (no final velocity v)<br>
+s = vt − ½at² ......................... (no initial velocity u)<br>
+v² = u² + 2as ......................... (no time t)
+</div>
+
 <table class="data-table">
-<tr><th>Symbol</th><th>Meaning</th><th>Units</th></tr>
-<tr><td>s</td><td>Displacement</td><td>m</td></tr>
-<tr><td>u</td><td>Initial velocity</td><td>m/s</td></tr>
-<tr><td>v</td><td>Final velocity</td><td>m/s</td></tr>
-<tr><td>a</td><td>Acceleration</td><td>m/s²</td></tr>
-<tr><td>t</td><td>Time</td><td>s</td></tr>
+<tr><th>Symbol</th><th>Meaning</th><th>Units</th><th>Notes</th></tr>
+<tr><td>s</td><td>Displacement</td><td>m</td><td>Vector — sign indicates direction</td></tr>
+<tr><td>u</td><td>Initial velocity</td><td>m·s⁻¹</td><td>At time t = 0</td></tr>
+<tr><td>v</td><td>Final velocity</td><td>m·s⁻¹</td><td>At time t</td></tr>
+<tr><td>a</td><td>Acceleration</td><td>m·s⁻²</td><td>Constant for SUVAT to apply</td></tr>
+<tr><td>t</td><td>Time</td><td>s</td><td>Duration of motion</td></tr>
 </table>
+
+<div class="definition-box">
+<h5>📖 Key Definitions</h5>
+<p><strong>Displacement (s):</strong> The straight-line distance from the starting point to the finishing point, in a specified direction.</p>
+<p><strong>Velocity:</strong> The rate of change of displacement (vector).</p>
+<p><strong>Acceleration:</strong> The rate of change of velocity. For constant acceleration: a = (v − u)/t.</p>
+</div>
+
+<div class="process-box">
+<h5>📋 Problem-Solving Strategy</h5>
+<ol>
+<li>Draw a diagram showing all known quantities and directions</li>
+<li>Define a positive direction (up, down, left, or right)</li>
+<li>List the known variables and the unknown you need to find</li>
+<li>Identify which quantity is missing — this determines which SUVAT equation to use</li>
+<li>Substitute values with correct signs, solve algebraically, then calculate</li>
+<li>Check your answer is sensible (e.g., positive time, reasonable magnitude)</li>
+</ol>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Choosing the Right Equation</h5>
+<p><strong>Question:</strong> A car accelerates uniformly from rest at 2.5 m·s⁻². Calculate its velocity after travelling 80 m.</p>
+<p><strong>Solution:</strong></p>
+<p>Known: u = 0, a = 2.5 m·s⁻², s = 80 m. Find: v.</p>
+<p>Missing quantity: <strong>time (t)</strong></p>
+<p>Use v² = u² + 2as (the equation without t)</p>
+<p>v² = 0² + 2 × 2.5 × 80 = 400</p>
+<p>v = √400 = <strong>20 m·s⁻¹</strong></p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Vertical Motion Under Gravity</h5>
+<p><strong>Question:</strong> A stone is thrown vertically upwards from ground level at 15 m·s⁻¹. Calculate: (a) the maximum height reached, (b) the total time before it returns to the ground. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>Take <strong>upwards as positive</strong>. Therefore a = −g = −9.81 m·s⁻².</p>
+<p>(a) At maximum height, v = 0. Use v² = u² + 2as:</p>
+<p>0 = 15² + 2(−9.81)s</p>
+<p>0 = 225 − 19.62s</p>
+<p>s = 225 / 19.62 = <strong>11.5 m</strong></p>
+<p>(b) When it returns to ground, s = 0. Use s = ut + ½at²:</p>
+<p>0 = 15t + ½(−9.81)t²</p>
+<p>0 = t(15 − 4.905t)</p>
+<p>t = 0 (start) or t = 15/4.905 = <strong>3.06 s</strong></p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>The acceleration due to gravity g is <strong>always</strong> directed downwards towards the centre of the Earth. If you take upwards as positive, then g = −9.81 m·s⁻². Even when an object is moving upwards, gravity is still pulling it down, causing it to decelerate. Many students incorrectly use g = +9.81 m·s⁻² for upward motion.</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> A ball is thrown vertically upwards with a speed of 12 m·s⁻¹ from a height of 25 m above the ground. Calculate the speed with which it hits the ground. (g = 9.81 m·s⁻²) [3 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• u = +12 m·s⁻¹, a = −9.81 m·s⁻², s = −25 m (downwards negative) (1 mark)</p>
+<p>• v² = u² + 2as = 12² + 2(−9.81)(−25) = 144 + 490.5 = 634.5 (1 mark)</p>
+<p>• v = √634.5 = <strong>25.2 m·s⁻¹</strong> (accept 25 m·s⁻¹) (1 mark)</p>
+<p>Alternative using energy: mgh + ½mu² = ½mv² → v = √(2gh + u²) also accepted.</p>
+</div>
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Graphs</h3>
+<h3>Displacement-Time Graphs</h3>
 </div>
 <div class="topic-content">
+<p>A displacement-time graph shows how the position of an object changes with time. The key features are the <strong>gradient</strong> and the <strong>area</strong> (though area under a displacement-time graph has no direct physical meaning — unlike velocity-time graphs).</p>
+
 <table class="data-table">
-<tr><th>Graph</th><th>Gradient</th><th>Area</th></tr>
-<tr><td>Displacement-time</td><td>Velocity</td><td>—</td></tr>
-<tr><td>Velocity-time</td><td>Acceleration</td><td>Displacement</td></tr>
-<tr><td>Acceleration-time</td><td>—</td><td>Change in velocity</td></tr>
+<tr><th>Feature</th><th>Physical Meaning</th></tr>
+<tr><td>Gradient</td><td>Velocity (steeper = faster; negative = reverse direction)</td></tr>
+<tr><td>Horizontal line</td><td>Stationary (velocity = 0)</td></tr>
+<tr><td>Straight line</td><td>Constant velocity (zero acceleration)</td></tr>
+<tr><td>Curved line</td><td>Changing velocity (acceleration present)</td></tr>
+<tr><td>Curving upwards</td><td>Increasing velocity (positive acceleration)</td></tr>
+<tr><td>Curving downwards</td><td>Decreasing velocity (deceleration)</td></tr>
 </table>
+
+<div class="key-point">The gradient of a displacement-time graph gives velocity. To find the velocity at a specific instant, draw a tangent to the curve at that point and calculate the gradient of the tangent.</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Interpreting a Displacement-Time Graph</h5>
+<p><strong>Question:</strong> A particle's displacement-time graph is a straight line from (0, 0) to (5 s, 20 m), then horizontal to (8 s, 20 m), then a straight line to (12 s, 0 m). Describe the motion and find the velocities.</p>
+<p><strong>Solution:</strong></p>
+<p>0–5 s: moving with constant velocity v = (20 − 0)/(5 − 0) = <strong>4 m·s⁻¹</strong></p>
+<p>5–8 s: stationary (horizontal line, velocity = <strong>0</strong>)</p>
+<p>8–12 s: returning with constant velocity v = (0 − 20)/(12 − 8) = <strong>−5 m·s⁻¹</strong> (negative = opposite direction)</p>
 </div>
 </div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Velocity-Time Graphs</h3>
+</div>
+<div class="topic-content">
+<p>Velocity-time graphs are arguably the most useful graphs in kinematics because both the gradient and the area have clear physical meanings. The gradient represents acceleration, and the area under the graph represents displacement. This makes v-t graphs powerful tools for solving problems graphically.</p>
+
+<table class="data-table">
+<tr><th>Feature</th><th>Physical Meaning</th></tr>
+<tr><td>Gradient</td><td>Acceleration</td></tr>
+<tr><td>Area under graph</td><td>Displacement</td></tr>
+<tr><td>Horizontal line</td><td>Constant velocity (zero acceleration)</td></tr>
+<tr><td>Line through origin</td><td>Constant acceleration from rest</td></tr>
+<tr><td>Line below time axis</td><td>Motion in opposite direction</td></tr>
+</table>
+
+<div class="formula-box">
+From v-t graphs:<br><br>
+Acceleration = gradient = Δv/Δt<br>
+Displacement = area under curve (areas below axis are negative)<br>
+Distance = total area (sum of absolute values of all areas)
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Area and Gradient from v-t Graph</h5>
+<p><strong>Question:</strong> A v-t graph shows velocity increasing uniformly from 0 to 12 m·s⁻¹ over 4 s, then constant for 3 s, then decreasing uniformly to 0 over 5 s. Find: (a) total displacement, (b) total distance, (c) acceleration in each stage.</p>
+<p><strong>Solution:</strong></p>
+<p>Stage 1 (0–4 s): triangle area = ½ × 4 × 12 = 24 m; a = 12/4 = 3 m·s⁻²</p>
+<p>Stage 2 (4–7 s): rectangle area = 3 × 12 = 36 m; a = 0</p>
+<p>Stage 3 (7–12 s): triangle area = ½ × 5 × 12 = 30 m; a = −12/5 = −2.4 m·s⁻²</p>
+<p>(a) Total displacement = 24 + 36 + 30 = <strong>90 m</strong></p>
+<p>(b) Total distance = 24 + 36 + 30 = <strong>90 m</strong> (same since v ≥ 0 throughout)</p>
+<p>(c) Accelerations: <strong>3 m·s⁻², 0, −2.4 m·s⁻²</strong></p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Students often confuse the <strong>area</strong> and <strong>gradient</strong> meanings between s-t and v-t graphs. Remember: <strong>s-t → gradient = v</strong>; <strong>v-t → gradient = a, area = s</strong>. A good mnemonic: "Area under v-t is displacement" and "Gradient of s-t is velocity."</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> The velocity-time graph for a car shows: constant velocity of 20 m·s⁻¹ for 10 s, then uniform deceleration to rest in 8 s. Sketch the graph and calculate the total displacement. [3 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• Correct sketch: horizontal line at 20 m·s⁻¹ from t=0 to t=10, then straight line to (18, 0) (1 mark)</p>
+<p>• Area = rectangle + triangle = (20 × 10) + (½ × 8 × 20) = 200 + 80 (1 mark)</p>
+<p>• Total displacement = <strong>280 m</strong> (1 mark)</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Acceleration-Time Graphs</h3>
+</div>
+<div class="topic-content">
+<p>Acceleration-time graphs show how acceleration varies with time. The area under an acceleration-time graph gives the <strong>change in velocity</strong> (not displacement). If the graph is a horizontal line at a = 0, the object moves with constant velocity.</p>
+
+<div class="key-point">Area under a-t graph = change in velocity (Δv). This is less commonly tested than v-t or s-t graphs, but understanding it completes your understanding of graphical kinematics.</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — a-t Graph</h5>
+<p><strong>Question:</strong> An a-t graph shows constant acceleration of 4 m·s⁻² for 3 s, then zero acceleration for 2 s. The initial velocity is 2 m·s⁻¹. Find the velocity at t = 5 s.</p>
+<p><strong>Solution:</strong></p>
+<p>Area under a-t graph (0–3 s) = 4 × 3 = 12 m·s⁻¹ → this is the change in velocity</p>
+<p>Area under a-t graph (3–5 s) = 0 × 2 = 0</p>
+<p>Total change in velocity = 12 m·s⁻¹</p>
+<p>Final velocity = 2 + 12 = <strong>14 m·s⁻¹</strong></p>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>Free Fall &amp; Projectile Motion</h3>
+</div>
+<div class="topic-content">
+<p>Free fall is motion under the influence of gravity alone, with no air resistance. In a vacuum, all objects fall at the same rate regardless of mass — this was famously demonstrated by Galileo and later by astronauts on the Moon. The acceleration due to gravity near Earth's surface is approximately g = 9.81 m·s⁻².</p>
+
+<p>Projectile motion involves analysing the horizontal and vertical motions <strong>independently</strong>. The horizontal motion has constant velocity (aₓ = 0, ignoring air resistance), while the vertical motion has constant downward acceleration (aᵧ = −g). The time of flight is determined by the vertical motion, and this same time applies to the horizontal motion.</p>
+
+<div class="formula-box">
+Projectile Motion (launched at angle θ, initial speed u):<br><br>
+Horizontal: uₓ = u cos θ, aₓ = 0, x = u cos θ · t<br>
+Vertical: uᵧ = u sin θ, aᵧ = −g, y = u sin θ · t − ½gt²<br><br>
+Time to maximum height: t = u sin θ / g<br>
+Maximum height: H = (u sin θ)² / (2g)<br>
+Range (horizontal distance): R = u² sin(2θ) / g
+</div>
+
+<div class="key-point">The trajectory of a projectile is a parabola (neglecting air resistance). At maximum height, the vertical velocity is zero, but horizontal velocity remains constant. The time to reach maximum height equals the time to fall back to the same vertical level.</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Projectile Launched Horizontally</h5>
+<p><strong>Question:</strong> A ball rolls off a horizontal table 1.25 m high with a horizontal speed of 3.0 m·s⁻¹. Calculate: (a) the time to reach the floor, (b) the horizontal distance travelled. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>Vertical motion: uᵧ = 0, aᵧ = 9.81 m·s⁻², s = 1.25 m</p>
+<p>(a) Use s = uᵧt + ½aᵧt²:</p>
+<p>1.25 = 0 + ½(9.81)t²</p>
+<p>t² = 2.50/9.81 = 0.255</p>
+<p>t = <strong>0.505 s</strong></p>
+<p>(b) Horizontal: x = uₓt = 3.0 × 0.505 = <strong>1.52 m</strong></p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Projectile at an Angle</h5>
+<p><strong>Question:</strong> A projectile is launched at 25 m·s⁻¹ at 40° above the horizontal. Find: (a) maximum height, (b) time of flight, (c) horizontal range. (g = 9.81 m·s⁻²)</p>
+<p><strong>Solution:</strong></p>
+<p>uₓ = 25 cos 40° = 19.2 m·s⁻¹; uᵧ = 25 sin 40° = 16.1 m·s⁻¹</p>
+<p>(a) H = (16.1)² / (2 × 9.81) = 259/19.62 = <strong>13.2 m</strong></p>
+<p>(b) Time of flight: total time in air = 2 × (16.1/9.81) = <strong>3.28 s</strong></p>
+<p>(c) R = 19.2 × 3.28 = <strong>63.0 m</strong> (or use R = u² sin(2θ)/g = 625 × sin(80°)/9.81 = 62.7 m)</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Many students think that the horizontal motion somehow affects the vertical motion (or vice versa). They are completely independent! The horizontal velocity remains constant throughout flight, while the vertical velocity changes due to gravity. The only thing they share is the <strong>time</strong> — the time spent in the air is the same for both components.</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> A stone is thrown horizontally from the top of a cliff at 8.0 m·s⁻¹. It hits the sea below after 2.5 s. Calculate: (a) the height of the cliff, (b) the horizontal distance from the base of the cliff where the stone hits the water, (c) the speed at which it hits the water. (g = 9.81 m·s⁻²) [5 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• (a) s = ½gt² = ½ × 9.81 × (2.5)² = <strong>30.7 m</strong> (accept 31 m) (1 mark)</p>
+<p>• (b) x = uₓt = 8.0 × 2.5 = <strong>20 m</strong> (1 mark)</p>
+<p>• (c) vᵧ = gt = 9.81 × 2.5 = 24.5 m·s⁻¹ (1 mark)</p>
+<p>• v = √(vₓ² + vᵧ²) = √(8.0² + 24.5²) = √(64 + 600) = √664 = <strong>25.8 m·s⁻¹</strong> (1 mark)</p>
+<p>• Direction: tan⁻¹(24.5/8.0) = 72.0° below horizontal (1 mark — accept mention of direction)</p>
+</div>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>SUVAT equations for constant acceleration</li>
-<li>v = u + at, s = ut + ½at², v² = u² + 2as</li>
-<li>v-t graph: gradient = acceleration, area = displacement</li>
-<li>s-t graph: gradient = velocity</li>
-<li>Take care with signs (direction)</li>
+<li>SUVAT equations apply only for constant acceleration in a straight line</li>
+<li>Choose the equation that omits the quantity you don't know and don't need</li>
+<li>Displacement-time graph: gradient = velocity</li>
+<li>Velocity-time graph: gradient = acceleration, area = displacement</li>
+<li>Acceleration-time graph: area = change in velocity</li>
+<li>Projectile motion: horizontal and vertical components are independent; time is common</li>
+<li>Maximum range for projectile: launched at 45° (when start and end at same height)</li>
+<li>Always define positive direction before solving; g = −9.81 m·s⁻² if up is positive</li>
 </ul>
 </div>
+
 <div class="exam-tips">
-<h2>💡 Exam Tips</h2>
+<h2>💡 Examiner Tips</h2>
 <ul>
-<li>Choose the SUVAT equation with the missing variable</li>
-<li>Draw graphs to visualise</li>
-<li>Check units: all SI (m, s, m/s, m/s²)</li>
-<li>Deceleration = negative acceleration</li>
+<li>Always draw a diagram — even a simple sketch will help you assign correct signs to vectors</li>
+<li>Define your positive direction explicitly at the start of your working</li>
+<li>Choose the SUVAT equation by identifying which variable is missing from the question</li>
+<li>For v-t graphs, remember: area = displacement, gradient = acceleration. Don't mix these up!</li>
+<li>When calculating displacement from a v-t graph, areas below the time axis represent negative displacement</li>
+<li>In projectile problems, always resolve the initial velocity into horizontal and vertical components first</li>
+<li>At maximum height of a projectile, vertical velocity is momentarily zero — this is often the key to solving the problem</li>
+<li>Show all substitution steps; method marks are awarded for correct use of equations even with arithmetic errors</li>
+<li>Check significant figures: usually match the least precise given value</li>
+<li>Don't forget to include direction when the answer is a vector (e.g., "25.8 m·s⁻¹ at 72° below horizontal")</li>
 </ul>
 </div>
 </div>

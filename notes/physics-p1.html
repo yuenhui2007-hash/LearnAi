@@ -53,6 +53,16 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box h5 { color: #b91c1c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.definition-box { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.definition-box h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #fff7ed; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; }
+.exam-question h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question p { margin-bottom: 8px; color: #7c2d12; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border: 1px solid #bbf7d0; }
+.mark-scheme h6 { color: #15803d; margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; }
+.mark-scheme p { color: #166534; margin-bottom: 4px; font-size: 0.9rem; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -67,15 +77,17 @@
 <a href="../subject.html?id=physics&level=alevel" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:12px;background:#f3f4f6;color:#1f2937;font-weight:500;text-decoration:none;margin-bottom:24px;transition:all 0.2s;">← Back to Physics</a>
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
-<h1>Physical Quantities</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<h1>Physical Quantities & Units</h1>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, exam questions, and examiner tips</p>
 </div>
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
 <li><a href="#section-1">SI Base Units</a></li>
-<li><a href="#section-2">Derived Units</a></li>
+<li><a href="#section-2">Derived Units &amp; Homogeneity</a></li>
 <li><a href="#section-3">Scalars and Vectors</a></li>
+<li><a href="#section-4">Measurement &amp; Uncertainty</a></li>
+<li><a href="#section-5">Vectors in Physics</a></li>
 </ol>
 </div>
 
@@ -85,32 +97,121 @@
 <h3>SI Base Units</h3>
 </div>
 <div class="topic-content">
+<p>The International System of Units (SI) provides a consistent framework for measuring physical quantities. Understanding base units is fundamental because <strong>every other unit in physics can be derived from these seven base units</strong>. This means that when you perform calculations, you can always trace your answer back to these fundamental measurements, which is incredibly useful for checking your work through dimensional analysis.</p>
+
+<p>The seven SI base units are defined by internationally agreed-upon standards. For example, the second is defined by the hyperfine transition frequency of caesium-133 atoms, making it incredibly precise and reproducible anywhere in the world. The kilogram was redefined in 2019 in terms of Planck's constant rather than a physical artefact, eliminating the last remaining base unit tied to a material object.</p>
+
 <table class="data-table">
-<tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
-<tr><td>Mass</td><td>Kilogram</td><td>kg</td></tr>
-<tr><td>Length</td><td>Metre</td><td>m</td></tr>
-<tr><td>Time</td><td>Second</td><td>s</td></tr>
-<tr><td>Current</td><td>Ampere</td><td>A</td></tr>
-<tr><td>Temperature</td><td>Kelvin</td><td>K</td></tr>
-<tr><td>Amount</td><td>Mole</td><td>mol</td></tr>
+<tr><th>Quantity</th><th>Unit</th><th>Symbol</th><th>Definition Context</th></tr>
+<tr><td>Mass</td><td>Kilogram</td><td>kg</td><td>Defined via Planck's constant h = 6.626 × 10⁻³⁴ J·s</td></tr>
+<tr><td>Length</td><td>Metre</td><td>m</td><td>Defined as the distance light travels in 1/299,792,458 s</td></tr>
+<tr><td>Time</td><td>Second</td><td>s</td><td>Defined by caesium-133 atomic clock frequency</td></tr>
+<tr><td>Electric Current</td><td>Ampere</td><td>A</td><td>Defined via the elementary charge e</td></tr>
+<tr><td>Temperature</td><td>Kelvin</td><td>K</td><td>Defined via Boltzmann constant k = 1.381 × 10⁻²³ J/K</td></tr>
+<tr><td>Amount of Substance</td><td>Mole</td><td>mol</td><td>Contains exactly 6.022 × 10²³ particles (Avogadro's number)</td></tr>
+<tr><td>Luminous Intensity</td><td>Candela</td><td>cd</td><td>Defined via monochromatic radiation at 540 × 10¹² Hz</td></tr>
 </table>
+
+<div class="definition-box">
+<h5>📖 Key Definition</h5>
+<p><strong>Base Unit:</strong> One of the seven fundamental units of the SI system from which all other units are derived. Base units are defined by physical constants or natural phenomena rather than being derived from other units.</p>
+</div>
+
+<div class="key-point">In A-Level Physics, you will primarily use six base units (kg, m, s, A, K, mol). The candela (cd) is rarely needed except in optics contexts. Always memorise these six — examiners expect you to recall them without prompting.</p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Identifying Base Quantities</h5>
+<p><strong>Question:</strong> Which of the following are base quantities in the SI system: force, temperature, velocity, amount of substance, power?</p>
+<p><strong>Solution:</strong></p>
+<p>From the list:</p>
+<ul>
+<li><strong>Temperature</strong> — base quantity (unit: kelvin, K) ✓</li>
+<li><strong>Amount of substance</strong> — base quantity (unit: mole, mol) ✓</li>
+<li><strong>Force</strong> — derived quantity (unit: newton, N = kg·m·s⁻²) ✗</li>
+<li><strong>Velocity</strong> — derived quantity (unit: m·s⁻¹) ✗</li>
+<li><strong>Power</strong> — derived quantity (unit: watt, W = kg·m²·s⁻³) ✗</li>
+</ul>
+<p><strong>Answer:</strong> Temperature and amount of substance are base quantities.</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Students often confuse <strong>mass</strong> and <strong>weight</strong> when discussing base units. Mass is a base quantity (kg), but weight is a force (derived unit: newton). The kilogram measures the amount of matter in an object, while weight depends on gravitational field strength (W = mg).</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> State two SI base quantities other than mass, length, and time. [2 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• Any two from: temperature/K (1 mark), current/A (1 mark), amount of substance/mol (1 mark), luminous intensity/cd (1 mark)</p>
+<p><strong>Maximum 2 marks.</strong> Must state both the quantity <em>and</em> its unit for full credit in some mark schemes.</p>
+</div>
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Derived Units</h3>
+<h3>Derived Units &amp; Homogeneity</h3>
 </div>
 <div class="topic-content">
+<p>Derived units are combinations of base units used to measure quantities that are defined in terms of other physical quantities. For example, velocity is defined as displacement divided by time, so its unit is metres per second (m·s⁻¹). The ability to express any physical quantity in terms of base units is called <strong>dimensional analysis</strong>, and it is one of the most powerful tools for checking the validity of equations.</p>
+
+<p>The principle of <strong>homogeneity</strong> states that for any physically correct equation, the units on both sides must be the same. This means you can verify whether a formula is plausible by checking that all terms have consistent units. If you find an equation where the left side has units of metres and the right side has units of seconds, the equation must be wrong.</p>
+
 <table class="data-table">
-<tr><th>Quantity</th><th>Unit</th><th>Base Units</th></tr>
-<tr><td>Velocity</td><td>m/s</td><td>m s⁻¹</td></tr>
-<tr><td>Acceleration</td><td>m/s²</td><td>m s⁻²</td></tr>
-<tr><td>Force</td><td>Newton (N)</td><td>kg m s⁻²</td></tr>
-<tr><td>Energy</td><td>Joule (J)</td><td>kg m² s⁻²</td></tr>
-<tr><td>Power</td><td>Watt (W)</td><td>kg m² s⁻³</td></tr>
+<tr><th>Quantity</th><th>Unit</th><th>Base Units</th><th>Derivation</th></tr>
+<tr><td>Velocity</td><td>m/s</td><td>m·s⁻¹</td><td>displacement/time</td></tr>
+<tr><td>Acceleration</td><td>m/s²</td><td>m·s⁻²</td><td>velocity/time</td></tr>
+<tr><td>Force</td><td>Newton (N)</td><td>kg·m·s⁻²</td><td>mass × acceleration</td></tr>
+<tr><td>Energy / Work</td><td>Joule (J)</td><td>kg·m²·s⁻²</td><td>force × displacement</td></tr>
+<tr><td>Power</td><td>Watt (W)</td><td>kg·m²·s⁻³</td><td>energy/time</td></tr>
+<tr><td>Pressure</td><td>Pascal (Pa)</td><td>kg·m⁻¹·s⁻²</td><td>force/area</td></tr>
+<tr><td>Frequency</td><td>Hertz (Hz)</td><td>s⁻¹</td><td>1/period</td></tr>
+<tr><td>Charge</td><td>Coulomb (C)</td><td>A·s</td><td>current × time</td></tr>
+<tr><td>Potential Difference</td><td>Volt (V)</td><td>kg·m²·s⁻³·A⁻¹</td><td>energy/charge</td></tr>
+<tr><td>Resistance</td><td>Ohm (Ω)</td><td>kg·m²·s⁻³·A⁻²</td><td>potential difference/current</td></tr>
 </table>
+
+<div class="formula-box">
+Dimensional Analysis Check:<br><br>
+For kinetic energy: Eₖ = ½mv²<br>
+Units: kg × (m·s⁻¹)² = kg·m²·s⁻² ✓ (same as joule)<br><br>
+For power: P = Fv<br>
+Units: (kg·m·s⁻²) × (m·s⁻¹) = kg·m²·s⁻³ ✓ (same as watt)
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Checking Homogeneity</h5>
+<p><strong>Question:</strong> A student suggests the formula for the period T of a pendulum is T = 2π√(m/g), where m is mass and g is acceleration due to gravity. Use dimensional analysis to show this formula is incorrect.</p>
+<p><strong>Solution:</strong></p>
+<p>Left side: T has units of <strong>seconds (s)</strong></p>
+<p>Right side: √(m/g) has units of √(kg / (m·s⁻²)) = √(kg·m⁻¹·s²) = kg½·m⁻½·s</p>
+<p>The right side includes kg and m, which the left side does not. The units are not homogeneous.</p>
+<p><strong>Conclusion:</strong> The formula must be incorrect. (The correct formula is T = 2π√(L/g), where L has units of m, giving √(m/(m·s⁻²)) = √s² = s ✓)</p>
+</div>
+
+<div class="key-point">When performing dimensional analysis, ignore numerical constants (like 2π, ½) and trigonometric functions — they have no units. Only consider the variables and their exponents.</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> The viscosity η of a liquid can be found from Stokes' law: F = 6πηrv, where F is force, r is radius, and v is velocity. Determine the base units of viscosity η. [3 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• Rearrange: η = F / (6πrv) (1 mark)</p>
+<p>• Units of F = kg·m·s⁻²; units of r = m; units of v = m·s⁻¹ (1 mark)</p>
+<p>• η = kg·m·s⁻² / (m × m·s⁻¹) = <strong>kg·m⁻¹·s⁻¹</strong> (1 mark)</p>
+<p>Accept N·s·m⁻² or Pa·s as equivalent.</p>
+</div>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Students frequently write derived units with solidus notation (e.g., m/s²) when examiners prefer index notation (m·s⁻²) for base unit expressions. While m/s² is acceptable for the unit name, always write base units using negative indices in dimensional analysis questions.</p>
+</div>
 </div>
 </div>
 
@@ -120,30 +221,189 @@
 <h3>Scalars and Vectors</h3>
 </div>
 <div class="topic-content">
+<p>Understanding the difference between scalars and vectors is absolutely essential in physics because it determines how quantities combine and interact. A <strong>scalar</strong> is completely described by its magnitude (size) alone, while a <strong>vector</strong> requires both magnitude and direction for a complete description. This distinction affects everything from how you add velocities to how you calculate resultant forces.</p>
+
+<p>When combining scalar quantities, you simply add their magnitudes algebraically. However, vector quantities must be added using vector addition methods — either graphically (using scale diagrams) or analytically (using components or the cosine/sine rules). This is why walking 3 m north and then 4 m east gives a total distance of 7 m (scalar) but a displacement of only 5 m northeast (vector).</p>
+
 <table class="data-table">
-<tr><th>Scalars</th><th>Vectors</th></tr>
-<tr><td>Distance, speed, mass, time, energy, temperature</td><td>Displacement, velocity, acceleration, force, momentum, field strength</td></tr>
+<tr><th>Scalars (magnitude only)</th><th>Vectors (magnitude + direction)</th></tr>
+<tr><td>Distance, speed, mass, time, energy, temperature, power, pressure, density, volume, frequency</td><td>Displacement, velocity, acceleration, force, momentum, weight, electric field strength, gravitational field strength, magnetic flux density</td></tr>
 </table>
-<div class="key-point">Vectors have magnitude and direction. Scalars have magnitude only.</div>
+
+<div class="definition-box">
+<h5>📖 Key Definitions</h5>
+<p><strong>Scalar:</strong> A physical quantity that has magnitude only.</p>
+<p><strong>Vector:</strong> A physical quantity that has both magnitude and direction.</p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Scalar vs Vector</h5>
+<p><strong>Question:</strong> A car travels 60 km north, then 80 km east. Calculate: (a) the total distance travelled, (b) the magnitude of the displacement.</p>
+<p><strong>Solution:</strong></p>
+<p>(a) Distance is a scalar — simply add magnitudes:</p>
+<p>Distance = 60 + 80 = <strong>140 km</strong></p>
+<p>(b) Displacement is a vector. The two displacements are perpendicular, so use Pythagoras:</p>
+<div class="formula-box">
+|displacement| = √(60² + 80²) = √(3600 + 6400) = √10000 = <strong>100 km</strong>
+</div>
+<p>Direction: θ = tan⁻¹(80/60) = 53.1° east of north</p>
+<p><strong>Answer:</strong> (a) 140 km, (b) 100 km at 53.1° east of north</p>
+</div>
+
+<div class="key-point">Speed and velocity are NOT the same! Speed is the rate of change of distance (scalar), while velocity is the rate of change of displacement (vector). A car driving at constant speed around a circular track has changing velocity because its direction is continuously changing.</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> State one similarity and one difference between distance and displacement. [2 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• Similarity: both measured in metres / both describe path or position (1 mark)</p>
+<p>• Difference: distance is scalar (magnitude only); displacement is vector (magnitude and direction) / OR distance is total path length; displacement is straight-line distance from start to finish (1 mark)</p>
 </div>
 </div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Measurement &amp; Uncertainty</h3>
+</div>
+<div class="topic-content">
+<p>No measurement is ever perfectly exact. Every experimental value has an associated <strong>uncertainty</strong> that represents the range within which the true value is expected to lie. Understanding and propagating uncertainties is a core skill in practical physics and is frequently tested in exams.</p>
+
+<p>There are two main types of uncertainty: <strong>random uncertainties</strong> (which cause readings to scatter around the mean, reduced by repeating measurements) and <strong>systematic uncertainties</strong> (which cause all readings to be consistently too high or too low, not reduced by repetition). Identifying and minimising both types is crucial for reliable experiments.</p>
+
+<div class="definition-box">
+<h5>📖 Key Definitions</h5>
+<p><strong>Absolute Uncertainty (Δx):</strong> The actual range of possible values, expressed in the same units as the measurement (e.g., 25.0 ± 0.5 cm).</p>
+<p><strong>Fractional Uncertainty:</strong> Δx / x — the ratio of uncertainty to measured value.</p>
+<p><strong>Percentage Uncertainty:</strong> (Δx / x) × 100%.</p>
+</div>
+
+<div class="formula-box">
+Combining Uncertainties:<br><br>
+For addition/subtraction: Δz = Δx + Δy<br>
+For multiplication/division: Δz/z = Δx/x + Δy/y (add fractional uncertainties)<br>
+For powers: if z = xⁿ, then Δz/z = n(Δx/x)
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Propagating Uncertainties</h5>
+<p><strong>Question:</strong> A rectangle has length l = 20.0 ± 0.2 cm and width w = 15.0 ± 0.2 cm. Calculate the area and its absolute uncertainty.</p>
+<p><strong>Solution:</strong></p>
+<p>Area A = l × w = 20.0 × 15.0 = <strong>300 cm²</strong></p>
+<p>Fractional uncertainty in l: 0.2/20.0 = 0.01</p>
+<p>Fractional uncertainty in w: 0.2/15.0 = 0.0133</p>
+<p>Total fractional uncertainty: 0.01 + 0.0133 = 0.0233</p>
+<p>Absolute uncertainty in A: 300 × 0.0233 = <strong>7.0 cm²</strong></p>
+<p><strong>Answer:</strong> A = 300 ± 7 cm² (or expressed to 1 sig fig in uncertainty: 300 ± 10 cm² if rounding uncertainty up)</p>
+</div>
+
+<div class="key-point">When stating a final result with uncertainty, the uncertainty should be quoted to <strong>one significant figure</strong> (or at most two if the first digit is 1), and the measured value should be rounded to match the decimal place of the uncertainty.</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Many students believe that repeating measurements reduces <em>all</em> types of uncertainty. This is false — repeating only reduces <strong>random</strong> uncertainties. Systematic errors (like a zero error on a micrometer or a miscalibrated thermometer) affect every reading in the same way and require different methods to identify and correct.</p>
+</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> The time period T of a pendulum is measured as 2.0 ± 0.1 s. The length l is measured as 1.00 ± 0.02 m. Calculate the percentage uncertainty in g, where g = 4π²l/T². [3 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• % uncertainty in l = (0.02/1.00) × 100 = 2% (1 mark)</p>
+<p>• % uncertainty in T = (0.1/2.0) × 100 = 5%; for T², multiply by 2 → 10% (1 mark)</p>
+<p>• % uncertainty in g = 2% + 10% = <strong>12%</strong> (1 mark)</p>
+<p>Note: constants (4π²) have no uncertainty.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>Vectors in Physics</h3>
+</div>
+<div class="topic-content">
+<p>Vector addition and resolution into components are fundamental skills that appear across multiple topics in A-Level Physics. Whether you are resolving forces on an inclined plane, finding resultant velocities, or analysing electric fields, the same mathematical principles apply.</p>
+
+<p>The <strong>parallelogram law</strong> states that if two vectors are represented by the adjacent sides of a parallelogram, their resultant is represented by the diagonal passing through the common point. Alternatively, you can resolve any vector into perpendicular components — usually horizontal and vertical — which simplifies many problems, especially those involving inclined planes or projectiles.</p>
+
+<div class="formula-box">
+Resolving a Vector V at angle θ:<br><br>
+Horizontal component: Vₓ = V cos θ<br>
+Vertical component: Vᵧ = V sin θ<br><br>
+Resultant of two perpendicular vectors:<br>
+R = √(Vₓ² + Vᵧ²)<br>
+θ = tan⁻¹(Vᵧ/Vₓ)
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Resolving Forces</h5>
+<p><strong>Question:</strong> A force of 50 N acts at 30° above the horizontal. Find its horizontal and vertical components.</p>
+<p><strong>Solution:</strong></p>
+<p>Fₓ = F cos θ = 50 × cos 30° = 50 × 0.866 = <strong>43.3 N</strong> (horizontal)</p>
+<p>Fᵧ = F sin θ = 50 × sin 30° = 50 × 0.5 = <strong>25.0 N</strong> (vertical)</p>
+<p>Check: √(43.3² + 25.0²) = √(1875 + 625) = √2500 = 50 N ✓</p>
+</div>
+
+<div class="example-box">
+<h5>📝 Worked Example — Finding a Resultant Vector</h5>
+<p><strong>Question:</strong> Two forces act on a particle: 12 N east and 5 N north. Find the magnitude and direction of the resultant force.</p>
+<p><strong>Solution:</strong></p>
+<p>The forces are perpendicular, so use Pythagoras:</p>
+<p>R = √(12² + 5²) = √(144 + 25) = √169 = <strong>13 N</strong></p>
+<p>Direction: θ = tan⁻¹(5/12) = 22.6° north of east</p>
+<p><strong>Answer:</strong> 13 N at 22.6° north of east</p>
+</div>
+
+<div class="key-point">When resolving vectors on an inclined plane, always resolve <em>parallel</em> and <em>perpendicular</em> to the plane surface, not horizontal and vertical. The weight mg resolves into mg sin θ (parallel, down the plane) and mg cos θ (perpendicular, into the plane).</div>
+
+<div class="exam-question">
+<h5>🎯 Exam-Style Question</h5>
+<p><strong>Question:</strong> A block of weight 80 N rests on a plane inclined at 25° to the horizontal. Calculate the component of the weight: (a) parallel to the plane, (b) perpendicular to the plane. [2 marks]</p>
+<div class="mark-scheme">
+<h6>Mark Scheme</h6>
+<p>• (a) Parallel component = 80 × sin 25° = <strong>33.8 N</strong> (accept 34 N) (1 mark)</p>
+<p>• (b) Perpendicular component = 80 × cos 25° = <strong>72.5 N</strong> (accept 73 N) (1 mark)</p>
+<p>Penalise 1 mark total if components are swapped (cos for parallel, sin for perpendicular).</p>
+</div>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconception</h5>
+<p>Students often confuse which trigonometric function to use when resolving on inclined planes. Remember: the component <strong>parallel</strong> to the slope uses <strong>sine</strong> (it is the "opposite" side to the angle of inclination), and the component <strong>perpendicular</strong> uses <strong>cosine</strong> (the "adjacent" side). Draw the triangle every time until this becomes automatic.</p>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>SI base units: kg, m, s, A, K, mol</li>
-<li>Derived units: N = kg m s⁻², J = kg m² s⁻²</li>
-<li>Scalars: magnitude only</li>
-<li>Vectors: magnitude and direction</li>
-<li>Check units in calculations</li>
+<li>SI base units: kg, m, s, A, K, mol, cd</li>
+<li>Derived units are combinations of base units; use dimensional analysis to check equations</li>
+<li>Principle of homogeneity: both sides of a physical equation must have the same base units</li>
+<li>Scalars have magnitude only; vectors have magnitude and direction</li>
+<li>Distance ≠ displacement; speed ≠ velocity</li>
+<li>Absolute uncertainty for add/subtract; fractional uncertainty for multiply/divide</li>
+<li>Resolve vectors: Vₓ = V cos θ, Vᵧ = V sin θ</li>
+<li>On inclined planes: parallel = mg sin θ, perpendicular = mg cos θ</li>
 </ul>
 </div>
+
 <div class="exam-tips">
-<h2>💡 Exam Tips</h2>
+<h2>💡 Examiner Tips</h2>
 <ul>
-<li>Always include units in calculations</li>
-<li>Use base units for unit analysis</li>
-<li>Vectors require direction (use arrows or angles)</li>
-<li>Significant figures: match least precise measurement</li>
+<li>Always include units in every calculation step — method marks often depend on correct unit handling</li>
+<li>Write base units using index notation (kg·m·s⁻²) not solidus (kg·m/s²) in dimensional analysis questions</li>
+<li>When asked for "base units", never include derived unit names like N, J, or W — always expand to kg, m, s, A</li>
+<li>For vector problems, always draw a labelled diagram showing the vectors and angle</li>
+<li>Define your positive direction before solving problems with vectors</li>
+<li>Round uncertainties to 1 significant figure, and match the measured value to that precision</li>
+<li>Read the question carefully: does it ask for magnitude only, or magnitude <em>and</em> direction?</li>
+<li>When combining percentage uncertainties, add them for multiplication/division — don't average them</li>
 </ul>
 </div>
 </div>

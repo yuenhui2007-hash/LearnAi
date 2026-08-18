@@ -53,6 +53,16 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -74,8 +84,10 @@
 <h2>📑 Contents</h2>
 <ol>
 <li><a href="#section-1">Enzyme Structure and Function</a></li>
-<li><a href="#section-2">Factors Affecting Enzyme Activity</a></li>
-<li><a href="#section-3">Inhibition</a></li>
+<li><a href="#section-2">The Mechanism of Enzyme Action</a></li>
+<li><a href="#section-3">Factors Affecting Enzyme Activity</a></li>
+<li><a href="#section-4">Inhibition</a></li>
+<li><a href="#section-5">Industrial and Medical Applications</a></li>
 </ol>
 </div>
 
@@ -85,62 +97,294 @@
 <h3>Enzyme Structure and Function</h3>
 </div>
 <div class="topic-content">
-<div class="key-point">Enzymes are globular proteins that catalyse specific reactions. They have an active site complementary to the substrate.</div>
-<div class="formula-box">Enzyme + Substrate → Enzyme-Substrate Complex → Enzyme + Products</div>
+<div class="key-point">Enzymes are globular proteins that act as biological catalysts, speeding up metabolic reactions without being consumed. They are highly specific due to the precise 3D shape of their active site.</div>
+
+<div class="definition-box">
+<strong>Enzyme:</strong> A biological catalyst that increases the rate of a chemical reaction by lowering the activation energy, without being used up in the process.
+</div>
+
+<h4>Properties of Enzymes</h4>
+<ul>
+<li><strong>Catalytic:</strong> Enzymes speed up reactions by providing an alternative reaction pathway with a lower activation energy.</li>
+<li><strong>Specific:</strong> Each enzyme catalyses only one type of reaction (or a narrow range of similar reactions) because its active site has a precise complementary shape to its substrate(s).</li>
+<li><strong>Not consumed:</strong> Enzymes are unchanged by the reaction and can be reused many times.</li>
+<li><strong>Work in small quantities:</strong> Because they are reusable, only tiny amounts are needed.</li>
+<li><strong>Sensitive to conditions:</strong> Enzyme activity is affected by temperature, pH, and substrate concentration.</li>
+<li><strong>Can be inhibited:</strong> Molecules that bind to enzymes can reduce or stop their activity.</li>
+</ul>
+
+<h4>The Active Site</h4>
+<p>The <strong>active site</strong> is a specific region of the enzyme where the substrate binds and the reaction occurs. It is formed by the folding of the polypeptide chain (tertiary structure) and has a unique 3D shape determined by the primary structure (amino acid sequence).</p>
+<ul>
+<li>The active site is relatively small compared to the overall enzyme size.</li>
+<li>It contains <strong> catalytic residues</strong> — amino acid R groups that directly participate in bond making and breaking.</li>
+<li>The shape and chemical properties of the active site are complementary to the substrate.</li>
+</ul>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Enzyme Replacement Therapy</h5>
+<p>People with genetic enzyme deficiencies can be treated with enzyme replacement therapy (ERT). For example, patients with Gaucher disease (deficiency of glucocerebrosidase) receive regular infusions of the missing enzyme produced using recombinant DNA technology. This prevents the buildup of toxic substrates in cells.</p>
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Factors Affecting Enzyme Activity</h3>
+<h3>The Mechanism of Enzyme Action</h3>
 </div>
 <div class="topic-content">
-<table class="data-table">
-<tr><th>Factor</th><th>Effect</th><th>Optimum</th></tr>
-<tr><td>Temperature</td><td>Increases rate up to optimum, then denatures</td><td>37°C for human enzymes</td></tr>
-<tr><td>pH</td><td>Each enzyme has specific optimum pH</td><td>Pepsin: pH 2; Trypsin: pH 8</td></tr>
-<tr><td>Substrate concentration</td><td>Rate increases until enzymes saturated</td><td>Vmax</td></tr>
-<tr><td>Enzyme concentration</td><td>Rate proportional to enzyme concentration</td><td>—</td></tr>
-</table>
+<h4>Lock and Key Model</h4>
+<p>Proposed by Emil Fischer in 1894, this model suggests that the active site has a rigid, pre-formed shape that exactly fits the substrate, like a lock and key.</p>
+<ul>
+<li>The substrate fits precisely into the active site.</li>
+<li>Enzyme-substrate complex forms.</li>
+<li>Reaction occurs, products are released.</li>
+<li>Enzyme returns to its original shape.</li>
+</ul>
+
+<h4>Induced Fit Model</h4>
+<p>Proposed by Daniel Koshland in 1958, this is the currently accepted model. The active site is not rigid but flexible. When the substrate binds, the enzyme changes shape slightly to mould around the substrate, creating a more precise fit.</p>
+<ul>
+<li>The active site is flexible and changes shape upon substrate binding.</li>
+<li>This "induced fit" brings catalytic residues into optimal positions.</li>
+<li>The enzyme may strain substrate bonds, making them easier to break.</li>
+<li>This explains why some enzymes can catalyse reactions with slightly different substrates.</li>
+</ul>
+
+<div class="formula-box">General enzyme reaction:<br>
+E + S ⇌ ES → E + P<br>
+Where: E = enzyme, S = substrate, ES = enzyme-substrate complex, P = product</div>
+
+<div class="diagram-box">
+<h5>📝 Annotated Diagram Description: Enzyme-Substrate Complex</h5>
+<p>When describing enzyme action in an exam:</p>
+<ol>
+<li>Draw the enzyme as a globular protein with a cleft (active site).</li>
+<li>Show the substrate molecule fitting into the active site.</li>
+<li>Label the active site and explain that its shape is complementary to the substrate.</li>
+<li>Show the products leaving the active site after the reaction.</li>
+<li>Emphasise that the enzyme is unchanged and can catalyse another reaction.</li>
+</ol>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Explaining Enzyme Specificity</h5>
+<p><strong>Question:</strong> Explain why enzymes are specific to particular substrates. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Enzymes have an active site with a specific 3D shape determined by the tertiary structure (1).</li>
+<li>The active site is complementary in shape and chemical properties to the substrate (1).</li>
+<li>Only the correct substrate can bind to the active site and form an enzyme-substrate complex; other molecules do not fit (1).</li>
+</ul>
+</div>
+
+<div class="misconception-box">
+<strong>Common Misconception:</strong> Some students describe the enzyme as being "used up" in the reaction. Enzymes are catalysts and are NOT consumed. They are released unchanged at the end of the reaction and can be used again.
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
+<h3>Factors Affecting Enzyme Activity</h3>
+</div>
+<div class="topic-content">
+<h4>Temperature</h4>
+<p>As temperature increases, enzyme activity increases up to an optimum, then rapidly decreases:</p>
+<ul>
+<li><strong>Low temperatures:</strong> Molecules have less kinetic energy, so fewer successful collisions between enzyme and substrate. Reactions are slow but enzymes are not denatured.</li>
+<li><strong>Increasing temperature:</strong> More kinetic energy → more frequent collisions with sufficient energy → reaction rate increases (Q₁₀ ≈ 2 for every 10°C rise).</li>
+<li><strong>Optimum temperature:</strong> The temperature at which enzyme activity is maximal. For most human enzymes, this is approximately 37°C (body temperature).</li>
+<li><strong>Above optimum:</strong> Excess heat breaks hydrogen bonds and ionic bonds that maintain the tertiary structure. The active site changes shape, and the enzyme can no longer bind substrate. This is called <strong>denaturation</strong> and is usually irreversible.</li>
+</ul>
+
+<div class="key-point">Denaturation is the irreversible loss of the 3D structure (tertiary structure) of a protein, caused by breaking of bonds that maintain the shape. The primary structure (peptide bonds) remains intact.</div>
+
+<h4>pH</h4>
+<p>Each enzyme has an optimal pH at which it works best:</p>
+<ul>
+<li>pH affects the ionisation of amino acid R groups in the active site and throughout the enzyme.</li>
+<li>At the optimal pH, the active site has the correct charge distribution for substrate binding.</li>
+<li>Extreme pH values alter the ionisation of charged R groups, breaking ionic bonds and changing the active site shape → denaturation.</li>
+<li><strong>Pepsin</strong> (stomach enzyme) has an optimum pH of ~2 (acidic).</li>
+<li><strong>Trypsin</strong> (small intestine enzyme) has an optimum pH of ~8 (alkaline).</li>
+<li><strong>Intracellular enzymes</strong> generally have an optimum pH of ~7 (neutral).</li>
+</ul>
+
+<h4>Substrate Concentration</h4>
+<ul>
+<li>At low substrate concentration, the reaction rate is directly proportional to substrate concentration — more substrate means more enzyme-substrate collisions.</li>
+<li>As substrate concentration increases, the rate increases but eventually levels off.</li>
+<li>At <strong>Vmax</strong> (maximum velocity), all active sites are occupied (enzyme saturation). Adding more substrate does not increase the rate.</li>
+</ul>
+
+<h4>Enzyme Concentration</h4>
+<ul>
+<li>The reaction rate is directly proportional to enzyme concentration, provided substrate is in excess.</li>
+<li>More enzyme molecules mean more active sites available to bind substrate.</li>
+<li>The graph of rate vs enzyme concentration is a straight line through the origin.</li>
+</ul>
+
+<table class="data-table">
+<tr><th>Factor</th><th>Effect on Rate</th><th>Optimum/Key Point</th><th>Mechanism</th></tr>
+<tr><td>Temperature</td><td>Increases to optimum, then denatures</td><td>~37°C for human enzymes</td><td>Kinetic energy and bond stability</td></tr>
+<tr><td>pH</td><td>Each enzyme has specific optimum; extremes denature</td><td>Pepsin: pH 2; Trypsin: pH 8; Most: pH 7</td><td>Ionisation of R groups affects active site shape</td></tr>
+<tr><td>Substrate concentration</td><td>Rate increases until saturation (Vmax)</td><td>Vmax = all active sites occupied</td><td>Probability of enzyme-substrate collisions</td></tr>
+<tr><td>Enzyme concentration</td><td>Rate proportional to enzyme concentration (if substrate in excess)</td><td>Linear relationship</td><td>More active sites available</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Effect of Temperature on Enzyme Activity</h5>
+<p><strong>Question:</strong> Explain why increasing temperature above the optimum causes a rapid decrease in enzyme activity. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>High temperatures provide enough energy to break the hydrogen bonds and ionic bonds that maintain the enzyme's tertiary structure (1).</li>
+<li>This causes the active site to change shape (denaturation), so the substrate can no longer bind (1).</li>
+<li>Denaturation is usually irreversible, so the enzyme cannot function even if the temperature is reduced (1).</li>
+</ul>
+</div>
+
+<div class="exam-question">
+<h5>📋 Exam-Style Question</h5>
+<p><strong>Question:</strong> Describe and explain the effect of substrate concentration on the rate of an enzyme-catalysed reaction. [4 marks]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong>
+<ul>
+<li>At low substrate concentration, rate is proportional to substrate concentration (1)</li>
+<li>Because more substrate molecules means more frequent collisions with enzyme active sites (1)</li>
+<li>As substrate concentration increases further, the rate levels off (1)</li>
+<li>Because all active sites are occupied (enzyme saturation / Vmax reached) (1)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
 <h3>Inhibition</h3>
 </div>
 <div class="topic-content">
+<p>Inhibitors are molecules that reduce the rate of enzyme-catalysed reactions. They are important in regulating metabolism and are the basis of many drugs and poisons.</p>
+
+<h4>Competitive Inhibition</h4>
+<ul>
+<li>The inhibitor molecule has a similar shape to the substrate and competes for the active site.</li>
+<li>It binds reversibly to the active site, preventing the substrate from binding.</li>
+<li>Increasing substrate concentration can overcome competitive inhibition (outcompetes the inhibitor).</li>
+<li><strong>Vmax remains unchanged</strong> — at high substrate concentrations, substrate outcompetes inhibitor.</li>
+<li><strong>Km increases</strong> — more substrate is needed to reach half Vmax.</li>
+<li><strong>Example:</strong> Malonate inhibits succinate dehydrogenase because it resembles succinate (the substrate).</li>
+</ul>
+
+<h4>Non-Competitive Inhibition</h4>
+<ul>
+<li>The inhibitor binds to an <strong>allosteric site</strong> (a site other than the active site) on the enzyme.</li>
+<li>Binding causes a conformational change in the active site, reducing or preventing substrate binding.</li>
+<li>Increasing substrate concentration <strong>cannot</strong> overcome non-competitive inhibition.</li>
+<li><strong>Vmax decreases</strong> — fewer functional enzymes are available.</li>
+<li><strong>Km remains unchanged</strong> — the active sites that are functional still bind substrate with the same affinity.</li>
+<li>May be reversible or irreversible.</li>
+<li><strong>Example:</strong> Cyanide binds to the copper ion in cytochrome c oxidase, blocking the electron transport chain.</li>
+</ul>
+
 <table class="data-table">
-<tr><th>Type</th><th>Mechanism</th><th>Reversibility</th></tr>
-<tr><td>Competitive</td><td>Inhibitor competes for active site</td><td>Reversible (increase substrate to overcome)</td></tr>
-<tr><td>Non-competitive</td><td>Inhibitor binds to allosteric site</td><td>Usually irreversible</td></tr>
+<tr><th>Feature</th><th>Competitive Inhibition</th><th>Non-Competitive Inhibition</th></tr>
+<tr><td>Binding site</td><td>Active site</td><td>Allosteric site</td></tr>
+<tr><td>Inhibitor shape</td><td>Similar to substrate</td><td>Not similar to substrate</td></tr>
+<tr><td>Reversibility</td><td>Usually reversible</td><td>Usually irreversible (or slowly reversible)</td></tr>
+<tr><td>Effect of increasing [S]</td><td>Overcomes inhibition</td><td>No effect</td></tr>
+<tr><td>Vmax</td><td>Unchanged</td><td>Decreased</td></tr>
+<tr><td>Km</td><td>Increased</td><td>Unchanged</td></tr>
 </table>
+
 <div class="example-box">
 <h5>Worked Example: Competitive Inhibition</h5>
-<p>Malonate inhibits succinate dehydrogenase because it has a similar shape to succinate (the substrate).</p>
-<p>Increasing succinate concentration overcomes the inhibition.</p>
+<p><strong>Question:</strong> Malonate is a competitive inhibitor of the enzyme succinate dehydrogenase. Explain how malonate inhibits this enzyme and how the inhibition can be overcome. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Malonate has a similar molecular shape to succinate (the substrate), so it competes for the active site of succinate dehydrogenase (1).</li>
+<li>When malonate binds to the active site, succinate cannot bind, so the reaction rate decreases (1).</li>
+<li>Increasing the concentration of succinate overcomes the inhibition because succinate outcompetes malonate for the active sites (1).</li>
+</ul>
+</div>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Drug Design</h5>
+<p>Many drugs work by enzyme inhibition. For example, statins competitively inhibit HMG-CoA reductase, the enzyme that synthesises cholesterol in the liver. By blocking this enzyme, statins reduce blood cholesterol levels and lower the risk of cardiovascular disease. Understanding competitive vs non-competitive inhibition helps pharmacologists design more effective and specific drugs.</p>
 </div>
 </div>
 </div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>Industrial and Medical Applications</h3>
+</div>
+<div class="topic-content">
+<h4>Immobilised Enzymes</h4>
+<p>Enzymes can be attached to an inert matrix or enclosed in a permeable membrane, allowing them to be reused and making the process more efficient.</p>
+<ul>
+<li><strong>Methods:</strong> Adsorption onto a surface, covalent bonding to a support, entrapment in a gel (e.g., alginate beads), encapsulation in a semi-permeable membrane.</li>
+<li><strong>Advantages:</strong> Enzymes can be reused; product is not contaminated with enzyme; enzymes are more stable; continuous flow processes are possible.</li>
+<li><strong>Disadvantages:</strong> Immobilisation can reduce enzyme activity; substrate must diffuse to the enzyme; initial setup costs are high.</li>
+</ul>
+
+<h4>Examples of Industrial Enzyme Use</h4>
+<table class="data-table">
+<tr><th>Application</th><th>Enzyme(s)</th><th>Use</th></tr>
+<tr><td>Biological washing powders</td><td>Proteases, lipases, amylases</td><td>Break down protein, fat, and starch stains at low temperatures</td></tr>
+<tr><td>Dairy industry</td><td>Lactase</td><td>Converts lactose to glucose and galactose for lactose-free milk</td></tr>
+<tr><td>Food industry</td><td>Pectinase</td><td>Clarifies fruit juice by breaking down pectin</td></tr>
+<tr><td>Food industry</td><td>Amylase</td><td>Converts starch to sugars in bread making</td></tr>
+<tr><td>Medical diagnostics</td><td>Glucose oxidase</td><td>Biosensors for blood glucose monitoring</td></tr>
+<tr><td>Brewing</td><td>Amylase, zymase (yeast)</td><td>Convert starch to sugars, then ferment to ethanol</td></tr>
+</table>
+
+<div class="exam-question">
+<h5>📋 Exam-Style Question</h5>
+<p><strong>Question:</strong> Compare competitive and non-competitive inhibition of enzymes. [4 marks]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong>
+<ul>
+<li>Competitive inhibitors bind to the active site; non-competitive bind to an allosteric site (1)</li>
+<li>Competitive inhibitors have a similar shape to the substrate; non-competitive do not (1)</li>
+<li>Increasing substrate concentration overcomes competitive but not non-competitive inhibition (1)</li>
+<li>Vmax unchanged in competitive, decreased in non-competitive; Km increased in competitive, unchanged in non-competitive (1)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Enzymes are biological catalysts</li>
-<li>Active site is specific to substrate (lock and key / induced fit)</li>
-<li>Optimum temperature: 37°C for most human enzymes</li>
-<li>Competitive inhibition: inhibitor competes for active site</li>
-<li>Non-competitive inhibition: inhibitor binds to allosteric site</li>
+<li>Enzymes are biological catalysts; globular proteins with specific active sites</li>
+<li>Lock and key model: rigid active site; Induced fit model: flexible active site changes shape upon substrate binding</li>
+<li>Temperature: rate increases to optimum (~37°C), then denaturation occurs</li>
+<li>pH: each enzyme has an optimum; extremes denature by altering ionisation of R groups</li>
+<li>Substrate concentration: rate increases to Vmax (all active sites occupied)</li>
+<li>Enzyme concentration: rate proportional to enzyme concentration (if substrate in excess)</li>
+<li>Competitive inhibition: inhibitor competes for active site; reversible; Vmax unchanged, Km increased</li>
+<li>Non-competitive inhibition: inhibitor binds allosteric site; not overcome by more substrate; Vmax decreased, Km unchanged</li>
+<li>Immobilised enzymes: attached to inert support; reusable; used in washing powders, food industry, biosensors</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Always mention specificity of active site</li>
-<li>Draw graphs for temperature and pH effects</li>
+<li>Always mention specificity of active site — shape complementary to substrate</li>
+<li>Draw graphs for temperature and pH effects — both show an optimum with decline on either side, but pH decline is usually more symmetrical</li>
 <li>Competitive inhibition: Vmax unchanged, Km increases</li>
 <li>Non-competitive inhibition: Vmax decreases, Km unchanged</li>
+<li>Remember: denaturation is the loss of tertiary structure, not primary structure (peptide bonds remain intact)</li>
+<li>In temperature questions, explain both the kinetic energy increase at lower temperatures AND bond breaking at higher temperatures</li>
+<li>For pH, explain ionisation changes of amino acid R groups in the active site</li>
+<li>Immobilised enzymes: list advantages (reusable, stable, pure product) and disadvantages (reduced activity, diffusion limitations)</li>
 </ul>
 </div>
 </div>

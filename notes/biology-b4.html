@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cell Membranes & Transport — Biology Notes | LearnAI</title>
 <meta name="description" content="Cell Membranes & Transport notes for Cambridge 9700 · 0610. Detailed study notes and last-minute summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,37 @@
 .summary-box ul li { color: #78350f; }
 .exam-tips { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0; }
 .exam-tips h2 { color: #1e40af; border-bottom-color: #3b82f6; }
-@media (max-width: 768px) { .notes-container { padding: 24px; } }
+.topic-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.topic-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #3b82f6; color: white; font-weight: 700; font-size: 1.1rem; border-radius: 10px; flex-shrink: 0; }
+.topic-header h3 { font-size: 1.4rem; color: #1e293b; margin: 0; }
+.topic-content { padding-left: 56px; }
+.topic-content h4 { font-size: 1.1rem; color: #334155; margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; }
+.topic-content h5 { font-size: 0.95rem; color: #475569; margin: 16px 0 8px; font-weight: 600; }
+.key-point { background: #fef9c3; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #eab308; margin: 20px 0; color: #854d0e; font-weight: 500; }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.data-table th { background: #f1f5f9; padding: 12px 16px; text-align: left; font-weight: 600; color: #334155; border: 1px solid #e2e8f0; }
+.data-table td { padding: 12px 16px; color: #475569; border: 1px solid #e2e8f0; }
+.data-table tr:nth-child(even) { background: #f8fafc; }
+.example-box { background: #f0fdf4; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #22c55e; margin: 20px 0; }
+.example-box h5 { color: #15803d; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.example-box p { margin-bottom: 8px; color: #166534; }
+.process-box { background: #f0f9ff; padding: 20px 24px; border-radius: 10px; border-left: 4px solid #0ea5e9; margin: 20px 0; }
+.process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.process-box ol { margin: 8px 0; padding-left: 20px; }
+.process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.definition-box { background: #fdf2f8; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ec4899; margin: 16px 0; }
+.definition-box strong { color: #be185d; }
+.misconception-box { background: #fef2f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #ef4444; margin: 20px 0; color: #991b1b; }
+.misconception-box strong { color: #b91c1c; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #cbd5e1; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; border-left: 3px solid #22c55e; }
+.mark-scheme strong { color: #15803d; }
+.real-world { background: #ecfdf5; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #10b981; margin: 20px 0; color: #065f46; }
+.real-world h5 { color: #047857; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 768px) { .notes-container { padding: 24px; } .topic-content { padding-left: 0; } }
 </style>
 </head>
 <body>
@@ -66,82 +96,270 @@
 
 <div class="notes-section">
 <h2>Detailed Notes</h2>
-<h3>1. Fluid Mosaic</h3><p>Phospholipid bilayer + intrinsic/extrinsic proteins + cholesterol + glycoproteins/glycolipids.</p>
-<h3>2. Diffusion</h3><ul><li>Simple: small non-polar (O₂, CO₂).</li><li>Facilitated: through channels/carriers (glucose, ions).</li></ul>
-<h3>3. Osmosis</h3><p>Water from high Ψ to low Ψ. Ψ = Ψs + Ψp. Pure water Ψ = 0.</p>
-<h3>4. Active Transport</h3><p>Against gradient. Needs ATP and carrier proteins.</p>
-<h3>5. Bulk Transport</h3><ul><li>Endocytosis: bulk uptake.</li><li>Exocytosis: bulk export.</li></ul>
+
+<div class="topic-block" id="section-1">
+<div class="topic-header">
+<span class="topic-number">1</span>
+<h3>Fluid Mosaic Model</h3>
 </div>
-<div class="notes-section">
-<h3>Experimental Design</h3>
+<div class="topic-content">
+<p>The <strong>fluid mosaic model</strong> describes the structure of the cell surface membrane as a dynamic, flexible structure composed of lipids, proteins, and carbohydrates.</p>
+
+<div class="definition-box">
+<strong>Fluid mosaic model:</strong> A model of membrane structure in which the membrane is a bilayer of phospholipids with embedded proteins, and both lipids and proteins are free to move laterally within the membrane.
+</div>
+
+<h4>Components of the Membrane</h4>
 <ul>
-<li><strong>Variables:</strong> Independent (what you change), dependent (what you measure), controlled (kept constant)</li>
-<li><strong>Validity:</strong> Does the experiment test what it claims to test?</li>
-<li><strong>Reliability:</strong> Repeatable results — repeat experiments, calculate means</li>
-<li><strong>Accuracy:</strong> Close to true value — use appropriate precision instruments</li>
+<li><strong>Phospholipid bilayer:</strong> The basic framework. Hydrophilic heads face the aqueous environment on both sides; hydrophobic tails face each other in the membrane interior. This creates a barrier to water-soluble substances.</li>
+<li><strong>Intrinsic (integral) proteins:</strong> Span the entire membrane (transmembrane proteins). Many are channel proteins or carrier proteins involved in transport. Some are enzymes or receptors.</li>
+<li><strong>Extrinsic (peripheral) proteins:</strong> Found on the inner or outer surface, attached to intrinsic proteins or phospholipid heads. Often involved in cell signalling or maintaining cell structure.</li>
+<li><strong>Cholesterol:</strong> Found in animal cell membranes. Its rigid steroid ring reduces phospholipid movement at high temperatures (reducing fluidity) and prevents tight packing at low temperatures (maintaining fluidity). It also reduces water permeability.</li>
+<li><strong>Glycoproteins:</strong> Proteins with carbohydrate chains attached to the outer surface. Involved in cell recognition, cell adhesion, and as receptors for hormones and neurotransmitters.</li>
+<li><strong>Glycolipids:</strong> Lipids with carbohydrate chains attached to the outer surface. Also involved in cell recognition and as antigens (e.g., ABO blood group antigens).</li>
+</ul>
+
+<div class="key-point">The membrane is described as "fluid" because phospholipids and proteins can move laterally within the layer. It is a "mosaic" because proteins are scattered throughout the phospholipid bilayer like tiles in a mosaic.</div>
+
+<div class="diagram-box">
+<h5>📝 Annotated Diagram Description: Cell Surface Membrane</h5>
+<p>In an exam, draw and label:</p>
+<ul>
+<li>Phospholipid bilayer with hydrophilic heads (circles) and hydrophobic tails (lines)</li>
+<li>Intrinsic protein spanning the membrane (channel or carrier)</li>
+<li>Extrinsic protein on the surface</li>
+<li>Cholesterol molecule embedded between phospholipids</li>
+<li>Glycoprotein and glycolipid with carbohydrate chains on the outer surface</li>
+<li>Label the cytoplasm side and extracellular fluid side</li>
 </ul>
 </div>
-<div class="notes-section">
-<h3>Microscopy Techniques</h3>
+</div>
+</div>
+
+<div class="topic-block" id="section-2">
+<div class="topic-header">
+<span class="topic-number">2</span>
+<h3>Diffusion</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Diffusion:</strong> The net movement of molecules or ions from a region of higher concentration to a region of lower concentration down a concentration gradient, as a result of random motion. No metabolic energy is required.
+</div>
+
+<h4>Factors Affecting Rate of Diffusion</h4>
 <ul>
-<li><strong>Light microscope:</strong> Max magnification ~×1500, resolution ~200 nm</li>
-<li><strong>Electron microscope:</strong> TEM (internal structure) vs SEM (surface detail)</li>
-<li><strong>Staining:</strong> Methylene blue (nuclei), iodine (starch), eosin (cytoplasm)</li>
-<li><strong>Cell fractionation:</strong> Homogenisation → filtration → ultracentrifugation</li>
+<li><strong>Concentration gradient:</strong> Steeper gradient = faster diffusion.</li>
+<li><strong>Thickness of exchange surface:</strong> Thinner surface = faster diffusion (shorter distance).</li>
+<li><strong>Surface area:</strong> Larger surface area = faster diffusion (more molecules can cross simultaneously).</li>
+<li><strong>Temperature:</strong> Higher temperature = more kinetic energy = faster diffusion.</li>
+<li><strong>Size of molecule:</strong> Smaller molecules diffuse faster.</li>
 </ul>
-<div class="key-point">Resolution is the ability to distinguish two separate points. Electron microscopes have much higher resolution than light microscopes because electrons have shorter wavelengths than visible light.</div>
+
+<h4>Simple Diffusion</h4>
+<p>Small, non-polar molecules can pass directly through the phospholipid bilayer:</p>
+<ul>
+<li>Oxygen (O₂), carbon dioxide (CO₂), nitrogen (N₂)</li>
+<li>Steroid hormones (lipid-soluble)</li>
+<li>Some small polar molecules: water (slowly), urea, glycerol</li>
+</ul>
+
+<h4>Facilitated Diffusion</h4>
+<p>Larger or charged molecules cannot pass through the hydrophobic core of the membrane. They cross using transport proteins:</p>
+<ul>
+<li><strong>Channel proteins:</strong> Form aqueous pores through the membrane. Specific to certain ions (e.g., voltage-gated Na⁺ channels, aquaporins for water). No conformational change needed.</li>
+<li><strong>Carrier proteins:</strong> Bind the molecule, change shape, and release it on the other side. Example: glucose carrier (GLUT) proteins. Slower than channel proteins but can transport larger molecules.</li>
+</ul>
+
+<div class="key-point">Facilitated diffusion is still passive — it does not require ATP. The movement is down a concentration gradient. The proteins simply provide a pathway for molecules that cannot cross the lipid bilayer directly.</div>
+
+<div class="example-box">
+<h5>Worked Example: Factors Affecting Diffusion</h5>
+<p><strong>Question:</strong> Explain why oxygen can diffuse directly through the cell membrane but glucose cannot. [2 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Oxygen is a small, non-polar molecule that can dissolve in and pass through the hydrophobic interior of the phospholipid bilayer (1).</li>
+<li>Glucose is a large, polar molecule that cannot pass through the hydrophobic core and requires a carrier protein for facilitated diffusion (1).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-3">
+<div class="topic-header">
+<span class="topic-number">3</span>
+<h3>Osmosis</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Osmosis:</strong> The net movement of water molecules from a region of higher water potential to a region of lower water potential across a partially permeable membrane, down a water potential gradient.
+</div>
+
+<h4>Water Potential (Ψ)</h4>
+<ul>
+<li>Water potential is the tendency of water molecules to move from one place to another.</li>
+<li>Pure water has the highest water potential, defined as <strong>zero</strong> (0 kPa).</li>
+<li>Adding solutes <strong>lowers</strong> the water potential (makes it more negative).</li>
+<li>Water potential = solute potential (Ψs) + pressure potential (Ψp).</li>
+<li>Water always moves from less negative (higher) to more negative (lower) water potential.</li>
+</ul>
+
+<div class="formula-box">Ψ = Ψs + Ψp<br>
+Ψs = solute potential (always negative or zero)<br>
+Ψp = pressure potential (usually positive, zero in pure water at atmospheric pressure)</div>
+
+<h4>Effects on Animal Cells</h4>
+<table class="data-table">
+<tr><th>Solution</th><th>Water Potential</th><th>Effect on Animal Cell</th></tr>
+<tr><td>Hypotonic (e.g., pure water)</td><td>Higher than cell cytoplasm</td><td>Water enters by osmosis; cell swells and may burst (lysis)</td></tr>
+<tr><td>Isotonic (e.g., 0.9% NaCl)</td><td>Equal to cell cytoplasm</td><td>No net water movement; cell maintains normal shape</td></tr>
+<tr><td>Hypertonic (e.g., concentrated salt)</td><td>Lower than cell cytoplasm</td><td>Water leaves by osmosis; cell shrinks (crenation)</td></tr>
+</table>
+
+<h4>Effects on Plant Cells</h4>
+<table class="data-table">
+<tr><th>Solution</th><th>Effect on Plant Cell</th></tr>
+<tr><td>Hypotonic</td><td>Water enters; cell swells but does not burst due to cell wall; becomes <strong>turgid</strong> (turgor pressure supports plant)</td></tr>
+<tr><td>Isotonic</td><td>No net water movement; cell is <strong>flaccid</strong> (plant wilts)</td></tr>
+<tr><td>Hypertonic</td><td>Water leaves; cytoplasm pulls away from cell wall (<strong>plasmolysis</strong>); plant wilts severely</td></tr>
+</table>
+
+<div class="example-box">
+<h5>Worked Example: Water Potential Calculation</h5>
+<p><strong>Question:</strong> A cell has a solute potential of -400 kPa and a pressure potential of 200 kPa. Calculate the water potential of the cell. [1 mark]</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">Ψ = Ψs + Ψp = -400 + 200 = -200 kPa</div>
+</div>
+
+<div class="misconception-box">
+<strong>Common Misconception:</strong> Students often say water moves from "high concentration to low concentration." This is imprecise. Water moves from <em>higher water potential</em> to <em>lower water potential</em>. A concentrated solution has a <em>lower</em> water potential (more negative) than pure water, even though it has a higher solute concentration.
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Active Transport</h3>
+</div>
+<div class="topic-content">
+<div class="definition-box">
+<strong>Active transport:</strong> The movement of molecules or ions across a membrane against a concentration gradient, using energy from ATP and carrier proteins.
+</div>
+
+<ul>
+<li><strong>Requires metabolic energy (ATP):</strong> Usually directly hydrolysed by the carrier protein (ATPase activity).</li>
+<li><strong>Against concentration gradient:</strong> Moves substances from low to high concentration.</li>
+<li><strong>Uses carrier proteins:</strong> Specific to the molecule being transported.</li>
+<li><strong>Saturable:</strong> Rate reaches a maximum (Vmax) when all carriers are occupied.</li>
+</ul>
+
+<h4>Examples of Active Transport</h4>
+<ul>
+<li><strong>Na⁺/K⁺ pump (sodium-potassium ATPase):</strong> Found in all animal cell membranes. Pumps 3 Na⁺ out and 2 K⁺ in, maintaining electrochemical gradients essential for nerve impulses and secondary active transport.</li>
+<li><strong>Calcium pump (Ca²⁺-ATPase):</strong> Pumps Ca²⁺ into the sarcoplasmic reticulum of muscle cells, allowing muscle relaxation.</li>
+<li><strong>Proton pump (H⁺-ATPase):</strong> In plant cells, pumps H⁺ out of the cell, creating a proton gradient used for co-transport of sugars and amino acids.</li>
+<li><strong>Glucose absorption in ileum:</strong> Na⁺-glucose co-transport uses the Na⁺ gradient (established by the Na⁺/K⁺ pump) to drive glucose uptake against its concentration gradient.</li>
+</ul>
+
+<div class="example-box">
+<h5>Worked Example: Sodium-Potassium Pump</h5>
+<p><strong>Question:</strong> Explain why the sodium-potassium pump is described as an example of active transport. [3 marks]</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>It moves Na⁺ and K⁺ ions against their concentration gradients (Na⁺ out, K⁺ in) (1).</li>
+<li>It requires energy from ATP hydrolysis to change the shape of the pump protein (1).</li>
+<li>It is a carrier protein that is specific to Na⁺ and K⁺ ions (1).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-5">
+<div class="topic-header">
+<span class="topic-number">5</span>
+<h3>Bulk Transport</h3>
+</div>
+<div class="topic-content">
+<h4>Endocytosis</h4>
+<p>The bulk uptake of material into the cell by invagination of the cell membrane:</p>
+<ul>
+<li><strong>Phagocytosis ("cell eating"):</strong> Solid particles are engulfed. The membrane extends around the particle, forming a phagosome that fuses with a lysosome for digestion. Example: white blood cells (phagocytes) engulfing bacteria.</li>
+<li><strong>Pinocytosis ("cell drinking"):</strong> Droplets of extracellular fluid are taken in. Non-specific uptake of dissolved substances.</li>
+<li><strong>Receptor-mediated endocytosis:</strong> Specific molecules bind to receptors on the cell surface, triggering invagination. Example: uptake of cholesterol via LDL receptors.</li>
+</ul>
+
+<h4>Exocytosis</h4>
+<p>The bulk export of material from the cell:</p>
+<ul>
+<li>Vesicles containing substances (e.g., hormones, neurotransmitters, enzymes) fuse with the cell membrane.</li>
+<li>The vesicle membrane becomes part of the cell membrane.</li>
+<li>Requires ATP.</li>
+<li>Example: secretion of insulin by pancreatic β cells; release of acetylcholine at synapses.</li>
+</ul>
+
+<div class="key-point">Both endocytosis and exocytosis require ATP and involve the cytoskeleton (microfilaments of actin help form vesicles). They are used for molecules too large to cross the membrane by other means.</div>
+</div>
+</div>
+
+<div class="topic-block" id="section-6">
+<div class="topic-header">
+<span class="topic-number">6</span>
+<h3>Surface Area to Volume Ratio</h3>
+</div>
+<div class="topic-content">
+<p>As organisms increase in size, their surface area to volume ratio decreases. This has profound implications for transport and exchange:</p>
+<ul>
+<li>Small organisms (e.g., bacteria, single-celled protists) have a high SA:V ratio, allowing efficient exchange of materials directly across their surface.</li>
+<li>Large organisms have a low SA:V ratio, so they need specialised exchange surfaces (lungs, gills, intestines) and transport systems (blood, xylem, phloem) to maintain sufficient exchange.</li>
+</ul>
+
+<div class="formula-box">Surface Area to Volume Ratio = Surface Area / Volume<br>
+For a cube of side length L: SA = 6L², V = L³, SA:V = 6/L</div>
+
+<div class="example-box">
+<h5>Worked Example: SA:V Ratio Calculation</h5>
+<p><strong>Question:</strong> Calculate the SA:V ratio for a cube with sides of 2 cm. [2 marks]</p>
+<p><strong>Solution:</strong></p>
+<div class="formula-box">Surface area = 6 × (2)² = 24 cm²<br>Volume = (2)³ = 8 cm³<br>SA:V = 24 / 8 = 3:1 (or 3 cm⁻¹)</div>
+</div>
+
+<div class="real-world">
+<h5>🔬 Real-World Application: Adaptations for Exchange</h5>
+<p>Specialised exchange surfaces maximise SA:V ratio:</p>
+<ul>
+<li><strong>Lungs:</strong> Millions of alveoli provide ~70 m² of surface area.</li>
+<li><strong>Small intestine:</strong> Villi and microvilli increase surface area ~600-fold.</li>
+<li><strong>Root hairs:</strong> Increase surface area for water and mineral absorption.</li>
+<li><strong>Leaves:</strong> Flat, thin structure with stomata for gas exchange.</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
 <div class="summary-box">
 <h2>Last-Minute Summary</h2>
-<ul><li>Fluid mosaic: bilayer + proteins + cholesterol + glycoproteins</li><li>Simple diffusion: small non-polar; Facilitated: channels/carriers</li><li>Osmosis: water high Ψ → low Ψ</li><li>Active transport: against gradient, needs ATP</li><li>Endocytosis in, exocytosis out</li></ul>
-</div>
-
-<div class="worked-example">
-<h4>🔬 Worked Example</h4>
-<p><strong>Question:</strong> Explain how the structure of the small intestine is adapted for absorption.</p>
-<div class="solution">
-<strong>Answer:</strong><br>
-1. <strong>Villi:</strong> Finger-like projections increase surface area<br>
-2. <strong>Microvilli:</strong> Further increase surface area on epithelial cells<br>
-3. <strong>Thin walls:</strong> Single cell layer reduces diffusion distance<br>
-4. <strong>Rich blood supply:</strong> Maintains concentration gradient<br>
-5. <strong>Lacteals:</strong> Absorb fatty acids and glycerol<br>
-</div>
-</div>
-<div class="common-mistake">Confusing absorption (taking nutrients into blood) with assimilation (incorporating nutrients into cells/tissues).</div>
-<div class="key-point">Surface area to volume ratio is crucial — as organisms get larger, SA:V decreases, requiring specialised exchange surfaces.</div>
-<div class="quick-recall">
-<h4>⚡ Quick Recall</h4>
 <ul>
-<li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</li>
-<li>Enzymes: Biological catalysts; specific active site</li>
-<li>DNA replication: Semi-conservative</li>
-<li>Natural selection: Variation → selection → inheritance</li>
+<li><strong>Fluid mosaic:</strong> Phospholipid bilayer + intrinsic/extrinsic proteins + cholesterol + glycoproteins/glycolipids. Fluid because components move; mosaic because proteins are scattered.</li>
+<li><strong>Simple diffusion:</strong> Small non-polar molecules (O₂, CO₂) pass through lipid bilayer down concentration gradient.</li>
+<li><strong>Facilitated diffusion:</strong> Channel proteins (ions, water) or carrier proteins (glucose) allow larger/charged molecules to cross down concentration gradient. No ATP.</li>
+<li><strong>Osmosis:</strong> Water moves from high Ψ to low Ψ across partially permeable membrane. Pure water Ψ = 0. Solutes lower Ψ.</li>
+<li><strong>Active transport:</strong> Against gradient; needs ATP and carrier proteins. Examples: Na⁺/K⁺ pump, proton pumps, glucose co-transport.</li>
+<li><strong>Endocytosis:</strong> Bulk uptake (phagocytosis, pinocytosis). Exocytosis: bulk export. Both need ATP.</li>
+<li><strong>SA:V ratio:</strong> Decreases as size increases. Large organisms need specialised exchange surfaces and transport systems.</li>
 </ul>
 </div>
 
 <div class="exam-tips">
-
-<h2>Exam Tips</h2>
+<h2>💡 Exam Tips</h2>
 <ul>
-<li>Read the question carefully — identify exactly what is being asked.</li>
-<li>Show all working — method marks are often awarded even if the final answer is wrong.</li>
-<li>Check units — ensure your final answer has the correct unit.</li>
-<li>Use the mark scheme structure — answer in the format the examiner expects.</li>
-<li>Manage your time — don't spend too long on any single question.</li>
-</ul>
-</div>
-</div>
-<div class="external-resources">
-<button class="ext-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">🔗 External Resources</button>
-<div class="ext-content">
-<ul>
-<li><a href="https://www.biologyguide.app/" target="_blank" rel="noopener">Biology Guide</a> — A-Level biology notes</li>
-<li><a href="https://www.savemyexams.co.uk/notes/biology/" target="_blank" rel="noopener">SaveMyExams</a> — Topic questions & mark schemes</li>
-<li><a href="https://znotes.org/cie-a-level-biology-9700/" target="_blank" rel="noopener">ZNotes</a> — Condensed revision notes</li>
-<li><a href="https://www.tutorchase.com/revision-notes/biology/" target="_blank" rel="noopener">TutorChase</a> — Free revision notes</li>
-<li><a href="https://simplestudy.ie/subject/biology" target="_blank" rel="noopener">Simple Study</a> — Flashcards & past papers</li>
+<li>Always describe the fluid mosaic model in detail — phospholipid bilayer, proteins, cholesterol, glycoproteins, and explain why it's called "fluid" and "mosaic"</li>
+<li>When explaining osmosis, use the term "water potential" not "water concentration"</li>
+<li>Pure water has Ψ = 0; adding solutes makes Ψ negative. Water moves toward more negative Ψ</li>
+<li>Distinguish clearly: diffusion (any molecule, down gradient), osmosis (water only, across membrane), facilitated diffusion (needs protein, down gradient, no ATP), active transport (needs protein, against gradient, needs ATP)</li>
+<li>For active transport, always mention ATP and carrier proteins</li>
+<li>Phagocytosis is for solids; pinocytosis is for liquids</li>
+<li>Calculate SA:V carefully — show all working</li>
 </ul>
 </div>
 </div>

@@ -53,6 +53,13 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -68,45 +75,131 @@
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Atomic Structure</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
+
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
-<li><a href="#section-1">Atomic Particles</a></li>
-<li><a href="#section-2">Electronic Configuration</a></li>
-<li><a href="#section-3">Mass Spectrometry</a></li>
+<li><a href="#section-1">Atomic Particles & Nuclear Notation</a></li>
+<li><a href="#section-2">Electronic Configuration & Ionisation Energy</a></li>
+<li><a href="#section-3">Mass Spectrometry & Isotopes</a></li>
+<li><a href="#section-4">Exam-Style Questions</a></li>
 </ol>
 </div>
 
 <div class="topic-block" id="section-1">
 <div class="topic-header">
 <span class="topic-number">1</span>
-<h3>Atomic Particles</h3>
+<h3>Atomic Particles & Nuclear Notation</h3>
 </div>
 <div class="topic-content">
+<p>Every atom consists of a central nucleus containing protons and neutrons, surrounded by electrons in energy levels or shells. Understanding the properties of these subatomic particles is fundamental to all of chemistry.</p>
+
 <table class="data-table">
-<tr><th>Particle</th><th>Relative Mass</th><th>Relative Charge</th><th>Location</th></tr>
-<tr><td>Proton</td><td>1</td><td>+1</td><td>Nucleus</td></tr>
-<tr><td>Neutron</td><td>1</td><td>0</td><td>Nucleus</td></tr>
-<tr><td>Electron</td><td>1/1836</td><td>-1</td><td>Electron shells</td></tr>
+<tr><th>Particle</th><th>Relative Mass</th><th>Relative Charge</th><th>Location</th><th>Absolute Mass (kg)</th></tr>
+<tr><td>Proton</td><td>1</td><td>+1</td><td>Nucleus</td><td>1.673 × 10⁻²⁷</td></tr>
+<tr><td>Neutron</td><td>1</td><td>0</td><td>Nucleus</td><td>1.675 × 10⁻²⁷</td></tr>
+<tr><td>Electron</td><td>1/1836 ≈ 0.0005</td><td>-1</td><td>Electron shells</td><td>9.109 × 10⁻³¹</td></tr>
 </table>
-<div class="formula-box">Mass number (A) = protons + neutrons<br>Atomic number (Z) = number of protons<br>Isotopes: same Z, different A</div>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Atomic number (Z):</strong> The number of protons in the nucleus of an atom. It defines the element.</p>
+<p><strong>Mass number (A):</strong> The total number of protons and neutrons in the nucleus.</p>
+<p><strong>Isotopes:</strong> Atoms of the same element (same Z) with different numbers of neutrons (different A).</p>
+<p><strong>Relative atomic mass (Aᵣ):</strong> The weighted average mass of an atom of an element compared to 1/12th the mass of a carbon-12 atom.</p>
+</div>
+
+<div class="formula-box">Mass number (A) = protons + neutrons<br>Atomic number (Z) = number of protons = number of electrons (in neutral atom)<br>Number of neutrons = A − Z</div>
+
+<div class="example-box">
+<h5>Worked Example: Nuclear Notation</h5>
+<p>Write the nuclear symbol for an atom with 17 protons and 18 neutrons.</p>
+<p><strong>Solution:</strong> Z = 17 (chlorine), A = 17 + 18 = 35. Symbol: ³⁵₁₇Cl</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Isotopes</h5>
+<p>Chlorine has two stable isotopes: ³⁵Cl (75.8%) and ³⁷Cl (24.2%). Calculate Aᵣ.</p>
+<p><strong>Solution:</strong> Aᵣ = (35 × 75.8 + 37 × 24.2) / 100 = (2653 + 895.4) / 100 = 35.5 (to 1 d.p.)</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• Isotopes do NOT have different chemical properties — only physical properties like mass and density differ because chemistry depends on electrons, not neutrons.</p>
+<p>• Relative atomic mass is NOT simply the average of isotope masses — it must be weighted by abundance.</p>
+<p>• The mass number is always a whole number; relative atomic mass is usually not.</p>
+</div>
+
+<div class="key-point">For a positive ion: electrons = Z − charge. For a negative ion: electrons = Z + |charge|.</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Electronic Configuration</h3>
+<h3>Electronic Configuration & Ionisation Energy</h3>
 </div>
 <div class="topic-content">
-<div class="formula-box">Shell 1: max 2 electrons<br>Shell 2: max 8 electrons<br>Shell 3: max 8 electrons (first 18 elements)</div>
+<p>Electrons occupy energy levels (shells) around the nucleus. Each shell contains subshells (s, p, d, f) which hold orbitals. An orbital can hold a maximum of 2 electrons with opposite spins.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Shell (principal quantum number n):</strong> Main energy level. n = 1, 2, 3...</p>
+<p><strong>Subshell:</strong> s (1 orbital, 2e⁻ max), p (3 orbitals, 6e⁻ max), d (5 orbitals, 10e⁻ max), f (7 orbitals, 14e⁻ max).</p>
+<p><strong>Orbital:</strong> A region of space where an electron may be found. Maximum 2 electrons per orbital (Pauli exclusion principle).</p>
+</div>
+
+<div class="process-box">
+<h5>Aufbau Principle — Filling Order</h5>
+<ol>
+<li>Fill lowest energy orbitals first</li>
+<li>Each orbital gets one electron before pairing (Hund's rule)</li>
+<li>Maximum 2 electrons per orbital with opposite spins</li>
+</ol>
+</div>
+
+<div class="formula-box">Filling order: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p...</div>
+
 <div class="example-box">
-<h5>Worked Example</h5>
-<p>Oxygen (Z=8): 2,6</p>
-<p>Sodium (Z=11): 2,8,1</p>
-<p>Chlorine (Z=17): 2,8,7</p>
+<h5>Worked Example: Electronic Configurations</h5>
+<p>Fe (Z=26): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶ (or [Ar] 3d⁶ 4s²)</p>
+<p>Fe²⁺: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ (lose 4s electrons first!)</p>
+<p>Fe³⁺: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ (half-filled d subshell is extra stable)</p>
+</div>
+
+<div class="key-point">Exceptions to remember: Cr = [Ar] 3d⁵ 4s¹ and Cu = [Ar] 3d¹⁰ 4s¹. A half-filled or fully-filled d subshell gives extra stability.</div>
+
+<h4>Ionisation Energy</h4>
+<p>First ionisation energy (IE₁): energy required to remove one mole of electrons from one mole of gaseous atoms to form one mole of gaseous +1 ions.</p>
+<div class="formula-box">X(g) → X⁺(g) + e⁻</div>
+
+<h4>Trends in First Ionisation Energy</h4>
+<p><strong>Across a period (left to right):</strong> Generally increases due to increasing nuclear charge with similar shielding. Smaller atomic radius means electrons are held more tightly.</p>
+<p><strong>Down a group:</strong> Decreases because outer electrons are further from the nucleus and there is more shielding from inner shells.</p>
+
+<div class="diagram-box">
+<strong>Explain the dip at Group 13 (e.g., Al):</strong><br>
+Al: [Ne] 3s² 3p¹. The 3p electron is slightly higher in energy than 3s and is partially shielded by the 3s electrons, so it is removed more easily than expected → lower IE.
+</div>
+
+<div class="diagram-box">
+<strong>Explain the dip at Group 16 (e.g., S):</strong><br>
+S: [Ne] 3s² 3p⁴. The fourth p electron must pair up in an already-occupied orbital. Electron-electron repulsion in the paired orbital makes it easier to remove → lower IE than P.
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Explaining IE Trend</h5>
+<p>Explain why magnesium has a higher first ionisation energy than aluminium.</p>
+<p><strong>Solution:</strong> Mg: 1s² 2s² 2p⁶ 3s²; Al: 1s² 2s² 2p⁶ 3s² 3p¹. Al's outer electron is in a 3p orbital which is at a slightly higher energy than 3s and is shielded by the 3s² pair. Less energy is needed to remove it. In Mg, both outer electrons are in the same 3s subshell with no additional shielding, so they are held more tightly.</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• Do NOT say "the 3p electron is further from the nucleus" — 3s and 3p are at roughly similar distances.</p>
+<p>• Always mention nuclear charge, atomic radius, AND shielding when explaining trends.</p>
+<p>• Ionisation energy refers to gaseous atoms — state symbols matter!</p>
 </div>
 </div>
 </div>
@@ -114,40 +207,113 @@
 <div class="topic-block" id="section-3">
 <div class="topic-header">
 <span class="topic-number">3</span>
-<h3>Mass Spectrometry</h3>
+<h3>Mass Spectrometry & Isotopes</h3>
 </div>
 <div class="topic-content">
+<p>Mass spectrometry is an analytical technique used to determine relative atomic masses, molecular masses, and structural information. It is essential in identifying unknown compounds.</p>
+
 <div class="process-box">
-<h5>Steps in Mass Spectrometry</h5>
+<h5>Steps in Mass Spectrometry (Electron Impact)</h5>
 <ol>
-<li>Vaporisation: sample heated to gas</li>
-<li>Ionisation: electron gun removes electrons → positive ions</li>
-<li>Acceleration: ions accelerated by electric field</li>
-<li>Deflection: ions separated by magnetic field (lighter ions deflected more)</li>
-<li>Detection: ions detected and recorded</li>
+<li><strong>Vaporisation:</strong> Sample is heated to become a gas</li>
+<li><strong>Ionisation:</strong> High-energy electrons bombard sample molecules, knocking off an electron → M⁺ (molecular ion)</li>
+<li><strong>Acceleration:</strong> Positive ions are accelerated by an electric field</li>
+<li><strong>Deflection:</strong> Magnetic field deflects ions based on mass-to-charge ratio (m/z). Lighter ions are deflected more.</li>
+<li><strong>Detection:</strong> Ions hit a detector; signal intensity is proportional to abundance</li>
 </ol>
 </div>
-<div class="formula-box">Relative atomic mass = Σ(isotope mass × relative abundance)</div>
+
+<div class="key-point">In a mass spectrum, the peak with the highest m/z value (on the far right) is the molecular ion peak M⁺ and gives the relative molecular mass.</div>
+
+<div class="formula-box">Relative atomic mass = Σ(isotope mass × relative abundance) / 100</div>
+
+<div class="example-box">
+<h5>Worked Example: Calculating Aᵣ from Mass Spectrum</h5>
+<p>A sample of boron gives peaks at m/z 10 (abundance 20%) and m/z 11 (abundance 80%).</p>
+<p><strong>Solution:</strong> Aᵣ = (10 × 20 + 11 × 80) / 100 = (200 + 880) / 100 = 10.8</p>
+</div>
+
+<div class="example-box">
+<h5>Worked Example: Identifying an Element</h5>
+<p>An element has peaks at m/z 63 (69.2%) and m/z 65 (30.8%). Identify the element.</p>
+<p><strong>Solution:</strong> Aᵣ = (63 × 69.2 + 65 × 30.8) / 100 = 63.6. This is copper (Cu).</p>
+</div>
+
+<h4>Fragmentation Patterns</h4>
+<p>The molecular ion M⁺ is often unstable and breaks into fragments. These fragments produce peaks at lower m/z values and give structural clues:</p>
+<ul>
+<li>m/z 15: CH₃⁺</li>
+<li>m/z 29: CHO⁺ or C₂H₅⁺</li>
+<li>m/z 43: C₃H₇⁺ or CH₃CO⁺</li>
+<li>m/z 77: C₆H₅⁺ (phenyl)</li>
+</ul>
+
+<div class="exam-tips">
+<h2>💡 Examiner Tips</h2>
+<ul>
+<li>Always show your working when calculating Aᵣ from isotope data</li>
+<li>The molecular ion peak gives Mr; fragmentation peaks give structural information</li>
+<li>For Time of Flight (TOF) mass spec: ions with same kinetic energy, lighter ones travel faster</li>
+<li>Remember: M+1 peak from ¹³C (~1.1% natural abundance)</li>
+</ul>
 </div>
 </div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Exam-Style Questions</h3>
+</div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) Define the term first ionisation energy. [2]</p>
+<p>(b) Write an equation for the second ionisation energy of magnesium. [1]</p>
+<p>(c) Explain why aluminium has a lower first ionisation energy than magnesium. [3]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Energy required to remove one mole of electrons from one mole of gaseous atoms (1) to form one mole of gaseous +1 ions (1).<br>
+(b) Mg⁺(g) → Mg²⁺(g) + e⁻ (1)<br>
+(c) Al has electron in 3p orbital (1) which is higher in energy / more shielded by 3s² (1) so less energy needed to remove it / electron is less strongly held (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>A sample of magnesium contains three isotopes with the following abundances: ²⁴Mg 78.6%, ²⁵Mg 10.1%, ²⁶Mg 11.3%. Calculate the relative atomic mass to 1 decimal place. [2]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+Aᵣ = (24 × 78.6 + 25 × 10.1 + 26 × 11.3) / 100 (1) = 24.3 (1)
+</div>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Protons: mass 1, charge +1</li>
-<li>Neutrons: mass 1, charge 0</li>
-<li>Electrons: mass negligible, charge -1</li>
-<li>Mass number = protons + neutrons</li>
-<li>Isotopes have same number of protons but different neutrons</li>
+<li>Protons: mass 1, charge +1; Neutrons: mass 1, charge 0; Electrons: mass negligible, charge -1</li>
+<li>Mass number = protons + neutrons; Atomic number = protons</li>
+<li>Isotopes have same Z, different A; same chemical properties, different physical properties</li>
+<li>Electronic configuration follows Aufbau, Pauli, Hund's rules</li>
+<li>Cr = [Ar] 3d⁵ 4s¹; Cu = [Ar] 3d¹⁰ 4s¹</li>
+<li>IE increases across period, decreases down group; dips at Gp 13 and Gp 16</li>
+<li>Mass spec steps: Vaporise → Ionise → Accelerate → Deflect → Detect</li>
+<li>Aᵣ = Σ(isotope mass × abundance) / 100</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
 <li>Remember the mass spectrometry steps: Vaporise, Ionise, Accelerate, Deflect, Detect</li>
-<li>Calculate RAM using isotope abundances</li>
-<li>Electronic configuration follows 2,8,8 pattern for first 20 elements</li>
+<li>Calculate RAM using isotope abundances — always show working</li>
+<li>Electronic configuration: 4s fills before 3d, but empties before 3d in ions</li>
+<li>When explaining IE trends, always mention nuclear charge, atomic radius, and shielding</li>
+<li>Use state symbols (g) in ionisation energy equations</li>
 </ul>
 </div>
+
 </div>
 </div></section>
 <script src="../js/theme.js?v=5"></script>

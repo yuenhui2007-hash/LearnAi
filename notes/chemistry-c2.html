@@ -53,6 +53,13 @@
 .process-box h5 { color: #0369a1; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .process-box ol { margin: 8px 0; padding-left: 20px; }
 .process-box li { color: #0c4a6e; margin-bottom: 6px; }
+.misconception-box { background: #fff1f2; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f43f5e; margin: 20px 0; color: #881337; }
+.misconception-box h5 { color: #be123c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.exam-question { background: #f8fafc; padding: 20px 24px; border-radius: 10px; border: 2px solid #94a3b8; margin: 20px 0; }
+.exam-question h5 { color: #334155; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.mark-scheme { background: #f0fdf4; padding: 16px 20px; border-radius: 8px; margin-top: 12px; color: #166534; }
+.definition-box { background: #fff7ed; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f97316; margin: 20px 0; color: #7c2d12; }
+.definition-box h5 { color: #c2410c; margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 @media (max-width: 768px) {
   .notes-container { padding: 24px; }
   .topic-content { padding-left: 0; }
@@ -68,14 +75,16 @@
 <div class="notes-header">
 <span class="syllabus-tag">A-Level</span>
 <h1>Chemical Bonding</h1>
-<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples</p>
+<p style="color:#64748b;margin-top:8px;">Comprehensive study notes with worked examples, mechanisms, and examiner tips</p>
 </div>
+
 <div class="toc">
 <h2>📑 Contents</h2>
 <ol>
 <li><a href="#section-1">Types of Bonding</a></li>
-<li><a href="#section-2">Dot-and-Cross Diagrams</a></li>
+<li><a href="#section-2">Covalent Bonding & Shapes</a></li>
 <li><a href="#section-3">Intermolecular Forces</a></li>
+<li><a href="#section-4">Exam-Style Questions</a></li>
 </ol>
 </div>
 
@@ -85,33 +94,103 @@
 <h3>Types of Bonding</h3>
 </div>
 <div class="topic-content">
+<p>Chemical bonding holds atoms together in compounds. The type of bonding depends on the elements involved and determines the physical and chemical properties of the substance.</p>
+
 <table class="data-table">
-<tr><th>Type</th><th>Between</th><th>Mechanism</th><th>Properties</th></tr>
-<tr><td>Ionic</td><td>Metal + Non-metal</td><td>Electron transfer</td><td>High melting point, conduct when molten/aqueous</td></tr>
-<tr><td>Covalent</td><td>Non-metal + Non-metal</td><td>Electron sharing</td><td>Variable melting point, usually non-conducting</td></tr>
-<tr><td>Metallic</td><td>Metal + Metal</td><td>Delocalised electrons</td><td>Malleable, conducting, lustrous</td></tr>
-<tr><td>Hydrogen</td><td>H and O/N/F</td><td>Dipole-dipole</td><td>Explains high boiling points of H₂O, NH₃, HF</td></tr>
+<tr><th>Type</th><th>Between</th><th>Mechanism</th><th>Melting Point</th><th>Electrical Conductivity</th></tr>
+<tr><td>Ionic</td><td>Metal + Non-metal</td><td>Electrostatic attraction between oppositely charged ions</td><td>High</td><td>Only molten or aqueous</td></tr>
+<tr><td>Covalent (simple molecular)</td><td>Non-metal + Non-metal</td><td>Shared pair of electrons</td><td>Low</td><td>Non-conducting</td></tr>
+<tr><td>Covalent (giant covalent)</td><td>Non-metal + Non-metal</td><td>Shared electrons in network</td><td>Very high</td><td>Usually non-conducting (except graphite)</td></tr>
+<tr><td>Metallic</td><td>Metal + Metal</td><td>Electrostatic attraction between positive ions and delocalised electrons</td><td>High</td><td>Conducting</td></tr>
 </table>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Ionic bond:</strong> Electrostatic attraction between oppositely charged ions formed by electron transfer.</p>
+<p><strong>Covalent bond:</strong> A shared pair of electrons between two atoms.</p>
+<p><strong>Coordinate (dative) bond:</strong> A covalent bond where both electrons come from the same atom.</p>
+<p><strong>Metallic bond:</strong> Electrostatic attraction between positive metal ions and a sea of delocalised electrons.</p>
+</div>
+
+<h4>Ionic Bonding in Detail</h4>
+<p>Ionic compounds form giant ionic lattices. Each ion is surrounded by oppositely charged ions. The strong electrostatic forces act in all directions, giving ionic compounds high melting points.</p>
+
+<div class="example-box">
+<h5>Worked Example: Drawing Dot-and-Cross Diagrams</h5>
+<p><strong>MgCl₂:</strong></p>
+<p>Mg (2.8.2) loses 2 electrons → Mg²⁺ (2.8)</p>
+<p>Each Cl (2.8.7) gains 1 electron → Cl⁻ (2.8.8)</p>
+<p>Formula: MgCl₂ (one Mg²⁺ balances two Cl⁻)</p>
+</div>
+
+<div class="key-point">Ionic compounds conduct electricity ONLY when molten or dissolved in water because the ions are free to move. In the solid state, ions are fixed in the lattice and cannot move.</div>
+
+<h4>Metallic Bonding in Detail</h4>
+<p>Metals consist of a lattice of positive ions surrounded by a 'sea' of delocalised valence electrons. This explains:</p>
+<ul>
+<li>High electrical conductivity — electrons are mobile</li>
+<li>Malleability and ductility — layers of ions can slide without breaking bonds</li>
+<li>Lustre — free electrons reflect light</li>
+<li>High melting points — strong metallic bonds</li>
+</ul>
+
+<div class="example-box">
+<h5>Worked Example: Explaining Properties</h5>
+<p>Explain why sodium is malleable but sodium chloride is brittle.</p>
+<p><strong>Solution:</strong> In sodium, layers of positive ions can slide over each other because the delocalised electrons maintain the metallic bond in new positions. In NaCl, sliding brings like charges together, causing repulsion and fracture.</p>
+</div>
 </div>
 </div>
 
 <div class="topic-block" id="section-2">
 <div class="topic-header">
 <span class="topic-number">2</span>
-<h3>Dot-and-Cross Diagrams</h3>
+<h3>Covalent Bonding & Shapes</h3>
 </div>
 <div class="topic-content">
-<div class="example-box">
-<h5>Worked Example: NaCl</h5>
-<p>Na → Na⁺ + e⁻</p>
-<p>Cl + e⁻ → Cl⁻</p>
-<p>Ionic bond formed by electrostatic attraction between Na⁺ and Cl⁻</p>
+<p>Covalent bonds form when atoms share electron pairs to achieve noble gas configurations. The shapes of molecules can be predicted using VSEPR (Valence Shell Electron Pair Repulsion) theory.</p>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Bond pair:</strong> A shared pair of electrons between two atoms.</p>
+<p><strong>Lone pair:</strong> A non-bonding pair of electrons on one atom.</p>
+<p><strong>VSEPR:</strong> Electron pairs around a central atom arrange themselves to minimise repulsion. Order of repulsion: lone pair-lone pair > lone pair-bond pair > bond pair-bond pair.</p>
 </div>
+
+<table class="data-table">
+<tr><th>Electron Pairs (bonding + lone)</th><th>Shape</th><th>Bond Angle</th><th>Example</th></tr>
+<tr><td>2</td><td>Linear</td><td>180°</td><td>BeCl₂, CO₂</td></tr>
+<tr><td>3 (0 lone)</td><td>Trigonal planar</td><td>120°</td><td>BF₃, AlCl₃</td></tr>
+<tr><td>4 (0 lone)</td><td>Tetrahedral</td><td>109.5°</td><td>CH₄, CCl₄</td></tr>
+<tr><td>4 (1 lone)</td><td>Trigonal pyramidal</td><td>107°</td><td>NH₃</td></tr>
+<tr><td>4 (2 lone)</td><td>Bent / V-shaped</td><td>104.5°</td><td>H₂O</td></tr>
+<tr><td>5 (0 lone)</td><td>Trigonal bipyramidal</td><td>90°, 120°</td><td>PCl₅</td></tr>
+<tr><td>6 (0 lone)</td><td>Octahedral</td><td>90°</td><td>SF₆</td></tr>
+</table>
+
 <div class="example-box">
-<h5>Worked Example: H₂O</h5>
-<p>Oxygen shares 2 electrons with each hydrogen (2 lone pairs, 2 bonding pairs)</p>
-<p>Bond angle: 104.5° (bent shape)</p>
+<h5>Worked Example: Predicting Shape</h5>
+<p>Predict the shape and bond angle of NH₃.</p>
+<p><strong>Solution:</strong> N has 5 valence electrons. Three bond pairs (N-H) and one lone pair = 4 electron pairs total. Shape is trigonal pyramidal. Bond angle is approximately 107° (less than 109.5° because lone pair repels more than bond pairs).</p>
 </div>
+
+<div class="example-box">
+<h5>Worked Example: CO₂ vs SO₂</h5>
+<p>CO₂: C has 4 valence electrons, forms 2 double bonds = 2 electron pairs → linear, 180°</p>
+<p>SO₂: S has 6 valence electrons, forms 2 double bonds + 1 lone pair = 3 electron pairs → bent, ~120°</p>
+</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• Double bonds count as ONE region of electron density for VSEPR, not two.</p>
+<p>• Always count ALL electron pairs (bonding + lone), not just bonds.</p>
+<p>• Lone pairs repel more than bond pairs, so they compress bond angles.</p>
+<p>• A molecule can have polar bonds but be non-polar overall if symmetrical (e.g., CCl₄).</p>
+</div>
+
+<h4>Polarity</h4>
+<p>A bond is polar if there is an electronegativity difference between the atoms. The more electronegative atom attracts electrons, becoming δ−; the other becomes δ+.</p>
+<div class="key-point">Molecules with polar bonds AND an asymmetrical shape are polar overall (e.g., H₂O, NH₃). Symmetrical molecules with polar bonds are non-polar overall (e.g., CO₂, CCl₄).</div>
 </div>
 </div>
 
@@ -121,34 +200,101 @@
 <h3>Intermolecular Forces</h3>
 </div>
 <div class="topic-content">
+<p>Intermolecular forces (IMFs) are attractions between molecules. They are much weaker than covalent, ionic, or metallic bonds but determine physical properties like boiling point and solubility.</p>
+
 <table class="data-table">
-<tr><th>Force</th><th>Strength</th><th>Between</th></tr>
-<tr><td>Van der Waals</td><td>Weak</td><td>All molecules</td></tr>
-<tr><td>Dipole-dipole</td><td>Moderate</td><td>Polar molecules</td></tr>
-<tr><td>Hydrogen bonding</td><td>Strong</td><td>H with N, O, or F</td></tr>
+<tr><th>Force</th><th>Relative Strength</th><th>Between</th><th>Example</th></tr>
+<tr><td>London dispersion (van der Waals)</td><td>Weakest</td><td>All molecules</td><td>CH₄, noble gases</td></tr>
+<tr><td>Dipole-dipole</td><td>Moderate</td><td>Polar molecules</td><td>HCl, propanone</td></tr>
+<tr><td>Hydrogen bonding</td><td>Strongest IMF</td><td>H bonded to N, O, or F</td><td>H₂O, NH₃, HF, alcohols</td></tr>
 </table>
-<div class="key-point">Hydrogen bonding explains why water has a high boiling point and ice is less dense than water.</div>
+
+<div class="definition-box">
+<h5>📘 Key Definitions</h5>
+<p><strong>Van der Waals forces:</strong> Temporary dipoles induced by fluctuating electron clouds. Strength increases with number of electrons / molecular size.</p>
+<p><strong>Dipole-dipole forces:</strong> Permanent attractions between δ+ and δ− ends of polar molecules.</p>
+<p><strong>Hydrogen bond:</strong> Strong dipole-dipole attraction between H (δ+) bonded to N, O, or F and a lone pair on another N, O, or F.</p>
+</div>
+
+<h4>Hydrogen Bonding — Special Cases</h4>
+<p><strong>Water:</strong> Each water molecule can form up to 4 hydrogen bonds. This explains:</p>
+<ul>
+<li>High boiling point (100°C) compared to H₂S (-60°C)</li>
+<li>Ice is less dense than water — hydrogen bonds hold molecules in an open hexagonal lattice</li>
+<li>High surface tension and specific heat capacity</li>
+</ul>
+
+<p><strong>DNA:</strong> Hydrogen bonds between complementary base pairs (A-T: 2 H-bonds; G-C: 3 H-bonds) hold the double helix together.</p>
+
+<div class="example-box">
+<h5>Worked Example: Boiling Points</h5>
+<p>Explain why ethanol (C₂H₅OH, bp 78°C) has a higher boiling point than ethane (C₂H₆, bp -89°C).</p>
+<p><strong>Solution:</strong> Both have similar numbers of electrons so similar van der Waals forces. However, ethanol has hydrogen bonding between the -OH groups (H bonded to O), which is much stronger than the van der Waals forces in ethane. More energy is needed to overcome hydrogen bonds.</p>
+</div>
+
+<div class="key-point">When comparing boiling points: (1) Check for hydrogen bonding first; (2) If both H-bond, compare number of H-bonds; (3) If no H-bond, compare molecular size / number of electrons (van der Waals); (4) Consider polarity for dipole-dipole.</div>
+
+<div class="misconception-box">
+<h5>⚠️ Common Misconceptions</h5>
+<p>• Hydrogen bonds are NOT covalent bonds — they are intermolecular forces.</p>
+<p>• Only H bonded directly to N, O, or F can hydrogen bond. CH₃OH can; CH₃OCH₃ cannot (no H on O).</p>
+<p>• Intramolecular hydrogen bonds (within a molecule) exist in some cases like proteins, but most H-bonds in exams are intermolecular.</p>
 </div>
 </div>
+</div>
+
+<div class="topic-block" id="section-4">
+<div class="topic-header">
+<span class="topic-number">4</span>
+<h3>Exam-Style Questions</h3>
+</div>
+<div class="topic-content">
+<div class="exam-question">
+<h5>📝 Exam Question 1</h5>
+<p>(a) State and explain the shape of a beryllium chloride (BeCl₂) molecule. [2]</p>
+<p>(b) State and explain the shape of a water (H₂O) molecule. [3]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+(a) Linear (1). Two bonding pairs / two regions of electron density (1) which arrange to minimise repulsion.<br>
+(b) Bent / V-shaped / non-linear (1). Two bonding pairs and two lone pairs / four regions of electron density (1). Lone pairs repel more than bonding pairs, reducing angle from 109.5° to 104.5° (1).
+</div>
+</div>
+
+<div class="exam-question">
+<h5>📝 Exam Question 2</h5>
+<p>Explain why ice is less dense than liquid water. [3]</p>
+<div class="mark-scheme">
+<strong>Mark Scheme:</strong><br>
+In ice, water molecules are held in a rigid lattice / open structure by hydrogen bonds (1). Each water molecule forms four hydrogen bonds (1). When ice melts, some hydrogen bonds break and the molecules can pack closer together (1), so liquid water has a higher density.
+</div>
+</div>
+</div>
+</div>
+
 <div class="summary-box">
 <h2>📝 Quick Summary</h2>
 <ul>
-<li>Ionic: electron transfer between metal and non-metal</li>
-<li>Covalent: electron sharing between non-metals</li>
-<li>Metallic: delocalised electrons in metal lattice</li>
-<li>Hydrogen bonding: H bonded to N, O, or F</li>
-<li>Intermolecular forces affect physical properties</li>
+<li>Ionic: electrostatic attraction; high mp; conduct when molten/aqueous</li>
+<li>Covalent: shared electrons; simple molecular = low mp; giant covalent = very high mp</li>
+<li>Metallic: cations + delocalised electrons; conducting; malleable</li>
+<li>VSEPR: electron pairs minimise repulsion; lone pairs repel more than bond pairs</li>
+<li>2 pairs = linear (180°); 3 = trigonal planar (120°); 4 = tetrahedral (109.5°)</li>
+<li>3 bonds + 1 lone = trigonal pyramidal (~107°); 2 bonds + 2 lone = bent (~104.5°)</li>
+<li>IMFs: van der Waals < dipole-dipole < hydrogen bonding</li>
+<li>H-bonding only when H is bonded to N, O, or F</li>
 </ul>
 </div>
 <div class="exam-tips">
 <h2>💡 Exam Tips</h2>
 <ul>
-<li>Always show electron transfer/sharing clearly</li>
-<li>Mention the strong electrostatic attraction in ionic bonds</li>
-<li>Hydrogen bonds are stronger than van der Waals but weaker than covalent bonds</li>
-<li>Shape of molecule affects polarity</li>
+<li>Always count ALL electron pairs for VSEPR (bonding + lone)</li>
+<li>When comparing melting points: giant structures > H-bonded > polar > non-polar</li>
+<li>Graphite conducts (delocalised electrons between layers); diamond doesn't</li>
+<li>Dipole moment direction: arrow points toward negative (δ−) end</li>
+<li>Symmetrical molecules with polar bonds are non-polar overall</li>
 </ul>
 </div>
+
 </div>
 </div></section>
 <script src="../js/theme.js?v=5"></script>
