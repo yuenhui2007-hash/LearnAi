@@ -95,6 +95,7 @@ router.get('/me', async (req, res) => {
     try {
         const jwt = require('jsonwebtoken');
         const { JWT_SECRET } = require('../middleware/auth');
+        const decoded = jwt.verify(token, JWT_SECRET);
         let user;
         if (isMongo && User) {
             user = await User.findById(decoded.id).select('-password');
@@ -103,6 +104,7 @@ router.get('/me', async (req, res) => {
         if (!user) {
             user = users.get(decoded.id);
             if (user) user = { id: user.id, email: user.email, name: user.name, role: user.role };
+        }
         if (!user) return res.status(401).json({ error: 'User not found' });
         res.json({ user });
     } catch (err) {
