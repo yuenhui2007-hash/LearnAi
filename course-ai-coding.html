@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Coding — Zetrix AI Academy</title>
+  <link rel="stylesheet" href="css/styles.css?v=10">
+  <link rel="stylesheet" href="css/course-engine.css?v=2">
+  <script src="js/nav.js?v=6" defer></script>
+  <script src="js/course-engine.js?v=2" defer></script>
+  <script src="js/theme.js?v=5" defer></script>
+</head>
+<body>
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h3>AI for Coding</h3>
+      <div class="progress-wrap">
+        <div class="progress-track"><div id="overall-progress" class="progress-fill" style="width:0%"></div></div>
+        <div id="overall-progress-text" class="progress-text">0/10 segments</div>
+      </div>
+      <nav id="segment-nav"></nav>
+    </aside>
+    <main class="course-main" id="segment-content"></main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CourseEngine.init('ai-coding', [
+        {
+          title: "Your AI Pair Programmer",
+          content: `<h3>Coding with an AI Partner</h3>
+          <p>AI pair programming transforms how you write, read, and maintain code. Your Avatar understands your codebase, follows your style, and catches bugs before they ship.</p>
+          <h3>What an AI Pair Programmer Can Do</h3>
+          <ol>
+            <li><strong>Autocomplete on steroids:</strong> Suggests entire functions, not just the next line. Understands context from imports, comments, and surrounding code.</li>
+            <li><strong>Code generation:</strong> Turn a description into working code. Example: "Write a Python function that validates UK postcodes using regex."</li>
+            <li><strong>Explanation:</strong> Highlight any code and ask: "What does this do?" Get a plain-English breakdown with edge cases.</li>
+            <li><strong>Refactoring:</strong> "Make this function more readable" or "Convert this to async/await." The Avatar preserves logic while improving structure.</li>
+            <li><strong>Test generation:</strong> Automatically writes unit tests covering happy paths, edge cases, and error conditions.</li>
+          </ol>
+          <h3>Step-by-Step: Setting Up Your Coding Environment</h3>
+          <ol>
+            <li>Install the <strong>Zetrix IDE extension</strong> for VS Code, JetBrains, or Vim.</li>
+            <li>Connect your code repository (GitHub, GitLab, or Bitbucket) in Integrations.</li>
+            <li>Index your codebase. The Avatar scans files, learns your patterns, and builds a semantic map.</li>
+            <li>Set your <strong>coding style preferences</strong>: language conventions, naming patterns (camelCase vs snake_case), max line length, and docstring format.</li>
+            <li>Test with a real task. Open a file, write a comment describing a new function, and press Tab. Watch the Avatar generate the implementation.</li>
+          </ol>
+          <p><strong>Mindset Shift:</strong> You are the pilot. The Avatar is the copilot. You make architectural decisions; it handles syntax and boilerplate.</p>`
+        },
+        {
+          title: "Prompt Engineering for Code",
+          content: `<h3>Writing Prompts That Produce Great Code</h3>
+          <p>Garbage in, garbage out. The quality of your code depends on the quality of your prompts. Master these patterns.</p>
+          <h3>The CODE Prompt Framework</h3>
+          <ol>
+            <li><strong>C – Context:</strong> Provide the file path, language, and relevant imports. "In my utils.py file, which imports re and datetime..."</li>
+            <li><strong>O – Objective:</strong> Be specific. "Write a function that sanitises user input to prevent XSS attacks."</li>
+            <li><strong>D – Details:</strong> Specify inputs, outputs, and constraints. "Accept a string. Return a safe string. Do not use external libraries."</li>
+            <li><strong>E – Examples:</strong> Show expected input/output pairs. This reduces ambiguity dramatically.</li>
+          </ol>
+          <h3>Step-by-Step: Crafting a Perfect Code Prompt</h3>
+          <ol>
+            <li>Identify the task. Example: "Sort a list of employees by start date, then by last name."</li>
+            <li>Add context: "In my HR module (hr/sorting.py), using Python 3.11. Employee objects have .start_date (datetime) and .last_name (str)."</li>
+            <li>Define constraints: "Do not mutate the original list. Handle None start_dates by placing them last."</li>
+            <li>Provide examples:
+              <pre>Input: [Alice(2023-01-15), Bob(None), Charlie(2022-06-01)]
+Output: [Charlie, Alice, Bob]</pre>
+            </li>
+            <li>Ask for tests: "Include unit tests using pytest."</li>
+            <li>Review the output. If wrong, do not rewrite the whole prompt. Isolate the error: "The None handling is reversed. Place Nones last, not first."</li>
+          </ol>
+          <h3>Anti-Patterns to Avoid</h3>
+          <ul>
+            <li>Vague prompts: "Fix this" → "Fix the off-by-one error in the loop on line 42."</li>
+            <li>Too much context: Including 500 lines of unrelated code confuses the model.</li>
+            <li>No examples: The Avatar guesses your intent. Examples make it certain.</li>
+            <li>Asking for everything at once: Break large tasks into 2–3 smaller prompts.</li>
+          </ul>`
+        },
+        {
+          title: "Debugging with AI",
+          content: `<h3>Finding and Fixing Bugs Faster</h3>
+          <p>Debugging is detective work. Your Avatar is Sherlock Holmes with infinite patience and perfect memory.</p>
+          <h3>Step-by-Step: AI-Powered Debugging</h3>
+          <ol>
+            <li><strong>Describe the symptom:</strong> "When I submit the form, the page hangs for 30 seconds then shows a 500 error."</li>
+            <li><strong>Share the error:</strong> Paste the stack trace, log output, or screenshot. The Avatar traces the error to its root cause.</li>
+            <li><strong>Provide context:</strong> Share the relevant file(s), recent changes, and environment (OS, language version, framework).</li>
+            <li><strong>Ask for hypotheses:</strong> "What are the 3 most likely causes?" The Avatar ranks them by probability.</li>
+            <li><strong>Test each hypothesis:</strong> The Avatar suggests diagnostic code or logging to narrow down the cause.</li>
+            <li><strong>Apply the fix:</strong> Once identified, the Avatar suggests a patch. Review it carefully before applying.</li>
+            <li><strong>Prevent recurrence:</strong> Ask the Avatar to write a regression test and update documentation.</li>
+          </ol>
+          <h3>Advanced Debugging Techniques</h3>
+          <ul>
+            <li><strong>Diff debugging:</strong> "This worked yesterday. Here is the diff since then. What broke?" The Avatar highlights risky changes.</li>
+            <li><strong>Log analysis:</strong> Paste 1,000 lines of logs. The Avatar summarises patterns, anomalies, and timelines.</li>
+            <li><strong>Performance profiling:</strong> Share a CPU or memory profile. The Avatar identifies bottlenecks and suggests optimisations.</li>
+            <li><strong>Replay debugging:</strong> Describe the exact sequence of actions. The Avatar reconstructs the state at each step.</li>
+          </ul>
+          <p><strong>Golden Rule:</strong> Never blindly apply AI-suggested fixes. Always understand the root cause before patching.</p>`
+        },
+        {
+          title: "AI Code Review",
+          content: `<h3>Catching Issues Before They Reach Production</h3>
+          <p>Code review is essential but time-consuming. Your Avatar performs first-pass reviews in seconds, freeing human reviewers for architecture and design.</p>
+          <h3>Step-by-Step: Automated Code Review</h3>
+          <ol>
+            <li>Create a <strong>Code Review Agent</strong> in Agent Studio.</li>
+            <li>Upload your <strong>style guide</strong> and <strong>security checklist</strong> to PKM. Example files: "Python-Style-Guide.md" and "Security-Checklist.md."</li>
+            <li>Write the system prompt:
+              <blockquote>"You are a senior engineer. Review the provided code for: correctness, readability, performance, security, and test coverage. Reference specific lines. Suggest improvements, not just criticisms."</blockquote>
+            </li>
+            <li>Configure triggers:
+              <ul>
+                <li>On pull request creation.</li>
+                <li>On commit to develop branch.</li>
+                <li>Manual trigger for ad-hoc reviews.</li>
+              </ul>
+            </li>
+            <li>The agent produces a review report:
+              <ul>
+                <li>Summary score (1–10).</li>
+                <li>Critical issues (must fix).</li>
+                <li>Warnings (should fix).</li>
+                <li>Suggestions (nice to have).</li>
+                <li>Positive highlights (what was done well).</li>
+              </ul>
+            </li>
+            <li>Human reviewers focus on the critical issues and architectural feedback. The Avatar handled the typos, style violations, and obvious bugs.</li>
+          </ol>
+          <h3>What the Avatar Reviews</h3>
+          <ul>
+            <li>Syntax errors and type mismatches.</li>
+            <li>Security vulnerabilities: SQL injection, XSS, insecure dependencies.</li>
+            <li>Performance issues: N+1 queries, unbounded loops, memory leaks.</li>
+            <li>Style consistency: naming, formatting, docstrings.</li>
+            <li>Test coverage: untested branches, missing edge cases.</li>
+          </ul>`
+        },
+        {
+          title: "API Building with AI",
+          content: `<h3>From Specification to Endpoint</h3>
+          <p>Building APIs is repetitive but critical. Your Avatar generates endpoints, documentation, and tests from a simple description.</p>
+          <h3>Step-by-Step: API Development Workflow</h3>
+          <ol>
+            <li>Write an <strong>OpenAPI specification</strong> or a plain-English description. Example: "I need a REST API for a task manager. Endpoints: GET /tasks, POST /tasks, GET /tasks/{id}, PUT /tasks/{id}, DELETE /tasks/{id}."</li>
+            <li>Prompt the Avatar: "Generate a FastAPI implementation with SQLAlchemy models, Pydantic schemas, and CRUD operations."</li>
+            <li>The Avatar produces:
+              <ul>
+                <li>main.py with route definitions.</li>
+                <li>models.py with database schemas.</li>
+                <li>schemas.py with request/response validation.</li>
+                <li>crud.py with database operations.</li>
+                <li>database.py with connection handling.</li>
+              </ul>
+            </li>
+            <li>Review the generated code. Check for SQL injection risks, missing auth, and incorrect HTTP status codes.</li>
+            <li>Prompt for documentation: "Generate Swagger UI annotations and a README with curl examples."</li>
+            <li>Prompt for tests: "Write pytest tests for all endpoints, including 404 and 422 cases."</li>
+            <li>Run the tests. Fix any failures. The Avatar helps debug test issues.</li>
+          </ol>
+          <h3>Advanced: GraphQL and gRPC</h3>
+          <ul>
+            <li><strong>GraphQL:</strong> Describe your data model. The Avatar generates schema, resolvers, and dataloaders for N+1 protection.</li>
+            <li><strong>gRPC:</strong> Write a .proto file. The Avatar generates server stubs, client code, and interceptors.</li>
+          </ul>`
+        },
+        {
+          title: "No-Code & Low-Code Development",
+          content: `<h3>Building Without Writing Code</h3>
+          <p>Not every problem needs a custom application. No-code tools let you build fast, iterate faster, and involve non-technical team members.</p>
+          <h3>Step-by-Step: No-Code App Creation</h3>
+          <ol>
+            <li>Define the problem. Example: "We need an internal tool to track employee vacation requests."</li>
+            <li>Choose a platform:
+              <ul>
+                <li><strong>Notion / Airtable:</strong> Database + views + forms. Best for simple workflows.</li>
+                <li><strong>Webflow / Framer:</strong> Design-driven websites with CMS. Best for marketing sites.</li>
+                <li><strong>Bubble / Adalo:</strong> Full web apps with logic, auth, and payments. Best for MVPs.</li>
+                <li><strong>Zapier / Make:</strong> Automation between tools. Best for connecting existing systems.</li>
+              </ul>
+            </li>
+            <li>Design the data model. What entities exist? What are their properties and relationships?</li>
+            <li>Prompt your Avatar: "Convert this data model into an Airtable base schema with linked tables and formula fields."</li>
+            <li>Build the UI. Use the platform's drag-and-drop editor. The Avatar suggests layouts and UX patterns.</li>
+            <li>Add logic. Example: "When status changes to Approved, send an email to HR and update the calendar." The Avatar writes the automation rules.</li>
+            <li>Test with 3 real users. Collect feedback. Iterate in hours, not weeks.</li>
+          </ol>
+          <h3>When to Use No-Code vs Code</h3>
+          <ul>
+            <li><strong>No-Code:</strong> Internal tools, MVPs, prototypes, event registration, simple CRUD apps.</li>
+            <li><strong>Low-Code:</strong> Apps needing custom logic but standard UI. Example: Retool dashboards.</li>
+            <li><strong>Code:</strong> High-scale systems, unique algorithms, strict compliance, performance-critical paths.</li>
+          </ul>`
+        },
+        {
+          title: "Git & Documentation",
+          content: `<h3>Version Control and Knowledge Sharing</h3>
+          <p>Code lives in Git. Knowledge lives in docs. Your Avatar helps with both, ensuring your team moves fast without breaking things.</p>
+          <h3>Step-by-Step: Git Workflow with AI</h3>
+          <ol>
+            <li><strong>Branch naming:</strong> Prompt: "Suggest a branch name for adding OAuth2 login." Output: "feature/oauth2-login"</li>
+            <li><strong>Commit messages:</strong> Stage your changes. Prompt: "Write a conventional commit message for these changes." The Avatar follows the conventional commits spec.</li>
+            <li><strong>PR descriptions:</strong> Paste the branch diff. The Avatar generates a structured PR description with summary, changes, testing notes, and screenshots placeholder.</li>
+            <li><strong>Merge conflict resolution:</strong> Paste the conflict markers. The Avatar explains both versions and suggests a resolution.</li>
+            <li><strong>Release notes:</strong> Provide a list of merged PRs. The Avatar categorises into Features, Fixes, Breaking Changes, and Deprecations.</li>
+          </ol>
+          <h3>Documentation Automation</h3>
+          <ol>
+            <li><strong>Code documentation:</strong> The Avatar reads your functions and generates docstrings, type hints, and README examples.</li>
+            <li><strong>API docs:</strong> From your OpenAPI spec, it generates markdown docs with request/response examples.</li>
+            <li><strong>Architecture Decision Records (ADRs):</strong> Describe a decision in bullet points. The Avatar formats it into a standard ADR template.</li>
+            <li><strong>Onboarding docs:</strong> The Avatar interviews you about setup steps, then writes a step-by-step guide for new developers.</li>
+          </ol>`
+        },
+        {
+          title: "Security Best Practices",
+          content: `<h3>Building Secure Software with AI</h3>
+          <p>Security is not a feature; it is a foundation. Your Avatar helps you identify vulnerabilities, follow best practices, and maintain compliance.</p>
+          <h3>Step-by-Step: Security Review Workflow</h3>
+          <ol>
+            <li>Upload your <strong>security policy</strong> to PKM. Example: "OWASP Top 10 checklist," "SOC 2 requirements," or "GDPR data handling rules."</li>
+            <li>Create a <strong>Security Agent</strong> in Agent Studio.
+              <ul>
+                <li>Prompt: "Review the provided code against the OWASP Top 10. Flag any vulnerabilities with severity (Critical, High, Medium, Low) and remediation steps."</li>
+              </ul>
+            </li>
+            <li>Run the agent on every pull request before human review.</li>
+            <li>Review the security report. Critical and High issues must be resolved before merge.</li>
+            <li>For dependencies, enable <strong>automated vulnerability scanning</strong>. The Avatar checks your package.json, requirements.txt, or Cargo.toml against known CVE databases.</li>
+            <li>Schedule a <strong>monthly security audit</strong>. The Avatar reviews access logs, secret rotation status, and compliance gaps.</li>
+          </ol>
+          <h3>Common Vulnerabilities the Avatar Detects</h3>
+          <ul>
+            <li><strong>Injection attacks:</strong> SQL, NoSQL, OS command, and LDAP injection.</li>
+            <li><strong>Broken authentication:</strong> Weak password policies, missing MFA, session fixation.</li>
+            <li><strong>Sensitive data exposure:</strong> Unencrypted PII, hardcoded secrets, verbose error messages.</li>
+            <li><strong>XXE and SSRF:</strong> XML external entities and server-side request forgery.</li>
+            <li><strong>Insecure deserialization:</strong> Untrusted data passed to unserialize() or pickle.loads().</li>
+          </ul>
+          <p><strong>Pro Tip:</strong> Keep a "security runbook" in your PKM. When the Avatar flags an issue, the runbook tells your team exactly how to respond.</p>`
+        },
+        {
+          title: "30-Day Coding Challenge",
+          content: `<h3>Level Up Your Development Skills</h3>
+          <p>This challenge takes you from AI-assisted coding to AI-native development. Build real projects, adopt best practices, and ship faster.</p>
+          <h3>Week 1: Pair Programming Foundations</h3>
+          <ol>
+            <li><strong>Day 1:</strong> Install the Zetrix IDE extension and index your current project.</li>
+            <li><strong>Day 2:</strong> Complete 5 tasks using only AI generation. Review each output for correctness.</li>
+            <li><strong>Day 3:</strong> Practice the CODE prompt framework. Write 10 prompts for real tasks.</li>
+            <li><strong>Day 4:</strong> Debug a real bug using AI. Document the root cause and fix.</li>
+            <li><strong>Day 5:</strong> Generate unit tests for a module with low coverage. Aim for 80%+.</li>
+            <li><strong>Day 6:</strong> Refactor a messy function. Ask the Avatar for 3 alternative implementations.</li>
+            <li><strong>Day 7:</strong> Review the week's AI-generated code. What patterns worked? What failed?</li>
+          </ol>
+          <h3>Week 2: Automation & Integration</h3>
+          <ol>
+            <li><strong>Day 8–10:</strong> Set up automated code review for your repository.</li>
+            <li><strong>Day 11–12:</strong> Build a small API using AI-generated scaffolding. Add auth and tests.</li>
+            <li><strong>Day 13–14:</strong> Create a no-code dashboard for a non-technical stakeholder.</li>
+          </ol>
+          <h3>Week 3: Security & Quality</h3>
+          <ol>
+            <li><strong>Day 15–17:</strong> Run a security audit on your project. Fix all Critical and High issues.</li>
+            <li><strong>Day 18–19:</strong> Automate documentation generation. Ensure every function has a docstring.</li>
+            <li><strong>Day 20–21:</strong> Set up CI/CD with AI-generated pipeline configs (GitHub Actions, GitLab CI).</li>
+          </ol>
+          <h3>Week 4: Mastery & Teaching</h3>
+          <ol>
+            <li><strong>Day 22–24:</strong> Build a complete feature end-to-end: spec → code → tests → docs → deploy.</li>
+            <li><strong>Day 25–27:</strong> Mentor a junior developer using AI-generated explanations and exercises.</li>
+            <li><strong>Day 28–29:</strong> Contribute to an open-source project. Use AI to understand the codebase and draft your PR.</li>
+            <li><strong>Day 30:</strong> Write a blog post: "How AI Changed My Development Workflow." Share your metrics: bugs caught, time saved, tests written.</li>
+          </ol>
+          <p><strong>Final Thought:</strong> The best developers in the AI era are not those who write the most code. They are those who ask the best questions, review with rigour, and architect with vision.</p>`,
+          quiz: [
+            { q: "What does the C in CODE prompt framework stand for?", options: ["Code", "Context", "Create", "Compile"], correct: 1 },
+            { q: "What should you always do before applying an AI-suggested fix?", options: ["Deploy immediately", "Understand the root cause", "Delete the old code", "Restart the server"], correct: 1 },
+            { q: "Which vulnerability involves untrusted data in unserialize()?", options: ["SQL Injection", "XSS", "Insecure Deserialization", "CSRF"], correct: 2 },
+            { q: "What is the recommended unit test coverage target?", options: ["50%", "60%", "80%", "100%"], correct: 2 },
+            { q: "When should you use code instead of no-code?", options: ["For all projects", "For high-scale or unique algorithms", "Never", "Only for mobile apps"], correct: 1 }
+          ],
+          passThreshold: 80
+        }
+      ]);
+    });
+  </script>
+</body>
+</html>

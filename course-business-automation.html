@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Automation — Zetrix AI Academy</title>
+  <link rel="stylesheet" href="css/styles.css?v=10">
+  <link rel="stylesheet" href="css/course-engine.css?v=2">
+  <script src="js/nav.js?v=6" defer></script>
+  <script src="js/course-engine.js?v=2" defer></script>
+  <script src="js/theme.js?v=5" defer></script>
+</head>
+<body>
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h3>Business Automation</h3>
+      <div class="progress-wrap">
+        <div class="progress-track"><div id="overall-progress" class="progress-fill" style="width:0%"></div></div>
+        <div id="overall-progress-text" class="progress-text">0/10 segments</div>
+      </div>
+      <nav id="segment-nav"></nav>
+    </aside>
+    <main class="course-main" id="segment-content"></main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CourseEngine.init('business-automation', [
+        {
+          title: "From Prompts to Processes",
+          content: `<h3>Turning One-Off Prompts into Repeatable Workflows</h3>
+          <p>Most people use AI for single tasks. The real power comes from chaining prompts into end-to-end processes. This segment shows you how.</p>
+          <h3>The Automation Spectrum</h3>
+          <ol>
+            <li><strong>Ad-hoc Prompt:</strong> "Write a thank-you email to Sarah." One input, one output, no memory.</li>
+            <li><strong>Templated Prompt:</strong> "Write a thank-you email to [NAME] for [REASON]." Reusable but still manual.</li>
+            <li><strong>Semi-Automated Workflow:</strong> Trigger → AI action → Human review → Send. Example: draft email, you approve, then it sends.</li>
+            <li><strong>Fully Automated Process:</strong> Trigger → AI action → Send → Log → Notify. No human in the loop.</li>
+          </ol>
+          <h3>Step-by-Step: Building Your First Workflow</h3>
+          <ol>
+            <li>Identify a repetitive task you do at least 3 times per week. Example: sending follow-up emails after meetings.</li>
+            <li>Write the perfect prompt for this task manually. Refine it until the output is 90% correct.</li>
+            <li>Go to <strong>Agent Studio &gt; Workflows</strong> and click <strong>Create Workflow</strong>.</li>
+            <li>Define the <strong>trigger</strong>. Options: calendar event ends, new email arrives, form submission, scheduled time, or manual button.</li>
+            <li>Add an <strong>AI action</strong>. Paste your refined prompt. Use variables like {{ attendee.name }} and {{ meeting.topic }}.</li>
+            <li>Add a <strong>human approval gate</strong> (recommended for early workflows). The Avatar drafts the output; you click approve or edit.</li>
+            <li>Add a <strong>send action</strong>. Connect Gmail or your email provider. Set the recipient dynamically.</li>
+            <li>Add a <strong>log action</strong>. Save a record to a Google Sheet or Notion database for tracking.</li>
+            <li>Save and activate. Test with a real trigger.</li>
+          </ol>
+          <p><strong>Golden Rule:</strong> Start semi-automated. Only remove the human gate after 10 consecutive flawless runs.</p>`
+        },
+        {
+          title: "Email Automation Mastery",
+          content: `<h3>Let Your Avatar Handle Your Inbox</h3>
+          <p>Email is where productivity dies. Reclaim your time with intelligent email automation.</p>
+          <h3>Step-by-Step: Setting Up Email Agents</h3>
+          <ol>
+            <li>Go to <strong>Integrations &gt; Email</strong> and connect your Gmail or Outlook account. Grant read and send permissions.</li>
+            <li>Create an <strong>Inbox Triage Agent</strong>:
+              <ul>
+                <li>Prompt: "Analyse the sender, subject, and body. Categorise as: Urgent, To Read, Delegate, Newsletter, or Spam."</li>
+                <li>Trigger: New email arrives.</li>
+                <li>Action: Label the email and send a brief summary to Slack if marked Urgent.</li>
+              </ul>
+            </li>
+            <li>Create a <strong>Follow-Up Agent</strong>:
+              <ul>
+                <li>Prompt: "If an email from a client has not been replied to in 48 hours, draft a polite follow-up."</li>
+                <li>Trigger: Daily at 09:00.</li>
+                <li>Action: Draft follow-ups in a "Follow-Up Drafts" label for your review.</li>
+              </ul>
+            </li>
+            <li>Create an <strong>Auto-Responder Agent</strong>:
+              <ul>
+                <li>Prompt: "If the email asks a common question, reply using the FAQ document in PKM. If unsure, flag for human review."</li>
+                <li>Trigger: New email arrives containing keywords "pricing," "demo," or "support."</li>
+                <li>Action: Send the reply immediately (no approval needed for FAQs).</li>
+              </ul>
+            </li>
+            <li>Review the <strong>Email Analytics</strong> dashboard weekly. Track: emails triaged, auto-replied, and draft accuracy.</li>
+          </ol>
+          <h3>Best Practices</h3>
+          <ul>
+            <li>Always start with a "draft only" mode. Never auto-send until accuracy is proven.</li>
+            <li>Maintain an <strong>email style guide</strong> in your PKM. The Avatar references it for tone consistency.</li>
+            <li>Use <strong>exclusion rules</strong> for sensitive senders (CEO, investors, family). These always go to human review.</li>
+          </ul>`
+        },
+        {
+          title: "Agent Studio Fundamentals",
+          content: `<h3>Building Custom Agents from Scratch</h3>
+          <p>Agent Studio is where you turn your Avatar into a team of specialists. This segment is your guided tour.</p>
+          <h3>Step-by-Step: Creating a Custom Agent</h3>
+          <ol>
+            <li>Navigate to <strong>Agent Studio</strong> from the Dashboard.</li>
+            <li>Click <strong>New Agent</strong>. Choose a starter template or start blank.</li>
+            <li>Name your agent descriptively. Example: "Q3-Report-Generator."</li>
+            <li>Write the <strong>System Prompt</strong>. This is the agent's permanent instruction set. Example:
+              <blockquote>"You are a financial analyst. You read spreadsheets and produce executive summaries. Use bullet points. Be conservative with projections. Cite specific cell references."</blockquote>
+            </li>
+            <li>Define <strong>Inputs</strong>. What data does the agent need? Example: a spreadsheet file, a date range, and a comparison flag.</li>
+            <li>Define <strong>Outputs</strong>. What does the agent produce? Example: a markdown report, a chart image, and an email draft.</li>
+            <li>Add <strong>Tools</strong>. Which integrations does the agent use? Spreadsheet reader, chart generator, email sender, etc.</li>
+            <li>Set <strong>Memory Scope</strong>. Can the agent access your full PKM, or only specific folders? Limit scope for speed and privacy.</li>
+            <li>Test the agent with sample inputs. Iterate on the system prompt until outputs are consistent.</li>
+            <li>Publish the agent. It now appears in your Avatar's agent library and can be triggered by voice or chat.</li>
+          </ol>
+          <h3>Agent Templates to Explore</h3>
+          <ul>
+            <li><strong>Data Analyst:</strong> Reads CSVs, finds trends, generates charts.</li>
+            <li><strong>Copywriter:</strong> Writes ads, emails, and landing pages in your brand voice.</li>
+            <li><strong>Meeting Scribe:</strong> Summarises transcripts, extracts action items, assigns owners.</li>
+            <li><strong>Researcher:</strong> Searches the web, summarises findings, cites sources.</li>
+          </ul>`
+        },
+        {
+          title: "Employee Onboarding Automation",
+          content: `<h3>Onboarding That Runs Itself</h3>
+          <p>A great onboarding experience sets the tone for retention. Automate it without losing the human touch.</p>
+          <h3>Step-by-Step: Building an Onboarding Workflow</h3>
+          <ol>
+            <li>Create an <strong>Onboarding Agent</strong> in Agent Studio.</li>
+            <li>Define the <strong>trigger</strong>: HR adds a new employee to the HRIS (e.g., BambooHR, Workday).</li>
+            <li>Set up a <strong>Day 1 sequence</strong>:
+              <ul>
+                <li>Send a welcome email from the CEO (drafted by the Avatar, approved by HR).</li>
+                <li>Create calendar holds for orientation sessions.</li>
+                <li>Send Slack invite and channel introductions.</li>
+                <li>Share the employee handbook and org chart from PKM.</li>
+              </ul>
+            </li>
+            <li>Set up a <strong>Week 1 sequence</strong> (daily drip):
+              <ul>
+                <li>Day 2: IT setup checklist and password manager invite.</li>
+                <li>Day 3: Meet-the-team intro emails (one per day, 3 teammates).</li>
+                <li>Day 4: First project brief and relevant PKM folders.</li>
+                <li>Day 5: Feedback survey and manager check-in reminder.</li>
+              </ul>
+            </li>
+            <li>Set up a <strong>30-60-90 Day Milestone Agent</strong>:
+              <ul>
+                <li>At 30 days: "How are you settling in?" survey.</li>
+                <li>At 60 days: Goal-setting workshop reminder.</li>
+                <li>At 90 days: Performance review prep and self-assessment.</li>
+              </ul>
+            </li>
+            <li>Log every action to a <strong>shared onboarding tracker</strong> (Google Sheet or Notion).</li>
+            <li>Add an <strong>escalation rule</strong>: If the new hire does not complete a checklist item in 48 hours, notify their manager.</li>
+          </ol>
+          <p><strong>Pro Tip:</strong> Include a "buddy assignment" step. The Avatar matches new hires with buddies based on role similarity and timezone.</p>`
+        },
+        {
+          title: "Document Review Workflows",
+          content: `<h3>Automating Contracts, Policies, and Reports</h3>
+          <p>Document review is tedious but critical. Let your Avatar handle the first pass so you focus on decisions.</p>
+          <h3>Step-by-Step: Document Review Agent</h3>
+          <ol>
+            <li>Create a <strong>Document Review Agent</strong> in Agent Studio.</li>
+            <li>Upload your <strong>review criteria</strong> to PKM. Example: a checklist for contract review (parties, terms, liability, termination, governing law).</li>
+            <li>Write the system prompt:
+              <blockquote>"You are a legal reviewer. Read the uploaded document against the criteria in 'Contract-Review-Checklist.md.' Flag missing sections, unusual terms, and risks. Output a score (1–10) and a summary."</blockquote>
+            </li>
+            <li>Define the trigger: Document uploaded to PKM folder "Pending Review."</li>
+            <li>Set up the workflow:
+              <ul>
+                <li>Agent reads the document and criteria.</li>
+                <li>Agent produces a review report (markdown).</li>
+                <li>Report is saved to "Reviews" folder and emailed to the assigned reviewer.</li>
+                <li>If score &lt; 5, escalate to senior reviewer via Slack.</li>
+              </ul>
+            </li>
+            <li>Test with 3 real documents. Refine the prompt based on false positives and missed issues.</li>
+            <li>Add <strong>version tracking</strong>. The agent compares new versions to previous reviews and highlights changes.</li>
+          </ol>
+          <h3>Document Types You Can Review</h3>
+          <ul>
+            <li>Contracts and NDAs</li>
+            <li>Policy drafts</li>
+            <li>Financial reports</li>
+            <li>Marketing copy for compliance</li>
+            <li>Code documentation</li>
+          </ul>`
+        },
+        {
+          title: "Meeting Automation",
+          content: `<h3>From Calendar Invite to Action Items</h3>
+          <p>Meetings should produce outcomes, not just notes. Automate the entire lifecycle.</p>
+          <h3>Step-by-Step: Meeting Automation Workflow</h3>
+          <ol>
+            <li><strong>Pre-Meeting Preparation:</strong>
+              <ul>
+                <li>Trigger: Meeting invite accepted (15 minutes before start).</li>
+                <li>Agent reads the meeting title and attendee list.</li>
+                <li>Agent pulls relevant documents from PKM (last meeting notes, project briefs).</li>
+                <li>Agent drafts an agenda and sends it to all attendees.</li>
+              </ul>
+            </li>
+            <li><strong>During the Meeting:</strong>
+              <ul>
+                <li>Connect your transcription tool (Otter, Fireflies, or native Zetrix transcription).</li>
+                <li>The Avatar listens in real time and highlights decisions, action items, and questions.</li>
+              </ul>
+            </li>
+            <li><strong>Post-Meeting Follow-Up:</strong>
+              <ul>
+                <li>Trigger: Meeting ends.</li>
+                <li>Agent receives the transcript.</li>
+                <li>Agent produces: meeting summary, decision log, and action item list with owners and deadlines.</li>
+                <li>Agent drafts follow-up emails to each owner with their specific tasks.</li>
+                <li>Agent creates calendar reminders for each deadline.</li>
+                <li>Agent logs everything in the project's PKM folder.</li>
+              </ul>
+            </li>
+            <li><strong>Review Weekly:</strong> Check the "Meeting Outcomes" dashboard. Track: meetings processed, action items created, and completion rate.</li>
+          </ol>
+          <p><strong>Pro Tip:</strong> Add a "no-meeting Wednesday" rule. The Avatar automatically declines non-urgent meetings on that day.</p>`
+        },
+        {
+          title: "Weekly Report Generation",
+          content: `<h3>Automating Status Updates and Reports</h3>
+          <p>Weekly reports eat hours. Automate them so your team stays informed and you stay productive.</p>
+          <h3>Step-by-Step: Automated Weekly Report</h3>
+          <ol>
+            <li>Create a <strong>Weekly Report Agent</strong> in Agent Studio.</li>
+            <li>Define data sources:
+              <ul>
+                <li>Project management tool (Jira, Asana, Monday)</li>
+                <li>Calendar (meetings attended, upcoming)</li>
+                <li>Email (key communications, pending replies)</li>
+                <li>PKM (documents created, notes taken)</li>
+              </ul>
+            </li>
+            <li>Write the report template in your PKM. Example sections: Wins, Blockers, Upcoming Priorities, Metrics, Needs Help.</li>
+            <li>Configure the agent to:
+              <ul>
+                <li>Pull data from all sources every Friday at 16:00.</li>
+                <li>Draft the report using the template.</li>
+                <li>Highlight anomalies (missed deadlines, unusual metrics).</li>
+                <li>Send the draft to you for review by 17:00.</li>
+              </ul>
+            </li>
+            <li>You review, edit, and approve. The agent sends the final report to stakeholders at 09:00 Monday.</li>
+            <li>Archive each report in PKM under "Reports &gt; Weekly &gt; [Date]."</li>
+          </ol>
+          <h3>Advanced: Multi-Level Reports</h3>
+          <ul>
+            <li><strong>Individual Report:</strong> Each team member's Avatar generates their own.</li>
+            <li><strong>Team Report:</strong> Aggregates all individual reports. Manager reviews.</li>
+            <li><strong>Executive Report:</strong> Aggregates team reports into a 1-page summary for leadership.</li>
+          </ul>
+          <p>Each level uses the same data but different templates and levels of detail.</p>`
+        },
+        {
+          title: "Integrations & Connectors",
+          content: `<h3>Connecting Zetrix to Your Tech Stack</h3>
+          <p>Automation lives or dies by connectivity. This segment covers every major integration.</p>
+          <h3>Step-by-Step: Connecting a New Integration</h3>
+          <ol>
+            <li>Go to <strong>Integrations &gt; Directory</strong>. Browse by category: Communication, CRM, Project Management, Finance, etc.</li>
+            <li>Click the integration you need (e.g., Salesforce). Review the permissions required.</li>
+            <li>Click <strong>Connect</strong>. You will be redirected to the service's OAuth page. Authorise Zetrix.</li>
+            <li>Return to Zetrix. The integration status turns green.</li>
+            <li>Configure <strong>sync settings</strong>:
+              <ul>
+                <li>Direction: one-way (Zetrix reads) or two-way (read + write).</li>
+                <li>Frequency: real-time, hourly, or daily.</li>
+                <li>Scope: which data fields are shared.</li>
+              </ul>
+            </li>
+            <li>Test the connection. Create a simple workflow that reads from the integration and logs to a sheet.</li>
+            <li>Monitor the <strong>Integration Health</strong> dashboard. Check for auth expiry, rate limits, and errors.</li>
+          </ol>
+          <h3>Popular Integrations</h3>
+          <ul>
+            <li><strong>Slack:</strong> Send alerts, receive commands, post summaries to channels.</li>
+            <li><strong>Notion:</strong> Sync PKM folders, create pages, update databases.</li>
+            <li><strong>Google Workspace:</strong> Read/write Docs, Sheets, Calendar, and Gmail.</li>
+            <li><strong>HubSpot / Salesforce:</strong> Update leads, log calls, draft follow-ups.</li>
+            <li><strong>GitHub:</strong> Summarise PRs, draft release notes, track issues.</li>
+            <li><strong>Zapier / Make:</strong> Bridge to 5,000+ apps not natively supported.</li>
+          </ul>`
+        },
+        {
+          title: "Error Handling & Fallbacks",
+          content: `<h3>Building Resilient Automation</h3>
+          <p>Automation breaks. The question is: does it break gracefully? This segment teaches defensive design.</p>
+          <h3>Common Failure Modes</h3>
+          <ol>
+            <li><strong>API Timeout:</strong> A connected service is slow or down.</li>
+            <li><strong>Auth Expiry:</strong> OAuth tokens expire after 30–90 days.</li>
+            <li><strong>Data Mismatch:</strong> The input format changed (e.g., a new column in a CSV).</li>
+            <li><strong>Rate Limiting:</strong> Too many requests to a service in a short window.</li>
+            <li><strong>AI Hallucination:</strong> The Avatar generates incorrect or nonsensical output.</li>
+          </ol>
+          <h3>Step-by-Step: Adding Error Handling</h3>
+          <ol>
+            <li>In <strong>Workflow Editor</strong>, click any action and open <strong>Error Settings</strong>.</li>
+            <li>Set a <strong>retry policy</strong>: 3 retries with exponential backoff (wait 5s, then 15s, then 45s).</li>
+            <li>Add a <strong>fallback action</strong>: If retries fail, send a Slack message to the workflow owner.</li>
+            <li>For <strong>AI actions</strong>, enable <strong>output validation</strong>. Define rules: output must contain X, must be under Y words, must reference a real document.</li>
+            <li>Add a <strong>human approval gate</strong> for any action that modifies external systems (sending emails, updating CRM).</li>
+            <li>Schedule a <strong>weekly health check</strong>. The Avatar emails you a summary of all failures, retries, and fallbacks from the past 7 days.</li>
+            <li>Maintain a <strong>runbook</strong> in your PKM: "If Workflow X fails, check Y, then do Z."</li>
+          </ol>
+          <h3>Graceful Degradation Checklist</h3>
+          <ul>
+            <li>Never let a failed auto-reply send a second, duplicate email.</li>
+            <li>If a calendar sync fails, do not delete existing events.</li>
+            <li>If AI output fails validation, queue for human review rather than sending garbage.</li>
+            <li>Log every error with context (timestamp, inputs, stack trace) for debugging.</li>
+          </ul>`
+        },
+        {
+          title: "30-Day Automation Challenge",
+          content: `<h3>Automate Your Work, Reclaim Your Life</h3>
+          <p>This challenge takes you from manual tasks to a mostly automated workflow in 30 days.</p>
+          <h3>Week 1: Identify & Map</h3>
+          <ol>
+            <li><strong>Day 1:</strong> Time-track your work for 4 hours. Note every repetitive task.</li>
+            <li><strong>Day 2:</strong> Rank tasks by frequency (how often) and pain (how much you hate them).</li>
+            <li><strong>Day 3:</strong> Pick your top 3 tasks. Write the manual process step-by-step.</li>
+            <li><strong>Day 4:</strong> For each task, write a single perfect prompt that produces the output.</li>
+            <li><strong>Day 5:</strong> Test each prompt 5 times. Refine until 90% accurate.</li>
+            <li><strong>Day 6:</strong> Connect one integration (Gmail, Slack, or Calendar).</li>
+            <li><strong>Day 7:</strong> Build your first semi-automated workflow. Run it manually 3 times.</li>
+          </ol>
+          <h3>Week 2: Expand & Connect</h3>
+          <ol>
+            <li><strong>Day 8–10:</strong> Build 2 more workflows. One for email, one for meetings.</li>
+            <li><strong>Day 11–12:</strong> Create your first custom agent in Agent Studio.</li>
+            <li><strong>Day 13–14:</strong> Connect a second integration. Test two-way sync.</li>
+          </ol>
+          <h3>Week 3: Scale & Delegate</h3>
+          <ol>
+            <li><strong>Day 15–17:</strong> Automate a team process (onboarding, reporting, or document review).</li>
+            <li><strong>Day 18–19:</strong> Remove one human approval gate that has been flawless for 10+ runs.</li>
+            <li><strong>Day 20–21:</strong> Set up error handling and fallback notifications.</li>
+          </ol>
+          <h3>Week 4: Optimise & Measure</h3>
+          <ol>
+            <li><strong>Day 22–24:</strong> Review automation analytics. Which workflows save the most time?</li>
+            <li><strong>Day 25–27:</strong> Refine the top 3 workflows. Shave 20% off their runtime.</li>
+            <li><strong>Day 28–29:</strong> Document your automation stack in PKM. Share with your team.</li>
+            <li><strong>Day 30:</strong> Calculate hours saved. Celebrate. Plan next quarter's automation roadmap.</li>
+          </ol>
+          <p><strong>Remember:</strong> Automation is not about replacing humans. It is about removing drudgery so humans can think, create, and lead.</p>`,
+          quiz: [
+            { q: "What is the recommended starting point for automation?", options: ["Fully automated", "Semi-automated with human approval", "Manual only", "AI-only with no oversight"], correct: 1 },
+            { q: "How many flawless runs are suggested before removing a human approval gate?", options: ["3", "5", "10", "20"], correct: 2 },
+            { q: "Which tool listens to meetings in real time?", options: ["Email Agent", "Document Review Agent", "Meeting Scribe Agent", "Follow-Up Agent"], correct: 2 },
+            { q: "What should you do if an integration auth token expires?", options: ["Ignore it", "Re-authenticate and monitor health", "Delete the integration", "Contact support immediately"], correct: 1 },
+            { q: "Which folder should trigger document review?", options: ["Archive", "Pending Review", "Daily Updates", "Reports"], correct: 1 }
+          ],
+          passThreshold: 80
+        }
+      ]);
+    });
+  </script>
+</body>
+</html>
