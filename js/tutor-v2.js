@@ -5,12 +5,19 @@
 const API_URL = 'https://round-breeze-1dcc.m-14324261.workers.dev';
 
 const SYSTEM_PROMPT = `You are the LearnAI Tutor, an expert Cambridge A-Level and IGCSE tutor who is also a helpful general assistant.
+You are ALSO the Zetrix AI Academy Tutor — a learning assistant for AI, Zetrix Avatar, Zetrix Claw, business automation, sales & marketing AI, personal productivity, AI for coding, and one-person companies.
 
-For academic questions:
+For Cambridge academic questions:
 - Give thorough, detailed explanations
 - Use LaTeX for equations: inline with \\( ... \\) and display with \\[ ... \\]
 - Include exam tips and common mistakes
 - If asked for practice, give realistic exam-style questions with hints and hidden answers
+
+For Zetrix AI Academy questions:
+- Answer the question first, then expand with context
+- Use adaptive teaching: simple for beginners, technical for advanced
+- Distinguish verified Zetrix facts from general knowledge; never invent features, pricing, APIs, or settings
+- Connect theory to practical application; encourage user independence
 
 For general questions (weather, news, restaurants, etc.):
 - Answer helpfully and briefly
@@ -1040,6 +1047,11 @@ const questionBank = {
 
 let conversationHistory = [];
 let currentSubject = 'all';
+
+// Merge Zetrix AI Academy knowledge base (from zetrix-knowledge.js) if available
+const mergedKnowledgeBase = typeof zetrixKnowledgeBase !== 'undefined'
+  ? { ...knowledgeBase, ...zetrixKnowledgeBase }
+  : knowledgeBase;
 let chatArea, userInput, sendBtn;
 
 function initTutor() {
@@ -1071,12 +1083,13 @@ function initTutor() {
 function updateSuggestions() {
   const suggestions = document.getElementById('suggestions');
   const map = {
-    all: ['Explain photosynthesis','What is PED?','Differentiation rules','SUVAT equations','Price discrimination','WWI causes','Exam tips','Practice question'],
+    all: ['Explain photosynthesis','What is PED?','Differentiation rules','What is RAG?','What is an AI avatar?','Quiz me on AI'],
     physics: ['SUVAT equations','Projectile motion','Wave interference','Kirchhoff laws','Transformer equation','Electric fields','Practice question'],
     chemistry: ['Le Chatelier principle','Stoichiometry moles','Organic tests','Electrode potentials','Redox balancing','Practice question'],
     biology: ['Calvin cycle steps','Cellular respiration','Immune response','DNA replication','Practice question'],
     maths: ['Chain rule example','Integration by parts','Trigonometric identities','Complex numbers','Vectors','Practice question'],
-    economics: ['PED calculation','Market failure types','Fiscal vs monetary','Supply-side policies','Practice question']
+    economics: ['PED calculation','Market failure types','Fiscal vs monetary','Supply-side policies','Practice question'],
+    zetrix: ['What is RAG?','What is an AI avatar?','Explain neural networks','What is fine-tuning?','What are AI agents?','Quiz me on AI']
   };
   const items = map[currentSubject] || map.all;
   suggestions.innerHTML = items.map(s => `<span class="chip">${s}</span>`).join('');
@@ -1276,8 +1289,23 @@ function getLocalResponse(text) {
     return generalAnswer;
   }
 
-  if (knowledgeBase.greetings.patterns.some(p => lower.includes(p))) {
-    return knowledgeBase.greetings.response;
+  // ===== ZETRIX QUIZ MODE =====
+  const zetrixQuiz = mergedKnowledgeBase['quiz-request'];
+  if (zetrixQuiz && zetrixQuiz.patterns.some(p => lower.includes(p))) {
+    const bank = zetrixQuiz.quizBank;
+    if (bank && bank.length) {
+      const q = bank[Math.floor(Math.random() * bank.length)];
+      const opts = q.options.map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join('<br>');
+      return `<h4>Zetrix AI Academy — Practice Question</h4>
+<p><strong>${q.q}</strong></p>
+<p>${opts}</p>
+<p><span class="chip" onclick="this.nextElementSibling.style.display='block';this.style.display='none'" style="cursor:pointer;display:inline-block;margin-top:8px;">Show Answer</span>
+<span style="display:none"><strong>Answer:</strong> ${String.fromCharCode(65 + q.a)} — ${q.options[q.a]}<br><em>${q.explain}</em></span></p>`;
+    }
+  }
+
+  if (mergedKnowledgeBase.greetings.patterns.some(p => lower.includes(p))) {
+    return mergedKnowledgeBase.greetings.response;
   }
 
   if (lower.includes('practice') || lower.includes('quiz') || lower.includes('question') || lower.includes('test me')) {
@@ -1285,13 +1313,13 @@ function getLocalResponse(text) {
   }
 
   if (lower.includes('revise') || lower.includes('study') || lower.includes('exam tip') || lower.includes('how to revise') || lower.includes('how do i study')) {
-    return knowledgeBase['revision-tips'].response;
+    return mergedKnowledgeBase['revision-tips'] ? mergedKnowledgeBase['revision-tips'].response : mergedKnowledgeBase['zetrix-greeting'].response;
   }
 
   let bestMatch = null;
   let bestScore = 0;
 
-  for (const [key, data] of Object.entries(knowledgeBase)) {
+  for (const [key, data] of Object.entries(mergedKnowledgeBase)) {
     if (!data.patterns) continue;
 
     let score = 0;
@@ -1315,7 +1343,7 @@ function getLocalResponse(text) {
     return bestMatch.response;
   }
 
-  return knowledgeBase.fallback.response;
+  return mergedKnowledgeBase.fallback ? mergedKnowledgeBase.fallback.response : "I'm not sure about that. Try asking about AI concepts, Zetrix products, business automation, or say 'quiz me'!";
 }
 
 function generatePracticeQuestion() {
